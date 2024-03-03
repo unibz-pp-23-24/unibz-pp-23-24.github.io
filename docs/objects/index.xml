@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Objects and classes on Programming project 2023-24</title>
+    <link>http://localhost:1313/docs/objects/</link>
+    <description>Recent content in Objects and classes on Programming project 2023-24</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/docs/objects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Objects</title>
+      <link>http://localhost:1313/docs/objects/sections/objects/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/objects/sections/objects/</guid>
+      <description>Objects # An object is a way to group data in a meaningful way.&#xA;A simple example: JSON objects # Here is a JSON object (in Javascript syntax) that describes the city of Florence:&#xA;{ name: &amp;#34;Florence&amp;#34;, zipcode: 50100, region: &amp;#34;Tuscany&amp;#34; } A JSON object may contain other objects, as well as arrays (of values, objects or arrays). For instance:&#xA;{ name: &amp;#34;Alice&amp;#34;, age: 26, birthPlace: { name: &amp;#34;Florence&amp;#34;, zipcode: 50100, region: &amp;#34;Tuscany&amp;#34; }, jobs: [ { employer: &amp;#34;Kolping&amp;#34;, start: 2021, end: 2022 }, { employer : &amp;#34;Eurac&amp;#34;, start: 2023 } ] } More formally:</description>
+    </item>
+    <item>
+      <title>Class and instance</title>
+      <link>http://localhost:1313/docs/objects/sections/classes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/objects/sections/classes/</guid>
+      <description>Class and instance # A class can be viewed as a blueprint for a set of similar objects.&#xA;For instance, consider the two objects:&#xA;{ name: &amp;#34;Florence&amp;#34;, zipCode: 50100, region: &amp;#34;Tuscany&amp;#34; } { name: &amp;#34;Rome&amp;#34;, zipCode: 00100, region: &amp;#34;Lazio&amp;#34; } Each of these objects describes a city, and they share the same keys (name, zipCode and region). A possible class for these two objects may enforce this structure, and it could be named City.</description>
+    </item>
+    <item>
+      <title>Inheritance</title>
+      <link>http://localhost:1313/docs/objects/sections/inheritance/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/objects/sections/inheritance/</guid>
+      <description>Inheritance # Subclass # In most (class-based) object-oriented languages, a class A can extend another class B. In this case, A is called a subclass of B. The intuitive meaning is inclusion between their respective sets of instances, i.e. every instance of A is also an instance of B (but the converse may not hold).&#xA;This can be paraphrased in English by &amp;ldquo;every A is a B &amp;ldquo;. For instance:</description>
+    </item>
+    <item>
+      <title>Instance methods</title>
+      <link>http://localhost:1313/docs/objects/sections/methods/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/objects/sections/methods/</guid>
+      <description>Instance methods # In most object-oriented languages (like Java), methods are implemented within class declarations.&#xA;An instance method requires an object of its class to be created before it can be called.&#xA;In Java, an instance method of MyClass can be called by appending . to a variable of type MyClass. The object referenced by the variable is accessible in the method, as well as its attributes.&#xA;This intuitively allows us to write methods with one less argument.</description>
+    </item>
+    <item>
+      <title>Mutability</title>
+      <link>http://localhost:1313/docs/objects/sections/mutability/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/objects/sections/mutability/</guid>
+      <description> Mutability # </description>
+    </item>
+    <item>
+      <title>Comparing objects</title>
+      <link>http://localhost:1313/docs/objects/sections/comparison/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/objects/sections/comparison/</guid>
+      <description> Comparing objects # </description>
+    </item>
+    <item>
+      <title>Encapsulation</title>
+      <link>http://localhost:1313/docs/objects/sections/encapsulation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/objects/sections/encapsulation/</guid>
+      <description>Encapsulation # Encapsulation is a (vague) principle in object-oriented programming that refers to &amp;ldquo;bundling&amp;rdquo; data with the code that operates on it, and restrict visibility of this code and data to other components of a system.&#xA;From Wikipedia: &amp;ldquo;Essentially, encapsulation prevents external code from being concerned [&amp;hellip;]&amp;rdquo;&#xA;Each component hides its internal logic by exposing only data (objects, attributes) and methods that other components may need.&#xA;Example. In our game, consider the component that is in charge of rendering the game visually, and let us call it the &amp;ldquo;renderer&amp;rdquo; for the sake of this example.</description>
+    </item>
+    <item>
+      <title>Copying objects</title>
+      <link>http://localhost:1313/docs/objects/sections/clone/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/objects/sections/clone/</guid>
+      <description> Copying objects # </description>
+    </item>
+    <item>
+      <title>Quasi-objects</title>
+      <link>http://localhost:1313/docs/objects/sections/quasi-objects/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/objects/sections/quasi-objects/</guid>
+      <description> Quasi-objects # Enumerated type # Record # </description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Fundamentals on Programming project 2023-24</title>
+    <link>http://localhost:1313/docs/fundamentals/</link>
+    <description>Recent content in Fundamentals on Programming project 2023-24</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/docs/fundamentals/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Computational problem</title>
+      <link>http://localhost:1313/docs/fundamentals/sections/problem/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/fundamentals/sections/problem/</guid>
+      <description>Computational problem # A computational problem is (usually) specified as:&#xA;a set of possible inputs, and the expected outputs (for these inputs). Problem vs algorithm # For instance, here is a problem that you may have encountered already:&#xA;Input: a sorted array A of integers, an integer a Output: true if a appears in A, false otherwise There are (infinitely) many algorithms that can solve this problem. But some of them are more efficient than others.</description>
+    </item>
+  </channel>
+</rss>

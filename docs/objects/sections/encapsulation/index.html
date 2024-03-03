@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Encapsulation # Encapsulation is a (vague) principle in object-oriented programming that refers to &ldquo;bundling&rdquo; data with the code that operates on it, and restrict visibility of this code and data to other components of a system.
+From Wikipedia: &ldquo;Essentially, encapsulation prevents external code from being concerned [&hellip;]&rdquo;
+Each component hides its internal logic by exposing only data (objects, attributes) and methods that other components may need.
+Example. In our game, consider the component that is in charge of rendering the game visually, and let us call it the &ldquo;renderer&rdquo; for the sake of this example.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Encapsulation" />
+<meta property="og:description" content="Encapsulation # Encapsulation is a (vague) principle in object-oriented programming that refers to &ldquo;bundling&rdquo; data with the code that operates on it, and restrict visibility of this code and data to other components of a system.
+From Wikipedia: &ldquo;Essentially, encapsulation prevents external code from being concerned [&hellip;]&rdquo;
+Each component hides its internal logic by exposing only data (objects, attributes) and methods that other components may need.
+Example. In our game, consider the component that is in charge of rendering the game visually, and let us call it the &ldquo;renderer&rdquo; for the sake of this example." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/objects/sections/encapsulation/" /><meta property="article:section" content="docs" />
+
+
+
+<title>Encapsulation | Programming project 2023-24</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" >
+<link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.2d63b920dc46557971f88d791108038c404e2046aafe9d0db5968e562990b153.js" integrity="sha256-LWO5INxGVXlx&#43;I15EQgDjEBOIEaq/p0NtZaOVimQsVM=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
+  integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0"
+  crossorigin="anonymous"
+/>
+
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
+  integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
+  crossorigin="anonymous"
+></script>
+
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
+  integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);"
+></script>
+
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Programming project 2023-24</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Encapsulation</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#in-java">in Java</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="encapsulation">
+  Encapsulation
+  <a class="anchor" href="#encapsulation">#</a>
+</h1>
+<p><strong>Encapsulation</strong> is a (vague) principle in object-oriented programming that refers to <em>&ldquo;bundling&rdquo;</em> data with the code that operates on it, and <em>restrict visibility</em> of this code and data to other components of a system.</p>
+<blockquote>
+<p>From <a href="">Wikipedia</a>:
+&ldquo;Essentially, encapsulation prevents external code from being concerned [&hellip;]&rdquo;</p>
+</blockquote>
+<p>Each component hides its internal logic by exposing only data (objects, attributes) and methods that other components may need.</p>
+<blockquote class="book-hint warning">
+  <p><strong><em>Example.</em></strong> In our game, consider the component that is in charge of rendering the game visually, and let us call it the &ldquo;renderer&rdquo; for the sake of this example.</p>
+<p>The renderer exposes a method that takes as input a <a href="">game snapshot</a>, and draws this snapshot on screen, as fast as possible.
+However, the renderer may receive snapshots faster than it can display them (due to the duration of on-screen animations).
+As a workaround, the renderer <strong>buffers</strong> the snapshots that it receives, displaying a new snapshot only after all previously submitted ones have been displayed.
+As a buffer, it uses a data structure called a <strong>queue</strong>.
+But this queue is <em>not exposed</em> to other components, because they should not need to access it.
+In other words, this queue is an implementation detail, <em>internal</em> to the renderer.</p>
+<p>Similarly, the implementation of this exposed method relies on subroutines that are only useful to the renderer.
+These auxiliary methods do not need to be exposed.</p>
+
+</blockquote>
+
+<p>Encapsulation also largely dictates how <em>libraries</em> are structured.
+For instance, when you create a <code>String</code> in Java, you do not have access to the internal representation of the string object.</p>
+<p>Encapsulation can have many benefits.
+Among others:</p>
+<ol>
+<li><strong><em>Modular code.</em></strong> For instance, in order to change the aspect of our game, the &ldquo;renderer&rdquo; could be replaced wit another one.
+As long as the new renderer implements (in some way) the methods that were exposed by its predecessor, this will not affect the rest of the system.</li>
+<li>Code that is <em>easier to understand</em> (and thus to debug).
+For instance, if the queue is internal to our renderer, then we know that it cannot be responsible for the malfunction of another component.</li>
+<li>Easier collaboration. For instance, Alice may refactor the internal structure of the renderer, knowing that this will not affect Bob, who is currently working on the backend.</li>
+</ol>
+<p>This is why a common practice in object-oriented programming consists in <em>hiding all attributes and methods</em> of a new class by default, and make only visible the ones that needs to be accessed from external code.
+In particular, this is likely to be the default behaviour of your IDE.</p>
+<h2 id="in-java">
+  in Java
+  <a class="anchor" href="#in-java">#</a>
+</h2>
+<p>Encapsulation can be enforced in Java by restricting access to certain attributes and/or methods of a class.</p>
+<p>Each attribute or method can have a <strong>visibility modifier</strong>, which indicates the classes that can access it:</p>
+<ul>
+<li><code>private</code> restricts visibility to the current class.</li>
+<li><code>protected</code> restricts visibility to the current class and its subclasses</li>
+<li><code>package-private</code> restricts visibility to the folder of the current class (and its subfolders), called a <strong>package</strong> in Java.</li>
+<li><code>public</code> does not restrict visibility.</li>
+</ul>
+<p>An attribute or method <em>without</em> visibility modifier is considered package-private.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#in-java">in Java</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

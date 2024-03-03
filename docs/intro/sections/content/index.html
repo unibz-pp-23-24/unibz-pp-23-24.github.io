@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Content of the course # This is a beginner&rsquo;s course on imperative and (class-based) object oriented programming, with an emphasis on practice and collaboration.
+The course relies on Java as main programming language. However, an important number of notions and techniques apply to other (imperative and/or object-oriented) programming languages: C/C&#43;&#43;, C#, Javascript, Go, Kotlin, Lua, Perl, PHP, Python, Rust, Ruby, Typescript, Visual Basic, etc.
+Prerequisites # Students are expected to have completed the Computer Programming course (INF/01 76258).">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Content" />
+<meta property="og:description" content="Content of the course # This is a beginner&rsquo;s course on imperative and (class-based) object oriented programming, with an emphasis on practice and collaboration.
+The course relies on Java as main programming language. However, an important number of notions and techniques apply to other (imperative and/or object-oriented) programming languages: C/C&#43;&#43;, C#, Javascript, Go, Kotlin, Lua, Perl, PHP, Python, Rust, Ruby, Typescript, Visual Basic, etc.
+Prerequisites # Students are expected to have completed the Computer Programming course (INF/01 76258)." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/intro/sections/content/" /><meta property="article:section" content="docs" />
+
+
+
+<title>Content | Programming project 2023-24</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" >
+<link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.2d63b920dc46557971f88d791108038c404e2046aafe9d0db5968e562990b153.js" integrity="sha256-LWO5INxGVXlx&#43;I15EQgDjEBOIEaq/p0NtZaOVimQsVM=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
+  integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0"
+  crossorigin="anonymous"
+/>
+
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
+  integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
+  crossorigin="anonymous"
+></script>
+
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
+  integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);"
+></script>
+
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Programming project 2023-24</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Content</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#prerequisites">Prerequisites</a></li>
+    <li><a href="#outcomes">Outcomes</a></li>
+    <li><a href="#focus">Focus</a>
+      <ul>
+        <li><a href="#foundations">Foundations</a></li>
+        <li><a href="#collaboration">Collaboration</a></li>
+        <li><a href="#running-example-board-game">Running example (board game)</a></li>
+      </ul>
+    </li>
+    <li><a href="#topics-covered">Topics covered</a>
+      <ul>
+        <li><a href="#programming-techniques">Programming techniques</a></li>
+        <li><a href="#software-engineering">Software engineering</a></li>
+        <li><a href="#java">Java</a></li>
+        <li><a href="#tools-and-tutorials">Tools and tutorials</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="content-of-the-course">
+  Content of the course
+  <a class="anchor" href="#content-of-the-course">#</a>
+</h1>
+<p>This is a beginner&rsquo;s course on <strong>imperative</strong> and (class-based) <strong>object oriented</strong> programming, with an emphasis on <em>practice</em> and <em>collaboration</em>.</p>
+<p>The course relies on Java as main programming language.
+However, an important number of notions and techniques apply to other (imperative and/or object-oriented) programming languages:
+C/C++, C#, Javascript, Go, Kotlin, Lua, Perl, PHP, Python, Rust, Ruby, Typescript, Visual Basic, etc.</p>
+<h2 id="prerequisites">
+  Prerequisites
+  <a class="anchor" href="#prerequisites">#</a>
+</h2>
+<p>Students are expected to have completed the <em>Computer Programming</em> course (INF/01 76258).</p>
+<p>Therefore the following topics are <em>not</em> covered in this course:</p>
+<ul>
+<li>variables, assignments, variable scope,</li>
+<li>basic data types,</li>
+<li>conditional statements (&ldquo;if/then/else&rdquo;) and loops,</li>
+<li>expression evaluation,</li>
+<li>methods/functions,</li>
+<li>arrays,</li>
+<li>etc.</li>
+</ul>
+<h2 id="outcomes">
+  Outcomes
+  <a class="anchor" href="#outcomes">#</a>
+</h2>
+<p>After completing this course, students should be able to:</p>
+<ul>
+<li>develop a prototype application in Java,</li>
+<li>write structured, documented and easily maintainable code,</li>
+<li>collaborate with other developers.</li>
+</ul>
+<h2 id="focus">
+  Focus
+  <a class="anchor" href="#focus">#</a>
+</h2>
+<h3 id="foundations">
+  Foundations
+  <a class="anchor" href="#foundations">#</a>
+</h3>
+<p>When this is relevant, the beginning of a chapter focuses on relatively abstract (albeit simple) notions.
+These includes elementary mathematical objects or structures (set, tuple, map, relation, preorder, graph, tree, etc.), recursion, boolean logic, regular languages, etc.<br>
+The purpose is twofold:</p>
+<ul>
+<li>ease the application of techniques seen in this course to programming languages <em>other than Java</em>,</li>
+<li>provide a widely accepted <em>vocabulary</em> to document/explain your code.</li>
+</ul>
+<p>For conciseness, <a href="https://en.wikipedia.org/wiki/Pseudocode">pseudocode</a> may be used in these sections rather than Java code.</p>
+<h3 id="collaboration">
+  Collaboration
+  <a class="anchor" href="#collaboration">#</a>
+</h3>
+<p>The course introduces simple coding practices that facilitate development within a <em>team</em>.
+In particular:</p>
+<ul>
+<li>structuring a project (components, interfaces, encapsulation, etc.),</li>
+<li><a href="">factorizing</a> code (inheritance, reuse of methods, etc.),</li>
+<li><a href="">test-driven</a> development,</li>
+<li>collaboration via <a href="">git</a>,</li>
+<li>documentation.</li>
+</ul>
+<blockquote class="book-hint info">
+  <strong><em>Note.</em></strong> What is considered <em>good communication</em> in computer science may differ from other disciplines. Emphasis is put on <em>clarity</em>, <em>precision</em> and <em>conciseness</em>.
+</blockquote>
+
+
+
+
+
+<div class="book-tabs"><input type="radio" class="toggle" name="tabs-exercise_method_spec" id="tabs-exercise_method_spec-0" checked="checked" />
+  <label for="tabs-exercise_method_spec-0">Exercise</label>
+  <div class="book-tabs-content markdown-inner"><p>Here is a (caricature of) a poorly documented method.
+Can you improve the method&rsquo;s description and/or signature?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">/** The algorithm looks at the first collection, and is only guaranteed to
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * work if no number is present twice in this collection, in which case it
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * loops over the numbers contained in this collection (in no specific order)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * and checks for each number whether it is also present in the second
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * collection (which is also expected to have distinct numbers). The code
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * written in this loop adds the current number (from the first collection)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * to the output collection if this number is also present in the second
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * collection, and does nothing otherwise.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
+</span></span><span style="display:flex;"><span>  Collection<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">filterNumbersThatAreShared</span>(Collection<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> c1,
+</span></span><span style="display:flex;"><span>                                                Collection<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> c2);
+</span></span></code></pre></div></div><input type="radio" class="toggle" name="tabs-exercise_method_spec" id="tabs-exercise_method_spec-1"  />
+  <label for="tabs-exercise_method_spec-1">Solution</label>
+  <div class="book-tabs-content markdown-inner"><p>A simpler signature and description could be:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>   <span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    * Returns the intersection of sets s1 and s2.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    */</span>
+</span></span><span style="display:flex;"><span>   Set<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">intersection</span>(Set<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> s1, Set<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> s2);
+</span></span></code></pre></div></div></div>
+
+<p>However, the following topics are <em>beyond the scope</em> of this course:</p>
+<ul>
+<li>advanced design patterns, dependency injection,</li>
+<li>continuous integration,</li>
+<li>project management (agile methodology, bug tracking, etc.),</li>
+<li>advanced git workflows,</li>
+<li>etc.</li>
+</ul>
+<h3 id="running-example-board-game">
+  Running example (board game)
+  <a class="anchor" href="#running-example-board-game">#</a>
+</h3>
+<p>For a large part, the course&rsquo;s illustrations a based on the same (imaginary) project.
+This project is an implementation of a board game, with rules analogous the ones of
+<a href="https://www.dotemu.com/games/might-magic-clash-of-heroes-definitive-edition/">Might &amp; Magic: Clash of Heroes</a> or
+<a href="https://snowprintstudios.com/solgard/">Legend of Solgard</a>.
+In order to understand these illustrations, you need to <em>play</em> one of these two game (approximately 1.5 hours, in order to understand its core mechanics).</p>
+<p>This game can also serve as the basis for your project, as explained in the <a href="">dedicated chapter</a>.</p>
+<h2 id="topics-covered">
+  Topics covered
+  <a class="anchor" href="#topics-covered">#</a>
+</h2>
+<p>Due to limited time, many notions (such as asymptotic cost, regular languages, hashmaps or multi-threading) are only briefly introduced in this course.
+However, some of them will be further discussed in other courses of the Bachelor.</p>
+<h3 id="programming-techniques">
+  Programming techniques
+  <a class="anchor" href="#programming-techniques">#</a>
+</h3>
+<p>A large part of this course is dedicated to the three following core topics:</p>
+<ul>
+<li>objects, classes and interfaces,</li>
+<li>collections and data structures,</li>
+<li>recursion.</li>
+</ul>
+<p>In addition, the following will be (brielfy) introduced:</p>
+<ul>
+<li>regular expressions,</li>
+<li>generics,</li>
+<li>lambda expressions and streams,</li>
+<li>multi-threading.</li>
+</ul>
+<blockquote class="book-hint info">
+  <strong>Note:</strong> some of these topics pertain to functional programming, but have been incorporated (in some form) to several imperative languages over the years.
+</blockquote>
+
+<h3 id="software-engineering">
+  Software engineering
+  <a class="anchor" href="#software-engineering">#</a>
+</h3>
+<ul>
+<li>Unit tests,</li>
+<li>Exceptions,</li>
+<li>Code factorization,</li>
+<li>Object-oriented design (basic design patterns).</li>
+</ul>
+<h3 id="java">
+  Java
+  <a class="anchor" href="#java">#</a>
+</h3>
+<ul>
+<li>Objects and references,</li>
+<li>Compilation/interpretation, bytecode, JVM and JDK,</li>
+<li>Memory (stack VS heap), garbage collection,</li>
+<li>Input/Output,</li>
+<li>Object serialization, JSON/XML serialization.</li>
+</ul>
+<h3 id="tools-and-tutorials">
+  Tools and tutorials
+  <a class="anchor" href="#tools-and-tutorials">#</a>
+</h3>
+<ul>
+<li><strong>Git</strong></li>
+<li>Build automation (<strong>Maven</strong> and <strong>Gradle</strong>)</li>
+<li>Using an <strong>IDE</strong> efficiently (navigation and debugging)</li>
+<li>Using a <strong>terminal</strong> efficiently (introduction)</li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#prerequisites">Prerequisites</a></li>
+    <li><a href="#outcomes">Outcomes</a></li>
+    <li><a href="#focus">Focus</a>
+      <ul>
+        <li><a href="#foundations">Foundations</a></li>
+        <li><a href="#collaboration">Collaboration</a></li>
+        <li><a href="#running-example-board-game">Running example (board game)</a></li>
+      </ul>
+    </li>
+    <li><a href="#topics-covered">Topics covered</a>
+      <ul>
+        <li><a href="#programming-techniques">Programming techniques</a></li>
+        <li><a href="#software-engineering">Software engineering</a></li>
+        <li><a href="#java">Java</a></li>
+        <li><a href="#tools-and-tutorials">Tools and tutorials</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

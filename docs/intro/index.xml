@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>This course on Programming project 2023-24</title>
+    <link>http://localhost:1313/docs/intro/</link>
+    <description>Recent content in This course on Programming project 2023-24</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/docs/intro/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Schedule</title>
+      <link>http://localhost:1313/docs/intro/sections/schedule/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/intro/sections/schedule/</guid>
+      <description>Schedule # The course consists of 60 hours of lectures and 30 hours of labs.&#xA;Lectures # By default, lectures are scheduled:&#xA;Tuesday 10:00 - 12:00 Wednesday 08:00 - 10:00 Thursday 10:00 - 12:00 All students attend the same lectures.&#xA;One lecture (to be determined) will be dedicated to a visit to Raiffeisen Information Service in Bolzano.&#xA;Labs # By default, labs are scheduled:&#xA;Tuesday 16:00 - 18:00 Friday 14:00 - 16:00 Students are split in two groups (to be determined) for the labs, with identical content.</description>
+    </item>
+    <item>
+      <title>Evaluation</title>
+      <link>http://localhost:1313/docs/intro/sections/evaluation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/intro/sections/evaluation/</guid>
+      <description>Evaluation # Evaluation for this course is based on:&#xA;assignments: up to 30 points, a group project: up to 60 points, and an oral exam: up to 10 points. Your final grade is the sum of the above, multiplied by 0.3.&#xA;Assignments # There are 6 assignments for this course. These are standard programming exercises, related to notions seen during the lectures. The labs are (mostly) dedicated to these assignments.</description>
+    </item>
+    <item>
+      <title>Teaching staff</title>
+      <link>http://localhost:1313/docs/intro/sections/lecturers/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/intro/sections/lecturers/</guid>
+      <description>Teaching staff # Julien Corman will teach the lectures and one lab.&#xA;Albulen Pano will teach the other lab.&#xA;Office hours # If you need additional help with the content of the course, the assignments and/or your project, you can ask for office hours with any (or both) of us.&#xA;These appointments must be scheduled via email (follow the links above for our email addresses).</description>
+    </item>
+    <item>
+      <title>Content</title>
+      <link>http://localhost:1313/docs/intro/sections/content/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/intro/sections/content/</guid>
+      <description>Content of the course # This is a beginner&amp;rsquo;s course on imperative and (class-based) object oriented programming, with an emphasis on practice and collaboration.&#xA;The course relies on Java as main programming language. However, an important number of notions and techniques apply to other (imperative and/or object-oriented) programming languages: C/C++, C#, Javascript, Go, Kotlin, Lua, Perl, PHP, Python, Rust, Ruby, Typescript, Visual Basic, etc.&#xA;Prerequisites # Students are expected to have completed the Computer Programming course (INF/01 76258).</description>
+    </item>
+    <item>
+      <title>Bibliography</title>
+      <link>http://localhost:1313/docs/intro/sections/bibliography/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/intro/sections/bibliography/</guid>
+      <description>Bibliography # Java&amp;rsquo;s syntax # In each chapter of this course, you will find Java code snippets that illustrate how to perform certain operations. However, this documentation is far from exhaustive (on purpose). In particular, alternative syntaxes are often available for the same (or similar) operations, either within the Java standard library, or in additional libraries such as Guava or the Apache commons libraries. For instance, there are multiple ways to read a file in Java.</description>
+    </item>
+  </channel>
+</rss>

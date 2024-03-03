@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
 <head>
-	<meta name="generator" content="Hugo 0.123.7">
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content=" Programming project 2023-24 # Welcome to the web site of the programming project course.
-This a university course taudt durin the academic year 2023-24 for the Bachelor in Computer Science of the Free University of Bozen-Bolzano.
-Important dates # First exam session # Project submission: June 2024 (TBD) Oral exam: June/July 2024 (TBD) Second exam session # Project submission: September 2024 (TBD) Oral exam: September/Otcober 2024 (TBD) Third exam session # Project submission: January/February 2025 (2025) Oral exam: January/February 2025 (2025) Resources # Microsoft Team Timetable of lectures and labs Project # Assignments # ">
+<meta name="description" content="Specification and programming interface # Specification # The specification of a method usually consists of:
+the computational problem that the method solves (if any), and (if needed,) a description of the format of the input and expected output, and (if applicable,) a description of the behavior of the program for invalid inputs (e.g. errors thrown by the method), and (if useful,) information about the implementation (e.g. if this may have an impact on performance for certain inputs).">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="Introduction" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://unibz-pp-23-24.github.io/" />
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Specification and programming interface" />
+<meta property="og:description" content="Specification and programming interface # Specification # The specification of a method usually consists of:
+the computational problem that the method solves (if any), and (if needed,) a description of the format of the input and expected output, and (if applicable,) a description of the behavior of the program for invalid inputs (e.g. errors thrown by the method), and (if useful,) information about the implementation (e.g. if this may have an impact on performance for certain inputs)." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/interfaces/sections/specification/" /><meta property="article:section" content="docs" />
 
-<title>Introduction | Programming project 2023-24</title>
+
+
+<title>Specification and programming interface | Programming project 2023-24</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
   <script defer src="/en.search.min.2d63b920dc46557971f88d791108038c404e2046aafe9d0db5968e562990b153.js" integrity="sha256-LWO5INxGVXlx&#43;I15EQgDjEBOIEaq/p0NtZaOVimQsVM=" crossorigin="anonymous"></script>
-<link rel="alternate" type="application/rss+xml" href="https://unibz-pp-23-24.github.io/index.xml" title="Programming project 2023-24" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -124,7 +124,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Introduction</strong>
+  <strong>Specification and programming interface</strong>
 
   <label for="toc-control">
     
@@ -140,17 +140,8 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#important-dates">Important dates</a>
-      <ul>
-        <li></li>
-      </ul>
-    </li>
-    <li><a href="#resources">Resources</a>
-      <ul>
-        <li><a href="#project">Project</a></li>
-        <li><a href="#assignments">Assignments</a></li>
-      </ul>
-    </li>
+    <li><a href="#specification">Specification</a></li>
+    <li><a href="#programming-interface">Programming interface</a></li>
   </ul>
 </nav>
 
@@ -163,64 +154,49 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown book-article"><h1 id="programming-project-2023-24">
-  Programming project 2023-24
-  <a class="anchor" href="#programming-project-2023-24">#</a>
+  <article class="markdown book-article"><h1 id="specification-and-programming-interface">
+  Specification and programming interface
+  <a class="anchor" href="#specification-and-programming-interface">#</a>
 </h1>
-<p>Welcome to the web site of the programming project course.</p>
-<p>This a university course taudt durin the academic year 2023-24 for the
-<a href="https://www.unibz.it/en/faculties/computer-science/bachelor-computer-science/">Bachelor in Computer Science</a>
-of the <a href="http://unibz.it/">Free University of Bozen-Bolzano</a>.</p>
-<h2 id="important-dates">
-  Important dates
-  <a class="anchor" href="#important-dates">#</a>
+<h2 id="specification">
+  Specification
+  <a class="anchor" href="#specification">#</a>
 </h2>
-<h4 id="first-exam-session">
-  First exam session
-  <a class="anchor" href="#first-exam-session">#</a>
-</h4>
+<blockquote class="book-hint warning">
+  <p>The <strong>specification</strong> of a <em>method</em> usually consists of:</p>
 <ul>
-<li><strong><em>Project submission:</em></strong> June 2024 (TBD)</li>
-<li><strong><em>Oral exam:</em></strong> June/July 2024 (TBD)</li>
+<li>the <a href="">computational problem</a> that the method solves (if any), and</li>
+<li>(if needed,) a description of the <em>format</em> of the input and expected output, and</li>
+<li>(if applicable,) a description of the behavior of the program for <em>invalid</em> inputs (e.g. errors thrown by the method), and</li>
+<li>(<em>if useful</em>,) information about the implementation (e.g. if this may have an impact on performance for certain inputs).</li>
 </ul>
-<h4 id="second-exam-session">
-  Second exam session
-  <a class="anchor" href="#second-exam-session">#</a>
-</h4>
+</blockquote>
+
+<p><blockquote class="book-hint info">
+  <p><strong><em>Example.</em></strong></p>
+<pre tabindex="0"><code> boolean isSolvable(int[][] grid)
+</code></pre><ul>
+<li><strong><em>Input:</em></strong> a 9 x 9 array of integers with numbers between 0 and 9</li>
+<li><strong><em>Output:</em></strong> true is this arrays represents a sudoku grid with a unique solution (where 0 stands for the absence of value)</li>
+<li><strong><em>Errors:</em></strong>
 <ul>
-<li><strong><em>Project submission:</em></strong> September 2024 (TBD)</li>
-<li><strong><em>Oral exam:</em></strong> September/Otcober 2024 (TBD)</li>
+<li>if the array&rsquo;s size is not 9 x 9</li>
+<li>if the array contains a number smaller that 0 or greater than 9</li>
 </ul>
-<h4 id="third-exam-session">
-  Third exam session
-  <a class="anchor" href="#third-exam-session">#</a>
-</h4>
-<ul>
-<li><strong><em>Project submission:</em></strong> January/February 2025 (2025)</li>
-<li><strong><em>Oral exam:</em></strong> January/February 2025 (2025)</li>
+</li>
 </ul>
-<h2 id="resources">
-  Resources
-  <a class="anchor" href="#resources">#</a>
+</blockquote>
+
+If a method has no return type or is not a <a href="">pure function</a>, then the specification may indicate the effect the method on its environment.</p>
+<p>The specification of a <em>command</em> (for a program with a command line interface) is similar, but may include additional information about the <em>syntax</em> of the command (options, arguments, etc.)</p>
+<h2 id="programming-interface">
+  Programming interface
+  <a class="anchor" href="#programming-interface">#</a>
 </h2>
-<!-- raw HTML omitted -->
-<ul>
-<li>Microsoft <a href="https://teams.microsoft.com/l/team/19%3a5nIIq-TkfyJLi3capYBYZG42U0vNmUBTv31Ac7Gqf641%40thread.tacv2/conversations?groupId=b394eaa9-e55c-42ed-be0f-5be013ff2f03&amp;tenantId=92513267-03e3-401a-80d4-c58ed6674e3b">Team</a></li>
-<li><a href="https://www.unibz.it/en/timetable/?searchByKeywords=programming&#43;project&amp;sourceId=unibz&amp;department=224&amp;fromDate=2024-03-03&amp;toDate=2025-02-20">Timetable</a> of lectures and labs</li>
-</ul>
-<h3 id="project">
-  Project
-  <a class="anchor" href="#project">#</a>
-</h3>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<h3 id="assignments">
-  Assignments
-  <a class="anchor" href="#assignments">#</a>
-</h3>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<blockquote class="book-hint warning">
+  In its simplest form, a <strong>programming interface</strong> is a set of method/command specifications.
+</blockquote>
+
 </article>
  
       
@@ -262,17 +238,8 @@ of the <a href="http://unibz.it/">Free University of Bozen-Bolzano</a>.</p>
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#important-dates">Important dates</a>
-      <ul>
-        <li></li>
-      </ul>
-    </li>
-    <li><a href="#resources">Resources</a>
-      <ul>
-        <li><a href="#project">Project</a></li>
-        <li><a href="#assignments">Assignments</a></li>
-      </ul>
-    </li>
+    <li><a href="#specification">Specification</a></li>
+    <li><a href="#programming-interface">Programming interface</a></li>
   </ul>
 </nav>
 
