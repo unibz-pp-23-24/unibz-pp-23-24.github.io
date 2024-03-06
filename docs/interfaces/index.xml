@@ -2,23 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Interfaces on Programming project 2023-24</title>
-    <link>http://localhost:1313/docs/interfaces/</link>
+    <link>http://localhost:46177/docs/interfaces/</link>
     <description>Recent content in Interfaces on Programming project 2023-24</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="http://localhost:1313/docs/interfaces/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:46177/docs/interfaces/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Specification and programming interface</title>
-      <link>http://localhost:1313/docs/interfaces/sections/specification/</link>
+      <link>http://localhost:46177/docs/interfaces/sections/specification/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/docs/interfaces/sections/specification/</guid>
+      <guid>http://localhost:46177/docs/interfaces/sections/specification/</guid>
       <description>Specification and programming interface # Specification # The specification of a method usually consists of:&#xA;the computational problem that the method solves (if any), and (if needed,) a description of the format of the input and expected output, and (if applicable,) a description of the behavior of the program for invalid inputs (e.g. errors thrown by the method), and (if useful,) information about the implementation (e.g. if this may have an impact on performance for certain inputs).</description>
     </item>
     <item>
       <title>Java interfaces</title>
-      <link>http://localhost:1313/docs/interfaces/sections/java_interfaces/</link>
+      <link>http://localhost:46177/docs/interfaces/sections/java_interfaces/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/docs/interfaces/sections/java_interfaces/</guid>
+      <guid>http://localhost:46177/docs/interfaces/sections/java_interfaces/</guid>
       <description>Java interfaces # A Java interface is a programming interface with additional (object-oriented) features.&#xA;Syntactically, a Java interface is similar to a class. But (in its simplest form), it contains no code. Instead, it specifies the behavior of some methods (which are implemented in some classes).&#xA;Examples # The implementation of our game contains an interface called Snapshot, which describes what a game snapshot is. This interface specifies (among others) a method called getSizeOfReinforcement, as follows:</description>
     </item>
   </channel>
