@@ -1,74 +1,20 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Development environment on Programming project 2023-24</title>
-    <link>http://localhost:38121/docs/env/</link>
-    <description>Recent content in Development environment on Programming project 2023-24</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <atom:link href="http://localhost:38121/docs/env/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Hierarchical file system</title>
-      <link>http://localhost:38121/docs/env/sections/files/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:38121/docs/env/sections/files/</guid>
-      <description>Hierarchical file system # Tree # Most operating system expose files as a tree (or possibly several trees for Windows).&#xA;Definition. A (nonempty) tree is either:&#xA;a single node (called a leaf), or a node with one or several children that are trees. In this tree, non-leaf nodes are directories, and the leaves can be files, executables, links, empty directories, etc. For instance:&#xA;├── bin │ ├── echo │ └── .</description>
-    </item>
-    <item>
-      <title>Backup</title>
-      <link>http://localhost:38121/docs/env/sections/backup/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:38121/docs/env/sections/backup/</guid>
-      <description>Backup # Make sure that your work does not depend on your laptop. You should be able to resume your work easily on another computer if your laptop gets lost, damaged, etc.&#xA;You should also be able to recover your data if you accidentally delete it from your hard drive.&#xA;Which information to back up # As a priority, make sure that there exist copies (outside of your hard drive) of:</description>
-    </item>
-    <item>
-      <title>Software management</title>
-      <link>http://localhost:38121/docs/env/sections/install/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:38121/docs/env/sections/install/</guid>
-      <description>Software management # Dependencies # As a developer, you frequently need to download, install and/or update:&#xA;libraries used in your projects (called dependencies), core programming utilities, such as a compiler or interpreter for a given programming language, a package manager, etc. tools for software development: editor, debugger, visualization tool, etc. These programs have their own dependencies, that have their own dependencies, etc. And two programs may depend on different versions of a same third program.</description>
-    </item>
-    <item>
-      <title>Operating system</title>
-      <link>http://localhost:38121/docs/env/sections/os/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:38121/docs/env/sections/os/</guid>
-      <description>Operating system (OS) # Your computer does not bind you to one OS. You can run multiple OSs on the same computer by:&#xA;partitioning your disk, or booting from an external drive, or using virtualisation. Depending on what you are developing, one operating system may be more convenient than another.&#xA;We review below some of the benefits and drawbacks of developing under Windows, macOS and Linux.&#xA;Windows # Benefits and drawbacks # Here are some benefits of using Windows as your OS for software development:</description>
-    </item>
-    <item>
-      <title>Requirements for this course</title>
-      <link>http://localhost:38121/docs/env/sections/requirements/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:38121/docs/env/sections/requirements/</guid>
-      <description>Requirements for this course # For this course, you will need:&#xA;Git Version 2.2 or higher A Java Development Kit (JDK) for Java 17 (e.g. openJDK) Maven Version 3.6 or higher In addition, if you choose the board game as project, you will need:&#xA;Gradle Version 7.2 or higher Again, we recommend using a package manager to install these programs if possible.&#xA;For Windows users. Maven is not available on the winget repository.</description>
-    </item>
-    <item>
-      <title>IDE</title>
-      <link>http://localhost:38121/docs/env/sections/ide/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:38121/docs/env/sections/ide/</guid>
-      <description>Integrated development environment (IDE) # An IDE is an application that consists of a source code editor with additional functionalities such as a debugger or build automation.&#xA;For this course, you can use any IDE (or enhanced code editor) for Java with at least the following features:&#xA;a debugger navigation to variable/class/interface declaration and usage, variable/class/interface renaming, Maven integration, Gradle integration if you choose the board game as your project.</description>
-    </item>
-    <item>
-      <title>Text editor</title>
-      <link>http://localhost:38121/docs/env/sections/text_editor/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:38121/docs/env/sections/text_editor/</guid>
-      <description>Text editor # A text editor allows you to edit plain (i.e. non-formatted) text. A text editor can open any file produced with a text editor (and more), regardless of the file&amp;rsquo;s extension.&#xA;In this sense, Microsoft Word is not a text editor (neither are Apple Pages or LibreOffice Writer).&#xA;Most operating systems comes with one or several text editor(s) pre-installed, such as Notepad++ (Windows), TextEdit (macOS), gedit (default Ubuntu), etc.</description>
-    </item>
-    <item>
-      <title>Evaluation environment</title>
-      <link>http://localhost:38121/docs/env/sections/eval/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:38121/docs/env/sections/eval/</guid>
-      <description>Evaluation environment # The evaluation environment for your project is a virtual machine (with Ubuntu 20) deployed on Microsoft Azure. You are not supposed to develop on this machine, but your project must run in this environment to be evaluated.&#xA;Each student gets his or her own clone of the original machine. Maven, Gradle, git and a Java 17 JDK are already installed. You will also be granted administrator rights, so that you can install additional software (if any) needed to run your project.</description>
-    </item>
-    <item>
-      <title>Terminal</title>
-      <link>http://localhost:38121/docs/env/sections/terminal/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:38121/docs/env/sections/terminal/</guid>
-      <description>Terminal # Using a terminal can be necessary during development, in order to execute a program that does not have a graphical user interface (GUI).&#xA;But even when a GUI is available, a Command Line Interface (CLI) can still be the preferred way to interact with some programs. Possible benefits are:&#xA;efficiency (thanks to autocompletion, there is very little to type), automation (via scripting), more transparency (a GUI may add a layer of obfuscation), stability over time (GUIs tend to change from one version of a program to another), reproducibility (the same command performs the same action, with a limited reliance on memory), customizability.</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Development environment on Programming project 2023-24</title><link>https://unibz-pp-23-24.github.io/docs/env/</link><description>Recent content in Development environment on Programming project 2023-24</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://unibz-pp-23-24.github.io/docs/env/index.xml" rel="self" type="application/rss+xml"/><item><title>Hierarchical file system</title><link>https://unibz-pp-23-24.github.io/docs/env/sections/files/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://unibz-pp-23-24.github.io/docs/env/sections/files/</guid><description>Hierarchical file system # Tree # Most operating system expose files as a tree (or possibly several trees for Windows).
+Definition. A (nonempty) tree is either:
+a single node (called a leaf), or a node with one or several children that are trees. In this tree, non-leaf nodes are directories, and the leaves can be files, executables, links, empty directories, etc. For instance:
+├── bin │ ├── echo │ └── .</description></item><item><title>Backup</title><link>https://unibz-pp-23-24.github.io/docs/env/sections/backup/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://unibz-pp-23-24.github.io/docs/env/sections/backup/</guid><description>Backup # Make sure that your work does not depend on your laptop. You should be able to resume your work easily on another computer if your laptop gets lost, damaged, etc.
+You should also be able to recover your data if you accidentally delete it from your hard drive.
+Which information to back up # As a priority, make sure that there exist copies (outside of your hard drive) of:</description></item><item><title>Software management</title><link>https://unibz-pp-23-24.github.io/docs/env/sections/install/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://unibz-pp-23-24.github.io/docs/env/sections/install/</guid><description>Software management # Dependencies # As a developer, you frequently need to download, install and/or update:
+libraries used in your projects (called dependencies), core programming utilities, such as a compiler or interpreter for a given programming language, a package manager, etc. tools for software development: editor, debugger, visualization tool, etc. These programs have their own dependencies, that have their own dependencies, etc. And two programs may depend on different versions of a same third program.</description></item><item><title>Operating system</title><link>https://unibz-pp-23-24.github.io/docs/env/sections/os/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://unibz-pp-23-24.github.io/docs/env/sections/os/</guid><description>Operating system (OS) # Your computer does not bind you to one OS. You can run multiple OSs on the same computer by:
+partitioning your disk, or booting from an external drive, or using virtualisation. Depending on what you are developing, one operating system may be more convenient than another.
+We review below some of the benefits and drawbacks of developing under Windows, macOS and Linux.
+Windows # Benefits and drawbacks # Here are some benefits of using Windows as your OS for software development:</description></item><item><title>Requirements for this course</title><link>https://unibz-pp-23-24.github.io/docs/env/sections/requirements/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://unibz-pp-23-24.github.io/docs/env/sections/requirements/</guid><description>Requirements for this course # For this course, you will need:
+Git Version 2.2 or higher A Java Development Kit (JDK) for Java 17 (e.g. openJDK) Maven Version 3.6 or higher In addition, if you choose the board game as project, you will need:
+Gradle Version 7.2 or higher Again, we recommend using a package manager to install these programs if possible.
+For Windows users. Maven is not available on the winget repository.</description></item><item><title>IDE</title><link>https://unibz-pp-23-24.github.io/docs/env/sections/ide/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://unibz-pp-23-24.github.io/docs/env/sections/ide/</guid><description>Integrated development environment (IDE) # An IDE is an application that consists of a source code editor with additional functionalities such as a debugger or build automation.
+For this course, you can use any IDE (or enhanced code editor) for Java with at least the following features:
+a debugger navigation to variable/class/interface declaration and usage, variable/class/interface renaming, Maven integration, Gradle integration if you choose the board game as your project.</description></item><item><title>Text editor</title><link>https://unibz-pp-23-24.github.io/docs/env/sections/text_editor/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://unibz-pp-23-24.github.io/docs/env/sections/text_editor/</guid><description>Text editor # A text editor allows you to edit plain (i.e. non-formatted) text. A text editor can open any file produced with a text editor (and more), regardless of the file&amp;rsquo;s extension.
+In this sense, Microsoft Word is not a text editor (neither are Apple Pages or LibreOffice Writer).
+Most operating systems comes with one or several text editor(s) pre-installed, such as Notepad++ (Windows), TextEdit (macOS), gedit (default Ubuntu), etc.</description></item><item><title>Evaluation environment</title><link>https://unibz-pp-23-24.github.io/docs/env/sections/eval/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://unibz-pp-23-24.github.io/docs/env/sections/eval/</guid><description>Evaluation environment # The evaluation environment for your project is a virtual machine (with Ubuntu 20) deployed on Microsoft Azure. You are not supposed to develop on this machine, but your project must run in this environment to be evaluated.
+Each student gets his or her own clone of the original machine. Maven, Gradle, git and a Java 17 JDK are already installed. You will also be granted administrator rights, so that you can install additional software (if any) needed to run your project.</description></item><item><title>Terminal</title><link>https://unibz-pp-23-24.github.io/docs/env/sections/terminal/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://unibz-pp-23-24.github.io/docs/env/sections/terminal/</guid><description>Terminal # Using a terminal can be necessary during development, in order to execute a program that does not have a graphical user interface (GUI).
+But even when a GUI is available, a Command Line Interface (CLI) can still be the preferred way to interact with some programs. Possible benefits are:
+efficiency (thanks to autocompletion, there is very little to type), automation (via scripting), more transparency (a GUI may add a layer of obfuscation), stability over time (GUIs tend to change from one version of a program to another), reproducibility (the same command performs the same action, with a limited reliance on memory), customizability.</description></item></channel></rss>
