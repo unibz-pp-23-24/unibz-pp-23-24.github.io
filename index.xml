@@ -1,51 +1,172 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Introduction on Programming project 2023-24</title><link>https://unibz-pp-23-24.github.io/</link><description>Recent content in Introduction on Programming project 2023-24</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://unibz-pp-23-24.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Computational problem</title><link>https://unibz-pp-23-24.github.io/docs/background/sections/problem/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://unibz-pp-23-24.github.io/docs/background/sections/problem/</guid><description>Computational problem # A computational problem is (usually) specified as:
-a set of possible inputs, and the expected outputs (for these inputs). Problem vs algorithm # For instance, here is a problem that you may have encountered already:
-Input: a sorted array A of integers, an integer a Output: true if a appears in A, false otherwise There are (infinitely) many algorithms that can solve this problem. But some of them are more efficient than others.</description></item><item><title>Objects</title><link>https://unibz-pp-23-24.github.io/docs/objects/sections/objects/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://unibz-pp-23-24.github.io/docs/objects/sections/objects/</guid><description>Objects # An object is a way to group data in a meaningful way.
-A simple example: JSON objects # Here is a JSON object (in Javascript syntax) that describes the city of Florence:
-{ name: &amp;#34;Florence&amp;#34;, zipcode: 50100 } A JSON object may contain other objects, as well as arrays (of values, objects or arrays). For instance:
-{ name: &amp;#34;Alice&amp;#34;, age: 26, birthPlace: { name: &amp;#34;Florence&amp;#34;, zipcode: 50100 }, jobs: [ { employer: &amp;#34;Kolping&amp;#34;, start: 2021, end: 2022 }, { employer : &amp;#34;Eurac&amp;#34;, start: 2023 } ] } More formally:</description></item><item><title>Option 1: free project</title><link>https://unibz-pp-23-24.github.io/docs/project/sections/free_project/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://unibz-pp-23-24.github.io/docs/project/sections/free_project/</guid><description>Option 1: free project # The first option available to you for your project consists in developing a Java application of your choice.
-This application is only a prototype, so it does not need a comprehensive list of features or functionalities.
-The evaluation of your project will be mostly based on its backend (rather than the frontend). This means that your application:
-does not necessarily need a graphical user interface (but you may choose to develop one), should perform non-trivial backend task(s) (e.</description></item><item><title>Schedule</title><link>https://unibz-pp-23-24.github.io/docs/intro/sections/schedule/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://unibz-pp-23-24.github.io/docs/intro/sections/schedule/</guid><description>Schedule # The course consists of 60 hours of lectures and 30 hours of labs.
-Lectures # By default, lectures are scheduled:
-Tuesday 10:00 - 12:00 Wednesday 08:00 - 10:00 Thursday 10:00 - 12:00 All students attend the same lectures.
-One lecture (to be determined) will be dedicated to a visit to Raiffeisen Information Service in Bolzano.
-Labs # By default, labs are scheduled:
-Tuesday 16:00 - 18:00 Friday 14:00 - 16:00 Students are split in two groups (to be determined) for the labs, with identical content.</description></item><item><title>Specification and programming interface</title><link>https://unibz-pp-23-24.github.io/docs/interfaces/sections/specification/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://unibz-pp-23-24.github.io/docs/interfaces/sections/specification/</guid><description>Specification and programming interface # Specification # The specification of a method usually consists of:
-the computational problem that the method solves (if any), and (if needed,) a description of the format of the input and expected output, and (if applicable,) a description of the behavior of the program for invalid inputs (e.g. errors thrown by the method), and (if useful,) information about the implementation (e.g. if this may have an impact on performance for certain inputs).</description></item><item><title>Class and instance</title><link>https://unibz-pp-23-24.github.io/docs/objects/sections/classes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://unibz-pp-23-24.github.io/docs/objects/sections/classes/</guid><description>Class and instance # A class can be viewed as a blueprint for a set of similar objects.
-For instance, consider the two objects:
-{ name: &amp;#34;Florence&amp;#34;, zipCode: 50100, region: &amp;#34;Tuscany&amp;#34; } { name: &amp;#34;Rome&amp;#34;, zipCode: 00100, region: &amp;#34;Lazio&amp;#34; } Each of these objects describes a city, and they share the same keys (name, zipCode and region). A possible class for these two objects may enforce this structure, and it could be named City.</description></item><item><title>Hierarchical file system</title><link>https://unibz-pp-23-24.github.io/docs/env/sections/files/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://unibz-pp-23-24.github.io/docs/env/sections/files/</guid><description>Hierarchical file system # Tree # Most operating system expose files as a tree (or possibly several trees for Windows).
-Definition. A (nonempty) tree is either:
-a single node (called a leaf), or a node with one or several children that are trees. In this tree, non-leaf nodes are directories, and the leaves can be files, executables, links, empty directories, etc. For instance:
-├── bin │ ├── echo │ └── .</description></item><item><title>Java interfaces</title><link>https://unibz-pp-23-24.github.io/docs/interfaces/sections/java_interfaces/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://unibz-pp-23-24.github.io/docs/interfaces/sections/java_interfaces/</guid><description>Java interfaces # A Java interface is a programming interface with additional (object-oriented) features.
-Syntactically, a Java interface is similar to a class. But (in its simplest form), it contains no code. Instead, it specifies the behavior of some methods (which are implemented in some classes).
-Examples # The implementation of our game contains an interface called Snapshot, which describes what a game snapshot is. This interface specifies (among others) a method called getSizeOfReinforcement, as follows:</description></item><item><title>Option 2: board game</title><link>https://unibz-pp-23-24.github.io/docs/project/sections/board_game/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://unibz-pp-23-24.github.io/docs/project/sections/board_game/</guid><description>Option 2: board game # The second project option available to you consists in developing a video game with mechanics analogous to the ones of Might &amp;amp; Magic: Clash of Heroes or Legend of Solgard.
-If you choose this option, you will be provided:
-a basic graphical user interface (GUI) that you can reuse and/or customize, examples during lectures that you may adapt to your project. Requirements # The minimal requirement to submit your project is a player vs player game playable on a single machine.</description></item><item><title>Teaching staff</title><link>https://unibz-pp-23-24.github.io/docs/intro/sections/lecturers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://unibz-pp-23-24.github.io/docs/intro/sections/lecturers/</guid><description>Teaching staff # Julien Corman will teach the lectures and one lab.
-Albulen Pano will teach the other lab.
-Office hours # If you need additional help with the content of the course, the assignments and/or your project, you can ask for office hours with any (or both) of us.
-These appointments must be scheduled via email (follow the links above for our email addresses).</description></item><item><title>Backup</title><link>https://unibz-pp-23-24.github.io/docs/env/sections/backup/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://unibz-pp-23-24.github.io/docs/env/sections/backup/</guid><description>Backup # Make sure that your work does not depend on your laptop. You should be able to resume your work easily on another computer if your laptop gets lost, damaged, etc.
-You should also be able to recover your data if you accidentally delete it from your hard drive.
-Which information to back up # As a priority, make sure that there exist copies (outside of your hard drive) of:</description></item><item><title>Evaluation</title><link>https://unibz-pp-23-24.github.io/docs/intro/sections/evaluation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://unibz-pp-23-24.github.io/docs/intro/sections/evaluation/</guid><description>Evaluation # Evaluation for this course is based on:
-assignments: up to 30 points, a group project: up to 60 points, and an oral exam: up to 10 points. Your final grade is the sum of the above, multiplied by 0.3.
-Assignments # There will be 8 or 9 assignments for this course. These are standard programming exercises, related to notions seen during the lectures. The labs are (mostly) dedicated to these assignments.</description></item><item><title>Visibility</title><link>https://unibz-pp-23-24.github.io/docs/encapsulation/sections/visibility/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://unibz-pp-23-24.github.io/docs/encapsulation/sections/visibility/</guid><description> Visibility #</description></item><item><title>Content</title><link>https://unibz-pp-23-24.github.io/docs/intro/sections/content/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://unibz-pp-23-24.github.io/docs/intro/sections/content/</guid><description>Content of the course # This is a beginner&amp;rsquo;s course on imperative and (class-based) object oriented programming, with an emphasis on practice and collaboration.
-The course relies on Java as main programming language. However, many concepts seen in this course are relevant to other (imperative and/or object-oriented) programming languages: C/C++, C#, Javascript, Go, Kotlin, Lua, Perl, PHP, Python, Rust, Ruby, Typescript, Visual Basic, etc.
-Prerequisites # Students are expected to have completed the Computer Programming course (INF/01 76258).</description></item><item><title>Software management</title><link>https://unibz-pp-23-24.github.io/docs/env/sections/install/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://unibz-pp-23-24.github.io/docs/env/sections/install/</guid><description>Software management # Dependencies # As a developer, you frequently need to download, install and/or update:
-libraries used in your projects (called dependencies), core programming utilities, such as a compiler or interpreter for a given programming language, a package manager, etc. tools for software development: editor, debugger, visualization tool, etc. These programs have their own dependencies, that have their own dependencies, etc. And two programs may depend on different versions of a same third program.</description></item><item><title>Board game</title><link>https://unibz-pp-23-24.github.io/docs/intro/sections/board_game/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://unibz-pp-23-24.github.io/docs/intro/sections/board_game/</guid><description>Board game # In order to follow this course, you will need to play one of the two following video games:
-Might &amp;amp; Magic: Clash of Heroes, or Legend of Solgard. These two games have very similar mechanics. So by default, we will refer to them as a unique game (e.g. when we write &amp;ldquo;this game&amp;rdquo; or &amp;ldquo;our board game&amp;rdquo;).
-Why this game # Turn-based board games (like chess, go, checkers, etc.</description></item><item><title>Operating system</title><link>https://unibz-pp-23-24.github.io/docs/env/sections/os/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://unibz-pp-23-24.github.io/docs/env/sections/os/</guid><description>Operating system (OS) # Your computer does not bind you to one OS. You can run multiple OSs on the same computer by:
-partitioning your disk, or booting from an external drive, or using virtualisation. Depending on what you are developing, one operating system may be more convenient than another.
-We review below some of the benefits and drawbacks of developing under Windows, macOS and Linux.
-Windows # Benefits and drawbacks # Here are some benefits of using Windows as your OS for software development:</description></item><item><title>Bibliography</title><link>https://unibz-pp-23-24.github.io/docs/intro/sections/bibliography/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://unibz-pp-23-24.github.io/docs/intro/sections/bibliography/</guid><description>Bibliography # Java&amp;rsquo;s syntax # In each chapter of this course, you will find Java code snippets that illustrate how to perform certain operations. However, this documentation is far from exhaustive (on purpose).
-So when it comes to syntax, the first two sources of complementary material for this course are:
-the Javadoc of the libraries (standard and auxiliary) used in your project/assignments. Your IDE is often the fastest way to navigate through it, the web.</description></item><item><title>Requirements for this course</title><link>https://unibz-pp-23-24.github.io/docs/env/sections/requirements/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://unibz-pp-23-24.github.io/docs/env/sections/requirements/</guid><description>Requirements for this course # For this course, you will need:
-Git Version 2.2 or higher A Java Development Kit (JDK) for Java 17 (e.g. openJDK) Maven Version 3.6 or higher In addition, if you choose the board game as project, you will need:
-Gradle Version 7.2 or higher Again, we recommend using a package manager to install these programs if possible.
-For Windows users. Maven is not available on the winget repository.</description></item><item><title>IDE</title><link>https://unibz-pp-23-24.github.io/docs/env/sections/ide/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://unibz-pp-23-24.github.io/docs/env/sections/ide/</guid><description>Integrated development environment (IDE) # An IDE is an application that consists of a source code editor with additional functionalities such as a debugger or build automation.
-For this course, you can use any IDE (or enhanced code editor) for Java with at least the following features:
-a debugger navigation to variable/class/interface declaration and usage, variable/class/interface renaming, Maven integration, Gradle integration if you choose the board game as your project.</description></item><item><title>Text editor</title><link>https://unibz-pp-23-24.github.io/docs/env/sections/text_editor/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://unibz-pp-23-24.github.io/docs/env/sections/text_editor/</guid><description>Text editor # A text editor allows you to edit plain (i.e. non-formatted) text. A text editor can open any file produced with a text editor (and more), regardless of the file&amp;rsquo;s extension.
-In this sense, Microsoft Word is not a text editor (neither are Apple Pages or LibreOffice Writer).
-Most operating systems comes with one or several text editor(s) pre-installed, such as Notepad++ (Windows), TextEdit (macOS), gedit (default Ubuntu), etc.</description></item><item><title>Evaluation environment</title><link>https://unibz-pp-23-24.github.io/docs/env/sections/eval/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://unibz-pp-23-24.github.io/docs/env/sections/eval/</guid><description>Evaluation environment # The evaluation environment for your project is a virtual machine (with Ubuntu 20) deployed on Microsoft Azure. You are not supposed to develop on this machine, but your project must run in this environment to be evaluated.
-Each student gets his or her own clone of the original machine. Maven, Gradle, git and a Java 17 JDK are already installed. You will also be granted administrator rights, so that you can install additional software (if any) needed to run your project.</description></item><item><title>Terminal</title><link>https://unibz-pp-23-24.github.io/docs/env/sections/terminal/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://unibz-pp-23-24.github.io/docs/env/sections/terminal/</guid><description>Terminal # Using a terminal can be necessary during development, in order to execute a program that does not have a graphical user interface (GUI).
-But even when a GUI is available, a Command Line Interface (CLI) can still be the preferred way to interact with some programs. Possible benefits are:
-efficiency (thanks to autocompletion, there is very little to type), automation (via scripting), more transparency (a GUI may add a layer of obfuscation), stability over time (GUIs tend to change from one version of a program to another), reproducibility (the same command performs the same action, with a limited reliance on memory), customizability.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Introduction on Programming project 2023-24</title>
+    <link>https://unibz-pp-23-24.github.io/</link>
+    <description>Recent content in Introduction on Programming project 2023-24</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="https://unibz-pp-23-24.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Computational problem</title>
+      <link>https://unibz-pp-23-24.github.io/docs/background/sections/problem/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/background/sections/problem/</guid>
+      <description>Computational problem # A computational problem is (usually) specified as:&#xA;a set of possible inputs, and the expected outputs (for these inputs). Problem vs algorithm # For instance, here is a problem that you may have encountered already:&#xA;Input: a sorted array A of integers, an integer a Output: true if a appears in A, false otherwise There are (infinitely) many algorithms that can solve this problem. But some of them are more efficient than others.</description>
+    </item>
+    <item>
+      <title>Objects</title>
+      <link>https://unibz-pp-23-24.github.io/docs/objects/sections/objects/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/objects/sections/objects/</guid>
+      <description>Objects # An object is a way to group data in a meaningful way.&#xA;A simple example: JSON objects # Here is a JSON object (in Javascript syntax) that describes the city of Florence:&#xA;{ name: &amp;#34;Florence&amp;#34;, zipcode: 50100 } A JSON object may contain other objects, as well as arrays (of values, objects or arrays). For instance:&#xA;{ name: &amp;#34;Alice&amp;#34;, age: 26, birthPlace: { name: &amp;#34;Florence&amp;#34;, zipcode: 50100 }, jobs: [ { employer: &amp;#34;Kolping&amp;#34;, start: 2021, end: 2022 }, { employer : &amp;#34;Eurac&amp;#34;, start: 2023 } ] } More formally:</description>
+    </item>
+    <item>
+      <title>Option 1: free project</title>
+      <link>https://unibz-pp-23-24.github.io/docs/project/sections/free_project/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/project/sections/free_project/</guid>
+      <description>Option 1: free project # The first option available to you for your project consists in developing a Java application of your choice.&#xA;This application is only a prototype, so it does not need a comprehensive list of features or functionalities.&#xA;The evaluation of your project will be mostly based on its backend (rather than the frontend). This means that your application:&#xA;does not necessarily need a graphical user interface (but you may choose to develop one), should perform non-trivial backend task(s) (e.</description>
+    </item>
+    <item>
+      <title>Schedule</title>
+      <link>https://unibz-pp-23-24.github.io/docs/intro/sections/schedule/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/intro/sections/schedule/</guid>
+      <description>Schedule # The course consists of 60 hours of lectures and 30 hours of labs.&#xA;Lectures # By default, lectures are scheduled:&#xA;Tuesday 10:00 - 12:00 Wednesday 08:00 - 10:00 Thursday 10:00 - 12:00 All students attend the same lectures.&#xA;One lecture (to be determined) will be dedicated to a visit to Raiffeisen Information Service in Bolzano.&#xA;Labs # By default, labs are scheduled:&#xA;Tuesday 16:00 - 18:00 Friday 14:00 - 16:00 Students are split in two groups (to be determined) for the labs, with identical content.</description>
+    </item>
+    <item>
+      <title>Specification and programming interface</title>
+      <link>https://unibz-pp-23-24.github.io/docs/interfaces/sections/specification/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/interfaces/sections/specification/</guid>
+      <description>Specification and programming interface # Specification # The specification of a method usually consists of:&#xA;the computational problem that the method solves (if any), and (if needed,) a description of the format of the input and expected output, and (if applicable,) a description of the behavior of the program for invalid inputs (e.g. errors thrown by the method), and (if useful,) information about the implementation (e.g. if this may have an impact on performance for certain inputs).</description>
+    </item>
+    <item>
+      <title>Class and instance</title>
+      <link>https://unibz-pp-23-24.github.io/docs/objects/sections/classes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/objects/sections/classes/</guid>
+      <description>Class and instance # A class can be viewed as a blueprint for a set of similar objects.&#xA;For instance, consider the two objects:&#xA;{ name: &amp;#34;Florence&amp;#34;, zipCode: 50100, region: &amp;#34;Tuscany&amp;#34; } { name: &amp;#34;Rome&amp;#34;, zipCode: 00100, region: &amp;#34;Lazio&amp;#34; } Each of these objects describes a city, and they share the same keys (name, zipCode and region). A possible class for these two objects may enforce this structure, and it could be named City.</description>
+    </item>
+    <item>
+      <title>Hierarchical file system</title>
+      <link>https://unibz-pp-23-24.github.io/docs/env/sections/files/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/env/sections/files/</guid>
+      <description>Hierarchical file system # Tree # Most operating system expose files as a tree (or possibly several trees for Windows).&#xA;Definition. A (nonempty) tree is either:&#xA;a single node (called a leaf), or a node with one or several children that are trees. In this tree, non-leaf nodes are directories, and the leaves can be files, executables, links, empty directories, etc. For instance:&#xA;├── bin │ ├── echo │ └── .</description>
+    </item>
+    <item>
+      <title>Java interfaces</title>
+      <link>https://unibz-pp-23-24.github.io/docs/interfaces/sections/java_interfaces/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/interfaces/sections/java_interfaces/</guid>
+      <description>Java interfaces # A Java interface is a programming interface with additional (object-oriented) features.&#xA;Syntactically, a Java interface is similar to a class. But (in its simplest form), it contains no code. Instead, it specifies the behavior of some methods (which are implemented in some classes).&#xA;Examples # The implementation of our game contains an interface called Snapshot, which describes what a game snapshot is. This interface specifies (among others) a method called getSizeOfReinforcement, as follows:</description>
+    </item>
+    <item>
+      <title>Option 2: board game</title>
+      <link>https://unibz-pp-23-24.github.io/docs/project/sections/board_game/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/project/sections/board_game/</guid>
+      <description>Option 2: board game # The second project option available to you consists in developing a video game with mechanics analogous to the ones of Might &amp;amp; Magic: Clash of Heroes or Legend of Solgard.&#xA;If you choose this option, you will be provided:&#xA;a basic graphical user interface (GUI) that you can reuse and/or customize, examples during lectures that you may adapt to your project. Requirements # The minimal requirement to submit your project is a player vs player game playable on a single machine.</description>
+    </item>
+    <item>
+      <title>Teaching staff</title>
+      <link>https://unibz-pp-23-24.github.io/docs/intro/sections/lecturers/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/intro/sections/lecturers/</guid>
+      <description>Teaching staff # Julien Corman will teach the lectures and one lab.&#xA;Albulen Pano will teach the other lab.&#xA;Office hours # If you need additional help with the content of the course, the assignments and/or your project, you can ask for office hours with any (or both) of us.&#xA;These appointments must be scheduled via email (follow the links above for our email addresses).</description>
+    </item>
+    <item>
+      <title>Backup</title>
+      <link>https://unibz-pp-23-24.github.io/docs/env/sections/backup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/env/sections/backup/</guid>
+      <description>Backup # Make sure that your work does not depend on your laptop. You should be able to resume your work easily on another computer if your laptop gets lost, damaged, etc.&#xA;You should also be able to recover your data if you accidentally delete it from your hard drive.&#xA;Which information to back up # As a priority, make sure that there exist copies (outside of your hard drive) of:</description>
+    </item>
+    <item>
+      <title>Evaluation</title>
+      <link>https://unibz-pp-23-24.github.io/docs/intro/sections/evaluation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/intro/sections/evaluation/</guid>
+      <description>Evaluation # Evaluation for this course is based on:&#xA;assignments: up to 30 points, a group project: up to 60 points, and an oral exam: up to 10 points. Your final grade is the sum of the above, multiplied by 0.3.&#xA;Assignments # There will be 8 or 9 assignments for this course. These are standard programming exercises, related to notions seen during the lectures. The labs are (mostly) dedicated to these assignments.</description>
+    </item>
+    <item>
+      <title>Visibility</title>
+      <link>https://unibz-pp-23-24.github.io/docs/encapsulation/sections/visibility/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/encapsulation/sections/visibility/</guid>
+      <description> Visibility # </description>
+    </item>
+    <item>
+      <title>Content</title>
+      <link>https://unibz-pp-23-24.github.io/docs/intro/sections/content/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/intro/sections/content/</guid>
+      <description>Content of the course # This is a beginner&amp;rsquo;s course on imperative and (class-based) object oriented programming, with an emphasis on practice and collaboration.&#xA;The course relies on Java as main programming language. However, many concepts seen in this course are relevant to other (imperative and/or object-oriented) programming languages: C/C++, C#, Javascript, Go, Kotlin, Lua, Perl, PHP, Python, Rust, Ruby, Typescript, Visual Basic, etc.&#xA;Prerequisites # Students are expected to have completed the Computer Programming course (INF/01 76258).</description>
+    </item>
+    <item>
+      <title>Software management</title>
+      <link>https://unibz-pp-23-24.github.io/docs/env/sections/install/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/env/sections/install/</guid>
+      <description>Software management # Dependencies # As a developer, you frequently need to download, install and/or update:&#xA;libraries used in your projects (called dependencies), core programming utilities, such as a compiler or interpreter for a given programming language, a package manager, etc. tools for software development: editor, debugger, visualization tool, etc. These programs have their own dependencies, that have their own dependencies, etc. And two programs may depend on different versions of a same third program.</description>
+    </item>
+    <item>
+      <title>Board game</title>
+      <link>https://unibz-pp-23-24.github.io/docs/intro/sections/board_game/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/intro/sections/board_game/</guid>
+      <description>Board game # In order to follow this course, you will need to play one of the two following video games:&#xA;Might &amp;amp; Magic: Clash of Heroes, or Legend of Solgard. These two games have very similar mechanics. So by default, we will refer to them as a unique game (e.g. when we write &amp;ldquo;this game&amp;rdquo; or &amp;ldquo;our board game&amp;rdquo;).&#xA;Why this game # Turn-based board games (like chess, go, checkers, etc.</description>
+    </item>
+    <item>
+      <title>Operating system</title>
+      <link>https://unibz-pp-23-24.github.io/docs/env/sections/os/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/env/sections/os/</guid>
+      <description>Operating system (OS) # Your computer does not bind you to one OS. You can run multiple OSs on the same computer by:&#xA;partitioning your disk, or booting from an external drive, or using virtualisation. Depending on what you are developing, one operating system may be more convenient than another.&#xA;We review below some of the benefits and drawbacks of developing under Windows, macOS and Linux.&#xA;Windows # Benefits and drawbacks # Here are some benefits of using Windows as your OS for software development:</description>
+    </item>
+    <item>
+      <title>Bibliography</title>
+      <link>https://unibz-pp-23-24.github.io/docs/intro/sections/bibliography/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/intro/sections/bibliography/</guid>
+      <description>Bibliography # Java&amp;rsquo;s syntax # In each chapter of this course, you will find Java code snippets that illustrate how to perform certain operations. However, this documentation is far from exhaustive (on purpose).&#xA;So when it comes to syntax, the first two sources of complementary material for this course are:&#xA;the Javadoc of the libraries (standard and auxiliary) used in your project/assignments. Your IDE is often the fastest way to navigate through it, the web.</description>
+    </item>
+    <item>
+      <title>Requirements for this course</title>
+      <link>https://unibz-pp-23-24.github.io/docs/env/sections/requirements/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/env/sections/requirements/</guid>
+      <description>Requirements for this course # For this course, you will need:&#xA;Git Version 2.2 or higher A Java Development Kit (JDK) for Java 17 (e.g. openJDK) Maven Version 3.6 or higher In addition, if you choose the board game as project, you will need:&#xA;Gradle Version 7.2 or higher Again, we recommend using a package manager to install these programs if possible.&#xA;For Windows users. Maven is not available on the winget repository.</description>
+    </item>
+    <item>
+      <title>IDE</title>
+      <link>https://unibz-pp-23-24.github.io/docs/env/sections/ide/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/env/sections/ide/</guid>
+      <description>Integrated development environment (IDE) # An IDE is an application that consists of a source code editor with additional functionalities such as a debugger or build automation.&#xA;For this course, you can use any IDE (or enhanced code editor) for Java with at least the following features:&#xA;a debugger navigation to variable/class/interface declaration and usage, variable/class/interface renaming, Maven integration, Gradle integration if you choose the board game as your project.</description>
+    </item>
+    <item>
+      <title>Text editor</title>
+      <link>https://unibz-pp-23-24.github.io/docs/env/sections/text_editor/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/env/sections/text_editor/</guid>
+      <description>Text editor # A text editor allows you to edit plain (i.e. non-formatted) text. A text editor can open any file produced with a text editor (and more), regardless of the file&amp;rsquo;s extension.&#xA;In this sense, Microsoft Word is not a text editor (neither are Apple Pages or LibreOffice Writer).&#xA;Most operating systems comes with one or several text editor(s) pre-installed, such as Notepad++ (Windows), TextEdit (macOS), gedit (default Ubuntu), etc.</description>
+    </item>
+    <item>
+      <title>Evaluation environment</title>
+      <link>https://unibz-pp-23-24.github.io/docs/env/sections/eval/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/env/sections/eval/</guid>
+      <description>Evaluation environment # The evaluation environment for your project is a virtual machine (with Ubuntu 20) deployed on Microsoft Azure. You are not supposed to develop on this machine, but your project must run in this environment to be evaluated.&#xA;Each student gets his or her own clone of the original machine. Maven, Gradle, git and a Java 17 JDK are already installed. You will also be granted administrator rights, so that you can install additional software (if any) needed to run your project.</description>
+    </item>
+    <item>
+      <title>Terminal</title>
+      <link>https://unibz-pp-23-24.github.io/docs/env/sections/terminal/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/env/sections/terminal/</guid>
+      <description>Terminal # Using a terminal can be necessary during development, in order to execute a program that does not have a graphical user interface (GUI).&#xA;But even when a GUI is available, a Command Line Interface (CLI) can still be the preferred way to interact with some programs. Possible benefits are:&#xA;efficiency (thanks to autocompletion, there is very little to type), automation (via scripting), more transparency (a GUI may add a layer of obfuscation), stability over time (GUIs tend to change from one version of a program to another), reproducibility (the same command performs the same action, with a limited reliance on memory), customizability.</description>
+    </item>
+  </channel>
+</rss>
