@@ -22,7 +22,7 @@ Input: a sorted array A of integers, an integer a Output: true if a appears in A
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.c315fdcdf8e812f15cb29688eb4a4f085dd9547d08aa3224ff2f08a05b419880.js" integrity="sha256-wxX9zfjoEvFcspaI60pPCF3ZVH0IqjIk/y8IoFtBmIA=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.0de8dfaf3b8aad05d8499e9606c03fce907c6f7cda1ece628ea5186a6884810c.js" integrity="sha256-DejfrzuKrQXYSZ6WBsA/zpB8b3zaHs5ijqUYamiEgQw=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -278,6 +278,32 @@ https://github.com/alex-shpak/hugo-book
         </li>
       
     
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/inheritance/" class="">Inheritance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/methods/" class="">Instance methods</a>
+  
+
+        </li>
+      
+    
   </ul>
 
         </li>
@@ -421,6 +447,40 @@ https://github.com/alex-shpak/hugo-book
         </li>
       
     
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ffcf8551871937aae0ce60f2b3cc616b" class="toggle" checked />
+    <label for="section-ffcf8551871937aae0ce60f2b3cc616b" class="flex justify-between">
+      <a href="/docs/background/" class="">Background</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/background/sections/problem/" class="active">Computational problem</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
   </ul>
 
 
@@ -529,7 +589,7 @@ Let <em>n</em> be the size of <em>A</em>, and let us assume for simplicity that 
 <li>Otherwise:
 <ul>
 <li>check whether <em>A</em>[<em>n</em>/2] = <em>a</em> (where &ldquo;/&rdquo; is integer division, rounded up or down if <em>n</em> is odd),</li>
-<li>depending on the result, repeat on either left or the right of the half of <em>A</em>.</li>
+<li>depending on the result, repeat on either the left or the right half of <em>A</em>.</li>
 </ul>
 </li>
 </ul>
@@ -598,7 +658,7 @@ This is also a common way to <em>document</em> your code.</p>
 
 <div class="book-tabs"><input type="radio" class="toggle" name="tabs-exercise_ill_problem_1" id="tabs-exercise_ill_problem_1-0" checked="checked" />
   <label for="tabs-exercise_ill_problem_1-0">Exercise</label>
-  <div class="book-tabs-content markdown-inner"><p>Consider the class <code>Unit</code> (and its subclasses), as defined in Section XXX.
+  <div class="book-tabs-content markdown-inner"><p>Consider the class <code>Unit</code> (and its subclasses), as defined in <a href="https://unibz-pp-23-24.github.io/docs/objects/sections/inheritance/">the section about inheritance</a>.
 The following problem is not properly defined.
 Can you see why?</p>
 <ul>
@@ -606,7 +666,7 @@ Can you see why?</p>
 <li><strong><em>Output:</em></strong> the unicorn with highest health in <em>A</em></li>
 </ul></div><input type="radio" class="toggle" name="tabs-exercise_ill_problem_1" id="tabs-exercise_ill_problem_1-1"  />
   <label for="tabs-exercise_ill_problem_1-1">Solution</label>
-  <div class="book-tabs-content markdown-inner">There may no unicorn in <em>A</em>, or several healthiest unicorns.</div></div>
+  <div class="book-tabs-content markdown-inner">There may be no unicorn in <em>A</em>, or several healthiest unicorns.</div></div>
 
 
 
@@ -618,7 +678,7 @@ Can you see why?</p>
 Can you see why?</p>
 <ul>
 <li><strong><em>Input:</em></strong> a (finite) family of (finite) sets</li>
-<li><strong><em>Output:</em></strong> the smallest set that has a nonempty intersection with each of the input sets (where &ldquo;smallest&rdquo; here refers to the size of a set)</li>
+<li><strong><em>Output:</em></strong> the smallest set that has a nonempty intersection with each of the input sets (where &ldquo;smallest&rdquo; here refers to the <em>size</em> of a set)</li>
 </ul>
 <p>For instance, for the input</p>
 <pre tabindex="0"><code>{ {a,c,k}, {a,b}, {a,m}, {c,d,f}, {c,e} }
@@ -644,7 +704,7 @@ there (provably) exist (infinitely many) inputs for which the algorithm either p
 </blockquote>
 
 <blockquote class="book-hint danger">
-  A problem may be decidable but <a href="">intractable</a>, meaning that (provably) no <em>efficient</em> algorithm can solve it (where cost is once again measured as a function of the size of the input),
+  A problem may be decidable but <a href="">intractable</a>, meaning that (provably) no <em>efficient</em> algorithm can solve it (where cost is once again measured as a function of the size of the input).
 </blockquote>
 
 </article>

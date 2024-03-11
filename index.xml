@@ -92,6 +92,13 @@
       <description>Evaluation # Evaluation for this course is based on:&#xA;assignments: up to 30 points, a group project: up to 60 points, and an oral exam: up to 10 points. Your final grade is the sum of the above, multiplied by 0.3.&#xA;Assignments # There will be 8 or 9 assignments for this course. These are standard programming exercises, related to notions seen during the lectures. The labs are (mostly) dedicated to these assignments.</description>
     </item>
     <item>
+      <title>Inheritance</title>
+      <link>https://unibz-pp-23-24.github.io/docs/objects/sections/inheritance/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/objects/sections/inheritance/</guid>
+      <description>Inheritance # Subclass # In most (class-based) object-oriented languages, a class A can extend another class B. In this case, A is called a subclass of B. The intuitive meaning is inclusion between their respective sets of instances, i.e. every instance of A is also an instance of B (but the converse may not hold).&#xA;This can be paraphrased in English by &amp;ldquo;every A is a B &amp;ldquo;. For instance:</description>
+    </item>
+    <item>
       <title>Visibility</title>
       <link>https://unibz-pp-23-24.github.io/docs/encapsulation/sections/visibility/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -104,6 +111,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/intro/sections/content/</guid>
       <description>Content of the course # This is a beginner&amp;rsquo;s course on imperative and (class-based) object oriented programming, with an emphasis on practice and collaboration.&#xA;The course relies on Java as main programming language. However, many concepts seen in this course are relevant to other (imperative and/or object-oriented) programming languages: C/C++, C#, Javascript, Go, Kotlin, Lua, Perl, PHP, Python, Rust, Ruby, Typescript, Visual Basic, etc.&#xA;Prerequisites # Students are expected to have completed the Computer Programming course (INF/01 76258).</description>
+    </item>
+    <item>
+      <title>Instance methods</title>
+      <link>https://unibz-pp-23-24.github.io/docs/objects/sections/methods/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/objects/sections/methods/</guid>
+      <description>Instance methods # In most object-oriented languages (like Java), methods are implemented within class declarations.&#xA;An instance method can only be called using an instance of the class where it is declared.&#xA;For instance, in Java, an instance method declared in MyClass can be called by appending . to a variable of type MyClass. The object referenced by the variable is accessible in the method, as well as its attributes.</description>
     </item>
     <item>
       <title>Software management</title>

@@ -2,45 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Background on Programming project 2023-24</title>
-    <link>http://localhost:46177/docs/background/</link>
+    <link>https://unibz-pp-23-24.github.io/docs/background/</link>
     <description>Recent content in Background on Programming project 2023-24</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="http://localhost:46177/docs/background/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://unibz-pp-23-24.github.io/docs/background/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Computational problem</title>
-      <link>http://localhost:46177/docs/background/sections/problem/</link>
+      <link>https://unibz-pp-23-24.github.io/docs/background/sections/problem/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:46177/docs/background/sections/problem/</guid>
+      <guid>https://unibz-pp-23-24.github.io/docs/background/sections/problem/</guid>
       <description>Computational problem # A computational problem is (usually) specified as:&#xA;a set of possible inputs, and the expected outputs (for these inputs). Problem vs algorithm # For instance, here is a problem that you may have encountered already:&#xA;Input: a sorted array A of integers, an integer a Output: true if a appears in A, false otherwise There are (infinitely) many algorithms that can solve this problem. But some of them are more efficient than others.</description>
-    </item>
-    <item>
-      <title>Computational cost</title>
-      <link>http://localhost:46177/docs/background/sections/cost/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:46177/docs/background/sections/cost/</guid>
-      <description> Computational cost # Time or memory # Worst-case cost, average cost # Asymptotic cost # Classes # </description>
-    </item>
-    <item>
-      <title>Graphs, trees and lists</title>
-      <link>http://localhost:46177/docs/background/sections/graph/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:46177/docs/background/sections/graph/</guid>
-      <description> Graphs, trees and lists # </description>
-    </item>
-    <item>
-      <title>Orders</title>
-      <link>http://localhost:46177/docs/background/sections/order/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:46177/docs/background/sections/order/</guid>
-      <description> Orders # </description>
-    </item>
-    <item>
-      <title>Sets, tuples and maps</title>
-      <link>http://localhost:46177/docs/background/sections/set_tuple_map/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:46177/docs/background/sections/set_tuple_map/</guid>
-      <description> Sets, tuples and maps # </description>
     </item>
   </channel>
 </rss>

@@ -1,11 +1,60 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Data structures on Programming project 2023-24</title>
-    <link>http://localhost:46177/docs/git/</link>
-    <description>Recent content in Data structures on Programming project 2023-24</description>
+    <title>git on Programming project 2023-24</title>
+    <link>http://localhost:1313/docs/git/</link>
+    <description>Recent content in git on Programming project 2023-24</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="http://localhost:46177/docs/git/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/docs/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Commit</title>
+      <link>http://localhost:1313/docs/git/sections/commit/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/git/sections/commit/</guid>
+      <description>Commit # Commit messages # Here are guideline about how to write an informative yet readable commit message: https://cbea.ms/git-commit/&#xA;Note that if you do not add the -m &amp;quot;&amp;lt;myMessage&amp;gt;&amp;quot; option to your command, git will open a text editor where you can type this message. If this happens, then type your commit message, save and close the file.&#xA;Warning. By default, on most operating systems, git open vi as a text editor.</description>
+    </item>
+    <item>
+      <title>Navigate</title>
+      <link>http://localhost:1313/docs/git/sections/navigate/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/git/sections/navigate/</guid>
+      <description> Navigate # </description>
+    </item>
+    <item>
+      <title>The basics</title>
+      <link>http://localhost:1313/docs/git/sections/basics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/git/sections/basics/</guid>
+      <description>The commit history # A git repository is a folder that stores a project.&#xA;A commit can be viewed as a snapshot of a repository.&#xA;a save state.&#xA;Each commits&#xA;The history of commits in a branch cvan&#xA;And the sequence of A commit&#xA;Each commit has</description>
+    </item>
+    <item>
+      <title>Configuration</title>
+      <link>http://localhost:1313/docs/git/sections/config/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/git/sections/config/</guid>
+      <description>Configuration # SSH key # The preferred way to interact with a git hosting service (such as GitHub) is via the ssh protocol.&#xA;For this, you need to need have (or create) an ssh key on your own machine, and share the public part of this key with the host.&#xA;You may already have an ssh key on your machine. By default, they are located in the &amp;lt;homeFolder/.ssh&amp;gt; dot folder (&amp;lt;homeFolder\.</description>
+    </item>
+    <item>
+      <title>Create or clone a repository</title>
+      <link>http://localhost:1313/docs/git/sections/create/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/git/sections/create/</guid>
+      <description> Create or clone a repository # </description>
+    </item>
+    <item>
+      <title>Resources</title>
+      <link>http://localhost:1313/docs/git/sections/resources/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/git/sections/resources/</guid>
+      <description> Resources # Git and GitHub learning resources Understanding the GitHub flow How to use GitHub branches Interactive Git training materials GitHub&amp;rsquo;s Learning Lab </description>
+    </item>
+    <item>
+      <title>Branches</title>
+      <link>http://localhost:1313/docs/git/sections/branches/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/git/sections/branches/</guid>
+      <description> Branches # </description>
+    </item>
   </channel>
 </rss>

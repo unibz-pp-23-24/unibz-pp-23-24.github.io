@@ -21,5 +21,19 @@
       <guid>https://unibz-pp-23-24.github.io/docs/objects/sections/classes/</guid>
       <description>Class and instance # A class can be viewed as a blueprint for a set of similar objects.&#xA;For instance, consider the two objects:&#xA;{ name: &amp;#34;Florence&amp;#34;, zipCode: 50100, region: &amp;#34;Tuscany&amp;#34; } { name: &amp;#34;Rome&amp;#34;, zipCode: 00100, region: &amp;#34;Lazio&amp;#34; } Each of these objects describes a city, and they share the same keys (name, zipCode and region). A possible class for these two objects may enforce this structure, and it could be named City.</description>
     </item>
+    <item>
+      <title>Inheritance</title>
+      <link>https://unibz-pp-23-24.github.io/docs/objects/sections/inheritance/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/objects/sections/inheritance/</guid>
+      <description>Inheritance # Subclass # In most (class-based) object-oriented languages, a class A can extend another class B. In this case, A is called a subclass of B. The intuitive meaning is inclusion between their respective sets of instances, i.e. every instance of A is also an instance of B (but the converse may not hold).&#xA;This can be paraphrased in English by &amp;ldquo;every A is a B &amp;ldquo;. For instance:</description>
+    </item>
+    <item>
+      <title>Instance methods</title>
+      <link>https://unibz-pp-23-24.github.io/docs/objects/sections/methods/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/objects/sections/methods/</guid>
+      <description>Instance methods # In most object-oriented languages (like Java), methods are implemented within class declarations.&#xA;An instance method can only be called using an instance of the class where it is declared.&#xA;For instance, in Java, an instance method declared in MyClass can be called by appending . to a variable of type MyClass. The object referenced by the variable is accessible in the method, as well as its attributes.</description>
+    </item>
   </channel>
 </rss>
