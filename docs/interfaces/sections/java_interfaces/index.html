@@ -22,7 +22,7 @@ Examples # The implementation of our game contains an interface called Snapshot,
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.0de8dfaf3b8aad05d8499e9606c03fce907c6f7cda1ece628ea5186a6884810c.js" integrity="sha256-DejfrzuKrQXYSZ6WBsA/zpB8b3zaHs5ijqUYamiEgQw=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.24c2a42824bccbba883d7f8d5d499633ba2088c2aa411b48db18577d2f896bce.js" integrity="sha256-JMKkKCS8y7qIPX&#43;NXUmWM7ogiMKqQRtI2xhXfS&#43;Ja84=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -316,6 +316,53 @@ https://github.com/alex-shpak/hugo-book
   
 
   
+    <input type="checkbox" id="section-48bc13e86f573c257821b397e779b02e" class="toggle" checked />
+    <label for="section-48bc13e86f573c257821b397e779b02e" class="flex justify-between">
+      <a href="/docs/interfaces/" class="">Interfaces</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/interfaces/sections/specification/" class="">Specification and programming interface</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/interfaces/sections/java_interfaces/" class="active">Java interfaces</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
     <input type="checkbox" id="section-494fdb80ca3ad5d2868cb487a042ae27" class="toggle"  />
     <label for="section-494fdb80ca3ad5d2868cb487a042ae27" class="flex justify-between">
       <a href="/docs/env/" class="">Development environment</a>
@@ -536,7 +583,7 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#examples">Examples</a></li>
     <li><a href="#when-to-use-a-java-interface">When to use a Java interface?</a></li>
     <li><a href="#inheritance">Inheritance</a></li>
-    <li><a href="#implementation">Implementation</a></li>
+    <li><a href="#implementing-an-interface">Implementing an interface</a></li>
     <li><a href="#interfaces-vs-abstract-classes">Interfaces vs abstract classes</a></li>
   </ul>
 </nav>
@@ -578,12 +625,14 @@ This interface specifies (among others) a method called <code>getSizeOfReinforce
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>Note that this description contains <em>no code</em>.</p>
 <p>A Java interface acts not only as documentation, but also as a <em>contract</em> :
-any class that implements this interface must implement all methods declared in the interface (otherwise the program will not compile).</p>
+any (non-abstract) class that implements this interface must implement all methods declared in the interface (otherwise the program will not compile).</p>
 <p>A Java interface can be used to specify how two components of a system <em>communicate</em> (before the interface is even implemented!).
 For instance, the <code>Snapshot</code> interface specifies which information must be provided by our backend to the component in charge of displaying the game on screen.</p>
 <!-- raw HTML omitted -->
 <p>The name of an interface can be used as a <a href="">reference type</a> (similarly to the name of a class).
-For instance, the <code>Snapshot</code> interface also specifies a method <code>getBoard</code>, which must return an object of type <code>Board</code>.
+For instance, the <code>Snapshot</code> interface also specifies a method</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Board <span style="color:#a6e22e">getBoard</span>();
+</span></span></code></pre></div><p>which must return an object of type <code>Board</code>.
 And <code>Board</code> is itself an interface, which specifies the information needed to draw the game board (units, position, etc).</p>
 <p>Here is for instance a fragment of the <code>Board</code> interface:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span> <span style="color:#75715e">/**
@@ -651,26 +700,29 @@ For instance, the method <code>drawSnapshot</code> (mentioned above) can be call
 <p>An interface in Java can extend another interface, like a class can extend another class, with the same keyword <code>extends</code>.</p>
 <p>However, Java interfaces support <em>multiple inheritance</em> (whereas java classes do not).
 This means that an interface <em>A</em> can extend two interfaces <em>B</em> and <em>C</em> even if <em>B</em> and <em>C</em> do not extend each other.</p>
-<h2 id="implementation">
-  Implementation
-  <a class="anchor" href="#implementation">#</a>
+<h2 id="implementing-an-interface">
+  Implementing an interface
+  <a class="anchor" href="#implementing-an-interface">#</a>
 </h2>
 <p>In Java, the keyword <code>implements</code> is used to indicate that a class implements an interface.
 For instance:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SnapshotImpl</span> <span style="color:#66d9ef">implements</span> Snapshot {
 </span></span><span style="display:flex;"><span>  ...
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><blockquote class="book-hint warning">
+</span></span></code></pre></div><blockquote class="book-hint info">
   <strong><em>Note.</em></strong> It is good practice to avoid a class and an interface with the same name (even if they describe the same objects).
 To differentiate them, you may for instance use the suffix <code>Impl</code>, as illustrated above.
 </blockquote>
 
-<p>Consider a class <em>C</em> that implements an interface <em>I</em> :</p>
+<p><blockquote class="book-hint warning">
+  <p>Consider a class <em>C</em> that implements an interface <em>I</em> :</p>
 <ul>
 <li>if <em>C</em> is abstract, then it <strong><em>can</em></strong> implement some of the methods declared in <em>I</em></li>
 <li>if <em>C</em> is not abstract, then each method declared in <em>I</em> <strong><em>must</em></strong> be implemented in <em>C</em> (or some superclass of <em>C</em> ), otherwise the program will not compile.</li>
 </ul>
-<p>
+</blockquote>
+
+
 
 
 
@@ -679,14 +731,6 @@ To differentiate them, you may for instance use the suffix <code>Impl</code>, as
   <div class="book-tabs-content markdown-inner"><p>The program represented by the following diagram does not compile.
 Can you see why?</p>
 <p><img src="/img/diagrams/plantuml/abstract_inherit.svg" alt="" /></p>
-</div><input type="radio" class="toggle" name="tabs-exercise_interface_inherit" id="tabs-exercise_interface_inherit-1"  />
-  <label for="tabs-exercise_interface_inherit-1">Solution</label>
-  <div class="book-tabs-content markdown-inner"><p>The class <code>Butterfly</code> does not implement the method <code>sleep</code>.</p>
-<blockquote>
-<p><strong><em>Note.</em></strong>
-In this example, the class <code>Butterfly</code> inherits an implementation of <code>boost</code> (from <code>AbstractUnit</code>), and <a href="https://unibz-pp-23-24.github.io/docs/objects/sections/methods/#overriding">overrides</a> it.
-This is <em>not</em> an error.</p>
-</blockquote>
 </div></div>
 
 Since Java interfaces support multiple inheritance, a Java class can implement several interface that do not extend each other.</p>
@@ -704,9 +748,7 @@ This would be declared as follows:</p>
   <div class="book-tabs-content markdown-inner"><p>The program represented by the following diagram does not compile.
 Can you see why?</p>
 <p><img src="/img/diagrams/plantuml/multiple_inherit.svg" alt="" /></p>
-</div><input type="radio" class="toggle" name="tabs-exercise_interface_multiple_inherit" id="tabs-exercise_interface_multiple_inherit-1"  />
-  <label for="tabs-exercise_interface_multiple_inherit-1">Solution</label>
-  <div class="book-tabs-content markdown-inner">The class <code>Unicorn</code> does not implement the method <code>hide</code>.</div></div>
+</div></div>
 
 <h2 id="interfaces-vs-abstract-classes">
   Interfaces vs abstract classes
@@ -773,7 +815,7 @@ However, for your project, feel free to deviate from this model if you think tha
     <li><a href="#examples">Examples</a></li>
     <li><a href="#when-to-use-a-java-interface">When to use a Java interface?</a></li>
     <li><a href="#inheritance">Inheritance</a></li>
-    <li><a href="#implementation">Implementation</a></li>
+    <li><a href="#implementing-an-interface">Implementing an interface</a></li>
     <li><a href="#interfaces-vs-abstract-classes">Interfaces vs abstract classes</a></li>
   </ul>
 </nav>

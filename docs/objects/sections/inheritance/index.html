@@ -20,7 +20,7 @@ This can be paraphrased in English by &ldquo;every A is a B &ldquo;. For instanc
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.0de8dfaf3b8aad05d8499e9606c03fce907c6f7cda1ece628ea5186a6884810c.js" integrity="sha256-DejfrzuKrQXYSZ6WBsA/zpB8b3zaHs5ijqUYamiEgQw=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.24c2a42824bccbba883d7f8d5d499633ba2088c2aa411b48db18577d2f896bce.js" integrity="sha256-JMKkKCS8y7qIPX&#43;NXUmWM7ogiMKqQRtI2xhXfS&#43;Ja84=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -297,6 +297,53 @@ https://github.com/alex-shpak/hugo-book
 
   
     <a href="/docs/objects/sections/methods/" class="">Instance methods</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-48bc13e86f573c257821b397e779b02e" class="toggle"  />
+    <label for="section-48bc13e86f573c257821b397e779b02e" class="flex justify-between">
+      <a href="/docs/interfaces/" class="">Interfaces</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/interfaces/sections/specification/" class="">Specification and programming interface</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/interfaces/sections/java_interfaces/" class="">Java interfaces</a>
   
 
         </li>
@@ -753,7 +800,48 @@ However, unnecessary attributes make code harder to understand, and such a desig
 
 <div class="book-tabs"><input type="radio" class="toggle" name="tabs-exercise_trans_inherit" id="tabs-exercise_trans_inherit-0" checked="checked" />
   <label for="tabs-exercise_trans_inherit-0">Exercise</label>
-  <div class="book-tabs-content markdown-inner">Modify our model to accommodate for the class <code>Wall</code>, so that an instance of <code>Wall</code> only has the <code>health</code> attribute.</div></div>
+  <div class="book-tabs-content markdown-inner">Modify our model to accommodate for the class <code>Wall</code>, so that an instance of <code>Wall</code> only has the <code>health</code> attribute.</div><input type="radio" class="toggle" name="tabs-exercise_trans_inherit" id="tabs-exercise_trans_inherit-1"  />
+  <label for="tabs-exercise_trans_inherit-1">Possible solution</label>
+  <div class="book-tabs-content markdown-inner"><p>One solution (among others) is the following:</p>
+<ol>
+<li>modify the class <code>Unit</code> so that it only carries the attribute <code>health</code>,</li>
+<li><code>Wall</code> extends <code>Unit</code>,</li>
+<li>create an (abstract) subclass of <code>Unit</code> (for instance <code>MobileUnit</code>) that carries the other two attributes,</li>
+<li><code>Butterfly</code> and <code>Unicorn</code> extend <code>MobileUnit</code> (therefore they also extend <code>Unit</code>, by transitivity).</li>
+</ol>
+<p><img src="/img/diagrams/plantuml/abstract_inherit_complex.svg" alt="" /></p>
+<p>Or in Java:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Unit</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> health;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Unit</span>(<span style="color:#66d9ef">int</span> health) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">heath</span> <span style="color:#f92672">=</span> health;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Wall</span> <span style="color:#66d9ef">extends</span> Unit {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Wall</span>() {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">super</span>(5);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MobileUnit</span> <span style="color:#66d9ef">extends</span> Unit {
+</span></span><span style="display:flex;"><span>    String color;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> attackCountdown;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">MobileUnit</span>(String color, <span style="color:#66d9ef">int</span> health) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">super</span>(health);
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">color</span> <span style="color:#f92672">=</span> color;
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">attackCountdown</span> <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>1;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Unicorn</span> <span style="color:#66d9ef">extends</span> MobileUnit {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Unicorn</span>(String color) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">super</span>(color, 1);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>and similarly for <code>Butterfy</code>.</p>
+</div></div>
 
 </article>
  
