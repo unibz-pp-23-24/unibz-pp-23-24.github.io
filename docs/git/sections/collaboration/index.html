@@ -3,24 +3,24 @@
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=33455&amp;path=livereload" data-no-instant defer></script>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Git # Git is a so-called distributed version control system, originally co-authored by Linus Torvalds to facilitate the development of the Linux kernel.
-It was first released in 2005, and has become ubiquitous in software development. For instance, 93.87% of respondents to the 2022 Stack overflow survey declared using it.
-Git allows synchronizing the content of a directory (called a repository) across several machines. Notably:
-each machine contains a copy of the repository and its full history, git allows parallel histories to coexist (in so-called branches), and provides ways to reconcile them.">
+<meta name="description" content="Collaboration # In the previous section, Alice created a repository on her machine, with two branches.
+Enters Bob&hellip; # Bob may want">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="git" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="http://localhost:33455/docs/git/" />
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Collaboration" />
+<meta property="og:description" content="Collaboration # In the previous section, Alice created a repository on her machine, with two branches.
+Enters Bob&hellip; # Bob may want" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:33455/docs/git/sections/collaboration/" /><meta property="article:section" content="docs" />
 
-<title>git | Programming project 2023-24</title>
+
+
+<title>Collaboration | Programming project 2023-24</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
   <script defer src="/en.search.min.119d913b2d05233be28b01a4ed9420a2e598cd4145946e9337d9e244113d31a0.js" integrity="sha256-EZ2ROy0FIzviiwGk7ZQgouWYzUFFlG6TN9niRBE9MaA=" crossorigin="anonymous"></script>
-<link rel="alternate" type="application/rss+xml" href="http://localhost:33455/docs/git/index.xml" title="Programming project 2023-24" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -810,7 +810,7 @@ https://github.com/alex-shpak/hugo-book
   
     <input type="checkbox" id="section-2870a15a3d2cff84408f43cbb1e77f97" class="toggle" checked />
     <label for="section-2870a15a3d2cff84408f43cbb1e77f97" class="flex justify-between">
-      <a href="/docs/git/" class="active">git</a>
+      <a href="/docs/git/" class="">git</a>
     </label>
   
 
@@ -915,7 +915,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/git/sections/collaboration/" class="">Collaboration</a>
+    <a href="/docs/git/sections/collaboration/" class="active">Collaboration</a>
   
 
         </li>
@@ -1103,7 +1103,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>git</strong>
+  <strong>Collaboration</strong>
 
   <label for="toc-control">
     
@@ -1119,7 +1119,7 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#terminology">Terminology.</a></li>
+    <li><a href="#enters-bob">Enters Bob&hellip;</a></li>
   </ul>
 </nav>
 
@@ -1132,45 +1132,16 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown book-article"><h1 id="git">
-  Git
-  <a class="anchor" href="#git">#</a>
+  <article class="markdown book-article"><h1 id="collaboration">
+  Collaboration
+  <a class="anchor" href="#collaboration">#</a>
 </h1>
-<p>Git is a so-called <a href="https://en.wikipedia.org/wiki/Distributed_version_control">distributed version control</a> system, originally co-authored by Linus Torvalds to facilitate the development of the Linux kernel.</p>
-<p>It was first released in 2005, and has become ubiquitous in software development.
-For instance, <a href="https://survey.stackoverflow.co/2022/#section-version-control-version-control-systems">93.87%</a> of respondents to the 2022 Stack overflow survey declared using it.</p>
-<p>Git allows synchronizing the content of a directory (called a <strong>repository</strong>) across several machines.
-Notably:</p>
-<ul>
-<li>each machine contains a copy of the repository <em>and its full history</em>,</li>
-<li>git allows parallel histories to coexist (in so-called <strong>branches</strong>), and provides ways to reconcile them.</li>
-</ul>
-<p>Git is mostly as a <em>command line</em> tool, but many GUIs are available, and numerous programs provide some form of git integration (your IDE is most likely one of them).</p>
-<h2 id="terminology">
-  Terminology.
-  <a class="anchor" href="#terminology">#</a>
+<p>In the previous section, Alice created a repository on her machine, with two branches.</p>
+<h2 id="enters-bob">
+  Enters Bob&hellip;
+  <a class="anchor" href="#enters-bob">#</a>
 </h2>
-<p>A difficulty when starting with git may be it terminology.
-Here is a <em>very approximative</em> map from git concepts to terms that you are familiar with:</p>
-<ul>
-<li><strong>a repository</strong>: a directory (more exactly, the root directory of a project)</li>
-<li><strong>a remote</strong>: a server</li>
-<li>to <strong>clone</strong>: to copy (a repository)</li>
-<li>to <strong>commit</strong>: to save</li>
-<li>to <strong>push</strong>: to upload (to a remote)</li>
-<li>to <strong>fetch</strong>: to download (from a remote)</li>
-<li>a <strong>branch</strong>: an alternative history (in your favorite time-travel novel/series/movie)</li>
-<li>to <strong>merge</strong>: to reconcile two branches</li>
-</ul>
-<p>Hosting services
-To collaborate and safely backup your repositories, you need a Git repository hosting service:</p>
-<pre><code>GitHub:
-    Github provides a Student Developer Pack
-GitLab:
-BitBucket:
-</code></pre>
-<p>Note that UNIBZ offers a self-hosted Gitlab service.</p>
-<p>Here is a link to git&rsquo;s very <a href="https://github.com/git/git/commit/e83c5163316f89bfbde7d9ab23ca2e25604af290">first commit</a>.</p>
+<p>Bob may want</p>
 </article>
  
       
@@ -1212,7 +1183,7 @@ BitBucket:
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#terminology">Terminology.</a></li>
+    <li><a href="#enters-bob">Enters Bob&hellip;</a></li>
   </ul>
 </nav>
 
