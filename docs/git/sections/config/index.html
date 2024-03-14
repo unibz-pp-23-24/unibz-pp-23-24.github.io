@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=33455&amp;path=livereload" data-no-instant defer></script>
+<head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Configuration # SSH key # The preferred way to interact with a git hosting service (such as GitHub) is via the ssh protocol.
-For this, you need to need have (or create) an ssh key on your own machine, and share the public part of this key with the host.
-You may already have an ssh key on your machine. By default, they are located in the &lt;homeFolder/.ssh&gt; dot folder (&lt;homeFolder\.">
+<meta name="description" content="Configuration # Text editor # In some situations (commit without message, merge commit, etc.), git automatically opens a text editor to let you type a message.
+By default, on most operating systems, git open vi for this purpose. I you have never used vi, we recommend selecting another text editor.
+You can do this by running:
+git config --global core.editor &lt;myEditor&gt; where &lt;myEditor&gt; is the command that launches your text editor (for instance notepad for Notepad, textedit for TextEdit , gedit for gedit, sublime for Sublime Text, etc.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="Configuration" />
-<meta property="og:description" content="Configuration # SSH key # The preferred way to interact with a git hosting service (such as GitHub) is via the ssh protocol.
-For this, you need to need have (or create) an ssh key on your own machine, and share the public part of this key with the host.
-You may already have an ssh key on your machine. By default, they are located in the &lt;homeFolder/.ssh&gt; dot folder (&lt;homeFolder\." />
+<meta property="og:description" content="Configuration # Text editor # In some situations (commit without message, merge commit, etc.), git automatically opens a text editor to let you type a message.
+By default, on most operating systems, git open vi for this purpose. I you have never used vi, we recommend selecting another text editor.
+You can do this by running:
+git config --global core.editor &lt;myEditor&gt; where &lt;myEditor&gt; is the command that launches your text editor (for instance notepad for Notepad, textedit for TextEdit , gedit for gedit, sublime for Sublime Text, etc." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:33455/docs/git/sections/config/" /><meta property="article:section" content="docs" />
+<meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/git/sections/config/" /><meta property="article:section" content="docs" />
 
 
 
@@ -22,7 +24,7 @@ You may already have an ssh key on your machine. By default, they are located in
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.119d913b2d05233be28b01a4ed9420a2e598cd4145946e9337d9e244113d31a0.js" integrity="sha256-EZ2ROy0FIzviiwGk7ZQgouWYzUFFlG6TN9niRBE9MaA=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.f9b526a3f48b053d0af7900f7d1e5ace98905ae9d6bc4d49bd56c5a1726d4854.js" integrity="sha256-&#43;bUmo/SLBT0K95APfR5azpiQWunWvE1JvVbFoXJtSFQ=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -304,105 +306,6 @@ https://github.com/alex-shpak/hugo-book
         </li>
       
     
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/objects/sections/comparison/" class="">Comparing objects</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/objects/sections/encapsulation/" class="">Encapsulation</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/objects/sections/clone/" class="">Copying objects</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/objects/sections/quasi-objects/" class="">Quasi-objects</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/objects/sections/casts/" class="">Type checking and cast</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-06ca724a4caafd99788c5f8e355ee319" class="toggle"  />
-    <label for="section-06ca724a4caafd99788c5f8e355ee319" class="flex justify-between">
-      <a href="/docs/encapsulation/" class="">Encapsulation</a>
-    </label>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/encapsulation/sections/visibility/" class="">Visibility</a>
-  
-
-        </li>
-      
-    
   </ul>
 
         </li>
@@ -449,216 +352,6 @@ https://github.com/alex-shpak/hugo-book
 
         </li>
       
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-c6d765e331787103ea5a4c660ad9d263" class="toggle"  />
-    <label for="section-c6d765e331787103ea5a4c660ad9d263" class="flex justify-between">
-      <a href="/docs/collections/" class="">Collections</a>
-    </label>
-  
-
-          
-  <ul>
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-5d60f9e6a9b7c875f51358c583373282" class="toggle"  />
-    <label for="section-5d60f9e6a9b7c875f51358c583373282" class="flex justify-between">
-      <a href="/docs/datastructures/" class="">Data structures</a>
-    </label>
-  
-
-          
-  <ul>
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-1be866adbf7f2244d1773e0d2a159b91" class="toggle"  />
-    <label for="section-1be866adbf7f2244d1773e0d2a159b91" class="flex justify-between">
-      <a href="/docs/recursion/" class="">Recursion</a>
-    </label>
-  
-
-          
-  <ul>
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-b7bc445f96cbe2bd1034c5f1c5d075bb" class="toggle"  />
-    <label for="section-b7bc445f96cbe2bd1034c5f1c5d075bb" class="flex justify-between">
-      <a href="/docs/input/" class="">I/O and serialization</a>
-    </label>
-  
-
-          
-  <ul>
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-baf3ea6e28839ac044570d2d313c8794" class="toggle"  />
-    <label for="section-baf3ea6e28839ac044570d2d313c8794" class="flex justify-between">
-      <a href="/docs/regex/" class="">Regular expressions</a>
-    </label>
-  
-
-          
-  <ul>
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-2cb8fe711c517d9ace405264c9b77bcb" class="toggle"  />
-    <label for="section-2cb8fe711c517d9ace405264c9b77bcb" class="flex justify-between">
-      <a href="/docs/streams/" class="">Streams</a>
-    </label>
-  
-
-          
-  <ul>
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-dfedb17969c9b09e6694374c71130ee4" class="toggle"  />
-    <label for="section-dfedb17969c9b09e6694374c71130ee4" class="flex justify-between">
-      <a href="/docs/concurrency/" class="">Concurrency</a>
-    </label>
-  
-
-          
-  <ul>
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-9d77b970a03dc72b048d9fce7bfe272f" class="toggle"  />
-    <label for="section-9d77b970a03dc72b048d9fce7bfe272f" class="flex justify-between">
-      <a href="/docs/unittests/" class="">Unit tests</a>
-    </label>
-  
-
-          
-  <ul>
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-1de498fc5e7787931a737882aa193936" class="toggle"  />
-    <label for="section-1de498fc5e7787931a737882aa193936" class="flex justify-between">
-      <a href="/docs/ide/" class="">Using an IDE</a>
-    </label>
-  
-
-          
-  <ul>
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-266852d187f25bd262cbe71071953925" class="toggle"  />
-    <label for="section-266852d187f25bd262cbe71071953925" class="flex justify-between">
-      <a href="/docs/factorization/" class="">Code factorization</a>
-    </label>
-  
-
-          
-  <ul>
     
   </ul>
 
@@ -826,7 +519,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/git/sections/commit/" class="">Commit</a>
+    <a href="/docs/git/sections/basics/" class="">Basics: repository, commits and branches</a>
   
 
         </li>
@@ -839,20 +532,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/git/sections/navigate/" class="">Navigate</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/git/sections/basics/" class="">The basics</a>
+    <a href="/docs/git/sections/collaboration/" class="">Basics: network and collaboration</a>
   
 
         </li>
@@ -891,7 +571,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/git/sections/resources/" class="">Resources</a>
+    <a href="/docs/git/sections/commit/" class="">Add, commit, stash</a>
   
 
         </li>
@@ -917,13 +597,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/git/sections/collaboration/" class="">Collaboration</a>
+    <a href="/docs/git/sections/sharing/" class="">Synchronization: remote, push, pull</a>
   
-
-        </li>
-      
-    
-  </ul>
 
         </li>
       
@@ -935,14 +610,37 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-44fa5eb3511a340ff4e9042080604b5c" class="toggle"  />
-    <label for="section-44fa5eb3511a340ff4e9042080604b5c" class="flex justify-between">
-      <a href="/docs/build/" class="">Build automation</a>
-    </label>
+    <a href="/docs/git/sections/backtracking/" class="">Backtracking</a>
   
 
+        </li>
+      
+    
+      
+        <li>
           
-  <ul>
+  
+  
+
+  
+    <a href="/docs/git/sections/ignore/" class="">Ignoring files</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/resources/" class="">To go further</a>
+  
+
+        </li>
+      
     
   </ul>
 
@@ -973,92 +671,6 @@ https://github.com/alex-shpak/hugo-book
 
   
     <a href="/docs/background/sections/problem/" class="">Computational problem</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/background/sections/cost/" class="">Computational cost</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/background/sections/graph/" class="">Graphs, trees and lists</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/background/sections/order/" class="">Orders</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/background/sections/set_tuple_map/" class="">Sets, tuples and maps</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-7fbf8d635a58977782e16dc9419d8cdc" class="toggle"  />
-    <label for="section-7fbf8d635a58977782e16dc9419d8cdc" class="flex justify-between">
-      <a href="/docs/template/" class="">Web page template</a>
-    </label>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/template/sections/template/" class="">Stubs</a>
   
 
         </li>
@@ -1121,8 +733,13 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#ssh-key">SSH key</a></li>
-    <li><a href="#http">HTTP</a></li>
+    <li><a href="#texteditor">Text editor</a></li>
+    <li><a href="#protocol">Protocol</a>
+      <ul>
+        <li><a href="#ssh-key">SSH key</a></li>
+        <li><a href="#https-credentials">HTTPS credentials</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
@@ -1139,38 +756,48 @@ https://github.com/alex-shpak/hugo-book
   Configuration
   <a class="anchor" href="#configuration">#</a>
 </h1>
-<h2 id="ssh-key">
+<h2 id="texteditor">
+  Text editor
+  <a class="anchor" href="#texteditor">#</a>
+</h2>
+<p>In some situations (commit without message, merge commit, etc.), git automatically opens a text editor to let you type a message.</p>
+<p>By default, on most operating systems, git open <a href="https://en.wikipedia.org/wiki/VI">vi</a> for this purpose.
+I you have never used vi, we recommend selecting another text editor.</p>
+<p>You can do this by running:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git config --global core.editor &lt;myEditor&gt;
+</span></span></code></pre></div><p>where <code>&lt;myEditor&gt;</code> is the command that launches your text editor (for instance <code>notepad</code> for Notepad, <code>textedit</code> for TextEdit , <code>gedit</code> for gedit, <code>sublime</code> for Sublime Text, etc.)</p>
+<h2 id="protocol">
+  Protocol
+  <a class="anchor" href="#protocol">#</a>
+</h2>
+<p>Git hosting services (such as GitHub) usually support two alternative protocols for sharing content with a remote: https and ssh.</p>
+<p>ssh is generally recommended.</p>
+<h3 id="ssh-key">
   SSH key
   <a class="anchor" href="#ssh-key">#</a>
-</h2>
-<p>The preferred way to interact with a git hosting service (such as GitHub) is via the ssh protocol.</p>
-<p>For this, you need to need have (or create) an ssh key on your own machine, and share the <em>public</em> part of this key with the host.</p>
+</h3>
+<p>To share content via ssh, you need a cryptographic key, often called an &ldquo;ssh key&rdquo; (in practice, this is an <a href="https://en.wikipedia.org/wiki/RSA_%28cryptosystem%29">RSA</a> key).</p>
 <p>You may already have an ssh key on your machine.
-By default, they are located in the
-<code>&lt;homeFolder/.ssh&gt;</code> dot folder (<code>&lt;homeFolder\.ssh&gt;</code> on Windows).</p>
-<p>If this folder exists, it should contain (at least) one file with extension <code>.pub</code>.
-Such a file contains a public RSA key.
-You can share this key with git hosts for authentication.</p>
+By default, ssh keys are located in the dot folder
+<code>&lt;homeFolder&gt;/.ssh</code> (or <code>&lt;homeFolder&gt;\.ssh</code> on Windows).</p>
+<p>If this folder exists, then it should contain (at least) one file with extension <code>.pub</code>.
+Such a file contains a <strong>public RSA key</strong>.
+You can share this key with a git host for authentication.</p>
 <p>If you do not have an SSH key on your machine, then you can generate one
 by running</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh-keygen
 </span></span></code></pre></div><p>in a terminal (Linux and macOS) or in the Windows Power Shell (Windows).
-If you accept the <code>./ssh</code> default location (or <code>.\ssh</code> on Windows), this command will generate the .ssh folder and a key.</p>
+If you accept the default location, this command will generate the <code>.ssh</code> folder and a key.</p>
 <p>In order to add a public key to your GitHub account, log in to GitHub, select &ldquo;Settings&rdquo;, then &ldquo;SSH and GPG keys&rdquo;.
 Click on the &ldquo;New SSH key&rdquo; button, give a name to your key, and paste your public key (i.e.the content of the file with extension <code>.pub</code>) in the field &ldquo;Key&rdquo;.</p>
 <p>For more details, you can for instance consult <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh">this page</a>.</p>
-<h2 id="http">
-  HTTP
-  <a class="anchor" href="#http">#</a>
-</h2>
-<p>If you get tired of adding your credentials every time you push changes to GitHub, consider <a href="https://docs.github.com/en/get-started/getting-started-with-git/caching-your-github-credentials-in-git">caching your GitHub credentials in Git</a>.</p>
-<ul>
-<li><a href="https://docs.github.com/en/github/getting-started-with-github/git-and-github-learning-resources">Git and GitHub learning resources</a></li>
-<li><a href="https://guides.github.com/introduction/flow/">Understanding the GitHub flow</a></li>
-<li><a href="https://www.youtube.com/watch?v=H5GJfcp3p4Q&amp;feature=youtu.be">How to use GitHub branches</a></li>
-<li><a href="https://githubtraining.github.io/training-manual/#/01_getting_ready_for_class">Interactive Git training materials</a></li>
-<li><a href="https://lab.github.com/">GitHub&rsquo;s Learning Lab</a></li>
-</ul>
+<h3 id="https-credentials">
+  HTTPS credentials
+  <a class="anchor" href="#https-credentials">#</a>
+</h3>
+<p>If you prefer, you can interact with (most) git hosting services via HTTPS.
+By default, this requires entering your credentials for each interaction with a remote.</p>
+<p>To avoid this, you may consider <a href="https://docs.github.com/en/get-started/getting-started-with-git/caching-your-github-credentials-in-git">caching your GitHub credentials in Git</a>.</p>
 </article>
  
       
@@ -1212,8 +839,13 @@ Click on the &ldquo;New SSH key&rdquo; button, give a name to your key, and past
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#ssh-key">SSH key</a></li>
-    <li><a href="#http">HTTP</a></li>
+    <li><a href="#texteditor">Text editor</a></li>
+    <li><a href="#protocol">Protocol</a>
+      <ul>
+        <li><a href="#ssh-key">SSH key</a></li>
+        <li><a href="#https-credentials">HTTPS credentials</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 

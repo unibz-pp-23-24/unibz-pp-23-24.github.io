@@ -2,66 +2,80 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>git on Programming project 2023-24</title>
-    <link>http://localhost:33455/docs/git/</link>
+    <link>https://unibz-pp-23-24.github.io/docs/git/</link>
     <description>Recent content in git on Programming project 2023-24</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="http://localhost:33455/docs/git/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://unibz-pp-23-24.github.io/docs/git/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Commit</title>
-      <link>http://localhost:33455/docs/git/sections/commit/</link>
+      <title>Basics: repository, commits and branches</title>
+      <link>https://unibz-pp-23-24.github.io/docs/git/sections/basics/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:33455/docs/git/sections/commit/</guid>
-      <description>Commit # Commit messages # Here are guideline about how to write an informative yet readable commit message: https://cbea.ms/git-commit/&#xA;Note that if you do not add the -m &amp;quot;&amp;lt;myMessage&amp;gt;&amp;quot; option to your command, git will open a text editor where you can type this message. If this happens, then type your commit message, save and close the file.&#xA;Warning. By default, on most operating systems, git open vi as a text editor.</description>
+      <guid>https://unibz-pp-23-24.github.io/docs/git/sections/basics/</guid>
+      <description>Basics: repository, commits and branches # Repository # A git repository is a folder that stores a project. It is identical to a regular folder, except for a hidden folder named .git. This folder stores (among others) the whole history of the project. Commit # A commit is a snapshot of a repository. Each commit has medatada associated to it. In particular:&#xA;an ID, the name of the commit&amp;rsquo;s author, a timestamp, a message that describes the commit.</description>
     </item>
     <item>
-      <title>Navigate</title>
-      <link>http://localhost:33455/docs/git/sections/navigate/</link>
+      <title>Basics: network and collaboration</title>
+      <link>https://unibz-pp-23-24.github.io/docs/git/sections/collaboration/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:33455/docs/git/sections/navigate/</guid>
-      <description> Navigate # </description>
-    </item>
-    <item>
-      <title>The basics</title>
-      <link>http://localhost:33455/docs/git/sections/basics/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:33455/docs/git/sections/basics/</guid>
-      <description>Repository # A git repository is a folder that stores a project. It is identical to a regular folder, except for a hidden folder named .git. This folder stores (among others) the whole history of the project. Commit # A commit is a snapshot of a repository. Each commit has medatada associated to it. In particular:&#xA;an ID (automatically generated, more on this later), a timestamp the name of the commit&amp;rsquo;s author, a message that describes the commit.</description>
+      <guid>https://unibz-pp-23-24.github.io/docs/git/sections/collaboration/</guid>
+      <description>Basics: network and collaboration # Network # In the previous section, Alice created and manipulated a git repository (with two branches).&#xA;She may also want to backup her work. To this end, she can upload some of her branches to a remote machine (often called &amp;ldquo;a remote&amp;rdquo;). For instance use a cloud hosting service for git repositories (such as GitHub, Gitlab, Bitbucket, etc.).&#xA;Whenever Alice wants to upload the content of a branch, she can push this branch to the remote.</description>
     </item>
     <item>
       <title>Configuration</title>
-      <link>http://localhost:33455/docs/git/sections/config/</link>
+      <link>https://unibz-pp-23-24.github.io/docs/git/sections/config/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:33455/docs/git/sections/config/</guid>
-      <description>Configuration # SSH key # The preferred way to interact with a git hosting service (such as GitHub) is via the ssh protocol.&#xA;For this, you need to need have (or create) an ssh key on your own machine, and share the public part of this key with the host.&#xA;You may already have an ssh key on your machine. By default, they are located in the &amp;lt;homeFolder/.ssh&amp;gt; dot folder (&amp;lt;homeFolder\.</description>
+      <guid>https://unibz-pp-23-24.github.io/docs/git/sections/config/</guid>
+      <description>Configuration # Text editor # In some situations (commit without message, merge commit, etc.), git automatically opens a text editor to let you type a message.&#xA;By default, on most operating systems, git open vi for this purpose. I you have never used vi, we recommend selecting another text editor.&#xA;You can do this by running:&#xA;git config --global core.editor &amp;lt;myEditor&amp;gt; where &amp;lt;myEditor&amp;gt; is the command that launches your text editor (for instance notepad for Notepad, textedit for TextEdit , gedit for gedit, sublime for Sublime Text, etc.</description>
     </item>
     <item>
       <title>Create or clone a repository</title>
-      <link>http://localhost:33455/docs/git/sections/create/</link>
+      <link>https://unibz-pp-23-24.github.io/docs/git/sections/create/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:33455/docs/git/sections/create/</guid>
-      <description> Create or clone a repository # </description>
+      <guid>https://unibz-pp-23-24.github.io/docs/git/sections/create/</guid>
+      <description>Create or clone a repository # From a remote server # The most common way to create a repository is to create the remote copy first, using the web interface of your host (Github, Gitlab, Bitbucket, etc.).&#xA;You will be asked to give the repository a name. Then you will be provided an address that allows use to clone the repository on your own machine (via ssh or https).</description>
     </item>
     <item>
-      <title>Resources</title>
-      <link>http://localhost:33455/docs/git/sections/resources/</link>
+      <title>Add, commit, stash</title>
+      <link>https://unibz-pp-23-24.github.io/docs/git/sections/commit/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:33455/docs/git/sections/resources/</guid>
-      <description> Resources # Git and GitHub learning resources Understanding the GitHub flow How to use GitHub branches Interactive Git training materials GitHub&amp;rsquo;s Learning Lab </description>
+      <guid>https://unibz-pp-23-24.github.io/docs/git/sections/commit/</guid>
+      <description>Add, commit, stash # Staging files # Git lets you to choose which modifications will be part of your next commit.&#xA;First, run&#xA;git status This will show which files have been added or modified since the last commit on the current branch (if any). In order to add (some of) these files to the next commit, you need to stage them.&#xA;If you want to stage all these files, from the root of the repository, run</description>
     </item>
     <item>
       <title>Branches</title>
-      <link>http://localhost:33455/docs/git/sections/branches/</link>
+      <link>https://unibz-pp-23-24.github.io/docs/git/sections/branches/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:33455/docs/git/sections/branches/</guid>
-      <description> Branches # </description>
+      <guid>https://unibz-pp-23-24.github.io/docs/git/sections/branches/</guid>
+      <description>Branches # Listing branches # The command&#xA;git branch allows you to list all local branches (for the current repository).&#xA;Creating a branch # To create a new branch, run&#xA;git branch &amp;lt;branchName&amp;gt; Then you can switch to this branch with&#xA;git checkout &amp;lt;branchName&amp;gt; Alternatively, you can perform both operations with a single command:&#xA;git checkout -b &amp;lt;branchName&amp;gt; Deleting a branch # You can delete a (local) branch other than the current branch with</description>
     </item>
     <item>
-      <title>Collaboration</title>
-      <link>http://localhost:33455/docs/git/sections/collaboration/</link>
+      <title>Synchronization: remote, push, pull</title>
+      <link>https://unibz-pp-23-24.github.io/docs/git/sections/sharing/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:33455/docs/git/sections/collaboration/</guid>
-      <description>Collaboration # In the previous section, Alice created a repository on her machine, with two branches.&#xA;Enters Bob&amp;hellip; # Bob may want</description>
+      <guid>https://unibz-pp-23-24.github.io/docs/git/sections/sharing/</guid>
+      <description>Synchronization: remote, push, pull # List remotes # To list the remote(s) associated to your repository, you can run&#xA;git remote -v Upload # If the current branch is already shared with a remote, you can upload it with&#xA;git push Otherwise, you can share this branch (and its commits) with&#xA;git push -u &amp;lt;remoteName&amp;gt; &amp;lt;branchName&amp;gt; To delete a remote branch, run&#xA;git push &amp;lt;remoteName&amp;gt; -d &amp;lt;branchName&amp;gt; Alternatively, you can delete a remote branch using the web interface of your hosting service.</description>
+    </item>
+    <item>
+      <title>Backtracking</title>
+      <link>https://unibz-pp-23-24.github.io/docs/git/sections/backtracking/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/git/sections/backtracking/</guid>
+      <description>Backtracking # We already saw how a file can be unstaged (with git reset) before it is committed.&#xA;If the file was committed by mistake, then there are at least three scenarios.&#xA;Reset # If the commits that contain the file have not been shared yet with a remote, then these commits can be cancelled locally. The command&#xA;git reset &amp;lt;ID&amp;gt; moves the pointer for the current branch &amp;ldquo;back in time&amp;rdquo; to the commit &amp;lt;ID&amp;gt;.</description>
+    </item>
+    <item>
+      <title>Ignoring files</title>
+      <link>https://unibz-pp-23-24.github.io/docs/git/sections/ignore/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/git/sections/ignore/</guid>
+      <description>Ignoring files # You can add a file named .gitignore to the root folder of your repository.&#xA;It specifies files that cannot be staged.&#xA;This is commonly used to exclude from a repository:&#xA;compiled code (e.g. files with the extension .class in Java), dependencies (e.g. the content of the /node_modules folder in a Node.js project), IDE-generated files (e.g. the .idea/ folder for IntelliJ), OS-generated files (e.g. .DS_Store/ folders for macOS), etc.</description>
+    </item>
+    <item>
+      <title>To go further</title>
+      <link>https://unibz-pp-23-24.github.io/docs/git/sections/resources/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/git/sections/resources/</guid>
+      <description>To go further # Here is a brief selection of resources about git (among many):&#xA;a (short) video that goes beyond the content of this chapter, the Atlassian git tutorials, the GitHub training material, guidelines about how to write an informative (yet readable) commit message. Misc # Here is a link to git&amp;rsquo;s very first commit.</description>
     </item>
   </channel>
 </rss>

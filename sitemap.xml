@@ -2,6 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://unibz-pp-23-24.github.io/docs/git/sections/basics/</loc>
+  </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/background/sections/problem/</loc>
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/objects/sections/objects/</loc>
@@ -13,6 +15,8 @@
     <loc>https://unibz-pp-23-24.github.io/docs/interfaces/sections/specification/</loc>
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/intro/</loc>
+  </url><url>
+    <loc>https://unibz-pp-23-24.github.io/docs/git/sections/collaboration/</loc>
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/objects/sections/classes/</loc>
   </url><url>
@@ -28,6 +32,8 @@
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/env/sections/backup/</loc>
   </url><url>
+    <loc>https://unibz-pp-23-24.github.io/docs/git/sections/config/</loc>
+  </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/intro/sections/evaluation/</loc>
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/objects/sections/inheritance/</loc>
@@ -38,11 +44,15 @@
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/intro/sections/content/</loc>
   </url><url>
+    <loc>https://unibz-pp-23-24.github.io/docs/git/sections/create/</loc>
+  </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/objects/sections/methods/</loc>
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/interfaces/</loc>
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/env/sections/install/</loc>
+  </url><url>
+    <loc>https://unibz-pp-23-24.github.io/docs/git/sections/commit/</loc>
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/intro/sections/board_game/</loc>
   </url><url>
@@ -52,15 +62,27 @@
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/env/sections/requirements/</loc>
   </url><url>
+    <loc>https://unibz-pp-23-24.github.io/docs/git/sections/branches/</loc>
+  </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/env/sections/ide/</loc>
+  </url><url>
+    <loc>https://unibz-pp-23-24.github.io/docs/git/sections/sharing/</loc>
+  </url><url>
+    <loc>https://unibz-pp-23-24.github.io/docs/git/sections/backtracking/</loc>
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/env/sections/text_editor/</loc>
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/env/sections/eval/</loc>
   </url><url>
+    <loc>https://unibz-pp-23-24.github.io/docs/git/sections/ignore/</loc>
+  </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/env/sections/terminal/</loc>
   </url><url>
+    <loc>https://unibz-pp-23-24.github.io/docs/git/sections/resources/</loc>
+  </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/env/</loc>
+  </url><url>
+    <loc>https://unibz-pp-23-24.github.io/docs/git/</loc>
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/background/</loc>
   </url><url>

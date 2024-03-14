@@ -8,6 +8,13 @@
     <language>en-us</language>
     <atom:link href="https://unibz-pp-23-24.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Basics: repository, commits and branches</title>
+      <link>https://unibz-pp-23-24.github.io/docs/git/sections/basics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/git/sections/basics/</guid>
+      <description>Basics: repository, commits and branches # Repository # A git repository is a folder that stores a project. It is identical to a regular folder, except for a hidden folder named .git. This folder stores (among others) the whole history of the project. Commit # A commit is a snapshot of a repository. Each commit has medatada associated to it. In particular:&#xA;an ID, the name of the commit&amp;rsquo;s author, a timestamp, a message that describes the commit.</description>
+    </item>
+    <item>
       <title>Computational problem</title>
       <link>https://unibz-pp-23-24.github.io/docs/background/sections/problem/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -41,6 +48,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/interfaces/sections/specification/</guid>
       <description>Specification and programming interface # Specification # The specification of a method usually consists of:&#xA;the computational problem that the method solves (if any), and (if needed,) a description of the format of the input and expected output, and (if applicable,) a description of the behavior of the program for invalid inputs (e.g. errors thrown by the method), and (if useful,) information about the implementation (e.g. if this may have an impact on performance for certain inputs).</description>
+    </item>
+    <item>
+      <title>Basics: network and collaboration</title>
+      <link>https://unibz-pp-23-24.github.io/docs/git/sections/collaboration/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/git/sections/collaboration/</guid>
+      <description>Basics: network and collaboration # Network # In the previous section, Alice created and manipulated a git repository (with two branches).&#xA;She may also want to backup her work. To this end, she can upload some of her branches to a remote machine (often called &amp;ldquo;a remote&amp;rdquo;). For instance use a cloud hosting service for git repositories (such as GitHub, Gitlab, Bitbucket, etc.).&#xA;Whenever Alice wants to upload the content of a branch, she can push this branch to the remote.</description>
     </item>
     <item>
       <title>Class and instance</title>
@@ -85,6 +99,13 @@
       <description>Backup # Make sure that your work does not depend on your laptop. You should be able to resume your work easily on another computer if your laptop gets lost, damaged, etc.&#xA;You should also be able to recover your data if you accidentally delete it from your hard drive.&#xA;Which information to back up # As a priority, make sure that there exist copies (outside of your hard drive) of:</description>
     </item>
     <item>
+      <title>Configuration</title>
+      <link>https://unibz-pp-23-24.github.io/docs/git/sections/config/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/git/sections/config/</guid>
+      <description>Configuration # Text editor # In some situations (commit without message, merge commit, etc.), git automatically opens a text editor to let you type a message.&#xA;By default, on most operating systems, git open vi for this purpose. I you have never used vi, we recommend selecting another text editor.&#xA;You can do this by running:&#xA;git config --global core.editor &amp;lt;myEditor&amp;gt; where &amp;lt;myEditor&amp;gt; is the command that launches your text editor (for instance notepad for Notepad, textedit for TextEdit , gedit for gedit, sublime for Sublime Text, etc.</description>
+    </item>
+    <item>
       <title>Evaluation</title>
       <link>https://unibz-pp-23-24.github.io/docs/intro/sections/evaluation/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -113,6 +134,13 @@
       <description>Content of the course # This is a beginner&amp;rsquo;s course on imperative and (class-based) object oriented programming, with an emphasis on practice and collaboration.&#xA;The course relies on Java as main programming language. However, many concepts seen in this course are relevant to other (imperative and/or object-oriented) programming languages: C/C++, C#, Javascript, Go, Kotlin, Lua, Perl, PHP, Python, Rust, Ruby, Typescript, Visual Basic, etc.&#xA;Prerequisites # Students are expected to have completed the Computer Programming course (INF/01 76258).</description>
     </item>
     <item>
+      <title>Create or clone a repository</title>
+      <link>https://unibz-pp-23-24.github.io/docs/git/sections/create/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/git/sections/create/</guid>
+      <description>Create or clone a repository # From a remote server # The most common way to create a repository is to create the remote copy first, using the web interface of your host (Github, Gitlab, Bitbucket, etc.).&#xA;You will be asked to give the repository a name. Then you will be provided an address that allows use to clone the repository on your own machine (via ssh or https).</description>
+    </item>
+    <item>
       <title>Instance methods</title>
       <link>https://unibz-pp-23-24.github.io/docs/objects/sections/methods/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -125,6 +153,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/env/sections/install/</guid>
       <description>Software management # Dependencies # As a developer, you frequently need to download, install and/or update:&#xA;libraries used in your projects (called dependencies), core programming utilities, such as a compiler or interpreter for a given programming language, a package manager, etc. tools for software development: editor, debugger, visualization tool, etc. These programs have their own dependencies, that have their own dependencies, etc. And two programs may depend on different versions of a same third program.</description>
+    </item>
+    <item>
+      <title>Add, commit, stash</title>
+      <link>https://unibz-pp-23-24.github.io/docs/git/sections/commit/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/git/sections/commit/</guid>
+      <description>Add, commit, stash # Staging files # Git lets you to choose which modifications will be part of your next commit.&#xA;First, run&#xA;git status This will show which files have been added or modified since the last commit on the current branch (if any). In order to add (some of) these files to the next commit, you need to stage them.&#xA;If you want to stage all these files, from the root of the repository, run</description>
     </item>
     <item>
       <title>Board game</title>
@@ -155,11 +190,32 @@
       <description>Requirements for this course # For this course, you will need:&#xA;Git Version 2.2 or higher A Java Development Kit (JDK) for Java 17 (e.g. openJDK) Maven Version 3.6 or higher In addition, if you choose the board game as project, you will need:&#xA;Gradle Version 7.2 or higher Again, we recommend using a package manager to install these programs if possible.&#xA;For Windows users. Maven is not available on the winget repository.</description>
     </item>
     <item>
+      <title>Branches</title>
+      <link>https://unibz-pp-23-24.github.io/docs/git/sections/branches/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/git/sections/branches/</guid>
+      <description>Branches # Listing branches # The command&#xA;git branch allows you to list all local branches (for the current repository).&#xA;Creating a branch # To create a new branch, run&#xA;git branch &amp;lt;branchName&amp;gt; Then you can switch to this branch with&#xA;git checkout &amp;lt;branchName&amp;gt; Alternatively, you can perform both operations with a single command:&#xA;git checkout -b &amp;lt;branchName&amp;gt; Deleting a branch # You can delete a (local) branch other than the current branch with</description>
+    </item>
+    <item>
       <title>IDE</title>
       <link>https://unibz-pp-23-24.github.io/docs/env/sections/ide/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/env/sections/ide/</guid>
       <description>Integrated development environment (IDE) # An IDE is an application that consists of a source code editor with additional functionalities such as a debugger or build automation.&#xA;For this course, you can use any IDE (or enhanced code editor) for Java with at least the following features:&#xA;a debugger navigation to variable/class/interface declaration and usage, variable/class/interface renaming, Maven integration, Gradle integration if you choose the board game as your project.</description>
+    </item>
+    <item>
+      <title>Synchronization: remote, push, pull</title>
+      <link>https://unibz-pp-23-24.github.io/docs/git/sections/sharing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/git/sections/sharing/</guid>
+      <description>Synchronization: remote, push, pull # List remotes # To list the remote(s) associated to your repository, you can run&#xA;git remote -v Upload # If the current branch is already shared with a remote, you can upload it with&#xA;git push Otherwise, you can share this branch (and its commits) with&#xA;git push -u &amp;lt;remoteName&amp;gt; &amp;lt;branchName&amp;gt; To delete a remote branch, run&#xA;git push &amp;lt;remoteName&amp;gt; -d &amp;lt;branchName&amp;gt; Alternatively, you can delete a remote branch using the web interface of your hosting service.</description>
+    </item>
+    <item>
+      <title>Backtracking</title>
+      <link>https://unibz-pp-23-24.github.io/docs/git/sections/backtracking/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/git/sections/backtracking/</guid>
+      <description>Backtracking # We already saw how a file can be unstaged (with git reset) before it is committed.&#xA;If the file was committed by mistake, then there are at least three scenarios.&#xA;Reset # If the commits that contain the file have not been shared yet with a remote, then these commits can be cancelled locally. The command&#xA;git reset &amp;lt;ID&amp;gt; moves the pointer for the current branch &amp;ldquo;back in time&amp;rdquo; to the commit &amp;lt;ID&amp;gt;.</description>
     </item>
     <item>
       <title>Text editor</title>
@@ -176,11 +232,25 @@
       <description>Evaluation environment # The evaluation environment for your project is a virtual machine (with Ubuntu 20) deployed on Microsoft Azure. You are not supposed to develop on this machine, but your project must run in this environment to be evaluated.&#xA;Each student gets his or her own clone of the original machine. Maven, Gradle, git and a Java 17 JDK are already installed. You will also be granted administrator rights, so that you can install additional software (if any) needed to run your project.</description>
     </item>
     <item>
+      <title>Ignoring files</title>
+      <link>https://unibz-pp-23-24.github.io/docs/git/sections/ignore/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/git/sections/ignore/</guid>
+      <description>Ignoring files # You can add a file named .gitignore to the root folder of your repository.&#xA;It specifies files that cannot be staged.&#xA;This is commonly used to exclude from a repository:&#xA;compiled code (e.g. files with the extension .class in Java), dependencies (e.g. the content of the /node_modules folder in a Node.js project), IDE-generated files (e.g. the .idea/ folder for IntelliJ), OS-generated files (e.g. .DS_Store/ folders for macOS), etc.</description>
+    </item>
+    <item>
       <title>Terminal</title>
       <link>https://unibz-pp-23-24.github.io/docs/env/sections/terminal/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/env/sections/terminal/</guid>
       <description>Terminal # Using a terminal can be necessary during development, in order to execute a program that does not have a graphical user interface (GUI).&#xA;But even when a GUI is available, a Command Line Interface (CLI) can still be the preferred way to interact with some programs. Possible benefits are:&#xA;efficiency (thanks to autocompletion, there is very little to type), automation (via scripting), more transparency (a GUI may add a layer of obfuscation), stability over time (GUIs tend to change from one version of a program to another), reproducibility (the same command performs the same action, with a limited reliance on memory), customizability.</description>
+    </item>
+    <item>
+      <title>To go further</title>
+      <link>https://unibz-pp-23-24.github.io/docs/git/sections/resources/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/git/sections/resources/</guid>
+      <description>To go further # Here is a brief selection of resources about git (among many):&#xA;a (short) video that goes beyond the content of this chapter, the Atlassian git tutorials, the GitHub training material, guidelines about how to write an informative (yet readable) commit message. Misc # Here is a link to git&amp;rsquo;s very first commit.</description>
     </item>
   </channel>
 </rss>
