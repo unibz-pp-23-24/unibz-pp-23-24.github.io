@@ -16,13 +16,12 @@ For instance, in Java, an instance method declared in MyClass can be called by a
 <meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/objects/sections/methods/" /><meta property="article:section" content="docs" />
 
 
-
 <title>Instance methods | Programming project 2023-24</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.f9b526a3f48b053d0af7900f7d1e5ace98905ae9d6bc4d49bd56c5a1726d4854.js" integrity="sha256-&#43;bUmo/SLBT0K95APfR5azpiQWunWvE1JvVbFoXJtSFQ=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.1fcd06dff93cb4be9491d571bba214336deddde3d8dd978fdfb6a771ad99ffab.js" integrity="sha256-H80G3/k8tL6UkdVxu6IUM23t3ePY3ZeP37anca2Z/6s=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -299,6 +298,32 @@ https://github.com/alex-shpak/hugo-book
 
   
     <a href="/docs/objects/sections/methods/" class="active">Instance methods</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classesasobjects/" class="">Classes as objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/encapsulation/" class="">Encapsulation</a>
   
 
         </li>
@@ -732,7 +757,7 @@ https://github.com/alex-shpak/hugo-book
 <nav id="TableOfContents">
   <ul>
     <li><a href="#overriding">Overriding</a></li>
-    <li><a href="#method-dispatch-aka-runtime-polymorphism">Method dispatch (a.k.a. runtime polymorphism)</a></li>
+    <li><a href="#dispatch">Dynamic dispatch (a.k.a. runtime polymorphism)</a></li>
     <li><a href="#code-factorization">Code factorization</a></li>
   </ul>
 </nav>
@@ -819,9 +844,30 @@ In this case, we say that <em>S</em> <strong>overrides</strong> the method.</p>
 However, the following program increases the health of (the object referenced by) <code>myWall</code> by 1, because <code>Wall</code> is a subclass of <code>Unit</code>, but not a subclass of <code>MobileUnit</code>.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span>  Wall myWall <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Wall();
 </span></span><span style="display:flex;"><span>  myWall.<span style="color:#a6e22e">regen</span>();
-</span></span></code></pre></div><h2 id="method-dispatch-aka-runtime-polymorphism">
-  Method dispatch (a.k.a. runtime polymorphism)
-  <a class="anchor" href="#method-dispatch-aka-runtime-polymorphism">#</a>
+</span></span></code></pre></div><blockquote class="book-hint info">
+  <p><strong><em>Hint.</em></strong> In Java, you can use the annotation <code>@Override</code> to indicate that a method overrides another, as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MobileUnit</span> <span style="color:#66d9ef">extends</span> Unit {
+</span></span><span style="display:flex;"><span>  ...
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">regen</span>(){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(health <span style="color:#f92672">&lt;</span> 10){
+</span></span><span style="display:flex;"><span>      health <span style="color:#f92672">+=</span> 1;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    health <span style="color:#f92672">+=</span> 1;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This is not necessary.
+The benefit is that the program will not compile if the overridden and overriding methods have different signatures.</p>
+<p>More generally, <em>syntactic</em> mistakes (a.k.a. compile time errors) are easier to fix than <em>bugs</em> (a.k.a. runtime errors).
+So when possible, it is good practice to use features of a language that prevent compilation if incorrect programs.
+This is why debugging in an untyped language (like Python, Javascript, Lua, etc.) can be more difficult than in a <em>typed</em> one (such as Java, C#, Typescript, etc.).</p>
+
+</blockquote>
+
+<h2 id="dispatch">
+  Dynamic dispatch (a.k.a. runtime polymorphism)
+  <a class="anchor" href="#dispatch">#</a>
 </h2>
 <p><blockquote class="book-hint warning">
   <strong>Dynamic dispatch</strong> consists in determining which version of a method must be called when a program is executed (a.k.a. &ldquo;at run time&rdquo;), when this cannot be determined by analyzing the program alone.
@@ -948,7 +994,7 @@ Add it as an instance method to our example, so that:</p>
 <nav id="TableOfContents">
   <ul>
     <li><a href="#overriding">Overriding</a></li>
-    <li><a href="#method-dispatch-aka-runtime-polymorphism">Method dispatch (a.k.a. runtime polymorphism)</a></li>
+    <li><a href="#dispatch">Dynamic dispatch (a.k.a. runtime polymorphism)</a></li>
     <li><a href="#code-factorization">Code factorization</a></li>
   </ul>
 </nav>

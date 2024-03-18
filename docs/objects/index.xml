@@ -35,5 +35,19 @@
       <guid>https://unibz-pp-23-24.github.io/docs/objects/sections/methods/</guid>
       <description>Instance methods # In most object-oriented languages (like Java), methods are implemented within class declarations.&#xA;An instance method can only be called using an instance of the class where it is declared.&#xA;For instance, in Java, an instance method declared in MyClass can be called by appending . to a variable of type MyClass. The object referenced by the variable is accessible in the method, as well as its attributes.</description>
     </item>
+    <item>
+      <title>Classes as objects</title>
+      <link>https://unibz-pp-23-24.github.io/docs/objects/sections/classesasobjects/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/objects/sections/classesasobjects/</guid>
+      <description>Classes as objects, casts # Some object-oriented languages (like Java, C# or C++) provide ways to access or manipulate classes (almost) as if they were objects.&#xA;Static attributes and methods # Static attributes # Java (as well as C# and C++) supports attributes that do not depend on a specific object, but on a class instead. These are often called static attributes (or sometimes class attributes or class variables), as opposed to the attributes that we have seen so far, called instance attributes (or member variables).</description>
+    </item>
+    <item>
+      <title>Encapsulation</title>
+      <link>https://unibz-pp-23-24.github.io/docs/objects/sections/encapsulation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/objects/sections/encapsulation/</guid>
+      <description>Encapsulation # Encapsulation is a (vague) principle in object-oriented programming that refers to &amp;ldquo;bundling&amp;rdquo; data with the code that operates on it, and restrict visibility of this code and data to other components of a system. From Wikipedia: &amp;ldquo;Essentially, encapsulation prevents external code from being concerned [&amp;hellip;]&amp;rdquo;&#xA;Each component hides its internal logic by exposing only data and methods that other components may need.&#xA;Example. In our game, consider the component that is in charge of rendering the game visually, and let us call it the &amp;ldquo;renderer&amp;rdquo; (for the sake of this example).</description>
+    </item>
   </channel>
 </rss>

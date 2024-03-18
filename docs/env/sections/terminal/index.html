@@ -16,13 +16,12 @@ efficiency (thanks to autocompletion, there is very little to type), automation 
 <meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/env/sections/terminal/" /><meta property="article:section" content="docs" />
 
 
-
 <title>Terminal | Programming project 2023-24</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.f9b526a3f48b053d0af7900f7d1e5ace98905ae9d6bc4d49bd56c5a1726d4854.js" integrity="sha256-&#43;bUmo/SLBT0K95APfR5azpiQWunWvE1JvVbFoXJtSFQ=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.1fcd06dff93cb4be9491d571bba214336deddde3d8dd978fdfb6a771ad99ffab.js" integrity="sha256-H80G3/k8tL6UkdVxu6IUM23t3ePY3ZeP37anca2Z/6s=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -299,6 +298,32 @@ https://github.com/alex-shpak/hugo-book
 
   
     <a href="/docs/objects/sections/methods/" class="">Instance methods</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classesasobjects/" class="">Classes as objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/encapsulation/" class="">Encapsulation</a>
   
 
         </li>
@@ -789,13 +814,17 @@ Possible benefits are:</p>
   Creating a static website
   <a class="anchor" href="#creating-a-static-website">#</a>
 </h2>
-<p>For this demo, instead of the default shell (called &ldquo;bash&rdquo;), we will use the Z shell (a.k.a. &ldquo;zsh&rdquo;).
-To activate it, run:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>zsh
-</span></span></code></pre></div><p>in the terminal (if you need to go back to bash at some point, you can either type <code>bash</code> or open a new terminal).</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>As an exercise, we will create a static website, using a simple framework called <a href="https://gohugo.io/">Hugo</a>.</p>
-<p>First, let us create a folder dedicated to our projects.
-For instance:</p>
+<p>First, in our home folder, let us create a subfolder dedicated to our projects.
+For instance, we can call this subfolder <code>workspace</code>.
+To create this folder, <a href="https://unibz-pp-23-24.github.io/docs/env/sections/eval/">open a terminal</a> and run:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir workspace
 </span></span></code></pre></div><p>Then navigate to this folder with the command <code>cd</code> (you do not need to type the full name of the directory, just type <code>cd w</code>, and press the Tab key for autocompletion):</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd workspace
@@ -858,9 +887,12 @@ By pressing the up and down arrow keys, you can scroll through the commands that
 Scroll until you find the command <code>hugo server</code>, and press Enter to restart the server.</p>
 <p>In order to keep the server running, we will execute our next command in another terminal.
 You can create a new one by clicking on the boxed &ldquo;+&rdquo; icon:</p>
-<p>Do not forget to activate zsh in this new terminal:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>zsh
-</span></span></code></pre></div><h2 id="adding-content">
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h2 id="adding-content">
   Adding content
   <a class="anchor" href="#adding-content">#</a>
 </h2>
@@ -873,7 +905,7 @@ You can for instance do this with the command:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gedit myPost.md
 </span></span></code></pre></div><p>which will open the file with the test editor &ldquo;gedit&rdquo;.</p>
 <p><strong><em>Note.</em></strong>
-If you only type <code>ge</code> followed by Tab, zsh will suggest you a list of programs whose name starts with these letters.
+If you only type <code>ge</code> followed by Tab, the shell will suggest you a list of programs whose name starts with these letters.
 You can scroll through them by pressing Tab again, or add a letter to disambiguate your search.</p>
 <p>In the text editor, copy-paste the following content:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>+++
@@ -889,7 +921,7 @@ You can scroll through them by pressing Tab again, or add a letter to disambigua
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>This is a [link](https://gohugo.io) to the Hugo website.
 </span></span></code></pre></div><p>In this file, everything below the header (title/date) is written in <a href="https://www.markdownguide.org/basic-syntax/">Markdown</a>.</p>
-<p>Save the file, and check with Firefox that your first post has been added to your website (to see your changes, you may need to force Firefox to ignore its cache, e.g. with Ctrl+F5 of by restarting it).</p>
+<p>Save the file, and check with Firefox that your first post has been added to your website (to see your changes, you may need to force Firefox to clear its cache: in &ldquo;Settings | Privacy &amp; Security | Cookiesand Site Data&rdquo;, click on the &ldquo;Clear Data&rdquo; button).</p>
 <h2 id="aliases">
   Aliases
   <a class="anchor" href="#aliases">#</a>
@@ -918,8 +950,9 @@ Open a new terminal and run:</p>
 </span></span></code></pre></div><p>You should get a &ldquo;command not found&rdquo; message, which confirms that this command is free.</p>
 <p>Now let us add the following line to the <code>.zshrc</code> file:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>alias o<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;xdg-open&#39;</span>
-</span></span></code></pre></div><p>Save the file, open a new terminal and switch to zsh.
-You can now use your <code>o</code> command to open any file.</p>
+</span></span></code></pre></div><p>Save the file and open a new terminal.</p>
+<!-- raw HTML omitted -->
+<p>You can now use the <code>o</code> command to open any file.</p>
 <p>To see this, let us navigate back to the <code>socials</code> folder that we were previously in (e.g. type <code>z so</code>, then up arrow key and then Enter).
 If you list the files in this folder (with <code>ll</code>), you will see that they have the <code>.svg</code> extension.
 To open one of these files, you can type <code>o </code> and the first letters of the name of the file, then Tab for autocompletion.
@@ -943,7 +976,8 @@ Save the file, and make it executable by running:</p>
 </span></span></code></pre></div><p>To test your script, close all running instances of hugo (if any), e.g. with Ctrl + C, as explained above.</p>
 <p>Now regardless of your location, you can type <code>ws</code> to start the web server.</p>
 <blockquote class="book-hint warning">
-  <strong><em>Note.</em></strong> bash and zsh support the same language for commands and scripts.
+  <strong><em>Note.</em></strong>
+Linux shells (such as bash or zsh) support the same language for commands and scripts.
 This is a full-fledged programming language (with conditional statements, loops, etc.), where an instruction can also be a command.
 </blockquote>
 

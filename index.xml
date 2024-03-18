@@ -120,13 +120,6 @@
       <description>Inheritance # Subclass # In most (class-based) object-oriented languages, a class A can extend another class B. In this case, A is called a subclass of B. The intuitive meaning is inclusion between their respective sets of instances, i.e. every instance of A is also an instance of B (but the converse may not hold).&#xA;This can be paraphrased in English by &amp;ldquo;every A is a B &amp;ldquo;. For instance:</description>
     </item>
     <item>
-      <title>Visibility</title>
-      <link>https://unibz-pp-23-24.github.io/docs/encapsulation/sections/visibility/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://unibz-pp-23-24.github.io/docs/encapsulation/sections/visibility/</guid>
-      <description> Visibility # </description>
-    </item>
-    <item>
       <title>Content</title>
       <link>https://unibz-pp-23-24.github.io/docs/intro/sections/content/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -183,6 +176,13 @@
       <description>Bibliography # Java&amp;rsquo;s syntax # In each chapter of this course, you will find Java code snippets that illustrate how to perform certain operations. However, this documentation is far from exhaustive (on purpose).&#xA;So when it comes to syntax, the first two sources of complementary material for this course are:&#xA;the Javadoc of the libraries (standard and auxiliary) used in your project/assignments. Your IDE is often the fastest way to navigate through it, the web.</description>
     </item>
     <item>
+      <title>Classes as objects</title>
+      <link>https://unibz-pp-23-24.github.io/docs/objects/sections/classesasobjects/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/objects/sections/classesasobjects/</guid>
+      <description>Classes as objects, casts # Some object-oriented languages (like Java, C# or C++) provide ways to access or manipulate classes (almost) as if they were objects.&#xA;Static attributes and methods # Static attributes # Java (as well as C# and C++) supports attributes that do not depend on a specific object, but on a class instead. These are often called static attributes (or sometimes class attributes or class variables), as opposed to the attributes that we have seen so far, called instance attributes (or member variables).</description>
+    </item>
+    <item>
       <title>Requirements for this course</title>
       <link>https://unibz-pp-23-24.github.io/docs/env/sections/requirements/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -195,6 +195,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/git/sections/branches/</guid>
       <description>Branches # Listing branches # The command&#xA;git branch allows you to list all local branches (for the current repository).&#xA;Creating a branch # To create a new branch, run&#xA;git branch &amp;lt;branchName&amp;gt; Then you can switch to this branch with&#xA;git checkout &amp;lt;branchName&amp;gt; Alternatively, you can perform both operations with a single command:&#xA;git checkout -b &amp;lt;branchName&amp;gt; Deleting a branch # You can delete a (local) branch other than the current branch with</description>
+    </item>
+    <item>
+      <title>Encapsulation</title>
+      <link>https://unibz-pp-23-24.github.io/docs/objects/sections/encapsulation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/objects/sections/encapsulation/</guid>
+      <description>Encapsulation # Encapsulation is a (vague) principle in object-oriented programming that refers to &amp;ldquo;bundling&amp;rdquo; data with the code that operates on it, and restrict visibility of this code and data to other components of a system. From Wikipedia: &amp;ldquo;Essentially, encapsulation prevents external code from being concerned [&amp;hellip;]&amp;rdquo;&#xA;Each component hides its internal logic by exposing only data and methods that other components may need.&#xA;Example. In our game, consider the component that is in charge of rendering the game visually, and let us call it the &amp;ldquo;renderer&amp;rdquo; (for the sake of this example).</description>
     </item>
     <item>
       <title>IDE</title>
