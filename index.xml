@@ -162,6 +162,13 @@
       <description>Board game # In order to follow this course, you will need to play one of the two following video games:&#xA;Might &amp;amp; Magic: Clash of Heroes, or Legend of Solgard. These two games have very similar mechanics. So by default, we will refer to them as a unique game (e.g. when we write &amp;ldquo;this game&amp;rdquo; or &amp;ldquo;our board game&amp;rdquo;).&#xA;Why this game # Turn-based board games (like chess, go, checkers, etc.</description>
     </item>
     <item>
+      <title>Displaying objects</title>
+      <link>https://unibz-pp-23-24.github.io/docs/objects/sections/tostring/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/objects/sections/tostring/</guid>
+      <description>Displaying objects # The class Object # Java has a native class called Object with 11 instance methods. Every Java class implicitly extends Object, including user-defined classes. Therefore any Java class inherits these methods. toString # toString is one of the methods of the class Object. Here is (part of) its specification:&#xA;/** Returns a string representation of the object. * In general, the toString method returns a string that * &amp;#34;textually represents&amp;#34; this object.</description>
+    </item>
+    <item>
       <title>Operating system</title>
       <link>https://unibz-pp-23-24.github.io/docs/env/sections/os/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -176,11 +183,11 @@
       <description>Bibliography # Java&amp;rsquo;s syntax # In each chapter of this course, you will find Java code snippets that illustrate how to perform certain operations. However, this documentation is far from exhaustive (on purpose).&#xA;So when it comes to syntax, the first two sources of complementary material for this course are:&#xA;the Javadoc of the libraries (standard and auxiliary) used in your project/assignments. Your IDE is often the fastest way to navigate through it, the web.</description>
     </item>
     <item>
-      <title>Classes as objects</title>
-      <link>https://unibz-pp-23-24.github.io/docs/objects/sections/classesasobjects/</link>
+      <title>Cast and equality</title>
+      <link>https://unibz-pp-23-24.github.io/docs/objects/sections/comparing/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://unibz-pp-23-24.github.io/docs/objects/sections/classesasobjects/</guid>
-      <description>Classes as objects, casts # Some object-oriented languages (like Java, C# or C++) provide ways to access or manipulate classes (almost) as if they were objects.&#xA;Static attributes and methods # Static attributes # Java (as well as C# and C++) supports attributes that do not depend on a specific object, but on a class instead. These are often called static attributes (or sometimes class attributes or class variables), as opposed to the attributes that we have seen so far, called instance attributes (or member variables).</description>
+      <guid>https://unibz-pp-23-24.github.io/docs/objects/sections/comparing/</guid>
+      <description>Cast and Equality # Cast # Java (as well as C# and C++) provides mechanisms to change the type associated with an object o, using either a supertype of o (this is an upcast), or a subtype of o (this is a downcast). Upcast # Explicit upcasts are uncommon, but may still be useful in some scenarios, e.g. to disambiguate two method calls.&#xA;Implicit upcasts on the other hand are very frequent, when the type of an object cannot be determined at compile time.</description>
     </item>
     <item>
       <title>Requirements for this course</title>
@@ -197,11 +204,11 @@
       <description>Branches # Listing branches # The command&#xA;git branch allows you to list all local branches (for the current repository).&#xA;Creating a branch # To create a new branch, run&#xA;git branch &amp;lt;branchName&amp;gt; Then you can switch to this branch with&#xA;git checkout &amp;lt;branchName&amp;gt; Alternatively, you can perform both operations with a single command:&#xA;git checkout -b &amp;lt;branchName&amp;gt; Deleting a branch # You can delete a (local) branch other than the current branch with</description>
     </item>
     <item>
-      <title>Encapsulation</title>
-      <link>https://unibz-pp-23-24.github.io/docs/objects/sections/encapsulation/</link>
+      <title>Classes as objects</title>
+      <link>https://unibz-pp-23-24.github.io/docs/objects/sections/classesasobjects/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://unibz-pp-23-24.github.io/docs/objects/sections/encapsulation/</guid>
-      <description>Encapsulation # Encapsulation is a (vague) principle in object-oriented programming that refers to &amp;ldquo;bundling&amp;rdquo; data with the code that operates on it, and restrict visibility of this code and data to other components of a system. From Wikipedia: &amp;ldquo;Essentially, encapsulation prevents external code from being concerned [&amp;hellip;]&amp;rdquo;&#xA;Each component hides its internal logic by exposing only data and methods that other components may need.&#xA;Example. In our game, consider the component that is in charge of rendering the game visually, and let us call it the &amp;ldquo;renderer&amp;rdquo; (for the sake of this example).</description>
+      <guid>https://unibz-pp-23-24.github.io/docs/objects/sections/classesasobjects/</guid>
+      <description>Classes as objects # Some object-oriented languages (like Java, C# or C++) provide ways to access or manipulate classes (almost) as if they were objects.&#xA;Static attributes and methods # Static attributes # Java (as well as C# and C++) supports attributes that do not depend on a specific object, but on a class instead. These are often called static attributes (or sometimes class attributes or class variables), as opposed to the attributes that we have seen so far, called instance attributes (or member variables).</description>
     </item>
     <item>
       <title>IDE</title>
@@ -251,6 +258,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/env/sections/terminal/</guid>
       <description>Terminal # Using a terminal can be necessary during development, in order to execute a program that does not have a graphical user interface (GUI).&#xA;But even when a GUI is available, a Command Line Interface (CLI) can still be the preferred way to interact with some programs. Possible benefits are:&#xA;efficiency (thanks to autocompletion, there is very little to type), automation (via scripting), more transparency (a GUI may add a layer of obfuscation), stability over time (GUIs tend to change from one version of a program to another), reproducibility (the same command performs the same action, with a limited reliance on memory), customizability.</description>
+    </item>
+    <item>
+      <title>Encapsulation</title>
+      <link>https://unibz-pp-23-24.github.io/docs/objects/sections/encapsulation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/objects/sections/encapsulation/</guid>
+      <description>Encapsulation # Encapsulation is a (vague) principle in object-oriented programming that refers to &amp;ldquo;bundling&amp;rdquo; data with the code that operates on it, and restrict visibility of this code and data to other components of a system. From Wikipedia: &amp;ldquo;Essentially, encapsulation prevents external code from being concerned [&amp;hellip;]&amp;rdquo;&#xA;Each component hides its internal logic by exposing only data and methods that other components may need.&#xA;Example. In our game, consider the component that is in charge of rendering the game visually, and let us call it the &amp;ldquo;renderer&amp;rdquo; (for the sake of this example).</description>
     </item>
     <item>
       <title>To go further</title>

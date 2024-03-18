@@ -36,11 +36,25 @@
       <description>Instance methods # In most object-oriented languages (like Java), methods are implemented within class declarations.&#xA;An instance method can only be called using an instance of the class where it is declared.&#xA;For instance, in Java, an instance method declared in MyClass can be called by appending . to a variable of type MyClass. The object referenced by the variable is accessible in the method, as well as its attributes.</description>
     </item>
     <item>
+      <title>Displaying objects</title>
+      <link>https://unibz-pp-23-24.github.io/docs/objects/sections/tostring/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/objects/sections/tostring/</guid>
+      <description>Displaying objects # The class Object # Java has a native class called Object with 11 instance methods. Every Java class implicitly extends Object, including user-defined classes. Therefore any Java class inherits these methods. toString # toString is one of the methods of the class Object. Here is (part of) its specification:&#xA;/** Returns a string representation of the object. * In general, the toString method returns a string that * &amp;#34;textually represents&amp;#34; this object.</description>
+    </item>
+    <item>
+      <title>Cast and equality</title>
+      <link>https://unibz-pp-23-24.github.io/docs/objects/sections/comparing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/objects/sections/comparing/</guid>
+      <description>Cast and Equality # Cast # Java (as well as C# and C++) provides mechanisms to change the type associated with an object o, using either a supertype of o (this is an upcast), or a subtype of o (this is a downcast). Upcast # Explicit upcasts are uncommon, but may still be useful in some scenarios, e.g. to disambiguate two method calls.&#xA;Implicit upcasts on the other hand are very frequent, when the type of an object cannot be determined at compile time.</description>
+    </item>
+    <item>
       <title>Classes as objects</title>
       <link>https://unibz-pp-23-24.github.io/docs/objects/sections/classesasobjects/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/objects/sections/classesasobjects/</guid>
-      <description>Classes as objects, casts # Some object-oriented languages (like Java, C# or C++) provide ways to access or manipulate classes (almost) as if they were objects.&#xA;Static attributes and methods # Static attributes # Java (as well as C# and C++) supports attributes that do not depend on a specific object, but on a class instead. These are often called static attributes (or sometimes class attributes or class variables), as opposed to the attributes that we have seen so far, called instance attributes (or member variables).</description>
+      <description>Classes as objects # Some object-oriented languages (like Java, C# or C++) provide ways to access or manipulate classes (almost) as if they were objects.&#xA;Static attributes and methods # Static attributes # Java (as well as C# and C++) supports attributes that do not depend on a specific object, but on a class instead. These are often called static attributes (or sometimes class attributes or class variables), as opposed to the attributes that we have seen so far, called instance attributes (or member variables).</description>
     </item>
     <item>
       <title>Encapsulation</title>
