@@ -19,7 +19,7 @@ Implicit upcasts on the other hand are very frequent, when the type of an object
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.7cea2dd2b16996e5ddb3b8bffd53f4c727c4b584dd0a6bfa24643f2e6fbde153.js" integrity="sha256-fOot0rFpluXds7i//VP0xyfEtYTdCmv6JGQ/Lm&#43;94VM=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.b055b5b2a067d3d5f2d7a5e0fe6e5d91671d740787959a9f306dcb8d8adba8b5.js" integrity="sha256-sFW1sqBn09Xy16Xg/m5dkWcddAeHlZqfMG3LjYrbqLU=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -889,7 +889,7 @@ So every (user-defined of native) class inherits <code>equals</code>.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">equals</span>(Object obj) {
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> (<span style="color:#66d9ef">this</span> <span style="color:#f92672">==</span> obj);
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>In other words, by default, this method behaves like the <code>equals</code> operator.
+</span></span></code></pre></div><p>In other words, by default, this method behaves like the <code>==</code> operator.
 In order to use this method to check whether two objects are equal, it has to be <a href="https://unibz-pp-23-24.github.io/docs/objects/sections/methods/#overriding">overriden</a>.</p>
 <p>For instance, here is a prototypical implementation of the method <code>equals</code> within our class <code>City</code>:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Override</span>

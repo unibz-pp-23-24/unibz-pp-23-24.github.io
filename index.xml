@@ -222,7 +222,7 @@
       <link>https://unibz-pp-23-24.github.io/docs/git/sections/sharing/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/git/sections/sharing/</guid>
-      <description>Synchronization: remote, push, pull # List remotes # To list the remote(s) associated to your repository, you can run&#xA;git remote -v Upload # If the current branch is already shared with a remote, you can upload it with&#xA;git push Otherwise, you can share this branch (and its commits) with&#xA;git push -u &amp;lt;remoteName&amp;gt; &amp;lt;branchName&amp;gt; To delete a remote branch, run&#xA;git push &amp;lt;remoteName&amp;gt; -d &amp;lt;branchName&amp;gt; Alternatively, you can delete a remote branch using the web interface of your hosting service.</description>
+      <description>Synchronization: remote, push, pull # List remotes # To list the remote(s) associated to your repository (name and address of each remote), you can run&#xA;git remote -v Upload # If the current branch is already shared with a remote, you can upload it with&#xA;git push Otherwise, you can share this branch (and its commits) with&#xA;git push -u &amp;lt;remoteName&amp;gt; &amp;lt;branchName&amp;gt; To delete a remote branch, run&#xA;git push &amp;lt;remoteName&amp;gt; -d &amp;lt;branchName&amp;gt; Alternatively, you can delete a remote branch using the web interface of your hosting service.</description>
     </item>
     <item>
       <title>Backtracking</title>
