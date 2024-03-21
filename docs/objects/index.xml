@@ -57,11 +57,18 @@
       <description>Classes as objects # Some object-oriented languages (like Java, C# or C++) provide ways to access or manipulate classes (almost) as if they were objects.&#xA;Static attributes and methods # Static attributes # Java (as well as C# and C++) supports attributes that do not depend on a specific object, but on a class instead. These are often called static attributes (or sometimes class attributes or class variables), as opposed to the attributes that we have seen so far, called instance attributes (or member variables).</description>
     </item>
     <item>
+      <title>Duplicating objects</title>
+      <link>https://unibz-pp-23-24.github.io/docs/objects/sections/clone/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/objects/sections/clone/</guid>
+      <description>Duplicating objects # In some scenarios, it may be useful to duplicate an object.&#xA;In Java, as we saw earlier, copying the value of a variable with reference type does not copy the object that it references. For instance, the following program outputs &amp;ldquo;yellow&amp;rdquo;:&#xA;Unicorn unicorn = new Unicorn(&amp;#34;green&amp;#34;); Unicorn shallowCopy = unicorn; unicorn.color = &amp;#34;yellow&amp;#34;; System.out.println(shallowCopy.color); The need to duplicate an object may for instance appear in a program that uses concurrency.</description>
+    </item>
+    <item>
       <title>Encapsulation</title>
       <link>https://unibz-pp-23-24.github.io/docs/objects/sections/encapsulation/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/objects/sections/encapsulation/</guid>
-      <description>Encapsulation # Encapsulation is a (vague) principle in object-oriented programming that refers to &amp;ldquo;bundling&amp;rdquo; data with the code that operates on it, and restrict visibility of this code and data to other components of a system. From Wikipedia: &amp;ldquo;Essentially, encapsulation prevents external code from being concerned [&amp;hellip;]&amp;rdquo;&#xA;Each component hides its internal logic by exposing only data and methods that other components may need.&#xA;Example. In our game, consider the component that is in charge of rendering the game visually, and let us call it the &amp;ldquo;renderer&amp;rdquo; (for the sake of this example).</description>
+      <description>Encapsulation # Encapsulation is a (vague) principle in object-oriented programming that refers to &amp;ldquo;bundling&amp;rdquo; data with the code that operates on it, and restrict visibility of this code and data to other components of a system. From Wikipedia: &amp;ldquo;Essentially, encapsulation prevents external code from being concerned [&amp;hellip;]&amp;rdquo;&#xA;Each component hides its internal logic by exposing only data and methods that other components may need.&#xA;Example. As we saw earlier, in our game, the &amp;ldquo;view&amp;rdquo; component (which is in charge of rendering the game on screen) may buffer the game snapshots that it receives from the backend, if these snapshots are received faster than they can be displayed.</description>
     </item>
   </channel>
 </rss>

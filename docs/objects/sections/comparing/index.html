@@ -19,7 +19,7 @@ Implicit upcasts on the other hand are very frequent, when the type of an object
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.b055b5b2a067d3d5f2d7a5e0fe6e5d91671d740787959a9f306dcb8d8adba8b5.js" integrity="sha256-sFW1sqBn09Xy16Xg/m5dkWcddAeHlZqfMG3LjYrbqLU=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.4eaed47f3e5737e4aded5b42c7c1a0f9e33f20a1839c144bb8df66ec7d2f764b.js" integrity="sha256-Tq7Ufz5XN&#43;St7VtCx8Gg&#43;eM/IKGDnBRLuN9m7H0vdks=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -335,6 +335,19 @@ https://github.com/alex-shpak/hugo-book
 
   
     <a href="/docs/objects/sections/classesasobjects/" class="">Classes as objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/clone/" class="">Duplicating objects</a>
   
 
         </li>
@@ -786,8 +799,9 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#downcast">Downcast</a></li>
       </ul>
     </li>
-    <li><a href="#object-equality">Object equality</a>
+    <li><a href="#equals">Object equality</a>
       <ul>
+        <li><a href="#recursion">Recursion</a></li>
         <li><a href="#built-in-implementations">Built-in implementations</a></li>
         <li><a href="#hashcode">hashCode</a></li>
       </ul>
@@ -855,9 +869,9 @@ For instance the above example can be modifed as follows:</p>
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>Here the operation <code>(Unicorn) unit</code> is a downcast.
 The output of this operation has type <code>Unicorn</code>, thus allowing the call to the method <code>regen</code>.</p>
-<h2 id="object-equality">
+<h2 id="equals">
   Object equality
-  <a class="anchor" href="#object-equality">#</a>
+  <a class="anchor" href="#equals">#</a>
 </h2>
 <p>As we saw in a <a href="https://unibz-pp-23-24.github.io/docs/objects/sections/classes/#constructor">previous chapter</a>, a constructor in Java creates an object in memory and returns a (fresh) <em>reference</em> to that object.
 Since two objects have different locations in memory, their respective references must differ, <em>even if the objects are identical</em>.</p>
@@ -883,7 +897,7 @@ Consider (a simplified version of) the class <code>City</code> that we saw <a hr
 
 However, in some scenarios, it may be useful to compare the objects themselves, rather than their references.
 Java provides a native method called <code>equals</code> for this purpose.</p>
-<p>Like the method <code>toString</code> that we saw <a href="https://unibz-pp-23-24.github.io/docs/objects/sections/tostring/">earlier</a>, the method <code>equals</code> is a method of the native Java class <code>Object</code>, which is an (implicit) superclass of every other class.
+<p>Like the method <code>toString</code> that we saw <a href="https://unibz-pp-23-24.github.io/docs/objects/sections/tostring/">earlier</a>, the <code>equals</code> is an instance method of the native Java class <code>Object</code>, which is an (implicit) superclass of every other class.
 So every (user-defined of native) class inherits <code>equals</code>.</p>
 <p>Here is the source code of <code>Object.equals</code>:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">equals</span>(Object obj) {
@@ -913,6 +927,15 @@ In order to use this method to check whether two objects are equal, it has to be
 <li>the (safe) downcast from <code>Object</code> to <code>City</code>, and</li>
 <li>the recursive call to <code>equals</code> (because <code>String</code> is not a primitive type).</li>
 </ul>
+<h3 id="recursion">
+  Recursion
+  <a class="anchor" href="#recursion">#</a>
+</h3>
+<blockquote class="book-hint danger">
+  <strong><em>Warning.</em></strong> Similarly to what we saw with the method <a href="https://unibz-pp-23-24.github.io/docs/objects/sections/tostring/#recursion">toString</a>,
+beware of naive (recursive) implementations of <code>equals</code> if your program can create an object that refers to itself (directly or indirectly).
+</blockquote>
+
 <h3 id="built-in-implementations">
   Built-in implementations
   <a class="anchor" href="#built-in-implementations">#</a>
@@ -973,8 +996,9 @@ We will explore this topic later in this course, when introducing the notion of 
         <li><a href="#downcast">Downcast</a></li>
       </ul>
     </li>
-    <li><a href="#object-equality">Object equality</a>
+    <li><a href="#equals">Object equality</a>
       <ul>
+        <li><a href="#recursion">Recursion</a></li>
         <li><a href="#built-in-implementations">Built-in implementations</a></li>
         <li><a href="#hashcode">hashCode</a></li>
       </ul>

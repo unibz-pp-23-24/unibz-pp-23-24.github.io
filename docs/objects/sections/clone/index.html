@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content=" Copying objects # ">
+<meta name="description" content="Duplicating objects # In some scenarios, it may be useful to duplicate an object.
+In Java, as we saw earlier, copying the value of a variable with reference type does not copy the object that it references. For instance, the following program outputs &ldquo;yellow&rdquo;:
+Unicorn unicorn = new Unicorn(&#34;green&#34;); Unicorn shallowCopy = unicorn; unicorn.color = &#34;yellow&#34;; System.out.println(shallowCopy.color); The need to duplicate an object may for instance appear in a program that uses concurrency.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="Copying objects" />
-<meta property="og:description" content=" Copying objects # " />
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Duplicating objects" />
+<meta property="og:description" content="Duplicating objects # In some scenarios, it may be useful to duplicate an object.
+In Java, as we saw earlier, copying the value of a variable with reference type does not copy the object that it references. For instance, the following program outputs &ldquo;yellow&rdquo;:
+Unicorn unicorn = new Unicorn(&#34;green&#34;); Unicorn shallowCopy = unicorn; unicorn.color = &#34;yellow&#34;; System.out.println(shallowCopy.color); The need to duplicate an object may for instance appear in a program that uses concurrency." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/docs/objects/sections/clone/" /><meta property="article:section" content="docs" />
+<meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/objects/sections/clone/" /><meta property="article:section" content="docs" />
 
 
-
-<title>Copying objects | Programming project 2023-24</title>
+<title>Duplicating objects | Programming project 2023-24</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.c159bcc34148094cb7100ffff20f51e4193a61f47e9e93427ea7ef4730469cb0.js" integrity="sha256-wVm8w0FICUy3EA//8g9R5Bk6YfR&#43;npNCfqfvRzBGnLA=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.4eaed47f3e5737e4aded5b42c7c1a0f9e33f20a1839c144bb8df66ec7d2f764b.js" integrity="sha256-Tq7Ufz5XN&#43;St7VtCx8Gg&#43;eM/IKGDnBRLuN9m7H0vdks=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -307,7 +310,46 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/objects/sections/comparison/" class="">Comparing objects</a>
+    <a href="/docs/objects/sections/tostring/" class="">Displaying objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/comparing/" class="">Cast and equality</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classesasobjects/" class="">Classes as objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/clone/" class="active">Duplicating objects</a>
   
 
         </li>
@@ -321,79 +363,6 @@ https://github.com/alex-shpak/hugo-book
 
   
     <a href="/docs/objects/sections/encapsulation/" class="">Encapsulation</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/objects/sections/clone/" class="active">Copying objects</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/objects/sections/quasi-objects/" class="">Quasi-objects</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/objects/sections/casts/" class="">Type checking and cast</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-06ca724a4caafd99788c5f8e355ee319" class="toggle"  />
-    <label for="section-06ca724a4caafd99788c5f8e355ee319" class="flex justify-between">
-      <a href="/docs/encapsulation/" class="">Encapsulation</a>
-    </label>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/encapsulation/sections/visibility/" class="">Visibility</a>
   
 
         </li>
@@ -445,216 +414,6 @@ https://github.com/alex-shpak/hugo-book
 
         </li>
       
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-c6d765e331787103ea5a4c660ad9d263" class="toggle"  />
-    <label for="section-c6d765e331787103ea5a4c660ad9d263" class="flex justify-between">
-      <a href="/docs/collections/" class="">Collections</a>
-    </label>
-  
-
-          
-  <ul>
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-5d60f9e6a9b7c875f51358c583373282" class="toggle"  />
-    <label for="section-5d60f9e6a9b7c875f51358c583373282" class="flex justify-between">
-      <a href="/docs/datastructures/" class="">Data structures</a>
-    </label>
-  
-
-          
-  <ul>
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-1be866adbf7f2244d1773e0d2a159b91" class="toggle"  />
-    <label for="section-1be866adbf7f2244d1773e0d2a159b91" class="flex justify-between">
-      <a href="/docs/recursion/" class="">Recursion</a>
-    </label>
-  
-
-          
-  <ul>
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-b7bc445f96cbe2bd1034c5f1c5d075bb" class="toggle"  />
-    <label for="section-b7bc445f96cbe2bd1034c5f1c5d075bb" class="flex justify-between">
-      <a href="/docs/input/" class="">I/O and serialization</a>
-    </label>
-  
-
-          
-  <ul>
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-baf3ea6e28839ac044570d2d313c8794" class="toggle"  />
-    <label for="section-baf3ea6e28839ac044570d2d313c8794" class="flex justify-between">
-      <a href="/docs/regex/" class="">Regular expressions</a>
-    </label>
-  
-
-          
-  <ul>
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-2cb8fe711c517d9ace405264c9b77bcb" class="toggle"  />
-    <label for="section-2cb8fe711c517d9ace405264c9b77bcb" class="flex justify-between">
-      <a href="/docs/streams/" class="">Streams</a>
-    </label>
-  
-
-          
-  <ul>
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-dfedb17969c9b09e6694374c71130ee4" class="toggle"  />
-    <label for="section-dfedb17969c9b09e6694374c71130ee4" class="flex justify-between">
-      <a href="/docs/concurrency/" class="">Concurrency</a>
-    </label>
-  
-
-          
-  <ul>
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-9d77b970a03dc72b048d9fce7bfe272f" class="toggle"  />
-    <label for="section-9d77b970a03dc72b048d9fce7bfe272f" class="flex justify-between">
-      <a href="/docs/unittests/" class="">Unit tests</a>
-    </label>
-  
-
-          
-  <ul>
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-1de498fc5e7787931a737882aa193936" class="toggle"  />
-    <label for="section-1de498fc5e7787931a737882aa193936" class="flex justify-between">
-      <a href="/docs/ide/" class="">Using an IDE</a>
-    </label>
-  
-
-          
-  <ul>
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-266852d187f25bd262cbe71071953925" class="toggle"  />
-    <label for="section-266852d187f25bd262cbe71071953925" class="flex justify-between">
-      <a href="/docs/factorization/" class="">Code factorization</a>
-    </label>
-  
-
-          
-  <ul>
     
   </ul>
 
@@ -822,7 +581,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/git/sections/basics/" class="">Basics: repository, commit and merge</a>
+    <a href="/docs/git/sections/basics/" class="">Basics: repository, commits and branches</a>
   
 
         </li>
@@ -861,7 +620,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/git/sections/create/" class="">Commands: create or clone a repository</a>
+    <a href="/docs/git/sections/create/" class="">Create or clone a repository</a>
   
 
         </li>
@@ -874,7 +633,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/git/sections/navigate/" class="">Commands: status, log and checkout</a>
+    <a href="/docs/git/sections/commit/" class="">Add, commit, stash</a>
   
 
         </li>
@@ -887,7 +646,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/git/sections/commit/" class="">Commands: commit, add and push</a>
+    <a href="/docs/git/sections/branches/" class="">Branches</a>
   
 
         </li>
@@ -900,7 +659,20 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/git/sections/branches/" class="">Commands: branches</a>
+    <a href="/docs/git/sections/sharing/" class="">Synchronization: remote, push, pull</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/backtracking/" class="">Backtracking</a>
   
 
         </li>
@@ -914,19 +686,6 @@ https://github.com/alex-shpak/hugo-book
 
   
     <a href="/docs/git/sections/ignore/" class="">Ignoring files</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/git/sections/tips/" class="">Tips</a>
   
 
         </li>
@@ -957,27 +716,6 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-44fa5eb3511a340ff4e9042080604b5c" class="toggle"  />
-    <label for="section-44fa5eb3511a340ff4e9042080604b5c" class="flex justify-between">
-      <a href="/docs/build/" class="">Build automation</a>
-    </label>
-  
-
-          
-  <ul>
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
     <input type="checkbox" id="section-ffcf8551871937aae0ce60f2b3cc616b" class="toggle"  />
     <label for="section-ffcf8551871937aae0ce60f2b3cc616b" class="flex justify-between">
       <a href="/docs/background/" class="">Background</a>
@@ -995,92 +733,6 @@ https://github.com/alex-shpak/hugo-book
 
   
     <a href="/docs/background/sections/problem/" class="">Computational problem</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/background/sections/cost/" class="">Computational cost</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/background/sections/graph/" class="">Graphs, trees and lists</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/background/sections/order/" class="">Orders</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/background/sections/set_tuple_map/" class="">Sets, tuples and maps</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-7fbf8d635a58977782e16dc9419d8cdc" class="toggle"  />
-    <label for="section-7fbf8d635a58977782e16dc9419d8cdc" class="flex justify-between">
-      <a href="/docs/template/" class="">Web page template</a>
-    </label>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/template/sections/template/" class="">Stubs</a>
   
 
         </li>
@@ -1127,7 +779,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Copying objects</strong>
+  <strong>Duplicating objects</strong>
 
   <label for="toc-control">
     
@@ -1141,7 +793,16 @@ https://github.com/alex-shpak/hugo-book
   <aside class="hidden clearfix">
     
   
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#deep-copy">Deep copy</a></li>
+    <li><a href="#in-java">in Java</a>
+      <ul>
+        <li><a href="#recursion">Recursion</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 
 
 
@@ -1152,10 +813,111 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown book-article"><h1 id="copying-objects">
-  Copying objects
-  <a class="anchor" href="#copying-objects">#</a>
+  <article class="markdown book-article"><h1 id="duplicating-objects">
+  Duplicating objects
+  <a class="anchor" href="#duplicating-objects">#</a>
 </h1>
+<p>In some scenarios, it may be useful to duplicate an object.</p>
+<p>In Java, as we saw earlier, copying the value of a variable with reference type does <em>not</em> copy the object that it references.
+For instance, the following program outputs &ldquo;yellow&rdquo;:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Unicorn unicorn <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Unicorn(<span style="color:#e6db74">&#34;green&#34;</span>);
+</span></span><span style="display:flex;"><span>Unicorn shallowCopy <span style="color:#f92672">=</span> unicorn;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>unicorn.<span style="color:#a6e22e">color</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;yellow&#34;</span>;
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(shallowCopy.<span style="color:#a6e22e">color</span>);
+</span></span></code></pre></div><p>The need to duplicate an object may for instance appear in a program that uses <em>concurrency</em>.</p>
+
+
+
+
+<div class="book-tabs"><input type="radio" class="toggle" name="tabs-exercise_clone" id="tabs-exercise_clone-0" checked="checked" />
+  <label for="tabs-exercise_clone-0">Exercise</label>
+  <div class="book-tabs-content markdown-inner"><p>In our game, the &ldquo;view&rdquo; component is in charge of rendering the game visually.</p>
+<p>This component exposes a method called <code>drawSnapshot</code> that takes as input a <a href="https://unibz-pp-23-24.github.io/docs/interfaces/sections/java_interfaces/#snapshotExample">game snapshot</a> and draws this snapshot on screen.
+The backend calls this method whenever a snapshot must be drawn.
+However, the backend may send these snapshots <em>faster</em> than they can be displayed (due to the duration of on-screen animations).</p>
+<p>To deal with this scenario, the &ldquo;view&rdquo; <strong>buffers</strong> the snapshots that it receives (displaying a new snapshot only after all previously submitted ones have been displayed).
+For the sake of this exercise, you can think of this buffer as an array with type <code>Snapshot[]</code>.</p>
+<p>Now consider the following method <code>deleteUnit(int x, int y)</code>, executed by our backend each time it receives the instruction to delete a unit:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Backend</span> <span style="color:#66d9ef">implements</span> EventHandler {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    Snapshot currentSnapshot;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">deleteUnit</span>(<span style="color:#66d9ef">int</span> x, <span style="color:#66d9ef">int</span> y){
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>(<span style="color:#f92672">&lt;</span><span style="color:#e6db74">&#34;there is a unit on the tile x, y&#34;</span><span style="color:#f92672">&gt;</span>){
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            removeUnitFromTile(x, y);
+</span></span><span style="display:flex;"><span>            drawSnapshot(currentSnapshot);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            shiftUnitsInColumn(x);
+</span></span><span style="display:flex;"><span>            drawSnapshot(currentSnapshot);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            performUnitMerges();
+</span></span><span style="display:flex;"><span>            drawSnapshot(currentSnapshot);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>where the auxiliary methods <code>removeUnitFromTile</code>, <code>shiftUnitsInColumn</code> and <code>performUnitMerges</code> may modify the object <code>currentSnapshot</code>.</p>
+<p>Observe that the method <code>deleteUnit</code> calls <code>drawSnapshot</code> three times.</p>
+<p>Now let us assume that the buffer of the &ldquo;view&rdquo; is nonempty when this method is executed, so that the 3 snapshots are added to the buffer, before any of them can be rendered on screen.</p>
+<p>How many of these 3 snapshots will be drawn on screen?</p>
+</div></div>
+
+<h2 id="deep-copy">
+  Deep copy
+  <a class="anchor" href="#deep-copy">#</a>
+</h2>
+<p>Copying a <em>reference</em> to an object can be viewed as the shallowest possible form of copy.
+As we saw <a href="https://unibz-pp-23-24.github.io/docs/objects/sections/classes/#javaByValue">already</a>, this is what happens in Java when a variable with reference type is passed as argument.</p>
+<p>At the other end of the spectrum is a so-called <strong>deep copy</strong>, where all attributes of the copied object are duplicated, <em>recursively</em>.
+In this case, the copy or any object that it references (recursively) can be modified without affecting their original counterparts.</p>
+<h2 id="in-java">
+  in Java
+  <a class="anchor" href="#in-java">#</a>
+</h2>
+<p>Java provides a native method called <code>clone</code> to duplicate objects.
+Like the methods <a href="https://unibz-pp-23-24.github.io/docs/objects/sections/tostring/">toString</a> and <a href="https://unibz-pp-23-24.github.io/docs/objects/sections/comparing/">equals</a> that we saw earlier, <code>clone</code> is an instance method of the native Java class <code>Object</code>, which is an (implicit) superclass of every other class.</p>
+<p>The specification of the method clone is arguably vague:</p>
+<blockquote>
+<p>Creates and returns a copy of this object.
+The precise meaning of &ldquo;copy&rdquo; may depend on the class of the object.
+The general intent is that, for any object <code>x</code>, the expression:</p>
+<pre tabindex="0"><code>x.clone() != x
+</code></pre><p>will be true, and that the expression:</p>
+<pre tabindex="0"><code>x.clone().getClass() == x.getClass()
+</code></pre><p>will be <code>true</code>, but these are not absolute requirements.</p>
+<p>While it is typically the case that
+<code>x.clone().equals(x)</code>
+will be true, this is not an absolute requirement.</p>
+</blockquote>
+<blockquote class="book-hint warning">
+  <p><strong><em>Note.</em></strong> A class that overrides <code>clone</code> must implement the interface <code>Cloneable</code>,
+otherwise the program will throw a <code>CloneNotSupportedException</code> when this method is called.
+For instance:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Unicorn</span> <span style="color:#66d9ef">implements</span> Cloneable {
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> Unicorn <span style="color:#a6e22e">clone</span>(){
+</span></span><span style="display:flex;"><span>        ...
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The interface <code>Cloneable</code> does not require implementing any additional method.</p>
+
+</blockquote>
+
+<h3 id="recursion">
+  Recursion
+  <a class="anchor" href="#recursion">#</a>
+</h3>
+<blockquote class="book-hint danger">
+  <strong><em>Warning.</em></strong> Similarly to what we saw with the methods <a href="https://unibz-pp-23-24.github.io/docs/objects/sections/tostring/#recursion">toString</a> or <a href="https://unibz-pp-23-24.github.io/docs/objects/sections/comparing/#recursion">equals</a>,
+beware of recursive implementations of <code>clone</code> if your program can create an object that refers to itself (directly or indirectly).
+</blockquote>
+
 </article>
  
       
@@ -1195,7 +957,16 @@ https://github.com/alex-shpak/hugo-book
       <div class="book-toc-content">
         
   
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#deep-copy">Deep copy</a></li>
+    <li><a href="#in-java">in Java</a>
+      <ul>
+        <li><a href="#recursion">Recursion</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 
 
  
