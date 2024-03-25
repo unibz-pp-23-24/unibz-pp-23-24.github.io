@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Duplicating objects # In some scenarios, it may be useful to duplicate an object.
 In Java, as we saw earlier, copying the value of a variable with reference type does not copy the object that it references. For instance, the following program outputs &ldquo;yellow&rdquo;:
-Unicorn unicorn = new Unicorn(&#34;green&#34;); Unicorn shallowCopy = unicorn; unicorn.color = &#34;yellow&#34;; System.out.println(shallowCopy.color); The need to duplicate an object may for instance appear in a program that uses concurrency.">
+Unicorn unicorn = new Unicorn(&#34;green&#34;); Unicorn shallowCopy = unicorn; unicorn.color = &#34;yellow&#34;; System.out.println(shallowCopy.color); The need to duplicate objects may notably appear in a program that rely on concurrency.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="Duplicating objects" />
 <meta property="og:description" content="Duplicating objects # In some scenarios, it may be useful to duplicate an object.
 In Java, as we saw earlier, copying the value of a variable with reference type does not copy the object that it references. For instance, the following program outputs &ldquo;yellow&rdquo;:
-Unicorn unicorn = new Unicorn(&#34;green&#34;); Unicorn shallowCopy = unicorn; unicorn.color = &#34;yellow&#34;; System.out.println(shallowCopy.color); The need to duplicate an object may for instance appear in a program that uses concurrency." />
+Unicorn unicorn = new Unicorn(&#34;green&#34;); Unicorn shallowCopy = unicorn; unicorn.color = &#34;yellow&#34;; System.out.println(shallowCopy.color); The need to duplicate objects may notably appear in a program that rely on concurrency." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/objects/sections/clone/" /><meta property="article:section" content="docs" />
 
@@ -21,7 +21,7 @@ Unicorn unicorn = new Unicorn(&#34;green&#34;); Unicorn shallowCopy = unicorn; u
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.4eaed47f3e5737e4aded5b42c7c1a0f9e33f20a1839c144bb8df66ec7d2f764b.js" integrity="sha256-Tq7Ufz5XN&#43;St7VtCx8Gg&#43;eM/IKGDnBRLuN9m7H0vdks=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.6890e65f49e50c1ac0e1e22c651fbfa3da33a217290190e9096b17625a73e1b7.js" integrity="sha256-aJDmX0nlDBrA4eIsZR&#43;/o9ozohcpAZDpCWsXYlpz4bc=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -362,7 +362,33 @@ https://github.com/alex-shpak/hugo-book
   
 
   
+    <a href="/docs/objects/sections/quasi-objects/" class="">Quasi-objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
     <a href="/docs/objects/sections/encapsulation/" class="">Encapsulation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/quiz/" class="">Quiz</a>
   
 
         </li>
@@ -795,10 +821,11 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#deep-copy">Deep copy</a></li>
+    <li><a href="#shallow-deep-and-hybrid-copy">Shallow, deep and hybrid copy</a></li>
     <li><a href="#in-java">in Java</a>
       <ul>
-        <li><a href="#recursion">Recursion</a></li>
+        <li><a href="#copy-constructor">Copy constructor</a></li>
+        <li><a href="#the-method-clone">The method <code>clone</code></a></li>
       </ul>
     </li>
   </ul>
@@ -825,7 +852,7 @@ For instance, the following program outputs &ldquo;yellow&rdquo;:</p>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>unicorn.<span style="color:#a6e22e">color</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;yellow&#34;</span>;
 </span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(shallowCopy.<span style="color:#a6e22e">color</span>);
-</span></span></code></pre></div><p>The need to duplicate an object may for instance appear in a program that uses <em>concurrency</em>.</p>
+</span></span></code></pre></div><p>The need to duplicate objects may notably appear in a program that rely on <em>concurrency</em>.</p>
 
 
 
@@ -857,6 +884,8 @@ For the sake of this exercise, you can think of this buffer as an array with typ
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>            performUnitMerges();
 </span></span><span style="display:flex;"><span>            drawSnapshot(currentSnapshot);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            ...
 </span></span><span style="display:flex;"><span>        }
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
@@ -866,56 +895,88 @@ For the sake of this exercise, you can think of this buffer as an array with typ
 <p>How many of these 3 snapshots will be drawn on screen?</p>
 </div></div>
 
-<h2 id="deep-copy">
-  Deep copy
-  <a class="anchor" href="#deep-copy">#</a>
+<h2 id="shallow-deep-and-hybrid-copy">
+  Shallow, deep and hybrid copy
+  <a class="anchor" href="#shallow-deep-and-hybrid-copy">#</a>
 </h2>
 <p>Copying a <em>reference</em> to an object can be viewed as the shallowest possible form of copy.
 As we saw <a href="https://unibz-pp-23-24.github.io/docs/objects/sections/classes/#javaByValue">already</a>, this is what happens in Java when a variable with reference type is passed as argument.</p>
 <p>At the other end of the spectrum is a so-called <strong>deep copy</strong>, where all attributes of the copied object are duplicated, <em>recursively</em>.
 In this case, the copy or any object that it references (recursively) can be modified without affecting their original counterparts.</p>
+<p>Between these two extremes:</p>
+<ul>
+<li>a <strong>shallow copy</strong> creates a new object (with fresh attributes), but does not copy referenced objects recursively,</li>
+<li>a <strong>hybrid copy</strong> is anything between a shallow copy and a deep copy.</li>
+</ul>
 <h2 id="in-java">
   in Java
   <a class="anchor" href="#in-java">#</a>
 </h2>
-<p>Java provides a native method called <code>clone</code> to duplicate objects.
-Like the methods <a href="https://unibz-pp-23-24.github.io/docs/objects/sections/tostring/">toString</a> and <a href="https://unibz-pp-23-24.github.io/docs/objects/sections/comparing/">equals</a> that we saw earlier, <code>clone</code> is an instance method of the native Java class <code>Object</code>, which is an (implicit) superclass of every other class.</p>
-<p>The specification of the method clone is arguably vague:</p>
-<blockquote>
-<p>Creates and returns a copy of this object.
-The precise meaning of &ldquo;copy&rdquo; may depend on the class of the object.
-The general intent is that, for any object <code>x</code>, the expression:</p>
-<pre tabindex="0"><code>x.clone() != x
-</code></pre><p>will be true, and that the expression:</p>
-<pre tabindex="0"><code>x.clone().getClass() == x.getClass()
-</code></pre><p>will be <code>true</code>, but these are not absolute requirements.</p>
-<p>While it is typically the case that
-<code>x.clone().equals(x)</code>
-will be true, this is not an absolute requirement.</p>
-</blockquote>
+<h3 id="copy-constructor">
+  Copy constructor
+  <a class="anchor" href="#copy-constructor">#</a>
+</h3>
 <blockquote class="book-hint warning">
-  <p><strong><em>Note.</em></strong> A class that overrides <code>clone</code> must implement the interface <code>Cloneable</code>,
-otherwise the program will throw a <code>CloneNotSupportedException</code> when this method is called.
-For instance:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Unicorn</span> <span style="color:#66d9ef">implements</span> Cloneable {
-</span></span><span style="display:flex;"><span>    ...
+  A copy can be performed in Java with a so-called <strong>copy constructor</strong>.
+This is an additional constructor that takes an instance of the class as input, and returns a copy of this instance.
+</blockquote>
+
+<p>For example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Hero</span> {
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> Unicorn <span style="color:#a6e22e">clone</span>(){
-</span></span><span style="display:flex;"><span>        ...
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> health;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// standard constructor</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Hero</span>(){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">health</span> <span style="color:#f92672">=</span> 10;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// copy constructor</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Hero</span>(Hero original){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">health</span> <span style="color:#f92672">=</span> original.<span style="color:#a6e22e">health</span>;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>The interface <code>Cloneable</code> does not require implementing any additional method.</p>
-
+</span></span></code></pre></div><p>In order to perform a deep(er) copy, a copy constructor may call another copy constructor.
+For example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Snapshot</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    Hero firstHero;
+</span></span><span style="display:flex;"><span>    Hero secondHero;
+</span></span><span style="display:flex;"><span>    Board board;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> remainingActions;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// standard constructor</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Snapshot</span>(Hero firstHero, Hero secondHero, Board board,
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">int</span> remainingActions){
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// some code here</span>
+</span></span><span style="display:flex;"><span>        ...
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// copy constructor</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Snapshot</span>(Snapshot original){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">firstHero</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Hero(original.<span style="color:#a6e22e">firstHero</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">secondHero</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Hero(original.<span style="color:#a6e22e">secondHero</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">board</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Board(original.<span style="color:#a6e22e">board</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">remainingActions</span> <span style="color:#f92672">=</span> original.<span style="color:#a6e22e">remainingActions</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><blockquote class="book-hint danger">
+  <strong><em>Warning.</em></strong> Similarly to what we saw with the methods <a href="https://unibz-pp-23-24.github.io/docs/objects/sections/tostring/#recursion">toString</a> or <a href="https://unibz-pp-23-24.github.io/docs/objects/sections/comparing/#recursion">equals</a>,
+beware of recursive implementations of copy constructors, if your program can create an object that refers to itself (directly or indirectly).
 </blockquote>
 
-<h3 id="recursion">
-  Recursion
-  <a class="anchor" href="#recursion">#</a>
+<h3 id="the-method-clone">
+  The method <code>clone</code>
+  <a class="anchor" href="#the-method-clone">#</a>
 </h3>
+<p>Java also provides a native method called <a href="https://en.wikipedia.org/wiki/Clone_%28Java_method%29">clone</a> to duplicate objects.
+Like the methods <a href="https://unibz-pp-23-24.github.io/docs/objects/sections/tostring/">toString</a> and <a href="https://unibz-pp-23-24.github.io/docs/objects/sections/comparing/">equals</a> that we saw earlier, <code>clone</code> is an instance method of the native Java class <code>Object</code>, which is an (implicit) superclass of every other class.</p>
+<p>Overriding <code>clone</code> can be more concise than using a copy constructor (especially for a class with a large number of attributes).</p>
 <blockquote class="book-hint danger">
-  <strong><em>Warning.</em></strong> Similarly to what we saw with the methods <a href="https://unibz-pp-23-24.github.io/docs/objects/sections/tostring/#recursion">toString</a> or <a href="https://unibz-pp-23-24.github.io/docs/objects/sections/comparing/#recursion">equals</a>,
-beware of recursive implementations of <code>clone</code> if your program can create an object that refers to itself (directly or indirectly).
+  <strong><em>Warning.</em></strong>
+Overriding <code>clone</code> can be <em>error-prone</em>, especially in presence of a class hierarchy (see <a href="https://unibz-pp-23-24.github.io/docs/intro/sections/bibliography/#effectiveJava">Effective Java</a>, Item 13 for further insight).
+Notably, the overriding class must implement the <code>Cloneable</code> interface, and an implementation of <code>clone</code> usually calls <code>super.clone</code> recursively (even for a class whose only superclass is <code>Object</code>).
+For these reasons, overriding <code>clone</code> is sometimes discouraged, in favor of conceptually simpler solutions (like copy constructors).
 </blockquote>
 
 </article>
@@ -959,10 +1020,11 @@ beware of recursive implementations of <code>clone</code> if your program can cr
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#deep-copy">Deep copy</a></li>
+    <li><a href="#shallow-deep-and-hybrid-copy">Shallow, deep and hybrid copy</a></li>
     <li><a href="#in-java">in Java</a>
       <ul>
-        <li><a href="#recursion">Recursion</a></li>
+        <li><a href="#copy-constructor">Copy constructor</a></li>
+        <li><a href="#the-method-clone">The method <code>clone</code></a></li>
       </ul>
     </li>
   </ul>

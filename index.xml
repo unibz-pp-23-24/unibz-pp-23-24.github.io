@@ -166,7 +166,7 @@
       <link>https://unibz-pp-23-24.github.io/docs/objects/sections/tostring/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/objects/sections/tostring/</guid>
-      <description>Displaying objects # The class Object # Java has a native class called Object with 11 instance methods. Every Java class implicitly extends Object, including user-defined classes. Therefore any Java class inherits these methods. toString # toString is one of the methods of the class Object. Here is (part of) its specification:&#xA;/** Returns a string representation of the object. * In general, the toString method returns a string that * &amp;#34;textually represents&amp;#34; this object.</description>
+      <description>Displaying objects # The class Object # Java has a native class called Object with 11 instance methods. Every Java class implicitly extends Object, including user-defined classes. Therefore any Java class inherits these methods. The method toString # toString is one of the methods of the class Object. Here is (part of) its specification:&#xA;/** Returns a string representation of the object. * In general, the toString method returns a string that * &amp;#34;textually represents&amp;#34; this object.</description>
     </item>
     <item>
       <title>Operating system</title>
@@ -236,7 +236,7 @@
       <link>https://unibz-pp-23-24.github.io/docs/objects/sections/clone/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/objects/sections/clone/</guid>
-      <description>Duplicating objects # In some scenarios, it may be useful to duplicate an object.&#xA;In Java, as we saw earlier, copying the value of a variable with reference type does not copy the object that it references. For instance, the following program outputs &amp;ldquo;yellow&amp;rdquo;:&#xA;Unicorn unicorn = new Unicorn(&amp;#34;green&amp;#34;); Unicorn shallowCopy = unicorn; unicorn.color = &amp;#34;yellow&amp;#34;; System.out.println(shallowCopy.color); The need to duplicate an object may for instance appear in a program that uses concurrency.</description>
+      <description>Duplicating objects # In some scenarios, it may be useful to duplicate an object.&#xA;In Java, as we saw earlier, copying the value of a variable with reference type does not copy the object that it references. For instance, the following program outputs &amp;ldquo;yellow&amp;rdquo;:&#xA;Unicorn unicorn = new Unicorn(&amp;#34;green&amp;#34;); Unicorn shallowCopy = unicorn; unicorn.color = &amp;#34;yellow&amp;#34;; System.out.println(shallowCopy.color); The need to duplicate objects may notably appear in a program that rely on concurrency.</description>
     </item>
     <item>
       <title>Text editor</title>
@@ -251,6 +251,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/env/sections/eval/</guid>
       <description>Evaluation environment # The evaluation environment for your project is a virtual machine (with Ubuntu 20) deployed on Microsoft Azure. You are not supposed to develop on this machine, but your project must run in this environment to be evaluated.&#xA;Each student gets his or her own clone of the original machine. Maven, Gradle, git and a Java 17 JDK are already installed. You will also be granted administrator rights, so that you can install additional software (if any) needed to run your project.</description>
+    </item>
+    <item>
+      <title>Quasi-objects</title>
+      <link>https://unibz-pp-23-24.github.io/docs/objects/sections/quasi-objects/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/objects/sections/quasi-objects/</guid>
+      <description>Quasi-objects # Enumerated types # Most imperative languages allow the creation of so-called enumerated types.&#xA;An enumerated type is a datatype for a finite set or enumerated values. For instance, if our game only allows &amp;ldquo;blue&amp;rdquo;, &amp;ldquo;green&amp;rdquo; and &amp;ldquo;red&amp;rdquo; as unit colors, then we may create a dedicated type that only allows these three values.&#xA;In Java # An enumerated type in Java is a set of constants. These constants are effectively static, meaning that they depends on the class or interface where the enumerated type is declared (similarly to a static attribute).</description>
     </item>
     <item>
       <title>Ignoring files</title>
@@ -279,6 +286,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/git/sections/resources/</guid>
       <description>To go further # Here is a brief selection of resources about git (among many):&#xA;a (short) video that goes beyond the content of this chapter, the Atlassian git tutorials, the GitHub training material, guidelines about how to write an informative (yet readable) commit message. Misc # Here is a link to git&amp;rsquo;s very first commit.</description>
+    </item>
+    <item>
+      <title>Quiz</title>
+      <link>https://unibz-pp-23-24.github.io/docs/objects/sections/quiz/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/objects/sections/quiz/</guid>
+      <description>Quiz # To answer the quiz (and check your answers), click here or scan this code:&#xA;Boxed type # public class City { int population; public City (int population){ this.population = population; } } int myInteger = 1; Integer myBoxedInteger = 1; Integer myBoxedCopy = myInteger; City myCity = new City(5000); myMethod(myInteger, myBoxedInteger, myBoxedCopy, myCity); System.out.println( myInteger + &amp;#34;, &amp;#34;+ myBoxedInteger + &amp;#34;, &amp;#34;+ myBoxedCopy + &amp;#34;,&amp;#34; + myCity.population); void myMethod(int integer, Integer boxedInteger, Integer boxedCopy, City city) { integer += 1; boxedInteger += 1; boxedCopy += 1; city.</description>
     </item>
   </channel>
 </rss>
