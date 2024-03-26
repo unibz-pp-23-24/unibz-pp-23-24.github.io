@@ -26,7 +26,7 @@
       <link>https://unibz-pp-23-24.github.io/docs/git/sections/config/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/git/sections/config/</guid>
-      <description>Configuration # Text editor # In some situations (commit without message, merge commit, etc.), git automatically opens a text editor to let you type a message.&#xA;By default, on most operating systems, git open vi for this purpose. I you have never used vi, we recommend selecting another text editor.&#xA;You can do this by running:&#xA;git config --global core.editor &amp;lt;myEditor&amp;gt; where &amp;lt;myEditor&amp;gt; is the command that launches your text editor (for instance notepad for Notepad, textedit for TextEdit , gedit for gedit, sublime for Sublime Text, etc.</description>
+      <description>Configuration # Text editor # In some situations (commit without message, merge commit, etc.), git automatically opens a text editor to let you type a message.&#xA;By default, on most operating systems, git open vi for this purpose. I you have never used vi, we recommend selecting another text editor.&#xA;You can do this by running:&#xA;git config --global core.editor &amp;lt;myEditor&amp;gt; where &amp;lt;myEditor&amp;gt; is the command that launches your text editor (for instance notepad for Notepad, open -e -W -n for TextEdit , gedit for gedit, sublime for Sublime Text, etc.</description>
     </item>
     <item>
       <title>Create or clone a repository</title>

@@ -21,7 +21,7 @@ Unicorn unicorn = new Unicorn(&#34;green&#34;); Unicorn shallowCopy = unicorn; u
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.6890e65f49e50c1ac0e1e22c651fbfa3da33a217290190e9096b17625a73e1b7.js" integrity="sha256-aJDmX0nlDBrA4eIsZR&#43;/o9ozohcpAZDpCWsXYlpz4bc=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.7fcf56ebf4b923ed65c3723452653e8cd35ca243f4d216f41b1682824f86e052.js" integrity="sha256-f89W6/S5I&#43;1lw3I0UmU&#43;jNNcokP00hb0GxaCgk&#43;G4FI=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -893,7 +893,9 @@ For the sake of this exercise, you can think of this buffer as an array with typ
 <p>Observe that the method <code>deleteUnit</code> calls <code>drawSnapshot</code> three times.</p>
 <p>Now let us assume that the buffer of the &ldquo;view&rdquo; is nonempty when this method is executed, so that the 3 snapshots are added to the buffer, before any of them can be rendered on screen.</p>
 <p>How many of these 3 snapshots will be drawn on screen?</p>
-</div></div>
+</div><input type="radio" class="toggle" name="tabs-exercise_clone" id="tabs-exercise_clone-1"  />
+  <label for="tabs-exercise_clone-1">Solution</label>
+  <div class="book-tabs-content markdown-inner">Only the third snapshot will be drawn (three times), because the buffer contains three references to the same object.</div></div>
 
 <h2 id="shallow-deep-and-hybrid-copy">
   Shallow, deep and hybrid copy
