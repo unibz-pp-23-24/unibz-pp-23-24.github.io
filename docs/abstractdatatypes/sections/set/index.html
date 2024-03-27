@@ -21,7 +21,7 @@ add: adds an element to the set if it was not present already (and returns true 
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.7f6341c580d65b616fd98034cbcf11e09269588f4c1d079e32393fa5393c5082.js" integrity="sha256-f2NBxYDWW2Fv2YA0y88R4JJpWI9MHQeeMjk/pTk8UII=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.c33bec47327744160c9d948b4ebb026935cc48ffee6c8c9e3da0613ce9b033a2.js" integrity="sha256-wzvsRzJ3RBYMnZSLTrsCaTXMSP/ubIyePaBhPOmwM6I=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1096,7 +1096,8 @@ Again, we refer to the <a href="https://docs.oracle.com/javase/8/docs/api/java/u
 Consider an implementation where:</p>
 <ul>
 <li>a board consists of a two-dimensional array of instance of the class <code>Unit</code>, and</li>
-<li>if a same unit sits on several tiles, then these tiles contain (a reference to) the same instance of <code>Unit</code>.</li>
+<li>if a same unit sits on several tiles, then these tiles contain (a reference to) the same instance of <code>Unit</code>, and</li>
+<li><code>Unit</code> does <em>not</em> override <code>equals</code> (neither do its sub or superclasses).</li>
 </ul>
 <p>Write a Java method that takes such an array as input, and returns the number of different units on the board.</p>
 <p>For instance, with the board below as input, the method should return 5.</p>
