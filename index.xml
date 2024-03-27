@@ -78,11 +78,25 @@
       <description>Java interfaces # A Java interface is a programming interface with additional (object-oriented) features.&#xA;Syntactically, a Java interface is similar to a class. But (in its simplest form), it contains no code. Instead, it specifies the behavior of some methods (which are implemented in some classes).&#xA;Examples # The implementation of our game contains an interface called Snapshot, which describes what a game snapshot is. This interface specifies (among others) a method called getSizeOfReinforcement, as follows:</description>
     </item>
     <item>
+      <title>List</title>
+      <link>https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/list/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/list/</guid>
+      <description>List # The abstract data type list simulates a tuple. Accordingly, a list may contain duplicates.&#xA;A list may expose the following methods:&#xA;isEmpty is self-explanatory, append adds an element at the end of the list, prepend adds an element at the beginning of the list, tail returns the sub-list identical to the current one, but without its first element, etc. Note. The size of a list is often unbounded (as opposed to the size of an array for instance).</description>
+    </item>
+    <item>
       <title>Option 2: board game</title>
       <link>https://unibz-pp-23-24.github.io/docs/project/sections/board_game/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/project/sections/board_game/</guid>
       <description>Option 2: board game # The second project option available to you consists in developing a video game with mechanics analogous to the ones of Might &amp;amp; Magic: Clash of Heroes or Legend of Solgard.&#xA;If you choose this option, you will be provided:&#xA;a basic graphical user interface (GUI) that you can reuse and/or customize, examples during lectures that you may adapt to your project. Requirements # The minimal requirement to submit your project is a player vs player game playable on a single machine.</description>
+    </item>
+    <item>
+      <title>Set, tuple, function</title>
+      <link>https://unibz-pp-23-24.github.io/docs/background/sections/set_tuple_map/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/background/sections/set_tuple_map/</guid>
+      <description>Set, tuple, function # Set # A set can be informally viewed as a collection of elements with no duplicate and in no specific order. Definition. The product \( S_1 \times S_2 \) of two sets \(S_1\) and \(S_2\) is the set of all pairs \((s_1, s_2)\) such that \(s_1 \in S_1\) and \( s_2 \in S_2\) .&#xA;For instance, if \( S_1 = \{a,b\} \) and \(S_2 = \{1,2,3\} \) , then</description>
     </item>
     <item>
       <title>Teaching staff</title>
@@ -174,6 +188,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/env/sections/os/</guid>
       <description>Operating system (OS) # Your computer does not bind you to one OS. You can run multiple OSs on the same computer by:&#xA;partitioning your disk, or booting from an external drive, or using virtualisation. Depending on what you are developing, one operating system may be more convenient than another.&#xA;We review below some of the benefits and drawbacks of developing under Windows, macOS and Linux.&#xA;Windows # Benefits and drawbacks # Here are some benefits of using Windows as your OS for software development:</description>
+    </item>
+    <item>
+      <title>Set</title>
+      <link>https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/set/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/set/</guid>
+      <description>Set # The abstract data type set simulates a (usually finite) mathematical set.&#xA;A set may expose the following methods:&#xA;add: adds an element to the set if it was not present already (and returns true iff this was the case), contains: checks whether an element belongs to the set, size: returns the cardinality of the set, etc. Warning. A set provides no guarantee on the order of its elements!</description>
     </item>
     <item>
       <title>Bibliography</title>

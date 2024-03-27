@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content=" Sets, tuples and maps # ">
+<meta name="description" content="Set, tuple, function # Set # A set can be informally viewed as a collection of elements with no duplicate and in no specific order. Definition. The product \( S_1 \times S_2 \) of two sets \(S_1\) and \(S_2\) is the set of all pairs \((s_1, s_2)\) such that \(s_1 \in S_1\) and \( s_2 \in S_2\) .
+For instance, if \( S_1 = \{a,b\} \) and \(S_2 = \{1,2,3\} \) , then">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="Sets, tuples and maps" />
-<meta property="og:description" content=" Sets, tuples and maps # " />
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Set, tuple, function" />
+<meta property="og:description" content="Set, tuple, function # Set # A set can be informally viewed as a collection of elements with no duplicate and in no specific order. Definition. The product \( S_1 \times S_2 \) of two sets \(S_1\) and \(S_2\) is the set of all pairs \((s_1, s_2)\) such that \(s_1 \in S_1\) and \( s_2 \in S_2\) .
+For instance, if \( S_1 = \{a,b\} \) and \(S_2 = \{1,2,3\} \) , then" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/docs/background/sections/set_tuple_map/" /><meta property="article:section" content="docs" />
+<meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/background/sections/set_tuple_map/" /><meta property="article:section" content="docs" />
 
 
-
-<title>Sets, tuples and maps | Programming project 2023-24</title>
+<title>Set, tuple, function | Programming project 2023-24</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.c159bcc34148094cb7100ffff20f51e4193a61f47e9e93427ea7ef4730469cb0.js" integrity="sha256-wVm8w0FICUy3EA//8g9R5Bk6YfR&#43;npNCfqfvRzBGnLA=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.7f6341c580d65b616fd98034cbcf11e09269588f4c1d079e32393fa5393c5082.js" integrity="sha256-f2NBxYDWW2Fv2YA0y88R4JJpWI9MHQeeMjk/pTk8UII=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -307,7 +308,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/objects/sections/comparison/" class="">Comparing objects</a>
+    <a href="/docs/objects/sections/tostring/" class="">Displaying objects</a>
   
 
         </li>
@@ -320,7 +321,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/objects/sections/encapsulation/" class="">Encapsulation</a>
+    <a href="/docs/objects/sections/comparing/" class="">Cast and equality</a>
   
 
         </li>
@@ -333,7 +334,20 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/objects/sections/clone/" class="">Copying objects</a>
+    <a href="/docs/objects/sections/classesasobjects/" class="">Classes as objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/clone/" class="">Duplicating objects</a>
   
 
         </li>
@@ -359,13 +373,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/objects/sections/casts/" class="">Type checking and cast</a>
+    <a href="/docs/objects/sections/encapsulation/" class="">Encapsulation</a>
   
-
-        </li>
-      
-    
-  </ul>
 
         </li>
       
@@ -377,23 +386,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-06ca724a4caafd99788c5f8e355ee319" class="toggle"  />
-    <label for="section-06ca724a4caafd99788c5f8e355ee319" class="flex justify-between">
-      <a href="/docs/encapsulation/" class="">Encapsulation</a>
-    </label>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/encapsulation/sections/visibility/" class="">Visibility</a>
+    <a href="/docs/objects/sections/quiz/" class="">Quiz</a>
   
 
         </li>
@@ -458,16 +451,24 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-c6d765e331787103ea5a4c660ad9d263" class="toggle"  />
-    <label for="section-c6d765e331787103ea5a4c660ad9d263" class="flex justify-between">
-      <a href="/docs/collections/" class="">Collections</a>
+    <input type="checkbox" id="section-e06acd393c0cc6e5b27e2cd8945d3dd8" class="toggle"  />
+    <label for="section-e06acd393c0cc6e5b27e2cd8945d3dd8" class="flex justify-between">
+      <a href="/docs/abstractdatatypes/" class="">Abstract data types</a>
     </label>
   
 
           
   <ul>
     
-  </ul>
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/list/" class="">List</a>
+  
 
         </li>
       
@@ -479,182 +480,11 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-5d60f9e6a9b7c875f51358c583373282" class="toggle"  />
-    <label for="section-5d60f9e6a9b7c875f51358c583373282" class="flex justify-between">
-      <a href="/docs/datastructures/" class="">Data structures</a>
-    </label>
+    <a href="/docs/abstractdatatypes/sections/set/" class="">Set</a>
   
-
-          
-  <ul>
-    
-  </ul>
 
         </li>
       
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-1be866adbf7f2244d1773e0d2a159b91" class="toggle"  />
-    <label for="section-1be866adbf7f2244d1773e0d2a159b91" class="flex justify-between">
-      <a href="/docs/recursion/" class="">Recursion</a>
-    </label>
-  
-
-          
-  <ul>
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-b7bc445f96cbe2bd1034c5f1c5d075bb" class="toggle"  />
-    <label for="section-b7bc445f96cbe2bd1034c5f1c5d075bb" class="flex justify-between">
-      <a href="/docs/input/" class="">I/O and serialization</a>
-    </label>
-  
-
-          
-  <ul>
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-baf3ea6e28839ac044570d2d313c8794" class="toggle"  />
-    <label for="section-baf3ea6e28839ac044570d2d313c8794" class="flex justify-between">
-      <a href="/docs/regex/" class="">Regular expressions</a>
-    </label>
-  
-
-          
-  <ul>
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-2cb8fe711c517d9ace405264c9b77bcb" class="toggle"  />
-    <label for="section-2cb8fe711c517d9ace405264c9b77bcb" class="flex justify-between">
-      <a href="/docs/streams/" class="">Streams</a>
-    </label>
-  
-
-          
-  <ul>
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-dfedb17969c9b09e6694374c71130ee4" class="toggle"  />
-    <label for="section-dfedb17969c9b09e6694374c71130ee4" class="flex justify-between">
-      <a href="/docs/concurrency/" class="">Concurrency</a>
-    </label>
-  
-
-          
-  <ul>
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-9d77b970a03dc72b048d9fce7bfe272f" class="toggle"  />
-    <label for="section-9d77b970a03dc72b048d9fce7bfe272f" class="flex justify-between">
-      <a href="/docs/unittests/" class="">Unit tests</a>
-    </label>
-  
-
-          
-  <ul>
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-1de498fc5e7787931a737882aa193936" class="toggle"  />
-    <label for="section-1de498fc5e7787931a737882aa193936" class="flex justify-between">
-      <a href="/docs/ide/" class="">Using an IDE</a>
-    </label>
-  
-
-          
-  <ul>
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-266852d187f25bd262cbe71071953925" class="toggle"  />
-    <label for="section-266852d187f25bd262cbe71071953925" class="flex justify-between">
-      <a href="/docs/factorization/" class="">Code factorization</a>
-    </label>
-  
-
-          
-  <ul>
     
   </ul>
 
@@ -822,7 +652,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/git/sections/basics/" class="">Basics: repository, commit and merge</a>
+    <a href="/docs/git/sections/basics/" class="">Basics: repository, commits and branches</a>
   
 
         </li>
@@ -861,7 +691,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/git/sections/create/" class="">Commands: create or clone a repository</a>
+    <a href="/docs/git/sections/create/" class="">Create or clone a repository</a>
   
 
         </li>
@@ -874,7 +704,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/git/sections/navigate/" class="">Commands: status, log and checkout</a>
+    <a href="/docs/git/sections/commit/" class="">Add, commit, stash</a>
   
 
         </li>
@@ -887,7 +717,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/git/sections/commit/" class="">Commands: commit, add and push</a>
+    <a href="/docs/git/sections/branches/" class="">Branches</a>
   
 
         </li>
@@ -900,7 +730,20 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/git/sections/branches/" class="">Commands: branches</a>
+    <a href="/docs/git/sections/sharing/" class="">Synchronization: remote, push, pull</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/backtracking/" class="">Backtracking</a>
   
 
         </li>
@@ -926,45 +769,11 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/git/sections/tips/" class="">Tips</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
     <a href="/docs/git/sections/resources/" class="">To go further</a>
   
 
         </li>
       
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-44fa5eb3511a340ff4e9042080604b5c" class="toggle"  />
-    <label for="section-44fa5eb3511a340ff4e9042080604b5c" class="flex justify-between">
-      <a href="/docs/build/" class="">Build automation</a>
-    </label>
-  
-
-          
-  <ul>
     
   </ul>
 
@@ -1007,80 +816,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/background/sections/cost/" class="">Computational cost</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/background/sections/graph/" class="">Graphs, trees and lists</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/background/sections/order/" class="">Orders</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/background/sections/set_tuple_map/" class="active">Sets, tuples and maps</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-7fbf8d635a58977782e16dc9419d8cdc" class="toggle"  />
-    <label for="section-7fbf8d635a58977782e16dc9419d8cdc" class="flex justify-between">
-      <a href="/docs/template/" class="">Web page template</a>
-    </label>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/template/sections/template/" class="">Stubs</a>
+    <a href="/docs/background/sections/set_tuple_map/" class="active">Set, tuple, function</a>
   
 
         </li>
@@ -1127,7 +863,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Sets, tuples and maps</strong>
+  <strong>Set, tuple, function</strong>
 
   <label for="toc-control">
     
@@ -1141,7 +877,14 @@ https://github.com/alex-shpak/hugo-book
   <aside class="hidden clearfix">
     
   
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#set">Set</a></li>
+    <li><a href="#tuple">Tuple</a></li>
+    <li><a href="#function">Function</a></li>
+    <li><a href="#multiset">Multiset</a></li>
+  </ul>
+</nav>
 
 
 
@@ -1152,10 +895,218 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown book-article"><h1 id="sets-tuples-and-maps">
-  Sets, tuples and maps
-  <a class="anchor" href="#sets-tuples-and-maps">#</a>
+  <article class="markdown book-article"><h1 id="set-tuple-function">
+  Set, tuple, function
+  <a class="anchor" href="#set-tuple-function">#</a>
 </h1>
+<h2 id="set">
+  Set
+  <a class="anchor" href="#set">#</a>
+</h2>
+<blockquote class="book-hint warning">
+  A <strong>set</strong> can be informally viewed as a collection of elements with <em>no duplicate</em> and in <em>no specific order</em>.
+</blockquote>
+
+<blockquote>
+<p><strong><em>Definition.</em></strong> The <strong>product</strong> 
+<link rel="stylesheet" href="/katex/katex.min.css" />
+<script defer src="/katex/katex.min.js"></script>
+<script defer src="/katex/auto-render.min.js" onload="renderMathInElement(document.body);"></script><span>
+  \( S_1 \times S_2 \)
+</span>
+ of two sets <span>
+  \(S_1\)
+</span>
+ and <span>
+  \(S_2\)
+</span>
+ is the set of all pairs <span>
+  \((s_1, s_2)\)
+</span>
+such that <span>
+  \(s_1 \in S_1\)
+</span>
+ and <span>
+  \( s_2 \in S_2\)
+</span>
+.</p>
+</blockquote>
+<p>For instance, if
+<span>
+  \( S_1 = \{a,b\} \)
+</span>
+and
+<span>
+  \(S_2 = \{1,2,3\} \)
+</span>
+, then</p>
+<span>
+  \(\qquad \qquad S_1 \times S_2 = \{
+\ (a,1),
+(a,2),
+(a,3),
+(b,1),
+(b,2),
+(b,3)\
+\}\)
+</span>
+
+<h2 id="tuple">
+  Tuple
+  <a class="anchor" href="#tuple">#</a>
+</h2>
+<blockquote>
+<p><strong><em>Definition.</em></strong> A <strong>tuple</strong> (or <strong>list</strong>) over a set<span>
+  \(S\)
+</span>
+is a finite sequence of (possibly repeated) element of<span>
+  \(S\)
+</span>
+</p>
+</blockquote>
+<p>For instance:</p>
+<p>-<span>
+  \(()\)
+</span>
+is the 0-tuple or <strong>empty tuple</strong></p>
+<p>-<span>
+  \((a)\)
+</span>
+is a 1-tuple</p>
+<p>-<span>
+  \((b,a)\)
+</span>
+is a 2-tuple or <strong>pair</strong></p>
+<p>-<span>
+  \((a,b,a)\)
+</span>
+is a 3-tuple or <strong>triple</strong>, etc.</p>
+<h2 id="function">
+  Function
+  <a class="anchor" href="#function">#</a>
+</h2>
+<blockquote>
+<p>A <strong>function</strong> (or <strong>map</strong>)<span>
+  \(f\colon D \to C\)
+</span>
+maps each element <span>
+  \(d\)
+</span>
+of its <strong>domain</strong><span>
+  \(D\)
+</span>
+to an element<span>
+  \(f(d)\)
+</span>
+of its <strong>codomain</strong><span>
+  \(C\)
+</span>
+.</p>
+</blockquote>
+<p>A function<span>
+  \(f\colon D \to C\)
+</span>
+can equivalently be viewed as a set of &ldquo;key-value&rdquo; pairs, namely the set of all pairs<span>
+  \((d, f(d))\)
+</span>
+such that<span>
+  \(d \in D\)
+</span>
+.</p>
+<blockquote>
+<p><strong><em>Definition.</em></strong> A function <span>
+  \(f\colon D \to C\)
+</span>
+ is:</p>
+<ul>
+<li><strong>injective</strong> is no two elements in its domain have the same image, i.e. if for <span>
+  \( d_1, d_2 \in D, \)
+</span>
+ <span>
+  \( d_1 \neq d_2 \)
+</span>
+ implies <span>
+  \( f(d_1) \neq f(d_2) \)
+</span>
+,</li>
+<li><strong>surjective</strong> if every element in its codomain has a preimage, i.e. if
+for each <span>
+  \(c \in C\)
+</span>
+
+there is a <span>
+  \( d \in D \)
+</span>
+ such that <span>
+  \( c = f(d) \)
+</span>
+.</li>
+<li><strong>bijective</strong> if it is injective and surjective.</li>
+</ul>
+</blockquote>
+<p>A function <span>
+  \(f\)
+</span>
+ with <em>finite</em> domain can be represented extensionally, as a set of pairs of the form</p>
+<span>
+  \(\qquad \qquad a \mapsto f(a)\)
+</span>
+
+<p>For instance, the function<span>
+  \(f\colon \{a,b,c\} \to \mathbb{N}\)
+</span>
+defined by</p>
+<p><span>
+  \(\qquad f(a) = 1,\ f(b) = 1\)
+</span>
+and<span>
+  \(f(c) = 2\)
+</span>
+</p>
+<p>can be represented as the set:</p>
+<span>
+  \(\qquad \{\ a \mapsto 1,\ b \mapsto 1,\ c \mapsto 2\ \}\)
+</span>
+
+<h2 id="multiset">
+  Multiset
+  <a class="anchor" href="#multiset">#</a>
+</h2>
+<blockquote class="book-hint warning">
+  A <strong>multiset</strong> (or <strong>bag</strong>) is a finite collection of elements in no specific order, <em>possibly with duplicates</em>.
+</blockquote>
+
+<p>Square bracket are sometimes uses to distinguish a multiset from a set or a tuple.
+For instance:</p>
+<p><span>
+  \([b,b,c]\)
+</span>
+
+and
+<span>
+  \([a,b]\)
+</span>
+
+are multisets (the latter is also a set).</p>
+<p><span>
+  \([a,b,a]\)
+</span>
+
+and
+<span>
+  \([b,a,a]\)
+</span>
+
+denote the same multiset.</p>
+
+
+
+
+<div class="book-tabs"><input type="radio" class="toggle" name="tabs-exercise_multiset" id="tabs-exercise_multiset-0" checked="checked" />
+  <label for="tabs-exercise_multiset-0">Exercise</label>
+  <div class="book-tabs-content markdown-inner">A multiset can equivalently be viewed as one of the mathematical objects seen above.
+Can you see which one?</div></div>
+
 </article>
  
       
@@ -1195,7 +1146,14 @@ https://github.com/alex-shpak/hugo-book
       <div class="book-toc-content">
         
   
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#set">Set</a></li>
+    <li><a href="#tuple">Tuple</a></li>
+    <li><a href="#function">Function</a></li>
+    <li><a href="#multiset">Multiset</a></li>
+  </ul>
+</nav>
 
 
  

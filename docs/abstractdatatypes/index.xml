@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Abstract data types on Programming project 2023-24</title>
+    <link>https://unibz-pp-23-24.github.io/docs/abstractdatatypes/</link>
+    <description>Recent content in Abstract data types on Programming project 2023-24</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="https://unibz-pp-23-24.github.io/docs/abstractdatatypes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>List</title>
+      <link>https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/list/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/list/</guid>
+      <description>List # The abstract data type list simulates a tuple. Accordingly, a list may contain duplicates.&#xA;A list may expose the following methods:&#xA;isEmpty is self-explanatory, append adds an element at the end of the list, prepend adds an element at the beginning of the list, tail returns the sub-list identical to the current one, but without its first element, etc. Note. The size of a list is often unbounded (as opposed to the size of an array for instance).</description>
+    </item>
+    <item>
+      <title>Set</title>
+      <link>https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/set/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/set/</guid>
+      <description>Set # The abstract data type set simulates a (usually finite) mathematical set.&#xA;A set may expose the following methods:&#xA;add: adds an element to the set if it was not present already (and returns true iff this was the case), contains: checks whether an element belongs to the set, size: returns the cardinality of the set, etc. Warning. A set provides no guarantee on the order of its elements!</description>
+    </item>
+  </channel>
+</rss>
