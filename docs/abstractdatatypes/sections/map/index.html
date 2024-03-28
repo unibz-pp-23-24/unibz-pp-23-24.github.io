@@ -19,7 +19,7 @@ lookup (or get) takes a key as input, and returns the value for this key (if any
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.de900ca4a36216ebb4a9fe615b81ba1680fdd655599478d5993cfef3250b67be.js" integrity="sha256-3pAMpKNiFuu0qf5hW4G6FoD91lVZlHjVmTz&#43;8yULZ74=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.a7c692656426a64fdbc80eccf735f91d575766ed3d1052a887140525e914cc09.js" integrity="sha256-p8aSZWQmpk/byA7M9zX5HVdXZu09EFKohxQFJekUzAk=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1100,47 +1100,7 @@ For instance, a map from integers to strings has type <code>Map&lt;Integer, Stri
 <code>[a,e,b,c,b,a,d,b]</code>,
 the method should return
 <code>2</code>.</p>
-</div><input type="radio" class="toggle" name="tabs-exercise_map_Countrepeated" id="tabs-exercise_map_Countrepeated-1"  />
-  <label for="tabs-exercise_map_Countrepeated-1">Possible solution</label>
-  <div class="book-tabs-content markdown-inner"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">countRepeatedChars</span>(<span style="color:#66d9ef">char</span><span style="color:#f92672">[]</span> chars) {
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// key: character</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// value: number of occurrences of this character</span>
-</span></span><span style="display:flex;"><span>    Map<span style="color:#f92672">&lt;</span>Character, Integer<span style="color:#f92672">&gt;</span> charToOcc <span style="color:#f92672">=</span> computeCharToOccMap(chars);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// return value</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> repeatedChars <span style="color:#f92672">=</span> 0;
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// count the number of entries in the map with a value &gt; 1</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (Integer occ  : charToOcc.<span style="color:#a6e22e">values</span>()){
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>(occ <span style="color:#f92672">&gt;</span> 1){
-</span></span><span style="display:flex;"><span>            repeatedChars<span style="color:#f92672">++</span>;
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> repeatedChars;
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/**
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Auxiliary method.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Returns a map that associates each character to its number of occurrences
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> Map<span style="color:#f92672">&lt;</span>Character, Integer<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">computeCharToOccMap</span>(<span style="color:#66d9ef">char</span><span style="color:#f92672">[]</span> chars) {
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// create an empty map</span>
-</span></span><span style="display:flex;"><span>    Map<span style="color:#f92672">&lt;</span>Character, Integer<span style="color:#f92672">&gt;</span> charToOcc <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashMap<span style="color:#f92672">&lt;&gt;</span>();
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// for each character in the input array</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">char</span> character : chars) {
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// retrieve the number of occurrences seen so far for this character</span>
-</span></span><span style="display:flex;"><span>        Integer occ <span style="color:#f92672">=</span> charToOcc.<span style="color:#a6e22e">get</span>(character);
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// increment this number by 1</span>
-</span></span><span style="display:flex;"><span>        occ <span style="color:#f92672">=</span> (occ <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span>) <span style="color:#f92672">?</span> 1 : occ <span style="color:#f92672">+</span> 1;
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// update the map for this character</span>
-</span></span><span style="display:flex;"><span>        charToOcc.<span style="color:#a6e22e">put</span>(character, occ);
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> charToOcc;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div></div></div>
+</div></div>
 
 
 
@@ -1158,47 +1118,7 @@ that takes a board as input, and prints the number of unit of each color, in any
 <pre tabindex="0"><code>blue: 1
 yellow: 2
 red: 2
-</code></pre></div><input type="radio" class="toggle" name="tabs-exercise_map_miniboard" id="tabs-exercise_map_miniboard-1"  />
-  <label for="tabs-exercise_map_miniboard-1">Possible solution</label>
-  <div class="book-tabs-content markdown-inner"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">printNumberOfUnitsByColor</span>(Unit<span style="color:#f92672">[][]</span> board) {
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// key: a color</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// value: the set of all units with this color</span>
-</span></span><span style="display:flex;"><span>    Map<span style="color:#f92672">&lt;</span>String, Set<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;&gt;</span> colorToUnits <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashMap<span style="color:#f92672">&lt;&gt;</span>();
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (Unit<span style="color:#f92672">[]</span> row : board) {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> (Unit unit : row) {
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (unit <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span>) {
-</span></span><span style="display:flex;"><span>                updateMap(unit, colorToUnits);
-</span></span><span style="display:flex;"><span>            }
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// for each entry in the map</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (Entry<span style="color:#f92672">&lt;</span>String, Set<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;&gt;</span> entry : colorToUnits.<span style="color:#a6e22e">entrySet</span>()) {
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// print the color and the number of units</span>
-</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(
-</span></span><span style="display:flex;"><span>            entry.<span style="color:#a6e22e">getKey</span>() <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;: &#34;</span> <span style="color:#f92672">+</span> entry.<span style="color:#a6e22e">getValue</span>().<span style="color:#a6e22e">size</span>()
-</span></span><span style="display:flex;"><span>        );
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/**
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Auxiliary method
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">updateMap</span>(Unit unit, Map<span style="color:#f92672">&lt;</span>String,Set<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;&gt;</span> colorToUnits){
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// retrieve the set of units seen so for the color</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// of the current unit</span>
-</span></span><span style="display:flex;"><span>    Set<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> units <span style="color:#f92672">=</span> colorToUnits.<span style="color:#a6e22e">get</span>(unit.<span style="color:#a6e22e">color</span>);
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (units <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span>) {
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// if this is the first unit seen with this color,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// then create an entry (in the map) for this color</span>
-</span></span><span style="display:flex;"><span>        units <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashSet<span style="color:#f92672">&lt;&gt;</span>();
-</span></span><span style="display:flex;"><span>        colorToUnits.<span style="color:#a6e22e">put</span>(unit.<span style="color:#a6e22e">color</span>, units);
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    units.<span style="color:#a6e22e">add</span>(unit);
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div></div></div>
+</code></pre></div></div>
 
 </article>
  
