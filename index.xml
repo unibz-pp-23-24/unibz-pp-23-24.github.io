@@ -22,6 +22,13 @@
       <description>Computational problem # A computational problem is (usually) specified as:&#xA;a set of possible inputs, and the expected outputs (for these inputs). Problem vs algorithm # For instance, here is a problem that you may have encountered already:&#xA;Input: a sorted array A of integers, an integer a Output: true if a appears in A, false otherwise There are (infinitely) many algorithms that can solve this problem. But some of them are more efficient than others.</description>
     </item>
     <item>
+      <title>List</title>
+      <link>https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/list/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/list/</guid>
+      <description>List # The abstract data type list simulates a tuple. Accordingly, a list may contain duplicates.&#xA;A list may expose the following methods:&#xA;isEmpty is self-explanatory, append adds an element at the end of the list, prepend adds an element at the beginning of the list, tail returns the sub-list identical to the current one, but without its first element, etc. Note. The size of a list is often unbounded (as opposed to the size of an array for instance).</description>
+    </item>
+    <item>
       <title>Objects</title>
       <link>https://unibz-pp-23-24.github.io/docs/objects/sections/objects/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -78,18 +85,18 @@
       <description>Java interfaces # A Java interface is a programming interface with additional (object-oriented) features.&#xA;Syntactically, a Java interface is similar to a class. But (in its simplest form), it contains no code. Instead, it specifies the behavior of some methods (which are implemented in some classes).&#xA;Examples # The implementation of our game contains an interface called Snapshot, which describes what a game snapshot is. This interface specifies (among others) a method called getSizeOfReinforcement, as follows:</description>
     </item>
     <item>
-      <title>List</title>
-      <link>https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/list/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/list/</guid>
-      <description>List # The abstract data type list simulates a tuple. Accordingly, a list may contain duplicates.&#xA;A list may expose the following methods:&#xA;isEmpty is self-explanatory, append adds an element at the end of the list, prepend adds an element at the beginning of the list, tail returns the sub-list identical to the current one, but without its first element, etc. Note. The size of a list is often unbounded (as opposed to the size of an array for instance).</description>
-    </item>
-    <item>
       <title>Option 2: board game</title>
       <link>https://unibz-pp-23-24.github.io/docs/project/sections/board_game/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/project/sections/board_game/</guid>
       <description>Option 2: board game # The second project option available to you consists in developing a video game with mechanics analogous to the ones of Might &amp;amp; Magic: Clash of Heroes or Legend of Solgard.&#xA;If you choose this option, you will be provided:&#xA;a basic graphical user interface (GUI) that you can reuse and/or customize, examples during lectures that you may adapt to your project. Requirements # The minimal requirement to submit your project is a player vs player game playable on a single machine.</description>
+    </item>
+    <item>
+      <title>Set</title>
+      <link>https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/set/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/set/</guid>
+      <description>Set # The abstract data type set simulates a (usually finite) mathematical set. A set may expose the following methods:&#xA;add: adds an element to the set if it was not present already (and returns true iff this was the case), contains: checks whether an element belongs to the set, size: returns the cardinality of the set, etc. Warning. A set provides no guarantee on the order of its elements!</description>
     </item>
     <item>
       <title>Set, tuple, function</title>
@@ -104,6 +111,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/intro/sections/lecturers/</guid>
       <description>Teaching staff # Julien Corman will teach the lectures and one lab.&#xA;Albulen Pano will teach the other lab.&#xA;Office hours # If you need additional help with the content of the course, the assignments and/or your project, you can ask for office hours with any (or both) of us.&#xA;These appointments must be scheduled via email (follow the links above for our email addresses).</description>
+    </item>
+    <item>
+      <title>Associative array</title>
+      <link>https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/map/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/map/</guid>
+      <description>Associative array # An associative array (or dictionary or map) simulates a function with finite domain. A associative array exposes at least the following methods:&#xA;lookup (or get) takes a key as input, and returns the value for this key (if any). insert (or put ) inserts a pair (key, value). If an entry for this key was already present, then overwrites its value. remove (or delete) deletes the entry for a given key (if any).</description>
     </item>
     <item>
       <title>Backup</title>
@@ -162,6 +176,13 @@
       <description>Software management # Dependencies # As a developer, you frequently need to download, install and/or update:&#xA;libraries used in your projects (called dependencies), core programming utilities, such as a compiler or interpreter for a given programming language, a package manager, etc. tools for software development: editor, debugger, visualization tool, etc. These programs have their own dependencies, that have their own dependencies, etc. And two programs may depend on different versions of a same third program.</description>
     </item>
     <item>
+      <title>Stack, queue, priority queue</title>
+      <link>https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/queue/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/queue/</guid>
+      <description>Stack, queue, priority queue # Some abstract data types impose strong limitations on the set of operations allowed on a collection. These limitations provide opportunities for specialized implementations (i.e. specialized data structures), which can be very efficient in some contexts.&#xA;Stack # A stack (or Last In First Out queue or LIFO queue) simulates a collection organized as a physical stack (for instance a stack of plates). A stack exposes three main methods:</description>
+    </item>
+    <item>
       <title>Add, commit, stash</title>
       <link>https://unibz-pp-23-24.github.io/docs/git/sections/commit/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -188,13 +209,6 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/env/sections/os/</guid>
       <description>Operating system (OS) # Your computer does not bind you to one OS. You can run multiple OSs on the same computer by:&#xA;partitioning your disk, or booting from an external drive, or using virtualisation. Depending on what you are developing, one operating system may be more convenient than another.&#xA;We review below some of the benefits and drawbacks of developing under Windows, macOS and Linux.&#xA;Windows # Benefits and drawbacks # Here are some benefits of using Windows as your OS for software development:</description>
-    </item>
-    <item>
-      <title>Set</title>
-      <link>https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/set/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/set/</guid>
-      <description>Set # The abstract data type set simulates a (usually finite) mathematical set.&#xA;A set may expose the following methods:&#xA;add: adds an element to the set if it was not present already (and returns true iff this was the case), contains: checks whether an element belongs to the set, size: returns the cardinality of the set, etc. Warning. A set provides no guarantee on the order of its elements!</description>
     </item>
     <item>
       <title>Bibliography</title>

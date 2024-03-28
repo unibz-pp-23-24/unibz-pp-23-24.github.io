@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=40995&amp;path=livereload" data-no-instant defer></script>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content=" Orders # ">
+<meta name="description" content="Relation, preorder # Relation # Definition. A relation over a set \(S\) is a set of [tuples] over \(S\) with the same cardinality:
+a binary relation is a set of [pairs] of elements of \(S\) or equivalently a subset of \(S \times S\) a ternary relation is a set of [triples] of elements of \(S\) or equivalently a subset of \(S \times S \times S\) etc. For instance, if \(S = \{a,b,c\}\) , then">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="Orders" />
-<meta property="og:description" content=" Orders # " />
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Relation, preorder" />
+<meta property="og:description" content="Relation, preorder # Relation # Definition. A relation over a set \(S\) is a set of [tuples] over \(S\) with the same cardinality:
+a binary relation is a set of [pairs] of elements of \(S\) or equivalently a subset of \(S \times S\) a ternary relation is a set of [triples] of elements of \(S\) or equivalently a subset of \(S \times S \times S\) etc. For instance, if \(S = \{a,b,c\}\) , then" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/docs/background/sections/order/" /><meta property="article:section" content="docs" />
+<meta property="og:url" content="http://localhost:40995/docs/background/sections/order/" /><meta property="article:section" content="docs" />
 
 
-
-<title>Orders | Programming project 2023-24</title>
+<title>Relation, preorder | Programming project 2023-24</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.c159bcc34148094cb7100ffff20f51e4193a61f47e9e93427ea7ef4730469cb0.js" integrity="sha256-wVm8w0FICUy3EA//8g9R5Bk6YfR&#43;npNCfqfvRzBGnLA=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.dcee9b40bcdebeae261df15c1ab700b4e88e6d857767ee08ef9b797acf074708.js" integrity="sha256-3O6bQLzevq4mHfFcGrcAtOiObYV3Z&#43;4I75t5es8HRwg=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -307,7 +308,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/objects/sections/comparison/" class="">Comparing objects</a>
+    <a href="/docs/objects/sections/tostring/" class="">Displaying objects</a>
   
 
         </li>
@@ -320,7 +321,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/objects/sections/encapsulation/" class="">Encapsulation</a>
+    <a href="/docs/objects/sections/comparing/" class="">Cast and equality</a>
   
 
         </li>
@@ -333,7 +334,20 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/objects/sections/clone/" class="">Copying objects</a>
+    <a href="/docs/objects/sections/classesasobjects/" class="">Classes as objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/clone/" class="">Duplicating objects</a>
   
 
         </li>
@@ -359,13 +373,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/objects/sections/casts/" class="">Type checking and cast</a>
+    <a href="/docs/objects/sections/encapsulation/" class="">Encapsulation</a>
   
-
-        </li>
-      
-    
-  </ul>
 
         </li>
       
@@ -377,23 +386,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-06ca724a4caafd99788c5f8e355ee319" class="toggle"  />
-    <label for="section-06ca724a4caafd99788c5f8e355ee319" class="flex justify-between">
-      <a href="/docs/encapsulation/" class="">Encapsulation</a>
-    </label>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/encapsulation/sections/visibility/" class="">Visibility</a>
+    <a href="/docs/objects/sections/quiz/" class="">Quiz</a>
   
 
         </li>
@@ -458,16 +451,24 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-c6d765e331787103ea5a4c660ad9d263" class="toggle"  />
-    <label for="section-c6d765e331787103ea5a4c660ad9d263" class="flex justify-between">
-      <a href="/docs/collections/" class="">Collections</a>
+    <input type="checkbox" id="section-e06acd393c0cc6e5b27e2cd8945d3dd8" class="toggle"  />
+    <label for="section-e06acd393c0cc6e5b27e2cd8945d3dd8" class="flex justify-between">
+      <a href="/docs/abstractdatatypes/" class="">Abstract data types</a>
     </label>
   
 
           
   <ul>
     
-  </ul>
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/list/" class="">List</a>
+  
 
         </li>
       
@@ -479,16 +480,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-5d60f9e6a9b7c875f51358c583373282" class="toggle"  />
-    <label for="section-5d60f9e6a9b7c875f51358c583373282" class="flex justify-between">
-      <a href="/docs/datastructures/" class="">Data structures</a>
-    </label>
+    <a href="/docs/abstractdatatypes/sections/set/" class="">Set</a>
   
-
-          
-  <ul>
-    
-  </ul>
 
         </li>
       
@@ -500,16 +493,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-1be866adbf7f2244d1773e0d2a159b91" class="toggle"  />
-    <label for="section-1be866adbf7f2244d1773e0d2a159b91" class="flex justify-between">
-      <a href="/docs/recursion/" class="">Recursion</a>
-    </label>
+    <a href="/docs/abstractdatatypes/sections/map/" class="">Associative array</a>
   
-
-          
-  <ul>
-    
-  </ul>
 
         </li>
       
@@ -521,140 +506,11 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-b7bc445f96cbe2bd1034c5f1c5d075bb" class="toggle"  />
-    <label for="section-b7bc445f96cbe2bd1034c5f1c5d075bb" class="flex justify-between">
-      <a href="/docs/input/" class="">I/O and serialization</a>
-    </label>
+    <a href="/docs/abstractdatatypes/sections/queue/" class="">Stack, queue, priority queue</a>
   
-
-          
-  <ul>
-    
-  </ul>
 
         </li>
       
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-baf3ea6e28839ac044570d2d313c8794" class="toggle"  />
-    <label for="section-baf3ea6e28839ac044570d2d313c8794" class="flex justify-between">
-      <a href="/docs/regex/" class="">Regular expressions</a>
-    </label>
-  
-
-          
-  <ul>
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-2cb8fe711c517d9ace405264c9b77bcb" class="toggle"  />
-    <label for="section-2cb8fe711c517d9ace405264c9b77bcb" class="flex justify-between">
-      <a href="/docs/streams/" class="">Streams</a>
-    </label>
-  
-
-          
-  <ul>
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-dfedb17969c9b09e6694374c71130ee4" class="toggle"  />
-    <label for="section-dfedb17969c9b09e6694374c71130ee4" class="flex justify-between">
-      <a href="/docs/concurrency/" class="">Concurrency</a>
-    </label>
-  
-
-          
-  <ul>
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-9d77b970a03dc72b048d9fce7bfe272f" class="toggle"  />
-    <label for="section-9d77b970a03dc72b048d9fce7bfe272f" class="flex justify-between">
-      <a href="/docs/unittests/" class="">Unit tests</a>
-    </label>
-  
-
-          
-  <ul>
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-1de498fc5e7787931a737882aa193936" class="toggle"  />
-    <label for="section-1de498fc5e7787931a737882aa193936" class="flex justify-between">
-      <a href="/docs/ide/" class="">Using an IDE</a>
-    </label>
-  
-
-          
-  <ul>
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-266852d187f25bd262cbe71071953925" class="toggle"  />
-    <label for="section-266852d187f25bd262cbe71071953925" class="flex justify-between">
-      <a href="/docs/factorization/" class="">Code factorization</a>
-    </label>
-  
-
-          
-  <ul>
     
   </ul>
 
@@ -822,7 +678,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/git/sections/basics/" class="">Basics: repository, commit and merge</a>
+    <a href="/docs/git/sections/basics/" class="">Basics: repository, commits and branches</a>
   
 
         </li>
@@ -861,7 +717,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/git/sections/create/" class="">Commands: create or clone a repository</a>
+    <a href="/docs/git/sections/create/" class="">Create or clone a repository</a>
   
 
         </li>
@@ -874,7 +730,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/git/sections/navigate/" class="">Commands: status, log and checkout</a>
+    <a href="/docs/git/sections/commit/" class="">Add, commit, stash</a>
   
 
         </li>
@@ -887,7 +743,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/git/sections/commit/" class="">Commands: commit, add and push</a>
+    <a href="/docs/git/sections/branches/" class="">Branches</a>
   
 
         </li>
@@ -900,7 +756,20 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/git/sections/branches/" class="">Commands: branches</a>
+    <a href="/docs/git/sections/sharing/" class="">Synchronization: remote, push, pull</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/backtracking/" class="">Backtracking</a>
   
 
         </li>
@@ -926,45 +795,11 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/git/sections/tips/" class="">Tips</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
     <a href="/docs/git/sections/resources/" class="">To go further</a>
   
 
         </li>
       
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-44fa5eb3511a340ff4e9042080604b5c" class="toggle"  />
-    <label for="section-44fa5eb3511a340ff4e9042080604b5c" class="flex justify-between">
-      <a href="/docs/build/" class="">Build automation</a>
-    </label>
-  
-
-          
-  <ul>
     
   </ul>
 
@@ -1007,7 +842,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/background/sections/cost/" class="">Computational cost</a>
+    <a href="/docs/background/sections/set_tuple_map/" class="">Set, tuple, function</a>
   
 
         </li>
@@ -1020,67 +855,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/background/sections/graph/" class="">Graphs, trees and lists</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/background/sections/order/" class="active">Orders</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/background/sections/set_tuple_map/" class="">Sets, tuples and maps</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-7fbf8d635a58977782e16dc9419d8cdc" class="toggle"  />
-    <label for="section-7fbf8d635a58977782e16dc9419d8cdc" class="flex justify-between">
-      <a href="/docs/template/" class="">Web page template</a>
-    </label>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/template/sections/template/" class="">Stubs</a>
+    <a href="/docs/background/sections/order/" class="active">Relation, preorder</a>
   
 
         </li>
@@ -1127,7 +902,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Orders</strong>
+  <strong>Relation, preorder</strong>
 
   <label for="toc-control">
     
@@ -1141,7 +916,19 @@ https://github.com/alex-shpak/hugo-book
   <aside class="hidden clearfix">
     
   
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#relation">Relation</a>
+      <ul>
+        <li><a href="#binary-relation">Binary relation</a></li>
+        <li><a href="#reflexive-transitive-antisymmetric">Reflexive, transitive, antisymmetric</a></li>
+        <li><a href="#preorder-order">Preorder, order</a></li>
+        <li><a href="#total-and-partial">Total and partial</a></li>
+        <li><a href="#lexicographic-product">Lexicographic product</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 
 
 
@@ -1152,10 +939,378 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown book-article"><h1 id="orders">
-  Orders
-  <a class="anchor" href="#orders">#</a>
+  <article class="markdown book-article"><h1 id="relation-preorder">
+  Relation, preorder
+  <a class="anchor" href="#relation-preorder">#</a>
 </h1>
+<h2 id="relation">
+  Relation
+  <a class="anchor" href="#relation">#</a>
+</h2>
+<blockquote>
+<p><strong><em>Definition.</em></strong>
+A <strong>relation</strong> over a set 
+<link rel="stylesheet" href="/katex/katex.min.css" />
+<script defer src="/katex/katex.min.js"></script>
+<script defer src="/katex/auto-render.min.js" onload="renderMathInElement(document.body);"></script><span>
+  \(S\)
+</span>
+ is a set of [tuples] over <span>
+  \(S\)
+</span>
+ with the same cardinality:</p>
+<ul>
+<li>a <strong>binary relation</strong> is a set of [pairs] of elements of <span>
+  \(S\)
+</span>
+ or equivalently a subset of <span>
+  \(S \times S\)
+</span>
+</li>
+<li>a <strong>ternary relation</strong> is a set of [triples] of elements of <span>
+  \(S\)
+</span>
+ or equivalently a subset of <span>
+  \(S \times S \times S\)
+</span>
+</li>
+<li>etc.</li>
+</ul>
+</blockquote>
+<p>For instance, if <span>
+  \(S = \{a,b,c\}\)
+</span>
+ , then</p>
+<ul>
+<li>
+<p><span>
+  \(\{ (a,b), (b,a), (a,a) \}\)
+</span>
+ is a binary relation over <span>
+  \(S\)
+</span>
+</p>
+</li>
+<li>
+<p><span>
+  \(\{ (a,b,a), (c,c,c) \}\)
+</span>
+ is a ternary relation over <span>
+  \(S\)
+</span>
+</p>
+</li>
+</ul>
+<h3 id="binary-relation">
+  Binary relation
+  <a class="anchor" href="#binary-relation">#</a>
+</h3>
+<p>A binary relation can be represented in multiple ways.</p>
+<p>In particular, it can be represented as a (directed) <strong>graph</strong> (and conversely).</p>
+<p>For instance</p>
+<div class="book-columns flex flex-wrap">
+
+  <div class="flex-even markdown-inner">
+    <!-- raw HTML omitted -->
+
+  </div>
+
+  <div class="flex-even markdown-inner">
+    
+  </div>
+
+</div>
+
+<p>A binary relation can also be represented with an infix symbol.</p>
+<p>For instance the relation</p>
+<span>
+  \(\{ (a,a), (a,b), (b,a) \}\)
+</span>
+
+<p>can be represented as</p>
+<p><span>
+  \(a \preceq a\)
+</span>
+,</p>
+<p><span>
+  \(a \preceq b\)
+</span>
+ and</p>
+<span>
+  \(b \preceq a\)
+</span>
+
+<h3 id="reflexive-transitive-antisymmetric">
+  Reflexive, transitive, antisymmetric
+  <a class="anchor" href="#reflexive-transitive-antisymmetric">#</a>
+</h3>
+<blockquote>
+<p><strong><em>Definition.</em></strong>
+A binary relation <span>
+  \(\preceq\)
+</span>
+ over <span>
+  \(S\)
+</span>
+ is</p>
+<ul>
+<li><strong>reflexive</strong> if <span>
+  \(a \preceq a\)
+</span>
+ for all <span>
+  \(a \in S\)
+</span>
+</li>
+<li><strong>transitive</strong> if for all <span>
+  \(a, b, c \in S\)
+</span>
+</li>
+</ul>
+<p><span>
+  \(\qquad \qquad \qquad a \preceq b\)
+</span>
+ and <span>
+  \(b \preceq c\)
+</span>
+ imply <span>
+  \(a \preceq c\)
+</span>
+</p>
+<ul>
+<li><strong>antisymmetric</strong> if no two elements are equal w.r.t. <span>
+  \(\preceq\)
+</span>
+ i.e. if for all <span>
+  \(a, b \in S\)
+</span>
+</li>
+</ul>
+<p><span>
+  \( \qquad \qquad \qquad a \preceq b\)
+</span>
+ and <span>
+  \(b \preceq a\)
+</span>
+ imply <span>
+  \(a = b\)
+</span>
+</p>
+</blockquote>
+<h3 id="preorder-order">
+  Preorder, order
+  <a class="anchor" href="#preorder-order">#</a>
+</h3>
+<blockquote>
+<p><strong><em>Definition.</em></strong>
+A binary relation is a <strong>preorder</strong> if it is reflexive and transitive.</p>
+<p>It is an <strong>order</strong> if it is also antisymmetric.</p>
+</blockquote>
+<h3 id="total-and-partial">
+  Total and partial
+  <a class="anchor" href="#total-and-partial">#</a>
+</h3>
+<p>A preorder over <span>
+  \(S\)
+</span>
+ is <strong>total</strong> if every two elements of <span>
+  \(S\)
+</span>
+ are comparable, i.e. if</p>
+<p><span>
+  \(a \preceq b\)
+</span>
+ or <span>
+  \(b \preceq a\)
+</span>
+ (or both) for all <span>
+  \(a, b \in S\)
+</span>
+.</p>
+<p>A preoder that is not total is called <strong>partial</strong>.
+<span>
+  \({(a,a), (a,b), (b,a)}\)
+</span>
+</p>
+<blockquote>
+<p><strong><em>Example.</em></strong>
+The natural order <span>
+  \(\le\)
+</span>
+ over real numbers is a total order (i.e. total, reflexive, transitive and antisymmetric).</p>
+</blockquote>
+<blockquote>
+<p><strong><em>Example.</em></strong>
+If <span>
+  \(S\)
+</span>
+ is a set, then the set inclusion relation <span>
+  \(\subseteq\)
+</span>
+ over the power set of <span>
+  \(S\)
+</span>
+ i&gt;s a partial order (i.e. reflexive, transitive and antisymmetric).</p>
+</blockquote>
+<p>If <span>
+  \(S\)
+</span>
+ is a set, then a total preorder is intuitively any relation that allows sorting <span>
+  \(S\)
+</span>
+.</p>
+<blockquote>
+<p><strong><em>Example.</em></strong>
+Let <span>
+  \(S\)
+</span>
+ be a set of people, and let <span>
+  \(\preceq\)
+</span>
+ be the relation defined over <span>
+  \(S\)
+</span>
+ by</p>
+<p><span>
+  \(p_1 \preceq p_2\)
+</span>
+ iff<br>
+<span>
+  \(p_1\)
+</span>
+ is younger than (or as old as) <span>
+  \(p_2\)
+</span>
+.</p>
+<p>Then <span>
+  \(\preceq\)
+</span>
+ is a total preorder
+(i.e. total reflexive and transitive)
+but it is not an order (i.e. not antisymmetric, because two people can have the same age).</p>
+</blockquote>
+<blockquote class="book-hint danger">
+  <strong><em>Warning.</em></strong>
+The term &ldquo;order&rdquo; is often used to refer to a <em>total</em> order.
+</blockquote>
+
+<h3 id="lexicographic-product">
+  Lexicographic product
+  <a class="anchor" href="#lexicographic-product">#</a>
+</h3>
+<p>If <span>
+  \(\preceq_o\)
+</span>
+ is a preorder, let us use:</p>
+<ul>
+<li><span>
+  \(a \prec_o b\)
+</span>
+ as a shortcut for <span>
+  \(a \preceq_o b\)
+</span>
+ and <span>
+  \(b \not\preceq_o a\)
+</span>
+</li>
+<li><span>
+  \(a =\_{o} b\)
+</span>
+ as a shortcut for <span>
+  \(a \preceq_o b\)
+</span>
+ and <span>
+  \(b \preceq_o a\)
+</span>
+.</li>
+</ul>
+<p>The <strong>lexicographic product</strong> <span>
+  \(\preceq\)
+</span>
+ of a peorders <span>
+  \(\preceq_1\)
+</span>
+ by a preprder <span>
+  \(\preceq_2\)
+</span>
+ is defined by</p>
+<p><span>
+  \(a \preceq b\)
+</span>
+ iff
+<span>
+  \(a \prec_1 b\)
+</span>
+ or ( <span>
+  \(a =\_o b\)
+</span>
+ and <span>
+  \(a \preceq_2 b\)
+</span>
+ )</p>
+<p>Example.
+Let <span>
+  \(S\)
+</span>
+ be a set of people, and let <span>
+  \(\preceq*{\text{age}}\)
+</span>
+ and <span>
+  \(\preceq*{\text{size}}\)
+</span>
+ be the total preorders defined over <span>
+  \(S\)
+</span>
+ by</p>
+<p><span>
+  \(p*1 \preceq*{age} p_2\)
+</span>
+ iff<br>
+<span>
+  \(p_1\)
+</span>
+ is younger than (or as old as) <span>
+  \(p_2\)
+</span>
+.</p>
+<p><span>
+  \(p*1 \preceq*{size} p_2\)
+</span>
+ iff<br>
+<span>
+  \(p_1\)
+</span>
+ is smaller than (or as tall as) <span>
+  \(p_2\)
+</span>
+.</p>
+<p>Then the product \preceq of \preceq*{age} by \preceq*{size} is defined by</p>
+<p><span>
+  \(p_1 \preceq p_2\)
+</span>
+ iff<br>
+<span>
+  \(p_1\)
+</span>
+ is younger than <span>
+  \(p_2\)
+</span>
+ or</p>
+<p><strong><em>Warning</em></strong>
+The lexicographic product of <span>
+  \(\preceq_1\)
+</span>
+ by <span>
+  \(\preceq_2\)
+</span>
+ may differ from the lexicographic product of <span>
+  \(\preceq_2\)
+</span>
+ by <span>
+  \(\preceq_1\)
+</span>
+.</p>
+<p><strong><em>Hint.</em></strong>
+The lexicographic product of two total preorders (resp. total order) is itself a total preorder (resp. total order).</p>
 </article>
  
       
@@ -1195,7 +1350,19 @@ https://github.com/alex-shpak/hugo-book
       <div class="book-toc-content">
         
   
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#relation">Relation</a>
+      <ul>
+        <li><a href="#binary-relation">Binary relation</a></li>
+        <li><a href="#reflexive-transitive-antisymmetric">Reflexive, transitive, antisymmetric</a></li>
+        <li><a href="#preorder-order">Preorder, order</a></li>
+        <li><a href="#total-and-partial">Total and partial</a></li>
+        <li><a href="#lexicographic-product">Lexicographic product</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 
 
  

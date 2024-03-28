@@ -1,27 +1,25 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Queue # A queue (or First In First Out queue or FIFO queue) simulates a collection organized as physical queue (for instance a waiting line).
-A queue exposes three main methods:
-enqueue (or add) adds an element to the end of the queue, dequeue (or poll) removes and returns the earliest enqueued element, isEmpty is self-explanatory. A fourth method called peek is sometimes exposed by a queue. It returns the next element to be dequeued, but without removing it from the queue.">
+<meta name="description" content="Stack, queue, priority queue # Some abstract data types impose strong limitations on the set of operations allowed on a collection. These limitations provide opportunities for specialized implementations (i.e. specialized data structures), which can be very efficient in some contexts.
+Stack # A stack (or Last In First Out queue or LIFO queue) simulates a collection organized as a physical stack (for instance a stack of plates). A stack exposes three main methods:">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="Queue" />
-<meta property="og:description" content="Queue # A queue (or First In First Out queue or FIFO queue) simulates a collection organized as physical queue (for instance a waiting line).
-A queue exposes three main methods:
-enqueue (or add) adds an element to the end of the queue, dequeue (or poll) removes and returns the earliest enqueued element, isEmpty is self-explanatory. A fourth method called peek is sometimes exposed by a queue. It returns the next element to be dequeued, but without removing it from the queue." />
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Stack, queue, priority queue" />
+<meta property="og:description" content="Stack, queue, priority queue # Some abstract data types impose strong limitations on the set of operations allowed on a collection. These limitations provide opportunities for specialized implementations (i.e. specialized data structures), which can be very efficient in some contexts.
+Stack # A stack (or Last In First Out queue or LIFO queue) simulates a collection organized as a physical stack (for instance a stack of plates). A stack exposes three main methods:" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/docs/abstractdatatypes/sections/queue/" /><meta property="article:section" content="docs" />
+<meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/queue/" /><meta property="article:section" content="docs" />
 
 
-<title>Queue | Programming project 2023-24</title>
+<title>Stack, queue, priority queue | Programming project 2023-24</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.5e34279710264b3b438c587ffa7e575cc5f824b1d20d9606222e5af46e99bf22.js" integrity="sha256-XjQnlxAmSztDjFh/&#43;n5XXMX4JLHSDZYGIi5a9G6ZvyI=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.de900ca4a36216ebb4a9fe615b81ba1680fdd655599478d5993cfef3250b67be.js" integrity="sha256-3pAMpKNiFuu0qf5hW4G6FoD91lVZlHjVmTz&#43;8yULZ74=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -469,58 +467,6 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/abstractdatatypes/sections/sorting/" class="">List</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/abstractdatatypes/sections/pqueue/" class="">Priority queue</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/abstractdatatypes/sections/queue/" class="active">Queue</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/abstractdatatypes/sections/stack/" class="">Stack</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
     <a href="/docs/abstractdatatypes/sections/list/" class="">List</a>
   
 
@@ -535,6 +481,32 @@ https://github.com/alex-shpak/hugo-book
 
   
     <a href="/docs/abstractdatatypes/sections/set/" class="">Set</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/map/" class="">Associative array</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/queue/" class="active">Stack, queue, priority queue</a>
   
 
         </li>
@@ -917,7 +889,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Queue</strong>
+  <strong>Stack, queue, priority queue</strong>
 
   <label for="toc-control">
     
@@ -933,7 +905,9 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#in-java">in Java</a></li>
+    <li><a href="#stack">Stack</a></li>
+    <li><a href="#queue">Queue</a></li>
+    <li><a href="#priority-queue">Priority queue</a></li>
   </ul>
 </nav>
 
@@ -946,23 +920,58 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown book-article"><h1 id="queue">
+  <article class="markdown book-article"><h1 id="stack-queue-priority-queue">
+  Stack, queue, priority queue
+  <a class="anchor" href="#stack-queue-priority-queue">#</a>
+</h1>
+<p>Some abstract data types impose strong limitations on the set of operations allowed on a collection.
+These limitations provide opportunities for <em>specialized implementations</em> (i.e. specialized data structures), which can be very <em>efficient</em> in some contexts.</p>
+<h2 id="stack">
+  Stack
+  <a class="anchor" href="#stack">#</a>
+</h2>
+<p><blockquote class="book-hint warning">
+  A <strong>stack</strong> (or <strong>Last In First Out queue</strong> or <strong>LIFO queue</strong>) simulates a collection organized as a physical stack (for instance a stack of plates).
+</blockquote>
+
+A stack exposes three main methods:</p>
+<ul>
+<li><strong>push</strong> adds an element to the collection,</li>
+<li><strong>pop</strong> removes and returns the most recently added element,</li>
+<li><strong>isEmpty</strong> is self-explanatory.</li>
+</ul>
+<h2 id="queue">
   Queue
   <a class="anchor" href="#queue">#</a>
-</h1>
-<p>A <strong>queue</strong> (or <strong>First In First Out</strong> queue or <strong>FIFO queue</strong>) simulates a collection organized as physical queue (for instance a waiting line).</p>
-<p>A queue exposes three main methods:</p>
+</h2>
+<p><blockquote class="book-hint warning">
+  A <strong>queue</strong> (or <strong>First In First Out queue</strong> or <strong>FIFO queue</strong>) simulates a collection organized as physical queue (for instance a waiting line).
+</blockquote>
+
+A queue exposes three main methods:</p>
 <ul>
 <li><strong>enqueue</strong> (or <strong>add</strong>) adds an element to the end of the queue,</li>
 <li><strong>dequeue</strong> (or <strong>poll</strong>) removes and returns the earliest enqueued element,</li>
 <li><strong>isEmpty</strong> is self-explanatory.</li>
 </ul>
-<p>A fourth method called <strong>peek</strong> is sometimes exposed by a queue.
-It returns the next element to be dequeued, but without removing it from the queue.</p>
-<h2 id="in-java">
-  in Java
-  <a class="anchor" href="#in-java">#</a>
+<h2 id="priority-queue">
+  Priority queue
+  <a class="anchor" href="#priority-queue">#</a>
 </h2>
+<p><blockquote class="book-hint warning">
+  A <strong>priority queue</strong> simulates a collection equipped with a <a href="">total preorder</a>, so that only (one of) the element(s) with highest priority can be retrieved.
+</blockquote>
+
+A priority queue exposes three main methods:</p>
+<ul>
+<li><strong>insertWithPriority</strong> adds an element to the queue with a given priority,</li>
+<li><strong>getMaximumElement</strong> removes and returns an element with highest priority,</li>
+<li><strong>isEmpty</strong> is self-explanatory.</li>
+</ul>
+<blockquote class="book-hint info">
+  <strong><em>Note.</em></strong> A regular queue can be viewed as a specific case of priority queue, where each inserted element has (strictly) lower priority than the previous one.
+</blockquote>
+
 </article>
  
       
@@ -1004,7 +1013,9 @@ It returns the next element to be dequeued, but without removing it from the que
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#in-java">in Java</a></li>
+    <li><a href="#stack">Stack</a></li>
+    <li><a href="#queue">Queue</a></li>
+    <li><a href="#priority-queue">Priority queue</a></li>
   </ul>
 </nav>
 

@@ -3,14 +3,12 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Set # The abstract data type set simulates a (usually finite) mathematical set.
-A set may expose the following methods:
+<meta name="description" content="Set # The abstract data type set simulates a (usually finite) mathematical set. A set may expose the following methods:
 add: adds an element to the set if it was not present already (and returns true iff this was the case), contains: checks whether an element belongs to the set, size: returns the cardinality of the set, etc. Warning. A set provides no guarantee on the order of its elements!">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="Set" />
-<meta property="og:description" content="Set # The abstract data type set simulates a (usually finite) mathematical set.
-A set may expose the following methods:
+<meta property="og:description" content="Set # The abstract data type set simulates a (usually finite) mathematical set. A set may expose the following methods:
 add: adds an element to the set if it was not present already (and returns true iff this was the case), contains: checks whether an element belongs to the set, size: returns the cardinality of the set, etc. Warning. A set provides no guarantee on the order of its elements!" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/set/" /><meta property="article:section" content="docs" />
@@ -21,7 +19,7 @@ add: adds an element to the set if it was not present already (and returns true 
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.c33bec47327744160c9d948b4ebb026935cc48ffee6c8c9e3da0613ce9b033a2.js" integrity="sha256-wzvsRzJ3RBYMnZSLTrsCaTXMSP/ubIyePaBhPOmwM6I=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.de900ca4a36216ebb4a9fe615b81ba1680fdd655599478d5993cfef3250b67be.js" integrity="sha256-3pAMpKNiFuu0qf5hW4G6FoD91lVZlHjVmTz&#43;8yULZ74=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -488,6 +486,32 @@ https://github.com/alex-shpak/hugo-book
         </li>
       
     
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/map/" class="">Associative array</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/queue/" class="">Stack, queue, priority queue</a>
+  
+
+        </li>
+      
+    
   </ul>
 
         </li>
@@ -881,13 +905,13 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#in-java">In Java</a>
+    <li><a href="#in-java">in Java</a>
       <ul>
         <li><a href="#syntax">Syntax</a></li>
         <li><a href="#duplicates">Duplicates</a></li>
-        <li><a href="#usage">Usage</a></li>
       </ul>
     </li>
+    <li><a href="#usage">Usage</a></li>
   </ul>
 </nav>
 
@@ -904,7 +928,10 @@ https://github.com/alex-shpak/hugo-book
   Set
   <a class="anchor" href="#set">#</a>
 </h1>
-<p>The abstract data type <strong>set</strong> simulates a (usually finite) mathematical <a href="">set</a>.</p>
+<blockquote class="book-hint warning">
+  The abstract data type <strong>set</strong> simulates a (usually finite) mathematical <a href="https://unibz-pp-23-24.github.io/docs/background/sections/set_tuple_map/#set">set</a>.
+</blockquote>
+
 <p>A set may expose the following methods:</p>
 <ul>
 <li><strong>add</strong>: adds an element to the set if it was not present already (and returns true iff this was the case),</li>
@@ -918,12 +945,12 @@ A set provides no guarantee on the <em>order</em> of its elements!
 </blockquote>
 
 <h2 id="in-java">
-  In Java
+  in Java
   <a class="anchor" href="#in-java">#</a>
 </h2>
-<p>Java provides an interface <code>Set</code> with several native implementations.
-<code>Set</code> extends <code>Collection</code>.</p>
-<p>The most commonly used implementation is <code>HashSet</code>.</p>
+<p>Java provides an interface <code>Set</code> with 8 native implementations (i.e. different <em>classes</em> that implement this interface).
+The most commonly used are <code>HashSet</code> and <code>TreeSet</code>.</p>
+<p>The interface <code>Set</code> extends the interface <code>Collection</code>.</p>
 <h3 id="syntax">
   Syntax
   <a class="anchor" href="#syntax">#</a>
@@ -1056,11 +1083,18 @@ According to this default implementation, <code>equals</code> behaves like <code
 Among others: <code>String</code>, boxed types (like <code>Integer</code>), but also most implementations of the <code>Collection</code> interface (including <code>HashSet</code>).
 </blockquote>
 
-<h3 id="usage">
+<blockquote class="book-hint info">
+  <strong><em>Note.</em></strong>
+Some implementations of <code>List</code> also provide methods that perform &ldquo;set-like&rdquo; comparisons.
+E.g. <code>containsAll</code>, <code>removeAll</code>, <code>retainAll</code>, etc.
+Again, we refer to the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html">Javadoc</a> for an exhaustive documentation.
+</blockquote>
+
+<h2 id="usage">
   Usage
   <a class="anchor" href="#usage">#</a>
-</h3>
-<p>Implementations of <code>Set</code> can be useful in a variety of contexts.
+</h2>
+<p>Implementations of the ADT set can be useful in a variety of contexts.
 For instance, remove duplicates from an array (assuming that the order of elements in the array is irrelevant):</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Integer<span style="color:#f92672">[]</span> myArray <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Integer<span style="color:#f92672">[]</span>{1,2,3,1,2};
 </span></span><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> tuple <span style="color:#f92672">=</span> List.<span style="color:#a6e22e">of</span>(myArray);
@@ -1079,27 +1113,20 @@ For instance, remove duplicates from an array (assuming that the order of elemen
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Outputs true</span>
 </span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(set1.<span style="color:#a6e22e">equals</span>(set2));
-</span></span></code></pre></div><blockquote class="book-hint info">
-  <strong><em>Note.</em></strong>
-Some implementations of <code>List</code> also provide &ldquo;set-like&rdquo; comparison.
-E.g. <code>containsAll</code>, <code>removeAll</code>, <code>retainAll</code>, etc.
-Again, we refer to the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html">Javadoc</a> for an exhaustive documentation.
-</blockquote>
-
-
+</span></span></code></pre></div>
 
 
 
 <div class="book-tabs"><input type="radio" class="toggle" name="tabs-exercise_set_miniboard" id="tabs-exercise_set_miniboard-0" checked="checked" />
   <label for="tabs-exercise_set_miniboard-0">Exercise</label>
-  <div class="book-tabs-content markdown-inner"><p>In our game, a unit may sit on two (or more) adjacent tiles.
-Consider an implementation where:</p>
+  <div class="book-tabs-content markdown-inner"><p>In our game, a same unit may sit on two (or more) adjacent tiles.</p>
+<p>Consider an implementation where:</p>
 <ul>
-<li>a board consists of a two-dimensional array of instance of the class <code>Unit</code>, and</li>
-<li>if a same unit sits on several tiles, then these tiles contain (a reference to) the same instance of <code>Unit</code>, and</li>
+<li>a board consists of a two-dimensional array with type <code>Unit[][]</code>, and</li>
+<li>if a same unit sits on several tiles, then these tiles contain (a reference to) the same (instance of) <code>Unit</code>, and</li>
 <li><code>Unit</code> does <em>not</em> override <code>equals</code> (neither do its sub or superclasses).</li>
 </ul>
-<p>Write a Java method that takes such an array as input, and returns the number of different units on the board.</p>
+<p>Write a Java method <code>int countUnits(Unit[][] board)</code> that takes such an array as input, and returns the number of different units on the board.</p>
 <p>For instance, with the board below as input, the method should return 5.</p>
 <p><img src="/img/adt/miniboard.png" alt="" /></p>
 </div></div>
@@ -1168,13 +1195,13 @@ Consider an implementation where:</p>
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#in-java">In Java</a>
+    <li><a href="#in-java">in Java</a>
       <ul>
         <li><a href="#syntax">Syntax</a></li>
         <li><a href="#duplicates">Duplicates</a></li>
-        <li><a href="#usage">Usage</a></li>
       </ul>
     </li>
+    <li><a href="#usage">Usage</a></li>
   </ul>
 </nav>
 

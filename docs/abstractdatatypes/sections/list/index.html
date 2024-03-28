@@ -21,7 +21,7 @@ isEmpty is self-explanatory, append adds an element at the end of the list, prep
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.c33bec47327744160c9d948b4ebb026935cc48ffee6c8c9e3da0613ce9b033a2.js" integrity="sha256-wzvsRzJ3RBYMnZSLTrsCaTXMSP/ubIyePaBhPOmwM6I=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.de900ca4a36216ebb4a9fe615b81ba1680fdd655599478d5993cfef3250b67be.js" integrity="sha256-3pAMpKNiFuu0qf5hW4G6FoD91lVZlHjVmTz&#43;8yULZ74=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -488,6 +488,32 @@ https://github.com/alex-shpak/hugo-book
         </li>
       
     
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/map/" class="">Associative array</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/queue/" class="">Stack, queue, priority queue</a>
+  
+
+        </li>
+      
+    
   </ul>
 
         </li>
@@ -902,7 +928,10 @@ https://github.com/alex-shpak/hugo-book
   List
   <a class="anchor" href="#list">#</a>
 </h1>
-<p>The abstract data type <strong>list</strong> simulates a <a href="">tuple</a>.
+<p><blockquote class="book-hint warning">
+  The abstract data type <strong>list</strong> simulates a <a href="https://unibz-pp-23-24.github.io/docs/background/sections/set_tuple_map/#tuple">tuple</a>.
+</blockquote>
+
 Accordingly, a list may contain <em>duplicates</em>.</p>
 <p>A list may expose the following methods:</p>
 <ul>
@@ -921,9 +950,9 @@ This can be implemented in different ways, for instance with a <a href="https://
   in Java
   <a class="anchor" href="#in-java">#</a>
 </h2>
-<p>Java has an interface <code>List</code> with several native implementations.
-The most commonly used implementations are <code>ArrayList</code> and <code>LinkedList</code> (more on this later).</p>
-<p><code>List</code> extends the interface <code>Collection</code>, and specifies a relatively large set of methods.</p>
+<p>Java has an interface <code>List</code> with 8 native implementations (i.e. 8 different <em>classes</em> that implement this interface).
+The most commonly used are <code>ArrayList</code> and <code>LinkedList</code>.</p>
+<p>The interface <code>List</code> extends the interface <code>Collection</code>.</p>
 <h3 id="syntax">
   Syntax
   <a class="anchor" href="#syntax">#</a>
@@ -938,11 +967,11 @@ The most commonly used implementations are <code>ArrayList</code> and <code>Link
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Creates an empty list of cities</span>
 </span></span><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>City<span style="color:#f92672">&gt;</span> myList <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList();
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// Adds milan to the list</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Appends Milan to the list</span>
 </span></span><span style="display:flex;"><span>myList.<span style="color:#a6e22e">add</span>(milan);
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// Adds Florence to the list</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Appends Florence to the list</span>
 </span></span><span style="display:flex;"><span>myList.<span style="color:#a6e22e">add</span>(florence);
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// Adds milan again to the list</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Appends Milan again to the list</span>
 </span></span><span style="display:flex;"><span>myList.<span style="color:#a6e22e">add</span>(milan);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Creates a list identical to the previous one, but immutable</span>
@@ -963,7 +992,7 @@ The most commonly used implementations are <code>ArrayList</code> and <code>Link
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Contains (a reference to) Florence</span>
 </span></span><span style="display:flex;"><span>City secondCity <span style="color:#f92672">=</span> myList.<span style="color:#a6e22e">get</span>(1);
 </span></span></code></pre></div><ul>
-<li>Insert an element at index <em>i</em> (shifts the position of all subsequent elements by 1).</li>
+<li>Insert an element at index <em>i</em> (shift the position of all subsequent elements by 1).</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>City trento <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Trento&#34;</span>, 38100);
 </span></span><span style="display:flex;"><span>myList.<span style="color:#a6e22e">add</span>(1, trento);
@@ -973,7 +1002,7 @@ The most commonly used implementations are <code>ArrayList</code> and <code>Link
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// contains (a reference to) Florence</span>
 </span></span><span style="display:flex;"><span>City thirdCity <span style="color:#f92672">=</span> myList.<span style="color:#a6e22e">get</span>(2);
 </span></span></code></pre></div><ul>
-<li>Remove the element a index <em>i</em> (shifts the position of all subsequent elements by -1), and return it</li>
+<li>Remove the element a index <em>i</em> (shift the position of all subsequent elements by -1), and return it</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>myList.<span style="color:#a6e22e">remove</span>(1);
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Outputs 3</span>
@@ -981,7 +1010,7 @@ The most commonly used implementations are <code>ArrayList</code> and <code>Link
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Now contains (a reference to) Florence</span>
 </span></span><span style="display:flex;"><span>secondCity <span style="color:#f92672">=</span> myList.<span style="color:#a6e22e">get</span>(1);
 </span></span></code></pre></div><ul>
-<li>Remove the first occurrence of an object in the list (shifts the position of all subsequent elements by -1):</li>
+<li>Remove the first occurrence of an object in the list (shift the position of all subsequent elements by -1):</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>myList.<span style="color:#a6e22e">remove</span>(milan);
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// contains (a reference to) Florence</span>

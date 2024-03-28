@@ -19,7 +19,21 @@
       <link>https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/set/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/set/</guid>
-      <description>Set # The abstract data type set simulates a (usually finite) mathematical set.&#xA;A set may expose the following methods:&#xA;add: adds an element to the set if it was not present already (and returns true iff this was the case), contains: checks whether an element belongs to the set, size: returns the cardinality of the set, etc. Warning. A set provides no guarantee on the order of its elements!</description>
+      <description>Set # The abstract data type set simulates a (usually finite) mathematical set. A set may expose the following methods:&#xA;add: adds an element to the set if it was not present already (and returns true iff this was the case), contains: checks whether an element belongs to the set, size: returns the cardinality of the set, etc. Warning. A set provides no guarantee on the order of its elements!</description>
+    </item>
+    <item>
+      <title>Associative array</title>
+      <link>https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/map/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/map/</guid>
+      <description>Associative array # An associative array (or dictionary or map) simulates a function with finite domain. A associative array exposes at least the following methods:&#xA;lookup (or get) takes a key as input, and returns the value for this key (if any). insert (or put ) inserts a pair (key, value). If an entry for this key was already present, then overwrites its value. remove (or delete) deletes the entry for a given key (if any).</description>
+    </item>
+    <item>
+      <title>Stack, queue, priority queue</title>
+      <link>https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/queue/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/queue/</guid>
+      <description>Stack, queue, priority queue # Some abstract data types impose strong limitations on the set of operations allowed on a collection. These limitations provide opportunities for specialized implementations (i.e. specialized data structures), which can be very efficient in some contexts.&#xA;Stack # A stack (or Last In First Out queue or LIFO queue) simulates a collection organized as a physical stack (for instance a stack of plates). A stack exposes three main methods:</description>
     </item>
   </channel>
 </rss>
