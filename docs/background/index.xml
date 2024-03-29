@@ -21,5 +21,12 @@
       <guid>https://unibz-pp-23-24.github.io/docs/background/sections/set_tuple_map/</guid>
       <description>Set, tuple, function # Set # A set can be informally viewed as a collection of elements with no duplicate and in no specific order. Definition. The product \( S_1 \times S_2 \) of two sets \(S_1\) and \(S_2\) is the set of all pairs \((s_1, s_2)\) such that \(s_1 \in S_1\) and \( s_2 \in S_2\) .&#xA;For instance, if \( S_1 = \{a,b\} \) and \(S_2 = \{1,2,3\} \) , then</description>
     </item>
+    <item>
+      <title>Relation, preorder</title>
+      <link>https://unibz-pp-23-24.github.io/docs/background/sections/order/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/background/sections/order/</guid>
+      <description>Relation, preorder # Relation # Definition. A relation over a set \(S\) is a set of [tuples] over \(S\) with the same cardinality:&#xA;a binary relation is a set of [pairs] of elements of \(S\) or equivalently a subset of \(S \times S\) a ternary relation is a set of [triples] of elements of \(S\) or equivalently a subset of \(S \times S \times S\) etc. For instance, if \(S = \{a,b,c\}\) , then</description>
+    </item>
   </channel>
 </rss>
