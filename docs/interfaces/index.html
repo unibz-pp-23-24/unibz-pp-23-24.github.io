@@ -18,7 +18,7 @@ if Alice sends a message to Bob, then she has to use a language that Bob can und
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.c1bb2da44a85716ab99d82beaf35a38eb4d6912ceeaf5b397610f35957bd1a41.js" integrity="sha256-wbstpEqFcWq5nYK&#43;rzWjjrTWkSzur1s5dhDzWVe9GkE=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.70cd5fdad2d3e1851af4cbd21cc486ea50d8c63932fc33ce143b77ed9365f118.js" integrity="sha256-cM1f2tLT4YUa9MvSHMSG6lDYxjky/DPOFDt37ZNl8Rg=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://unibz-pp-23-24.github.io/docs/interfaces/index.xml" title="Programming project 2023-24" />
 <!--
 Made with Book Theme
@@ -47,6 +47,17 @@ https://github.com/alex-shpak/hugo-book
   crossorigin="anonymous"
   onload="renderMathInElement(document.body);"
 ></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+      ],
+    });
+  });
+</script>
 
 </head>
 <body dir="ltr">
@@ -843,6 +854,19 @@ https://github.com/alex-shpak/hugo-book
 
   
     <a href="/docs/background/sections/set_tuple_map/" class="">Set, tuple, function</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/background/sections/order/" class="">Relation, preorder</a>
   
 
         </li>

@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Relation, preorder # Relation # Definition. A relation over a set \(S\) is a set of [tuples] over \(S\) with the same cardinality:
-a binary relation is a set of [pairs] of elements of \(S\) or equivalently a subset of \(S \times S\) a ternary relation is a set of [triples] of elements of \(S\) or equivalently a subset of \(S \times S \times S\) etc. For instance, if \(S = \{a,b,c\}\) , then">
+<meta name="description" content="Relation, preorder # Relation # Definition. A relation over a set $S$ is a set of tuples over $S$ with the same arity. In particular:
+a binary relation over $S$ is a set of pairs, or equivalently a subset of $S \times S$ a ternary relation over $S$ is a set of triples, or equivalently a subset of $S \times S \times S$ etc. For instance, if \(S = \{a,b,c,d\}\) , then">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="Relation, preorder" />
-<meta property="og:description" content="Relation, preorder # Relation # Definition. A relation over a set \(S\) is a set of [tuples] over \(S\) with the same cardinality:
-a binary relation is a set of [pairs] of elements of \(S\) or equivalently a subset of \(S \times S\) a ternary relation is a set of [triples] of elements of \(S\) or equivalently a subset of \(S \times S \times S\) etc. For instance, if \(S = \{a,b,c\}\) , then" />
+<meta property="og:description" content="Relation, preorder # Relation # Definition. A relation over a set $S$ is a set of tuples over $S$ with the same arity. In particular:
+a binary relation over $S$ is a set of pairs, or equivalently a subset of $S \times S$ a ternary relation over $S$ is a set of triples, or equivalently a subset of $S \times S \times S$ etc. For instance, if \(S = \{a,b,c,d\}\) , then" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/background/sections/order/" /><meta property="article:section" content="docs" />
 
@@ -19,7 +19,7 @@ a binary relation is a set of [pairs] of elements of \(S\) or equivalently a sub
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.aa33ab2229be0e9d8f51afd7113e5b91440b7ede513c013aa51747fd52633f80.js" integrity="sha256-qjOrIim&#43;Dp2PUa/XET5bkUQLft5RPAE6pRdH/VJjP4A=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.70cd5fdad2d3e1851af4cbd21cc486ea50d8c63932fc33ce143b77ed9365f118.js" integrity="sha256-cM1f2tLT4YUa9MvSHMSG6lDYxjky/DPOFDt37ZNl8Rg=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -47,6 +47,17 @@ https://github.com/alex-shpak/hugo-book
   crossorigin="anonymous"
   onload="renderMathInElement(document.body);"
 ></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+      ],
+    });
+  });
+</script>
 
 </head>
 <body dir="ltr">
@@ -921,9 +932,10 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#relation">Relation</a>
       <ul>
         <li><a href="#binary-relation">Binary relation</a></li>
-        <li><a href="#reflexive-transitive-antisymmetric">Reflexive, transitive, antisymmetric</a></li>
+        <li><a href="#reflexivity-transitivity-antisymmetry">Reflexivity, transitivity, antisymmetry</a></li>
         <li><a href="#preorder-order">Preorder, order</a></li>
-        <li><a href="#total-and-partial">Total and partial</a></li>
+        <li><a href="#total-vs-partial">Total vs partial</a></li>
+        <li><a href="#sorting">Sorting</a></li>
         <li><a href="#lexicographic-product">Lexicographic product</a></li>
       </ul>
     </li>
@@ -947,87 +959,70 @@ https://github.com/alex-shpak/hugo-book
   Relation
   <a class="anchor" href="#relation">#</a>
 </h2>
-<blockquote>
-<p><strong><em>Definition.</em></strong>
-A <strong>relation</strong> over a set 
-<link rel="stylesheet" href="/katex/katex.min.css" />
-<script defer src="/katex/katex.min.js"></script>
-<script defer src="/katex/auto-render.min.js" onload="renderMathInElement(document.body);"></script><span>
-  \(S\)
-</span>
- is a set of [tuples] over <span>
-  \(S\)
-</span>
- with the same cardinality:</p>
+<blockquote class="book-hint warning">
+  <p><strong><em>Definition.</em></strong> A <strong>relation</strong> over a set $S$ is a set of <a href="https://unibz-pp-23-24.github.io/docs/background/sections/set_tuple_map/#tuple">tuples</a> over $S$ with the same arity.
+In particular:</p>
 <ul>
-<li>a <strong>binary relation</strong> is a set of [pairs] of elements of <span>
-  \(S\)
-</span>
- or equivalently a subset of <span>
-  \(S \times S\)
-</span>
-</li>
-<li>a <strong>ternary relation</strong> is a set of [triples] of elements of <span>
-  \(S\)
-</span>
- or equivalently a subset of <span>
-  \(S \times S \times S\)
-</span>
-</li>
+<li>a <strong>binary relation</strong> over $S$ is a set of <a href="https://unibz-pp-23-24.github.io/docs/background/sections/set_tuple_map/#tuple">pairs</a>, or equivalently a subset of $S \times S$</li>
+<li>a <strong>ternary relation</strong> over $S$ is a set of <a href="https://unibz-pp-23-24.github.io/docs/background/sections/set_tuple_map/#tuple">triples</a>, or equivalently a subset of $S \times S \times S$</li>
 <li>etc.</li>
 </ul>
 </blockquote>
-<p>For instance, if <span>
-  \(S = \{a,b,c\}\)
+
+<p>For instance, if 
+<link rel="stylesheet" href="/katex/katex.min.css" />
+<script defer src="/katex/katex.min.js"></script>
+<script defer src="/katex/auto-render.min.js" onload="renderMathInElement(document.body);"></script><span>
+  \(S = \{a,b,c,d\}\)
 </span>
  , then</p>
 <ul>
 <li>
 <p><span>
-  \(\{ (a,b), (b,a), (a,a) \}\)
+  \(\Big\{ (a,a),\ (a,b),\ (b,a),\ (b,c) \Big\}\)
 </span>
  is a binary relation over <span>
   \(S\)
 </span>
-</p>
+.</p>
 </li>
 <li>
 <p><span>
-  \(\{ (a,b,a), (c,c,c) \}\)
+  \(\Big\{ (a,b,a),\ (c,c,c) \Big\}\)
 </span>
  is a ternary relation over <span>
   \(S\)
 </span>
-</p>
+.</p>
 </li>
 </ul>
+
+
+
+
+<div class="book-tabs"><input type="radio" class="toggle" name="tabs-exercise_numberOfrelations" id="tabs-exercise_numberOfrelations-0" checked="checked" />
+  <label for="tabs-exercise_numberOfrelations-0">Exercise</label>
+  <div class="book-tabs-content markdown-inner">If $S$ is finite with size $n$, then how many $k$-ary relations are there over $S$?</div></div>
+
 <h3 id="binary-relation">
   Binary relation
   <a class="anchor" href="#binary-relation">#</a>
 </h3>
 <p>A binary relation can be represented in multiple ways.</p>
 <p>In particular, it can be represented as a (directed) <strong>graph</strong> (and conversely).</p>
-<p>For instance</p>
-<div class="book-columns flex flex-wrap">
-
-  <div class="flex-even markdown-inner">
-    <!-- raw HTML omitted -->
-
-  </div>
-
-  <div class="flex-even markdown-inner">
-    
-  </div>
-
-</div>
-
-<p>A binary relation can also be represented with an infix symbol.</p>
-<p>For instance the relation</p>
-<span>
-  \(\{ (a,a), (a,b), (b,a) \}\)
+<p>For instance, the relation <span>
+  \(\Big\{ (a,a),\ (a,b),\ (b,a),\ (b,c) \Big\}\)
 </span>
-
-<p>can be represented as</p>
+ over <span>
+  \(\{a,b,c,d\}\)
+</span>
+ can be viewed as the graph</p>
+<p><img src="/img/order/graph_basic.svg" alt="" /></p>
+<p>A binary relation can also be represented with an infix symbol.</p>
+<p>For instance, the same relation <span>
+  \(\Big\{ (a,a),\ (a,b),\ (b,a),\ (b,c) \Big\}\)
+</span>
+ can be represented as</p>
 <p><span>
   \(a \preceq a\)
 </span>
@@ -1035,282 +1030,146 @@ A <strong>relation</strong> over a set
 <p><span>
   \(a \preceq b\)
 </span>
- and</p>
-<span>
+,</p>
+<p><span>
   \(b \preceq a\)
 </span>
-
-<h3 id="reflexive-transitive-antisymmetric">
-  Reflexive, transitive, antisymmetric
-  <a class="anchor" href="#reflexive-transitive-antisymmetric">#</a>
-</h3>
-<blockquote>
-<p><strong><em>Definition.</em></strong>
-A binary relation <span>
-  \(\preceq\)
-</span>
- over <span>
-  \(S\)
-</span>
- is</p>
-<ul>
-<li><strong>reflexive</strong> if <span>
-  \(a \preceq a\)
-</span>
- for all <span>
-  \(a \in S\)
-</span>
-</li>
-<li><strong>transitive</strong> if for all <span>
-  \(a, b, c \in S\)
-</span>
-</li>
-</ul>
+,</p>
 <p><span>
-  \(\qquad \qquad \qquad a \preceq b\)
-</span>
- and <span>
   \(b \preceq c\)
 </span>
- imply <span>
-  \(a \preceq c\)
-</span>
-</p>
+.</p>
+<h3 id="reflexivity-transitivity-antisymmetry">
+  Reflexivity, transitivity, antisymmetry
+  <a class="anchor" href="#reflexivity-transitivity-antisymmetry">#</a>
+</h3>
+<blockquote class="book-hint warning">
+  <p><strong><em>Definition.</em></strong> A binary relation $\preceq$ over a set $S$ is</p>
 <ul>
-<li><strong>antisymmetric</strong> if no two elements are equal w.r.t. <span>
-  \(\preceq\)
-</span>
- i.e. if for all <span>
-  \(a, b \in S\)
-</span>
-</li>
+<li><strong>reflexive</strong> if $x \preceq x$ for all $x \in S$</li>
+<li><strong>transitive</strong> if for all $x, y, z \in S$</li>
 </ul>
-<p><span>
-  \( \qquad \qquad \qquad a \preceq b\)
-</span>
- and <span>
-  \(b \preceq a\)
-</span>
- imply <span>
-  \(a = b\)
-</span>
-</p>
+<p>$\qquad \qquad \qquad x \preceq y$ and $y \preceq z$ imply $x \preceq z$</p>
+<ul>
+<li><strong>antisymmetric</strong> if no two elements are equal w.r.t. $\preceq$, i.e. if for all $x, y \in S$</li>
+</ul>
+<p>$\qquad \qquad \qquad x \preceq y$ and $y \preceq x$ imply $x = y$</p>
+
 </blockquote>
+
+
+
+
+
+<div class="book-tabs"><input type="radio" class="toggle" name="tabs-exercise_relation" id="tabs-exercise_relation-0" checked="checked" />
+  <label for="tabs-exercise_relation-0">Exercise</label>
+  <div class="book-tabs-content markdown-inner"><p>Which of these three properties does the relation below satisfy?</p>
+<p><img src="/img/order/graph_prop.svg" alt="" /></p>
+</div></div>
+
 <h3 id="preorder-order">
   Preorder, order
   <a class="anchor" href="#preorder-order">#</a>
 </h3>
-<blockquote>
-<p><strong><em>Definition.</em></strong>
-A binary relation is a <strong>preorder</strong> if it is reflexive and transitive.</p>
-<p>It is an <strong>order</strong> if it is also antisymmetric.</p>
+<blockquote class="book-hint warning">
+  <strong><em>Definition.</em></strong>
+A binary relation is a <strong>preorder</strong> if it is reflexive and transitive.
+It is an <strong>order</strong> if it is also antisymmetric.
 </blockquote>
-<h3 id="total-and-partial">
-  Total and partial
-  <a class="anchor" href="#total-and-partial">#</a>
+
+<h3 id="total-vs-partial">
+  Total vs partial
+  <a class="anchor" href="#total-vs-partial">#</a>
 </h3>
-<p>A preorder over <span>
-  \(S\)
-</span>
- is <strong>total</strong> if every two elements of <span>
-  \(S\)
-</span>
- are comparable, i.e. if</p>
-<p><span>
-  \(a \preceq b\)
-</span>
- or <span>
-  \(b \preceq a\)
-</span>
- (or both) for all <span>
-  \(a, b \in S\)
-</span>
-.</p>
-<p>A preoder that is not total is called <strong>partial</strong>.
-<span>
-  \({(a,a), (a,b), (b,a)}\)
-</span>
-</p>
-<blockquote>
-<p><strong><em>Example.</em></strong>
-The natural order <span>
-  \(\le\)
-</span>
- over real numbers is a total order (i.e. total, reflexive, transitive and antisymmetric).</p>
+<blockquote class="book-hint warning">
+  <p><strong><em>Definition.</em></strong>
+A preorder $\preceq$ over $S$ is <strong>total</strong> if every two elements of $S$ are comparable, i.e. if</p>
+<p>$ \qquad \qquad x \preceq y$ or $y \preceq x$ for all $x, y \in S$</p>
+<p>A preoder that is not total is called <strong>partial</strong>.</p>
+
 </blockquote>
-<blockquote>
-<p><strong><em>Example.</em></strong>
-If <span>
-  \(S\)
-</span>
- is a set, then the set inclusion relation <span>
-  \(\subseteq\)
-</span>
- over the power set of <span>
-  \(S\)
-</span>
- i&gt;s a partial order (i.e. reflexive, transitive and antisymmetric).</p>
+
+<blockquote class="book-hint info">
+  <strong><em>Example.</em></strong>
+The natural order $\le$ over $\mathbb{R}$ is a total order (i.e. total, reflexive, transitive and antisymmetric).
 </blockquote>
-<p>If <span>
-  \(S\)
-</span>
- is a set, then a total preorder is intuitively any relation that allows sorting <span>
-  \(S\)
-</span>
-.</p>
-<blockquote>
-<p><strong><em>Example.</em></strong>
-Let <span>
-  \(S\)
-</span>
- be a set of people, and let <span>
-  \(\preceq\)
-</span>
- be the relation defined over <span>
-  \(S\)
-</span>
- by</p>
-<p><span>
-  \(p_1 \preceq p_2\)
-</span>
- iff<br>
-<span>
-  \(p_1\)
-</span>
- is younger than (or as old as) <span>
-  \(p_2\)
-</span>
-.</p>
-<p>Then <span>
-  \(\preceq\)
-</span>
- is a total preorder
-(i.e. total reflexive and transitive)
-but it is not an order (i.e. not antisymmetric, because two people can have the same age).</p>
+
+<blockquote class="book-hint info">
+  <strong><em>Example.</em></strong>
+If $S$ is a set, then the set inclusion relation $\subseteq$ over the <a href="https://unibz-pp-23-24.github.io/docs/background/sections/set_tuple_map/#set">power set</a> of $S$ is a partial order (i.e. reflexive, transitive and antisymmetric).
 </blockquote>
+
 <blockquote class="book-hint danger">
   <strong><em>Warning.</em></strong>
 The term &ldquo;order&rdquo; is often used to refer to a <em>total</em> order.
+</blockquote>
+
+<h3 id="sorting">
+  Sorting
+  <a class="anchor" href="#sorting">#</a>
+</h3>
+<p>If <span>
+  \(S\)
+</span>
+ is a set, then a total preorder over <span>
+  \(S\)
+</span>
+ is intuitively any relation that allows <em>sorting</em> <span>
+  \(S\)
+</span>
+.</p>
+<blockquote class="book-hint info">
+  <p><strong><em>Example.</em></strong>
+Let $P$ be the set of people, and let $\preceq_{\text{age}}$ be the relation defined over $P$ by</p>
+<p>$\qquad \qquad p_1 \preceq_{\text{age}} p_2$ iff $p_1$ is younger than (or as old as) $p_2$.</p>
+<p>Then $\preceq_{\text{age}}$ is a total preorder
+(i.e. total, reflexive and transitive), but it is not an order (i.e. not antisymmetric), because two persons can have the same age.</p>
+
 </blockquote>
 
 <h3 id="lexicographic-product">
   Lexicographic product
   <a class="anchor" href="#lexicographic-product">#</a>
 </h3>
-<p>If <span>
-  \(\preceq_o\)
-</span>
- is a preorder, let us use:</p>
+<blockquote class="book-hint warning">
+  <p><strong><em>Notation.</em></strong> If $\preceq_o$ is a preorder, let us use:</p>
 <ul>
-<li><span>
-  \(a \prec_o b\)
-</span>
- as a shortcut for <span>
-  \(a \preceq_o b\)
-</span>
- and <span>
-  \(b \not\preceq_o a\)
-</span>
-</li>
-<li><span>
-  \(a =\text{o} b\)
-</span>
- as a shortcut for <span>
-  \(a \preceq_o b\)
-</span>
- and <span>
-  \(b \preceq_o a\)
-</span>
-.</li>
+<li>$x \prec_o y$ as a shortcut for ($ x \preceq_o y$ and $ y \not\preceq_o x$ ),</li>
+<li>$x =_o y$ as a shortcut for ($x \preceq_o y$ and $y \preceq_o x$ ).</li>
 </ul>
-<p>The <strong>lexicographic product</strong> <span>
-  \(\preceq\)
-</span>
- of a peorders <span>
-  \(\preceq_1\)
-</span>
- by a preprder <span>
-  \(\preceq_2\)
-</span>
- is defined by</p>
-<p><span>
-  \(a \preceq b\)
-</span>
- iff
-<span>
-  \(a \prec_1 b\)
-</span>
- or ( <span>
-  \(a =\_o b\)
-</span>
- and <span>
-  \(a \preceq_2 b\)
-</span>
- )</p>
-<p>Example.
-Let <span>
-  \(S\)
-</span>
- be a set of people, and let <span>
-  \(\preceq*{\text{age}}\)
-</span>
- and <span>
-  \(\preceq*{\text{size}}\)
-</span>
- be the total preorders defined over <span>
-  \(S\)
-</span>
- by</p>
-<p><span>
-  \(p*1 \preceq*{age} p_2\)
-</span>
- iff<br>
-<span>
-  \(p_1\)
-</span>
- is younger than (or as old as) <span>
-  \(p_2\)
-</span>
-.</p>
-<p><span>
-  \(p*1 \preceq*{size} p_2\)
-</span>
- iff<br>
-<span>
-  \(p_1\)
-</span>
- is smaller than (or as tall as) <span>
-  \(p_2\)
-</span>
-.</p>
-<p>Then the product \preceq of \preceq*{age} by \preceq*{size} is defined by</p>
-<p><span>
-  \(p_1 \preceq p_2\)
-</span>
- iff<br>
-<span>
-  \(p_1\)
-</span>
- is younger than <span>
-  \(p_2\)
-</span>
- or</p>
-<p><strong><em>Warning</em></strong>
-The lexicographic product of <span>
-  \(\preceq_1\)
-</span>
- by <span>
-  \(\preceq_2\)
-</span>
- may differ from the lexicographic product of <span>
-  \(\preceq_2\)
-</span>
- by <span>
-  \(\preceq_1\)
-</span>
-.</p>
-<p><strong><em>Hint.</em></strong>
-The lexicographic product of two total preorders (resp. total order) is itself a total preorder (resp. total order).</p>
+</blockquote>
+
+<p><blockquote class="book-hint warning">
+  <p><strong><em>Definition.</em></strong> The <strong>lexicographic product</strong> $\preceq_{1,2}$ of a preorder $\preceq_1$ by a preorder $\preceq_2$ is defined by</p>
+<p>$\qquad \qquad x \preceq_{1,2} y$ iff
+$x \prec_1 y$ or ( $x =_1 y$ and $x \preceq_2 y$ )</p>
+
+</blockquote>
+
+<blockquote class="book-hint info">
+  <p><strong><em>Example.</em></strong>
+Let $P$ be the set of people, and let $\preceq_{\text{age}}$ and
+$\preceq_{\text{size}}$
+be the total preorders defined over $S$ by</p>
+<p>$\qquad \qquad p_1 \preceq_{\text{age}} p_2$ iff $p_1$ is younger than (or as old as) $p_2$, and</p>
+<p>$\qquad \qquad p_1 \preceq_{\text{size}} p_2$ iff $p_1$ is smaller than (or as tall as) $p_2$.</p>
+<p>Then the lexicographic product $\preceq_{\text{age, size}}$ of $\preceq_{\text{age}}$ by $\preceq_{\text{size}}$ is defined by</p>
+<p>$\qquad p_1 \preceq_{\text{age, size}} p_2$ iff</p>
+<p>$\qquad \qquad p_1$ is strictly younger than $p_2$, or</p>
+<p>$\qquad \qquad$ they have the same age and $p_1$ is smaller than (or as tall as) $p_2$.</p>
+
+</blockquote>
+</p>
+<blockquote class="book-hint danger">
+  <strong><em>Warning.</em></strong>
+The lexicographic product of $\preceq_1$ by $\preceq_2$ may differ from the lexicographic product of $\preceq_2$ by $\preceq_1$.
+</blockquote>
+
+<blockquote class="book-hint info">
+  <strong><em>Hint.</em></strong>
+The lexicographic product of a total preorder by a total preorder (resp. a total order) is itself a total preorder (resp. a total order).
+</blockquote>
+
 </article>
  
       
@@ -1355,9 +1214,10 @@ The lexicographic product of two total preorders (resp. total order) is itself a
     <li><a href="#relation">Relation</a>
       <ul>
         <li><a href="#binary-relation">Binary relation</a></li>
-        <li><a href="#reflexive-transitive-antisymmetric">Reflexive, transitive, antisymmetric</a></li>
+        <li><a href="#reflexivity-transitivity-antisymmetry">Reflexivity, transitivity, antisymmetry</a></li>
         <li><a href="#preorder-order">Preorder, order</a></li>
-        <li><a href="#total-and-partial">Total and partial</a></li>
+        <li><a href="#total-vs-partial">Total vs partial</a></li>
+        <li><a href="#sorting">Sorting</a></li>
         <li><a href="#lexicographic-product">Lexicographic product</a></li>
       </ul>
     </li>
