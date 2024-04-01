@@ -23,7 +23,7 @@ Observation. Some data type have several natural sorting criteria." />
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.1fe2aeed66af95ccc83fe6d9010b39a9e5ff17e4a5b12aa94049fbc1d2c0ba6f.js" integrity="sha256-H&#43;Ku7WavlczIP&#43;bZAQs5qeX/F&#43;SlsSqpQEn7wdLAum8=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.1694293d49ce92d095648c7ef1b496ad432a6e028bc81021fc9ac8ae969ff486.js" integrity="sha256-FpQpPUnOktCVZIx&#43;8bSWrUMqbgKLyBAh/JrIrpaf9IY=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1286,7 +1286,8 @@ Like <code>Arrays.sort</code>, it comes in two flavors (with and without compara
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">health</span> <span style="color:#f92672">=</span> health;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>write a Java method <code>void printHeroesOcc(</code>Hero[] heroes)<code> that takes as input an array of type</code>Hero[]`, and prints the number of occurrences of each hero in this array,
+</span></span></code></pre></div><p>Write a Java method <code>void printHeroesOcc(Hero[] heroes)</code>
+that takes as input an array of type <code>Hero[]</code>, and prints the number of occurrences of each hero in this array,
 where two heroes are considered identical if they have the same name and health.</p>
 <p><strong><em>Constraint.</em></strong> For this exercise, you <em>cannot</em> use an associative array (a.k.a. Java <code>Map</code>).</p>
 </div></div>
@@ -1294,10 +1295,10 @@ where two heroes are considered identical if they have the same name and health.
 <blockquote class="book-hint info">
   <p><strong><em>Note.</em></strong>
 The solution to the exercise above relies on sorting the input array.
-But the same problem could be solved with an associative array, as follows:</p>
+But the same problem could be solved with an <a href="https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/map/">associative array</a>, as follows:</p>
 <ul>
-<li>overrride <code>equals</code> and <code>hashCode</code> in the class<code>City</code>,</li>
-<li>compute a <code>Map&lt;City, Integer&gt;</code> that maps each city to its number of occurrences in the array,</li>
+<li>override <code>equals</code> and <code>hashCode</code> in the class <code>Hero</code>,</li>
+<li>compute a <code>Map&lt;Hero, Integer&gt;</code> that maps each hero to its number of occurrences in the input array,</li>
 <li>iterates over the entries of this map and print them.</li>
 </ul>
 <p>When it comes to running time, the latter solution is more efficient <em>on average</em> (assuming a hashmap), but less efficient <em>in the worst case</em>.</p>
