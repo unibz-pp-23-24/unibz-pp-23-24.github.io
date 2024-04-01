@@ -4,6 +4,8 @@
   <url>
     <loc>https://unibz-pp-23-24.github.io/docs/git/sections/basics/</loc>
   </url><url>
+    <loc>https://unibz-pp-23-24.github.io/docs/errors/sections/callstack/</loc>
+  </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/background/sections/problem/</loc>
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/list/</loc>
@@ -20,7 +22,13 @@
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/git/sections/collaboration/</loc>
   </url><url>
+    <loc>https://unibz-pp-23-24.github.io/docs/errors/sections/checked/</loc>
+  </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/objects/sections/classes/</loc>
+  </url><url>
+    <loc>https://unibz-pp-23-24.github.io/docs/errors/sections/creation/</loc>
+  </url><url>
+    <loc>https://unibz-pp-23-24.github.io/docs/errors/sections/exceptions/</loc>
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/env/sections/files/</loc>
   </url><url>
@@ -95,6 +103,8 @@
     <loc>https://unibz-pp-23-24.github.io/docs/env/sections/eval/</loc>
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/objects/sections/quasi-objects/</loc>
+  </url><url>
+    <loc>https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/sorting/</loc>
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/git/sections/ignore/</loc>
   </url><url>

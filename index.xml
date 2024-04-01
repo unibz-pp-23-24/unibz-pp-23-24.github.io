@@ -15,6 +15,13 @@
       <description>Basics: repository, commits and branches # Repository # A git repository is a folder that stores a project. It is identical to a regular folder, except for a hidden folder named .git. This folder stores (among others) the whole history of the project. Commit # A commit is a snapshot of a repository. Each commit has medatada associated to it. In particular:&#xA;an ID, the name of the commit&amp;rsquo;s author, a timestamp, a message that describes the commit.</description>
     </item>
     <item>
+      <title>Call stack</title>
+      <link>https://unibz-pp-23-24.github.io/docs/errors/sections/callstack/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/errors/sections/callstack/</guid>
+      <description>Call stack # A call stack is a stack that keeps track of the methods that are active during the execution of a computer program. By &amp;ldquo;active&amp;rdquo;, we mean that an execution of the method has started, but has not terminated yet.&#xA;When the execution of a method starts, it is added to the stack. When it terminates, the method is removed from the stack, and control is passed back to the method that called it.</description>
+    </item>
+    <item>
       <title>Computational problem</title>
       <link>https://unibz-pp-23-24.github.io/docs/background/sections/problem/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -64,11 +71,32 @@
       <description>Basics: network and collaboration # Network # In the previous section, Alice created and manipulated a git repository (with two branches).&#xA;She may also want to backup her work. To this end, she can upload some of her branches to a remote machine (often called &amp;ldquo;a remote&amp;rdquo;). For instance use a cloud hosting service for git repositories (such as GitHub, Gitlab, Bitbucket, etc.).&#xA;Whenever Alice wants to upload the content of a branch, she can push this branch to the remote.</description>
     </item>
     <item>
+      <title>Checked exceptions</title>
+      <link>https://unibz-pp-23-24.github.io/docs/errors/sections/checked/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/errors/sections/checked/</guid>
+      <description> Checked exceptions # </description>
+    </item>
+    <item>
       <title>Class and instance</title>
       <link>https://unibz-pp-23-24.github.io/docs/objects/sections/classes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/objects/sections/classes/</guid>
       <description>Class and instance # A class can be viewed as a blueprint for a set of similar objects.&#xA;For instance, consider the two objects:&#xA;{ name: &amp;#34;Florence&amp;#34;, zipCode: 50100, region: &amp;#34;Tuscany&amp;#34; } { name: &amp;#34;Rome&amp;#34;, zipCode: 00100, region: &amp;#34;Lazio&amp;#34; } Each of these objects describes a city, and they share the same keys (name, zipCode and region). A possible class for these two objects may enforce this structure, and it could be named City.</description>
+    </item>
+    <item>
+      <title>Custom exceptions in Java</title>
+      <link>https://unibz-pp-23-24.github.io/docs/errors/sections/creation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/errors/sections/creation/</guid>
+      <description>Custom exceptions in Java # Java allows you to create your own exceptions.</description>
+    </item>
+    <item>
+      <title>Exceptions</title>
+      <link>https://unibz-pp-23-24.github.io/docs/errors/sections/exceptions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/errors/sections/exceptions/</guid>
+      <description>Exceptions # Programming languages may significantly differ in the way they support runtime errors.&#xA;Java relies on mechanism called exceptions. Several other languages use exceptions, for instance C++, C#, PHP, Python or Ruby.&#xA;An exception is an object or data structure that stores information about an exceptional condition encountered during the execution of a program. In Java, an exception is an object.&#xA;An exception is thrown by a method $m$ when such a condition occurs.</description>
     </item>
     <item>
       <title>Hierarchical file system</title>
@@ -103,7 +131,7 @@
       <link>https://unibz-pp-23-24.github.io/docs/background/sections/set_tuple_map/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/background/sections/set_tuple_map/</guid>
-      <description>Set, tuple, function # Set # A set can be informally viewed as a collection of elements with no duplicate and in no specific order. Definition. The power set $\mathcal{P}(S)$ of a set $S$ is the set of all subsets of $S$. For instance , if \(S = \{a,b\}\) , then&#xA;\( \qquad \qquad \qquad \mathcal{P}(S) = \Big\{ \{\}, \{a\}, \{b\}, S \Big\} \) Note. An alternative notation for the power set of $S$ is $2^S$.</description>
+      <description>Set, tuple, function # Set # A set can be informally viewed as a collection of elements with no duplicate and in no specific order. Definition. The power set $\mathcal{P}(S)$ of a set $S$ is the set of all subsets of $S$. For instance, if \(S = \{a,b\}\) , then&#xA;\( \qquad \qquad \qquad \mathcal{P}(S) = \Big\{ \{\}, \{a\}, \{b\}, S \Big\} \) Note. An alternative notation for the power set of $S$ is $2^S$.</description>
     </item>
     <item>
       <title>Teaching staff</title>
@@ -173,7 +201,7 @@
       <link>https://unibz-pp-23-24.github.io/docs/background/sections/order/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/background/sections/order/</guid>
-      <description>Relation, preorder # Relation # Definition. A relation over a set $S$ is a set of tuples over $S$ with the same arity. In particular:&#xA;a binary relation over $S$ is a set of pairs, or equivalently a subset of $S \times S$ a ternary relation over $S$ is a set of triples, or equivalently a subset of $S \times S \times S$ etc. For instance, if \(S = \{a,b,c,d\}\) , then</description>
+      <description>Relation, preorder # Relation # Definition. A relation over a set $S$ is a set of tuples over $S$ with the same arity. In particular:&#xA;a binary relation over $S$ is a set of pairs, or equivalently a subset of $S \times S$, a ternary relation over $S$ is a set of triples, or equivalently a subset of $S \times S \times S$, etc. For instance, if \(S = \{a,b,c,d\}\) , then</description>
     </item>
     <item>
       <title>Software management</title>
@@ -300,6 +328,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/objects/sections/quasi-objects/</guid>
       <description>Quasi-objects # Enumerated types # Most imperative languages allow the creation of so-called enumerated types.&#xA;An enumerated type is a datatype for a finite set or enumerated values. For instance, if our game only allows &amp;ldquo;blue&amp;rdquo;, &amp;ldquo;green&amp;rdquo; and &amp;ldquo;red&amp;rdquo; as unit colors, then we may create a dedicated type that only allows these three values.&#xA;In Java # An enumerated type in Java is a set of constants. These constants are effectively static, meaning that they depends on the class or interface where the enumerated type is declared (similarly to a static attribute).</description>
+    </item>
+    <item>
+      <title>Sorting</title>
+      <link>https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/sorting/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/sorting/</guid>
+      <description>Sorting # Sorting a collection (of values or objects) is needed in a variety of scenarios.&#xA;Sorting criterion # In order to sort a collection of values (resp. objects), we need a sorting criterion, i.e. a way to compare two values (resp. objects).&#xA;Some data types come with a natural way to compare two values. For instance, two real numbers can be compared w.r.t. $\le$.&#xA;Observation. Some data type have several natural sorting criteria.</description>
     </item>
     <item>
       <title>Ignoring files</title>

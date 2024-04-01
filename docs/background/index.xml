@@ -19,14 +19,14 @@
       <link>https://unibz-pp-23-24.github.io/docs/background/sections/set_tuple_map/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/background/sections/set_tuple_map/</guid>
-      <description>Set, tuple, function # Set # A set can be informally viewed as a collection of elements with no duplicate and in no specific order. Definition. The power set $\mathcal{P}(S)$ of a set $S$ is the set of all subsets of $S$. For instance , if \(S = \{a,b\}\) , then&#xA;\( \qquad \qquad \qquad \mathcal{P}(S) = \Big\{ \{\}, \{a\}, \{b\}, S \Big\} \) Note. An alternative notation for the power set of $S$ is $2^S$.</description>
+      <description>Set, tuple, function # Set # A set can be informally viewed as a collection of elements with no duplicate and in no specific order. Definition. The power set $\mathcal{P}(S)$ of a set $S$ is the set of all subsets of $S$. For instance, if \(S = \{a,b\}\) , then&#xA;\( \qquad \qquad \qquad \mathcal{P}(S) = \Big\{ \{\}, \{a\}, \{b\}, S \Big\} \) Note. An alternative notation for the power set of $S$ is $2^S$.</description>
     </item>
     <item>
       <title>Relation, preorder</title>
       <link>https://unibz-pp-23-24.github.io/docs/background/sections/order/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/background/sections/order/</guid>
-      <description>Relation, preorder # Relation # Definition. A relation over a set $S$ is a set of tuples over $S$ with the same arity. In particular:&#xA;a binary relation over $S$ is a set of pairs, or equivalently a subset of $S \times S$ a ternary relation over $S$ is a set of triples, or equivalently a subset of $S \times S \times S$ etc. For instance, if \(S = \{a,b,c,d\}\) , then</description>
+      <description>Relation, preorder # Relation # Definition. A relation over a set $S$ is a set of tuples over $S$ with the same arity. In particular:&#xA;a binary relation over $S$ is a set of pairs, or equivalently a subset of $S \times S$, a ternary relation over $S$ is a set of triples, or equivalently a subset of $S \times S \times S$, etc. For instance, if \(S = \{a,b,c,d\}\) , then</description>
     </item>
   </channel>
 </rss>

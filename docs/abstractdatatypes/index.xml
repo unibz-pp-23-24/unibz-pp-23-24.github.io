@@ -35,5 +35,12 @@
       <guid>https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/queue/</guid>
       <description>Stack, queue, priority queue # Some abstract data types impose strong limitations on the set of operations allowed on a collection. These limitations provide opportunities for specialized implementations (i.e. specialized data structures), which can be very efficient in some contexts.&#xA;Stack # A stack (or Last In First Out queue or LIFO queue) simulates a collection organized as a physical stack (for instance a stack of plates). A stack exposes three main methods:</description>
     </item>
+    <item>
+      <title>Sorting</title>
+      <link>https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/sorting/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/sorting/</guid>
+      <description>Sorting # Sorting a collection (of values or objects) is needed in a variety of scenarios.&#xA;Sorting criterion # In order to sort a collection of values (resp. objects), we need a sorting criterion, i.e. a way to compare two values (resp. objects).&#xA;Some data types come with a natural way to compare two values. For instance, two real numbers can be compared w.r.t. $\le$.&#xA;Observation. Some data type have several natural sorting criteria.</description>
+    </item>
   </channel>
 </rss>

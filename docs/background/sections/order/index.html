@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Relation, preorder # Relation # Definition. A relation over a set $S$ is a set of tuples over $S$ with the same arity. In particular:
-a binary relation over $S$ is a set of pairs, or equivalently a subset of $S \times S$ a ternary relation over $S$ is a set of triples, or equivalently a subset of $S \times S \times S$ etc. For instance, if \(S = \{a,b,c,d\}\) , then">
+a binary relation over $S$ is a set of pairs, or equivalently a subset of $S \times S$, a ternary relation over $S$ is a set of triples, or equivalently a subset of $S \times S \times S$, etc. For instance, if \(S = \{a,b,c,d\}\) , then">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="Relation, preorder" />
 <meta property="og:description" content="Relation, preorder # Relation # Definition. A relation over a set $S$ is a set of tuples over $S$ with the same arity. In particular:
-a binary relation over $S$ is a set of pairs, or equivalently a subset of $S \times S$ a ternary relation over $S$ is a set of triples, or equivalently a subset of $S \times S \times S$ etc. For instance, if \(S = \{a,b,c,d\}\) , then" />
+a binary relation over $S$ is a set of pairs, or equivalently a subset of $S \times S$, a ternary relation over $S$ is a set of triples, or equivalently a subset of $S \times S \times S$, etc. For instance, if \(S = \{a,b,c,d\}\) , then" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/background/sections/order/" /><meta property="article:section" content="docs" />
 
@@ -19,7 +19,7 @@ a binary relation over $S$ is a set of pairs, or equivalently a subset of $S \ti
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.70cd5fdad2d3e1851af4cbd21cc486ea50d8c63932fc33ce143b77ed9365f118.js" integrity="sha256-cM1f2tLT4YUa9MvSHMSG6lDYxjky/DPOFDt37ZNl8Rg=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.1fe2aeed66af95ccc83fe6d9010b39a9e5ff17e4a5b12aa94049fbc1d2c0ba6f.js" integrity="sha256-H&#43;Ku7WavlczIP&#43;bZAQs5qeX/F&#43;SlsSqpQEn7wdLAum8=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -523,6 +523,19 @@ https://github.com/alex-shpak/hugo-book
         </li>
       
     
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/sorting/" class="">Sorting</a>
+  
+
+        </li>
+      
+    
   </ul>
 
         </li>
@@ -933,10 +946,10 @@ https://github.com/alex-shpak/hugo-book
       <ul>
         <li><a href="#binary-relation">Binary relation</a></li>
         <li><a href="#reflexivity-transitivity-antisymmetry">Reflexivity, transitivity, antisymmetry</a></li>
-        <li><a href="#preorder-order">Preorder, order</a></li>
+        <li><a href="#preorder">Preorder, order</a></li>
         <li><a href="#total-vs-partial">Total vs partial</a></li>
         <li><a href="#sorting">Sorting</a></li>
-        <li><a href="#lexicographic-product">Lexicographic product</a></li>
+        <li><a href="#lexProduct">Lexicographic product</a></li>
       </ul>
     </li>
   </ul>
@@ -963,8 +976,8 @@ https://github.com/alex-shpak/hugo-book
   <p><strong><em>Definition.</em></strong> A <strong>relation</strong> over a set $S$ is a set of <a href="https://unibz-pp-23-24.github.io/docs/background/sections/set_tuple_map/#tuple">tuples</a> over $S$ with the same arity.
 In particular:</p>
 <ul>
-<li>a <strong>binary relation</strong> over $S$ is a set of <a href="https://unibz-pp-23-24.github.io/docs/background/sections/set_tuple_map/#tuple">pairs</a>, or equivalently a subset of $S \times S$</li>
-<li>a <strong>ternary relation</strong> over $S$ is a set of <a href="https://unibz-pp-23-24.github.io/docs/background/sections/set_tuple_map/#tuple">triples</a>, or equivalently a subset of $S \times S \times S$</li>
+<li>a <strong>binary relation</strong> over $S$ is a set of <a href="https://unibz-pp-23-24.github.io/docs/background/sections/set_tuple_map/#tuple">pairs</a>, or equivalently a subset of $S \times S$,</li>
+<li>a <strong>ternary relation</strong> over $S$ is a set of <a href="https://unibz-pp-23-24.github.io/docs/background/sections/set_tuple_map/#tuple">triples</a>, or equivalently a subset of $S \times S \times S$,</li>
 <li>etc.</li>
 </ul>
 </blockquote>
@@ -984,7 +997,7 @@ In particular:</p>
  is a binary relation over <span>
   \(S\)
 </span>
-.</p>
+,</p>
 </li>
 <li>
 <p><span>
@@ -1016,7 +1029,7 @@ In particular:</p>
  over <span>
   \(\{a,b,c,d\}\)
 </span>
- can be viewed as the graph</p>
+ can be viewed as the graph:</p>
 <p><img src="/img/order/graph_basic.svg" alt="" /></p>
 <p>A binary relation can also be represented with an infix symbol.</p>
 <p>For instance, the same relation <span>
@@ -1051,7 +1064,7 @@ In particular:</p>
 </ul>
 <p>$\qquad \qquad \qquad x \preceq y$ and $y \preceq z$ imply $x \preceq z$</p>
 <ul>
-<li><strong>antisymmetric</strong> if no two elements are equal w.r.t. $\preceq$, i.e. if for all $x, y \in S$</li>
+<li><strong>antisymmetric</strong> if for all $x, y \in S$</li>
 </ul>
 <p>$\qquad \qquad \qquad x \preceq y$ and $y \preceq x$ imply $x = y$</p>
 
@@ -1067,9 +1080,9 @@ In particular:</p>
 <p><img src="/img/order/graph_prop.svg" alt="" /></p>
 </div></div>
 
-<h3 id="preorder-order">
+<h3 id="preorder">
   Preorder, order
-  <a class="anchor" href="#preorder-order">#</a>
+  <a class="anchor" href="#preorder">#</a>
 </h3>
 <blockquote class="book-hint warning">
   <strong><em>Definition.</em></strong>
@@ -1084,7 +1097,7 @@ It is an <strong>order</strong> if it is also antisymmetric.
 <blockquote class="book-hint warning">
   <p><strong><em>Definition.</em></strong>
 A preorder $\preceq$ over $S$ is <strong>total</strong> if every two elements of $S$ are comparable, i.e. if</p>
-<p>$ \qquad \qquad x \preceq y$ or $y \preceq x$ for all $x, y \in S$</p>
+<p>$ \qquad \qquad x \preceq y$ or $y \preceq x$ for all $x, y \in S$.</p>
 <p>A preoder that is not total is called <strong>partial</strong>.</p>
 
 </blockquote>
@@ -1127,9 +1140,9 @@ Let $P$ be the set of people, and let $\preceq_{\text{age}}$ be the relation def
 
 </blockquote>
 
-<h3 id="lexicographic-product">
+<h3 id="lexProduct">
   Lexicographic product
-  <a class="anchor" href="#lexicographic-product">#</a>
+  <a class="anchor" href="#lexProduct">#</a>
 </h3>
 <blockquote class="book-hint warning">
   <p><strong><em>Notation.</em></strong> If $\preceq_o$ is a preorder, let us use:</p>
@@ -1215,10 +1228,10 @@ The lexicographic product of a total preorder by a total preorder (resp. a total
       <ul>
         <li><a href="#binary-relation">Binary relation</a></li>
         <li><a href="#reflexivity-transitivity-antisymmetry">Reflexivity, transitivity, antisymmetry</a></li>
-        <li><a href="#preorder-order">Preorder, order</a></li>
+        <li><a href="#preorder">Preorder, order</a></li>
         <li><a href="#total-vs-partial">Total vs partial</a></li>
         <li><a href="#sorting">Sorting</a></li>
-        <li><a href="#lexicographic-product">Lexicographic product</a></li>
+        <li><a href="#lexProduct">Lexicographic product</a></li>
       </ul>
     </li>
   </ul>
