@@ -3,17 +3,15 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Exceptions # Programming languages may significantly differ in the way they support runtime errors.
-Java relies on mechanism called exceptions. Several other languages use exceptions, for instance C&#43;&#43;, C#, PHP, Python or Ruby.
-An exception is an object or data structure that stores information about an exceptional condition encountered during the execution of a program. In Java, an exception is an object.
-An exception is thrown by a method $m$ when such a condition occurs.">
+<meta name="description" content="Exceptions # Programming languages may significantly differ in the way they support errors messages.
+Java relies on a mechanism called exceptions. Several other languages use exceptions, for instance C&#43;&#43;, C#, PHP, Python or Ruby. However, the purpose of exceptions may vary from one language to another.
+An exception is an object or data structure that stores information about an exceptional condition encountered during the execution of a program. Terminology. An exception is thrown by a method $m$ when such a condition occurs.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="Exceptions" />
-<meta property="og:description" content="Exceptions # Programming languages may significantly differ in the way they support runtime errors.
-Java relies on mechanism called exceptions. Several other languages use exceptions, for instance C&#43;&#43;, C#, PHP, Python or Ruby.
-An exception is an object or data structure that stores information about an exceptional condition encountered during the execution of a program. In Java, an exception is an object.
-An exception is thrown by a method $m$ when such a condition occurs." />
+<meta property="og:description" content="Exceptions # Programming languages may significantly differ in the way they support errors messages.
+Java relies on a mechanism called exceptions. Several other languages use exceptions, for instance C&#43;&#43;, C#, PHP, Python or Ruby. However, the purpose of exceptions may vary from one language to another.
+An exception is an object or data structure that stores information about an exceptional condition encountered during the execution of a program. Terminology. An exception is thrown by a method $m$ when such a condition occurs." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/errors/sections/exceptions/" /><meta property="article:section" content="docs" />
 
@@ -23,7 +21,7 @@ An exception is thrown by a method $m$ when such a condition occurs." />
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.1080c3d666a2a991edc547c1b93969a3963131394602aab344a1f22693557052.js" integrity="sha256-EIDD1maiqZHtxUfBuTlpo5YxMTlGAqqzRKHyJpNVcFI=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.941fbc425d1eed247e510991db4727cdec1ae919d2c9c590de1b3e015bb82167.js" integrity="sha256-lB&#43;8Ql0e7SR&#43;UQmR20cnzewa6RnSycWQ3hs&#43;AVu4IWc=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -449,6 +447,91 @@ https://github.com/alex-shpak/hugo-book
 
   
     <a href="/docs/interfaces/sections/java_interfaces/" class="">Java interfaces</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-93b39c27c032f5f72bed81496cbb41e3" class="toggle" checked />
+    <label for="section-93b39c27c032f5f72bed81496cbb41e3" class="flex justify-between">
+      <a href="/docs/errors/" class="">Errors</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a2fa4d1523374519c87fe83f9d8226b6" class="toggle"  />
+    <label for="section-a2fa4d1523374519c87fe83f9d8226b6" class="flex justify-between">
+      <a href="/docs/errors/sections/callstack/" class="">Call stack</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-323953d2054911560fd76ed4505d5bb2" class="toggle" checked />
+    <label for="section-323953d2054911560fd76ed4505d5bb2" class="flex justify-between">
+      <a href="/docs/errors/sections/exceptions/" class="active">Exceptions</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-03b7629c50286af7810d9917f4bdabd2" class="toggle"  />
+    <label for="section-03b7629c50286af7810d9917f4bdabd2" class="flex justify-between">
+      <a href="/docs/errors/sections/checked/" class="">Checked vs unchecked</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-b9c696d05ab8cb944ddf9cef47a3abb4" class="toggle"  />
+    <label for="section-b9c696d05ab8cb944ddf9cef47a3abb4" class="flex justify-between">
+      <a href="/docs/errors/sections/errors/" class="">Java errors</a>
+    </label>
   
 
         </li>
@@ -946,11 +1029,12 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#runtime-exceptions-in-java">Runtime exceptions in Java</a>
+    <li><a href="#in-java">in Java</a>
       <ul>
-        <li><a href="#error-stack">Error stack</a></li>
-        <li><a href="#naming-conventions">Naming conventions</a></li>
+        <li><a href="#stack-trace">Stack trace</a></li>
+        <li><a href="#throwing-an-exception">Throwing an exception</a></li>
         <li><a href="#catching-an-exception">Catching an exception</a></li>
+        <li><a href="#chaining">Chaining</a></li>
       </ul>
     </li>
   </ul>
@@ -969,87 +1053,180 @@ https://github.com/alex-shpak/hugo-book
   Exceptions
   <a class="anchor" href="#exceptions">#</a>
 </h1>
-<p>Programming languages may significantly differ in the way they support runtime errors.</p>
-<p>Java relies on mechanism called <strong>exceptions</strong>.
-Several other languages use exceptions, for instance C++, C#, PHP, Python or Ruby.</p>
-<p>An exception is an object or data structure that stores information about an exceptional condition encountered during the execution of a program.
-In Java, an exception is an <em>object</em>.</p>
-<p>An exception is <strong>thrown</strong> by a method $m$ when such a condition occurs.
-The method that called $m$ can either</p>
+<p>Programming languages may significantly differ in the way they support errors messages.</p>
+<p>Java relies on a mechanism called <em>exceptions</em>.
+Several other languages use exceptions, for instance C++, C#, PHP, Python or Ruby.
+However, the purpose of exceptions may vary from one language to another.</p>
+<blockquote class="book-hint warning">
+  An <strong>exception</strong> is an object or data structure that stores information about an exceptional condition encountered during the execution of a program.
+</blockquote>
+
+<blockquote class="book-hint warning">
+  <p><strong><em>Terminology.</em></strong> An exception is <strong>thrown</strong> by a method $m$ when such a condition occurs.
+The method that called $m$ can either:</p>
 <ul>
 <li><strong>catch</strong> the exception (and handle it), or</li>
 <li><strong>rethrow</strong> it.</li>
 </ul>
-<h2 id="runtime-exceptions-in-java">
-  Runtime exceptions in Java
-  <a class="anchor" href="#runtime-exceptions-in-java">#</a>
+</blockquote>
+
+<h2 id="in-java">
+  in Java
+  <a class="anchor" href="#in-java">#</a>
 </h2>
-<p>A runtime exception in Java is an instance of the native class <code>RuntimeException</code>.</p>
-<h3 id="error-stack">
-  Error stack
-  <a class="anchor" href="#error-stack">#</a>
+<p>In Java, an exception is an <em>object</em>, instance of the native class <code>Exception</code>.</p>
+<p>All exception types (e.g. <code>FileNotFoundException</code>) are subclasses of <code>Exception</code>.</p>
+<p>By convention, a class name for an exception:</p>
+<ul>
+<li>ends with the word <code>Exception</code>, and</li>
+<li>provides information about the cause of the exception.</li>
+</ul>
+<h3 id="stack-trace">
+  Stack trace
+  <a class="anchor" href="#stack-trace">#</a>
 </h3>
-<p>By default, when a runtime exception is thrown, the program interrupts its execution, and the current <a href="">call stack</a> is printed on an output stream called <code>System.error</code>.</p>
+<p>By default, when an unchecked exception is thrown, the program interrupts its execution, and the current <a href="">call stack</a> is printed on an output stream called <code>System.error</code>.
+This output is called the <strong>stack trace</strong> (because it allows tracing back the method calls that led to the exception being thrown).</p>
 <p>For instance, consider the following class:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyClass</span>{
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyClass</span>{
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">myMethod</span>(City<span style="color:#f92672">[]</span> city){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">myMethod</span>(){
 </span></span><span style="display:flex;"><span>        Integer.<span style="color:#a6e22e">parseInt</span>(<span style="color:#e6db74">&#34;clearlyNotANumber&#34;</span>);
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>When <code>myMethod</code> is executed, it calls the method <code>Integer.parseInt(String string)</code>.
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>When <code>myMethod</code> is executed, it calls the method <code>Integer.parseInt(String string)</code>.
 This method in turn calls the method <code>Integer.parseInt(String string, int radix)</code> with the same string as argument, and a value of <code>10</code> for the <a href="https://en.wikipedia.org/wiki/Radix">radix</a> (meaning that the string should represent an integer in base 10).
-Because the string &ldquo;clearlyNotANumber&rdquo; does not represent a number, the method <code>Integer.parseInt(String string, int radix)</code> (which is on top the call stack) throws an exception.</p>
-<p>As a result, the following is printed to <code>System.error</code>:</p>
+Because the string &ldquo;clearlyNotANumber&rdquo; does not represent a number, the method <code>Integer.parseInt(String string, int radix)</code> (which is on top the call stack) <em>throws</em> an exception.</p>
+<p>As a result, the following stack trace is printed to <code>System.error</code>:</p>
 <pre tabindex="0"><code>java.lang.NumberFormatException: For input string: &#34;clearlyNotANumber&#34;
 
 at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
 at java.base/java.lang.Integer.parseInt(Integer.java:668)
 at java.base/java.lang.Integer.parseInt(Integer.java:786)
-at Myclass.myMethod(Myclass.java:377)
-&lt;bottom of the stack&gt;
-</code></pre><p><strong><em>Hint.</em></strong>
-Your IDE allows you to freely navigate through Java&rsquo;s source code to trace the cause of the exception.</p>
-<p><strong><em>Hint.</em></strong>
+at Myclass.myMethod(Myclass.java:4)
+&lt;bottom of the stack trace&gt;
+</code></pre><blockquote class="book-hint info">
+  <strong><em>Hint.</em></strong>
+Your IDE allows you to navigate through Java&rsquo;s source code to trace the cause of the exception.
+</blockquote>
+
+<blockquote class="book-hint info">
+  <p><strong><em>Hint.</em></strong>
 To debug your code, by default:</p>
-<ul>
-<li>find the last method in the error stack that was written by you (in this example <code>Myclass.myMethod</code>)</li>
-<li>using our IDE, create a breakpoint at the indicated line for this class (XXX in this example)</li>
-<li>run your program in debug mode (e.g. clicking on the &ldquo;bug&rdquo; icon of your IDE)</li>
-</ul>
-<h3 id="naming-conventions">
-  Naming conventions
-  <a class="anchor" href="#naming-conventions">#</a>
+<ol>
+<li>find the <em>last</em> method (from bottom to top) in the stack trace that was written by you (in this example <code>Myclass.myMethod</code>),</li>
+<li>using our IDE, create a breakpoint at the indicated line for this class (4 in this example),</li>
+<li>run your program in debug mode (e.g. clicking on the &ldquo;bug&rdquo; icon of your IDE).</li>
+</ol>
+</blockquote>
+
+<h3 id="throwing-an-exception">
+  Throwing an exception
+  <a class="anchor" href="#throwing-an-exception">#</a>
 </h3>
-<p>The class <code>RuntimeException</code> has several native subclasses, and extends itself the class <code>Exception</code>.
-Here is a (small) excerpt of this hierarchy:</p>
-<p>By convention, class names for exceptions:</p>
-<ul>
-<li>provide information about the cause of the exception,</li>
-<li>end with the word <code>Exception</code>.</li>
-</ul>
+<p>You can throw an exception with the keyword <code>throw</code>, as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">isSolvable</span>(<span style="color:#66d9ef">int</span><span style="color:#f92672">[][]</span> sudokuGrid){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(sudokuGrid.<span style="color:#a6e22e">length</span> <span style="color:#f92672">!=</span> 9){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> IllegalArgumentException(<span style="color:#e6db74">&#34;A sudoku grid should have 9 rows&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(sudokuGrid<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">!=</span> 9){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> IllegalArgumentException(<span style="color:#e6db74">&#34;A sudoku grid should have 9 columns&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Classes for native Java exceptions usually have several constructors, one of which takes a string as input.
+For instance, in the example above, we used the constructor <code>IllegalArgumentExcetion(String errorMessage)</code>.</p>
 <h3 id="catching-an-exception">
   Catching an exception
   <a class="anchor" href="#catching-an-exception">#</a>
 </h3>
-<p>If a method $m_1$ throws an exception, then a method $m_2$ in the call stack may <em>catch</em> it.</p>
-<p>I this happens, then the program is <em>not interrupted</em>.
-Instead, control is passed back to $m_2$.</p>
-<p>More precisely, when an exception is thrown, the JVM &ldquo;pops&rdquo; methods calls from the call stack, until either:</p>
+<p>When a runtime exception is thrown by a method, the method that precedes it in the stack trace can either <strong>rethrow</strong> the exception, or <strong>catch</strong> it.</p>
+<p>If a method in the call stack catches the exception, then the program is <em>not interrupted</em>.
+Instead, control is passed to the catching method.</p>
+<p>More precisely, when an exception is thrown, the JVM &ldquo;pops&rdquo; method calls from the call stack, until either:</p>
 <ul>
 <li>a <code>catch</code> instruction is found, or</li>
 <li>the call stack is empty (in which case the program is interrupted).</li>
 </ul>
-<p>For instance, consider the following stack</p>
-<pre tabindex="0"><code>at java.base/java.lang.Integer.parseInt(Integer.java:786)
-at Myclass.myMethod(Myclass.java:377)
-&lt;bottom of the stack&gt;
-</code></pre><p>the so-called <code>catch block</code> code of $m_2$</p>
-<p>Instead, some code</p>
-<p>by another method in the call stack.</p>
-<p>Instead of</p>
-<p>An exception handler is a block of code that can handle exceptions of one or more types.</p>
-</article>
+<p>For instance, let us modify <code>myMethod</code> above so that:</p>
+<ul>
+<li>it takes as input a string (maybe supplied at run time),</li>
+<li>if this string can be converted to an integer, then it returns this integer,</li>
+<li>otherwise it returns <code>0</code>.</li>
+</ul>
+<p>This can be achieved by catching the exception thrown by <code>Integer.parseInt</code>.
+Syntactically, this is done with a <code>try/catch</code> block, as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">myMethod</span>(String inputString){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>{
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> Integer.<span style="color:#a6e22e">parseInt</span>(inputString);
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">catch</span> (NumberFormatException e) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> 0;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The code inside the <code>try</code> block is always executed, whereas the code inside the <code>catch</code> block is only executed if a <code>NumberFormatException</code> is thrown during the execution of the <code>try</code> block.</p>
+<p>In this example, the program is <em>not</em> interrupted.</p>
+<h3 id="chaining">
+  Chaining
+  <a class="anchor" href="#chaining">#</a>
+</h3>
+<p>The <code>catch</code> clause may itself throw an exception.</p>
+<p>This is a very common pattern.
+In particular, it can be used to add information about the context in which an error occurred.
+In such a case, a common practice consists in <strong>chaining</strong> these two exceptions.</p>
+<p>Most native Java classes for exceptions have a dedicated constructor for this purpose: it takes as input a string (for the error message), and the exception that was caught.
+For instance, we can modify our example in such a way that if the input string cannot be converted to an integer, then the program gets interrupted, but with a less generic error message:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyClass</span>{
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">myMethod</span>(String inputString){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">try</span>{
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> Integer.<span style="color:#a6e22e">parseInt</span>(inputString);
+</span></span><span style="display:flex;"><span>        } <span style="color:#66d9ef">catch</span> (NumberFormatException e) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> IllegalArgumentException(<span style="color:#e6db74">&#34;Please provide a valid number&#34;</span>, e);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Note in this example the second argument <code>e</code> of the constructor for <code>IllegalArgumentExcetion</code>.</p>
+<p>If the method is called as follows,</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>myMethod(<span style="color:#e6db74">&#34;notANumberEither&#34;</span>);
+</span></span></code></pre></div><p>then the program will be interrupted, with the following stack trace:</p>
+<pre tabindex="0"><code>Java.lang.IllegalArgumentException: Please provide a valid number
+
+  at MyClass.myMethod(MyClass.java:6)
+  &lt;bottom of the stack trace&gt;
+Caused by: java.lang.NumberFormatException: For input string: &#34;notANumberEither&#34;
+  at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+  at java.base/java.lang.Integer.parseInt(Integer.java:668)
+  at java.base/java.lang.Integer.parseInt(Integer.java:786)
+  at MyClass.myMethod(MyClass.java:4)
+</code></pre></article>
  
       
 
@@ -1090,11 +1267,12 @@ at Myclass.myMethod(Myclass.java:377)
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#runtime-exceptions-in-java">Runtime exceptions in Java</a>
+    <li><a href="#in-java">in Java</a>
       <ul>
-        <li><a href="#error-stack">Error stack</a></li>
-        <li><a href="#naming-conventions">Naming conventions</a></li>
+        <li><a href="#stack-trace">Stack trace</a></li>
+        <li><a href="#throwing-an-exception">Throwing an exception</a></li>
         <li><a href="#catching-an-exception">Catching an exception</a></li>
+        <li><a href="#chaining">Chaining</a></li>
       </ul>
     </li>
   </ul>

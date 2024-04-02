@@ -3,21 +3,27 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content=" Checked exceptions # ">
+<meta name="description" content="Checked vs unchecked # Unchecked exceptions # The simplest type of exception in Java is called an unchecked exception. An unchecked exception is an instances of the native class RuntimeException.
+The class RuntimeException has several native subclasses. You may be familiar wit some of them: NullPointerException, ArrayIndexOutOfBoundsException, IllegalArgumentException, etc.
+An unchecked exception that is not caught is automatically rethrown.
+Checked exceptions # In Java, an instance of Exception that is not an instance of RuntimeException is a checked exception.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="Checked exceptions" />
-<meta property="og:description" content=" Checked exceptions # " />
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Checked vs unchecked" />
+<meta property="og:description" content="Checked vs unchecked # Unchecked exceptions # The simplest type of exception in Java is called an unchecked exception. An unchecked exception is an instances of the native class RuntimeException.
+The class RuntimeException has several native subclasses. You may be familiar wit some of them: NullPointerException, ArrayIndexOutOfBoundsException, IllegalArgumentException, etc.
+An unchecked exception that is not caught is automatically rethrown.
+Checked exceptions # In Java, an instance of Exception that is not an instance of RuntimeException is a checked exception." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/errors/sections/checked/" /><meta property="article:section" content="docs" />
 
 
-<title>Checked exceptions | Programming project 2023-24</title>
+<title>Checked vs unchecked | Programming project 2023-24</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.1080c3d666a2a991edc547c1b93969a3963131394602aab344a1f22693557052.js" integrity="sha256-EIDD1maiqZHtxUfBuTlpo5YxMTlGAqqzRKHyJpNVcFI=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.941fbc425d1eed247e510991db4727cdec1ae919d2c9c590de1b3e015bb82167.js" integrity="sha256-lB&#43;8Ql0e7SR&#43;UQmR20cnzewa6RnSycWQ3hs&#43;AVu4IWc=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -443,6 +449,91 @@ https://github.com/alex-shpak/hugo-book
 
   
     <a href="/docs/interfaces/sections/java_interfaces/" class="">Java interfaces</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-93b39c27c032f5f72bed81496cbb41e3" class="toggle" checked />
+    <label for="section-93b39c27c032f5f72bed81496cbb41e3" class="flex justify-between">
+      <a href="/docs/errors/" class="">Errors</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a2fa4d1523374519c87fe83f9d8226b6" class="toggle"  />
+    <label for="section-a2fa4d1523374519c87fe83f9d8226b6" class="flex justify-between">
+      <a href="/docs/errors/sections/callstack/" class="">Call stack</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-323953d2054911560fd76ed4505d5bb2" class="toggle"  />
+    <label for="section-323953d2054911560fd76ed4505d5bb2" class="flex justify-between">
+      <a href="/docs/errors/sections/exceptions/" class="">Exceptions</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-03b7629c50286af7810d9917f4bdabd2" class="toggle" checked />
+    <label for="section-03b7629c50286af7810d9917f4bdabd2" class="flex justify-between">
+      <a href="/docs/errors/sections/checked/" class="active">Checked vs unchecked</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-b9c696d05ab8cb944ddf9cef47a3abb4" class="toggle"  />
+    <label for="section-b9c696d05ab8cb944ddf9cef47a3abb4" class="flex justify-between">
+      <a href="/docs/errors/sections/errors/" class="">Java errors</a>
+    </label>
   
 
         </li>
@@ -924,7 +1015,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Checked exceptions</strong>
+  <strong>Checked vs unchecked</strong>
 
   <label for="toc-control">
     
@@ -938,7 +1029,13 @@ https://github.com/alex-shpak/hugo-book
   <aside class="hidden clearfix">
     
   
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#unchecked-exceptions">Unchecked exceptions</a></li>
+    <li><a href="#checked-exceptions">Checked exceptions</a></li>
+    <li><a href="#custom-exceptions">Custom exceptions</a></li>
+  </ul>
+</nav>
 
 
 
@@ -949,10 +1046,71 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown book-article"><h1 id="checked-exceptions">
+  <article class="markdown book-article"><h1 id="checked-vs-unchecked">
+  Checked vs unchecked
+  <a class="anchor" href="#checked-vs-unchecked">#</a>
+</h1>
+<h2 id="unchecked-exceptions">
+  Unchecked exceptions
+  <a class="anchor" href="#unchecked-exceptions">#</a>
+</h2>
+<p>The simplest type of exception in Java is called an <strong>unchecked</strong> exception.
+An unchecked exception is an instances of the native class <code>RuntimeException</code>.</p>
+<p>The class <code>RuntimeException</code> has several native subclasses.
+You may be familiar wit some of them:
+<code>NullPointerException</code>, <code>ArrayIndexOutOfBoundsException</code>, <code>IllegalArgumentException</code>, etc.</p>
+<p>An unchecked exception that is not caught is <em>automatically rethrown</em>.</p>
+<h2 id="checked-exceptions">
   Checked exceptions
   <a class="anchor" href="#checked-exceptions">#</a>
-</h1>
+</h2>
+<p>In Java, an instance of <code>Exception</code> that is not an instance of <code>RuntimeException</code> is a <strong>checked</strong> exception.</p>
+<p>For instance, instances of the class <code>FileNotFoundException</code> are checked exceptions.</p>
+<p><img src="/img/diagrams/plantuml/exceptions.svg" alt="" /></p>
+<p>A checked exception is <em>not</em> rethrown by default.
+Instead, it must be <em>explicitly</em> rethrown (or caught), otherwise the program does not compile.</p>
+<p>For instance, the following code does not compile, because the constructor of <code>FileInputStream</code> may throw a <code>FileNotFoundException</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">myMethod</span>(String path) {
+</span></span><span style="display:flex;"><span>    FileInputStream stream <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FileInputStream(path);
+</span></span><span style="display:flex;"><span>        ...
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This can be fixed by either <a href="">catching</a> the exception, or <em>explicitly</em> rethrowing it, as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">myMethod</span>(String path) <span style="color:#66d9ef">throws</span> FileInputStream {
+</span></span><span style="display:flex;"><span>    FileInputStream stream <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FileInputStream(path);
+</span></span><span style="display:flex;"><span>        ...
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Then a method that calls <code>myMethod</code> will in turn have to catch the exception, or rethrow it explicitly, etc.</p>
+<h2 id="custom-exceptions">
+  Custom exceptions
+  <a class="anchor" href="#custom-exceptions">#</a>
+</h2>
+<p>You can create your own exception types by extending one of Java&rsquo;s native exception types.
+For instance:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">WrongNumberOfRowsException</span> <span style="color:#66d9ef">extends</span> IllegalArgumentException {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">WrongNumberOfRowsException</span>(<span style="color:#66d9ef">int</span> numberOfRows) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">super</span>(<span style="color:#e6db74">&#34;This sudoku grid has &#34;</span><span style="color:#f92672">+</span>numberOfRows<span style="color:#f92672">+</span><span style="color:#e6db74">&#34; rows, whereas it should have 9&#34;</span>).
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>A custom exception can be <a href="">thrown</a> like a regular one:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">if</span>(sudokuGrid.<span style="color:#a6e22e">length</span> <span style="color:#f92672">!=</span> 9){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> WrongNumberOfRowsException(sudokuGrid.<span style="color:#a6e22e">length</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><blockquote class="book-hint danger">
+  <p><strong><em>Warning.</em></strong>
+Recall that an instance of a subclass of <code>RuntimeException</code> is <em>unchecked</em>.</p>
+<p>In this example, <code>WrongNumberOfRowsException</code> extends <code>IllegalArgumentException</code>, which extends <code>RuntimeException</code>.
+Therefore an instance of <code>WrongNumberOfRowsException</code> is an <em>unchecked</em> exception.</p>
+
+</blockquote>
+
+<blockquote class="book-hint danger">
+  <strong><em>Warning.</em></strong>
+Checked exceptions add boilerplate code to signature methods (e.g. <code>throws FileInputStream</code> in the above example).
+For this reason, it is often recommended to use unchecked exceptions (i.e. instances of <code>RuntimeException</code>) <em>by default</em>.
+In <a href="">Effective java</a> (Item 71) Joshua Bloch suggests unchecked exceptions only if some calling method is likely to catch the exception and take a meaningful action when this happens.
+</blockquote>
+
 </article>
  
       
@@ -992,7 +1150,13 @@ https://github.com/alex-shpak/hugo-book
       <div class="book-toc-content">
         
   
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#unchecked-exceptions">Unchecked exceptions</a></li>
+    <li><a href="#checked-exceptions">Checked exceptions</a></li>
+    <li><a href="#custom-exceptions">Custom exceptions</a></li>
+  </ul>
+</nav>
 
 
  
