@@ -8,13 +8,13 @@
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/background/sections/problem/</loc>
   </url><url>
-    <loc>https://unibz-pp-23-24.github.io/docs/input/sections/files/</loc>
-  </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/list/</loc>
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/objects/sections/objects/</loc>
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/project/sections/free_project/</loc>
+  </url><url>
+    <loc>https://unibz-pp-23-24.github.io/docs/input/sections/files/</loc>
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/intro/sections/schedule/</loc>
   </url><url>
@@ -36,6 +36,8 @@
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/project/</loc>
   </url><url>
+    <loc>https://unibz-pp-23-24.github.io/docs/input/sections/read/</loc>
+  </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/set/</loc>
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/background/sections/set_tuple_map/</loc>
@@ -56,6 +58,8 @@
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/errors/sections/checked/</loc>
   </url><url>
+    <loc>https://unibz-pp-23-24.github.io/docs/input/sections/property/</loc>
+  </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/intro/sections/content/</loc>
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/git/sections/create/</loc>
@@ -70,23 +74,23 @@
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/queue/</loc>
   </url><url>
+    <loc>https://unibz-pp-23-24.github.io/docs/abstractdatatypes/</loc>
+  </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/git/sections/commit/</loc>
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/intro/sections/board_game/</loc>
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/objects/sections/tostring/</loc>
   </url><url>
-    <loc>https://unibz-pp-23-24.github.io/docs/errors/</loc>
-  </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/errors/sections/errors/</loc>
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/env/sections/os/</loc>
   </url><url>
-    <loc>https://unibz-pp-23-24.github.io/docs/abstractdatatypes/</loc>
-  </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/intro/sections/bibliography/</loc>
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/objects/sections/comparing/</loc>
+  </url><url>
+    <loc>https://unibz-pp-23-24.github.io/docs/errors/</loc>
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/env/sections/requirements/</loc>
   </url><url>
@@ -113,6 +117,8 @@
     <loc>https://unibz-pp-23-24.github.io/docs/objects/sections/quasi-objects/</loc>
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/sorting/</loc>
+  </url><url>
+    <loc>https://unibz-pp-23-24.github.io/docs/input/</loc>
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/git/sections/ignore/</loc>
   </url><url>

@@ -2,10 +2,45 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>I/O and serialization on Programming project 2023-24</title>
-    <link>http://localhost:1313/docs/input/</link>
+    <link>https://unibz-pp-23-24.github.io/docs/input/</link>
     <description>Recent content in I/O and serialization on Programming project 2023-24</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="http://localhost:1313/docs/input/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://unibz-pp-23-24.github.io/docs/input/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Paths and files in Java</title>
+      <link>https://unibz-pp-23-24.github.io/docs/input/sections/files/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/input/sections/files/</guid>
+      <description>Paths and files in Java # Java&amp;rsquo;s initial package for input/output (I/O) is called java.io. A central class in this package is File.&#xA;Over the years, programmers realized that this package had limitations: limited error handling, limited support for file metadata (owner, access rights, etc.), and some performance issues.&#xA;With Java 7 (2011), A new I/O package called NIO2 was released, with additional features (and in some cases a more concise syntax).</description>
+    </item>
+    <item>
+      <title>Reading from and writing to a file in Java</title>
+      <link>https://unibz-pp-23-24.github.io/docs/input/sections/read/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/input/sections/read/</guid>
+      <description>Reading from and writing to a file in Java # There are numerous ways to read from or write to a file in Java, using either native of external libraries.&#xA;We highlight here some of the simplest ones (syntactically), even though they may not be the most efficient.&#xA;We also restrict our scope to:&#xA;reading and writing text (but Java also offers multiple ways to read or write sequences of bytes), reading sequentially and writing by appending, but some classes like RandomAccessFile instance allows accessing any position in a file.</description>
+    </item>
+    <item>
+      <title>Configuration files</title>
+      <link>https://unibz-pp-23-24.github.io/docs/input/sections/property/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/input/sections/property/</guid>
+      <description>Configuration files # It is common practice for an application to store parameters (e.g. user-specific settings) in configuration files.&#xA;A configuration file may be edited manually and/or via a graphical interface.&#xA;Configuration files may use different serialization formats. Some popular formats are INI, JSON, TOML, YAML or XML.&#xA;in Java # Java provides native support for at least two configuration file serialization formats: XML and the so-called &amp;ldquo;property file&amp;rdquo; format.</description>
+    </item>
+    <item>
+      <title>Serialization</title>
+      <link>https://unibz-pp-23-24.github.io/docs/input/sections/serialize/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/input/sections/serialize/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>JSON Serialization</title>
+      <link>https://unibz-pp-23-24.github.io/docs/input/sections/json/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/input/sections/json/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

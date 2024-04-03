@@ -29,13 +29,6 @@
       <description>Computational problem # A computational problem is (usually) specified as:&#xA;a set of possible inputs, and the expected outputs (for these inputs). Problem vs algorithm # For instance, here is a problem that you may have encountered already:&#xA;Input: a sorted array A of integers, an integer a Output: true if a appears in A, false otherwise There are (infinitely) many algorithms that can solve this problem. But some of them are more efficient than others.</description>
     </item>
     <item>
-      <title>I/O in Java</title>
-      <link>https://unibz-pp-23-24.github.io/docs/input/sections/files/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://unibz-pp-23-24.github.io/docs/input/sections/files/</guid>
-      <description>I/O in Java # Java&amp;rsquo;s initial package for input/output (I/O) is called java.io.</description>
-    </item>
-    <item>
       <title>List</title>
       <link>https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/list/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -55,6 +48,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/project/sections/free_project/</guid>
       <description>Option 1: free project # The first option available to you for your project consists in developing a Java application of your choice.&#xA;This application is only a prototype, so it does not need a comprehensive list of features or functionalities.&#xA;The evaluation of your project will be mostly based on its backend (rather than the frontend). This means that your application:&#xA;does not necessarily need a graphical user interface (but you may choose to develop one), should perform non-trivial backend task(s) (e.</description>
+    </item>
+    <item>
+      <title>Paths and files in Java</title>
+      <link>https://unibz-pp-23-24.github.io/docs/input/sections/files/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/input/sections/files/</guid>
+      <description>Paths and files in Java # Java&amp;rsquo;s initial package for input/output (I/O) is called java.io. A central class in this package is File.&#xA;Over the years, programmers realized that this package had limitations: limited error handling, limited support for file metadata (owner, access rights, etc.), and some performance issues.&#xA;With Java 7 (2011), A new I/O package called NIO2 was released, with additional features (and in some cases a more concise syntax).</description>
     </item>
     <item>
       <title>Schedule</title>
@@ -89,7 +89,7 @@
       <link>https://unibz-pp-23-24.github.io/docs/errors/sections/exceptions/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/errors/sections/exceptions/</guid>
-      <description>Exceptions # Programming languages may significantly differ in the way they support errors messages.&#xA;Java relies on a mechanism called exceptions. Several other languages use exceptions, for instance C++, C#, PHP, Python or Ruby. However, the purpose of exceptions may vary from one language to another.&#xA;An exception is an object or data structure that stores information about an exceptional condition encountered during the execution of a program. Terminology. An exception is thrown by a method $m$ when such a condition occurs.</description>
+      <description>Exceptions # Programming languages may significantly differ in the way they support errors messages.&#xA;Java relies on a mechanism called exceptions. Several other languages use exceptions, for instance C++, C#, PHP, Python or Ruby. However, the purpose of exceptions may vary from one language to another.&#xA;An exception is an object or data structure that stores information about an exceptional condition encountered during the execution of a program. in Java # In Java, an exception is an object, instance of the native class Exception.</description>
     </item>
     <item>
       <title>Hierarchical file system</title>
@@ -111,6 +111,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/project/sections/board_game/</guid>
       <description>Option 2: board game # The second project option available to you consists in developing a video game with mechanics analogous to the ones of Might &amp;amp; Magic: Clash of Heroes or Legend of Solgard.&#xA;If you choose this option, you will be provided:&#xA;a basic graphical user interface (GUI) that you can reuse and/or customize, examples during lectures that you may adapt to your project. Requirements # The minimal requirement to submit your project is a player vs player game playable on a single machine.</description>
+    </item>
+    <item>
+      <title>Reading from and writing to a file in Java</title>
+      <link>https://unibz-pp-23-24.github.io/docs/input/sections/read/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/input/sections/read/</guid>
+      <description>Reading from and writing to a file in Java # There are numerous ways to read from or write to a file in Java, using either native of external libraries.&#xA;We highlight here some of the simplest ones (syntactically), even though they may not be the most efficient.&#xA;We also restrict our scope to:&#xA;reading and writing text (but Java also offers multiple ways to read or write sequences of bytes), reading sequentially and writing by appending, but some classes like RandomAccessFile instance allows accessing any position in a file.</description>
     </item>
     <item>
       <title>Set</title>
@@ -173,7 +180,14 @@
       <link>https://unibz-pp-23-24.github.io/docs/errors/sections/checked/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/errors/sections/checked/</guid>
-      <description>Checked vs unchecked # Unchecked exceptions # The simplest type of exception in Java is called an unchecked exception. An unchecked exception is an instances of the native class RuntimeException.&#xA;The class RuntimeException has several native subclasses. You may be familiar wit some of them: NullPointerException, ArrayIndexOutOfBoundsException, IllegalArgumentException, etc.&#xA;An unchecked exception that is not caught is automatically rethrown. Checked exceptions # In Java, an instance of Exception that is not an instance of RuntimeException is a checked exception.</description>
+      <description>Checked vs unchecked # Unchecked exceptions # The simplest type of exception in Java is called an unchecked exception. An unchecked exception is an instances of the native class RuntimeException.&#xA;The class RuntimeException has several native subclasses. You may be familiar wit some of them: NullPointerException, ArrayIndexOutOfBoundsException, IllegalArgumentException, etc.&#xA;An unchecked exception that is not caught is automatically rethrown. Checked exceptions # In Java, an Exception that is not a RuntimeException is a checked exception.</description>
+    </item>
+    <item>
+      <title>Configuration files</title>
+      <link>https://unibz-pp-23-24.github.io/docs/input/sections/property/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/input/sections/property/</guid>
+      <description>Configuration files # It is common practice for an application to store parameters (e.g. user-specific settings) in configuration files.&#xA;A configuration file may be edited manually and/or via a graphical interface.&#xA;Configuration files may use different serialization formats. Some popular formats are INI, JSON, TOML, YAML or XML.&#xA;in Java # Java provides native support for at least two configuration file serialization formats: XML and the so-called &amp;ldquo;property file&amp;rdquo; format.</description>
     </item>
     <item>
       <title>Content</title>

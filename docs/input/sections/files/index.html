@@ -3,21 +3,25 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="I/O in Java # Java&rsquo;s initial package for input/output (I/O) is called java.io.">
+<meta name="description" content="Paths and files in Java # Java&rsquo;s initial package for input/output (I/O) is called java.io. A central class in this package is File.
+Over the years, programmers realized that this package had limitations: limited error handling, limited support for file metadata (owner, access rights, etc.), and some performance issues.
+With Java 7 (2011), A new I/O package called NIO2 was released, with additional features (and in some cases a more concise syntax).">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="I/O in Java" />
-<meta property="og:description" content="I/O in Java # Java&rsquo;s initial package for input/output (I/O) is called java.io." />
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Paths and files in Java" />
+<meta property="og:description" content="Paths and files in Java # Java&rsquo;s initial package for input/output (I/O) is called java.io. A central class in this package is File.
+Over the years, programmers realized that this package had limitations: limited error handling, limited support for file metadata (owner, access rights, etc.), and some performance issues.
+With Java 7 (2011), A new I/O package called NIO2 was released, with additional features (and in some cases a more concise syntax)." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/input/sections/files/" /><meta property="article:section" content="docs" />
 
 
-<title>I/O in Java | Programming project 2023-24</title>
+<title>Paths and files in Java | Programming project 2023-24</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.47068b21f35db8bac3598e308af7129cfb2fc150f66944bcf08a96a9bf1c5162.js" integrity="sha256-RwaLIfNduLrDWY4wivcSnPsvwVD2aUS88IqWqb8cUWI=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.bfb6e1d7df198bf724a66372d43ed2657e9eae6bf17f67d697fb4db1b781a4da.js" integrity="sha256-v7bh198Zi/ckpmNy1D7SZX6ermvxf2fWl/tNsbeBpNo=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -460,6 +464,92 @@ https://github.com/alex-shpak/hugo-book
   
 
   
+    <input type="checkbox" id="section-e06acd393c0cc6e5b27e2cd8945d3dd8" class="toggle"  />
+    <label for="section-e06acd393c0cc6e5b27e2cd8945d3dd8" class="flex justify-between">
+      <a href="/docs/abstractdatatypes/" class="">Abstract data types</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/list/" class="">List</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/set/" class="">Set</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/map/" class="">Associative array</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/queue/" class="">Stack, queue, priority queue</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/sorting/" class="">Sorting</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
     <input type="checkbox" id="section-93b39c27c032f5f72bed81496cbb41e3" class="toggle"  />
     <label for="section-93b39c27c032f5f72bed81496cbb41e3" class="flex justify-between">
       <a href="/docs/errors/" class="">Errors</a>
@@ -545,9 +635,9 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-e06acd393c0cc6e5b27e2cd8945d3dd8" class="toggle"  />
-    <label for="section-e06acd393c0cc6e5b27e2cd8945d3dd8" class="flex justify-between">
-      <a href="/docs/abstractdatatypes/" class="">Abstract data types</a>
+    <input type="checkbox" id="section-b7bc445f96cbe2bd1034c5f1c5d075bb" class="toggle" checked />
+    <label for="section-b7bc445f96cbe2bd1034c5f1c5d075bb" class="flex justify-between">
+      <a href="/docs/input/" class="">I/O and serialization</a>
     </label>
   
 
@@ -561,7 +651,10 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/abstractdatatypes/sections/list/" class="">List</a>
+    <input type="checkbox" id="section-09ea3b18445537bd77c25d3db6ab2fcf" class="toggle" checked />
+    <label for="section-09ea3b18445537bd77c25d3db6ab2fcf" class="flex justify-between">
+      <a href="/docs/input/sections/files/" class="active">Paths and files in Java</a>
+    </label>
   
 
         </li>
@@ -574,7 +667,10 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/abstractdatatypes/sections/set/" class="">Set</a>
+    <input type="checkbox" id="section-640b25aadb55f28505bfbbe5a5f7073d" class="toggle"  />
+    <label for="section-640b25aadb55f28505bfbbe5a5f7073d" class="flex justify-between">
+      <a href="/docs/input/sections/read/" class="">Reading from and writing to a file in Java</a>
+    </label>
   
 
         </li>
@@ -587,36 +683,17 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/abstractdatatypes/sections/map/" class="">Associative array</a>
+    <input type="checkbox" id="section-7efe7741b54b5b602db75415a7806ef4" class="toggle"  />
+    <label for="section-7efe7741b54b5b602db75415a7806ef4" class="flex justify-between">
+      <a href="/docs/input/sections/property/" class="">Configuration files</a>
+    </label>
   
 
         </li>
       
     
       
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/abstractdatatypes/sections/queue/" class="">Stack, queue, priority queue</a>
-  
-
-        </li>
-      
     
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/abstractdatatypes/sections/sorting/" class="">Sorting</a>
-  
-
-        </li>
       
     
   </ul>
@@ -1009,7 +1086,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>I/O in Java</strong>
+  <strong>Paths and files in Java</strong>
 
   <label for="toc-control">
     
@@ -1023,7 +1100,20 @@ https://github.com/alex-shpak/hugo-book
   <aside class="hidden clearfix">
     
   
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#paths">Paths</a>
+      <ul>
+        <li><a href="#path-names">Path names</a></li>
+        <li><a href="#working-directory">Working directory</a></li>
+        <li><a href="#the-path-interface">The Path interface</a></li>
+      </ul>
+    </li>
+    <li><a href="#existence-and-metadata">Existence and metadata</a></li>
+    <li><a href="#navigation">Navigation</a></li>
+    <li><a href="#modifications">Modifications</a></li>
+  </ul>
+</nav>
 
 
 
@@ -1034,12 +1124,156 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown book-article"><h1 id="io-in-java">
-  I/O in Java
-  <a class="anchor" href="#io-in-java">#</a>
+  <article class="markdown book-article"><h1 id="paths-and-files-in-java">
+  Paths and files in Java
+  <a class="anchor" href="#paths-and-files-in-java">#</a>
 </h1>
-<p>Java&rsquo;s initial package for input/output (I/O) is called <code>java.io</code>.</p>
-</article>
+<p>Java&rsquo;s initial package for input/output (I/O) is called <code>java.io</code>.
+A central class in this package is <a href="https://docs.oracle.com/javase/8/docs/api/java/io/File.html">File</a>.</p>
+<p>Over the years, programmers realized that this package had limitations: limited error handling, limited support for file metadata (owner, access rights, etc.), and some performance issues.</p>
+<p>With Java 7 (2011), A new I/O package called NIO2 was released, with additional features (and in some cases a more concise syntax).
+A central interface (resp. class) in this package is <a href="https://docs.oracle.com/javase/8/docs/api/java/nio/file/Path.html">Path</a> (resp. <a href="https://docs.oracle.com/javase/8/docs/api/java/nio/file/Files.html">Files</a>).</p>
+<p>However, the package <code>java.io</code> is still part of the latest Java release (it has <em>not</em> been deprecated), in part for backward compatibility reasons.</p>
+<p>In this chapter, we will focus whenever possible on NIO2&rsquo;s classes and methods, rather than <code>java.io</code>.
+In particular, we will use the <code>Path</code> when possible rather than <code>File</code>.</p>
+<p>Note also that some external libraries (notably Apache <a href="https://commons.apache.org/proper/commons-io/description.html">commons.io</a> and <a href="https://github.com/google/guava/wiki/IOExplained">Guava</a>) provide additional methods for I/O, sometimes with a more concise syntax.</p>
+<h2 id="paths">
+  Paths
+  <a class="anchor" href="#paths">#</a>
+</h2>
+<p>An instance of <code>Path</code> represents a <a href="https://unibz-pp-23-24.github.io/docs/env/sections/files/#path">path</a> in the hierarchical file system.</p>
+<p>An instance of <code>Path</code> can be created in multiple ways.
+For instance:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Path myPath <span style="color:#f92672">=</span> Path.<span style="color:#a6e22e">of</span>(<span style="color:#e6db74">&#34;path/to/file.txt&#34;</span>);
+</span></span><span style="display:flex;"><span>Path samePath <span style="color:#f92672">=</span> Path.<span style="color:#a6e22e">of</span>(<span style="color:#e6db74">&#34;path&#34;</span>, <span style="color:#e6db74">&#34;to&#34;</span>, <span style="color:#e6db74">&#34;file.txt&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Extend a path</span>
+</span></span><span style="display:flex;"><span>Path folder <span style="color:#f92672">=</span> Path.<span style="color:#a6e22e">of</span>(<span style="color:#e6db74">&#34;path/to&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// identical to myPath</span>
+</span></span><span style="display:flex;"><span>Path myPathAgain <span style="color:#f92672">=</span> folder.<span style="color:#a6e22e">resolve</span>(<span style="color:#e6db74">&#34;file.txt&#34;</span>);
+</span></span></code></pre></div><h3 id="path-names">
+  Path names
+  <a class="anchor" href="#path-names">#</a>
+</h3>
+<blockquote class="book-hint info">
+  <p><strong><em>Note.</em></strong>
+If the string <code>path/to/file.txt</code> is used to create a Java <code>Path</code> (or a Java <code>File</code>), then the <code>/</code> symbol is interpreted (at runtime) as the path separator <em>of the operating system</em> (OS) that executes the program.
+So you can safely use this syntax, <em>regardless of your OS</em>.
+Precisely:</p>
+<ul>
+<li>if the program is executed on macOS, Linux, Android, etc., then this string will be interpreted as is,</li>
+<li>if the program is executed on Windows, then this string will be interpreted as <code>path\to\file.txt</code>.</li>
+</ul>
+</blockquote>
+
+<blockquote class="book-hint danger">
+  <strong><em>Warning.</em></strong>
+If the string <code>path\to\file.txt</code> is used to create a Java <code>Path</code>, then this string will be interpreted <em>as is</em>.
+So the program may run on Windows, but fail on other systems.
+</blockquote>
+
+<blockquote class="book-hint danger">
+  <strong><em>Warning.</em></strong>
+Paths are <em>case sensitive</em> on Linux, Android, etc., but <em>case insensitive</em> on Windows and macOS.
+For maximal compatibility, make sure that path names in your code respect the case of your file and directory names.
+</blockquote>
+
+<blockquote class="book-hint danger">
+  <strong><em>Warning.</em></strong>
+Do <em>not</em> use <a href="https://unibz-pp-23-24.github.io/docs/env/sections/files/#absolute">absolute paths</a> in your code (e.g. <code>/home/Alice/workspace/javaProject/myFile.txt</code>, or <code>C:\Users\Alice\workspace\javaProject\myFile.txt</code>).
+Your program may run on your own computer, but will fail on others.
+</blockquote>
+
+<h3 id="working-directory">
+  Working directory
+  <a class="anchor" href="#working-directory">#</a>
+</h3>
+<p><blockquote class="book-hint danger">
+  <strong><em>Warning.</em></strong>
+When a Java program is executed, relative paths are understood as paths <em>from</em> the current <a href="https://unibz-pp-23-24.github.io/docs/env/sections/files/#wd">working directory</a> (WD).
+</blockquote>
+
+If you need to know what the WD is, you can use the following (among other possibilities):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Paths.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;&#34;</span>).<span style="color:#a6e22e">toAbsolutePath</span>();
+</span></span></code></pre></div><p>This instruction returns an absolute <code>Path</code> to the WD.</p>
+<p>For instance,</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(Paths.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;&#34;</span>).<span style="color:#a6e22e">toAbsolutePath</span>());
+</span></span></code></pre></div><p>may output on Windows:</p>
+<pre tabindex="0"><code>C:\Users\Alice\workspace\javaProject
+</code></pre><p>or on macOS:</p>
+<pre tabindex="0"><code>/Users/Alice/workspace/javaProject
+</code></pre><p>or on Linux:</p>
+<pre tabindex="0"><code>/home/Alice/workspace/javaProject
+</code></pre><h3 id="the-path-interface">
+  The Path interface
+  <a class="anchor" href="#the-path-interface">#</a>
+</h3>
+<p>Here are examples of outputs for some methods of the <code>Path</code> interface (assuming that the WD is <code>/home/Alice/workspace/javaProject</code>):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Path path <span style="color:#f92672">=</span> Path.<span style="color:#a6e22e">of</span>(<span style="color:#e6db74">&#34;src/main/../main/resources/myFile.txt&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Outputs &#39;/home/Alice/workspace/javaProject/src/main/../main/resources/myFile.txt&#39;</span>
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(path.<span style="color:#a6e22e">toAbsolutePath</span>());
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Outputs &#39;/home/Alice/workspace/javaProject/src/main/resources/myFile.txt&#39;</span>
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(path.<span style="color:#a6e22e">toRealPath</span>());
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Outputs &#39;myFile.txt&#39;</span>
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(path.<span style="color:#a6e22e">getFileName</span>());
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Outputs &#39;false&#39;</span>
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(path.<span style="color:#a6e22e">isAbsolute</span>());
+</span></span></code></pre></div><h2 id="existence-and-metadata">
+  Existence and metadata
+  <a class="anchor" href="#existence-and-metadata">#</a>
+</h2>
+<p>Static methods of the class <code>Files</code> can be used to check whether a file or directory exists, and retrieve metadata about it:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Path path <span style="color:#f92672">=</span> Path.<span style="color:#a6e22e">of</span>(<span style="color:#e6db74">&#34;src/main/resources/myFile.txt&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Exists = &#34;</span> <span style="color:#f92672">+</span> Files.<span style="color:#a6e22e">exists</span>(path));
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Is directory = &#34;</span> <span style="color:#f92672">+</span> Files.<span style="color:#a6e22e">isDirectory</span>(path));
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Is file = &#34;</span> <span style="color:#f92672">+</span> Files.<span style="color:#a6e22e">isRegularFile</span>(path));
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Is hidden = &#34;</span> <span style="color:#f92672">+</span> Files.<span style="color:#a6e22e">isHidden</span>(path));
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Size = &#34;</span> <span style="color:#f92672">+</span> Files.<span style="color:#a6e22e">size</span>(path) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; bytes&#34;</span>);
+</span></span></code></pre></div><h2 id="navigation">
+  Navigation
+  <a class="anchor" href="#navigation">#</a>
+</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Path path <span style="color:#f92672">=</span> Path.<span style="color:#a6e22e">of</span>(<span style="color:#e6db74">&#34;src/main/resources/myFile.txt&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Get the parent directory &#39;src/main/resources&#39;</span>
+</span></span><span style="display:flex;"><span>Path dir <span style="color:#f92672">=</span> path.<span style="color:#a6e22e">getParent</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Contains all files and folders in &#39;src/main/resources&#39;</span>
+</span></span><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Path<span style="color:#f92672">&gt;</span> children <span style="color:#f92672">=</span> Files.<span style="color:#a6e22e">list</span>(dir).<span style="color:#a6e22e">toList</span>();
+</span></span></code></pre></div><h2 id="modifications">
+  Modifications
+  <a class="anchor" href="#modifications">#</a>
+</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Create a directory</span>
+</span></span><span style="display:flex;"><span>Path folder <span style="color:#f92672">=</span> Path.<span style="color:#a6e22e">of</span>(<span style="color:#e6db74">&#34;myFolder&#34;</span>);
+</span></span><span style="display:flex;"><span>Files.<span style="color:#a6e22e">createDirectory</span>(folder);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Create nested directories</span>
+</span></span><span style="display:flex;"><span>Path subfolder <span style="color:#f92672">=</span> Path.<span style="color:#a6e22e">of</span>(<span style="color:#e6db74">&#34;myFolder/sub1/sub2&#34;</span>);
+</span></span><span style="display:flex;"><span>Files.<span style="color:#a6e22e">createDirectories</span>(subfolder);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Create a file</span>
+</span></span><span style="display:flex;"><span>Path file <span style="color:#f92672">=</span> Path.<span style="color:#a6e22e">of</span>(<span style="color:#e6db74">&#34;myFolder/hello.txt&#34;</span>);
+</span></span><span style="display:flex;"><span>Files.<span style="color:#a6e22e">createFile</span>(file);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Rename (a.k.a. move) a file</span>
+</span></span><span style="display:flex;"><span>Path renamedFile <span style="color:#f92672">=</span> Path.<span style="color:#a6e22e">of</span>(<span style="color:#e6db74">&#34;myFolder/sub1/bye.txt&#34;</span>);
+</span></span><span style="display:flex;"><span>Files.<span style="color:#a6e22e">move</span>(file, renamedFile);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Copy a file</span>
+</span></span><span style="display:flex;"><span>Path copy <span style="color:#f92672">=</span> Path.<span style="color:#a6e22e">of</span>(<span style="color:#e6db74">&#34;myFolder/sub1/sub2/bybye.txt&#34;</span>);
+</span></span><span style="display:flex;"><span>Files.<span style="color:#a6e22e">copy</span>(renamedFile, copy);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Delete a file or directory (throws a checked exception)</span>
+</span></span><span style="display:flex;"><span>Files.<span style="color:#a6e22e">delete</span>(copy);
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// the directory must be empty</span>
+</span></span><span style="display:flex;"><span>Files.<span style="color:#a6e22e">delete</span>(subfolder);
+</span></span></code></pre></div></article>
  
       
 
@@ -1078,7 +1312,20 @@ https://github.com/alex-shpak/hugo-book
       <div class="book-toc-content">
         
   
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#paths">Paths</a>
+      <ul>
+        <li><a href="#path-names">Path names</a></li>
+        <li><a href="#working-directory">Working directory</a></li>
+        <li><a href="#the-path-interface">The Path interface</a></li>
+      </ul>
+    </li>
+    <li><a href="#existence-and-metadata">Existence and metadata</a></li>
+    <li><a href="#navigation">Navigation</a></li>
+    <li><a href="#modifications">Modifications</a></li>
+  </ul>
+</nav>
 
 
  
