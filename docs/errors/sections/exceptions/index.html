@@ -21,7 +21,7 @@ An exception is an object or data structure that stores information about an exc
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.941fbc425d1eed247e510991db4727cdec1ae919d2c9c590de1b3e015bb82167.js" integrity="sha256-lB&#43;8Ql0e7SR&#43;UQmR20cnzewa6RnSycWQ3hs&#43;AVu4IWc=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.47068b21f35db8bac3598e308af7129cfb2fc150f66944bcf08a96a9bf1c5162.js" integrity="sha256-RwaLIfNduLrDWY4wivcSnPsvwVD2aUS88IqWqb8cUWI=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1063,7 +1063,7 @@ However, the purpose of exceptions may vary from one language to another.</p>
 
 <blockquote class="book-hint warning">
   <p><strong><em>Terminology.</em></strong> An exception is <strong>thrown</strong> by a method $m$ when such a condition occurs.
-The method that called $m$ can either:</p>
+The method that called $m$ (i.e. the method immediately below $m$ in the call stack) can either:</p>
 <ul>
 <li><strong>catch</strong> the exception (and handle it), or</li>
 <li><strong>rethrow</strong> it.</li>
@@ -1075,7 +1075,7 @@ The method that called $m$ can either:</p>
   <a class="anchor" href="#in-java">#</a>
 </h2>
 <p>In Java, an exception is an <em>object</em>, instance of the native class <code>Exception</code>.</p>
-<p>All exception types (e.g. <code>FileNotFoundException</code>) are subclasses of <code>Exception</code>.</p>
+<p>All exception types (e.g. <code>IOException</code>) are subclasses of <code>Exception</code>.</p>
 <p>By convention, a class name for an exception:</p>
 <ul>
 <li>ends with the word <code>Exception</code>, and</li>
@@ -1085,7 +1085,7 @@ The method that called $m$ can either:</p>
   Stack trace
   <a class="anchor" href="#stack-trace">#</a>
 </h3>
-<p>By default, when an unchecked exception is thrown, the program interrupts its execution, and the current <a href="">call stack</a> is printed on an output stream called <code>System.error</code>.
+<p>By default, when an exception is thrown, the program interrupts its execution, and the current <a href="">call stack</a> is sent to an output stream called <code>System.error</code>.
 This output is called the <strong>stack trace</strong> (because it allows tracing back the method calls that led to the exception being thrown).</p>
 <p>For instance, consider the following class:</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
@@ -1106,10 +1106,7 @@ This output is called the <strong>stack trace</strong> (because it allows tracin
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>When <code>myMethod</code> is executed, it calls the method <code>Integer.parseInt(String string)</code>.
-This method in turn calls the method <code>Integer.parseInt(String string, int radix)</code> with the same string as argument, and a value of <code>10</code> for the <a href="https://en.wikipedia.org/wiki/Radix">radix</a> (meaning that the string should represent an integer in base 10).
-Because the string &ldquo;clearlyNotANumber&rdquo; does not represent a number, the method <code>Integer.parseInt(String string, int radix)</code> (which is on top the call stack) <em>throws</em> an exception.</p>
-<p>As a result, the following stack trace is printed to <code>System.error</code>:</p>
+</div><p>When <code>myMethod</code> is executed, the following stack trace is printed to <code>System.error</code>:</p>
 <pre tabindex="0"><code>java.lang.NumberFormatException: For input string: &#34;clearlyNotANumber&#34;
 
 at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
@@ -1117,9 +1114,15 @@ at java.base/java.lang.Integer.parseInt(Integer.java:668)
 at java.base/java.lang.Integer.parseInt(Integer.java:786)
 at Myclass.myMethod(Myclass.java:4)
 &lt;bottom of the stack trace&gt;
-</code></pre><blockquote class="book-hint info">
+</code></pre><p>The explanation is the following:</p>
+<ul>
+<li><code>myMethod</code> (Line 4) calls <code>Integer.parseInt(String string)</code>,</li>
+<li><code>Integer.parseInt(String string)</code> calls <code>Integer.parseInt(String string, int radix)</code> with the same string as argument, and a value of <code>10</code> for the <a href="https://en.wikipedia.org/wiki/Radix">radix</a> (meaning that the string should represent an integer in base 10).</li>
+<li><code>Integer.parseInt(String string, int radix)</code> throws an exception, because the string &ldquo;clearlyNotANumber&rdquo; does not represent a (base 10) number.</li>
+</ul>
+<blockquote class="book-hint info">
   <strong><em>Hint.</em></strong>
-Your IDE allows you to navigate through Java&rsquo;s source code to trace the cause of the exception.
+Your IDE allows you to navigate through Java&rsquo;s source code to trace the cause of an exception.
 </blockquote>
 
 <blockquote class="book-hint info">
@@ -1147,17 +1150,20 @@ To debug your code, by default:</p>
 </span></span><span style="display:flex;"><span>    ...
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>Classes for native Java exceptions usually have several constructors, one of which takes a string as input.
-For instance, in the example above, we used the constructor <code>IllegalArgumentExcetion(String errorMessage)</code>.</p>
+For instance, in the example above, we used the constructor <code>IllegalArgumentException(String errorMessage)</code>.</p>
 <h3 id="catching-an-exception">
   Catching an exception
   <a class="anchor" href="#catching-an-exception">#</a>
 </h3>
-<p>When a runtime exception is thrown by a method, the method that precedes it in the stack trace can either <strong>rethrow</strong> the exception, or <strong>catch</strong> it.</p>
-<p>If a method in the call stack catches the exception, then the program is <em>not interrupted</em>.
+<p><blockquote class="book-hint warning">
+  When a runtime exception is thrown by a method, the method immediately below it in the stack trace can either <strong>rethrow</strong> the exception, or <strong>catch</strong> it.
+</blockquote>
+
+When a method in the call stack catches the exception, the program is <em>not interrupted</em>.
 Instead, control is passed to the catching method.</p>
 <p>More precisely, when an exception is thrown, the JVM &ldquo;pops&rdquo; method calls from the call stack, until either:</p>
 <ul>
-<li>a <code>catch</code> instruction is found, or</li>
+<li>a catching method is found, or</li>
 <li>the call stack is empty (in which case the program is interrupted).</li>
 </ul>
 <p>For instance, let us modify <code>myMethod</code> above so that:</p>
@@ -1175,8 +1181,12 @@ Syntactically, this is done with a <code>try/catch</code> block, as follows:</p>
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> 0;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>The code inside the <code>try</code> block is always executed, whereas the code inside the <code>catch</code> block is only executed if a <code>NumberFormatException</code> is thrown during the execution of the <code>try</code> block.</p>
-<p>In this example, the program is <em>not</em> interrupted.</p>
+</span></span></code></pre></div><p>In this example:</p>
+<ul>
+<li>the code inside the <code>try</code> block is always executed,</li>
+<li>the code inside the <code>catch</code> block is only executed if a <code>NumberFormatException</code> is thrown during the execution of the <code>try</code> block,</li>
+<li>the program is <em>not</em> interrupted.</li>
+</ul>
 <h3 id="chaining">
   Chaining
   <a class="anchor" href="#chaining">#</a>
@@ -1213,7 +1223,7 @@ For instance, we can modify our example in such a way that if the input string c
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>Note in this example the second argument <code>e</code> of the constructor for <code>IllegalArgumentExcetion</code>.</p>
+</div><p>Note in this example the second argument <code>e</code> of the constructor for <code>IllegalArgumentException</code>.</p>
 <p>If the method is called as follows,</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>myMethod(<span style="color:#e6db74">&#34;notANumberEither&#34;</span>);
 </span></span></code></pre></div><p>then the program will be interrupted, with the following stack trace:</p>

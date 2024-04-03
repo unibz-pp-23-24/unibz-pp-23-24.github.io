@@ -5,15 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Checked vs unchecked # Unchecked exceptions # The simplest type of exception in Java is called an unchecked exception. An unchecked exception is an instances of the native class RuntimeException.
 The class RuntimeException has several native subclasses. You may be familiar wit some of them: NullPointerException, ArrayIndexOutOfBoundsException, IllegalArgumentException, etc.
-An unchecked exception that is not caught is automatically rethrown.
-Checked exceptions # In Java, an instance of Exception that is not an instance of RuntimeException is a checked exception.">
+An unchecked exception that is not caught is automatically rethrown. Checked exceptions # In Java, an instance of Exception that is not an instance of RuntimeException is a checked exception.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="Checked vs unchecked" />
 <meta property="og:description" content="Checked vs unchecked # Unchecked exceptions # The simplest type of exception in Java is called an unchecked exception. An unchecked exception is an instances of the native class RuntimeException.
 The class RuntimeException has several native subclasses. You may be familiar wit some of them: NullPointerException, ArrayIndexOutOfBoundsException, IllegalArgumentException, etc.
-An unchecked exception that is not caught is automatically rethrown.
-Checked exceptions # In Java, an instance of Exception that is not an instance of RuntimeException is a checked exception." />
+An unchecked exception that is not caught is automatically rethrown. Checked exceptions # In Java, an instance of Exception that is not an instance of RuntimeException is a checked exception." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/errors/sections/checked/" /><meta property="article:section" content="docs" />
 
@@ -23,7 +21,7 @@ Checked exceptions # In Java, an instance of Exception that is not an instance o
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.941fbc425d1eed247e510991db4727cdec1ae919d2c9c590de1b3e015bb82167.js" integrity="sha256-lB&#43;8Ql0e7SR&#43;UQmR20cnzewa6RnSycWQ3hs&#43;AVu4IWc=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.47068b21f35db8bac3598e308af7129cfb2fc150f66944bcf08a96a9bf1c5162.js" integrity="sha256-RwaLIfNduLrDWY4wivcSnPsvwVD2aUS88IqWqb8cUWI=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1059,25 +1057,29 @@ An unchecked exception is an instances of the native class <code>RuntimeExceptio
 <p>The class <code>RuntimeException</code> has several native subclasses.
 You may be familiar wit some of them:
 <code>NullPointerException</code>, <code>ArrayIndexOutOfBoundsException</code>, <code>IllegalArgumentException</code>, etc.</p>
-<p>An unchecked exception that is not caught is <em>automatically rethrown</em>.</p>
+<blockquote class="book-hint warning">
+  An unchecked exception that is not caught is <em>automatically rethrown</em>.
+</blockquote>
+
 <h2 id="checked-exceptions">
   Checked exceptions
   <a class="anchor" href="#checked-exceptions">#</a>
 </h2>
 <p>In Java, an instance of <code>Exception</code> that is not an instance of <code>RuntimeException</code> is a <strong>checked</strong> exception.</p>
-<p>For instance, instances of the class <code>FileNotFoundException</code> are checked exceptions.</p>
+<p>For instance, instances of the class <code>IOException</code> are checked exceptions.</p>
 <p><img src="/img/diagrams/plantuml/exceptions.svg" alt="" /></p>
-<p>A checked exception is <em>not</em> rethrown by default.
-Instead, it must be <em>explicitly</em> rethrown (or caught), otherwise the program does not compile.</p>
-<p>For instance, the following code does not compile, because the constructor of <code>FileInputStream</code> may throw a <code>FileNotFoundException</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">myMethod</span>(String path) {
-</span></span><span style="display:flex;"><span>    FileInputStream stream <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FileInputStream(path);
-</span></span><span style="display:flex;"><span>        ...
+<blockquote class="book-hint warning">
+  A checked exception is <em>not</em> rethrown by default.
+Instead, it must be <em>explicitly</em> rethrown (or caught), otherwise the program does not <em>compile</em>.
+</blockquote>
+
+<p>For instance, the following code does not compile, because the method of <code>Files.readAllLines</code> may throw an <code>IOException</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">myMethod</span>(Path path) {
+</span></span><span style="display:flex;"><span>    Files.<span style="color:#a6e22e">readAllLines</span>(path);
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>This can be fixed by either <a href="">catching</a> the exception, or <em>explicitly</em> rethrowing it, as follows:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">myMethod</span>(String path) <span style="color:#66d9ef">throws</span> FileInputStream {
-</span></span><span style="display:flex;"><span>    FileInputStream stream <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FileInputStream(path);
-</span></span><span style="display:flex;"><span>        ...
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">myMethod</span>(Path path) <span style="color:#66d9ef">throws</span> IOException {
+</span></span><span style="display:flex;"><span>    Files.<span style="color:#a6e22e">readAllLines</span>(path);
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>Then a method that calls <code>myMethod</code> will in turn have to catch the exception, or rethrow it explicitly, etc.</p>
 <h2 id="custom-exceptions">
@@ -1106,9 +1108,9 @@ Therefore an instance of <code>WrongNumberOfRowsException</code> is an <em>unche
 
 <blockquote class="book-hint danger">
   <strong><em>Warning.</em></strong>
-Checked exceptions add boilerplate code to signature methods (e.g. <code>throws FileInputStream</code> in the above example).
+Checked exceptions add boilerplate code to method signatures (e.g. <code>throws IOException</code> in the above example).
 For this reason, it is often recommended to use unchecked exceptions (i.e. instances of <code>RuntimeException</code>) <em>by default</em>.
-In <a href="">Effective java</a> (Item 71) Joshua Bloch suggests unchecked exceptions only if some calling method is likely to catch the exception and take a meaningful action when this happens.
+In <a href="">Effective java</a> (Item 71) Joshua Bloch suggests unchecked exceptions only if some calling method is likely to <em>catch</em> the exception and take a <em>meaningful action</em> when this happens.
 </blockquote>
 
 </article>

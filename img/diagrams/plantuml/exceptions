@@ -17,11 +17,11 @@ class ArrayIndexOutOfBoundsException {
 class NullPointerException {
 }
 
-class FileNotFoundException {
+class IOException {
 }
 
 Exception <|-- RuntimeException : extends
-Exception <|-- FileNotFoundException : extends
+Exception <|-- IOException : extends
 RuntimeException <|-- ArrayIndexOutOfBoundsException : extends
 RuntimeException <|-- NullPointerException : extends
 RuntimeException <|-- IllegalArgumentException : extends
