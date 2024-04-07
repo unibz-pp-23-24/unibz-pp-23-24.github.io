@@ -23,7 +23,7 @@ in Java # Java provides native support for at least two configuration file seria
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.4498c0268009ba17d60a2678f16624e5415e98079ce1c2daba4b9d8d590070af.js" integrity="sha256-RJjAJoAJuhfWCiZ48WYk5UFemAec4cLaukudjVkAcK8=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.dbcbb4798985e5752824de07f9c20ff0c941a60da47641d9e32ef56b204f5191.js" integrity="sha256-28u0eYmF5XUoJN4H&#43;cIP8MlBpg2kdkHZ4y71ayBPUZE=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1015,6 +1015,43 @@ https://github.com/alex-shpak/hugo-book
   
 
   
+    <input type="checkbox" id="section-44fa5eb3511a340ff4e9042080604b5c" class="toggle"  />
+    <label for="section-44fa5eb3511a340ff4e9042080604b5c" class="flex justify-between">
+      <a href="/docs/build/" class="">Build automation</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-5537e478f301d8ff4f0b5a7a03c9db32" class="toggle"  />
+    <label for="section-5537e478f301d8ff4f0b5a7a03c9db32" class="flex justify-between">
+      <a href="/docs/build/sections/layout/" class="">Layout</a>
+    </label>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
     <input type="checkbox" id="section-ffcf8551871937aae0ce60f2b3cc616b" class="toggle"  />
     <label for="section-ffcf8551871937aae0ce60f2b3cc616b" class="flex justify-between">
       <a href="/docs/background/" class="">Background</a>
@@ -1122,8 +1159,8 @@ https://github.com/alex-shpak/hugo-book
   <ul>
     <li><a href="#in-java">in Java</a>
       <ul>
-        <li><a href="#reading">Reading</a></li>
-        <li><a href="#writing">Writing</a></li>
+        <li><a href="#reading-a-property-file">Reading a property file</a></li>
+        <li><a href="#writing-to-a-property-file">Writing to a property file</a></li>
       </ul>
     </li>
   </ul>
@@ -1155,7 +1192,7 @@ Some popular formats are INI, JSON, TOML, YAML or XML.</p>
 <blockquote class="book-hint warning">
   <p>A <strong>property file</strong> usually:</p>
 <ul>
-<li>has extension <code>.properties</code>, and</li>
+<li>has extension <code>.properties</code>,</li>
 <li>may have commented line (starting with <code>#</code> or <code>!</code>),</li>
 <li>contains one <code>key=value</code> pair per (non-commented) line.</li>
 </ul>
@@ -1169,10 +1206,10 @@ resolution=1920x1080
 </code></pre>
 </blockquote>
 
-A further introduction to the syntax of property files (escaped characters, spaces, etc.) can be found <a href="https://en.wikipedia.org/wiki/.properties">here</a>.</p>
-<h3 id="reading">
-  Reading
-  <a class="anchor" href="#reading">#</a>
+More details about the syntax of property files (escaped characters, spaces, etc.) can be found <a href="https://en.wikipedia.org/wiki/.properties">here</a>.</p>
+<h3 id="reading-a-property-file">
+  Reading a property file
+  <a class="anchor" href="#reading-a-property-file">#</a>
 </h3>
 <p>The content of a property file can be loaded in memory and modified as an <a href="https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/map/">associative array</a>
 , instance of the class <code>Properties</code> (which extends <code>Map</code>).</p>
@@ -1186,17 +1223,21 @@ A further introduction to the syntax of property files (escaped characters, spac
 </span></span></code></pre></div><p>Then a value can be read with the method <code>getProperty</code> (among other possibilities), as follows:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String resolution <span style="color:#f92672">=</span> properties.<span style="color:#a6e22e">getProperty</span>(<span style="color:#e6db74">&#34;resolution&#34;</span>);
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">float</span> duration <span style="color:#f92672">=</span> Float.<span style="color:#a6e22e">parseFloat</span>(properties.<span style="color:#a6e22e">getProperty</span>(<span style="color:#e6db74">&#34;animationDuration&#34;</span>));
-</span></span></code></pre></div><h3 id="writing">
-  Writing
-  <a class="anchor" href="#writing">#</a>
+</span></span></code></pre></div><h3 id="writing-to-a-property-file">
+  Writing to a property file
+  <a class="anchor" href="#writing-to-a-property-file">#</a>
 </h3>
 <p>The content of a property file can be modified with the methods <code>setProperty</code> and <code>store</code> (among other possibilities), as follows:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;path/to/config.properties&#34;</span>;
 </span></span><span style="display:flex;"><span>Properties properties <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Properties();
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// load the file as an associative array</span>
 </span></span><span style="display:flex;"><span>    properties.<span style="color:#a6e22e">load</span>(<span style="color:#66d9ef">new</span> FileInputStream(path));
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// modify the associative array</span>
 </span></span><span style="display:flex;"><span>    properties.<span style="color:#a6e22e">setProperty</span>(<span style="color:#e6db74">&#34;animationDuration&#34;</span>, Float.<span style="color:#a6e22e">toString</span>(0.<span style="color:#a6e22e">5f</span>));
-</span></span><span style="display:flex;"><span>    properties.<span style="color:#a6e22e">store</span>(<span style="color:#66d9ef">new</span> FileOutputStream(path), <span style="color:#e6db74">&#34;Some optional comment&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// replace the content of the property file with the</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// content of the associative array</span>
+</span></span><span style="display:flex;"><span>    properties.<span style="color:#a6e22e">store</span>(<span style="color:#66d9ef">new</span> FileOutputStream(path));
 </span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">catch</span> (IOException e) {
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> RuntimeException(e);
 </span></span><span style="display:flex;"><span>}
@@ -1243,8 +1284,8 @@ A further introduction to the syntax of property files (escaped characters, spac
   <ul>
     <li><a href="#in-java">in Java</a>
       <ul>
-        <li><a href="#reading">Reading</a></li>
-        <li><a href="#writing">Writing</a></li>
+        <li><a href="#reading-a-property-file">Reading a property file</a></li>
+        <li><a href="#writing-to-a-property-file">Writing to a property file</a></li>
       </ul>
     </li>
   </ul>
