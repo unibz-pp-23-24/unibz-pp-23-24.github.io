@@ -3,20 +3,18 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Checked vs unchecked # Unchecked exceptions # The simplest type of exception in Java is called an unchecked exception. An unchecked exception is an instances of the native class RuntimeException.
-The class RuntimeException has several native subclasses. You may be familiar wit some of them: NullPointerException, ArrayIndexOutOfBoundsException, IllegalArgumentException, etc.
-An unchecked exception that is not caught is automatically rethrown. Checked exceptions # In Java, an Exception that is not a RuntimeException is a checked exception.">
+<meta name="description" content="Layout # The standard directory layout # By default, a Maven project is expected to comply with the so-called &ldquo;standard directly layout&rdquo;.
+Warning. We focus here on files and folders that you are likely to use in your project. A more comprehensive description can be found here. ├── README.md ├── pom.xml ├── src │ ├── main │ │ ├── java │ │ │ └── ... │ │ └── resources │ │ └── .">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="Checked vs unchecked" />
-<meta property="og:description" content="Checked vs unchecked # Unchecked exceptions # The simplest type of exception in Java is called an unchecked exception. An unchecked exception is an instances of the native class RuntimeException.
-The class RuntimeException has several native subclasses. You may be familiar wit some of them: NullPointerException, ArrayIndexOutOfBoundsException, IllegalArgumentException, etc.
-An unchecked exception that is not caught is automatically rethrown. Checked exceptions # In Java, an Exception that is not a RuntimeException is a checked exception." />
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Layout" />
+<meta property="og:description" content="Layout # The standard directory layout # By default, a Maven project is expected to comply with the so-called &ldquo;standard directly layout&rdquo;.
+Warning. We focus here on files and folders that you are likely to use in your project. A more comprehensive description can be found here. ├── README.md ├── pom.xml ├── src │ ├── main │ │ ├── java │ │ │ └── ... │ │ └── resources │ │ └── ." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/errors/sections/checked/" /><meta property="article:section" content="docs" />
+<meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/build/sections/layout/" /><meta property="article:section" content="docs" />
 
 
-<title>Checked vs unchecked | Programming project 2023-24</title>
+<title>Layout | Programming project 2023-24</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
@@ -550,7 +548,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-93b39c27c032f5f72bed81496cbb41e3" class="toggle" checked />
+    <input type="checkbox" id="section-93b39c27c032f5f72bed81496cbb41e3" class="toggle"  />
     <label for="section-93b39c27c032f5f72bed81496cbb41e3" class="flex justify-between">
       <a href="/docs/errors/" class="">Errors</a>
     </label>
@@ -598,9 +596,9 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-03b7629c50286af7810d9917f4bdabd2" class="toggle" checked />
+    <input type="checkbox" id="section-03b7629c50286af7810d9917f4bdabd2" class="toggle"  />
     <label for="section-03b7629c50286af7810d9917f4bdabd2" class="flex justify-between">
-      <a href="/docs/errors/sections/checked/" class="active">Checked vs unchecked</a>
+      <a href="/docs/errors/sections/checked/" class="">Checked vs unchecked</a>
     </label>
   
 
@@ -1102,7 +1100,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Checked vs unchecked</strong>
+  <strong>Layout</strong>
 
   <label for="toc-control">
     
@@ -1118,12 +1116,10 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#unchecked">Unchecked exceptions</a></li>
-    <li><a href="#checked">Checked exceptions</a>
-      <ul>
-        <li><a href="#rethrow">Rethrow explicitly</a></li>
-      </ul>
-    </li>
+    <li><a href="#the-standard-directory-layout">The standard directory layout</a></li>
+    <li><a href="#the-target-directory">The <code>target</code> directory</a></li>
+    <li><a href="#maven-and-git">Maven and Git</a></li>
+    <li><a href="#the-pomxml-file">The <code>pom.xml</code> file</a></li>
   </ul>
 </nav>
 
@@ -1136,57 +1132,161 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown book-article"><h1 id="checked-vs-unchecked">
-  Checked vs unchecked
-  <a class="anchor" href="#checked-vs-unchecked">#</a>
+  <article class="markdown book-article"><h1 id="layout">
+  Layout
+  <a class="anchor" href="#layout">#</a>
 </h1>
-<h2 id="unchecked">
-  Unchecked exceptions
-  <a class="anchor" href="#unchecked">#</a>
+<h2 id="the-standard-directory-layout">
+  The standard directory layout
+  <a class="anchor" href="#the-standard-directory-layout">#</a>
 </h2>
-<p>The simplest type of exception in Java is called an <strong>unchecked</strong> exception.
-An unchecked exception is an instances of the native class <code>RuntimeException</code>.</p>
-<p>The class <code>RuntimeException</code> has several native subclasses.
-You may be familiar wit some of them:
-<code>NullPointerException</code>, <code>ArrayIndexOutOfBoundsException</code>, <code>IllegalArgumentException</code>, etc.</p>
-<blockquote class="book-hint warning">
-  An unchecked exception that is not caught is <em>automatically rethrown</em>.
-</blockquote>
-
-<h2 id="checked">
-  Checked exceptions
-  <a class="anchor" href="#checked">#</a>
-</h2>
-<p>In Java, an <code>Exception</code> that is not a <code>RuntimeException</code> is a <strong>checked</strong> exception.</p>
-<p>For instance, an <code>IOException</code> is a checked exception.</p>
-<p><img src="/img/diagrams/plantuml/exceptions.svg" alt="" /></p>
-<blockquote class="book-hint warning">
-  A checked exception is <em>not</em> rethrown by default.
-Instead, it must be <em>explicitly</em> rethrown (or caught), otherwise the program does not <em>compile</em>.
-</blockquote>
-
-<p>For instance, the following code does not compile, because the method of <code>Files.readAllLines</code> may throw an <code>IOException</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">someMethod</span>(Path path) {
-</span></span><span style="display:flex;"><span>    Files.<span style="color:#a6e22e">readAllLines</span>(path);
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h3 id="rethrow">
-  Rethrow explicitly
-  <a class="anchor" href="#rethrow">#</a>
-</h3>
-<p>This can be fixed by either <a href="https://unibz-pp-23-24.github.io/docs/errors/sections/exceptions/#catch">catching</a> the exception, or <em>explicitly</em> rethrowing it, as follows:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">someMethod</span>(Path path) <span style="color:#66d9ef">throws</span> IOException {
-</span></span><span style="display:flex;"><span>    Files.<span style="color:#a6e22e">readAllLines</span>(path);
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>Then a method that calls <code>myMethod</code> will in turn have to catch the exception, or rethrow it explicitly, etc.</p>
+<p>By default, a Maven project is expected to comply with the so-called &ldquo;standard directly layout&rdquo;.</p>
 <blockquote class="book-hint danger">
   <strong><em>Warning.</em></strong>
-Checked exceptions add boilerplate code to method signatures (e.g. <code>throws IOException</code> in the above example).
-For this reason, it is often recommended to use unchecked exceptions (i.e. instances of <code>RuntimeException</code>) <em>by default</em>.
-In <a href="https://unibz-pp-23-24.github.io/docs/intro/sections/bibliography/#effectiveJava">Effective java</a> (Item 71),
-Joshua Bloch suggests checked exceptions only if some calling method is likely to <em>catch</em> the exception and take a <em>meaningful action</em> when this happens.
+We focus here on files and folders that you are likely to use in your project.
+A more comprehensive description can be found <a href="https://maven.apache.org/guides/introduction/introduction-to-the-standard-directory-layout.html">here</a>.
 </blockquote>
 
-</article>
+<div class="book-columns flex flex-wrap">
+
+  <div class="flex-even markdown-inner">
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>├── README.md
+</span></span><span style="display:flex;"><span>├── pom.xml
+</span></span><span style="display:flex;"><span>├── src
+</span></span><span style="display:flex;"><span>│   ├── main
+</span></span><span style="display:flex;"><span>│   │   ├── java
+</span></span><span style="display:flex;"><span>│   │   │   └── ...
+</span></span><span style="display:flex;"><span>│   │   └── resources
+</span></span><span style="display:flex;"><span>│   │       └── ...
+</span></span><span style="display:flex;"><span>│   └── test
+</span></span><span style="display:flex;"><span>│       ├── java
+</span></span><span style="display:flex;"><span>│       │   └── ...
+</span></span><span style="display:flex;"><span>│       └── resources
+</span></span><span style="display:flex;"><span>│           └── ...
+</span></span><span style="display:flex;"><span>...
+</span></span></code></pre></div>
+  </div>
+
+  <div class="flex-even markdown-inner">
+    
+  </div>
+
+</div>
+
+<p>Here is the intended purpose of these files and directories (all <a href="">paths</a> are from the root of the project):</p>
+<table>
+<thead>
+<tr>
+<th>file or directory</th>
+<th>content</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>README</code> or <code>README.md</code></td>
+<td>description of the project</td>
+</tr>
+<tr>
+<td><code>pom.xml</code></td>
+<td>Maven configuration for the project</td>
+</tr>
+<tr>
+<td><code>src/main/java</code></td>
+<td>source code of the project</td>
+</tr>
+<tr>
+<td><code>src/main/resources</code></td>
+<td>resources for the project (e.g. configuration files, images, etc.)</td>
+</tr>
+<tr>
+<td><code>src/test/java</code></td>
+<td>source code for unit tests</td>
+</tr>
+<tr>
+<td><code>src/test/resources</code></td>
+<td>resources for unit tests (e.g. data)</td>
+</tr>
+</tbody>
+</table>
+<blockquote class="book-hint info">
+  <strong><em>Note.</em></strong>
+By default, the content of the <code>resource</code> directories is automatically included in a <a href="">jar</a> generated with Maven.
+</blockquote>
+
+<h2 id="the-target-directory">
+  The <code>target</code> directory
+  <a class="anchor" href="#the-target-directory">#</a>
+</h2>
+<p>When building a Maven project, some files and directories are <em>generated</em>.</p>
+<p>By default, the directory called <code>target</code> (at the root of the project) contains the output of the build, in particular:</p>
+<ul>
+<li>the bytecode (i.e. <code>.class</code> files),</li>
+<li>the generated <code>.jar</code> file(s), if any.</li>
+</ul>
+<blockquote class="book-hint info">
+  <strong><em>Hint.</em></strong>
+Since it is automatically generated,
+the <code>target</code> directory can be safely deleted.
+</blockquote>
+
+<h2 id="maven-and-git">
+  Maven and Git
+  <a class="anchor" href="#maven-and-git">#</a>
+</h2>
+<p>Aside from the content of the project, the following Maven-specific files should usually be committed:</p>
+<ul>
+<li>the <code>pom.xml</code> file,</li>
+<li>if the <a href="">Maven wrapper</a> was used
+<ul>
+<li>the <code>.mvn</code>folder,</li>
+<li>the <code>mvnw</code> file,</li>
+<li>the <code>mvnw.cmd</code> folder</li>
+</ul>
+</li>
+</ul>
+<p>The following should <em>not</em> be committed (i.e. ignored via <code>.gitignore</code>):</p>
+<ul>
+<li>the <code>target</code> directory,</li>
+<li>additional content (if any) generated by certain plugins (e.g. generated code).</li>
+</ul>
+<h2 id="the-pomxml-file">
+  The <code>pom.xml</code> file
+  <a class="anchor" href="#the-pomxml-file">#</a>
+</h2>
+<p>POM stands for &ldquo;Project Object Model&rdquo;.
+A <code>pom.xml</code> file contains the configuration of a Maven project (or a module in a project).
+It contains all the necessary information about the project and its build process.</p>
+<p>Your IDE can generate the backbone of a <code>pom.xml</code> file.</p>
+<p>For a Java project, it usually has the following structure:</p>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->4.0.0<!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted --> XXX <!-- raw HTML omitted -->
+<!-- raw HTML omitted --> XXX <!-- raw HTML omitted -->
+<!-- raw HTML omitted --> XXX <!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>Here is the skeleton of a basic <code>pom.xml</code> file for a Java 17 project</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;project</span> <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://maven.apache.org/POM/4.0.0&#34;</span> <span style="color:#a6e22e">xmlns:xsi=</span><span style="color:#e6db74">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">xsi:schemaLocation=</span><span style="color:#e6db74">&#34;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;modelVersion&gt;</span>4.0.0<span style="color:#f92672">&lt;/modelVersion&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;groupId&gt;</span>it.unibz.pp2022<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;artifactId&gt;</span>hello-world<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;version&gt;</span>1.0-SNAPSHOT<span style="color:#f92672">&lt;/version&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;properties&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;maven.compiler.target&gt;</span>17<span style="color:#f92672">&lt;/maven.compiler.target&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;maven.compiler.source&gt;</span>17<span style="color:#f92672">&lt;/maven.compiler.source&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;project.build.sourceEncoding&gt;</span>UTF-8<span style="color:#f92672">&lt;/project.build.sourceEncoding&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;/properties&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/project&gt;</span>
+</span></span></code></pre></div></article>
  
       
 
@@ -1227,12 +1327,10 @@ Joshua Bloch suggests checked exceptions only if some calling method is likely t
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#unchecked">Unchecked exceptions</a></li>
-    <li><a href="#checked">Checked exceptions</a>
-      <ul>
-        <li><a href="#rethrow">Rethrow explicitly</a></li>
-      </ul>
-    </li>
+    <li><a href="#the-standard-directory-layout">The standard directory layout</a></li>
+    <li><a href="#the-target-directory">The <code>target</code> directory</a></li>
+    <li><a href="#maven-and-git">Maven and Git</a></li>
+    <li><a href="#the-pomxml-file">The <code>pom.xml</code> file</a></li>
   </ul>
 </nav>
 

@@ -29,6 +29,13 @@
       <description>Computational problem # A computational problem is (usually) specified as:&#xA;a set of possible inputs, and the expected outputs (for these inputs). Problem vs algorithm # For instance, here is a problem that you may have encountered already:&#xA;Input: a sorted array A of integers, an integer a Output: true if a appears in A, false otherwise There are (infinitely) many algorithms that can solve this problem. But some of them are more efficient than others.</description>
     </item>
     <item>
+      <title>Layout</title>
+      <link>https://unibz-pp-23-24.github.io/docs/build/sections/layout/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/build/sections/layout/</guid>
+      <description>Layout # The standard directory layout # By default, a Maven project is expected to comply with the so-called &amp;ldquo;standard directly layout&amp;rdquo;.&#xA;Warning. We focus here on files and folders that you are likely to use in your project. A more comprehensive description can be found here. ├── README.md ├── pom.xml ├── src │ ├── main │ │ ├── java │ │ │ └── ... │ │ └── resources │ │ └── .</description>
+    </item>
+    <item>
       <title>List</title>
       <link>https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/list/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -117,7 +124,7 @@
       <link>https://unibz-pp-23-24.github.io/docs/input/sections/read/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/input/sections/read/</guid>
-      <description>Reading from and writing to a file in Java # There are numerous ways to read from or write to a file in Java, using either native of external libraries.&#xA;We highlight here some of the simplest ones (syntactically), even though they may not be the most efficient.&#xA;We also restrict our scope to:&#xA;reading and writing text (but Java also offers multiple ways to read or write sequences of bytes), reading sequentially and writing by appending, but some classes like RandomAccessFile instance allows accessing any position in a file.</description>
+      <description>Reading from and writing to a file in Java # There are numerous ways to read from or write to a file in Java, using either native of external libraries.&#xA;We highlight here some of the simplest ones (syntactically), even though they may not be the most efficient.&#xA;We also restrict our scope to:&#xA;reading and writing text (but Java also offers multiple ways to read or write sequences of bytes), reading sequentially and writing by appending (but some classes like RandomAccessFile allow accessing any position in a file).</description>
     </item>
     <item>
       <title>Set</title>
@@ -246,18 +253,18 @@
       <description>Board game # In order to follow this course, you will need to play one of the two following video games:&#xA;Might &amp;amp; Magic: Clash of Heroes, or Legend of Solgard. These two games have very similar mechanics. So by default, we will refer to them as a unique game (e.g. when we write &amp;ldquo;this game&amp;rdquo; or &amp;ldquo;our board game&amp;rdquo;).&#xA;Why this game # Turn-based board games (like chess, go, checkers, etc.</description>
     </item>
     <item>
+      <title>Custom exceptions</title>
+      <link>https://unibz-pp-23-24.github.io/docs/errors/sections/custom/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/errors/sections/custom/</guid>
+      <description>Custom exception # Custom exceptions can be created by extending one of Java&amp;rsquo;s native exception types. For instance:&#xA;public class WrongNumberOfRowsException extends IllegalArgumentException { public WrongNumberOfRowsException(int numberOfRows) { super(&amp;#34;This sudoku grid has &amp;#34;+numberOfRows+&amp;#34; rows, whereas it should have 9&amp;#34;). } } A custom exception can be thrown like a regular one:&#xA;if(sudokuGrid.length != 9){ throw new WrongNumberOfRowsException(sudokuGrid.length); } Observation. In this example, WrongNumberOfRowsException extends IllegalArgumentException, which extends RuntimeException. Recall that an instance of a subclass of RuntimeException is unchecked.</description>
+    </item>
+    <item>
       <title>Displaying objects</title>
       <link>https://unibz-pp-23-24.github.io/docs/objects/sections/tostring/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/objects/sections/tostring/</guid>
       <description>Displaying objects # The class Object # Java has a native class called Object with 11 instance methods. Every Java class implicitly extends Object, including user-defined classes. Therefore any Java class inherits these methods. The method toString # toString is one of the methods of the class Object. Here is (part of) its specification:&#xA;/** Returns a string representation of the object. * In general, the toString method returns a string that * &amp;#34;textually represents&amp;#34; this object.</description>
-    </item>
-    <item>
-      <title>Java errors</title>
-      <link>https://unibz-pp-23-24.github.io/docs/errors/sections/errors/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://unibz-pp-23-24.github.io/docs/errors/sections/errors/</guid>
-      <description>Java errors # Aside from exceptions, a Java program can throw a so-called Error.&#xA;According to the Javadoc for the class Error:&#xA;An Error [&amp;hellip;] indicates serious problems that a reasonable application should not try to catch. Most such errors are abnormal conditions.&#xA;For instance, some subclasses or Error are OutOfMemoryError and StackOverflowError.</description>
     </item>
     <item>
       <title>Operating system</title>
@@ -314,6 +321,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/env/sections/ide/</guid>
       <description>Integrated development environment (IDE) # An IDE is an application that consists of a source code editor with additional functionalities such as a debugger or build automation.&#xA;For this course, you can use any IDE (or enhanced code editor) for Java with at least the following features:&#xA;a debugger navigation to variable/class/interface declaration and usage, variable/class/interface renaming, Maven integration, Gradle integration if you choose the board game as your project.</description>
+    </item>
+    <item>
+      <title>Java errors</title>
+      <link>https://unibz-pp-23-24.github.io/docs/errors/sections/errors/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/errors/sections/errors/</guid>
+      <description>Java errors # Aside from exceptions, a Java program can throw a so-called Error.&#xA;According to the Javadoc for the class Error:&#xA;An Error [&amp;hellip;] indicates serious problems that a reasonable application should not try to catch. Most such errors are abnormal conditions.&#xA;For instance, some subclasses or Error are OutOfMemoryError and StackOverflowError.</description>
     </item>
     <item>
       <title>Synchronization: remote, push, pull</title>

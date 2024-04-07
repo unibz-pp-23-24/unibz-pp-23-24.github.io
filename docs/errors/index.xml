@@ -29,6 +29,13 @@
       <description>Checked vs unchecked # Unchecked exceptions # The simplest type of exception in Java is called an unchecked exception. An unchecked exception is an instances of the native class RuntimeException.&#xA;The class RuntimeException has several native subclasses. You may be familiar wit some of them: NullPointerException, ArrayIndexOutOfBoundsException, IllegalArgumentException, etc.&#xA;An unchecked exception that is not caught is automatically rethrown. Checked exceptions # In Java, an Exception that is not a RuntimeException is a checked exception.</description>
     </item>
     <item>
+      <title>Custom exceptions</title>
+      <link>https://unibz-pp-23-24.github.io/docs/errors/sections/custom/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/errors/sections/custom/</guid>
+      <description>Custom exception # Custom exceptions can be created by extending one of Java&amp;rsquo;s native exception types. For instance:&#xA;public class WrongNumberOfRowsException extends IllegalArgumentException { public WrongNumberOfRowsException(int numberOfRows) { super(&amp;#34;This sudoku grid has &amp;#34;+numberOfRows+&amp;#34; rows, whereas it should have 9&amp;#34;). } } A custom exception can be thrown like a regular one:&#xA;if(sudokuGrid.length != 9){ throw new WrongNumberOfRowsException(sudokuGrid.length); } Observation. In this example, WrongNumberOfRowsException extends IllegalArgumentException, which extends RuntimeException. Recall that an instance of a subclass of RuntimeException is unchecked.</description>
+    </item>
+    <item>
       <title>Java errors</title>
       <link>https://unibz-pp-23-24.github.io/docs/errors/sections/errors/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

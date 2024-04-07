@@ -6,14 +6,14 @@
 <meta name="description" content="Reading from and writing to a file in Java # There are numerous ways to read from or write to a file in Java, using either native of external libraries.
 We highlight here some of the simplest ones (syntactically), even though they may not be the most efficient.
 We also restrict our scope to:
-reading and writing text (but Java also offers multiple ways to read or write sequences of bytes), reading sequentially and writing by appending, but some classes like RandomAccessFile instance allows accessing any position in a file.">
+reading and writing text (but Java also offers multiple ways to read or write sequences of bytes), reading sequentially and writing by appending (but some classes like RandomAccessFile allow accessing any position in a file).">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="Reading from and writing to a file in Java" />
 <meta property="og:description" content="Reading from and writing to a file in Java # There are numerous ways to read from or write to a file in Java, using either native of external libraries.
 We highlight here some of the simplest ones (syntactically), even though they may not be the most efficient.
 We also restrict our scope to:
-reading and writing text (but Java also offers multiple ways to read or write sequences of bytes), reading sequentially and writing by appending, but some classes like RandomAccessFile instance allows accessing any position in a file." />
+reading and writing text (but Java also offers multiple ways to read or write sequences of bytes), reading sequentially and writing by appending (but some classes like RandomAccessFile allow accessing any position in a file)." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/input/sections/read/" /><meta property="article:section" content="docs" />
 
@@ -23,7 +23,7 @@ reading and writing text (but Java also offers multiple ways to read or write se
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.6fe41009638969570acaf844e00ee98eeddcb18fac6eff6f94a509a3392416a9.js" integrity="sha256-b&#43;QQCWOJaVcKyvhE4A7pju3csY&#43;sbv9vlKUJozkkFqk=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.4498c0268009ba17d60a2678f16624e5415e98079ce1c2daba4b9d8d590070af.js" integrity="sha256-RJjAJoAJuhfWCiZ48WYk5UFemAec4cLaukudjVkAcK8=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -616,6 +616,22 @@ https://github.com/alex-shpak/hugo-book
   
 
   
+    <input type="checkbox" id="section-3add83584009ceb58c28b43e0a2280c9" class="toggle"  />
+    <label for="section-3add83584009ceb58c28b43e0a2280c9" class="flex justify-between">
+      <a href="/docs/errors/sections/custom/" class="">Custom exceptions</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
     <input type="checkbox" id="section-b9c696d05ab8cb944ddf9cef47a3abb4" class="toggle"  />
     <label for="section-b9c696d05ab8cb944ddf9cef47a3abb4" class="flex justify-between">
       <a href="/docs/errors/sections/errors/" class="">Java errors</a>
@@ -1140,7 +1156,7 @@ https://github.com/alex-shpak/hugo-book
 <p>We also restrict our scope to:</p>
 <ul>
 <li>reading and writing <em>text</em> (but Java also offers multiple ways to read or write sequences of bytes),</li>
-<li>reading sequentially and writing by appending, but some classes like <a href="https://docs.oracle.com/javase/8/docs/api/java/io/RandomAccessFile.html">RandomAccessFile</a> instance allows accessing any position in a file.</li>
+<li>reading sequentially and writing by appending (but some classes like <a href="https://docs.oracle.com/javase/8/docs/api/java/io/RandomAccessFile.html">RandomAccessFile</a> allow accessing any position in a file).</li>
 </ul>
 <h2 id="reading">
   Reading
@@ -1200,7 +1216,7 @@ For instance, in a csv file, each line can be decomposed using a comma (<code>,<
 </h2>
 <blockquote class="book-hint danger">
   <strong><em>Warning.</em></strong>
-In Java, methods that write an (underspecified) line separator produce a (sequence of) character(s) that depends on the operating system running the program (<code>\r\n</code> on Windows, and <code>\n</code> on most modern operating systems).
+In Java, methods that write an (underspecified) line separator produce a (sequence of) character(s) that depends on the operating system running the program: <code>\r\n</code> on Windows, and <code>\n</code> on most other modern operating systems.
 </blockquote>
 
 <p>This is the case in all three examples below, with the methods <code>BufferedWriter.newLine</code>, <code>PrintWriter.println</code> and <code>Files.write</code>.</p>

@@ -21,7 +21,7 @@ An exception is an object or data structure that stores information about an exc
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.6fe41009638969570acaf844e00ee98eeddcb18fac6eff6f94a509a3392416a9.js" integrity="sha256-b&#43;QQCWOJaVcKyvhE4A7pju3csY&#43;sbv9vlKUJozkkFqk=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.4498c0268009ba17d60a2678f16624e5415e98079ce1c2daba4b9d8d590070af.js" integrity="sha256-RJjAJoAJuhfWCiZ48WYk5UFemAec4cLaukudjVkAcK8=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -614,6 +614,22 @@ https://github.com/alex-shpak/hugo-book
   
 
   
+    <input type="checkbox" id="section-3add83584009ceb58c28b43e0a2280c9" class="toggle"  />
+    <label for="section-3add83584009ceb58c28b43e0a2280c9" class="flex justify-between">
+      <a href="/docs/errors/sections/custom/" class="">Custom exceptions</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
     <input type="checkbox" id="section-b9c696d05ab8cb944ddf9cef47a3abb4" class="toggle"  />
     <label for="section-b9c696d05ab8cb944ddf9cef47a3abb4" class="flex justify-between">
       <a href="/docs/errors/sections/errors/" class="">Java errors</a>
@@ -1105,8 +1121,8 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#in-java">in Java</a>
       <ul>
         <li><a href="#stack-trace">Stack trace</a></li>
-        <li><a href="#throwing-an-exception">Throwing an exception</a></li>
-        <li><a href="#catching-an-exception">Catching an exception</a></li>
+        <li><a href="#throw">Throwing an exception</a></li>
+        <li><a href="#catch">Catching an exception</a></li>
         <li><a href="#chaining">Chaining</a></li>
       </ul>
     </li>
@@ -1149,7 +1165,7 @@ However, the purpose of exceptions may vary from one language to another.</p>
   Stack trace
   <a class="anchor" href="#stack-trace">#</a>
 </h3>
-<p>By default, when an exception is <strong>thrown</strong>, the program interrupts its execution, and the current <a href="">call stack</a> is sent to an output stream called <code>System.error</code>.
+<p>By default, when an exception is <strong>thrown</strong>, the program interrupts its execution, and the current <a href="https://unibz-pp-23-24.github.io/docs/errors/sections/callstack/">call stack</a> is sent to an output stream called <code>System.error</code>.
 This output is called the <strong>stack trace</strong> (because it allows tracing back the method calls that led to the exception being thrown).</p>
 <p>For instance, consider the following class:</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
@@ -1199,9 +1215,9 @@ To debug your code, by default:</p>
 </ol>
 </blockquote>
 
-<h3 id="throwing-an-exception">
+<h3 id="throw">
   Throwing an exception
-  <a class="anchor" href="#throwing-an-exception">#</a>
+  <a class="anchor" href="#throw">#</a>
 </h3>
 <p>An exception can be thrown with the keyword <code>throw</code>, as follows:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">isSolvable</span>(<span style="color:#66d9ef">int</span><span style="color:#f92672">[][]</span> sudokuGrid){
@@ -1215,9 +1231,9 @@ To debug your code, by default:</p>
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>Classes for native Java exceptions usually have several constructors, one of which takes a string as input.
 For instance, in the example above, we used the constructor <code>IllegalArgumentException(String errorMessage)</code>.</p>
-<h3 id="catching-an-exception">
+<h3 id="catch">
   Catching an exception
-  <a class="anchor" href="#catching-an-exception">#</a>
+  <a class="anchor" href="#catch">#</a>
 </h3>
 <p><blockquote class="book-hint warning">
   When a runtime exception is thrown by a method, the method immediately below it in the stack trace can either <strong>rethrow</strong> the exception, or <strong>catch</strong> it.
@@ -1344,8 +1360,8 @@ Caused by: java.lang.NumberFormatException: For input string: &#34;notANumberEit
     <li><a href="#in-java">in Java</a>
       <ul>
         <li><a href="#stack-trace">Stack trace</a></li>
-        <li><a href="#throwing-an-exception">Throwing an exception</a></li>
-        <li><a href="#catching-an-exception">Catching an exception</a></li>
+        <li><a href="#throw">Throwing an exception</a></li>
+        <li><a href="#catch">Catching an exception</a></li>
         <li><a href="#chaining">Chaining</a></li>
       </ul>
     </li>

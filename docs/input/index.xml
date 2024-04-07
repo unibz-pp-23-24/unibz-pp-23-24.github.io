@@ -19,7 +19,7 @@
       <link>https://unibz-pp-23-24.github.io/docs/input/sections/read/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/input/sections/read/</guid>
-      <description>Reading from and writing to a file in Java # There are numerous ways to read from or write to a file in Java, using either native of external libraries.&#xA;We highlight here some of the simplest ones (syntactically), even though they may not be the most efficient.&#xA;We also restrict our scope to:&#xA;reading and writing text (but Java also offers multiple ways to read or write sequences of bytes), reading sequentially and writing by appending, but some classes like RandomAccessFile instance allows accessing any position in a file.</description>
+      <description>Reading from and writing to a file in Java # There are numerous ways to read from or write to a file in Java, using either native of external libraries.&#xA;We highlight here some of the simplest ones (syntactically), even though they may not be the most efficient.&#xA;We also restrict our scope to:&#xA;reading and writing text (but Java also offers multiple ways to read or write sequences of bytes), reading sequentially and writing by appending (but some classes like RandomAccessFile allow accessing any position in a file).</description>
     </item>
     <item>
       <title>Configuration files</title>

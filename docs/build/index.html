@@ -3,20 +3,21 @@
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content=" Build automation # ">
+<meta name="description" content="Build automation # Building a piece of software means converting code into a program that can be executed. This may include code generation, compilation, linking, testing, file compression, creating an installer or an executable, deployment, etc.
+Each of these subtasks may be performed numerous times during the development of a program. So it is natural to automate them.
+A build automation tool is meant to facilitate the configuration of these tasks, and execute them automatically.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="Build automation" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://localhost:1313/docs/build/" />
-
 <title>Build automation | Programming project 2023-24</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.c159bcc34148094cb7100ffff20f51e4193a61f47e9e93427ea7ef4730469cb0.js" integrity="sha256-wVm8w0FICUy3EA//8g9R5Bk6YfR&#43;npNCfqfvRzBGnLA=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.3a3e6abdf62ef8bbff02381a92791ed03dc4aaf200437b06fb06a07fb0ecc45e.js" integrity="sha256-Oj5qvfYu&#43;Lv/Ajgaknke0D3EqvIAQ3sG&#43;wagf7DsxF4=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="http://localhost:1313/docs/build/index.xml" title="Programming project 2023-24" />
 <!--
 Made with Book Theme
@@ -45,6 +46,17 @@ https://github.com/alex-shpak/hugo-book
   crossorigin="anonymous"
   onload="renderMathInElement(document.body);"
 ></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+      ],
+    });
+  });
+</script>
 
 </head>
 <body dir="ltr">
@@ -306,7 +318,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/objects/sections/comparison/" class="">Comparing objects</a>
+    <a href="/docs/objects/sections/tostring/" class="">Displaying objects</a>
   
 
         </li>
@@ -319,7 +331,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/objects/sections/encapsulation/" class="">Encapsulation</a>
+    <a href="/docs/objects/sections/comparing/" class="">Cast and equality</a>
   
 
         </li>
@@ -332,7 +344,20 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/objects/sections/clone/" class="">Copying objects</a>
+    <a href="/docs/objects/sections/classesasobjects/" class="">Classes as objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/clone/" class="">Duplicating objects</a>
   
 
         </li>
@@ -358,13 +383,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/objects/sections/casts/" class="">Type checking and cast</a>
+    <a href="/docs/objects/sections/encapsulation/" class="">Encapsulation</a>
   
-
-        </li>
-      
-    
-  </ul>
 
         </li>
       
@@ -376,23 +396,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-06ca724a4caafd99788c5f8e355ee319" class="toggle"  />
-    <label for="section-06ca724a4caafd99788c5f8e355ee319" class="flex justify-between">
-      <a href="/docs/encapsulation/" class="">Encapsulation</a>
-    </label>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/encapsulation/sections/visibility/" class="">Visibility</a>
+    <a href="/docs/objects/sections/quiz/" class="">Quiz</a>
   
 
         </li>
@@ -457,14 +461,79 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-c6d765e331787103ea5a4c660ad9d263" class="toggle"  />
-    <label for="section-c6d765e331787103ea5a4c660ad9d263" class="flex justify-between">
-      <a href="/docs/collections/" class="">Collections</a>
+    <input type="checkbox" id="section-e06acd393c0cc6e5b27e2cd8945d3dd8" class="toggle"  />
+    <label for="section-e06acd393c0cc6e5b27e2cd8945d3dd8" class="flex justify-between">
+      <a href="/docs/abstractdatatypes/" class="">Abstract data types</a>
     </label>
   
 
           
   <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/list/" class="">List</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/set/" class="">Set</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/map/" class="">Associative array</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/queue/" class="">Stack, queue, priority queue</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/sorting/" class="">Sorting</a>
+  
+
+        </li>
+      
     
   </ul>
 
@@ -478,16 +547,27 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-5d60f9e6a9b7c875f51358c583373282" class="toggle"  />
-    <label for="section-5d60f9e6a9b7c875f51358c583373282" class="flex justify-between">
-      <a href="/docs/datastructures/" class="">Data structures</a>
+    <input type="checkbox" id="section-93b39c27c032f5f72bed81496cbb41e3" class="toggle"  />
+    <label for="section-93b39c27c032f5f72bed81496cbb41e3" class="flex justify-between">
+      <a href="/docs/errors/" class="">Errors</a>
     </label>
   
 
           
   <ul>
     
-  </ul>
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a2fa4d1523374519c87fe83f9d8226b6" class="toggle"  />
+    <label for="section-a2fa4d1523374519c87fe83f9d8226b6" class="flex justify-between">
+      <a href="/docs/errors/sections/callstack/" class="">Call stack</a>
+    </label>
+  
 
         </li>
       
@@ -499,14 +579,62 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-1be866adbf7f2244d1773e0d2a159b91" class="toggle"  />
-    <label for="section-1be866adbf7f2244d1773e0d2a159b91" class="flex justify-between">
-      <a href="/docs/recursion/" class="">Recursion</a>
+    <input type="checkbox" id="section-323953d2054911560fd76ed4505d5bb2" class="toggle"  />
+    <label for="section-323953d2054911560fd76ed4505d5bb2" class="flex justify-between">
+      <a href="/docs/errors/sections/exceptions/" class="">Exceptions</a>
     </label>
   
 
+        </li>
+      
+    
+      
+        <li>
           
-  <ul>
+  
+  
+
+  
+    <input type="checkbox" id="section-03b7629c50286af7810d9917f4bdabd2" class="toggle"  />
+    <label for="section-03b7629c50286af7810d9917f4bdabd2" class="flex justify-between">
+      <a href="/docs/errors/sections/checked/" class="">Checked vs unchecked</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-3add83584009ceb58c28b43e0a2280c9" class="toggle"  />
+    <label for="section-3add83584009ceb58c28b43e0a2280c9" class="flex justify-between">
+      <a href="/docs/errors/sections/custom/" class="">Custom exceptions</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-b9c696d05ab8cb944ddf9cef47a3abb4" class="toggle"  />
+    <label for="section-b9c696d05ab8cb944ddf9cef47a3abb4" class="flex justify-between">
+      <a href="/docs/errors/sections/errors/" class="">Java errors</a>
+    </label>
+  
+
+        </li>
+      
     
   </ul>
 
@@ -529,7 +657,18 @@ https://github.com/alex-shpak/hugo-book
           
   <ul>
     
-  </ul>
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-09ea3b18445537bd77c25d3db6ab2fcf" class="toggle"  />
+    <label for="section-09ea3b18445537bd77c25d3db6ab2fcf" class="flex justify-between">
+      <a href="/docs/input/sections/files/" class="">Paths and files in Java</a>
+    </label>
+  
 
         </li>
       
@@ -541,16 +680,11 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-baf3ea6e28839ac044570d2d313c8794" class="toggle"  />
-    <label for="section-baf3ea6e28839ac044570d2d313c8794" class="flex justify-between">
-      <a href="/docs/regex/" class="">Regular expressions</a>
+    <input type="checkbox" id="section-640b25aadb55f28505bfbbe5a5f7073d" class="toggle"  />
+    <label for="section-640b25aadb55f28505bfbbe5a5f7073d" class="flex justify-between">
+      <a href="/docs/input/sections/read/" class="">Reading from and writing to a file in Java</a>
     </label>
   
-
-          
-  <ul>
-    
-  </ul>
 
         </li>
       
@@ -562,98 +696,18 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-2cb8fe711c517d9ace405264c9b77bcb" class="toggle"  />
-    <label for="section-2cb8fe711c517d9ace405264c9b77bcb" class="flex justify-between">
-      <a href="/docs/streams/" class="">Streams</a>
+    <input type="checkbox" id="section-7efe7741b54b5b602db75415a7806ef4" class="toggle"  />
+    <label for="section-7efe7741b54b5b602db75415a7806ef4" class="flex justify-between">
+      <a href="/docs/input/sections/property/" class="">Configuration files</a>
     </label>
   
-
-          
-  <ul>
-    
-  </ul>
 
         </li>
       
     
       
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-dfedb17969c9b09e6694374c71130ee4" class="toggle"  />
-    <label for="section-dfedb17969c9b09e6694374c71130ee4" class="flex justify-between">
-      <a href="/docs/concurrency/" class="">Concurrency</a>
-    </label>
-  
-
-          
-  <ul>
-    
-  </ul>
-
-        </li>
-      
     
       
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-9d77b970a03dc72b048d9fce7bfe272f" class="toggle"  />
-    <label for="section-9d77b970a03dc72b048d9fce7bfe272f" class="flex justify-between">
-      <a href="/docs/unittests/" class="">Unit tests</a>
-    </label>
-  
-
-          
-  <ul>
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-1de498fc5e7787931a737882aa193936" class="toggle"  />
-    <label for="section-1de498fc5e7787931a737882aa193936" class="flex justify-between">
-      <a href="/docs/ide/" class="">Using an IDE</a>
-    </label>
-  
-
-          
-  <ul>
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-266852d187f25bd262cbe71071953925" class="toggle"  />
-    <label for="section-266852d187f25bd262cbe71071953925" class="flex justify-between">
-      <a href="/docs/factorization/" class="">Code factorization</a>
-    </label>
-  
-
-          
-  <ul>
     
   </ul>
 
@@ -821,7 +875,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/git/sections/basics/" class="">Basics: repository, commit and merge</a>
+    <a href="/docs/git/sections/basics/" class="">Basics: repository, commits and branches</a>
   
 
         </li>
@@ -860,7 +914,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/git/sections/create/" class="">Commands: create or clone a repository</a>
+    <a href="/docs/git/sections/create/" class="">Create or clone a repository</a>
   
 
         </li>
@@ -873,7 +927,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/git/sections/navigate/" class="">Commands: status, log and checkout</a>
+    <a href="/docs/git/sections/commit/" class="">Add, commit, stash</a>
   
 
         </li>
@@ -886,7 +940,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/git/sections/commit/" class="">Commands: commit, add and push</a>
+    <a href="/docs/git/sections/branches/" class="">Branches</a>
   
 
         </li>
@@ -899,7 +953,20 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/git/sections/branches/" class="">Commands: branches</a>
+    <a href="/docs/git/sections/sharing/" class="">Synchronization: remote, push, pull</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/backtracking/" class="">Backtracking</a>
   
 
         </li>
@@ -913,19 +980,6 @@ https://github.com/alex-shpak/hugo-book
 
   
     <a href="/docs/git/sections/ignore/" class="">Ignoring files</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/git/sections/tips/" class="">Tips</a>
   
 
         </li>
@@ -964,6 +1018,22 @@ https://github.com/alex-shpak/hugo-book
 
           
   <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-5537e478f301d8ff4f0b5a7a03c9db32" class="toggle"  />
+    <label for="section-5537e478f301d8ff4f0b5a7a03c9db32" class="flex justify-between">
+      <a href="/docs/build/sections/layout/" class="">Layout</a>
+    </label>
+  
+
+        </li>
+      
     
   </ul>
 
@@ -1006,7 +1076,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/background/sections/cost/" class="">Computational cost</a>
+    <a href="/docs/background/sections/set_tuple_map/" class="">Set, tuple, function</a>
   
 
         </li>
@@ -1019,67 +1089,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/background/sections/graph/" class="">Graphs, trees and lists</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/background/sections/order/" class="">Orders</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/background/sections/set_tuple_map/" class="">Sets, tuples and maps</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-7fbf8d635a58977782e16dc9419d8cdc" class="toggle"  />
-    <label for="section-7fbf8d635a58977782e16dc9419d8cdc" class="flex justify-between">
-      <a href="/docs/template/" class="">Web page template</a>
-    </label>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/template/sections/template/" class="">Stubs</a>
+    <a href="/docs/background/sections/order/" class="">Relation, preorder</a>
   
 
         </li>
@@ -1140,7 +1150,16 @@ https://github.com/alex-shpak/hugo-book
   <aside class="hidden clearfix">
     
   
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#in-java-maven-vs-gradle">in Java: Maven vs Gradle</a>
+      <ul>
+        <li><a href="#gradle">Gradle</a></li>
+        <li><a href="#maven">Maven</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 
 
 
@@ -1155,6 +1174,77 @@ https://github.com/alex-shpak/hugo-book
   Build automation
   <a class="anchor" href="#build-automation">#</a>
 </h1>
+<blockquote class="book-hint warning">
+  <strong>Building</strong> a piece of software means converting code into a program that can be executed.
+</blockquote>
+
+<p>This may include code generation, compilation, linking, testing, file compression, creating an installer or an executable, deployment, etc.</p>
+<p>Each of these subtasks may be performed numerous times during the development of a program.
+So it is natural to <em>automate</em> them.</p>
+<blockquote class="book-hint warning">
+  A <strong>build automation tool</strong> is meant to facilitate the configuration of these tasks, and execute them automatically.
+</blockquote>
+
+<p>For instance, Maven is a build automation tool for Java, that allows building a project with a single command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mvn package
+</span></span></code></pre></div><p>Other popular build automation tools include:</p>
+<ul>
+<li>Make, CMake or Ninja for C/C++,</li>
+<li>MSBuild for C#,</li>
+<li>Grunt or Gulp for Javascript,</li>
+<li>Gradle (multi-language),</li>
+<li>sbt for scala</li>
+<li>etc.</li>
+</ul>
+<blockquote class="book-hint info">
+  <strong><em>Note.</em></strong>
+Build tasks are often delegated to a server (e.g. each time a developer <a href="">pushes</a> a git commit), as part of a process called <strong>continuous integration</strong> (CI).
+Popular frameworks to set up a CI server include <a href="">Jenkins</a> and <a href="">Travis</a>.
+CI is beyond the scope of this course.
+</blockquote>
+
+<h2 id="in-java-maven-vs-gradle">
+  in Java: Maven vs Gradle
+  <a class="anchor" href="#in-java-maven-vs-gradle">#</a>
+</h2>
+<p>The two most popular build automation tools for Java are Maven and Gradle.</p>
+<p>Both also act as <a href="">package managers</a> for Java libraries.</p>
+<p>Maven is slightly older (2004 vs 2008), and influenced the design of Gradle.</p>
+<h3 id="gradle">
+  Gradle
+  <a class="anchor" href="#gradle">#</a>
+</h3>
+<p>Gradle is a <em>multi-language</em> build automation tool.
+Among others, it offers support for project written in Java and its main derivatives (Groovy, Kotlin and Scala), C/C++ and Javascript.
+Gradle has been selected by Google as the official build automation tool for Android applications.</p>
+<p>Gradle has a <em>more concise syntax</em> than Maven (precisely two: one is a Groovy Domain Specific Language (DSL), the other is a Kotlin DSL).
+Re-building a project can also be <em>faster</em> with Gradle than than with Maven, thanks to more advanced caching strategies.
+Another strength of Gradle is its <em>flexibility</em> : a build can be easily customized, whereas Maven relies on conventions that can be hard to bypass.</p>
+<p>Gradle is often considered more difficult to learn than Maven, especially for new programmers.
+Its syntax is also less stable (older project configurations need to be updated to comply with more recent releases).</p>
+<h3 id="maven">
+  Maven
+  <a class="anchor" href="#maven">#</a>
+</h3>
+<p>Maven is (still?) more widely used than Gradle.
+It also has a gentler learning curve.</p>
+<p>In particular, Maven relies on a number of implicit <em>conventions</em> (e.g. for directly layout).
+For a simple project, this often results in a quicker set up than with Gradle (but makes advanced customization more involved).</p>
+<p>Due to the popularity of Maven, some of these conventions (e.g. directory layout and artifact naming) have also been adopted in other contexts.</p>
+<p>Additional strengths of Maven are:</p>
+<ul>
+<li>excellent integration with IDEs,</li>
+<li>a vast ecosystem of plugins.</li>
+</ul>
+<p>A common criticism of Maven is the use of XML files to specify a project&rsquo;s build, which can be verbose and difficult to parse (for a human being).</p>
+<blockquote class="book-hint info">
+  <p><strong><em>In this course.</em></strong>
+For simplicity, this chapter focuses on Maven.
+In addition, the content is restricted to the <em>bare minimum</em> (i.e. what you are likely to need for your project).</p>
+<p>For a more thorough introduction to Maven, a good entry point is the official <a href="https://maven.apache.org/guides/getting-started/index.html#what-is-a-snapshot-version">getting started guide</a>.</p>
+
+</blockquote>
+
 </article>
  
       
@@ -1194,7 +1284,16 @@ https://github.com/alex-shpak/hugo-book
       <div class="book-toc-content">
         
   
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#in-java-maven-vs-gradle">in Java: Maven vs Gradle</a>
+      <ul>
+        <li><a href="#gradle">Gradle</a></li>
+        <li><a href="#maven">Maven</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 
 
  

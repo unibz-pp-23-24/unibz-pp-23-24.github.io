@@ -8,6 +8,8 @@
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/background/sections/problem/</loc>
   </url><url>
+    <loc>https://unibz-pp-23-24.github.io/docs/build/sections/layout/</loc>
+  </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/list/</loc>
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/objects/sections/objects/</loc>
@@ -80,9 +82,9 @@
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/intro/sections/board_game/</loc>
   </url><url>
-    <loc>https://unibz-pp-23-24.github.io/docs/objects/sections/tostring/</loc>
+    <loc>https://unibz-pp-23-24.github.io/docs/errors/sections/custom/</loc>
   </url><url>
-    <loc>https://unibz-pp-23-24.github.io/docs/errors/sections/errors/</loc>
+    <loc>https://unibz-pp-23-24.github.io/docs/objects/sections/tostring/</loc>
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/env/sections/os/</loc>
   </url><url>
@@ -101,6 +103,8 @@
     <loc>https://unibz-pp-23-24.github.io/docs/objects/sections/classesasobjects/</loc>
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/env/sections/ide/</loc>
+  </url><url>
+    <loc>https://unibz-pp-23-24.github.io/docs/errors/sections/errors/</loc>
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/git/sections/sharing/</loc>
   </url><url>
