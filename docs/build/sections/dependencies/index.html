@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Dependencies # Maven (like Gradle) act both as a build automation tool and a package manager.
-As a package manager, Maven (like Gradle) relies by default a software repository called Maven Central. It contains more than 260.000 artifacts (more than 6 million when counting versions), with over a trillion downloads in 2023.
+<meta name="description" content="Dependencies # Maven (like Gradle) acts both as a build automation tool and as a package manager.
+As a package manager, Maven (like Gradle) relies by default a software repository called Maven Central. This repository contains more than 260.000 artifacts (more than 6 million when counting versions), with over a trillion downloads in 2023.
 An artifact on Maven Central is identified by its coordinates.
-The coordinates of a library are often provided as part of its documentation.">
+Hint. The coordinates of a library are often provided as part of its documentation.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="Dependencies" />
-<meta property="og:description" content="Dependencies # Maven (like Gradle) act both as a build automation tool and a package manager.
-As a package manager, Maven (like Gradle) relies by default a software repository called Maven Central. It contains more than 260.000 artifacts (more than 6 million when counting versions), with over a trillion downloads in 2023.
+<meta property="og:description" content="Dependencies # Maven (like Gradle) acts both as a build automation tool and as a package manager.
+As a package manager, Maven (like Gradle) relies by default a software repository called Maven Central. This repository contains more than 260.000 artifacts (more than 6 million when counting versions), with over a trillion downloads in 2023.
 An artifact on Maven Central is identified by its coordinates.
-The coordinates of a library are often provided as part of its documentation." />
+Hint. The coordinates of a library are often provided as part of its documentation." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/build/sections/dependencies/" /><meta property="article:section" content="docs" />
 
@@ -23,7 +23,7 @@ The coordinates of a library are often provided as part of its documentation." /
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.b3dd0309d6ba2f44e949cdf0d725e1b24a08bc7c251a0eb9c0adb1073739950c.js" integrity="sha256-s90DCda6L0TpSc3w1yXhskoIvHwlGg65wK2xBzc5lQw=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.071ee626885361b78c2abe9ee85e53d4fb3e0c19f30831de919831d7bbb8cbad.js" integrity="sha256-Bx7mJohTYbeMKr6e6F5T1Ps&#43;DBnzCDHekZgx17u4y60=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1015,75 +1015,6 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-44fa5eb3511a340ff4e9042080604b5c" class="toggle" checked />
-    <label for="section-44fa5eb3511a340ff4e9042080604b5c" class="flex justify-between">
-      <a href="/docs/build/" class="">Build automation</a>
-    </label>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-0c816e62fd66eb322757addb01600cdd" class="toggle"  />
-    <label for="section-0c816e62fd66eb322757addb01600cdd" class="flex justify-between">
-      <a href="/docs/build/sections/packaging/" class="">Packaging a Java application</a>
-    </label>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-5537e478f301d8ff4f0b5a7a03c9db32" class="toggle"  />
-    <label for="section-5537e478f301d8ff4f0b5a7a03c9db32" class="flex justify-between">
-      <a href="/docs/build/sections/layout/" class="">Layout</a>
-    </label>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-d01a14431bc2161a8fed02d90e1a365b" class="toggle" checked />
-    <label for="section-d01a14431bc2161a8fed02d90e1a365b" class="flex justify-between">
-      <a href="/docs/build/sections/dependencies/" class="active">Dependencies</a>
-    </label>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
     <input type="checkbox" id="section-ffcf8551871937aae0ce60f2b3cc616b" class="toggle"  />
     <label for="section-ffcf8551871937aae0ce60f2b3cc616b" class="flex justify-between">
       <a href="/docs/background/" class="">Background</a>
@@ -1190,8 +1121,13 @@ https://github.com/alex-shpak/hugo-book
 <nav id="TableOfContents">
   <ul>
     <li><a href="#local-repository">Local repository</a></li>
-    <li><a href="#syntax-maven">Syntax (Maven)</a></li>
-    <li><a href="#syntax-gradle">Syntax (Gradle)</a></li>
+    <li><a href="#declaring-a-dependency">Declaring a dependency</a>
+      <ul>
+        <li><a href="#maven">Maven</a></li>
+        <li><a href="#gradle">Gradle</a></li>
+      </ul>
+    </li>
+    <li><a href="#using-an-external-library">Using an external library</a></li>
   </ul>
 </nav>
 
@@ -1208,46 +1144,65 @@ https://github.com/alex-shpak/hugo-book
   Dependencies
   <a class="anchor" href="#dependencies">#</a>
 </h1>
-<p>Maven (like Gradle) act both as a <a href="">build automation tool</a> and a <a href="">package manager</a>.</p>
+<p>Maven (like Gradle) acts both as a <a href="">build automation tool</a> and as a <a href="">package manager</a>.</p>
 <p>As a package manager, Maven (like Gradle) relies by default a <a href="">software repository</a> called Maven Central.
-It contains more than 260.000 artifacts (more than 6 million when counting versions), with over a trillion downloads in 2023.</p>
+This repository contains more than 260.000 artifacts (more than 6 million when counting versions), with over a trillion downloads in 2023.</p>
 <p>An artifact on Maven Central is identified by its <a href="">coordinates</a>.</p>
-<p>The coordinates of a library are often provided as part of its documentation.
-For instance, this is how to use <a href="https://github.com/google/guava?tab=readme-ov-file#adding-guava-to-your-build">Google Guava</a> to your build:
-Alternatively, <a href="https://mvnrepository.com/">this website</a> allows you to search for the coordinates of an artifact on Maven Central (as well as 1990 other repositories).
-For instance, <a href="https://mvnrepository.com/artifact/commons-io/commons-io/2.16.0">here</a> are the coordinates for the latest version of the Apache Commons IO library.</p>
+<p><strong><em>Hint.</em></strong>
+The coordinates of a library are often provided as part of its documentation.
+For instance, this is the case of Google&rsquo;s <a href="https://github.com/google/guava?tab=readme-ov-file#adding-guava-to-your-build">Guava</a> library.
+Alternatively, <a href="https://mvnrepository.com/">this website</a> can be used to search for the coordinates of an artifact on Maven Central (as well as 1990 other repositories).
+For instance, <a href="https://mvnrepository.com/artifact/com.github.haifengl/smile-core/3.1.0">here</a> are the coordinates for the latest version of the <a href="https://haifengl.github.io/index.html">Smile</a> library for machine learning.</p>
 <h2 id="local-repository">
   Local repository
   <a class="anchor" href="#local-repository">#</a>
 </h2>
-<p>By default, Maven caches project dependencies (as jars) in a hidden directory with path <code>&lt;homeFolder&gt;/.m2</code>.
+<blockquote class="book-hint warning">
+  <p>By default, Maven <em>caches</em> project dependencies (as <a href="">jars</a>) in a hidden directory with path <code>&lt;homeFolder&gt;/.m2</code>.
 In Maven&rsquo;s terminology:</p>
 <ul>
 <li>this directory is called the <strong>local repository</strong>,</li>
 <li>an artifact is <strong>installed</strong> when it is added the local repository.</li>
 </ul>
-<p>When a project is build, Maven reuses by default artifacts that are already present in the local repository.
-If an artifact is not present, then it is downloaded (e.g. from Maven central) and added to the local repository.</p>
+</blockquote>
+
+<p>When a project is build, Maven searches for each dependency in the local repository.
+If the corresponding artifact is not &ldquo;installed&rdquo;, then it is downloaded (e.g. from Maven central) and &ldquo;installed&rdquo;.</p>
 <p>Gradle proceeds in a similar way (but the cache is under <code>&lt;homeFolder&gt;/.gradle</code>).</p>
-<p><strong><em>Note.</em></strong>
-The local repository can contain multiple versions of the same artifact.</p>
-<p><strong><em>Note.</em></strong>
-By default, when installing an artifact, Maven also installs <em>all its dependencies, transitively</em> (if not already present).
-Gradle proceeds in a similar way.</p>
-<p><strong><em>Note.</em></strong>
-If a project depends on <code>SNAPSHOT</code> version, then artifact is updated on a regular basis (by default once per day).</p>
-<h2 id="syntax-maven">
-  Syntax (Maven)
-  <a class="anchor" href="#syntax-maven">#</a>
+<blockquote class="book-hint info">
+  <strong><em>Note.</em></strong>
+The local repository can contain different versions of the same artifact.
+</blockquote>
+
+<blockquote class="book-hint info">
+  <strong><em>Note.</em></strong>
+By default, when installing an artifact, Maven also installs <em>all its missing dependencies, transitively</em>.
+Gradle proceeds in a similar way.
+</blockquote>
+
+<blockquote class="book-hint danger">
+  <strong><em>Note.</em></strong>
+If a project depends on a <code>SNAPSHOT</code> version, then the installed artifact is automatically updated on a regular basis (by default once per day).
+</blockquote>
+
+<h2 id="declaring-a-dependency">
+  Declaring a dependency
+  <a class="anchor" href="#declaring-a-dependency">#</a>
 </h2>
-<p>To add a dependency to a Maven project, add the following to the <code>pom.xml</code> file, inside the <code>&lt;dependencies&gt;</code> tag:</p>
+<h3 id="maven">
+  Maven
+  <a class="anchor" href="#maven">#</a>
+</h3>
+<p>A dependency can be declared by adding the following to the <code>pom.xml</code> file, inside the <code>&lt;dependencies&gt;</code> tag:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;dependency&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;groupId&gt;</span> XXX <span style="color:#f92672">&lt;/groupId&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;artifactId&gt;</span> XXX <span style="color:#f92672">&lt;/artifactId&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;version&gt;</span> XXX <span style="color:#f92672">&lt;/version&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/dependency&gt;</span>
 </span></span></code></pre></div><p>In addition, the attribute <code>&lt;scope&gt;test&lt;\scope&gt;</code> can be added to indicate that the dependency is needed for unit tests only.</p>
-<p>For instance, here is how to declare dependencies on Guava, Apache commons IO and JUNIT 5, where the latter is only needed for unit tests:</p>
+<blockquote class="book-hint info">
+  <p><strong><em>Example.</em></strong>
+Here is how to declare dependencies on Guava, Smile and JUNIT 5, while specifying that the latter is only needed for unit tests:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;dependencies&gt;</span>
 </span></span><span style="display:flex;"><span>
@@ -1258,9 +1213,9 @@ If a project depends on <code>SNAPSHOT</code> version, then artifact is updated 
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;/dependency&gt;</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;dependency&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;groupId&gt;</span>commons-io<span style="color:#f92672">&lt;/groupId&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;artifactId&gt;</span>commons-io<span style="color:#f92672">&lt;/artifactId&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;version&gt;</span>2.16.0<span style="color:#f92672">&lt;/version&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;groupId&gt;</span>com.github.haifengl<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;artifactId&gt;</span>smile-core<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;version&gt;</span>3.1.0<span style="color:#f92672">&lt;/version&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;/dependency&gt;</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;dependency&gt;</span>
@@ -1270,14 +1225,18 @@ If a project depends on <code>SNAPSHOT</code> version, then artifact is updated 
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;scope&gt;</span>test<span style="color:#f92672">&lt;/scope&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;/dependency&gt;</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;dependencies&gt;</span>
-</span></span></code></pre></div><h2 id="syntax-gradle">
-  Syntax (Gradle)
-  <a class="anchor" href="#syntax-gradle">#</a>
-</h2>
-<p>There are many alternative syntaxes to declare a dependency with Gradle (these may depend on the project&rsquo;s configuration).</p>
-<p><strong><em>Example.</em></strong>
-If you chose the board game as your project, then you can declare a dependency in the file <code>core/build.gradle</code>.
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/dependencies&gt;</span>
+</span></span></code></pre></div>
+</blockquote>
+
+<h3 id="gradle">
+  Gradle
+  <a class="anchor" href="#gradle">#</a>
+</h3>
+<p>There are several alternative syntaxes to declare a dependency with Gradle (these may depend on the project&rsquo;s configuration).</p>
+<p><blockquote class="book-hint info">
+  <p><strong><em>Example.</em></strong>
+If you chose the board game as your project, then you can declare a dependency in the file <code>core/build.gradle</code>, as follows:
 Inside</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span>dependencies <span style="color:#f92672">{</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">...</span>
@@ -1286,7 +1245,40 @@ Inside</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span>    implementation group: XXX<span style="color:#f92672">,</span> name: XXX<span style="color:#f92672">,</span> version: XXX
 </span></span></code></pre></div><p>For instance:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span>    implementation group: <span style="color:#e6db74">&#39;com.google.guava&#39;</span><span style="color:#f92672">,</span> name: <span style="color:#e6db74">&#39;guava&#39;</span><span style="color:#f92672">,</span> version: <span style="color:#e6db74">&#39;33.1.0-jre&#39;</span>
-</span></span></code></pre></div><p>To specify that the dependency is only needed for unit tests, replace <code>implementation</code> with <code>testImplementation</code>.</p>
+</span></span></code></pre></div>
+</blockquote>
+
+To specify that the dependency is only needed for unit tests, replace <code>implementation</code> with <code>testImplementation</code>.</p>
+<h2 id="using-an-external-library">
+  Using an external library
+  <a class="anchor" href="#using-an-external-library">#</a>
+</h2>
+<p>Once a dependency is declared, the classes and interfaces of the corresponding library can be used in the source code of the project, with a regular <code>import</code> statement.</p>
+<blockquote class="book-hint info">
+  <p><strong><em>Example.</em></strong>
+For instance, Guava provides a convenient class <code>ImmutableList</code> for lists that cannot be modified.
+It can be used as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> com.google.common.collect.ImmutableList;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyClass</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    String name;
+</span></span><span style="display:flex;"><span>    ImmutableList<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> values;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">MyClass</span>(String name, ImmutableList<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> values){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">values</span> <span style="color:#f92672">=</span> values;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+</blockquote>
+
+<blockquote class="book-hint info">
+  <strong><em>Hint.</em></strong>
+Import statements like the one above can be automatically generated by your IDE.
+</blockquote>
+
 </article>
  
       
@@ -1329,8 +1321,13 @@ Inside</p>
 <nav id="TableOfContents">
   <ul>
     <li><a href="#local-repository">Local repository</a></li>
-    <li><a href="#syntax-maven">Syntax (Maven)</a></li>
-    <li><a href="#syntax-gradle">Syntax (Gradle)</a></li>
+    <li><a href="#declaring-a-dependency">Declaring a dependency</a>
+      <ul>
+        <li><a href="#maven">Maven</a></li>
+        <li><a href="#gradle">Gradle</a></li>
+      </ul>
+    </li>
+    <li><a href="#using-an-external-library">Using an external library</a></li>
   </ul>
 </nav>
 

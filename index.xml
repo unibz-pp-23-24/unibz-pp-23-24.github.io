@@ -190,6 +190,13 @@
       <description>Inheritance # Subclass # In most (class-based) object-oriented languages, a class A can extend another class B. In this case, A is called a subclass of B. The intuitive meaning is inclusion between their respective sets of instances, i.e. every instance of A is also an instance of B (but the converse may not hold).&#xA;This can be paraphrased in English by &amp;ldquo;every A is a B &amp;ldquo;. For instance:</description>
     </item>
     <item>
+      <title>POM and artifact</title>
+      <link>https://unibz-pp-23-24.github.io/docs/build/sections/pom/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/build/sections/pom/</guid>
+      <description>POM and artifact # Project Object Model (POM) # The root folder of a Maven project normally contains a configuration file called pom.xml. This file provides the information needed to identify and build the project.&#xA;Hint. Your IDE can generate the backbone of a pom.xml file (for instance, when creating a Maven project). For a basic Java project, the pom.xml file usually has the following structure:&#xA;&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt; &amp;lt;project xmlns=&amp;#34;http://maven.</description>
+    </item>
+    <item>
       <title>Checked vs unchecked</title>
       <link>https://unibz-pp-23-24.github.io/docs/errors/sections/checked/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -271,7 +278,7 @@
       <link>https://unibz-pp-23-24.github.io/docs/build/sections/dependencies/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/build/sections/dependencies/</guid>
-      <description>Dependencies # Maven (like Gradle) act both as a build automation tool and a package manager.&#xA;As a package manager, Maven (like Gradle) relies by default a software repository called Maven Central. It contains more than 260.000 artifacts (more than 6 million when counting versions), with over a trillion downloads in 2023.&#xA;An artifact on Maven Central is identified by its coordinates.&#xA;The coordinates of a library are often provided as part of its documentation.</description>
+      <description>Dependencies # Maven (like Gradle) acts both as a build automation tool and as a package manager.&#xA;As a package manager, Maven (like Gradle) relies by default a software repository called Maven Central. This repository contains more than 260.000 artifacts (more than 6 million when counting versions), with over a trillion downloads in 2023.&#xA;An artifact on Maven Central is identified by its coordinates.&#xA;Hint. The coordinates of a library are often provided as part of its documentation.</description>
     </item>
     <item>
       <title>Displaying objects</title>
