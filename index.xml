@@ -29,13 +29,6 @@
       <description>Computational problem # A computational problem is (usually) specified as:&#xA;a set of possible inputs, and the expected outputs (for these inputs). Problem vs algorithm # For instance, here is a problem that you may have encountered already:&#xA;Input: a sorted array A of integers, an integer a Output: true if a appears in A, false otherwise There are (infinitely) many algorithms that can solve this problem. But some of them are more efficient than others.</description>
     </item>
     <item>
-      <title>Layout</title>
-      <link>https://unibz-pp-23-24.github.io/docs/build/sections/layout/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://unibz-pp-23-24.github.io/docs/build/sections/layout/</guid>
-      <description>Layout # The standard directory layout # By default, a Maven project is expected to comply with the so-called &amp;ldquo;standard directly layout&amp;rdquo;.&#xA;Warning. We focus here on files and folders that you are likely to use in your project. A more comprehensive description can be found here. ├── README.md ├── pom.xml ├── src │ ├── main │ │ ├── java │ │ │ └── ... │ │ └── resources │ │ └── .</description>
-    </item>
-    <item>
       <title>List</title>
       <link>https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/list/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -55,6 +48,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/project/sections/free_project/</guid>
       <description>Option 1: free project # The first option available to you for your project consists in developing a Java application of your choice.&#xA;This application is only a prototype, so it does not need a comprehensive list of features or functionalities.&#xA;The evaluation of your project will be mostly based on its backend (rather than the frontend). This means that your application:&#xA;does not necessarily need a graphical user interface (but you may choose to develop one), should perform non-trivial backend task(s) (e.</description>
+    </item>
+    <item>
+      <title>Packaging a Java application</title>
+      <link>https://unibz-pp-23-24.github.io/docs/build/sections/packaging/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/build/sections/packaging/</guid>
+      <description>Packaging a Java application # Java (like C# or Python) is a precompiled language, meaning that source code is compiled into a machine-independent representation called bytecode. Bytecode can be distributed and executed on any machine.&#xA;In Java, a source file MyClass.java is compiled into a bytecode file MyClass.class.&#xA;A Java Virtual Machine (JVM) is a program in charge of executing Java bytecode. A packaged Java program is usually a zip file that contains:</description>
     </item>
     <item>
       <title>Paths and files in Java</title>
@@ -111,6 +111,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/interfaces/sections/java_interfaces/</guid>
       <description>Java interfaces # A Java interface is a programming interface with additional (object-oriented) features.&#xA;Syntactically, a Java interface is similar to a class. But (in its simplest form), it contains no code. Instead, it specifies the behavior of some methods (which are implemented in some classes).&#xA;Examples # The implementation of our game contains an interface called Snapshot, which describes what a game snapshot is. This interface specifies (among others) a method called getSizeOfReinforcement, as follows:</description>
+    </item>
+    <item>
+      <title>Layout</title>
+      <link>https://unibz-pp-23-24.github.io/docs/build/sections/layout/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/build/sections/layout/</guid>
+      <description>Layout # The standard directory layout # By default, a Maven project is expected to comply with the so-called &amp;ldquo;standard directly layout&amp;rdquo;.&#xA;Warning. We restrict here the layout to files and folders that you are likely to use in your project. A comprehensive description can be found here. ├── pom.xml ├── README.md ├── src │ ├── main │ │ ├── java │ │ │ └── ... │ │ └── resources │ │ └── .</description>
     </item>
     <item>
       <title>Option 2: board game</title>
@@ -258,6 +265,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/errors/sections/custom/</guid>
       <description>Custom exception # Custom exceptions can be created by extending one of Java&amp;rsquo;s native exception types. For instance:&#xA;public class WrongNumberOfRowsException extends IllegalArgumentException { public WrongNumberOfRowsException(int numberOfRows) { super(&amp;#34;This sudoku grid has &amp;#34;+numberOfRows+&amp;#34; rows, whereas it should have 9&amp;#34;). } } A custom exception can be thrown like a regular one:&#xA;if(sudokuGrid.length != 9){ throw new WrongNumberOfRowsException(sudokuGrid.length); } Observation. In this example, WrongNumberOfRowsException extends IllegalArgumentException, which extends RuntimeException. Recall that an instance of a subclass of RuntimeException is unchecked.</description>
+    </item>
+    <item>
+      <title>Dependencies</title>
+      <link>https://unibz-pp-23-24.github.io/docs/build/sections/dependencies/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/build/sections/dependencies/</guid>
+      <description>Dependencies # Maven (like Gradle) act both as a build automation tool and a package manager.&#xA;As a package manager, Maven (like Gradle) relies by default a software repository called Maven Central. It contains more than 260.000 artifacts (more than 6 million when counting versions), with over a trillion downloads in 2023.&#xA;An artifact on Maven Central is identified by its coordinates.&#xA;The coordinates of a library are often provided as part of its documentation.</description>
     </item>
     <item>
       <title>Displaying objects</title>

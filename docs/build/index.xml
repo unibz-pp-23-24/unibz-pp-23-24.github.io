@@ -8,11 +8,25 @@
     <language>en-us</language>
     <atom:link href="https://unibz-pp-23-24.github.io/docs/build/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Packaging a Java application</title>
+      <link>https://unibz-pp-23-24.github.io/docs/build/sections/packaging/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/build/sections/packaging/</guid>
+      <description>Packaging a Java application # Java (like C# or Python) is a precompiled language, meaning that source code is compiled into a machine-independent representation called bytecode. Bytecode can be distributed and executed on any machine.&#xA;In Java, a source file MyClass.java is compiled into a bytecode file MyClass.class.&#xA;A Java Virtual Machine (JVM) is a program in charge of executing Java bytecode. A packaged Java program is usually a zip file that contains:</description>
+    </item>
+    <item>
       <title>Layout</title>
       <link>https://unibz-pp-23-24.github.io/docs/build/sections/layout/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/build/sections/layout/</guid>
-      <description>Layout # The standard directory layout # By default, a Maven project is expected to comply with the so-called &amp;ldquo;standard directly layout&amp;rdquo;.&#xA;Warning. We focus here on files and folders that you are likely to use in your project. A more comprehensive description can be found here. ├── README.md ├── pom.xml ├── src │ ├── main │ │ ├── java │ │ │ └── ... │ │ └── resources │ │ └── .</description>
+      <description>Layout # The standard directory layout # By default, a Maven project is expected to comply with the so-called &amp;ldquo;standard directly layout&amp;rdquo;.&#xA;Warning. We restrict here the layout to files and folders that you are likely to use in your project. A comprehensive description can be found here. ├── pom.xml ├── README.md ├── src │ ├── main │ │ ├── java │ │ │ └── ... │ │ └── resources │ │ └── .</description>
+    </item>
+    <item>
+      <title>Dependencies</title>
+      <link>https://unibz-pp-23-24.github.io/docs/build/sections/dependencies/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/build/sections/dependencies/</guid>
+      <description>Dependencies # Maven (like Gradle) act both as a build automation tool and a package manager.&#xA;As a package manager, Maven (like Gradle) relies by default a software repository called Maven Central. It contains more than 260.000 artifacts (more than 6 million when counting versions), with over a trillion downloads in 2023.&#xA;An artifact on Maven Central is identified by its coordinates.&#xA;The coordinates of a library are often provided as part of its documentation.</description>
     </item>
   </channel>
 </rss>

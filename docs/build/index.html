@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Build automation # Building a piece of software means converting code into a program that can be executed. This may include code generation, compilation, linking, testing, file compression, creating an installer or an executable, deployment, etc.
-Each of these subtasks may be performed numerous times during the development of a program. So it is natural to automate them.
+<meta name="description" content="Build automation # Building a piece of software means converting code into a program that can be executed. Building a program may consists of many subtasks:
+code generation, compilation, linking, testing, file compression, creating an installer or an executable, deployment, etc. These subtasks tend to be performed numerous times during the development of a program. So it is natural to automate the build.
 A build automation tool is meant to facilitate the configuration of these tasks, and execute them automatically.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="Build automation" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="http://localhost:1313/docs/build/" />
+<meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/build/" />
 <title>Build automation | Programming project 2023-24</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.67c0e8b250f7a368f45acc29644d1fa3079ca0470b1618614b7fd194bd35bb10.js" integrity="sha256-Z8DoslD3o2j0WswpZE0fowecoEcLFhhhS3/RlL01uxA=" crossorigin="anonymous"></script>
-<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/docs/build/index.xml" title="Programming project 2023-24" />
+  <script defer src="/en.search.min.b3dd0309d6ba2f44e949cdf0d725e1b24a08bc7c251a0eb9c0adb1073739950c.js" integrity="sha256-s90DCda6L0TpSc3w1yXhskoIvHwlGg65wK2xBzc5lQw=" crossorigin="anonymous"></script>
+<link rel="alternate" type="application/rss+xml" href="https://unibz-pp-23-24.github.io/docs/build/index.xml" title="Programming project 2023-24" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1026,9 +1026,41 @@ https://github.com/alex-shpak/hugo-book
   
 
   
+    <input type="checkbox" id="section-0c816e62fd66eb322757addb01600cdd" class="toggle"  />
+    <label for="section-0c816e62fd66eb322757addb01600cdd" class="flex justify-between">
+      <a href="/docs/build/sections/packaging/" class="">Packaging a Java application</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
     <input type="checkbox" id="section-5537e478f301d8ff4f0b5a7a03c9db32" class="toggle"  />
     <label for="section-5537e478f301d8ff4f0b5a7a03c9db32" class="flex justify-between">
       <a href="/docs/build/sections/layout/" class="">Layout</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-d01a14431bc2161a8fed02d90e1a365b" class="toggle"  />
+    <label for="section-d01a14431bc2161a8fed02d90e1a365b" class="flex justify-between">
+      <a href="/docs/build/sections/dependencies/" class="">Dependencies</a>
     </label>
   
 
@@ -1154,8 +1186,8 @@ https://github.com/alex-shpak/hugo-book
   <ul>
     <li><a href="#in-java-maven-vs-gradle">in Java: Maven vs Gradle</a>
       <ul>
-        <li><a href="#gradle">Gradle</a></li>
         <li><a href="#maven">Maven</a></li>
+        <li><a href="#gradle">Gradle</a></li>
       </ul>
     </li>
   </ul>
@@ -1178,13 +1210,20 @@ https://github.com/alex-shpak/hugo-book
   <strong>Building</strong> a piece of software means converting code into a program that can be executed.
 </blockquote>
 
-<p>This may include code generation, compilation, linking, testing, file compression, creating an installer or an executable, deployment, etc.</p>
-<p>Each of these subtasks may be performed numerous times during the development of a program.
-So it is natural to <em>automate</em> them.</p>
-<blockquote class="book-hint warning">
-  A <strong>build automation tool</strong> is meant to facilitate the configuration of these tasks, and execute them automatically.
-</blockquote>
-
+<p>Building a program may consists of many subtasks:</p>
+<ul>
+<li>code generation,</li>
+<li>compilation,</li>
+<li>linking,</li>
+<li>testing,</li>
+<li>file compression,</li>
+<li>creating an installer or an executable,</li>
+<li>deployment,</li>
+<li>etc.</li>
+</ul>
+<p>These subtasks tend to be performed numerous times during the development of a program.
+So it is natural to <em>automate</em> the build.</p>
+<p>A <strong>build automation tool</strong> is meant to facilitate the configuration of these tasks, and execute them automatically.</p>
 <p>For instance, Maven is a build automation tool for Java, that allows building a project with a single command:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mvn package
 </span></span></code></pre></div><p>Other popular build automation tools include:</p>
@@ -1198,8 +1237,9 @@ So it is natural to <em>automate</em> them.</p>
 </ul>
 <blockquote class="book-hint info">
   <strong><em>Note.</em></strong>
-Build tasks are often delegated to a server (e.g. each time a developer <a href="">pushes</a> a git commit), as part of a process called <strong>continuous integration</strong> (CI).
-Popular frameworks to set up a CI server include <a href="">Jenkins</a> and <a href="">Travis</a>.
+Build tasks are often delegated to a server (e.g. each time a developer <a href="https://unibz-pp-23-24.github.io/docs/git/sections/sharing/#push">pushes</a>
+a git commit), as part of a process called <strong>continuous integration</strong> (CI).
+Popular frameworks to set up a CI server include <a href="https://en.wikipedia.org/wiki/Jenkins_%28software%29">Jenkins</a> and <a href="https://en.wikipedia.org/wiki/Travis_CI">Travis CI</a>.
 CI is beyond the scope of this course.
 </blockquote>
 
@@ -1208,8 +1248,31 @@ CI is beyond the scope of this course.
   <a class="anchor" href="#in-java-maven-vs-gradle">#</a>
 </h2>
 <p>The two most popular build automation tools for Java are Maven and Gradle.</p>
-<p>Both also act as <a href="">package managers</a> for Java libraries.</p>
+<p>Both also act as <a href="https://unibz-pp-23-24.github.io/docs/env/sections/install/#package">package managers</a> for Java libraries.</p>
 <p>Maven is slightly older (2004 vs 2008), and influenced the design of Gradle.</p>
+<h3 id="maven">
+  Maven
+  <a class="anchor" href="#maven">#</a>
+</h3>
+<p>Maven is (still?) more widely used than Gradle.
+It also has a gentler learning curve.</p>
+<p>In particular, Maven relies on a number of implicit <em>conventions</em> (e.g. for directory layout).
+For a simple project, this often results in a <em>quicker set up</em> than with Gradle (but makes advanced customization more involved).</p>
+<p>Due to the popularity of Maven, some of these conventions (e.g. directory layout and artifact naming) have also been adopted in other contexts.</p>
+<p>Additional strengths of Maven are:</p>
+<ul>
+<li>excellent integration with IDEs,</li>
+<li>a vast ecosystem of plugins.</li>
+</ul>
+<p>A common criticism of Maven is the use of XML files to specify a project&rsquo;s build, which can be verbose and difficult to parse (for a human being).</p>
+<blockquote class="book-hint info">
+  <p><strong><em>In this course.</em></strong>
+For simplicity, this chapter (mostly) focuses on Maven.
+In addition, the content is restricted to the <em>bare minimum</em> (i.e. what you are likely to need for your project).</p>
+<p>For a more thorough introduction to Maven, a good entry point is the official <a href="https://maven.apache.org/guides/getting-started/index.html#what-is-a-snapshot-version">getting started guide</a>.</p>
+
+</blockquote>
+
 <h3 id="gradle">
   Gradle
   <a class="anchor" href="#gradle">#</a>
@@ -1222,26 +1285,11 @@ Re-building a project can also be <em>faster</em> with Gradle than than with Mav
 Another strength of Gradle is its <em>flexibility</em> : a build can be easily customized, whereas Maven relies on conventions that can be hard to bypass.</p>
 <p>Gradle is often considered more difficult to learn than Maven, especially for new programmers.
 Its syntax is also less stable (older project configurations need to be updated to comply with more recent releases).</p>
-<h3 id="maven">
-  Maven
-  <a class="anchor" href="#maven">#</a>
-</h3>
-<p>Maven is (still?) more widely used than Gradle.
-It also has a gentler learning curve.</p>
-<p>In particular, Maven relies on a number of implicit <em>conventions</em> (e.g. for directly layout).
-For a simple project, this often results in a quicker set up than with Gradle (but makes advanced customization more involved).</p>
-<p>Due to the popularity of Maven, some of these conventions (e.g. directory layout and artifact naming) have also been adopted in other contexts.</p>
-<p>Additional strengths of Maven are:</p>
-<ul>
-<li>excellent integration with IDEs,</li>
-<li>a vast ecosystem of plugins.</li>
-</ul>
-<p>A common criticism of Maven is the use of XML files to specify a project&rsquo;s build, which can be verbose and difficult to parse (for a human being).</p>
 <blockquote class="book-hint info">
-  <p><strong><em>In this course.</em></strong>
-For simplicity, this chapter focuses on Maven.
-In addition, the content is restricted to the <em>bare minimum</em> (i.e. what you are likely to need for your project).</p>
-<p>For a more thorough introduction to Maven, a good entry point is the official <a href="https://maven.apache.org/guides/getting-started/index.html#what-is-a-snapshot-version">getting started guide</a>.</p>
+  <p><strong><em>Warning.</em></strong>
+If you chose the board game as your project (option 2), then you will use Gradle (at least by default).</p>
+<p>The build is already configured.
+By default, you do not need to modify it, except maybe to <a href="">declare dependencies</a>.</p>
 
 </blockquote>
 
@@ -1288,8 +1336,8 @@ In addition, the content is restricted to the <em>bare minimum</em> (i.e. what y
   <ul>
     <li><a href="#in-java-maven-vs-gradle">in Java: Maven vs Gradle</a>
       <ul>
-        <li><a href="#gradle">Gradle</a></li>
         <li><a href="#maven">Maven</a></li>
+        <li><a href="#gradle">Gradle</a></li>
       </ul>
     </li>
   </ul>
