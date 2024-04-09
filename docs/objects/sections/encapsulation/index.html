@@ -21,7 +21,7 @@ Example. As we saw earlier, in our game, the &ldquo;view&rdquo; component (which
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.071ee626885361b78c2abe9ee85e53d4fb3e0c19f30831de919831d7bbb8cbad.js" integrity="sha256-Bx7mJohTYbeMKr6e6F5T1Ps&#43;DBnzCDHekZgx17u4y60=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.18caeec1a3715f2488cf53b596345fb270837f9c7c4e5a731ed6786fa1782901.js" integrity="sha256-GMruwaNxXySIz1O1ljRfsnCDf5x8TlpzHtZ4b6F4KQE=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1255,11 +1255,6 @@ A method declared in an <a href="https://unibz-pp-23-24.github.io/docs/interface
 If a method <em>m1</em> overrides (or implements) a method <em>m2</em>, then <em>m1</em> must be at least as accessible as <em>m2</em>.
 </blockquote>
 </p>
-<blockquote class="book-hint danger">
-  <strong><em>Warning.</em></strong>
-An <em>object</em> can always access the <em>attributes</em> that it inherits (even if they are declared private).
-</blockquote>
-
 
 
 
@@ -1296,7 +1291,13 @@ Can you see why, and how to fix this?</p>
 </span></span><span style="display:flex;"><span>        myUnicorn.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Tornado&#34;</span>;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div></div></div>
+</span></span></code></pre></div></div><input type="radio" class="toggle" name="tabs-exercise_encapsulation_relax" id="tabs-exercise_encapsulation_relax-1"  />
+  <label for="tabs-exercise_encapsulation_relax-1">Solution</label>
+  <div class="book-tabs-content markdown-inner"><ul>
+<li><code>Unicorn.getConfigFilePath</code> tries to access the package-private attribute <code>Unit.configFolder</code> (it should be made protected of public),</li>
+<li><code>Run.getConfigFilePath</code>, tries to access the package-private attribute <code>name</code> of <code>myUnicorn</code> (it should be made public).</li>
+</ul>
+</div></div>
 
 <blockquote class="book-hint info">
   <p><strong><em>Hint.</em></strong>
@@ -1367,7 +1368,15 @@ Can you see how?</p>
 </span></span><span style="display:flex;"><span>        u1.<span style="color:#a6e22e">attack</span>(u2);
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div></div></div>
+</span></span></code></pre></div></div><input type="radio" class="toggle" name="tabs-exercise_encapsulation_restrict" id="tabs-exercise_encapsulation_restrict-1"  />
+  <label for="tabs-exercise_encapsulation_restrict-1">Solution</label>
+  <div class="book-tabs-content markdown-inner"><ul>
+<li><code>Unit.health</code> can be made protected,</li>
+<li>the constructor of <code>Unit</code> can be made protected,</li>
+<li><code>Unit.attack</code> can be made protected,</li>
+<li><code>Unicorn.regen</code> can be made private.</li>
+</ul>
+</div></div>
 
 <blockquote class="book-hint info">
   <strong><em>Note.</em></strong> The constructor of an <em>abstract</em> class can always be made protected (since it can only be called in the constructor of a subclass).
