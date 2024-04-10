@@ -29,11 +29,18 @@
       <description>Configuration files # It is common practice for an application to store parameters (e.g. user-specific settings) in configuration files.&#xA;A configuration file may be edited manually and/or via a graphical interface.&#xA;Configuration files may use different serialization formats. Some popular formats are INI, JSON, TOML, YAML or XML.&#xA;in Java # Java provides native support for at least two configuration file serialization formats: XML and the so-called &amp;ldquo;property file&amp;rdquo; format.</description>
     </item>
     <item>
+      <title>Serialization</title>
+      <link>https://unibz-pp-23-24.github.io/docs/input/sections/serialize/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/input/sections/serialize/</guid>
+      <description>Serialization # Serializing an object (resp. data structure) means converting it into a form that can be stored or transmitted, and such that the object (resp. data structure) can be later reconstructed (a.k.a. deserialized). in Java # Java provides a native mechanism to serialize an object (including information about the type of the object). The serialization format is not (meant to be) human-readable.&#xA;The process is JVM independent, meaning that an object can be serialized on one platform and deserialized on another.</description>
+    </item>
+    <item>
       <title>JSON Serialization</title>
       <link>https://unibz-pp-23-24.github.io/docs/input/sections/json/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/input/sections/json/</guid>
-      <description></description>
+      <description>JSON serialization # A number of (external) libraries allow transforming Java objects into JSON objects and conversely. For instance Jackson, Gson, JSON-java, JSON-B and JSON-P.&#xA;In this section, we focus on Jackson.&#xA;Note. Jackson was initially designed for JSON, but extensions of Jackson allow manipulating other formats: XML, TOML, YAML, CSV and Java property files. Install # Jackson can be used within a Maven project, by declaring the following dependency</description>
     </item>
   </channel>
 </rss>

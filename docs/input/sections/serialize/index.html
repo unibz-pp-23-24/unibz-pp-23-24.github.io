@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Serialization # Serializing an object (resp. data structure) means translating it into a form that can be stored or transmitted, and so that the object (resp. data structure) can be later reconstructed (a.k.a. deserialized).
-in Java # Java provides a native mechanisms to serialize an object as a sequence of bytes (including information about the type of the object).
+<meta name="description" content="Serialization # Serializing an object (resp. data structure) means converting it into a form that can be stored or transmitted, and such that the object (resp. data structure) can be later reconstructed (a.k.a. deserialized). in Java # Java provides a native mechanism to serialize an object (including information about the type of the object). The serialization format is not (meant to be) human-readable.
 The process is JVM independent, meaning that an object can be serialized on one platform and deserialized on another.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="Serialization" />
-<meta property="og:description" content="Serialization # Serializing an object (resp. data structure) means translating it into a form that can be stored or transmitted, and so that the object (resp. data structure) can be later reconstructed (a.k.a. deserialized).
-in Java # Java provides a native mechanisms to serialize an object as a sequence of bytes (including information about the type of the object).
+<meta property="og:description" content="Serialization # Serializing an object (resp. data structure) means converting it into a form that can be stored or transmitted, and such that the object (resp. data structure) can be later reconstructed (a.k.a. deserialized). in Java # Java provides a native mechanism to serialize an object (including information about the type of the object). The serialization format is not (meant to be) human-readable.
 The process is JVM independent, meaning that an object can be serialized on one platform and deserialized on another." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/docs/input/sections/serialize/" /><meta property="article:section" content="docs" />
+<meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/input/sections/serialize/" /><meta property="article:section" content="docs" />
 
 
 <title>Serialization | Programming project 2023-24</title>
@@ -21,7 +19,7 @@ The process is JVM independent, meaning that an object can be serialized on one 
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.2ac4d30718c3da52701477b187a397cff7f6554b8578c621800c715a4135754c.js" integrity="sha256-KsTTBxjD2lJwFHexh6OXz/f2VUuFeMYhgAxxWkE1dUw=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.68fda4c147fc97fcca3f0ecc93b805f47e26f5a9577d627f6ea42b2c6ea0bfcb.js" integrity="sha256-aP2kwUf8l/zKPw7Mk7gF9H4m9alXfWJ/bqQrLG6gv8s=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -725,6 +723,20 @@ https://github.com/alex-shpak/hugo-book
       
     
       
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ec41b3fcd24b301058a1bd1bd7b5c8e7" class="toggle"  />
+    <label for="section-ec41b3fcd24b301058a1bd1bd7b5c8e7" class="flex justify-between">
+      <a href="/docs/input/sections/json/" class="">JSON Serialization</a>
+    </label>
+  
+
+        </li>
+      
     
   </ul>
 
@@ -1251,10 +1263,12 @@ https://github.com/alex-shpak/hugo-book
   <ul>
     <li><a href="#in-java">in Java</a>
       <ul>
+        <li><a href="#transient">Transient</a></li>
         <li><a href="#serializable">Serializable</a></li>
-        <li><a href="#serializing-methods">Serializing methods</a></li>
       </ul>
     </li>
+    <li><a href="#serialversionuid"><code>serialVersionUID</code></a></li>
+    <li><a href="#serialization-and-deserialization-methods">Serialization (and deserialization) methods</a></li>
   </ul>
 </nav>
 
@@ -1271,22 +1285,49 @@ https://github.com/alex-shpak/hugo-book
   Serialization
   <a class="anchor" href="#serialization">#</a>
 </h1>
-<p>Serializing an object (resp. data structure) means translating it into a form that can be stored or transmitted, and so that the object (resp. data structure) can be later reconstructed (a.k.a. <strong>deserialized</strong>).</p>
+<blockquote class="book-hint warning">
+  <strong>Serializing</strong> an object (resp. data structure) means converting it into a form that can be stored or transmitted, and such that the object (resp. data structure) can be later reconstructed (a.k.a. <strong>deserialized</strong>).
+</blockquote>
+
 <h2 id="in-java">
   in Java
   <a class="anchor" href="#in-java">#</a>
 </h2>
-<p>Java provides a native mechanisms to serialize an object as a sequence of bytes (including information about the type of the object).</p>
+<p>Java provides a native mechanism to serialize an object (including information about the type of the object).
+The serialization format is <em>not</em> (meant to be) human-readable.</p>
 <p>The process is <em>JVM independent</em>, meaning that an object can be serialized on one platform and deserialized on another.</p>
+<h3 id="transient">
+  Transient
+  <a class="anchor" href="#transient">#</a>
+</h3>
+<p>In Java, an instance attribute can be marked with the keyword <code>transient</code> (a.k.a. &ldquo;volatile&rdquo;).
+For instance:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyClass</span> {
+</span></span><span style="display:flex;"><span>  String serializedAttribute;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">transient</span> <span style="color:#66d9ef">int</span> transientAttribute;
+</span></span><span style="display:flex;"><span>  ...
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Transient attributes are <em>excluded</em> from the serialization process (meaning that a serialized object contains no value for its transient attribute).</p>
+<blockquote class="book-hint danger">
+  <strong><em>Warning.</em></strong>
+When an object is <em>deserialized</em> (i.e. converted back to an object), <a href="https://docs.oracle.com/javase/specs/jls/se7/html/jls-4.html#jls-4.12.5">default values</a> are assigned to each of its transient attributes: <code>null</code> for a reference, <code>0</code> for an <code>int</code>, <code>false</code> for a <code>boolean</code>, etc.
+</blockquote>
+
 <h3 id="serializable">
   Serializable
   <a class="anchor" href="#serializable">#</a>
 </h3>
 <blockquote class="book-hint warning">
-  <p>A Java object is <strong>serializable</strong> if:</p>
+  <p>In Java:</p>
+<ul>
+<li>a value with primitive type (e.g. <code>int</code>) is <strong>serializable</strong>,</li>
+<li>an array is <strong>serializable</strong> if its elements are serializable,</li>
+<li>an object is <strong>serializable</strong> if:
 <ul>
 <li>its class implements the interface <code>Serializable</code>, and</li>
-<li>each object that it references is serializable, or the referencing attribute has the keyword <code>transient</code>.</li>
+<li>each of its attributes is serializable or marked as <code>transient</code>.</li>
+</ul>
+</li>
 </ul>
 </blockquote>
 
@@ -1324,25 +1365,82 @@ because the attribute <code>country</code> has type <code>Country</code>, which 
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    Country country;
 </span></span></code></pre></div><p>with</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    <span style="color:#66d9ef">transient</span> Country country;
-</span></span></code></pre></div><p>then instances of the class <code>City</code> are serializable, because</p>
+</span></span></code></pre></div><p>then instances of the class <code>City</code> become serializable, because:</p>
 <ul>
 <li>the attribute <code>name</code> has type <code>String</code>, which implements <code>Serializable</code>, and</li>
 <li>the attribute <code>zipCode</code> has a primitive type, and</li>
-<li>the attribute <code>country</code> is declared as transient (a.k.a. &ldquo;volatile&rdquo;).</li>
+<li>the attribute <code>country</code> is now declared as transient.</li>
 </ul>
 
 </blockquote>
 
-<h3 id="serializing-methods">
-  Serializing methods
-  <a class="anchor" href="#serializing-methods">#</a>
-</h3>
-<p>The native Java class <code>ObjectInputStream</code> allows serializing an object, with the method:</p>
+<blockquote class="book-hint info">
+  <strong><em>Note.</em></strong>
+Most native implementations of the Java interfaces <code>Collection</code> (<code>ArrayList</code>, <code>LinkedList</code>, <code>HashSet</code>, <code>TreeSet</code>, etc.) and <code>Map</code> (<code>HashMap</code>, <code>TreeMap</code>, etc.) also implement <code>Serializable</code>.
+</blockquote>
+
+<h2 id="serialversionuid">
+  <code>serialVersionUID</code>
+  <a class="anchor" href="#serialversionuid">#</a>
+</h2>
+<p>If a class implements the interface <code>Serializable</code>, it is recommended to add a field:
+<code>private static final long serialVersionUID</code> (annotated with <code>@Serial</code>)
+and initialize it.
+For instance:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">City</span> <span style="color:#66d9ef">implements</span> Serializable {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Serial</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">long</span> serialVersionUID <span style="color:#f92672">=</span> 0;
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The value is irrelevant, but is meant to be updated if the (instance) attributes of the class are modified.</p>
+<p>For an explanation, we refer to <a href="https://www.baeldung.com/java-serial-version-uid">this page</a>.</p>
+<h2 id="serialization-and-deserialization-methods">
+  Serialization (and deserialization) methods
+  <a class="anchor" href="#serialization-and-deserialization-methods">#</a>
+</h2>
+<p>The class <code>ObjectOutputStream</code> allows serializing an object, with the method:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">writeObject</span>(Object x) <span style="color:#66d9ef">throws</span> IOException
-</span></span></code></pre></div><p>Similarly, the class <code>ObjectOutputStream</code> allows <strong>deserializing</strong> (i.e. loading it back into memory),
+</span></span></code></pre></div><p>Similarly, the class <code>ObjectInputStream</code> allows deserializing an object (i.e. loading it back into memory),
 with the method:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Object <span style="color:#a6e22e">readObject</span>() <span style="color:#66d9ef">throws</span> IOException, ClassNotFoundException
-</span></span></code></pre></div><p>The return type is <code>Object</code>, so the returned object needs to be cast to its appropriate data type.</p>
+</span></span></code></pre></div><blockquote class="book-hint info">
+  <strong><em>Note.</em></strong>
+The return type of <code>readObject</code> is <code>Object</code>, so the returned object needs to be cast to its appropriate data type.
+</blockquote>
+
+<blockquote class="book-hint info">
+  <p><strong><em>Example.</em></strong>
+Let us continue with the example abovee (assuming that the attribute <code>City.country</code> is marked as <code>transient</code>).</p>
+<p>A instance of <code>City</code> can be serialized to a file as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;path/to/file.ser&#34;</span>;
+</span></span><span style="display:flex;"><span>Country italy <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Country(<span style="color:#e6db74">&#34;Italy&#34;</span>);
+</span></span><span style="display:flex;"><span>City bologna <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Bologna&#34;</span>, 40100, italy);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">try</span> (ObjectOutputStream out <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ObjectOutputStream(<span style="color:#66d9ef">new</span> FileOutputStream(path))) {
+</span></span><span style="display:flex;"><span>    out.<span style="color:#a6e22e">writeObject</span>(bologna);
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">catch</span> (IOException e) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> RuntimeException(e);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>And deserialized as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>City deserializedBologna;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">try</span> (ObjectInputStream in <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ObjectInputStream(<span style="color:#66d9ef">new</span> FileInputStream(path))) {
+</span></span><span style="display:flex;"><span>  deserializedBologna <span style="color:#f92672">=</span> (City) in.<span style="color:#a6e22e">readObject</span>();
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">catch</span> (IOException <span style="color:#f92672">|</span> ClassNotFoundException e ) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> RuntimeException(e);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Ouputs &#39;Deserialized city: { name: Bologna, zipCode: 40100, country: null }&#39;</span>
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">printf</span>(
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;Deserialized city: { name: %s, zipCode: %d, country: %s }&#34;</span>,
+</span></span><span style="display:flex;"><span>  deserializedBologna.<span style="color:#a6e22e">name</span>,
+</span></span><span style="display:flex;"><span>  deserializedBologna.<span style="color:#a6e22e">zipCode</span>,
+</span></span><span style="display:flex;"><span>  deserializedBologna.<span style="color:#a6e22e">country</span>
+</span></span><span style="display:flex;"><span>);
+</span></span></code></pre></div><p>Observe that the attribute <code>country</code> after deserialization has value <code>null</code> (because it is marked as <code>transient</code>).</p>
+
+</blockquote>
+
 </article>
  
       
@@ -1386,10 +1484,12 @@ with the method:</p>
   <ul>
     <li><a href="#in-java">in Java</a>
       <ul>
+        <li><a href="#transient">Transient</a></li>
         <li><a href="#serializable">Serializable</a></li>
-        <li><a href="#serializing-methods">Serializing methods</a></li>
       </ul>
     </li>
+    <li><a href="#serialversionuid"><code>serialVersionUID</code></a></li>
+    <li><a href="#serialization-and-deserialization-methods">Serialization (and deserialization) methods</a></li>
   </ul>
 </nav>
 
