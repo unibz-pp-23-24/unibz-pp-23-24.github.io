@@ -54,7 +54,7 @@
       <link>https://unibz-pp-23-24.github.io/docs/build/sections/packaging/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/build/sections/packaging/</guid>
-      <description>Packaging a Java application # Java (like C# or Python) is a precompiled language, meaning that source code is compiled into a machine-independent representation called bytecode. Bytecode can be distributed and executed on any machine.&#xA;In Java, a source file MyClass.java is compiled into a bytecode file MyClass.class.&#xA;A Java Virtual Machine (JVM) is a program in charge of executing Java bytecode. A packaged Java program is usually a zip file that contains:</description>
+      <description>Packaging a Java application # Java (like C# or Python) is a precompiled language, meaning that source code is compiled into a machine-independent representation called bytecode. Bytecode can be distributed and executed on any machine.&#xA;In Java, by convention, a source file MyClass.java is compiled into a bytecode file MyClass.class.&#xA;A Java Virtual Machine (JVM) is a program in charge of executing Java bytecode. A packaged Java program is usually a zip file that contains:</description>
     </item>
     <item>
       <title>Paths and files in Java</title>
@@ -176,6 +176,13 @@
       <description>Configuration # Text editor # In some situations (commit without message, merge commit, etc.), git automatically opens a text editor to let you type a message.&#xA;By default, on most operating systems, git open vi for this purpose. I you have never used vi, we recommend selecting another text editor.&#xA;You can do this by running:&#xA;git config --global core.editor &amp;lt;myEditor&amp;gt; where &amp;lt;myEditor&amp;gt; is the command that launches your text editor (for instance notepad for Notepad, open -e -W -n for TextEdit , gedit for gedit, sublime for Sublime Text, etc.</description>
     </item>
     <item>
+      <title>Configuration file</title>
+      <link>https://unibz-pp-23-24.github.io/docs/build/sections/pom/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/build/sections/pom/</guid>
+      <description>Configuration file # The Project Object Model (POM) # The root folder of a Maven project normally contains a configuration file called pom.xml. This file provides the information needed to identify and build the project.&#xA;Hint. Your IDE can generate the backbone of a pom.xml file (for instance, when creating a Maven project). For a basic Java project, the pom.xml file usually has the following structure:&#xA;&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt; &amp;lt;project xmlns=&amp;#34;http://maven.</description>
+    </item>
+    <item>
       <title>Evaluation</title>
       <link>https://unibz-pp-23-24.github.io/docs/intro/sections/evaluation/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -190,11 +197,11 @@
       <description>Inheritance # Subclass # In most (class-based) object-oriented languages, a class A can extend another class B. In this case, A is called a subclass of B. The intuitive meaning is inclusion between their respective sets of instances, i.e. every instance of A is also an instance of B (but the converse may not hold).&#xA;This can be paraphrased in English by &amp;ldquo;every A is a B &amp;ldquo;. For instance:</description>
     </item>
     <item>
-      <title>POM and artifact</title>
-      <link>https://unibz-pp-23-24.github.io/docs/build/sections/pom/</link>
+      <title>Artifact</title>
+      <link>https://unibz-pp-23-24.github.io/docs/build/sections/artifact/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://unibz-pp-23-24.github.io/docs/build/sections/pom/</guid>
-      <description>POM and artifact # Project Object Model (POM) # The root folder of a Maven project normally contains a configuration file called pom.xml. This file provides the information needed to identify and build the project.&#xA;Hint. Your IDE can generate the backbone of a pom.xml file (for instance, when creating a Maven project). For a basic Java project, the pom.xml file usually has the following structure:&#xA;&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt; &amp;lt;project xmlns=&amp;#34;http://maven.</description>
+      <guid>https://unibz-pp-23-24.github.io/docs/build/sections/artifact/</guid>
+      <description>Artifact # A Maven artifact is the output of a build process. It can for instance be a jar. Coordinates # A Maven artifact is identified by so-called coordinates:&#xA;groupId: identifier of the organization that created the project (this is usually the organization&amp;rsquo;s reversed domain name), artifactId: identifier of the project within the group, version: version of the artifact. Examples.&#xA;&amp;lt;groupId&amp;gt;com.google.guava&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;guava&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;33.1.0-jre&amp;lt;/version&amp;gt; &amp;lt;groupId&amp;gt;com.github.haifengl&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;smile-core&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;3.1.0&amp;lt;/version&amp;gt; These coordinates are notably used to declare dependencies.</description>
     </item>
     <item>
       <title>Checked vs unchecked</title>
@@ -278,7 +285,7 @@
       <link>https://unibz-pp-23-24.github.io/docs/build/sections/dependencies/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/build/sections/dependencies/</guid>
-      <description>Dependencies # Maven (like Gradle) acts both as a build automation tool and as a package manager.&#xA;As a package manager, Maven (like Gradle) relies by default a software repository called Maven Central. This repository contains more than 260.000 artifacts (more than 6 million when counting versions), with over a trillion downloads in 2023.&#xA;An artifact on Maven Central is identified by its coordinates.&#xA;Hint. The coordinates of a library are often provided as part of its documentation.</description>
+      <description>Dependencies # Maven (like Gradle) acts both as a build automation tool and as a package manager.&#xA;As a package manager, Maven (like Gradle) relies by default a software repository called Maven Central. This repository contains more than 260.000 artifacts (more than 6 million when counting versions), with over a trillion downloads in 2023.&#xA;An artifact on Maven Central is identified by its coordinates.&#xA;Finding a library&amp;rsquo;s coordinates # The coordinates of a library are often provided as part of its documentation.</description>
     </item>
     <item>
       <title>Displaying objects</title>
@@ -302,6 +309,13 @@
       <description>Bibliography # Java&amp;rsquo;s syntax # In each chapter of this course, you will find Java code snippets that illustrate how to perform certain operations. However, this documentation is far from exhaustive (on purpose).&#xA;So when it comes to syntax, the first two sources of complementary material for this course are:&#xA;the Javadoc of the libraries (standard and auxiliary) used in your project/assignments. Your IDE is often the fastest way to navigate through it, the web.</description>
     </item>
     <item>
+      <title>Building</title>
+      <link>https://unibz-pp-23-24.github.io/docs/build/sections/building/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/build/sections/building/</guid>
+      <description>Building # Cleaning # The command&#xA;mvn clean attempts to delete all content generated during a previous build (in particular, .class files).&#xA;Example. Let us assume that MyClass.java is compiled into MyClass.class, and then renamed MyNewClass.java. In this scenario, mvn clean allows eliminating the file MyClass.class from the target directory. The default lifecycle # Maven&amp;rsquo;s default lifecycle is a sequence of 23 operations (called phases) that can be executed during a build.</description>
+    </item>
+    <item>
       <title>Cast and equality</title>
       <link>https://unibz-pp-23-24.github.io/docs/objects/sections/comparing/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -314,13 +328,6 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/env/sections/requirements/</guid>
       <description>Requirements for this course # For this course, you will need:&#xA;Git Version 2.2 or higher A Java Development Kit (JDK) for Java 17 (e.g. openJDK) Maven Version 3.6 or higher In addition, if you choose the board game as project, you will need:&#xA;Gradle Version 7.2 or higher Again, we recommend using a package manager to install these programs if possible.&#xA;For Windows users. Maven is not available on the winget repository.</description>
-    </item>
-    <item>
-      <title>Serialization</title>
-      <link>https://unibz-pp-23-24.github.io/docs/input/sections/serialize/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://unibz-pp-23-24.github.io/docs/input/sections/serialize/</guid>
-      <description></description>
     </item>
     <item>
       <title>Branches</title>

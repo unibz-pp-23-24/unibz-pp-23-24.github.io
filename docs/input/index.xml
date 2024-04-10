@@ -29,13 +29,6 @@
       <description>Configuration files # It is common practice for an application to store parameters (e.g. user-specific settings) in configuration files.&#xA;A configuration file may be edited manually and/or via a graphical interface.&#xA;Configuration files may use different serialization formats. Some popular formats are INI, JSON, TOML, YAML or XML.&#xA;in Java # Java provides native support for at least two configuration file serialization formats: XML and the so-called &amp;ldquo;property file&amp;rdquo; format.</description>
     </item>
     <item>
-      <title>Serialization</title>
-      <link>https://unibz-pp-23-24.github.io/docs/input/sections/serialize/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://unibz-pp-23-24.github.io/docs/input/sections/serialize/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>JSON Serialization</title>
       <link>https://unibz-pp-23-24.github.io/docs/input/sections/json/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
