@@ -21,7 +21,7 @@ Note. Jackson was initially designed for JSON, but extensions of Jackson allow m
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.68fda4c147fc97fcca3f0ecc93b805f47e26f5a9577d627f6ea42b2c6ea0bfcb.js" integrity="sha256-aP2kwUf8l/zKPw7Mk7gF9H4m9alXfWJ/bqQrLG6gv8s=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.2fc3348313b4e0a3dfe5e9a05db66c0ed4408f5783d9ec2787eb914fdc19959e.js" integrity="sha256-L8M0gxO04KPf5emgXbZsDtRAj1eD2ewnh&#43;uRT9wZlZ4=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1396,7 +1396,7 @@ for instance <a href="https://github.com/FasterXML/jackson-databind/">Jackson in
 </span></span><span style="display:flex;"><span>Set<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> set <span style="color:#f92672">=</span> mapper.<span style="color:#a6e22e">readValue</span>(<span style="color:#e6db74">&#34;[2,3,2]&#34;</span>, Set.<span style="color:#a6e22e">class</span>);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Creates a LinkedHashMap with values {&#34;Alice&#34; -&gt; 20, &#34;Bob&#34; -&gt; 19}</span>
-</span></span><span style="display:flex;"><span>Map<span style="color:#f92672">&lt;</span>Integer, Boolean<span style="color:#f92672">&gt;</span> map <span style="color:#f92672">=</span> mapper.<span style="color:#a6e22e">readValue</span>(<span style="color:#e6db74">&#34;{\&#34;Alice\&#34;: 20, \&#34;Bob\&#34;: 19}&#34;</span>, Map.<span style="color:#a6e22e">class</span>);
+</span></span><span style="display:flex;"><span>Map<span style="color:#f92672">&lt;</span>String, Integer<span style="color:#f92672">&gt;</span> map <span style="color:#f92672">=</span> mapper.<span style="color:#a6e22e">readValue</span>(<span style="color:#e6db74">&#34;{\&#34;Alice\&#34;: 20, \&#34;Bob\&#34;: 19}&#34;</span>, Map.<span style="color:#a6e22e">class</span>);
 </span></span></code></pre></div><h3 id="convert-an-object">
   Convert an object
   <a class="anchor" href="#convert-an-object">#</a>
@@ -1575,7 +1575,11 @@ For instance:</p>
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> countries.<span style="color:#a6e22e">size</span>();
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div></div></div>
+</span></span></code></pre></div></div><input type="radio" class="toggle" name="tabs-exercise_JSON_serialize" id="tabs-exercise_JSON_serialize-1"  />
+  <label for="tabs-exercise_JSON_serialize-1">Solution</label>
+  <div class="book-tabs-content markdown-inner"><p>2</p>
+<p>1</p>
+</div></div>
 
 <h2 id="writing-to-or-reading-from-a-file">
   Writing to or reading from a file
