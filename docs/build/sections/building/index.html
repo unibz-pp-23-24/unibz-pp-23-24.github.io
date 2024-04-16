@@ -21,7 +21,7 @@ Example. Let us assume that MyClass.java is compiled into MyClass.class, and the
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.2fc3348313b4e0a3dfe5e9a05db66c0ed4408f5783d9ec2787eb914fdc19959e.js" integrity="sha256-L8M0gxO04KPf5emgXbZsDtRAj1eD2ewnh&#43;uRT9wZlZ4=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.b82fb0be1adfe44bbf0358df9273363cb5e62777205770af87180349d6ff344c.js" integrity="sha256-uC&#43;wvhrf5Eu/A1jfknM2PLXmJ3cgV3CvhxgDSdb/NEw=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -752,6 +752,75 @@ https://github.com/alex-shpak/hugo-book
   
 
   
+    <input type="checkbox" id="section-9d77b970a03dc72b048d9fce7bfe272f" class="toggle"  />
+    <label for="section-9d77b970a03dc72b048d9fce7bfe272f" class="flex justify-between">
+      <a href="/docs/unittests/" class="">Unit tests</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-796939dc839b82c2ff89d99e47011262" class="toggle"  />
+    <label for="section-796939dc839b82c2ff89d99e47011262" class="flex justify-between">
+      <a href="/docs/unittests/sections/structured/" class="">Code units</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ad5c3d825858d4a9ca4ad02d541f7121" class="toggle"  />
+    <label for="section-ad5c3d825858d4a9ca4ad02d541f7121" class="flex justify-between">
+      <a href="/docs/unittests/sections/tdd/" class="">Test-driven development</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-7e09be54c45521908b57f9eaf194f5f6" class="toggle"  />
+    <label for="section-7e09be54c45521908b57f9eaf194f5f6" class="flex justify-between">
+      <a href="/docs/unittests/sections/junit/" class="">in Java</a>
+    </label>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
     <input type="checkbox" id="section-494fdb80ca3ad5d2868cb487a042ae27" class="toggle"  />
     <label for="section-494fdb80ca3ad5d2868cb487a042ae27" class="flex justify-between">
       <a href="/docs/env/" class="">Development environment</a>
@@ -1264,9 +1333,9 @@ https://github.com/alex-shpak/hugo-book
 <nav id="TableOfContents">
   <ul>
     <li><a href="#cleaning">Cleaning</a></li>
-    <li><a href="#the-default-lifecycle">The default lifecycle</a></li>
+    <li><a href="#phases">The default lifecycle</a></li>
     <li><a href="#goals-and-plugins">Goals and plugins</a></li>
-    <li><a href="#installing-a-plugin">Installing a plugin</a></li>
+    <li><a href="#installPlugin">Installing a plugin</a></li>
     <li><a href="#useful-plugins">Useful plugins</a>
       <ul>
         <li><a href="#the-assembly-plugin">The assembly plugin</a></li>
@@ -1302,9 +1371,9 @@ https://github.com/alex-shpak/hugo-book
 In this scenario, <code>mvn clean</code> allows eliminating the file <code>MyClass.class</code> from the <code>target</code> directory.
 </blockquote>
 
-<h2 id="the-default-lifecycle">
+<h2 id="phases">
   The default lifecycle
-  <a class="anchor" href="#the-default-lifecycle">#</a>
+  <a class="anchor" href="#phases">#</a>
 </h2>
 <blockquote class="book-hint warning">
   Maven&rsquo;s <strong>default lifecycle</strong> is a <em>sequence</em> of <a href="https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#default-lifecycle">23 operations</a> (called <strong>phases</strong>) that can be executed during a build.
@@ -1425,9 +1494,9 @@ in the <code>pom.xml</code> file <em>of the project</em>, as follows:</p>
 </span></span></code></pre></div><p>For instance, the <a href="https://github.com/openjfx/javafx-maven-plugin">javafx maven plugin</a> has a goal <code>run</code> to start a JavaFX application.
 It can be executed with:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mvn javafx:run
-</span></span></code></pre></div><h2 id="installing-a-plugin">
+</span></span></code></pre></div><h2 id="installPlugin">
   Installing a plugin
-  <a class="anchor" href="#installing-a-plugin">#</a>
+  <a class="anchor" href="#installPlugin">#</a>
 </h2>
 <p>Maven plugins are available for a variety of tasks, like code analysis, Javadoc generation, parser generation, etc.</p>
 <p>An plugin is a <a href="https://unibz-pp-23-24.github.io/docs/build/sections/artifact/">Maven artifact</a>.
@@ -1566,9 +1635,9 @@ This allows:</p>
 <nav id="TableOfContents">
   <ul>
     <li><a href="#cleaning">Cleaning</a></li>
-    <li><a href="#the-default-lifecycle">The default lifecycle</a></li>
+    <li><a href="#phases">The default lifecycle</a></li>
     <li><a href="#goals-and-plugins">Goals and plugins</a></li>
-    <li><a href="#installing-a-plugin">Installing a plugin</a></li>
+    <li><a href="#installPlugin">Installing a plugin</a></li>
     <li><a href="#useful-plugins">Useful plugins</a>
       <ul>
         <li><a href="#the-assembly-plugin">The assembly plugin</a></li>

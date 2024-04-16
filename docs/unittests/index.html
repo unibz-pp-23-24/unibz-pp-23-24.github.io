@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Unit tests # Testing software # Testing is an integral part of software development.
 Different terminologies coexists to categorize software tests (more or less precise, an with overlapping meanings). Common categories are:
-functional vs non-functional test unit vs integration test security test performance test regression test etc. As a side benefit, a test often helps clarifying what a program (or component or method) should do. So in a sense, tests are part of the documentation or specification of a system.">
+functional vs non-functional test unit vs integration test security test performance test regression test etc. A side benefit of many tests is that they help clarifying what a program (resp. component, method) is expected to do. So in a sense, tests are part of the documentation or specification of a system, because they provide precise examples of the expected behavior of the program (resp.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="Unit tests" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="http://localhost:1313/docs/unittests/" />
+<meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/unittests/" />
 <title>Unit tests | Programming project 2023-24</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.b0a198233b4c4797f31ff5d252275aa49e2605758d4dffd563f57875b4147fb9.js" integrity="sha256-sKGYIztMR5fzH/XSUidapJ4mBXWNTf/VY/V4dbQUf7k=" crossorigin="anonymous"></script>
-<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/docs/unittests/index.xml" title="Programming project 2023-24" />
+  <script defer src="/en.search.min.b82fb0be1adfe44bbf0358df9273363cb5e62777205770af87180349d6ff344c.js" integrity="sha256-uC&#43;wvhrf5Eu/A1jfknM2PLXmJ3cgV3CvhxgDSdb/NEw=" crossorigin="anonymous"></script>
+<link rel="alternate" type="application/rss+xml" href="https://unibz-pp-23-24.github.io/docs/unittests/index.xml" title="Programming project 2023-24" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -758,6 +758,54 @@ https://github.com/alex-shpak/hugo-book
           
   <ul>
     
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-796939dc839b82c2ff89d99e47011262" class="toggle"  />
+    <label for="section-796939dc839b82c2ff89d99e47011262" class="flex justify-between">
+      <a href="/docs/unittests/sections/structured/" class="">Code units</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ad5c3d825858d4a9ca4ad02d541f7121" class="toggle"  />
+    <label for="section-ad5c3d825858d4a9ca4ad02d541f7121" class="flex justify-between">
+      <a href="/docs/unittests/sections/tdd/" class="">Test-driven development</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-7e09be54c45521908b57f9eaf194f5f6" class="toggle"  />
+    <label for="section-7e09be54c45521908b57f9eaf194f5f6" class="flex justify-between">
+      <a href="/docs/unittests/sections/junit/" class="">in Java</a>
+    </label>
+  
+
+        </li>
+      
+    
   </ul>
 
         </li>
@@ -1282,10 +1330,11 @@ https://github.com/alex-shpak/hugo-book
 <nav id="TableOfContents">
   <ul>
     <li><a href="#testing-software">Testing software</a></li>
-    <li><a href="#unit-test">Unit test</a></li>
+    <li><a href="#unit-tests-1">Unit tests</a></li>
+    <li><a href="#unit-test-design">Unit test design</a></li>
     <li><a href="#implementation">Implementation</a></li>
-    <li><a href="#benefits">Benefits</a></li>
-    <li><a href="#notes">Notes</a></li>
+    <li><a href="#unit-tests-and-build-automation">Unit tests and build automation</a></li>
+    <li><a href="#regression-tests">Regression tests</a></li>
   </ul>
 </nav>
 
@@ -1317,25 +1366,25 @@ Common categories are:</p>
 <li>regression test</li>
 <li>etc.</li>
 </ul>
-<p>As a side benefit, a test often helps clarifying <em>what</em> a program (or component or method) should do.
-So in a sense, tests are part of the documentation or specification of a system.</p>
+<p>A side benefit of many tests is that they help clarifying <em>what</em> a program (resp. component, method) is expected to do.
+So in a sense, tests are part of the <em>documentation</em> or specification of a system, because they provide precise <em>examples</em> of the expected behavior of the program (resp. component, method).</p>
 <p>This is why tests are often part of the development process itself.
-Notably, <a href="">test-driven development</a> consists in developing tests cases <em>before</em> software is fully developed.</p>
-<h2 id="unit-test">
-  Unit test
-  <a class="anchor" href="#unit-test">#</a>
+Notably, <a href="https://unibz-pp-23-24.github.io/docs/unittests/sections/tdd/">test-driven development</a> consists in developing tests cases <em>before</em> software is fully developed.</p>
+<h2 id="unit-tests-1">
+  Unit tests
+  <a class="anchor" href="#unit-tests-1">#</a>
 </h2>
 <p><blockquote class="book-hint warning">
   <p>A <strong>unit test</strong> is usually understood as:</p>
 <ul>
 <li>testing the behavior of a <em>small</em> piece of code (typically a method),</li>
-<li>automated (typically integrated to the <a href="http://localhost:1313/docs/build/">build</a> process),</li>
-<li>fast,</li>
-<li>isolated.</li>
+<li>automated (typically integrated to the <a href="https://unibz-pp-23-24.github.io/docs/build/">build</a> process),</li>
+<li>fast.</li>
 </ul>
+<!-- raw HTML omitted -->
 </blockquote>
 
-Besides, most unit tests are concerned with <em>correctness</em>, i.e. whether the tested piece of code behaves as it should.</p>
+Besides, most unit tests are concerned with <em>correctness</em> (rather than performance for instance).</p>
 <blockquote class="book-hint danger">
   <strong><em>Warning.</em></strong>
 The tests used to evaluate assignments in this course are implemented via libraries for unit testing.
@@ -1345,7 +1394,7 @@ However, many of them do <em>not</em> qualify as unit tests.
 <blockquote class="book-hint warning">
   <p>In its simplest form, a unit test can be viewed as a pair</p>
 <p>$\qquad$ (input, expected output)</p>
-<p>for a given <a href="http://localhost:1313/docs/background/sections/problem/">computational problem</a>.</p>
+<p>for a given <a href="https://unibz-pp-23-24.github.io/docs/background/sections/problem/">computational problem</a>.</p>
 
 </blockquote>
 
@@ -1353,15 +1402,15 @@ However, many of them do <em>not</em> qualify as unit tests.
   <p><strong><em>Example.</em></strong>
 Consider the following problem:</p>
 <blockquote>
-<p><strong><em>Input:</em></strong> a (finite) array of positive integers, representing the successive values of a stock.</p>
-<p><strong><em>Output:</em></strong> the maximal gain that can be made by buying at a certain moment in time, and selling later on.</p>
+<p><strong><em>Input:</em></strong> a (finite) array of positive integers, representing the successive values of a stock, one value per day.</p>
+<p><strong><em>Output:</em></strong> the maximal gain that can be made by buying on a certain day, and selling the same day or later on.</p>
 </blockquote>
 <p>Possible unit tests for this problem are:</p>
 <ul>
 <li>( [0, 3], 3 )</li>
-<li>( [3, 8, 6], 5 )</li>
-<li>( [3, 1, 7], 6 )</li>
-<li>( [3, 2, 4, 9, 1, 3], 7 )</li>
+<li>( [4, 3, 6, 8, 6], 5 )</li>
+<li>( [2, 4, 9, 1, 3], 7 )</li>
+<li>( [3, 2], 0 )</li>
 <li>etc.</li>
 </ul>
 
@@ -1383,71 +1432,96 @@ Consider the following problem:</p>
 <p>the expected output is
 <code>4</code>.</p>
 <p><strong><em>Question.</em></strong> Does there exist a (finite) set of unit tests for this problem that guarantees that an implementation is correct?</p>
-</div><input type="radio" class="toggle" name="tabs-exercise_finite_unitTests" id="tabs-exercise_finite_unitTests-1"  />
-  <label for="tabs-exercise_finite_unitTests-1">Solution</label>
-  <div class="book-tabs-content markdown-inner"><p>No.</p>
-<p>A unit tests for this problem is a pair
-$(a, i)$,
-where</p>
-<ul>
-<li>$a$ is an array of characters, and</li>
-<li>$i$ is a (strictly positive) integer.</li>
-</ul>
-<p>Take any finite set</p>
-<p>$\qquad (a_1, i_1),\  ..,\ (a_n, i_n)$</p>
-<p>of such unit tests.</p>
-<p>Because this set if finite (and because there is no bound on the size of the input array), there exists an array of characters
-$a_0$ that does not appear in this set of tests.</p>
-<p>Let $i_0$ be the expected output for $a_0$, and let $j$ be any positive integer different from $i_0$.</p>
-<p>Now consider the method (in pseudocode):</p>
-<pre tabindex="0"><code>int sizeOfLongestNonDecreasingSequence(char[] characters) {
-    if(characters == a_1) {
-      return i_1
-    }
-    if(characters == a_2) {
-      return i_2
-    }
-    ...
-
-    if(characters == a_n) {
-      return i_n
-    }
-    return j;
-}
-</code></pre><p>This algorithm will pass the unit tests, but is incorrect for the input $a_0$.</p>
 </div></div>
 
 <p>This (artificial) exercise was only meant to illustrate the following:
 <blockquote class="book-hint danger">
   <strong><em>Warning.</em></strong>
-In general, no (reasonably small) set of unit tests can ensure that a method is correct.
+In general, no (reasonably small) set of unit tests can ensure that a (non-trivial) method is correct.
 </blockquote>
 </p>
+<h2 id="unit-test-design">
+  Unit test design
+  <a class="anchor" href="#unit-test-design">#</a>
+</h2>
+<p>Here are a few simple rules of thumb to design unit tests.</p>
+<ol>
+<li>
+<p>The input for a unit test is usually <em>small</em> (this makes debugging easier when the test fails).</p>
+</li>
+<li>
+<p>Two tests for the same method should illustrate different types of inputs/scenarios (writing similar tests is a waste of time).</p>
+</li>
+<li>
+<p>Trivial methods do not need unit tests.</p>
+</li>
+<li>
+<p>Priority is often given to so-called &ldquo;<a href="https://en.wikipedia.org/wiki/Happy_path">happy path</a>&rdquo; tests (a.k.a &ldquo;normal&rdquo; scenarios).
+These are representative of what the tested method is likely to receive as input.</p>
+</li>
+<li>
+<p>In addition to &ldquo;happy path&rdquo; tests, one <em>may</em> implement tests that deal with corner cases (e.g. empty array, value <code>0</code>, etc.).
+However, an exhaustive coverage of corner cases is often unnecessary, because the methods that call the tested method cannot produce such inputs.</p>
+</li>
+<li>
+<p>A unit test should be <em>reproducible</em>.
+In particular, it should not depend on:</p>
+<ul>
+<li>(pseudo)-random values,</li>
+<li>external services (web API, etc.) whose behavior cannot be controlled.</li>
+</ul>
+</li>
+</ol>
 <h2 id="implementation">
   Implementation
   <a class="anchor" href="#implementation">#</a>
 </h2>
-<p>A unit test should itself be <em>free of bugs</em>.</p>
+<blockquote class="book-hint danger">
+  <strong><em>Requirement.</em></strong>
+A unit test should itself be <em>free of bugs</em>.
+</blockquote>
+
 <p>For this reason, unit tests usually:</p>
 <ul>
 <li>rely of widely used libraries for test execution,</li>
-<li>consist of mostly <em>declarative</em> code otherwise.</li>
+<li>mostly consist of simple, <em>declarative</em> code otherwise.</li>
 </ul>
-<p>In particular, unit tests are a (rare) case where code factorization is not a priority (e.g. they often contain copy-pasted )</p>
-<h2 id="benefits">
-  Benefits
-  <a class="anchor" href="#benefits">#</a>
+<p>In particular, unit tests are a (rare) case where code factorization is <em>not</em> a priority (i.e. unit tests may contain redundant code).</p>
+<h2 id="unit-tests-and-build-automation">
+  Unit tests and build automation
+  <a class="anchor" href="#unit-tests-and-build-automation">#</a>
 </h2>
-<h2 id="notes">
-  Notes
-  <a class="anchor" href="#notes">#</a>
+<p>Unit tests are usually integrated to the standard build automation process of a project.</p>
+<p>For instance, the <code>test-compile</code> and <code>test</code> phases of Maven&rsquo;s <a href="https://unibz-pp-23-24.github.io/docs/build/sections/building/#phases">default lifecycle</a> are in charge of compiling and executing unit tests respectively.
+This effectively prevents further phases to be executed if a test fails.</p>
+<h2 id="regression-tests">
+  Regression tests
+  <a class="anchor" href="#regression-tests">#</a>
 </h2>
-<p>We want to document how our system should behave.</p>
-<p>Which methods should I test?</p>
-<p>TDD helps set up intermediate objectives: a method is implemented once the tests written for it succeed.</p>
+<blockquote class="book-hint warning">
+  A <strong>regression test</strong> is meant to verify that modifications brought to the code base (e.g. a new feature, code optimization, reorganization, etc. ) do not compromise correctness of functionalities that were already implemented.
+</blockquote>
+
+<p>Some unit tests may act in practice as regression tests.</p>
+<p>In particular, before sharing code with co-developers (e.g. via the main branch of a git repository), it is good practice to verify that all unit tests as <em>successful</em>.</p>
+
+
+
+
+<div class="book-tabs"><input type="radio" class="toggle" name="tabs-exercise_git_collab_reminder" id="tabs-exercise_git_collab_reminder-0" checked="checked" />
+  <label for="tabs-exercise_git_collab_reminder-0">Exercise (reminder)</label>
+  <div class="book-tabs-content markdown-inner"><p>Consider a basic collaboration scheme via git, where:</p>
 <ul>
-<li>Changes in the code are reflected</li>
+<li>Alice, Bob and Carol collaborate on the same project,</li>
+<li>they share code via the <code>main</code> branch,</li>
+<li>each of them has a personal branch (named <code>alice</code>, <code>bob</code> and <code>carol</code> respectively) where they write code that is not yet ready to be shared with the others.</li>
 </ul>
+<p>Alice just finished implementing a method, on the branch <code>alice</code>.
+Her code compiles and passes all unit tests.
+Now she wants to share her code with the other two.</p>
+<p>Which sequence of git commands should Alice execute?</p>
+</div></div>
+
 </article>
  
       
@@ -1490,10 +1564,11 @@ In general, no (reasonably small) set of unit tests can ensure that a method is 
 <nav id="TableOfContents">
   <ul>
     <li><a href="#testing-software">Testing software</a></li>
-    <li><a href="#unit-test">Unit test</a></li>
+    <li><a href="#unit-tests-1">Unit tests</a></li>
+    <li><a href="#unit-test-design">Unit test design</a></li>
     <li><a href="#implementation">Implementation</a></li>
-    <li><a href="#benefits">Benefits</a></li>
-    <li><a href="#notes">Notes</a></li>
+    <li><a href="#unit-tests-and-build-automation">Unit tests and build automation</a></li>
+    <li><a href="#regression-tests">Regression tests</a></li>
   </ul>
 </nav>
 

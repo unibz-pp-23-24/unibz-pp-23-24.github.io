@@ -92,6 +92,13 @@
       <description>Class and instance # A class can be viewed as a blueprint for a set of similar objects.&#xA;For instance, consider the two objects:&#xA;{ name: &amp;#34;Florence&amp;#34;, zipCode: 50100, region: &amp;#34;Tuscany&amp;#34; } { name: &amp;#34;Rome&amp;#34;, zipCode: 00100, region: &amp;#34;Lazio&amp;#34; } Each of these objects describes a city, and they share the same keys (name, zipCode and region). A possible class for these two objects may enforce this structure, and it could be named City.</description>
     </item>
     <item>
+      <title>Code units</title>
+      <link>https://unibz-pp-23-24.github.io/docs/unittests/sections/structured/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/unittests/sections/structured/</guid>
+      <description>Code units # A unit test is meant to test to a small unit of code. This is only possible if the program contains small units of code.&#xA;Therefore unit testing is closely related to decomposing complex problems into smaller ones (and creating methods that solve these smaller problems).&#xA;Benefits # Possible benefits of decomposing complex methods into smaller ones are:&#xA;readability, easier debugging, opportunities to factorize code (the same small methods can be called in several places), easier collaboration (two person modifying the same method in parallel is less likely if the method is small), Some good indicators that auxiliary methods may be helpful are:</description>
+    </item>
+    <item>
       <title>Exceptions</title>
       <link>https://unibz-pp-23-24.github.io/docs/errors/sections/exceptions/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -153,6 +160,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/intro/sections/lecturers/</guid>
       <description>Teaching staff # Julien Corman will teach the lectures and one lab.&#xA;Albulen Pano will teach the other lab.&#xA;Office hours # If you need additional help with the content of the course, the assignments and/or your project, you can ask for office hours with any (or both) of us.&#xA;These appointments must be scheduled via email (follow the links above for our email addresses).</description>
+    </item>
+    <item>
+      <title>Test-driven development</title>
+      <link>https://unibz-pp-23-24.github.io/docs/unittests/sections/tdd/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/unittests/sections/tdd/</guid>
+      <description>Test-driven development # Test-driven development (TDD) consists in converting a program&amp;rsquo;s requirements into test cases, before the program is fully developed. Note that this approach is not restricted to unit tests.&#xA;In practice # For a non-trivial method:&#xA;Create a method stub (e.g. return null is the method has an reference return type). Specify the expected behavior (input and expected output) of the method. Write one or several test(s) for this method, illustrating the specification.</description>
     </item>
     <item>
       <title>Associative array</title>
@@ -293,6 +307,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/objects/sections/tostring/</guid>
       <description>Displaying objects # The class Object # Java has a native class called Object with 11 instance methods. Every Java class implicitly extends Object, including user-defined classes. Therefore any Java class inherits these methods. The method toString # toString is one of the methods of the class Object. Here is (part of) its specification:&#xA;/** Returns a string representation of the object. * In general, the toString method returns a string that * &amp;#34;textually represents&amp;#34; this object.</description>
+    </item>
+    <item>
+      <title>in Java</title>
+      <link>https://unibz-pp-23-24.github.io/docs/unittests/sections/junit/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/unittests/sections/junit/</guid>
+      <description>Unit tests in Java # Several frameworks are available in Java for unit tests. Popular frameworks include:&#xA;JUnit 4 JUnit 5 TestNG Spock In this section, we focus on Junit 5.&#xA;Install Junit 5 with Maven # Junit 5 can be used in a Maven project by declaring the following dependency and plugin&#xA;&amp;lt;dependencies&amp;gt; ... &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.junit.jupiter&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;junit-jupiter-api&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;XXX&amp;lt;/version&amp;gt; &amp;lt;scope&amp;gt;test&amp;lt;/scope&amp;gt; &amp;lt;/dependency&amp;gt; ... &amp;lt;dependencies&amp;gt; &amp;lt;build&amp;gt; &amp;lt;plugins&amp;gt; ... &amp;lt;plugin&amp;gt; &amp;lt;groupId&amp;gt;org.apache.maven.plugins&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;maven-surefire-plugin&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;XXX&amp;lt;/version&amp;gt; &amp;lt;/plugin&amp;gt; .</description>
     </item>
     <item>
       <title>Operating system</title>
