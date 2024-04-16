@@ -23,7 +23,7 @@ reading and writing text (but Java also offers multiple ways to read or write se
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.c5486bccfef044114c5e7b6a281ee3b761823fc9821e9c3ac216cbe4ad87ff65.js" integrity="sha256-xUhrzP7wRBFMXntqKB7jt2GCP8mCHpw6whbL5K2H/2U=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.b70320f42608517facb482c67173ae8e512a08b249812521fd2661b6d1e442e6.js" integrity="sha256-twMg9CYIUX&#43;stILGcXOujlEqCLJJgSUh/SZhttHkQuY=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1446,7 +1446,7 @@ For instance:</p>
 </span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">catch</span> (IOException e) {
 </span></span><span style="display:flex;"><span>        e.<span style="color:#a6e22e">printStackTrace</span>();
 </span></span><span style="display:flex;"><span>    }
-</span></span></code></pre></div><p>A <code>PrintWriter</code> offers additional methods to easily format the output, such as <code>println</code> or <code>printf</code>, analogous to the methods of the standard output stream <code>System.out</code>.
+</span></span></code></pre></div><p>A <code>PrintWriter</code> offers additional methods to easily format the output, such as <code>print</code>, <code>println</code> or <code>printf</code>, analogous to the methods of the standard output stream <code>System.out</code>.
 It is often used as a wrapper around another writer, for instance a <code>BufferedWriter</code>:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>(PrintWriter writer <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> PrintWriter(<span style="color:#66d9ef">new</span> BufferedWriter(<span style="color:#66d9ef">new</span> FileWriter(<span style="color:#e6db74">&#34;path/to/file.txt&#34;</span>)))){
 </span></span><span style="display:flex;"><span>        writer.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Hi&#34;</span>);

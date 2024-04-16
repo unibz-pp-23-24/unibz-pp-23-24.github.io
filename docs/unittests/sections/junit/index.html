@@ -6,14 +6,14 @@
 <meta name="description" content="Unit tests in Java # Several frameworks are available in Java for unit tests. Popular frameworks include:
 JUnit 4 JUnit 5 TestNG Spock In this section, we focus on Junit 5.
 Install Junit 5 with Maven # Junit 5 can be used in a Maven project by declaring the following dependency and plugin
-&lt;dependencies&gt; ... &lt;dependency&gt; &lt;groupId&gt;org.junit.jupiter&lt;/groupId&gt; &lt;artifactId&gt;junit-jupiter-api&lt;/artifactId&gt; &lt;version&gt;XXX&lt;/version&gt; &lt;scope&gt;test&lt;/scope&gt; &lt;/dependency&gt; ... &lt;dependencies&gt; &lt;build&gt; &lt;plugins&gt; ... &lt;plugin&gt; &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt; &lt;artifactId&gt;maven-surefire-plugin&lt;/artifactId&gt; &lt;version&gt;XXX&lt;/version&gt; &lt;/plugin&gt; .">
+&lt;dependencies&gt; ... &lt;dependency&gt; &lt;groupId&gt;org.junit.jupiter&lt;/groupId&gt; &lt;artifactId&gt;junit-jupiter&lt;/artifactId&gt; &lt;version&gt;5.10.2&lt;/version&gt; &lt;scope&gt;test&lt;/scope&gt; &lt;/dependency&gt; ... &lt;/dependencies&gt; &lt;build&gt; &lt;plugins&gt; ... &lt;plugin&gt; &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt; &lt;artifactId&gt;maven-surefire-plugin&lt;/artifactId&gt; &lt;version&gt;3.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="in Java" />
 <meta property="og:description" content="Unit tests in Java # Several frameworks are available in Java for unit tests. Popular frameworks include:
 JUnit 4 JUnit 5 TestNG Spock In this section, we focus on Junit 5.
 Install Junit 5 with Maven # Junit 5 can be used in a Maven project by declaring the following dependency and plugin
-&lt;dependencies&gt; ... &lt;dependency&gt; &lt;groupId&gt;org.junit.jupiter&lt;/groupId&gt; &lt;artifactId&gt;junit-jupiter-api&lt;/artifactId&gt; &lt;version&gt;XXX&lt;/version&gt; &lt;scope&gt;test&lt;/scope&gt; &lt;/dependency&gt; ... &lt;dependencies&gt; &lt;build&gt; &lt;plugins&gt; ... &lt;plugin&gt; &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt; &lt;artifactId&gt;maven-surefire-plugin&lt;/artifactId&gt; &lt;version&gt;XXX&lt;/version&gt; &lt;/plugin&gt; ." />
+&lt;dependencies&gt; ... &lt;dependency&gt; &lt;groupId&gt;org.junit.jupiter&lt;/groupId&gt; &lt;artifactId&gt;junit-jupiter&lt;/artifactId&gt; &lt;version&gt;5.10.2&lt;/version&gt; &lt;scope&gt;test&lt;/scope&gt; &lt;/dependency&gt; ... &lt;/dependencies&gt; &lt;build&gt; &lt;plugins&gt; ... &lt;plugin&gt; &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt; &lt;artifactId&gt;maven-surefire-plugin&lt;/artifactId&gt; &lt;version&gt;3." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/unittests/sections/junit/" /><meta property="article:section" content="docs" />
 
@@ -23,7 +23,7 @@ Install Junit 5 with Maven # Junit 5 can be used in a Maven project by declaring
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.c5486bccfef044114c5e7b6a281ee3b761823fc9821e9c3ac216cbe4ad87ff65.js" integrity="sha256-xUhrzP7wRBFMXntqKB7jt2GCP8mCHpw6whbL5K2H/2U=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.b70320f42608517facb482c67173ae8e512a08b249812521fd2661b6d1e442e6.js" integrity="sha256-twMg9CYIUX&#43;stILGcXOujlEqCLJJgSUh/SZhttHkQuY=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1344,14 +1344,14 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#writing-unit-tests">Writing unit tests</a>
       <ul>
         <li><a href="#checking-exceptions">Checking exceptions</a></li>
-        <li><a href="#prior-anor-subsequent-code">Prior an/or subsequent code</a></li>
+        <li><a href="#prior-andor-subsequent-code">Prior and/or subsequent code</a></li>
         <li><a href="#disabling-tests">Disabling tests</a></li>
       </ul>
     </li>
     <li><a href="#running-unit-tests">Running unit tests</a>
       <ul>
         <li><a href="#from-the-command-line">from the command line</a></li>
-        <li><a href="#within-an-ide">Within an IDE</a></li>
+        <li><a href="#within-an-ide">within an IDE</a></li>
       </ul>
     </li>
   </ul>
@@ -1388,25 +1388,25 @@ Popular frameworks include:</p>
 </span></span><span style="display:flex;"><span>  ...
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;dependency&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;groupId&gt;</span>org.junit.jupiter<span style="color:#f92672">&lt;/groupId&gt;</span>
-</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&lt;artifactId&gt;</span>junit-jupiter-api<span style="color:#f92672">&lt;/artifactId&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;version&gt;</span>XXX<span style="color:#f92672">&lt;/version&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;artifactId&gt;</span>junit-jupiter<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;version&gt;</span>5.10.2<span style="color:#f92672">&lt;/version&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;scope&gt;</span>test<span style="color:#f92672">&lt;/scope&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;/dependency&gt;</span>
 </span></span><span style="display:flex;"><span> ...
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;dependencies&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/dependencies&gt;</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;build&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;plugins&gt;</span>
 </span></span><span style="display:flex;"><span>  ...
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;plugin&gt;</span>
 </span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;groupId&gt;</span>org.apache.maven.plugins<span style="color:#f92672">&lt;/groupId&gt;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;artifactId&gt;</span>maven-surefire-plugin<span style="color:#f92672">&lt;/artifactId&gt;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;version&gt;</span>XXX<span style="color:#f92672">&lt;/version&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;artifactId&gt;</span>maven-surefire-plugin<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;version&gt;</span>3.2.5<span style="color:#f92672">&lt;/version&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/plugin&gt;</span>
 </span></span><span style="display:flex;"><span>  ...
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;/plugins&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/build&gt;</span>
-</span></span></code></pre></div><p>where the version number for the plugin is &gt;= <code>3.0</code>.</p>
+</span></span></code></pre></div><p>For the latest versions, search <a href="https://mvnrepository.com">Maven Central</a>.</p>
 <h2 id="layout">
   Layout
   <a class="anchor" href="#layout">#</a>
@@ -1441,16 +1441,16 @@ You will also find (dummy) unit tests in the directory <code>core/src/test/java/
   Writing unit tests
   <a class="anchor" href="#writing-unit-tests">#</a>
 </h2>
-<p>Any (public or protected) Java class in <code>src/test/java</code> (or a subdirectory) can contain unit tests.</p>
+<p>Any (public or protected) Java class in <code>src/test/java</code> (or a subdirectory) can contain JUnit tests.</p>
 <p><blockquote class="book-hint warning">
-  <p>A Junit 5 unit test is a (public or protected) instance method:</p>
+  <p>A <strong>Junit 5 test</strong> is a (public or protected) <em>instance method</em> :</p>
 <ul>
 <li>with <code>void</code> return type,</li>
 <li>annotated with <code>org.junit.jupiter.api.Test</code>.</li>
 </ul>
 </blockquote>
 
-In addition, the method usually contains one or several calls to static methods of Junit&rsquo;s <a href="https://junit.org/junit5/docs/5.0.1/api/org/junit/jupiter/api/Assertions.html">Assertions</a> class, like <code>assertTrue</code> or <code>assertThrows</code>.
+In addition, the method usually contains one or several calls to static methods of JUnit&rsquo;s <a href="https://junit.org/junit5/docs/5.0.1/api/org/junit/jupiter/api/Assertions.html">Assertions</a> class, like <code>assertEquals</code> or <code>assertThrows</code>.
 The test succeeds iff <em>all</em> these calls return <code>true</code>.</p>
 <p>For instance, the following class contains a single (successful) test:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> org.junit.jupiter.api.Test;
@@ -1468,21 +1468,21 @@ The test succeeds iff <em>all</em> these calls return <code>true</code>.</p>
 </span></span></code></pre></div><blockquote class="book-hint danger">
   <strong><em>Warning.</em></strong>
 The method <code>assertEquals</code> takes the expected value as first argument, and the actual one as second argument.
-This has an incidence on the logs in case of test failure (&ldquo;expected&rdquo; : XXX, &ldquo;actual: &ldquo;YYY&rdquo;);
+This has an incidence on logs in case of test failure (&ldquo;expected&rdquo; : XXX, &ldquo;actual: &ldquo;YYY&rdquo;);
 </blockquote>
 
 <blockquote class="book-hint info">
   <strong><em>Hint.</em></strong>
-A string can be passed to <code>assertEquals</code> as third argument, in order to display a message.
+A string can be passed to <code>assertEquals</code> as third argument, in order to display an additional message in case of failure.
 </blockquote>
 
 <blockquote class="book-hint info">
   <p><strong><em>Hint.</em></strong>
 Most methods of the class <a href="https://junit.org/junit5/docs/5.0.1/api/org/junit/jupiter/api/Assertions.html">Assertions</a> are syntactic sugar (thus not strictly necessary).
 For instance</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>assertTrue(<span style="color:#f92672">&lt;</span>myCondition<span style="color:#f92672">&gt;</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>assertTrue(<span style="color:#f92672">&lt;</span>myExpression<span style="color:#f92672">&gt;</span>)
 </span></span></code></pre></div><p>is a shortcut for</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>assertEquals(<span style="color:#66d9ef">true</span>, <span style="color:#f92672">&lt;</span>myCondition<span style="color:#f92672">&gt;</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>assertEquals(<span style="color:#66d9ef">true</span>, <span style="color:#f92672">&lt;</span>myExpression<span style="color:#f92672">&gt;</span>)
 </span></span></code></pre></div>
 </blockquote>
 
@@ -1507,11 +1507,11 @@ For instance the following unit test succeeds:</p>
 </span></span><span style="display:flex;"><span>        }
 </span></span><span style="display:flex;"><span>    );
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h3 id="prior-anor-subsequent-code">
-  Prior an/or subsequent code
-  <a class="anchor" href="#prior-anor-subsequent-code">#</a>
+</span></span></code></pre></div><h3 id="prior-andor-subsequent-code">
+  Prior and/or subsequent code
+  <a class="anchor" href="#prior-andor-subsequent-code">#</a>
 </h3>
-<p>The annotation <code>@BeforeAll</code> (resp. <code>@AfterAll</code>) can be used to indicate that a method must be executed (only <em>once</em>) before (resp. after) all unit tests in the class, regardless of test success or failure.
+<p>The annotation <code>@BeforeAll</code> (resp. <code>@AfterAll</code>) can be used to indicate that a method must be executed (only <em>once</em>) before (resp. after) all unit tests in the class, regardless of test successes or failures.
 This can be used for costly operations, or for opening (resp. closing) a resource, like an connection or an input (resp. output) stream.
 For instance</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> org.junit.jupiter.api.AfterAll;
@@ -1544,13 +1544,13 @@ For instance</p>
 </span></span><span style="display:flex;"><span>        ...
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>Similarly the annotation <code>@BeforEach</code> (resp. <code>@AfterEach</code>) can be used to indicate that a method must be executed before (resp. after) <em>each</em> unit test in the class, regardless of test success or failure.
+</span></span></code></pre></div><p>Similarly the annotation <code>@BeforeEach</code> (resp. <code>@AfterEach</code>) can be used to indicate that a method must be executed before (resp. after) <em>each</em> unit test in the class.
 This can be convenient to avoid copy-pasting code.
 For instance</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> org.junit.jupiter.api.BeforeEach;
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.junit.jupiter.api.Test;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BoargameTests</span> {
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BoardgameTests</span> {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    Snapshot testSnapshot;
 </span></span><span style="display:flex;"><span>
@@ -1574,6 +1574,7 @@ For instance</p>
   <a class="anchor" href="#disabling-tests">#</a>
 </h3>
 <p>A unit test can be disabled with the annotation <code>@Disabled</code>.
+As a result, it will be ignored by Maven, Gradle, and (to some extent) your IDE.
 For instance:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> org.junit.jupiter.api.Disabled;
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.junit.jupiter.api.Test;
@@ -1601,10 +1602,10 @@ For instance:</p>
 </h3>
 <p>The command</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mvn test
-</span></span></code></pre></div><p>executes all <a href="https://unibz-pp-23-24.github.io/docs/build/sections/building/#phases">phases</a> that precede the <code>test</code> phase (e.g. <code>compile</code> and <code>test-compile</code>), and then executes all unit tests under <code>src/test/java</code>.</p>
+</span></span></code></pre></div><p>executes all phases that precede the <code>test</code> phase (e.g. <code>compile</code> and <code>test-compile</code>) in Maven&rsquo;s <a href="https://unibz-pp-23-24.github.io/docs/build/sections/building/#phases">default lifecycle</a>, and then executes all unit tests under <code>src/test/java</code>.</p>
 <blockquote class="book-hint info">
   <strong><em>Note.</em></strong>
-The source code of unit tests (and related resources) is by default <em>excluded</em> form the output of the <code>package</code> phase (e.g. from the jar produces by Maven).
+The source code of unit tests (and related resources) is by default <em>excluded</em> form the output of the <code>package</code> phase (e.g. from the jar produced by Maven).
 </blockquote>
 
 <blockquote class="book-hint info">
@@ -1612,7 +1613,7 @@ The source code of unit tests (and related resources) is by default <em>excluded
 A unit test failure will prevent execution of Maven phases that are posterior to <code>test</code>.
 For instance</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mvn package
-</span></span></code></pre></div><p>does not produce the expected jar.</p>
+</span></span></code></pre></div><p>does <em>not</em> produce the expected jar if a test fails.</p>
 <p>However, if needed, it is possible to execute a posterior Maven phase while skipping the unit tests, with the option <code>-DskipTests</code>.
 For instance:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mvn package -DskipTests
@@ -1620,7 +1621,7 @@ For instance:</p>
 </blockquote>
 
 <h3 id="within-an-ide">
-  Within an IDE
+  within an IDE
   <a class="anchor" href="#within-an-ide">#</a>
 </h3>
 <p>IDEs provide multiple ways to run unit tests, either:</p>
@@ -1693,14 +1694,14 @@ For instance, with IntelliJ, right-click on the green arrow and select &lsquo;De
     <li><a href="#writing-unit-tests">Writing unit tests</a>
       <ul>
         <li><a href="#checking-exceptions">Checking exceptions</a></li>
-        <li><a href="#prior-anor-subsequent-code">Prior an/or subsequent code</a></li>
+        <li><a href="#prior-andor-subsequent-code">Prior and/or subsequent code</a></li>
         <li><a href="#disabling-tests">Disabling tests</a></li>
       </ul>
     </li>
     <li><a href="#running-unit-tests">Running unit tests</a>
       <ul>
         <li><a href="#from-the-command-line">from the command line</a></li>
-        <li><a href="#within-an-ide">Within an IDE</a></li>
+        <li><a href="#within-an-ide">within an IDE</a></li>
       </ul>
     </li>
   </ul>
