@@ -23,7 +23,7 @@ Install Junit 5 with Maven # Junit 5 can be used in a Maven project by declaring
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.b82fb0be1adfe44bbf0358df9273363cb5e62777205770af87180349d6ff344c.js" integrity="sha256-uC&#43;wvhrf5Eu/A1jfknM2PLXmJ3cgV3CvhxgDSdb/NEw=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.c5486bccfef044114c5e7b6a281ee3b761823fc9821e9c3ac216cbe4ad87ff65.js" integrity="sha256-xUhrzP7wRBFMXntqKB7jt2GCP8mCHpw6whbL5K2H/2U=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1345,6 +1345,7 @@ https://github.com/alex-shpak/hugo-book
       <ul>
         <li><a href="#checking-exceptions">Checking exceptions</a></li>
         <li><a href="#prior-anor-subsequent-code">Prior an/or subsequent code</a></li>
+        <li><a href="#disabling-tests">Disabling tests</a></li>
       </ul>
     </li>
     <li><a href="#running-unit-tests">Running unit tests</a>
@@ -1568,6 +1569,28 @@ For instance</p>
 </span></span><span style="display:flex;"><span>        ...
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="disabling-tests">
+  Disabling tests
+  <a class="anchor" href="#disabling-tests">#</a>
+</h3>
+<p>A unit test can be disabled with the annotation <code>@Disabled</code>.
+For instance:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> org.junit.jupiter.api.Disabled;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.junit.jupiter.api.Test;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyTests</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Test</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Disabled</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">test1</span>(){
+</span></span><span style="display:flex;"><span>        ...
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Test</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">test2</span>(){
+</span></span><span style="display:flex;"><span>        ...
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><h2 id="running-unit-tests">
   Running unit tests
   <a class="anchor" href="#running-unit-tests">#</a>
@@ -1590,7 +1613,7 @@ A unit test failure will prevent execution of Maven phases that are posterior to
 For instance</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mvn package
 </span></span></code></pre></div><p>does not produce the expected jar.</p>
-<p>However, if needed, it is possible to execute a posterior Maven phase while skipping the unit tests, with the option <code>-Dskiptests</code>.
+<p>However, if needed, it is possible to execute a posterior Maven phase while skipping the unit tests, with the option <code>-DskipTests</code>.
 For instance:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mvn package -DskipTests
 </span></span></code></pre></div>
@@ -1671,6 +1694,7 @@ For instance, with IntelliJ, right-click on the green arrow and select &lsquo;De
       <ul>
         <li><a href="#checking-exceptions">Checking exceptions</a></li>
         <li><a href="#prior-anor-subsequent-code">Prior an/or subsequent code</a></li>
+        <li><a href="#disabling-tests">Disabling tests</a></li>
       </ul>
     </li>
     <li><a href="#running-unit-tests">Running unit tests</a>

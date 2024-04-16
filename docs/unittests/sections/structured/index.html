@@ -23,7 +23,7 @@ readability, easier debugging, opportunities to factorize code (the same small m
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.b82fb0be1adfe44bbf0358df9273363cb5e62777205770af87180349d6ff344c.js" integrity="sha256-uC&#43;wvhrf5Eu/A1jfknM2PLXmJ3cgV3CvhxgDSdb/NEw=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.c5486bccfef044114c5e7b6a281ee3b761823fc9821e9c3ac216cbe4ad87ff65.js" integrity="sha256-xUhrzP7wRBFMXntqKB7jt2GCP8mCHpw6whbL5K2H/2U=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1396,6 +1396,35 @@ This is only possible if the program contains small units of code.</p>
 </span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&lt;block5&gt;</span>
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;block6&gt;</span>
+</span></span></code></pre></div></div><input type="radio" class="toggle" name="tabs-exercise_decomposition" id="tabs-exercise_decomposition-1"  />
+  <label for="tabs-exercise_decomposition-1">Possible solution</label>
+  <div class="book-tabs-content markdown-inner"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span>method1()
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;block6&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>method1(){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(<span style="color:#e6db74">&lt;condition1&gt;</span>){
+</span></span><span style="display:flex;"><span>        method2()
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&lt;block4&gt;</span>
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>        method3()
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&lt;block5&gt;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>method2(){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span>(<span style="color:#e6db74">&lt;condition2&gt;</span>){
+</span></span><span style="display:flex;"><span>        method3()
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&lt;block3&gt;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>method3(){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(<span style="color:#e6db74">&lt;condition3&gt;</span>){
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&lt;block1&gt;</span>
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&lt;block2&gt;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div></div></div>
 
 </article>

@@ -17,7 +17,7 @@ functional vs non-functional test unit vs integration test security test perform
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.b82fb0be1adfe44bbf0358df9273363cb5e62777205770af87180349d6ff344c.js" integrity="sha256-uC&#43;wvhrf5Eu/A1jfknM2PLXmJ3cgV3CvhxgDSdb/NEw=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.c5486bccfef044114c5e7b6a281ee3b761823fc9821e9c3ac216cbe4ad87ff65.js" integrity="sha256-xUhrzP7wRBFMXntqKB7jt2GCP8mCHpw6whbL5K2H/2U=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://unibz-pp-23-24.github.io/docs/unittests/index.xml" title="Programming project 2023-24" />
 <!--
 Made with Book Theme
@@ -1432,6 +1432,39 @@ Consider the following problem:</p>
 <p>the expected output is
 <code>4</code>.</p>
 <p><strong><em>Question.</em></strong> Does there exist a (finite) set of unit tests for this problem that guarantees that an implementation is correct?</p>
+</div><input type="radio" class="toggle" name="tabs-exercise_finite_unitTests" id="tabs-exercise_finite_unitTests-1"  />
+  <label for="tabs-exercise_finite_unitTests-1">Solution</label>
+  <div class="book-tabs-content markdown-inner"><p>No.</p>
+<p>A unit tests for this problem is a pair
+$(a, i)$,
+where</p>
+<ul>
+<li>$a$ is an array of characters, and</li>
+<li>$i$ is a natural number.</li>
+</ul>
+<p>Take any finite set</p>
+<p>$\qquad (a_1, i_1), (a_2, i_2),\ ..,\ (a_n, i_n)$</p>
+<p>of such unit tests.</p>
+<p>Because this set if finite,
+there exists an array of characters $a_0$ that does not appear in this set of tests.</p>
+<p>Let $i_0$ be the expected output for $a_0$, and let $j$ be any positive integer different from $i_0$.</p>
+<p>Now consider the method (in pseudocode):</p>
+<pre tabindex="0"><code>int sizeOfLongestNonDecreasingSequence(char[] characters) {
+    if(characters == a_1) {
+      return i_1
+    }
+    if(characters == a_2) {
+      return i_2
+    }
+    ...
+
+    if(characters == a_n) {
+      return i_n
+    }
+    return j;
+}
+</code></pre><p>This algorithm will pass the unit tests, but is incorrect for the input $a_0$.</p>
+<p>So given any set of unit tests (for this problem), there exists an incorrect algorithm that passes these tests.</p>
 </div></div>
 
 <p>This (artificial) exercise was only meant to illustrate the following:
@@ -1520,6 +1553,55 @@ This effectively prevents further phases to be executed if a test fails.</p>
 Her code compiles and passes all unit tests.
 Now she wants to share her code with the other two.</p>
 <p>Which sequence of git commands should Alice execute?</p>
+</div><input type="radio" class="toggle" name="tabs-exercise_git_collab_reminder" id="tabs-exercise_git_collab_reminder-1"  />
+  <label for="tabs-exercise_git_collab_reminder-1">Solution</label>
+  <div class="book-tabs-content markdown-inner"><ol>
+<li>Commit her changes (locally, to the branch <code>alice</code>):</li>
+</ol>
+<ul>
+<li><code>git add .</code></li>
+<li><code>git commit -m &quot;commit message&quot;</code></li>
+</ul>
+<ol start="2">
+<li>Update the remote copy of the branch <code>alice</code> (for backup only):</li>
+</ol>
+<ul>
+<li><code>git push</code></li>
+</ul>
+<ol start="3">
+<li>Synchronize the local copy of the branch <code>main</code> (because Bob and Carol may have added content to it):</li>
+</ol>
+<ul>
+<li><code>git checkout main</code></li>
+<li><code>git pull</code></li>
+</ul>
+<ol start="4">
+<li>Merge (locally) the content of <code>main</code> into <code>alice</code> (and fix the merge conflicts, if any):</li>
+</ol>
+<ul>
+<li><code>git checkout alice</code></li>
+<li><code>git merge main</code></li>
+</ul>
+<ol start="5">
+<li>Merge (locally) the content of <code>alice</code> into <code>main</code> (there should be no more conflict).
+After this step, the local copies of <code>alice</code> and <code>main</code> will be identical.</li>
+</ol>
+<ul>
+<li><code>git checkout main</code></li>
+<li><code>git merge alice</code></li>
+</ul>
+<ol start="6">
+<li>Upload the changes:</li>
+</ol>
+<ul>
+<li><code>git push</code></li>
+</ul>
+<ol start="7">
+<li>Go back to work:</li>
+</ol>
+<ul>
+<li><code>git checkout alice</code></li>
+</ul>
 </div></div>
 
 </article>
