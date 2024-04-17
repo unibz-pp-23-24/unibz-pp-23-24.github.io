@@ -4,7 +4,7 @@
     <title>Unit tests on Programming project 2023-24</title>
     <link>https://unibz-pp-23-24.github.io/docs/unittests/</link>
     <description>Recent content in Unit tests on Programming project 2023-24</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo 0.125.0</generator>
     <language>en-us</language>
     <atom:link href="https://unibz-pp-23-24.github.io/docs/unittests/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -15,11 +15,11 @@
       <description>Code units # A unit test is meant to test to a small unit of code. This is only possible if the program contains small units of code.&#xA;Therefore unit testing is closely related to decomposing complex problems into smaller ones (and creating methods that solve these smaller problems).&#xA;Benefits # Possible benefits of decomposing complex methods into smaller ones are:&#xA;readability, easier debugging, opportunities to factorize code (the same small methods can be called in several places), easier collaboration (two person modifying the same method in parallel is less likely if the method is small), Some good indicators that auxiliary methods may be helpful are:</description>
     </item>
     <item>
-      <title>Test-driven development</title>
+      <title>Development driven by unit tests</title>
       <link>https://unibz-pp-23-24.github.io/docs/unittests/sections/tdd/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/unittests/sections/tdd/</guid>
-      <description>Test-driven development # Test-driven development (TDD) consists in converting a program&amp;rsquo;s requirements into test cases, before the program is fully developed. Note that this approach is not restricted to unit tests.&#xA;In practice # For a non-trivial method:&#xA;Create a method stub (e.g. return null is the method has an reference return type). Specify the expected behavior (input and expected output) of the method. Write one or several test(s) for this method, illustrating the specification.</description>
+      <description>Development driven by unit tests # Test-driven development (TDD) consists in converting a program&amp;rsquo;s requirements into test cases, before the program is fully developed. Note that this approach is not restricted to unit tests.&#xA;In practice # For a non-trivial method:&#xA;Create a method stub (e.g. return null is the method&amp;rsquo;s return type is a reference type). Specify the expected behavior (input and expected output) of the method. Write one or several test(s) for this method, illustrating the specification.</description>
     </item>
     <item>
       <title>in Java</title>

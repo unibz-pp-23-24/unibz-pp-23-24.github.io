@@ -1,0 +1,33 @@
+digraph tree {
+graph [size="4.5!"]
+    a[label=""];
+    b[label=""];
+    am[label="",width=.1,style=invis];
+    c[label=""];
+    b [label="",width=.1,style=invis];
+    d[label=""];
+    bm[label="",width=.1,style=invis];
+    br[label="",width=.1,style=invis];
+    e[label=""];
+    cm[label="",width=.1,style=invis];
+    f[label=""];
+    el[label="",width=.1,style=invis];
+    em[label="",width=.1,style=invis];
+    g[label=""];
+    
+    a -> b
+    a -> am [style=invis]
+    a -> c
+    {rank=same b -> am -> c [style=invis]}
+    
+    b -> d
+    b -> bm
+    b -> br
+    {rank=same d -> bm -> br [style=invis]}
+
+    c -> e;
+    c -> f;
+
+    e -> el;
+    e -> g;
+}

@@ -1,0 +1,25 @@
+digraph tree {
+graph [size="4.5!"]
+    i[label="a"]
+    l[label="b"]
+    i -> l
+    m[label="",width=.1,style=invis]
+    i -> m [style=invis]
+    r[label="c"]
+    i -> r
+    
+    ll[label="a"]
+    l -> ll
+    lm[label="",width=.1,style=invis]
+    l -> lm [style=invis]
+    lr[label="c"]
+    l -> lr
+    
+    rl[label="a"]
+    r -> rl
+    rm[label="",width=.1,style=invis]
+    r -> rm [style=invis]
+    rr[label="c"]
+    r -> rr
+
+}

@@ -30,6 +30,8 @@
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/unittests/sections/structured/</loc>
   </url><url>
+    <loc>https://unibz-pp-23-24.github.io/docs/unittests/sections/tdd/</loc>
+  </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/errors/sections/exceptions/</loc>
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/env/sections/files/</loc>
@@ -49,8 +51,6 @@
     <loc>https://unibz-pp-23-24.github.io/docs/background/sections/set_tuple_map/</loc>
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/intro/sections/lecturers/</loc>
-  </url><url>
-    <loc>https://unibz-pp-23-24.github.io/docs/unittests/sections/tdd/</loc>
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/map/</loc>
   </url><url>
@@ -121,6 +121,8 @@
     <loc>https://unibz-pp-23-24.github.io/docs/env/sections/ide/</loc>
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/errors/sections/errors/</loc>
+  </url><url>
+    <loc>https://unibz-pp-23-24.github.io/docs/recursion/</loc>
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/git/sections/sharing/</loc>
   </url><url>
