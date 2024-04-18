@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1713383199 "tree.tex" "tree.pdf" "tree" 1713383199 0
+["pdflatex"] 1713439847 "tree.tex" "tree.pdf" "tree" 1713439847 0
   "/opt/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1690893886 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/opt/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm" 1690893886 1324 c910af8c371558dc20f2d7822f66fe64 ""
   "/opt/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmr17.tfm" 1690893886 1292 296a67155bdbfc32aa9c636f21e91433 ""
@@ -95,8 +95,8 @@
   "/opt/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1690893886 4647389 4dadafbb2bb83b4a807446006fc08d18 ""
   "/opt/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1690893886 8172790 04d4067b12f9ed3b8e27c051183215b1 ""
   "/opt/texlive/2023/texmf.cnf" 1690893886 585 cbdac2c540e67e6925735bc924caa885 ""
-  "tree.aux" 1713383199 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
-  "tree.tex" 1713383198 803 bd7bfbd609616be7f8d7dae2f345991a ""
+  "tree.aux" 1713439847 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
+  "tree.tex" 1713439845 803 8b8f8a8741a30992be58f4050db43c9d ""
   (generated)
   "tree.aux"
   "tree.log"
