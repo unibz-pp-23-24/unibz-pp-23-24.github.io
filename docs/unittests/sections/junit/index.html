@@ -24,7 +24,7 @@ Install Junit 5 with Maven # Junit 5 can be used in a Maven project by declaring
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.5b26b8077897f9acca7414be423e0db229b093d958de993bada8b6a292154dd5.js" integrity="sha256-Wya4B3iX&#43;azKdBS&#43;Qj4Nsimwk9lY3pk7rai2opIVTdU=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.bb6cbe6623efa4d6a4376d24bb9148f3c87c980d015ecc6b79750132cd017a72.js" integrity="sha256-u2y&#43;ZiPvpNakN20ku5FI88h8mA0BXsxreXUBMs0BenI=" crossorigin="anonymous"></script>
 
   
 
@@ -1536,7 +1536,7 @@ For instance the following unit test succeeds:</p>
   Prior and/or subsequent code
   <a class="anchor" href="#prior-andor-subsequent-code">#</a>
 </h3>
-<p>The annotation <code>@BeforeAll</code> (resp. <code>@AfterAll</code>) can be used to indicate that a method must be executed (only <em>once</em>) before (resp. after) all unit tests in the class, regardless of test successes or failures.
+<p>The annotation <code>@BeforeAll</code> (resp. <code>@AfterAll</code>) can be used to indicate that a (static) method must be executed (only <em>once</em>) before (resp. after) all unit tests in the class, regardless of test successes or failures.
 This can be used for costly operations, or for opening (resp. closing) a resource, like an connection or an input (resp. output) stream.
 For instance</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> org.junit.jupiter.api.AfterAll;
@@ -1550,7 +1550,7 @@ For instance</p>
 </span></span><span style="display:flex;"><span>    Connection myConnection;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@BeforeAll</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">openConnection</span>(){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">openConnection</span>(){
 </span></span><span style="display:flex;"><span>        ...
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>
@@ -1565,7 +1565,7 @@ For instance</p>
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@AfterAll</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">closeConnection</span>(){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">closeConnection</span>(){
 </span></span><span style="display:flex;"><span>        ...
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
