@@ -12,7 +12,7 @@
       <link>https://unibz-pp-23-24.github.io/docs/objects/sections/objects/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/objects/sections/objects/</guid>
-      <description>Objects # An object is a way to group data in a meaningful way.&#xA;A simple example: JSON objects # Here is a JSON object (in Javascript syntax) that describes the city of Florence:&#xA;{ name: &amp;#34;Florence&amp;#34;, zipcode: 50100 } A JSON object may contain other objects, as well as arrays (of values, objects or arrays). For instance:&#xA;{ name: &amp;#34;Alice&amp;#34;, age: 26, birthPlace: { name: &amp;#34;Florence&amp;#34;, zipcode: 50100 }, jobs: [ { employer: &amp;#34;Kolping&amp;#34;, start: 2021, end: 2022 }, { employer : &amp;#34;Eurac&amp;#34;, start: 2023 } ] } More formally:</description>
+      <description>Objects # An object is a way to group data in a meaningful way.&#xA;A simple example: JSON objects # Here is a JSON object (in Javascript syntax) that describes the city of Florence:&#xA;{ name: &amp;#34;Florence&amp;#34;, zipcode: 50100 } A JSON object may contain other objects, as well as arrays (of values, objects or arrays). For instance:&#xA;{ name: &amp;#34;Alice&amp;#34;, age: 26, birthPlace: { name: &amp;#34;Florence&amp;#34;, zipcode: 50100 }, jobs: [ { employer: &amp;#34;Kolping&amp;#34;, start: 2021, end: 2022 }, { employer : &amp;#34;Eurac&amp;#34;, start: 2023 } ] } In JSON:</description>
     </item>
     <item>
       <title>Class and instance</title>
