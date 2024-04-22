@@ -4,7 +4,7 @@
     <title>Introduction on Programming project 2023-24</title>
     <link>https://unibz-pp-23-24.github.io/</link>
     <description>Recent content in Introduction on Programming project 2023-24</description>
-    <generator>Hugo 0.125.0</generator>
+    <generator>Hugo 0.125.2</generator>
     <language>en-us</language>
     <atom:link href="https://unibz-pp-23-24.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -27,6 +27,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/background/sections/problem/</guid>
       <description>Computational problem # A computational problem is (usually) specified as:&#xA;a set of possible inputs, and the expected outputs (for these inputs). Problem vs algorithm # For instance, here is a problem that you may have encountered already:&#xA;Input: a sorted array A of integers, an integer a Output: true if a appears in A, false otherwise There are (infinitely) many algorithms that can solve this problem. But some of them are more efficient than others.</description>
+    </item>
+    <item>
+      <title>Linear recursion</title>
+      <link>https://unibz-pp-23-24.github.io/docs/recursion/sections/linear/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/recursion/sections/linear/</guid>
+      <description>Linear recursion # Definition. A recursive method is linear recursive if it performs at most one recursive call each time it is executed. A linear recursive algorithm is often easy to transform into an iterative one (i.e. using loops only).&#xA;Example # Exercise Write in pseudocode a (linear) recursive algorithm for a method int occ(char[] A, char c) that:&#xA;takes as input a (non-null) array A of characters and a character c, and returns the number of occurrences of c in A.</description>
     </item>
     <item>
       <title>List</title>

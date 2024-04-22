@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content=" Linear recursion # ">
+<meta name="description" content="Linear recursion # Definition. A recursive method is linear recursive if it performs at most one recursive call each time it is executed. A linear recursive algorithm is often easy to transform into an iterative one (i.e. using loops only).
+Example # Exercise Write in pseudocode a (linear) recursive algorithm for a method int occ(char[] A, char c) that:
+takes as input a (non-null) array A of characters and a character c, and returns the number of occurrences of c in A.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/recursion/sections/linear/">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/recursion/sections/linear/">
   <meta property="og:site_name" content="Programming project 2023-24">
   <meta property="og:title" content="Linear recursion">
-  <meta property="og:description" content=" Linear recursion # ">
+  <meta property="og:description" content="Linear recursion # Definition. A recursive method is linear recursive if it performs at most one recursive call each time it is executed. A linear recursive algorithm is often easy to transform into an iterative one (i.e. using loops only).
+Example # Exercise Write in pseudocode a (linear) recursive algorithm for a method int occ(char[] A, char c) that:
+takes as input a (non-null) array A of characters and a character c, and returns the number of occurrences of c in A.">
   <meta property="og:locale" content="en-us">
   <meta property="og:type" content="article">
   <meta property="article:section" content="docs">
@@ -18,7 +22,7 @@
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.4c18ff9faedf2acdd57a146c455d54bdab5f9774f8a0d00ca3f474cbb50333d9.js" integrity="sha256-TBj/n67fKs3VehRsRV1Uvatfl3T4oNAMo/R0y7UDM9k=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.0f59f8ac125b1c96538878c5e6bae740e7a4efa89aee9e53b1bbdb57e1a36fbb.js" integrity="sha256-D1n4rBJbHJZTiHjF5rrnQOek76ia7p5TsbvbV&#43;Gjb7s=" crossorigin="anonymous"></script>
 
   
 
@@ -673,19 +677,6 @@ https://github.com/alex-shpak/hugo-book
         </li>
       
     
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/recursion/sections/nary/" class="">N-ary recursion</a>
-  
-
-        </li>
-      
-    
   </ul>
 
         </li>
@@ -833,7 +824,7 @@ https://github.com/alex-shpak/hugo-book
   
     <input type="checkbox" id="section-ad5c3d825858d4a9ca4ad02d541f7121" class="toggle"  />
     <label for="section-ad5c3d825858d4a9ca4ad02d541f7121" class="flex justify-between">
-      <a href="/docs/unittests/sections/tdd/" class="">Test-driven development</a>
+      <a href="/docs/unittests/sections/tdd/" class="">Development driven by unit tests</a>
     </label>
   
 
@@ -1377,7 +1368,22 @@ https://github.com/alex-shpak/hugo-book
   <aside class="hidden clearfix">
     
   
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#example">Example</a></li>
+    <li><a href="#tail-recursion">Tail recursion</a>
+      <ul>
+        <li><a href="#motivation">Motivation</a></li>
+        <li><a href="#definition">Definition</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a>
+      <ul>
+        <li><a href="#linked-list">Linked list</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 
 
 
@@ -1392,6 +1398,135 @@ https://github.com/alex-shpak/hugo-book
   Linear recursion
   <a class="anchor" href="#linear-recursion">#</a>
 </h1>
+<blockquote class="book-hint warning">
+  <strong><em>Definition.</em></strong>
+A recursive method is <strong>linear recursive</strong> if it performs at most one recursive call each time it is executed.
+</blockquote>
+
+<p>A linear recursive algorithm is often easy to transform into an iterative one (i.e. using loops only).</p>
+<h2 id="example">
+  Example
+  <a class="anchor" href="#example">#</a>
+</h2>
+
+
+
+
+<div class="book-tabs"><input type="radio" class="toggle" name="tabs-exercise_array_linearRec" id="tabs-exercise_array_linearRec-0" checked="checked" />
+  <label for="tabs-exercise_array_linearRec-0">Exercise</label>
+  <div class="book-tabs-content markdown-inner"><p>Write in pseudocode a (linear) recursive algorithm for a method <code>int occ(char[] A, char c)</code> that:</p>
+<ul>
+<li>takes as input a (non-null) array <code>A</code> of characters and a character <code>c</code>, and</li>
+<li>returns the number of occurrences of <code>c</code> in <code>A</code>.</li>
+</ul></div></div>
+
+<h2 id="tail-recursion">
+  Tail recursion
+  <a class="anchor" href="#tail-recursion">#</a>
+</h2>
+<h3 id="motivation">
+  Motivation
+  <a class="anchor" href="#motivation">#</a>
+</h3>
+<p>Consider a (not necessarily recursive) method <code>method1</code> that calls a method <code>method2</code>, for instance:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span>method1() {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>    method2()
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>When <code>method1</code> calls <code>method2</code>, its execution is interrupted, and resumes after the execution of <code>method2</code>.</p>
+<p>During this interruption, the <a href="">call stack</a> contains:</p>
+<pre tabindex="0"><code>method2
+method1
+&lt;bottom of the stack&gt;
+</code></pre><p>Variables that are local to the execution of a method are allocated on the so-called <a href="https://en.wikipedia.org/wiki/Stack-based_memory_allocation">stack</a> memory.</p>
+<p>In this example, variables that are local to <code>method1</code> remain in memory during the execution of <code>method2</code> (because they may be needed when the execution of <code>method1</code> resumes).
+However, if no instruction in <code>method1</code> needs to be executed <em>after</em> the call to <code>method2</code>, then there is no need to maintain this information in memory.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span>method1() {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>    method2()
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>In other words, the call stack in this case could be safely be reduced to</p>
+<pre tabindex="0"><code>method2
+&lt;bottom of the stack&gt;
+</code></pre><p>This optimization is known as <a href="https://en.wikipedia.org/wiki/Tail_call">tail-call elimination</a>.
+Some compilers apply it (but most Java compilers do not).</p>
+<p>During the execution of a recursive algorithm, the size of the call stack may become important, therefore also the amount of stack memory required.
+Therefore identifying calls that may be safely be removed from the stack can significantly reduce memory consumption.</p>
+<h3 id="definition">
+  Definition
+  <a class="anchor" href="#definition">#</a>
+</h3>
+<blockquote class="book-hint warning">
+  A linear recursive method is <strong>tail recursive</strong> if no instruction in this method can be executed <em>after</em> a recursive call.
+</blockquote>
+
+<p>A tail recursive algorithm can easily be transformed into an iterative one.
+This can be viewed as a &ldquo;manual&rdquo; form of tail-call elimination.</p>
+<p>
+
+
+
+<div class="book-tabs"><input type="radio" class="toggle" name="tabs-exercise_array_TailRec" id="tabs-exercise_array_TailRec-0" checked="checked" />
+  <label for="tabs-exercise_array_TailRec-0">Exercise</label>
+  <div class="book-tabs-content markdown-inner"><p>The algorithm above for the method <code>int occ(char[] A, char c)</code> is linear recursive, but not tail-recursive.</p>
+<p>Rewrite it into a tail-recursive algorithm.
+Then convert it into an iterative algorithm.</p>
+</div></div>
+
+A common strategy to convert a linear recursive method into a tail-recursive one consists in using additional arguments (like the argument <code>count</code> in the above example).
+These extra arguments are sometimes called <strong>accumulators</strong>.</p>
+<h2 id="usage">
+  Usage
+  <a class="anchor" href="#usage">#</a>
+</h2>
+<p>Linear recursive implementations are not very frequent, because most of them can be easily converted into iterative ones, as illustrated above.
+Besides, as we explained above, the iterative solution is often more efficient (at least memory-wise) for large inputs.</p>
+<p>However, some problems can be easier to solve in a linear recursive form (e.g. as a first attempt).
+This may also produce code that is easier to read and/or debug.</p>
+<p>In particular, it may be the case when manipulating linked lists.</p>
+<h3 id="linked-list">
+  Linked list
+  <a class="anchor" href="#linked-list">#</a>
+</h3>
+<p><blockquote class="book-hint warning">
+  A <strong>linked list</strong> is a set of objects organized in a <em>sequence</em>, such that each object (except for the last one) points to its successor.
+</blockquote>
+
+Equivalently, a linked list can be be viewed as a (degenerate) tree, where each node has at most one child.</p>
+<p>For instance:</p>
+<p><img src="/img/linkedLists/unlabeled/list.svg" alt="" /></p>
+<blockquote class="book-hint warning">
+  <p><strong><em>Terminology.</em></strong></p>
+<ul>
+<li>the first object in a linked list is often called the <strong>head</strong> of the list, and</li>
+<li>the rest of the list (i.e. the sublist with the second object as head) is often called the <strong>tail</strong> of the list.</li>
+</ul>
+</blockquote>
+
+<h4 id="example-1">
+  Example
+  <a class="anchor" href="#example-1">#</a>
+</h4>
+
+
+
+
+<div class="book-tabs"><input type="radio" class="toggle" name="tabs-exercise_linkedList_removeDup" id="tabs-exercise_linkedList_removeDup-0" checked="checked" />
+  <label for="tabs-exercise_linkedList_removeDup-0">Exercise</label>
+  <div class="book-tabs-content markdown-inner"><p>Consider linked lists that consist of instances of the following class:</p>
+<p><img src="/img/diagrams/plantuml/listNode_labeled.svg" alt="" /></p>
+<p>Write (in pseudocode) a linear recursive algorithm <code>Node removeDuplicates(Node head)</code> that:</p>
+<ul>
+<li>takes as input the head of a list with nodes sorted according to their label (in alphabetical order),</li>
+<li>returns the head of a list with the same labels, in alphabetical order, but where each label appears exactly once.</li>
+</ul>
+<p>For instance, for the following input list:</p>
+<p><img src="/img/linkedLists/labeled/char/withDup/list.svg" alt="" /></p>
+<p>the algorithm should output a list with labels:</p>
+<p><img src="/img/linkedLists/labeled/char/noDup/list.svg" alt="" /></p>
+</div></div>
+
 </article>
  
       
@@ -1431,7 +1566,22 @@ https://github.com/alex-shpak/hugo-book
       <div class="book-toc-content">
         
   
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#example">Example</a></li>
+    <li><a href="#tail-recursion">Tail recursion</a>
+      <ul>
+        <li><a href="#motivation">Motivation</a></li>
+        <li><a href="#definition">Definition</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a>
+      <ul>
+        <li><a href="#linked-list">Linked list</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 
 
  

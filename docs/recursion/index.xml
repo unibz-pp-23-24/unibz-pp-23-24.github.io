@@ -4,8 +4,15 @@
     <title>Recursion on Programming project 2023-24</title>
     <link>https://unibz-pp-23-24.github.io/docs/recursion/</link>
     <description>Recent content in Recursion on Programming project 2023-24</description>
-    <generator>Hugo 0.125.0</generator>
+    <generator>Hugo 0.125.2</generator>
     <language>en-us</language>
     <atom:link href="https://unibz-pp-23-24.github.io/docs/recursion/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linear recursion</title>
+      <link>https://unibz-pp-23-24.github.io/docs/recursion/sections/linear/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/recursion/sections/linear/</guid>
+      <description>Linear recursion # Definition. A recursive method is linear recursive if it performs at most one recursive call each time it is executed. A linear recursive algorithm is often easy to transform into an iterative one (i.e. using loops only).&#xA;Example # Exercise Write in pseudocode a (linear) recursive algorithm for a method int occ(char[] A, char c) that:&#xA;takes as input a (non-null) array A of characters and a character c, and returns the number of occurrences of c in A.</description>
+    </item>
   </channel>
 </rss>
