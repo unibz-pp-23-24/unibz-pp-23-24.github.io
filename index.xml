@@ -33,7 +33,7 @@
       <link>https://unibz-pp-23-24.github.io/docs/recursion/sections/linear/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/recursion/sections/linear/</guid>
-      <description>Linear recursion # Definition. A recursive method is linear recursive if it performs at most one recursive call each time it is executed. A linear recursive algorithm is often easy to transform into an iterative one (i.e. using loops only).&#xA;Example # Exercise Write in pseudocode a (linear) recursive algorithm for a method int occ(char[] A, char c) that:&#xA;takes as input a (non-null) array A of characters and a character c, and returns the number of occurrences of c in A.</description>
+      <description>Linear recursion # Definition. A recursive method is linear recursive if it performs at most one recursive call each time it is executed. Terminology. The term unary recursion is sometimes used to refer to linear recursive methods (as opposed to n-ary recursion). Hint. A linear recursive algorithm is often easy to transform into an iterative one (i.e. using loops only). Example # Exercise Write in pseudocode a (linear) recursive algorithm for a method int occ(char[] A, char c) that:</description>
     </item>
     <item>
       <title>List</title>
@@ -139,6 +139,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/build/sections/layout/</guid>
       <description>Layout # The standard directory layout # By default, a Maven project is expected to comply with the so-called &amp;ldquo;standard directly layout&amp;rdquo;.&#xA;Warning. We restrict here the layout to files and folders that you are likely to use in your project. A comprehensive description can be found here. ├── pom.xml ├── README.md ├── src │ ├── main │ │ ├── java │ │ │ └── ... │ │ └── resources │ │ └── .</description>
+    </item>
+    <item>
+      <title>N-ary recursion</title>
+      <link>https://unibz-pp-23-24.github.io/docs/recursion/sections/nary/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/recursion/sections/nary/</guid>
+      <description>N-ary recursion # Definition.&#xA;A recursive method that is not linear recursive uses n-ary recursion.&#xA;Specific cases are:&#xA;binary recursion if a method performs up to two recursive calls each time it is executed, ternary recursion if it performs up to three recursive calls each time it is executed, etc. Examples.&#xA;The algorithm seen earlier to print all files in a folder uses n-ary recursion.&#xA;The binary tree algorithms seen earlier all use binary recursion.</description>
     </item>
     <item>
       <title>Option 2: board game</title>

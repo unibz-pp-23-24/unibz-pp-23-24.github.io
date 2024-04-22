@@ -23,7 +23,7 @@ takes as input a path to an (existing) folder, and prints a path to each file co
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.0f59f8ac125b1c96538878c5e6bae740e7a4efa89aee9e53b1bbdb57e1a36fbb.js" integrity="sha256-D1n4rBJbHJZTiHjF5rrnQOek76ia7p5TsbvbV&#43;Gjb7s=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.be809afdf883d81e110cea29f4a41366de15a1248e7142b780e4673753b1d454.js" integrity="sha256-voCa/fiD2B4RDOop9KQTZt4VoSSOcUK3gORnN1Ox1FQ=" crossorigin="anonymous"></script>
 
   
 
@@ -674,6 +674,19 @@ https://github.com/alex-shpak/hugo-book
 
   
     <a href="/docs/recursion/sections/linear/" class="">Linear recursion</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/recursion/sections/nary/" class="">N-ary recursion</a>
   
 
         </li>
@@ -1524,7 +1537,7 @@ To solve a problem recursively:</p>
 </h3>
 <blockquote class="book-hint warning">
   <strong><em>Definition.</em></strong>
-An <strong>ordered tree</strong> is a tree where the children of each node are ordered.
+An <strong>ordered tree</strong> is a tree where the children of each node are totally ordered.
 </blockquote>
 
 <blockquote class="book-hint warning">
@@ -1576,7 +1589,19 @@ A <strong>binary tree</strong> is an ordered tree where each node has exactly tw
   <div class="book-tabs-content markdown-inner"><p>Let us represent a binary tree as above, but where nodes are labeled with a character.</p>
 <p><img src="/img/diagrams/plantuml/nodeWithChar.svg" alt="" /></p>
 <p>Consider the following recursive algorithm:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">traverse</span>(Node root){
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">traverse</span>(Node root){
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// inductive case only (do nothing in the base case)</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (root <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span>){
 </span></span><span style="display:flex;"><span>        print(root.<span style="color:#a6e22e">label</span>)
@@ -1584,7 +1609,9 @@ A <strong>binary tree</strong> is an ordered tree where each node has exactly tw
 </span></span><span style="display:flex;"><span>        traverse(root.<span style="color:#a6e22e">rightChild</span>)
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>What does this algorithm print for the following input tree?</p>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>What does this algorithm print for the following input tree?</p>
 <p><img src="/img/binaryTrees/labeled/char/tree.svg" alt="" /></p>
 </div></div>
 
@@ -1595,7 +1622,19 @@ A <strong>binary tree</strong> is an ordered tree where each node has exactly tw
 <div class="book-tabs"><input type="radio" class="toggle" name="tabs-exercise_inorder_traversal" id="tabs-exercise_inorder_traversal-0" checked="checked" />
   <label for="tabs-exercise_inorder_traversal-0">Exercise</label>
   <div class="book-tabs-content markdown-inner"><p>What about the following algorithm (for the same tree)?</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">traverse</span>(Node root){
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">traverse</span>(Node root){
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// inductive case only (do nothing in the base case)</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (root <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span>){
 </span></span><span style="display:flex;"><span>        traverse(root.<span style="color:#a6e22e">leftChild</span>)
@@ -1603,7 +1642,9 @@ A <strong>binary tree</strong> is an ordered tree where each node has exactly tw
 </span></span><span style="display:flex;"><span>        traverse(root.<span style="color:#a6e22e">rightChild</span>)
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div></div></div>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></div></div>
 
 
 
@@ -1612,7 +1653,19 @@ A <strong>binary tree</strong> is an ordered tree where each node has exactly tw
 <div class="book-tabs"><input type="radio" class="toggle" name="tabs-exercise_postorder_traversal" id="tabs-exercise_postorder_traversal-0" checked="checked" />
   <label for="tabs-exercise_postorder_traversal-0">Exercise</label>
   <div class="book-tabs-content markdown-inner"><p>And this algorithm?</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">traverse</span>(Node root){
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">traverse</span>(Node root){
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// inductive case only (do nothing in the base case)</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (root <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span>){
 </span></span><span style="display:flex;"><span>        traverse(root.<span style="color:#a6e22e">leftChild</span>)
@@ -1620,7 +1673,9 @@ A <strong>binary tree</strong> is an ordered tree where each node has exactly tw
 </span></span><span style="display:flex;"><span>        print(root.<span style="color:#a6e22e">label</span>)
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div></div></div>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></div></div>
 
 <blockquote class="book-hint warning">
   <strong><em>Definition.</em></strong>
@@ -1664,6 +1719,7 @@ In-order traversal processes nodes in left-to-right order (when projected to a l
 </span></span><span style="display:flex;"><span>      ...
 </span></span><span style="display:flex;"><span>      myMethod(smallerInput_2)
 </span></span><span style="display:flex;"><span>      ...
+</span></span><span style="display:flex;"><span>      ...
 </span></span><span style="display:flex;"><span>      myMethod(smallerInput_k)
 </span></span><span style="display:flex;"><span>      ...
 </span></span><span style="display:flex;"><span>    }
@@ -1688,36 +1744,43 @@ For instance, some problems with an array as input can be solved recursively by 
 </span></span><span style="display:flex;"><span>        ...
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// inductive case</span>
 </span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> {
-</span></span><span style="display:flex;"><span>      ...
-</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// middle index (rounded down)</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">int</span> middleIndex <span style="color:#f92672">=</span> (startIndex <span style="color:#f92672">+</span> endIndex) <span style="color:#f92672">/</span> 2
-</span></span><span style="display:flex;"><span>      ...
-</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// recursive call on the left subsegment</span>
-</span></span><span style="display:flex;"><span>      solveProblemRec(array, startIndex, middleIndex)
-</span></span><span style="display:flex;"><span>      ...
-</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// recursive call on the right subsegment</span>
-</span></span><span style="display:flex;"><span>      solveProblemRec(array, middleIndex, endIndex)
-</span></span><span style="display:flex;"><span>      ...
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// middle index (rounded down)</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> middleIndex <span style="color:#f92672">=</span> (startIndex <span style="color:#f92672">+</span> endIndex) <span style="color:#f92672">/</span> 2
+</span></span><span style="display:flex;"><span>        ...
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// recursive call on the left subsegment</span>
+</span></span><span style="display:flex;"><span>        solveProblemRec(array, startIndex, middleIndex)
+</span></span><span style="display:flex;"><span>        ...
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// recursive call on the right subsegment</span>
+</span></span><span style="display:flex;"><span>        solveProblemRec(array, middleIndex <span style="color:#f92672">+</span> 1, endIndex)
+</span></span><span style="display:flex;"><span>        ...
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>It is also frequent for a recursive method to return <em>multiple</em> values.
 For instance, in a binary tree, return the set of labels that appear in a tree as well as the number of nodes.</p>
 <p>In Java 14 or later, this can be easily achieved by returning a <a href="https://unibz-pp-23-24.github.io/docs/objects/sections/quasi-objects/#record">record</a>.
 For instance:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">record</span> <span style="color:#a6e22e">ReturnValue</span>(Set<span style="color:#f92672">&lt;</span>Character<span style="color:#f92672">&gt;</span> labels, <span style="color:#66d9ef">int</span> numberOfNodes){};
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">record</span> <span style="color:#a6e22e">Result</span>(Set<span style="color:#f92672">&lt;</span>Character<span style="color:#f92672">&gt;</span> labels, <span style="color:#66d9ef">int</span> numberOfNodes){};
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>ReturnValue <span style="color:#a6e22e">myMethod</span>(Node root) {
+</span></span><span style="display:flex;"><span>Result <span style="color:#a6e22e">myMethod</span>(Node root) {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// base case</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(root <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span>) {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> ReturnValue(<span style="color:#66d9ef">new</span> HashSet<span style="color:#f92672">&lt;&gt;</span>(), 0);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> Result(<span style="color:#66d9ef">new</span> HashSet<span style="color:#f92672">&lt;&gt;</span>(), 0);
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// inductive case</span>
 </span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> {
-</span></span><span style="display:flex;"><span>      ...
-</span></span><span style="display:flex;"><span>      myMethod(root.<span style="color:#a6e22e">leftchild</span>);
-</span></span><span style="display:flex;"><span>      ...
-</span></span><span style="display:flex;"><span>      myMethod(root.<span style="color:#a6e22e">rightChild</span>);
-</span></span><span style="display:flex;"><span>      ...
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// recursive calls</span>
+</span></span><span style="display:flex;"><span>        Result leftResult <span style="color:#f92672">=</span> myMethod(root.<span style="color:#a6e22e">leftchild</span>);
+</span></span><span style="display:flex;"><span>        Result rightResult <span style="color:#f92672">=</span> myMethod(root.<span style="color:#a6e22e">rightchild</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// build the union of all labels</span>
+</span></span><span style="display:flex;"><span>        Set<span style="color:#f92672">&lt;</span>Char<span style="color:#f92672">&gt;</span> allLabels <span style="color:#f92672">=</span> leftResult.<span style="color:#a6e22e">labels</span>;
+</span></span><span style="display:flex;"><span>        allLabels.<span style="color:#a6e22e">addAll</span>(rightResult.<span style="color:#a6e22e">labels</span>);
+</span></span><span style="display:flex;"><span>        allLabels.<span style="color:#a6e22e">add</span>(root.<span style="color:#a6e22e">label</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> Result(
+</span></span><span style="display:flex;"><span>            allLabels,
+</span></span><span style="display:flex;"><span>            leftResult.<span style="color:#a6e22e">numberOfNodes</span> <span style="color:#f92672">+</span> rightResult.<span style="color:#a6e22e">numberOfNodes</span> <span style="color:#f92672">+</span> 1
+</span></span><span style="display:flex;"><span>        );
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div></article>

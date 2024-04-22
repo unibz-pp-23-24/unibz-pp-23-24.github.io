@@ -3,17 +3,13 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Linear recursion # Definition. A recursive method is linear recursive if it performs at most one recursive call each time it is executed. A linear recursive algorithm is often easy to transform into an iterative one (i.e. using loops only).
-Example # Exercise Write in pseudocode a (linear) recursive algorithm for a method int occ(char[] A, char c) that:
-takes as input a (non-null) array A of characters and a character c, and returns the number of occurrences of c in A.">
+<meta name="description" content="Linear recursion # Definition. A recursive method is linear recursive if it performs at most one recursive call each time it is executed. Terminology. The term unary recursion is sometimes used to refer to linear recursive methods (as opposed to n-ary recursion). Hint. A linear recursive algorithm is often easy to transform into an iterative one (i.e. using loops only). Example # Exercise Write in pseudocode a (linear) recursive algorithm for a method int occ(char[] A, char c) that:">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/recursion/sections/linear/">
   <meta property="og:site_name" content="Programming project 2023-24">
   <meta property="og:title" content="Linear recursion">
-  <meta property="og:description" content="Linear recursion # Definition. A recursive method is linear recursive if it performs at most one recursive call each time it is executed. A linear recursive algorithm is often easy to transform into an iterative one (i.e. using loops only).
-Example # Exercise Write in pseudocode a (linear) recursive algorithm for a method int occ(char[] A, char c) that:
-takes as input a (non-null) array A of characters and a character c, and returns the number of occurrences of c in A.">
+  <meta property="og:description" content="Linear recursion # Definition. A recursive method is linear recursive if it performs at most one recursive call each time it is executed. Terminology. The term unary recursion is sometimes used to refer to linear recursive methods (as opposed to n-ary recursion). Hint. A linear recursive algorithm is often easy to transform into an iterative one (i.e. using loops only). Example # Exercise Write in pseudocode a (linear) recursive algorithm for a method int occ(char[] A, char c) that:">
   <meta property="og:locale" content="en-us">
   <meta property="og:type" content="article">
   <meta property="article:section" content="docs">
@@ -22,7 +18,7 @@ takes as input a (non-null) array A of characters and a character c, and returns
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.0f59f8ac125b1c96538878c5e6bae740e7a4efa89aee9e53b1bbdb57e1a36fbb.js" integrity="sha256-D1n4rBJbHJZTiHjF5rrnQOek76ia7p5TsbvbV&#43;Gjb7s=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.be809afdf883d81e110cea29f4a41366de15a1248e7142b780e4673753b1d454.js" integrity="sha256-voCa/fiD2B4RDOop9KQTZt4VoSSOcUK3gORnN1Ox1FQ=" crossorigin="anonymous"></script>
 
   
 
@@ -672,6 +668,19 @@ https://github.com/alex-shpak/hugo-book
 
   
     <a href="/docs/recursion/sections/linear/" class="active">Linear recursion</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/recursion/sections/nary/" class="">N-ary recursion</a>
   
 
         </li>
@@ -1403,7 +1412,16 @@ https://github.com/alex-shpak/hugo-book
 A recursive method is <strong>linear recursive</strong> if it performs at most one recursive call each time it is executed.
 </blockquote>
 
-<p>A linear recursive algorithm is often easy to transform into an iterative one (i.e. using loops only).</p>
+<blockquote class="book-hint warning">
+  <strong><em>Terminology.</em></strong>
+The term <strong>unary recursion</strong> is sometimes used to refer to linear recursive methods (as opposed to <a href="https://unibz-pp-23-24.github.io/docs/recursion/sections/nary/">n-ary recursion</a>).
+</blockquote>
+
+<blockquote class="book-hint info">
+  <strong><em>Hint.</em></strong>
+A linear recursive algorithm is often easy to transform into an iterative one (i.e. using loops only).
+</blockquote>
+
 <h2 id="example">
   Example
   <a class="anchor" href="#example">#</a>
@@ -1493,7 +1511,7 @@ This may also produce code that is easier to read and/or debug.</p>
   A <strong>linked list</strong> is a set of objects organized in a <em>sequence</em>, such that each object (except for the last one) points to its successor.
 </blockquote>
 
-Equivalently, a linked list can be be viewed as a (degenerate) tree, where each node has at most one child.</p>
+Equivalently, a linked list can be be viewed as a (degenerate) tree, where each node has exactly one (possibly null) child.</p>
 <p>For instance:</p>
 <p><img src="/img/linkedLists/unlabeled/list.svg" alt="" /></p>
 <blockquote class="book-hint warning">

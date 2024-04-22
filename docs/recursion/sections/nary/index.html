@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="N-ary recursion # Divide an conquer # The divide and conquer approach to solve a problem consists in:
-Dividing the input $I$ into smaller inputs $I_1$, .., $I_k$ solving the problem for $I_1$, .., $I_k$, combining the solutions for $I_1$, .., $I_k$ into a solution for $I$. MergeSort.
-Input: an array $a$ (e.g. of integers) Output: the same array, sorted
-Algorithm:
-if $a$ has size $1$, then return it ($a$ is is already sorted).">
+<meta name="description" content="N-ary recursion # Definition.
+A recursive method that is not linear recursive uses n-ary recursion.
+Specific cases are:
+binary recursion if a method performs up to two recursive calls each time it is executed, ternary recursion if it performs up to three recursive calls each time it is executed, etc. Examples.
+The algorithm seen earlier to print all files in a folder uses n-ary recursion.
+The binary tree algorithms seen earlier all use binary recursion.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/recursion/sections/nary/">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/recursion/sections/nary/">
   <meta property="og:site_name" content="Programming project 2023-24">
   <meta property="og:title" content="N-ary recursion">
-  <meta property="og:description" content="N-ary recursion # Divide an conquer # The divide and conquer approach to solve a problem consists in:
-Dividing the input $I$ into smaller inputs $I_1$, .., $I_k$ solving the problem for $I_1$, .., $I_k$, combining the solutions for $I_1$, .., $I_k$ into a solution for $I$. MergeSort.
-Input: an array $a$ (e.g. of integers) Output: the same array, sorted
-Algorithm:
-if $a$ has size $1$, then return it ($a$ is is already sorted).">
+  <meta property="og:description" content="N-ary recursion # Definition.
+A recursive method that is not linear recursive uses n-ary recursion.
+Specific cases are:
+binary recursion if a method performs up to two recursive calls each time it is executed, ternary recursion if it performs up to three recursive calls each time it is executed, etc. Examples.
+The algorithm seen earlier to print all files in a folder uses n-ary recursion.
+The binary tree algorithms seen earlier all use binary recursion.">
   <meta property="og:locale" content="en-us">
   <meta property="og:type" content="article">
   <meta property="article:section" content="docs">
@@ -26,7 +28,7 @@ if $a$ has size $1$, then return it ($a$ is is already sorted).">
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.4c18ff9faedf2acdd57a146c455d54bdab5f9774f8a0d00ca3f474cbb50333d9.js" integrity="sha256-TBj/n67fKs3VehRsRV1Uvatfl3T4oNAMo/R0y7UDM9k=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.be809afdf883d81e110cea29f4a41366de15a1248e7142b780e4673753b1d454.js" integrity="sha256-voCa/fiD2B4RDOop9KQTZt4VoSSOcUK3gORnN1Ox1FQ=" crossorigin="anonymous"></script>
 
   
 
@@ -841,7 +843,7 @@ https://github.com/alex-shpak/hugo-book
   
     <input type="checkbox" id="section-ad5c3d825858d4a9ca4ad02d541f7121" class="toggle"  />
     <label for="section-ad5c3d825858d4a9ca4ad02d541f7121" class="flex justify-between">
-      <a href="/docs/unittests/sections/tdd/" class="">Test-driven development</a>
+      <a href="/docs/unittests/sections/tdd/" class="">Development driven by unit tests</a>
     </label>
   
 
@@ -1389,7 +1391,9 @@ https://github.com/alex-shpak/hugo-book
   <ul>
     <li><a href="#divide-an-conquer">Divide an conquer</a>
       <ul>
+        <li><a href="#example-merge-sort">Example: Merge sort</a></li>
         <li><a href="#graphs">Graphs</a></li>
+        <li><a href="#enumeration">Enumeration</a></li>
       </ul>
     </li>
   </ul>
@@ -1408,46 +1412,90 @@ https://github.com/alex-shpak/hugo-book
   N-ary recursion
   <a class="anchor" href="#n-ary-recursion">#</a>
 </h1>
+<p><strong><em>Definition.</em></strong></p>
+<p>A recursive method that is <em>not</em> linear recursive uses <strong>n-ary recursion</strong>.</p>
+<p>Specific cases are:</p>
+<ul>
+<li><strong>binary recursion</strong> if a method performs up to two recursive calls each time it is executed,</li>
+<li><strong>ternary recursion</strong> if it performs up to three recursive calls each time it is executed,</li>
+<li>etc.</li>
+</ul>
+<p><strong><em>Examples.</em></strong></p>
+<p>The algorithm seen <a href="">earlier</a> to print all files in a folder uses n-ary recursion.</p>
+<p>The binary tree algorithms seen <a href="">earlier</a> all use binary recursion.</p>
 <h2 id="divide-an-conquer">
   Divide an conquer
   <a class="anchor" href="#divide-an-conquer">#</a>
 </h2>
-<p>The <strong>divide and conquer</strong> approach to solve a problem consists in:</p>
-<ol>
-<li>Dividing the input $I$ into <em>smaller</em> inputs $I_1$, .., $I_k$</li>
-<li>solving the problem for $I_1$, .., $I_k$,</li>
-<li>combining the solutions for $I_1$, .., $I_k$ into a solution for $I$.</li>
-</ol>
-<p><strong><em>MergeSort.</em></strong></p>
-<p>Input: an array $a$ (e.g. of integers)
-Output: the same array, sorted</p>
+<p>The <strong>divide and conquer</strong> paradigm is a variation of the methodology seen earlier to solve a problem recursively.
+In the divide-and-conquer approach, the <em>smaller</em> inputs $I_1$, .., $I_k$ usually have (nearly) the same <em>size</em>.</p>
+<p>Divide-and-conquer has been instrumental in discovering efficient solutions to pervasive computational problems:</p>
+<p>Notorious examples include:</p>
+<ul>
+<li>the Karatsuba algorithm for multiplying two numbers,</li>
+<li>Strassen&rsquo;s algorithm for matrix product,</li>
+<li>Merge sort for (stable) sorting.</li>
+</ul>
+<h3 id="example-merge-sort">
+  Example: Merge sort
+  <a class="anchor" href="#example-merge-sort">#</a>
+</h3>
+<p>Merge sort is one of (many) algorithms commonly used for the following problem:</p>
+<p>Input: an array $A$ (e.g. of characters, integers, objects, etc.)
+Output: the same array, sorted (w.r.t. to some total preorder)</p>
+<p>The algorithm may be summarized as follows:</p>
 <p>Algorithm:</p>
 <ul>
 <li>if $a$ has size $1$, then return it ($a$ is is already sorted).</li>
 <li>otherwise:
 <ul>
-<li><em>(divide):</em> partition $a$ into $a_1$ and $a_2$,</li>
-<li><em>(solve):</em> sort $a_1$ and $a_2$</li>
-<li><em>(combine):</em> merge the solutions to the sub-problems</li>
+<li><em>(divide):</em> partition $A$ into its left half $A_1$ and its right half $A_2$,</li>
+<li><em>(solve):</em> <em>sort</em> $A_1$ and $A_2$ (recursively),</li>
+<li><em>(combine):</em> merge (the sorted versions of) $A_1$ and $A_2$</li>
 </ul>
 </li>
 </ul>
-<p>Psudocode:</p>
+<p>Or in pseudocode:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>sort(a){
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(a.<span style="color:#a6e22e">lenght</span> <span style="color:#f92672">==</span> 1){
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> a
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    merge(sort(a.<span style="color:#a6e22e">left</span>), sort(a.<span style="color:#a6e22e">right</span>))
+</span></span><span style="display:flex;"><span>sort(<span style="color:#66d9ef">char</span><span style="color:#f92672">[]</span> A) {
+</span></span><span style="display:flex;"><span>    sortRec(A, 0, A.<span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> 1)
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>Divide $a$</p>
-<p>an array (e.g. of integer)</p>
-<p>Sort an array</p>
-<p>-problsms (of the same ) conmsiosts ion</p>
-<p>some problems have an easy loops</p>
-<h3 id="graphs">
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Sorts the segment A[startindex .. enIndex]</span>
+</span></span><span style="display:flex;"><span>sortRec(A, <span style="color:#66d9ef">int</span> startIndex, <span style="color:#66d9ef">int</span> endIndex) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Base case: a segmsnt of size 1 is already sorted</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(sratIndex <span style="color:#f92672">==</span> endIndex){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> A
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Inductive case: divide the segment in two</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> middleIndex <span style="color:#f92672">=</span> (startIndex <span style="color:#f92672">+</span> endIndex) <span style="color:#f92672">/</span> 2
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// sort the left half</span>
+</span></span><span style="display:flex;"><span>    sortRec(A, startIndex, middleIndex)
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// sort the right half</span>
+</span></span><span style="display:flex;"><span>    sortRec(A, middleIndex, endIndex)
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// merge the two sorted halves</span>
+</span></span><span style="display:flex;"><span>    merge(A, startIndex, middleIndex, endIndex)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* Merges the sorted segments
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    A[startindex .. middleIndex]
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">and
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    A[middleIndex+1 .. endIndex],
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">in such a way that that
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    A[startindex .. endIndex]
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">is sorted.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span>merge(A, <span style="color:#66d9ef">int</span> startIndex, <span style="color:#66d9ef">int</span> middle Index, <span style="color:#66d9ef">int</span> endIndex){
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="graphs">
   Graphs
   <a class="anchor" href="#graphs">#</a>
+</h3>
+<h3 id="enumeration">
+  Enumeration
+  <a class="anchor" href="#enumeration">#</a>
 </h3>
 </article>
  
@@ -1492,7 +1540,9 @@ Output: the same array, sorted</p>
   <ul>
     <li><a href="#divide-an-conquer">Divide an conquer</a>
       <ul>
+        <li><a href="#example-merge-sort">Example: Merge sort</a></li>
         <li><a href="#graphs">Graphs</a></li>
+        <li><a href="#enumeration">Enumeration</a></li>
       </ul>
     </li>
   </ul>
