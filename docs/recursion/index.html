@@ -23,7 +23,7 @@ takes as input a path to an (existing) folder, and prints a path to each file co
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.ec2f3681891ecb92166bee2e758c28dd88dae71bc852910027433233ce8ac91a.js" integrity="sha256-7C82gYkey5IWa&#43;4udYwo3Yja5xvIUpEAJ0MyM86KyRo=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.d86689d83a7e859efc750eadcbd7d19587f4d38b82eca0885b01e8f889cfa32a.js" integrity="sha256-2GaJ2Dp&#43;hZ78dQ6ty9fRlYf004uC7KCIWwHo&#43;InPoyo=" crossorigin="anonymous"></script>
 
   
 
@@ -1535,17 +1535,7 @@ A <strong>binary tree</strong> is an ordered tree where each node has exactly tw
 <p>Write (in pseudocode) a method <code>int sum(Node root)</code> that takes as input the root of a binary tree, and returns the sum of all values in the tree.</p>
 <p>For instance, for the following tree, the method should return 13:</p>
 <p><img src="/img/binaryTrees/labeled/int/tree.svg" alt="" /></p>
-</div><input type="radio" class="toggle" name="tabs-exercise_binTree_sum" id="tabs-exercise_binTree_sum-1"  />
-  <label for="tabs-exercise_binTree_sum-1">Possible solution</label>
-  <div class="book-tabs-content markdown-inner"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">sum</span>(Node root){
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// base case</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (root <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span>){
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> 0
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// inductive case</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> root.<span style="color:#a6e22e">value</span> <span style="color:#f92672">+</span> sum(root.<span style="color:#a6e22e">leftChild</span>) <span style="color:#f92672">+</span> sum(root.<span style="color:#a6e22e">rightChild</span>)
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div></div></div>
+</div></div>
 
 
 
@@ -1558,20 +1548,7 @@ A <strong>binary tree</strong> is an ordered tree where each node has exactly tw
 <p>Write (in pseudocode) a method <code>int height(Node root)</code> that takes as input the root of such a tree, and returns the number of nodes in the longest branch of this tree.</p>
 <p>For instance, for the following tree, the method should return 4:</p>
 <p><img src="/img/binaryTrees/unlabeled/height/tree.svg" alt="" /></p>
-</div><input type="radio" class="toggle" name="tabs-exercise_binTree_height" id="tabs-exercise_binTree_height-1"  />
-  <label for="tabs-exercise_binTree_height-1">Possible solution</label>
-  <div class="book-tabs-content markdown-inner"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">height</span>(Node root){
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//base case</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (root <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span>){
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> 0
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// inductive case</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> 1 <span style="color:#f92672">+</span> max(
-</span></span><span style="display:flex;"><span>                height(root.<span style="color:#a6e22e">leftChild</span>),
-</span></span><span style="display:flex;"><span>                height(root.<span style="color:#a6e22e">rightChild</span>)
-</span></span><span style="display:flex;"><span>    )
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div></div></div>
+</div></div>
 
 <h3 id="processing-order">
   Processing order
@@ -1610,9 +1587,7 @@ A <strong>binary tree</strong> is an ordered tree where each node has exactly tw
 </div>
 </div><p>What does this algorithm print for the following input tree?</p>
 <p><img src="/img/binaryTrees/labeled/char/tree.svg" alt="" /></p>
-</div><input type="radio" class="toggle" name="tabs-exercise_preorder_traversal" id="tabs-exercise_preorder_traversal-1"  />
-  <label for="tabs-exercise_preorder_traversal-1">Solution</label>
-  <div class="book-tabs-content markdown-inner">A B D H E I J C F K L G M</div></div>
+</div></div>
 
 
 
@@ -1643,9 +1618,7 @@ A <strong>binary tree</strong> is an ordered tree where each node has exactly tw
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></td></tr></table>
 </div>
-</div></div><input type="radio" class="toggle" name="tabs-exercise_inorder_traversal" id="tabs-exercise_inorder_traversal-1"  />
-  <label for="tabs-exercise_inorder_traversal-1">Solution</label>
-  <div class="book-tabs-content markdown-inner">D H B I E J A K F L C G M</div></div>
+</div></div></div>
 
 
 
@@ -1676,9 +1649,7 @@ A <strong>binary tree</strong> is an ordered tree where each node has exactly tw
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></td></tr></table>
 </div>
-</div></div><input type="radio" class="toggle" name="tabs-exercise_postorder_traversal" id="tabs-exercise_postorder_traversal-1"  />
-  <label for="tabs-exercise_postorder_traversal-1">Solution</label>
-  <div class="book-tabs-content markdown-inner">H D I J E B A K L F M G C</div></div>
+</div></div></div>
 
 <blockquote class="book-hint warning">
   <strong><em>Definition.</em></strong>
@@ -1703,30 +1674,7 @@ In-order traversal processes nodes in left-to-right order (when projected to a l
   <div class="book-tabs-content markdown-inner"><p>Let us consider once again a binary tree where nodes are labeled with a character.</p>
 <p><img src="/img/diagrams/plantuml/nodeWithChar.svg" alt="" /></p>
 <p>Write (in pseudocode) a method <code>Node leftMost(Node root, char label)</code> that returns the leftmost node labeled with <code>label</code> in the tree rooted in <code>root</code> (or <code>null</code> if there is no such node).</p>
-</div><input type="radio" class="toggle" name="tabs-exercise_leftMost" id="tabs-exercise_leftMost-1"  />
-  <label for="tabs-exercise_leftMost-1">Possible solution</label>
-  <div class="book-tabs-content markdown-inner"><p>We can adapt the in-order traversal algorithm (above), as follows:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Node <span style="color:#a6e22e">leftMost</span>(Node root, <span style="color:#66d9ef">char</span> label){
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Base case.</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(root <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span>){
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span>
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Inductive case.</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Explore the left subtree first.</span>
-</span></span><span style="display:flex;"><span>    Node candidate <span style="color:#f92672">=</span> leftMost(root.<span style="color:#a6e22e">leftChild</span>, label)
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// If the call succeeded, then we found the leftmost occurrence in the tree.</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(candidate <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span>){
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> candidate
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Otherwise the next candidate (from left to right) is the current node.</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (root.<span style="color:#a6e22e">label</span> <span style="color:#f92672">==</span> label) {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> root
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// If both attempts failed, then explore the right subtree.</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> leftMost(root.<span style="color:#a6e22e">rightChild</span>)
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div></div></div>
+</div></div>
 
 <h2 id="syntax">
   Syntax
