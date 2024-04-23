@@ -3,13 +3,13 @@
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Linear recursion # Definition. A recursive method is linear recursive if it performs at most one recursive call each time it is executed. Terminology. The term unary recursion is sometimes used to refer to linear recursive methods (as opposed to n-ary recursion). Hint. A linear recursive algorithm is often easy to transform into an iterative one (i.e. using loops only). Example # Exercise Write in pseudocode a (linear) recursive algorithm for a method int occ(char[] A, char c) that:">
+<meta name="description" content="Linear recursion # Definition. A recursive method is linear recursive if it performs at most one recursive call each time it is executed. Terminology. The term unary recursion is sometimes used to refer to linear recursive methods (as opposed to n-ary recursion). Hint. A linear recursive algorithm is often easy to transform into an iterative one (i.e. an algorithm that uses only loops). Example # Exercise Write in pseudocode a (linear) recursive algorithm for a method int occ(char[] A, char c) that:">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/recursion/sections/linear/">
   <meta property="og:site_name" content="Programming project 2023-24">
   <meta property="og:title" content="Linear recursion">
-  <meta property="og:description" content="Linear recursion # Definition. A recursive method is linear recursive if it performs at most one recursive call each time it is executed. Terminology. The term unary recursion is sometimes used to refer to linear recursive methods (as opposed to n-ary recursion). Hint. A linear recursive algorithm is often easy to transform into an iterative one (i.e. using loops only). Example # Exercise Write in pseudocode a (linear) recursive algorithm for a method int occ(char[] A, char c) that:">
+  <meta property="og:description" content="Linear recursion # Definition. A recursive method is linear recursive if it performs at most one recursive call each time it is executed. Terminology. The term unary recursion is sometimes used to refer to linear recursive methods (as opposed to n-ary recursion). Hint. A linear recursive algorithm is often easy to transform into an iterative one (i.e. an algorithm that uses only loops). Example # Exercise Write in pseudocode a (linear) recursive algorithm for a method int occ(char[] A, char c) that:">
   <meta property="og:locale" content="en-us">
   <meta property="og:type" content="article">
   <meta property="article:section" content="docs">
@@ -18,7 +18,7 @@
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.20f275aae4b40f176ca9c3fc20bb241cc34be9dec23673c0f57a7e72831bd884.js" integrity="sha256-IPJ1quS0DxdsqcP8ILskHMNL6d7CNnPA9Xp&#43;coMb2IQ=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.b5920d6f45ca98f3d6b07fcb5f4eb803126b3e7238e14c3ae13b475fad7f3c2a.js" integrity="sha256-tZINb0XKmPPWsH/LX064AxJrPnI44Uw64TtHX61/PCo=" crossorigin="anonymous"></script>
 
   
 
@@ -1409,7 +1409,7 @@ https://github.com/alex-shpak/hugo-book
 </h1>
 <blockquote class="book-hint warning">
   <strong><em>Definition.</em></strong>
-A recursive method is <strong>linear recursive</strong> if it performs at most one recursive call each time it is executed.
+A recursive method is <strong>linear recursive</strong> if it performs at most <em>one</em> recursive call each time it is executed.
 </blockquote>
 
 <blockquote class="book-hint warning">
@@ -1419,7 +1419,7 @@ The term <strong>unary recursion</strong> is sometimes used to refer to linear r
 
 <blockquote class="book-hint info">
   <strong><em>Hint.</em></strong>
-A linear recursive algorithm is often easy to transform into an iterative one (i.e. using loops only).
+A linear recursive algorithm is often easy to transform into an iterative one (i.e. an algorithm that uses only loops).
 </blockquote>
 
 <h2 id="example">
@@ -1472,22 +1472,25 @@ A linear recursive algorithm is often easy to transform into an iterative one (i
 </span></span><span style="display:flex;"><span>    method2()
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">...</span>
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>When <code>method1</code> calls <code>method2</code>, its execution is interrupted, and resumes after the execution of <code>method2</code>.</p>
+</span></span></code></pre></div><p>The execution of <code>method1</code> is interrupted when it calls <code>method2</code>.</p>
 <p>During this interruption, the <a href="">call stack</a> contains:</p>
 <pre tabindex="0"><code>method2
 method1
 &lt;bottom of the stack&gt;
-</code></pre><p>Variables that are local to the execution of a method are allocated on the so-called <a href="https://en.wikipedia.org/wiki/Stack-based_memory_allocation">stack</a> memory.</p>
-<p>In this example, variables that are local to <code>method1</code> remain in memory during the execution of <code>method2</code> (because they may be needed when the execution of <code>method1</code> resumes).
+</code></pre><p><blockquote class="book-hint warning">
+  Variables that are local to the execution of a method are allocated on the so-called <a href="https://en.wikipedia.org/wiki/Stack-based_memory_allocation">stack</a> memory.
+</blockquote>
+
+In this example, variables that are local to <code>method1</code> remain in memory during the execution of <code>method2</code> (because they may be needed when the execution of <code>method1</code> resumes).
 However, if no instruction in <code>method1</code> needs to be executed <em>after</em> the call to <code>method2</code>, then there is no need to maintain this information in memory.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span>method1() {
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">...</span>
 </span></span><span style="display:flex;"><span>    method2()
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>In other words, the call stack in this case could be safely be reduced to</p>
+</span></span></code></pre></div><p>In other words, the call stack in this case could be safely be reduced to:</p>
 <pre tabindex="0"><code>method2
 &lt;bottom of the stack&gt;
-</code></pre><p>This optimization is known as <a href="https://en.wikipedia.org/wiki/Tail_call">tail-call elimination</a>.
+</code></pre><p>This optimization technique is known as <a href="https://en.wikipedia.org/wiki/Tail_call">tail-call elimination</a>.
 Some compilers apply it (but most Java compilers do not).</p>
 <p>During the execution of a recursive algorithm, the size of the call stack may become important, therefore also the amount of stack memory required.
 Therefore identifying calls that may be safely be removed from the stack can significantly reduce memory consumption.</p>
@@ -1500,7 +1503,7 @@ Therefore identifying calls that may be safely be removed from the stack can sig
 </blockquote>
 
 <p>A tail recursive algorithm can easily be transformed into an iterative one.
-This can be viewed as a &ldquo;manual&rdquo; form of tail-call elimination.</p>
+This transformation can be viewed as a &ldquo;manual&rdquo; form of tail-call elimination.</p>
 <p>
 
 
@@ -1542,7 +1545,7 @@ Then convert it into an iterative algorithm.</p>
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div></div></div>
 
-A common strategy to convert a linear recursive method into a tail-recursive one consists in using additional arguments (like the argument <code>count</code> in the above example).
+A common strategy to convert a linear recursive method into a tail-recursive one consists in using additional arguments (like the argument <code>occurrences</code> in the above example).
 These extra arguments are sometimes called <strong>accumulators</strong>.</p>
 <h2 id="usage">
   Usage
@@ -1558,10 +1561,11 @@ This may also produce code that is easier to read and/or debug.</p>
   <a class="anchor" href="#linked-list">#</a>
 </h3>
 <p><blockquote class="book-hint warning">
-  A <strong>linked list</strong> is a set of objects organized in a <em>sequence</em>, such that each object (except for the last one) points to its successor.
+  <strong><em>Definition.</em></strong>
+A <strong>linked list</strong> is a set of objects organized in a <em>sequence</em>, such that each object (except for the last one) points to its successor.
 </blockquote>
 
-Equivalently, a linked list can be be viewed as a (degenerate) tree, where each node has exactly one (possibly null) child.</p>
+Equivalently, a linked list is a unary tree (and conversely), i.e. a tree where each node has exactly one (possibly null) child.</p>
 <p>For instance:</p>
 <p><img src="/img/linkedLists/unlabeled/list.svg" alt="" /></p>
 <blockquote class="book-hint warning">
