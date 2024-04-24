@@ -23,7 +23,7 @@ takes as input a path to an (existing) folder, and prints a path to each file co
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.1691d5483d247b43c66575eb1ad425913ec6c5210d1735d52e49ef0aedd0bd1e.js" integrity="sha256-FpHVSD0ke0PGZXXrGtQlkT7GxSENFzXVLknvCu3QvR4=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.86659ccbf9c18562e7ec6da4a26bc45e39da786a8e16e427e23fe74a72a09cf7.js" integrity="sha256-hmWcy/nBhWLn7G2komvEXjnaeGqOFuQn4j/nSnKgnPc=" crossorigin="anonymous"></script>
 
   
 
@@ -665,6 +665,19 @@ https://github.com/alex-shpak/hugo-book
 
           
   <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/recursion/sections/linear/" class="">Linear recursion</a>
+  
+
+        </li>
+      
     
   </ul>
 
@@ -1734,7 +1747,7 @@ In-order traversal processes nodes in left-to-right order (when projected to a l
   <a class="anchor" href="#syntax">#</a>
 </h2>
 <p>A recursive method often has the following structure (in pseudocode):</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>myMethod(InputType input) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>myMethod(Type input) {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// base case</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(<span style="color:#f92672">&lt;</span>input is minimal<span style="color:#f92672">&gt;</span>) {
@@ -1758,14 +1771,14 @@ Termination is guaranteed if the input of each recursive call is strictly <em>sm
 
 <p>Besides, a recursive method is often an <em>auxiliary method</em>.
 For instance, some problems with an array as input can be solved recursively by dividing the array in sub-segments, as follows (in pseudocode):</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>solveProblem(InputType<span style="color:#f92672">[]</span> array) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>solveProblem(Type<span style="color:#f92672">[]</span> array) {
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(array.<span style="color:#a6e22e">length</span> <span style="color:#f92672">!=</span> 0){
 </span></span><span style="display:flex;"><span>        <span style="color:#75715e">// the initial segment is the whole array</span>
-</span></span><span style="display:flex;"><span>        solveProblemRec(array, 0, array.<span style="color:#a6e22e">length</span>)
+</span></span><span style="display:flex;"><span>        solveProblemRec(array, 0, array.<span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> 1)
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>solveProblemRec(InputType<span style="color:#f92672">[]</span> array, <span style="color:#66d9ef">int</span> startIndex, <span style="color:#66d9ef">int</span> endIndex)
+</span></span><span style="display:flex;"><span>solveProblemRec(Type<span style="color:#f92672">[]</span> array, <span style="color:#66d9ef">int</span> startIndex, <span style="color:#66d9ef">int</span> endIndex)
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// base case (segment of length 1)</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(startIndex <span style="color:#f92672">==</span> endIndex) {
 </span></span><span style="display:flex;"><span>        ...
