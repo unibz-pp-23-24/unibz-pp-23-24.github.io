@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="N-ary recursion # Definition. A recursive method that is not linear recursive uses n-ary recursion. Specific cases include:
@@ -9,7 +9,7 @@ The algorithm seen earlier to print all files in a folder uses n-ary recursion.
 All the binary tree algorithms seen earlier use binary recursion.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/recursion/sections/nary/">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/recursion/sections/nary/">
   <meta property="og:site_name" content="Programming project 2023-24">
   <meta property="og:title" content="N-ary recursion">
   <meta property="og:description" content="N-ary recursion # Definition. A recursive method that is not linear recursive uses n-ary recursion. Specific cases include:
@@ -24,7 +24,7 @@ All the binary tree algorithms seen earlier use binary recursion.">
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.27b9006c48e3de0de4d2f4d4a0809315b81b336325735df13cd9bbae0a4f79af.js" integrity="sha256-J7kAbEjj3g3k0vTUoICTFbgbM2Mlc13xPNm7rgpPea8=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.71f1523605cfacaa0e085cf5366727ba97c6e0d01fe4100d18afd08011426f37.js" integrity="sha256-cfFSNgXPrKoOCFz1NmcnupfG4NAf5BANGK/QgBFCbzc=" crossorigin="anonymous"></script>
 
   
 
@@ -1387,14 +1387,10 @@ https://github.com/alex-shpak/hugo-book
   <ul>
     <li><a href="#divide-and-conquer">Divide and conquer</a>
       <ul>
-        <li><a href="#example-mergesort">Example: mergesort</a></li>
+        <li><a href="#example-mergesort">Example: Mergesort</a></li>
       </ul>
     </li>
-    <li><a href="#tree-and-graph-traversal">Tree and graph traversal</a>
-      <ul>
-        <li><a href="#enumeration">Enumeration</a></li>
-      </ul>
-    </li>
+    <li><a href="#tree-and-graph-traversal">Tree and graph traversal</a></li>
   </ul>
 </nav>
 
@@ -1424,8 +1420,8 @@ A recursive method that is <em>not</em> linear recursive uses <strong>n-ary recu
 </ul>
 <blockquote class="book-hint info">
   <p><strong><em>Examples.</em></strong></p>
-<p>The algorithm seen <a href="">earlier</a> to print all files in a folder uses n-ary recursion.</p>
-<p>All the binary tree algorithms seen <a href="">earlier</a> use binary recursion.</p>
+<p>The algorithm seen <a href="https://unibz-pp-23-24.github.io/docs/recursion/#printFiles">earlier</a> to print all files in a folder uses n-ary recursion.</p>
+<p>All the binary tree algorithms seen <a href="https://unibz-pp-23-24.github.io/docs/recursion/#binaryTrees">earlier</a> use binary recursion.</p>
 
 </blockquote>
 
@@ -1434,7 +1430,7 @@ A recursive method that is <em>not</em> linear recursive uses <strong>n-ary recu
   <a class="anchor" href="#divide-and-conquer">#</a>
 </h2>
 <blockquote class="book-hint warning">
-  The <strong>divide-and-conquer</strong> paradigm is a variation of the methodology seen <a href="">earlier</a> to solve a problem recursively.
+  The <strong>divide-and-conquer</strong> paradigm is a variation of the methodology seen <a href="https://unibz-pp-23-24.github.io/docs/recursion/#methodology">earlier</a> to solve a problem recursively.
 In the divide-and-conquer approach, the smaller inputs $I_1$, .., $I_k$ usually have (nearly) the <em>same size</em>.
 </blockquote>
 
@@ -1446,7 +1442,7 @@ Well-known examples include:</p>
 <li>Mergesort for (stable) sorting.</li>
 </ul>
 <h3 id="example-mergesort">
-  Example: mergesort
+  Example: Mergesort
   <a class="anchor" href="#example-mergesort">#</a>
 </h3>
 <p>Mergesort is one of (many) algorithms commonly used to sort an array, i.e. to solve the following problem:</p>
@@ -1455,7 +1451,7 @@ Well-known examples include:</p>
 <p><strong><em>Output:</em></strong> a sorted array with the same elements as $A$</p>
 </blockquote>
 <p><strong><em>Observation.</em></strong>
-As we saw <a href="">already</a>, the array can be of any type (int, String, City, Unit, etc.), and the sorting criterion can be any <a href="">total preorder</a> over this type.</p>
+As we saw <a href="https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/sorting/">already</a>, the array can be of any type (int, String, City, Unit, etc.), and the sorting criterion can be any <a href="https://unibz-pp-23-24.github.io/docs/background/sections/order/#preorder">total preorder</a> over this type.</p>
 <blockquote class="book-hint warning">
   <p>The Mergesort algorithm may be summarized as follows:</p>
 <ul>
@@ -1510,61 +1506,8 @@ We only used it to keep the explanation simple.
   <label for="tabs-exercise_mergeSort-0">Exercise</label>
   <div class="book-tabs-content markdown-inner"><p>To complete this algorithm, implement (in pseudocode) the auxiliary method</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Type<span style="color:#f92672">[]</span> <span style="color:#a6e22e">merge</span>(Type<span style="color:#f92672">[]</span> A, Type<span style="color:#f92672">[]</span> B)
-</span></span></code></pre></div><p>which takes as input two sorted arrays <code>A</code> and <code>B</code>, and returns a sorted array that contains their values.</p>
-</div><input type="radio" class="toggle" name="tabs-exercise_mergeSort" id="tabs-exercise_mergeSort-1"  />
-  <label for="tabs-exercise_mergeSort-1">Possible solution</label>
-  <div class="book-tabs-content markdown-inner"><p>Iterate over <code>A</code> and <code>B</code> in parallel:</p>
-<ul>
-<li>if <code>A[0]</code> (resp. <code>B[0]</code>) is smaller than <code>B[0]</code> (resp. <code>A[0]</code>),
-then:
-<ul>
-<li>add <code>A[0]</code> (resp. <code>B[0]</code>) to the output array, and</li>
-<li>repeat with <code>A[1]</code> and <code>B[0]</code> (resp. <code>A[0]</code> and <code>B[1]</code>),</li>
-<li>etc.</li>
-</ul>
-</li>
-<li>when reaching the end of <code>A</code> (resp. <code>B</code>), add the remaining elements of <code>B</code> (resp. <code>A</code>) to the output array.</li>
-</ul>
-<p>More precisely:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Type<span style="color:#f92672">[]</span> <span style="color:#a6e22e">merge</span>(Type<span style="color:#f92672">[]</span> A, Type<span style="color:#f92672">[]</span> B){
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Output array</span>
-</span></span><span style="display:flex;"><span>    Type<span style="color:#f92672">[]</span> C <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Type<span style="color:#f92672">[</span>A.<span style="color:#a6e22e">length</span> <span style="color:#f92672">+</span> B.<span style="color:#a6e22e">length</span><span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Index to iterate over A</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> a <span style="color:#f92672">=</span> 0
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Index to iterate over B</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> b <span style="color:#f92672">=</span> 0
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Index to iteratate over O</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> c <span style="color:#f92672">=</span> 0
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">while</span> (a <span style="color:#f92672">&lt;</span> A.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&amp;&amp;</span> b <span style="color:#f92672">&lt;</span> B.<span style="color:#a6e22e">length</span>) {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>(A<span style="color:#f92672">[</span>a<span style="color:#f92672">]</span> <span style="color:#f92672">&lt;</span> B<span style="color:#f92672">[</span>b<span style="color:#f92672">]</span>) {
-</span></span><span style="display:flex;"><span>            C<span style="color:#f92672">[</span>c<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> A<span style="color:#f92672">[</span>a<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>            a<span style="color:#f92672">++</span>
-</span></span><span style="display:flex;"><span>        } <span style="color:#66d9ef">else</span> {
-</span></span><span style="display:flex;"><span>            C<span style="color:#f92672">[</span>c<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> B<span style="color:#f92672">[</span>b<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>            b<span style="color:#f92672">++</span>
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// If we reached the end of A,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(a <span style="color:#f92672">==</span> A.<span style="color:#a6e22e">length</span>){
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// append all remaining elements of B to the output array.</span>
-</span></span><span style="display:flex;"><span>        append(B, b, C, c)
-</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Otherwise we reached the end of B.</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// So append all remaining elements of A to the output array.</span>
-</span></span><span style="display:flex;"><span>        append(A, a, C, c)
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>append (Type<span style="color:#f92672">[]</span> A, <span style="color:#66d9ef">int</span> a, Type<span style="color:#f92672">[]</span> C, <span style="color:#66d9ef">int</span> c) {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> (a <span style="color:#f92672">&lt;</span> A.<span style="color:#a6e22e">length</span>){
-</span></span><span style="display:flex;"><span>        C<span style="color:#f92672">[</span>c<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> A<span style="color:#f92672">[</span>a<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>        a<span style="color:#f92672">++</span>
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div></div></div>
+</span></span></code></pre></div><p>that takes as input two sorted arrays <code>A</code> and <code>B</code>, and returns a sorted array that contains their values.</p>
+</div></div>
 
 <blockquote class="book-hint info">
   <strong><em>Merge sort in action.</em></strong>
@@ -1575,14 +1518,14 @@ or <a href="https://willrosenbaum.com/blog/2022/merge-sort/">this (more accurate
 
 <blockquote class="book-hint info">
   <strong><em>Observation.</em></strong>
-Merge sort is a <a href="">stable</a> sorting algorithm.
+Merge sort is a <a href="https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/sorting/#stable">stable</a> sorting algorithm.
 </blockquote>
 
 <h2 id="tree-and-graph-traversal">
   Tree and graph traversal
   <a class="anchor" href="#tree-and-graph-traversal">#</a>
 </h2>
-<p><a href="">Earlier</a> in this chapter, we used different algorithms to traverse a binary tree, where nodes were instances of the following class:</p>
+<p><a href="https://unibz-pp-23-24.github.io/docs/recursion/#binaryTrees">Earlier</a> in this chapter, we used different algorithms to traverse a binary tree, where nodes were instances of the following class:</p>
 <p><img src="/img/diagrams/plantuml/nodeWithChar.svg" alt="" /></p>
 <p>One of these algorithms was the so-called &ldquo;pre-order traversal&rdquo;:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>traverse(Node root){
@@ -1594,7 +1537,7 @@ Merge sort is a <a href="">stable</a> sorting algorithm.
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>This algorithm naturally generalizes to trees where nodes may have more than two children.
-Nodes in such a tree can be represented as instance of the following class:</p>
+Nodes in such a tree can be represented as instances of the following class:</p>
 <p><img src="/img/diagrams/plantuml/node_nary.svg" alt="" /></p>
 <p>And the algorithm becomes:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>traverse(Node root){
@@ -1643,66 +1586,9 @@ which indicates whether a node has already been visited during a traversal:</p>
   <div class="book-tabs-content markdown-inner"><p>Consider the following graph.</p>
 <p><img src="/img/graphs/graph_labeled.svg" alt="" /></p>
 <p>What does the above algorithm print for input node A, assuming that the children of each node are sorted in label&rsquo;s alphabetical order?</p>
-</div><input type="radio" class="toggle" name="tabs-exercise_graph_traversal" id="tabs-exercise_graph_traversal-1"  />
-  <label for="tabs-exercise_graph_traversal-1">Solution</label>
-  <div class="book-tabs-content markdown-inner"></div></div>
+</div></div>
 
-<h3 id="enumeration">
-  Enumeration
-  <a class="anchor" href="#enumeration">#</a>
-</h3>
-<p>N-ary recursion is often used to enumerate (potentially large) subsets of a search space.</p>
-<p>For instance, here is way to enumerate the power set of a set $S$.</p>
-<p>Let us order the elements of $S$ into a linked list (equivalently we could use an array).</p>
-<p>For instance, if $S = {a, b, c}$, then let us create a list:</p>
-<p>a, b, c</p>
-<p>Now consider the subset $S&rsquo;$ of $S$ that that contains all elements of $S$, minus its first element.
-In our example,
-$S&rsquo; = S \setminus {a} = {b,c}$</p>
-<p>Next, consider the power set $\mathcal{P}(S&rsquo;)$ of $S&rsquo;$.</p>
-<p>In our example, $\mathcal{P}(S&rsquo;) = {\emptyset, {b}, {c}, {b,c}}$.</p>
-<p>And consider the family $\mathcal{F}$ obtained by adding the first element of $S$ to each set in $\mathcal{P}(S&rsquo;)$.</p>
-<p>In our example,
-$\F = {{a}, {a, b}, {a, c}, {a, b,c}}$</p>
-<p>Now observe that the power set $\mathcal{P}(S)$ of $S$ is the union of $\mathcal{\P(S&rsquo;)}$ and $\F$.</p>
-<p>This lead to a natural recursive algorithm.
-In the inductive case:</p>
-<ul>
-<li>compute $\mathcal{\P(S&rsquo;)}$,</li>
-<li>duplicate it,</li>
-<li>create $\F$ by adding the first element of $S$ to each set in one of the two copies,</li>
-<li>return $\mathcal{\P(S&rsquo;)} \cup \mathcal{F}$</li>
-</ul>
-<p>Or in pseudocode:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Type<span style="color:#f92672">[]</span> array <span style="color:#f92672">=</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Set<span style="color:#f92672">&lt;</span>Set<span style="color:#f92672">&lt;</span>Type<span style="color:#f92672">&gt;&gt;</span> <span style="color:#a6e22e">powerSet</span> (Set<span style="color:#f92672">&lt;</span>Type<span style="color:#f92672">&gt;</span> S){
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> powerSetRec(S.<span style="color:#a6e22e">toList</span>(), 0)
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Set<span style="color:#f92672">&lt;</span>Set<span style="color:#f92672">&lt;</span>Type<span style="color:#f92672">&gt;&gt;</span> <span style="color:#a6e22e">powerSetRec</span>(Node head){
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Base case: we reached the end of the input list.</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Return the power set of S minus all its elements,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// i.e. the power set of the empty set, which is the family { { } }</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(head.<span style="color:#a6e22e">next</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span>){
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> HashSet<span style="color:#f92672">&lt;&gt;</span>(<span style="color:#66d9ef">new</span> Hashset<span style="color:#f92672">&lt;&gt;</span>())
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Inductive case.</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Compute the power set of S&#39;.</span>
-</span></span><span style="display:flex;"><span>    Set<span style="color:#f92672">&lt;</span>Set<span style="color:#f92672">&lt;</span>Type<span style="color:#f92672">&gt;&gt;</span> P_S_prime <span style="color:#f92672">=</span> powerSetRec(head.<span style="color:#a6e22e">next</span>)
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Duplicate it</span>
-</span></span><span style="display:flex;"><span>    Set<span style="color:#f92672">&lt;</span>Set<span style="color:#f92672">&lt;</span>Type<span style="color:#f92672">&gt;&gt;</span> F <span style="color:#f92672">=</span> clone(P_S_prime)
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Add the first element of S to each element of the family</span>
-</span></span><span style="display:flex;"><span>    foreach s in F {
-</span></span><span style="display:flex;"><span>        s.<span style="color:#a6e22e">add</span>(head.<span style="color:#a6e22e">value</span>)
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// compute the union of F and the the power set of S&#39;, and return it</span>
-</span></span><span style="display:flex;"><span>    F.<span style="color:#a6e22e">addAll</span>(P_S_prime)
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> F
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div></article>
+</article>
  
       
 
@@ -1745,14 +1631,10 @@ In the inductive case:</p>
   <ul>
     <li><a href="#divide-and-conquer">Divide and conquer</a>
       <ul>
-        <li><a href="#example-mergesort">Example: mergesort</a></li>
+        <li><a href="#example-mergesort">Example: Mergesort</a></li>
       </ul>
     </li>
-    <li><a href="#tree-and-graph-traversal">Tree and graph traversal</a>
-      <ul>
-        <li><a href="#enumeration">Enumeration</a></li>
-      </ul>
-    </li>
+    <li><a href="#tree-and-graph-traversal">Tree and graph traversal</a></li>
   </ul>
 </nav>
 

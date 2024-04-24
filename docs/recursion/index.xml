@@ -12,7 +12,14 @@
       <link>https://unibz-pp-23-24.github.io/docs/recursion/sections/linear/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/recursion/sections/linear/</guid>
-      <description>Linear recursion # Definition. A recursive method is linear recursive if it performs at most one recursive call each time it is executed. Terminology. The term unary recursion is sometimes used to refer to linear recursive algorithms (as opposed to n-ary recursion. Hint. A linear recursive algorithm is often easy to transform into an iterative one (i.e. an algorithm that uses only loops). Example # Exercise Write in pseudocode a (linear) recursive algorithm for a method int occ(char[] A, char c) that:</description>
+      <description>Linear recursion # Definition. A recursive method is linear recursive if it performs at most one recursive call each time it is executed. Terminology. The term unary recursion is sometimes used to refer to linear recursive algorithms (as opposed to n-ary recursion). Hint. A linear recursive algorithm is often easy to transform into an iterative one (i.e. an algorithm that uses only loops). Example # Exercise Write in pseudocode a (linear) recursive algorithm for a method int occ(char[] A, char c) that:</description>
+    </item>
+    <item>
+      <title>N-ary recursion</title>
+      <link>https://unibz-pp-23-24.github.io/docs/recursion/sections/nary/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/recursion/sections/nary/</guid>
+      <description>N-ary recursion # Definition. A recursive method that is not linear recursive uses n-ary recursion. Specific cases include:&#xA;binary recursion if a method performs up to two recursive calls each time it is executed, ternary recursion if it performs up to three recursive calls each time it is executed, etc. Examples.&#xA;The algorithm seen earlier to print all files in a folder uses n-ary recursion.&#xA;All the binary tree algorithms seen earlier use binary recursion.</description>
     </item>
   </channel>
 </rss>
