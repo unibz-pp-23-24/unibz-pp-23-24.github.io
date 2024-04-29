@@ -7,12 +7,5 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="https://unibz-pp-23-24.github.io/docs/regex/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Usage</title>
-      <link>https://unibz-pp-23-24.github.io/docs/regex/sections/usage/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://unibz-pp-23-24.github.io/docs/regex/sections/usage/</guid>
-      <description>Usage # String validation # In a sense, regular expressions can be viewed as a (relatively inexpressive) programming language for string validation. Precisely, each regular expression $e$ can be viewed as a program that:&#xA;takes as input a word $w$, and returns true if $w$ belongs to the language described by $e$, and returns false otherwise. Pattern matching # Another common usage of regexes is pattern matching.&#xA;In this scenario, each regular expression $e$ can be viewed as a program that:</description>
-    </item>
   </channel>
 </rss>

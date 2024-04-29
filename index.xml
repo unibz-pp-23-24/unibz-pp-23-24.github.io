@@ -183,13 +183,6 @@
       <description>Teaching staff # Julien Corman will teach the lectures and one lab.&#xA;Albulen Pano will teach the other lab.&#xA;Office hours # If you need additional help with the content of the course, the assignments and/or your project, you can ask for office hours with any (or both) of us.&#xA;These appointments must be scheduled via email (follow the links above for our email addresses).</description>
     </item>
     <item>
-      <title>Usage</title>
-      <link>https://unibz-pp-23-24.github.io/docs/regex/sections/usage/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://unibz-pp-23-24.github.io/docs/regex/sections/usage/</guid>
-      <description>Usage # String validation # In a sense, regular expressions can be viewed as a (relatively inexpressive) programming language for string validation. Precisely, each regular expression $e$ can be viewed as a program that:&#xA;takes as input a word $w$, and returns true if $w$ belongs to the language described by $e$, and returns false otherwise. Pattern matching # Another common usage of regexes is pattern matching.&#xA;In this scenario, each regular expression $e$ can be viewed as a program that:</description>
-    </item>
-    <item>
       <title>Associative array</title>
       <link>https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/map/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

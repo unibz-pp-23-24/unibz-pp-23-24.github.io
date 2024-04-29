@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Usage # String validation # In a sense, regular expressions can be viewed as a (relatively inexpressive) programming language for string validation. Precisely, each regular expression $e$ can be viewed as a program that:
@@ -8,7 +8,7 @@ takes as input a word $w$, and returns true if $w$ belongs to the language descr
 In this scenario, each regular expression $e$ can be viewed as a program that:">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/regex/sections/usage/">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/regex/sections/usage/">
   <meta property="og:site_name" content="Programming project 2023-24">
   <meta property="og:title" content="Usage">
   <meta property="og:description" content="Usage # String validation # In a sense, regular expressions can be viewed as a (relatively inexpressive) programming language for string validation. Precisely, each regular expression $e$ can be viewed as a program that:
@@ -1552,7 +1552,17 @@ Several matches may carry the same word (e.g. the first and third matches in the
   <label for="tabs-exercise_matches-0">Exercise</label>
   <div class="book-tabs-content markdown-inner"><p>Consider the regex $e$ = <code>a*</code> and the word $w$ = <code>aa</code>.</p>
 <p>How many matches are there for $e$ in $w$?</p>
-</div></div>
+</div><input type="radio" class="toggle" name="tabs-exercise_matches" id="tabs-exercise_matches-1"  />
+  <label for="tabs-exercise_matches-1">Solution</label>
+  <div class="book-tabs-content markdown-inner"><p>There are 6 matches for the regex <code>a*</code> in the word <code>aa</code>:</p>
+<ul>
+<li>$w[0 .. 0)$: $\varepsilon$</li>
+<li>$w[0 .. 1)$: <code>a</code></li>
+<li>$w[0 .. 2)$: <code>aa</code></li>
+<li>$w[1 .. 1)$: $\varepsilon$</li>
+<li>$w[1 .. 2)$: <code>a</code></li>
+<li>$w[2 .. 2)$: $\varepsilon$</li>
+</ul></div></div>
 
 <h3 id="greediest-match">
   Greediest match
@@ -1688,7 +1698,60 @@ Let $e$ be the regex <code>ab*</code>, and let $w$ be the word <code>abac</code>
 <td><code>abab</code></td>
 </tr>
 </tbody>
-</table></div></div>
+</table></div><input type="radio" class="toggle" name="tabs-exercise_greedy_matches" id="tabs-exercise_greedy_matches-1"  />
+  <label for="tabs-exercise_greedy_matches-1">Solution</label>
+  <div class="book-tabs-content markdown-inner"><table>
+<thead>
+<tr>
+<th>regex $e$</th>
+<th>word $w$</th>
+<th>greedy matches</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>a</code></td>
+<td><code>aba</code></td>
+<td>$[0 .. 1)$:<code>a</code>, $[2 .. 3)$:<code>a</code></td>
+</tr>
+<tr>
+<td><code>a*b</code></td>
+<td><code>aba</code></td>
+<td>$[0 .. 2)$:<code>ab</code></td>
+</tr>
+<tr>
+<td><code>ab*</code></td>
+<td><code>ab</code></td>
+<td>$[0 .. 2)$:<code>ab</code></td>
+</tr>
+<tr>
+<td><code>ab*</code></td>
+<td><code>aba</code></td>
+<td>$[0 .. 2)$:<code>ab</code>, $[2 .. 3)$:<code>a</code></td>
+</tr>
+<tr>
+<td><code>a*</code></td>
+<td><code>a</code></td>
+<td>$[0 .. 1)$:<code>a</code>, $[1 .. 1)$: $\varepsilon$</td>
+</tr>
+<tr>
+<td><code>a*</code></td>
+<td><code>aba</code></td>
+<td>$[0 .. 1)$:<code>a</code>, $[1 .. 1)$: $\varepsilon$, $[2 .. 3)$:<code>a</code>, $[3 .. 3)$: $\varepsilon$</td>
+</tr>
+<tr>
+<td><code>(ab)*</code></td>
+<td><code>aba</code></td>
+<td>$[0 .. 1)$:<code>ab</code>, $[1 .. 1)$: $\varepsilon$</td>
+</tr>
+<tr>
+<td><code>(ab)*</code></td>
+<td><code>abab</code></td>
+<td>$[0 .. 3)$:<code>abab</code>, $[3 .. 3)$: $\varepsilon$</td>
+</tr>
+</tbody>
+</table>
+</div></div>
 
 </article>
  
