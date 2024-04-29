@@ -1,23 +1,29 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content=" Regular expressions # ">
+<meta name="description" content="Regular expressions # The theory of regular expressions (a.k.a. regexes) was developed in the 1950&rsquo;s (notably by Stephen Cole Kleene), and regexes have been used since the 1960&rsquo;s for variety of computational tasks. Common applications include:
+input string validation (e.g. checking whether a date is valid, or whether a password contains characters of certain types), searching and replacing strings (e.g. within an IDE), lexical analysis in a compiler. Definition # A regular expression is a (finite) expression that describes a (possibly infinite) regular language.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="Regular expressions" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="http://localhost:1313/docs/regex/" />
-
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/regex/">
+  <meta property="og:site_name" content="Programming project 2023-24">
+  <meta property="og:title" content="Regular expressions">
+  <meta property="og:description" content="Regular expressions # The theory of regular expressions (a.k.a. regexes) was developed in the 1950’s (notably by Stephen Cole Kleene), and regexes have been used since the 1960’s for variety of computational tasks. Common applications include:
+input string validation (e.g. checking whether a date is valid, or whether a password contains characters of certain types), searching and replacing strings (e.g. within an IDE), lexical analysis in a compiler. Definition # A regular expression is a (finite) expression that describes a (possibly infinite) regular language.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="website">
 <title>Regular expressions | Programming project 2023-24</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.c159bcc34148094cb7100ffff20f51e4193a61f47e9e93427ea7ef4730469cb0.js" integrity="sha256-wVm8w0FICUy3EA//8g9R5Bk6YfR&#43;npNCfqfvRzBGnLA=" crossorigin="anonymous"></script>
-<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/docs/regex/index.xml" title="Programming project 2023-24" />
+  <script defer src="/en.search.min.81de8532b44b2dbdff1732594798ad82f794ed551c45c4230ab17248b16951b5.js" integrity="sha256-gd6FMrRLLb3/FzJZR5itgveU7VUcRcQjCrFySLFpUbU=" crossorigin="anonymous"></script>
+
+  
+
+<link rel="alternate" type="application/rss+xml" href="https://unibz-pp-23-24.github.io/docs/regex/index.xml" title="Programming project 2023-24" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -45,6 +51,17 @@ https://github.com/alex-shpak/hugo-book
   crossorigin="anonymous"
   onload="renderMathInElement(document.body);"
 ></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+      ],
+    });
+  });
+</script>
 
 </head>
 <body dir="ltr">
@@ -306,7 +323,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/objects/sections/comparison/" class="">Comparing objects</a>
+    <a href="/docs/objects/sections/tostring/" class="">Displaying objects</a>
   
 
         </li>
@@ -319,7 +336,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/objects/sections/encapsulation/" class="">Encapsulation</a>
+    <a href="/docs/objects/sections/comparing/" class="">Cast and equality</a>
   
 
         </li>
@@ -332,7 +349,20 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/objects/sections/clone/" class="">Copying objects</a>
+    <a href="/docs/objects/sections/classesasobjects/" class="">Classes as objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/clone/" class="">Duplicating objects</a>
   
 
         </li>
@@ -358,13 +388,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/objects/sections/casts/" class="">Type checking and cast</a>
+    <a href="/docs/objects/sections/encapsulation/" class="">Encapsulation</a>
   
-
-        </li>
-      
-    
-  </ul>
 
         </li>
       
@@ -376,23 +401,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-06ca724a4caafd99788c5f8e355ee319" class="toggle"  />
-    <label for="section-06ca724a4caafd99788c5f8e355ee319" class="flex justify-between">
-      <a href="/docs/encapsulation/" class="">Encapsulation</a>
-    </label>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/encapsulation/sections/visibility/" class="">Visibility</a>
+    <a href="/docs/objects/sections/quiz/" class="">Quiz</a>
   
 
         </li>
@@ -457,14 +466,79 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-c6d765e331787103ea5a4c660ad9d263" class="toggle"  />
-    <label for="section-c6d765e331787103ea5a4c660ad9d263" class="flex justify-between">
-      <a href="/docs/collections/" class="">Collections</a>
+    <input type="checkbox" id="section-e06acd393c0cc6e5b27e2cd8945d3dd8" class="toggle"  />
+    <label for="section-e06acd393c0cc6e5b27e2cd8945d3dd8" class="flex justify-between">
+      <a href="/docs/abstractdatatypes/" class="">Abstract data types</a>
     </label>
   
 
           
   <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/list/" class="">List</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/set/" class="">Set</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/map/" class="">Associative array</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/queue/" class="">Stack, queue, priority queue</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/sorting/" class="">Sorting</a>
+  
+
+        </li>
+      
     
   </ul>
 
@@ -478,14 +552,94 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-5d60f9e6a9b7c875f51358c583373282" class="toggle"  />
-    <label for="section-5d60f9e6a9b7c875f51358c583373282" class="flex justify-between">
-      <a href="/docs/datastructures/" class="">Data structures</a>
+    <input type="checkbox" id="section-93b39c27c032f5f72bed81496cbb41e3" class="toggle"  />
+    <label for="section-93b39c27c032f5f72bed81496cbb41e3" class="flex justify-between">
+      <a href="/docs/errors/" class="">Errors</a>
     </label>
   
 
           
   <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a2fa4d1523374519c87fe83f9d8226b6" class="toggle"  />
+    <label for="section-a2fa4d1523374519c87fe83f9d8226b6" class="flex justify-between">
+      <a href="/docs/errors/sections/callstack/" class="">Call stack</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-323953d2054911560fd76ed4505d5bb2" class="toggle"  />
+    <label for="section-323953d2054911560fd76ed4505d5bb2" class="flex justify-between">
+      <a href="/docs/errors/sections/exceptions/" class="">Exceptions</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-03b7629c50286af7810d9917f4bdabd2" class="toggle"  />
+    <label for="section-03b7629c50286af7810d9917f4bdabd2" class="flex justify-between">
+      <a href="/docs/errors/sections/checked/" class="">Checked vs unchecked</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-3add83584009ceb58c28b43e0a2280c9" class="toggle"  />
+    <label for="section-3add83584009ceb58c28b43e0a2280c9" class="flex justify-between">
+      <a href="/docs/errors/sections/custom/" class="">Custom exceptions</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-b9c696d05ab8cb944ddf9cef47a3abb4" class="toggle"  />
+    <label for="section-b9c696d05ab8cb944ddf9cef47a3abb4" class="flex justify-between">
+      <a href="/docs/errors/sections/errors/" class="">Java errors</a>
+    </label>
+  
+
+        </li>
+      
     
   </ul>
 
@@ -508,6 +662,45 @@ https://github.com/alex-shpak/hugo-book
           
   <ul>
     
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/recursion/sections/linear/" class="">Linear recursion</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/recursion/sections/nary/" class="">N-ary recursion</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/recursion/sections/correctness/" class="">Correctness</a>
+  
+
+        </li>
+      
+    
   </ul>
 
         </li>
@@ -528,6 +721,86 @@ https://github.com/alex-shpak/hugo-book
 
           
   <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-09ea3b18445537bd77c25d3db6ab2fcf" class="toggle"  />
+    <label for="section-09ea3b18445537bd77c25d3db6ab2fcf" class="flex justify-between">
+      <a href="/docs/input/sections/files/" class="">Paths and files in Java</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-640b25aadb55f28505bfbbe5a5f7073d" class="toggle"  />
+    <label for="section-640b25aadb55f28505bfbbe5a5f7073d" class="flex justify-between">
+      <a href="/docs/input/sections/read/" class="">Reading from and writing to a file in Java</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-7efe7741b54b5b602db75415a7806ef4" class="toggle"  />
+    <label for="section-7efe7741b54b5b602db75415a7806ef4" class="flex justify-between">
+      <a href="/docs/input/sections/property/" class="">Configuration files</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-37fdfe811c449d15e51a84c19673df2f" class="toggle"  />
+    <label for="section-37fdfe811c449d15e51a84c19673df2f" class="flex justify-between">
+      <a href="/docs/input/sections/serialize/" class="">Serialization</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ec41b3fcd24b301058a1bd1bd7b5c8e7" class="toggle"  />
+    <label for="section-ec41b3fcd24b301058a1bd1bd7b5c8e7" class="flex justify-between">
+      <a href="/docs/input/sections/json/" class="">JSON Serialization</a>
+    </label>
+  
+
+        </li>
+      
     
   </ul>
 
@@ -550,11 +823,6 @@ https://github.com/alex-shpak/hugo-book
           
   <ul>
     
-  </ul>
-
-        </li>
-      
-    
       
         <li>
           
@@ -562,35 +830,11 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-2cb8fe711c517d9ace405264c9b77bcb" class="toggle"  />
-    <label for="section-2cb8fe711c517d9ace405264c9b77bcb" class="flex justify-between">
-      <a href="/docs/streams/" class="">Streams</a>
-    </label>
+    <a href="/docs/regex/sections/usage/" class="">Usage</a>
   
-
-          
-  <ul>
-    
-  </ul>
 
         </li>
       
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-dfedb17969c9b09e6694374c71130ee4" class="toggle"  />
-    <label for="section-dfedb17969c9b09e6694374c71130ee4" class="flex justify-between">
-      <a href="/docs/concurrency/" class="">Concurrency</a>
-    </label>
-  
-
-          
-  <ul>
     
   </ul>
 
@@ -613,7 +857,18 @@ https://github.com/alex-shpak/hugo-book
           
   <ul>
     
-  </ul>
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-796939dc839b82c2ff89d99e47011262" class="toggle"  />
+    <label for="section-796939dc839b82c2ff89d99e47011262" class="flex justify-between">
+      <a href="/docs/unittests/sections/structured/" class="">Code units</a>
+    </label>
+  
 
         </li>
       
@@ -625,16 +880,11 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-1de498fc5e7787931a737882aa193936" class="toggle"  />
-    <label for="section-1de498fc5e7787931a737882aa193936" class="flex justify-between">
-      <a href="/docs/ide/" class="">Using an IDE</a>
+    <input type="checkbox" id="section-ad5c3d825858d4a9ca4ad02d541f7121" class="toggle"  />
+    <label for="section-ad5c3d825858d4a9ca4ad02d541f7121" class="flex justify-between">
+      <a href="/docs/unittests/sections/tdd/" class="">Development driven by unit tests</a>
     </label>
   
-
-          
-  <ul>
-    
-  </ul>
 
         </li>
       
@@ -646,14 +896,14 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-266852d187f25bd262cbe71071953925" class="toggle"  />
-    <label for="section-266852d187f25bd262cbe71071953925" class="flex justify-between">
-      <a href="/docs/factorization/" class="">Code factorization</a>
+    <input type="checkbox" id="section-7e09be54c45521908b57f9eaf194f5f6" class="toggle"  />
+    <label for="section-7e09be54c45521908b57f9eaf194f5f6" class="flex justify-between">
+      <a href="/docs/unittests/sections/junit/" class="">in Java</a>
     </label>
   
 
-          
-  <ul>
+        </li>
+      
     
   </ul>
 
@@ -821,7 +1071,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/git/sections/basics/" class="">Basics: repository, commit and merge</a>
+    <a href="/docs/git/sections/basics/" class="">Basics: repository, commits and branches</a>
   
 
         </li>
@@ -860,7 +1110,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/git/sections/create/" class="">Commands: create or clone a repository</a>
+    <a href="/docs/git/sections/create/" class="">Create or clone a repository</a>
   
 
         </li>
@@ -873,7 +1123,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/git/sections/navigate/" class="">Commands: status, log and checkout</a>
+    <a href="/docs/git/sections/commit/" class="">Add, commit, stash</a>
   
 
         </li>
@@ -886,7 +1136,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/git/sections/commit/" class="">Commands: commit, add and push</a>
+    <a href="/docs/git/sections/branches/" class="">Branches</a>
   
 
         </li>
@@ -899,7 +1149,20 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/git/sections/branches/" class="">Commands: branches</a>
+    <a href="/docs/git/sections/sharing/" class="">Synchronization: remote, push, pull</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/backtracking/" class="">Backtracking</a>
   
 
         </li>
@@ -913,19 +1176,6 @@ https://github.com/alex-shpak/hugo-book
 
   
     <a href="/docs/git/sections/ignore/" class="">Ignoring files</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/git/sections/tips/" class="">Tips</a>
   
 
         </li>
@@ -964,6 +1214,102 @@ https://github.com/alex-shpak/hugo-book
 
           
   <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-0c816e62fd66eb322757addb01600cdd" class="toggle"  />
+    <label for="section-0c816e62fd66eb322757addb01600cdd" class="flex justify-between">
+      <a href="/docs/build/sections/packaging/" class="">Packaging a Java application</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-5537e478f301d8ff4f0b5a7a03c9db32" class="toggle"  />
+    <label for="section-5537e478f301d8ff4f0b5a7a03c9db32" class="flex justify-between">
+      <a href="/docs/build/sections/layout/" class="">Layout</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-33bd3456c4645cc966d192fba400a71a" class="toggle"  />
+    <label for="section-33bd3456c4645cc966d192fba400a71a" class="flex justify-between">
+      <a href="/docs/build/sections/pom/" class="">Configuration file</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-c956d0b428ebb6c853f314459a513393" class="toggle"  />
+    <label for="section-c956d0b428ebb6c853f314459a513393" class="flex justify-between">
+      <a href="/docs/build/sections/artifact/" class="">Artifact</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-d01a14431bc2161a8fed02d90e1a365b" class="toggle"  />
+    <label for="section-d01a14431bc2161a8fed02d90e1a365b" class="flex justify-between">
+      <a href="/docs/build/sections/dependencies/" class="">Dependencies</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-b838446830102a7dece872d673537390" class="toggle"  />
+    <label for="section-b838446830102a7dece872d673537390" class="flex justify-between">
+      <a href="/docs/build/sections/building/" class="">Building</a>
+    </label>
+  
+
+        </li>
+      
     
   </ul>
 
@@ -1006,7 +1352,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/background/sections/cost/" class="">Computational cost</a>
+    <a href="/docs/background/sections/set_tuple_map/" class="">Set, tuple, function</a>
   
 
         </li>
@@ -1019,7 +1365,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/background/sections/graph/" class="">Graphs, trees and lists</a>
+    <a href="/docs/background/sections/order/" class="">Relation, preorder</a>
   
 
         </li>
@@ -1032,54 +1378,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/background/sections/order/" class="">Orders</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/background/sections/set_tuple_map/" class="">Sets, tuples and maps</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-7fbf8d635a58977782e16dc9419d8cdc" class="toggle"  />
-    <label for="section-7fbf8d635a58977782e16dc9419d8cdc" class="flex justify-between">
-      <a href="/docs/template/" class="">Web page template</a>
-    </label>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/template/sections/template/" class="">Stubs</a>
+    <a href="/docs/background/sections/regular/" class="">Regular languages</a>
   
 
         </li>
@@ -1140,7 +1439,12 @@ https://github.com/alex-shpak/hugo-book
   <aside class="hidden clearfix">
     
   
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#definition">Definition</a></li>
+    <li><a href="#illustrations">Illustrations</a></li>
+  </ul>
+</nav>
 
 
 
@@ -1155,6 +1459,152 @@ https://github.com/alex-shpak/hugo-book
   Regular expressions
   <a class="anchor" href="#regular-expressions">#</a>
 </h1>
+<p>The theory of regular expressions (a.k.a. <strong>regexes</strong>) was developed in the 1950&rsquo;s (notably by Stephen Cole Kleene), and regexes have been used since the 1960&rsquo;s for variety of computational tasks.
+Common applications include:</p>
+<ul>
+<li>input string validation (e.g. checking whether a date is valid, or whether a password contains characters of certain types),</li>
+<li>searching and replacing strings (e.g. within an IDE),</li>
+<li>lexical analysis in a compiler.</li>
+</ul>
+<h2 id="definition">
+  Definition
+  <a class="anchor" href="#definition">#</a>
+</h2>
+<p>A <strong>regular expression</strong> is a (finite) expression that describes a (possibly infinite) <a href="">regular language</a>.</p>
+<blockquote class="book-hint warning">
+  <p><strong><em>Syntax.</em></strong>
+A regular expression is either:</p>
+<ul>
+<li>$\emptyset$, or</li>
+<li>a single character (e.g. <code>a</code>), or</li>
+<li>an expression of the form:
+<ul>
+<li>$e_1 | e_2$, or</li>
+<li>$e_1e_2$, or</li>
+<li>$e*$</li>
+</ul>
+</li>
+</ul>
+<p>where $e, e_1, e_2$ are regular expressions.</p>
+
+</blockquote>
+
+<blockquote class="book-hint info">
+  <p><strong><em>Examples.</em></strong></p>
+<p><code>b</code> is a regular expression</p>
+<p><code>b|c</code> is another regular expression</p>
+<p><code>((b\n)|c)*</code> is yet another regular expression</p>
+
+</blockquote>
+
+<p><blockquote class="book-hint warning">
+  <p><strong><em>Precedence.</em></strong> By convention:</p>
+<ul>
+<li>$*$ has precedence over concatenation,</li>
+<li>concatenation has precedence over $|$</li>
+</ul>
+</blockquote>
+
+Precedence allows omitting some parentheses.
+For instance:</p>
+<ul>
+<li><code>a|bc</code> is equivalent to <code>a|(bc)</code></li>
+<li><code>ab*|c*</code> is equivalent to <code>(a(b*))|(c*)</code></li>
+</ul>
+<blockquote class="book-hint warning">
+  <p><strong><em>Semantics.</em></strong>
+If $e$ is a regular expression, we use $\llbracket{e}\rrbracket$ to denote the <a href="">regular language</a> described by $e$.</p>
+<p>Let <code>a</code> be a character, and let $e, e_1, e_2$ be regular expressions.
+Then:</p>
+<ul>
+<li>$\emptyset$ describes the empty language:
+<ul>
+<li>$\llbracket{\emptyset}\rrbracket = $ { }</li>
+</ul>
+</li>
+<li><code>a</code> describes the language that contains only the word <code>a</code>:
+<ul>
+<li>$\llbracket$<code>a</code>$\rrbracket$ = { <code>a</code> }</li>
+</ul>
+</li>
+<li>$e_1|e_2$ describes the union of the languages described by $e_1$ and $e_2$:
+<ul>
+<li>$\llbracket{ e_1 | e_2 }\rrbracket = \llbracket{e_1}\rrbracket \cup \llbracket{e_2}\rrbracket$</li>
+</ul>
+</li>
+<li>$e_1 e_2$ describes the <a href="">element-wise concatenation</a> of the languages described by $e_1$ and $e_2$:
+<ul>
+<li>$\llbracket{e_1e_2}\rrbracket = \llbracket{e_1}\rrbracket \circ \llbracket{e_2}\rrbracket$</li>
+</ul>
+</li>
+<li>$e*$ describes the <a href="">closure</a> of the language described by $e$:
+<ul>
+<li>$\llbracket e * \rrbracket$ = $\llbracket e \rrbracket^*$</li>
+</ul>
+</li>
+</ul>
+
+</blockquote>
+
+<h2 id="illustrations">
+  Illustrations
+  <a class="anchor" href="#illustrations">#</a>
+</h2>
+<blockquote class="book-hint info">
+  <p><strong><em>Examples.</em></strong></p>
+<p>The expression <code>a</code> describes the language { <code>a</code> }</p>
+<p>The expression <code>b</code> describes the language { <code>b</code> }</p>
+<p>The expression <code>ab</code> describes the language { <code>a</code> } $\circ$ { <code>b</code> } = { <code>ab</code> }</p>
+<p>The expression <code>a|b</code> describes the language { <code>a</code> } $\cup$ { <code>b</code> } = {<code>a</code>,<code>b</code>}</p>
+<p>The expression <code>(ab)*</code> describes the language { $\varepsilon$, <code>ab</code>, <code>abab</code>, <code>ababab</code>, &hellip; }</p>
+<p>The expression <code>a(b|c|d)*</code> describes the language of all words over the alphabet { <code>a</code>, <code>b</code>, <code>c</code>, <code>d</code>} that start with an <code>a</code> and contain no other <code>a</code></p>
+<p>The expression <code>(b|c)(a|b|c)*</code> describes the language of all nonempty words over the alphabet { <code>a</code>, <code>b</code>, <code>c</code>} where <code>a</code> cannot appear as the first character.</p>
+
+</blockquote>
+
+
+
+
+
+<div class="book-tabs"><input type="radio" class="toggle" name="tabs-exercise_regex_to_language" id="tabs-exercise_regex_to_language-0" checked="checked" />
+  <label for="tabs-exercise_regex_to_language-0">Exercise</label>
+  <div class="book-tabs-content markdown-inner"><p>What is the language described by each of the following regexes?</p>
+<ol>
+<li><code>ab|a</code></li>
+<li><code>a*a</code></li>
+<li><code>a*ba*</code></li>
+<li><code>a(a|b)*a</code></li>
+<li><code>(a|b)*|(a|b)*c(a|b)*</code></li>
+<li><code>(a|b)*</code></li>
+<li><code>(b*a*)*</code></li>
+<li><code>(b*a)*</code></li>
+</ol></div></div>
+
+
+
+
+
+<div class="book-tabs"><input type="radio" class="toggle" name="tabs-exercise_regexes_same_language" id="tabs-exercise_regexes_same_language-0" checked="checked" />
+  <label for="tabs-exercise_regexes_same_language-0">Exercise</label>
+  <div class="book-tabs-content markdown-inner">As we saw in the exercise above, two regular expressions can describe the same language.
+Can you find more examples?</div></div>
+
+
+
+
+
+<div class="book-tabs"><input type="radio" class="toggle" name="tabs-exercise_language_to_regex" id="tabs-exercise_language_to_regex-0" checked="checked" />
+  <label for="tabs-exercise_language_to_regex-0">Exercise</label>
+  <div class="book-tabs-content markdown-inner"><p>For each of the following regular languages, write a regex that describes this language.</p>
+<ol>
+<li>The language of all words over the alphabet {<code>a</code>,<code>b</code>,<code>c</code>} whose characters (if any) are in alphabetical order (from left to right)</li>
+<li>The language of all words over the alphabet {<code>a</code>,<code>b</code>,<code>c</code>} such that every <code>c</code> is immediately followed by an <code>a</code></li>
+<li>The language of all words over the alphabet {<code>a</code>,<code>b</code>} that start with an <code>a</code>, end with a <code>b</code>, and do not contain two identical consecutive characters</li>
+<li>The language of all words over the alphabet {<code>a</code>,<code>b</code>} that contain at least two consecutive b&rsquo;s</li>
+<li>The language of all words over the alphabet {<code>a</code>,<code>b</code>} that do not contain two consecutive b&rsquo;s</li>
+<li>The language of all words over the alphabet {<code>a</code>,<code>b</code>} that do not contain three consecutive b&rsquo;s</li>
+</ol></div></div>
+
 </article>
  
       
@@ -1194,7 +1644,12 @@ https://github.com/alex-shpak/hugo-book
       <div class="book-toc-content">
         
   
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#definition">Definition</a></li>
+    <li><a href="#illustrations">Illustrations</a></li>
+  </ul>
+</nav>
 
 
  

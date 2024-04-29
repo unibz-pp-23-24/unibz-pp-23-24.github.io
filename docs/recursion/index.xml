@@ -21,5 +21,12 @@
       <guid>https://unibz-pp-23-24.github.io/docs/recursion/sections/nary/</guid>
       <description>N-ary recursion # Definition. A recursive method that is not linear recursive uses n-ary recursion. Specific cases include:&#xA;binary recursion if a method performs up to two recursive calls each time it is executed, ternary recursion if it performs up to three recursive calls each time it is executed, etc. Examples.&#xA;The algorithm seen earlier to print all files in a folder uses n-ary recursion.&#xA;All the binary tree algorithms seen earlier use binary recursion.</description>
     </item>
+    <item>
+      <title>Correctness</title>
+      <link>https://unibz-pp-23-24.github.io/docs/recursion/sections/correctness/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/recursion/sections/correctness/</guid>
+      <description>Correctness # To check whether a recursive method is correct, it is (usually) sufficient to check that the two following two properties hold:&#xA;(Base case(s)). The method is correct for the smallest possible inputs.&#xA;(Inductive case). For an arbitrary $n$:&#xA;$\qquad\qquad$ if the method is correct for all inputs of size $\leq n$, then it is correct for all inputs of size $n+1$.&#xA;Example. Consider the algorithm seen earlier to compute the sum of all nodes in a binary tree, if nodes are instance of the following class:</description>
+    </item>
   </channel>
 </rss>

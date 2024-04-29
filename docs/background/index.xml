@@ -28,5 +28,12 @@
       <guid>https://unibz-pp-23-24.github.io/docs/background/sections/order/</guid>
       <description>Relation, preorder # Relation # Definition. A relation over a set $S$ is a set of tuples over $S$ with the same arity. In particular:&#xA;a binary relation over $S$ is a set of pairs, or equivalently a subset of $S \times S$, a ternary relation over $S$ is a set of triples, or equivalently a subset of $S \times S \times S$, etc. For instance, if \(S = \{a,b,c,d\}\) , then</description>
     </item>
+    <item>
+      <title>Regular languages</title>
+      <link>https://unibz-pp-23-24.github.io/docs/background/sections/regular/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/background/sections/regular/</guid>
+      <description>Regular languages # Definitions # Alphabet # Definition.&#xA;An alphabet is a finite set of characters.&#xA;Examples.&#xA;{a} is a alphabet,&#xA;{a,b} is another alphabet,&#xA;{a, b, 3, 5,\n} is yet another alphabet.&#xA;Warning. A blank space is is a character. The letter $\Sigma$ is often used to refer to an alphabet.&#xA;Word # Definition. A word over an alphabet $\Sigma$ is a (possibly empty) finite sequence of character in $\Sigma$.</description>
+    </item>
   </channel>
 </rss>

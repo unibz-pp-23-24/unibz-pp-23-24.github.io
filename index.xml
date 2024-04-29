@@ -183,6 +183,13 @@
       <description>Teaching staff # Julien Corman will teach the lectures and one lab.&#xA;Albulen Pano will teach the other lab.&#xA;Office hours # If you need additional help with the content of the course, the assignments and/or your project, you can ask for office hours with any (or both) of us.&#xA;These appointments must be scheduled via email (follow the links above for our email addresses).</description>
     </item>
     <item>
+      <title>Usage</title>
+      <link>https://unibz-pp-23-24.github.io/docs/regex/sections/usage/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/regex/sections/usage/</guid>
+      <description>Usage # String validation # In a sense, regular expressions can be viewed as a (relatively inexpressive) programming language for string validation. Precisely, each regular expression $e$ can be viewed as a program that:&#xA;takes as input a word $w$, and returns true if $w$ belongs to the language described by $e$, and returns false otherwise. Pattern matching # Another common usage of regexes is pattern matching.&#xA;In this scenario, each regular expression $e$ can be viewed as a program that:</description>
+    </item>
+    <item>
       <title>Associative array</title>
       <link>https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/map/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -209,6 +216,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/build/sections/pom/</guid>
       <description>Configuration file # The Project Object Model (POM) # The root folder of a Maven project normally contains a configuration file called pom.xml. This file provides the information needed to identify and build the project.&#xA;Hint. Your IDE can generate the backbone of a pom.xml file (for instance, when creating a Maven project). For a basic Java project, the pom.xml file usually has the following structure:&#xA;&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt; &amp;lt;project xmlns=&amp;#34;http://maven.</description>
+    </item>
+    <item>
+      <title>Correctness</title>
+      <link>https://unibz-pp-23-24.github.io/docs/recursion/sections/correctness/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/recursion/sections/correctness/</guid>
+      <description>Correctness # To check whether a recursive method is correct, it is (usually) sufficient to check that the two following two properties hold:&#xA;(Base case(s)). The method is correct for the smallest possible inputs.&#xA;(Inductive case). For an arbitrary $n$:&#xA;$\qquad\qquad$ if the method is correct for all inputs of size $\leq n$, then it is correct for all inputs of size $n+1$.&#xA;Example. Consider the algorithm seen earlier to compute the sum of all nodes in a binary tree, if nodes are instance of the following class:</description>
     </item>
     <item>
       <title>Evaluation</title>
@@ -356,6 +370,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/objects/sections/comparing/</guid>
       <description>Cast and Equality # Cast # Java (as well as C# and C++) provides mechanisms to change the type associated with an object o, using either a supertype of o (this is an upcast), or a subtype of o (this is a downcast). Upcast # Explicit upcasts are uncommon, but may still be useful in some scenarios, e.g. to disambiguate two method calls.&#xA;Implicit upcasts on the other hand are very frequent, when the type of an object cannot be determined at compile time.</description>
+    </item>
+    <item>
+      <title>Regular languages</title>
+      <link>https://unibz-pp-23-24.github.io/docs/background/sections/regular/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/background/sections/regular/</guid>
+      <description>Regular languages # Definitions # Alphabet # Definition.&#xA;An alphabet is a finite set of characters.&#xA;Examples.&#xA;{a} is a alphabet,&#xA;{a,b} is another alphabet,&#xA;{a, b, 3, 5,\n} is yet another alphabet.&#xA;Warning. A blank space is is a character. The letter $\Sigma$ is often used to refer to an alphabet.&#xA;Word # Definition. A word over an alphabet $\Sigma$ is a (possibly empty) finite sequence of character in $\Sigma$.</description>
     </item>
     <item>
       <title>Requirements for this course</title>
