@@ -155,6 +155,13 @@
       <description>Option 2: board game # The second project option available to you consists in developing a video game with mechanics analogous to the ones of Might &amp;amp; Magic: Clash of Heroes or Legend of Solgard.&#xA;If you choose this option, you will be provided:&#xA;a basic graphical user interface (GUI) that you can reuse and/or customize, examples during lectures that you may adapt to your project. Requirements # The minimal requirement to submit your project is a player vs player game playable on a single machine.</description>
     </item>
     <item>
+      <title>Pattern matching</title>
+      <link>https://unibz-pp-23-24.github.io/docs/regex/sections/usage/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/regex/sections/usage/</guid>
+      <description>Pattern matching # Two of the main uses of regexes are:&#xA;string validation, i.e. check whether a string satisfies certain constraints. For instance: has at least one digit and one special character, is a valid address, etc. string search, i.e. identify occurrences of a pattern in a line or in a file. This can be useful for: replacing strings in a file or a folder (e.g. within a codebase), splitting a sentence into (natural language) words, splitting a program into meaningful substrings, e.</description>
+    </item>
+    <item>
       <title>Reading from and writing to a file in Java</title>
       <link>https://unibz-pp-23-24.github.io/docs/input/sections/read/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

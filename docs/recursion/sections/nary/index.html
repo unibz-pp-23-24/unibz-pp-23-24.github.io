@@ -24,7 +24,7 @@ All the binary tree algorithms seen earlier use binary recursion.">
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.dca0929bb7592978a1b84535cc6382ee354fe2881a72cb5495dae6a0d81df16a.js" integrity="sha256-3KCSm7dZKXihuEU1zGOC7jVP4ogacstUldrmoNgd8Wo=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.0afbb8b7f0f9654ee2a1e8883613702295ace88ebe4c3ef033c500b67930817f.js" integrity="sha256-Cvu4t/D5ZU7ioeiINhNwIpWs6I6&#43;TD7wM8UAtnkwgX8=" crossorigin="anonymous"></script>
 
   
 
@@ -827,6 +827,19 @@ https://github.com/alex-shpak/hugo-book
           
   <ul>
     
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/regex/sections/usage/" class="">Pattern matching</a>
+  
+
+        </li>
+      
+    
   </ul>
 
         </li>
@@ -1554,7 +1567,62 @@ We only used it to keep the explanation simple.
   <div class="book-tabs-content markdown-inner"><p>To complete this algorithm, implement (in pseudocode) the auxiliary method</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Type<span style="color:#f92672">[]</span> <span style="color:#a6e22e">merge</span>(Type<span style="color:#f92672">[]</span> A, Type<span style="color:#f92672">[]</span> B)
 </span></span></code></pre></div><p>that takes as input two sorted arrays <code>A</code> and <code>B</code>, and returns a sorted array that contains their values.</p>
-</div></div>
+<p>Try also to write it in such a way that the overall Mergesort algorithm is <a href="https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/sorting/#stable">stable</a>.</p>
+</div><input type="radio" class="toggle" name="tabs-exercise_mergeSort" id="tabs-exercise_mergeSort-1"  />
+  <label for="tabs-exercise_mergeSort-1">Possible solution</label>
+  <div class="book-tabs-content markdown-inner"><p>Iterate over <code>A</code> and <code>B</code> in parallel:</p>
+<ul>
+<li>if <code>A[0]</code> (resp. <code>B[0]</code>) is smaller than <code>B[0]</code> (resp. <code>A[0]</code>),
+then:
+<ul>
+<li>add <code>A[0]</code> (resp. <code>B[0]</code>) to the output array, and</li>
+<li>repeat with <code>A[1]</code> and <code>B[0]</code> (resp. <code>A[0]</code> and <code>B[1]</code>),</li>
+<li>etc.</li>
+</ul>
+</li>
+<li>when reaching the end of <code>A</code> (resp. <code>B</code>), add the remaining elements of <code>B</code> (resp. <code>A</code>) to the output array.</li>
+</ul>
+<p>More precisely:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Type<span style="color:#f92672">[]</span> <span style="color:#a6e22e">merge</span>(Type<span style="color:#f92672">[]</span> A, Type<span style="color:#f92672">[]</span> B){
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Output array</span>
+</span></span><span style="display:flex;"><span>    Type<span style="color:#f92672">[]</span> C <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Type<span style="color:#f92672">[</span>A.<span style="color:#a6e22e">length</span> <span style="color:#f92672">+</span> B.<span style="color:#a6e22e">length</span><span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Index to iterate over A</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> a <span style="color:#f92672">=</span> 0
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Index to iterate over B</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> b <span style="color:#f92672">=</span> 0
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Index to iteratate over C</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> c <span style="color:#f92672">=</span> 0
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// while we have not reached the end of A or B</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> (a <span style="color:#f92672">&lt;</span> A.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&amp;&amp;</span> b <span style="color:#f92672">&lt;</span> B.<span style="color:#a6e22e">length</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>(A<span style="color:#f92672">[</span>a<span style="color:#f92672">]</span> <span style="color:#f92672">&lt;=</span> B<span style="color:#f92672">[</span>b<span style="color:#f92672">]</span>) {
+</span></span><span style="display:flex;"><span>            C<span style="color:#f92672">[</span>c<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> A<span style="color:#f92672">[</span>a<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>            a<span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>        } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>            C<span style="color:#f92672">[</span>c<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> B<span style="color:#f92672">[</span>b<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>            b<span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// If we reached the end of A,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(a <span style="color:#f92672">==</span> A.<span style="color:#a6e22e">length</span>){
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// append all remaining elements of B to the output array.</span>
+</span></span><span style="display:flex;"><span>        append(B, b, C, c)
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Otherwise we reached the end of B.</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// So append all remaining elements of A to the output array.</span>
+</span></span><span style="display:flex;"><span>        append(A, a, C, c)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>append (Type<span style="color:#f92672">[]</span> D, <span style="color:#66d9ef">int</span> d, Type<span style="color:#f92672">[]</span> C, <span style="color:#66d9ef">int</span> c) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> (d <span style="color:#f92672">&lt;</span> D.<span style="color:#a6e22e">length</span>){
+</span></span><span style="display:flex;"><span>        C<span style="color:#f92672">[</span>c<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> D<span style="color:#f92672">[</span>d<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>        d<span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></div></div>
 
 <blockquote class="book-hint info">
   <strong><em>Merge sort in action.</em></strong>
@@ -1633,7 +1701,9 @@ which indicates whether a node has already been visited during a traversal:</p>
   <div class="book-tabs-content markdown-inner"><p>Consider the following graph.</p>
 <p><img src="/img/graphs/graph_labeled.svg" alt="" /></p>
 <p>What does the above algorithm print for input node A, assuming that the children of each node are sorted in label&rsquo;s alphabetical order?</p>
-</div></div>
+</div><input type="radio" class="toggle" name="tabs-exercise_graph_traversal" id="tabs-exercise_graph_traversal-1"  />
+  <label for="tabs-exercise_graph_traversal-1">Solution</label>
+  <div class="book-tabs-content markdown-inner">A B D F C E</div></div>
 
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
