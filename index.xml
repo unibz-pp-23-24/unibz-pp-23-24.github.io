@@ -156,9 +156,9 @@
     </item>
     <item>
       <title>Pattern matching</title>
-      <link>https://unibz-pp-23-24.github.io/docs/regex/sections/usage/</link>
+      <link>https://unibz-pp-23-24.github.io/docs/regex/sections/pattern/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://unibz-pp-23-24.github.io/docs/regex/sections/usage/</guid>
+      <guid>https://unibz-pp-23-24.github.io/docs/regex/sections/pattern/</guid>
       <description>Pattern matching # Two of the main uses of regexes are:&#xA;string validation, i.e. check whether a string satisfies certain constraints. For instance: has at least one digit and one special character, is a valid address, etc. string search, i.e. identify occurrences of a pattern in a line or in a file. This can be useful for: replacing strings in a file or a folder (e.g. within a codebase), splitting a sentence into (natural language) words, splitting a program into meaningful substrings, e.</description>
     </item>
     <item>

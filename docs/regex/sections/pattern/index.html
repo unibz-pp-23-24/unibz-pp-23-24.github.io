@@ -1,0 +1,1899 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Pattern matching # Two of the main uses of regexes are:
+string validation, i.e. check whether a string satisfies certain constraints. For instance: has at least one digit and one special character, is a valid address, etc. string search, i.e. identify occurrences of a pattern in a line or in a file. This can be useful for: replacing strings in a file or a folder (e.g. within a codebase), splitting a sentence into (natural language) words, splitting a program into meaningful substrings, e.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/regex/sections/pattern/">
+  <meta property="og:site_name" content="Programming project 2023-24">
+  <meta property="og:title" content="Pattern matching">
+  <meta property="og:description" content="Pattern matching # Two of the main uses of regexes are:
+string validation, i.e. check whether a string satisfies certain constraints. For instance: has at least one digit and one special character, is a valid address, etc. string search, i.e. identify occurrences of a pattern in a line or in a file. This can be useful for: replacing strings in a file or a folder (e.g. within a codebase), splitting a sentence into (natural language) words, splitting a program into meaningful substrings, e.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Pattern matching | Programming project 2023-24</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" >
+<link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.7dd27dc5ad6dbf08a61af86c09a2a4d36781ac7ffae81ed2a126767cfe9ae1b6.js" integrity="sha256-fdJ9xa1tvwimGvhsCaKk02eBrH/66B7SoSZ2fP6a4bY=" crossorigin="anonymous"></script>
+
+  
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
+  integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0"
+  crossorigin="anonymous"
+/>
+
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
+  integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
+  crossorigin="anonymous"
+></script>
+
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
+  integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);"
+></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+      ],
+    });
+  });
+</script>
+
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Programming project 2023-24</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f1c1e874f9c9473478447bba6c7db644" class="toggle"  />
+    <label for="section-f1c1e874f9c9473478447bba6c7db644" class="flex justify-between">
+      <a href="/docs/intro/" class="">This course</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/schedule/" class="">Schedule</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/lecturers/" class="">Teaching staff</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/evaluation/" class="">Evaluation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/content/" class="">Content</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/board_game/" class="">Board game</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/bibliography/" class="">Bibliography</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-bc4d9392f5af16481cccf0c311076888" class="toggle"  />
+    <label for="section-bc4d9392f5af16481cccf0c311076888" class="flex justify-between">
+      <a href="/docs/project/" class="">Project</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/project/sections/free_project/" class="">Option 1: free project</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/project/sections/board_game/" class="">Option 2: board game</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-3435ead23eba75b5ffeeb8d422f70dea" class="toggle"  />
+    <label for="section-3435ead23eba75b5ffeeb8d422f70dea" class="flex justify-between">
+      <a href="/docs/objects/" class="">Objects and classes</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/objects/" class="">Objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classes/" class="">Class and instance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/inheritance/" class="">Inheritance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/methods/" class="">Instance methods</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/tostring/" class="">Displaying objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/comparing/" class="">Cast and equality</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classesasobjects/" class="">Classes as objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/clone/" class="">Duplicating objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/quasi-objects/" class="">Quasi-objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/encapsulation/" class="">Encapsulation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/quiz/" class="">Quiz</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-48bc13e86f573c257821b397e779b02e" class="toggle"  />
+    <label for="section-48bc13e86f573c257821b397e779b02e" class="flex justify-between">
+      <a href="/docs/interfaces/" class="">Interfaces</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/interfaces/sections/specification/" class="">Specification and programming interface</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/interfaces/sections/java_interfaces/" class="">Java interfaces</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-e06acd393c0cc6e5b27e2cd8945d3dd8" class="toggle"  />
+    <label for="section-e06acd393c0cc6e5b27e2cd8945d3dd8" class="flex justify-between">
+      <a href="/docs/abstractdatatypes/" class="">Abstract data types</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/list/" class="">List</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/set/" class="">Set</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/map/" class="">Associative array</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/queue/" class="">Stack, queue, priority queue</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/sorting/" class="">Sorting</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-93b39c27c032f5f72bed81496cbb41e3" class="toggle"  />
+    <label for="section-93b39c27c032f5f72bed81496cbb41e3" class="flex justify-between">
+      <a href="/docs/errors/" class="">Errors</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a2fa4d1523374519c87fe83f9d8226b6" class="toggle"  />
+    <label for="section-a2fa4d1523374519c87fe83f9d8226b6" class="flex justify-between">
+      <a href="/docs/errors/sections/callstack/" class="">Call stack</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-323953d2054911560fd76ed4505d5bb2" class="toggle"  />
+    <label for="section-323953d2054911560fd76ed4505d5bb2" class="flex justify-between">
+      <a href="/docs/errors/sections/exceptions/" class="">Exceptions</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-03b7629c50286af7810d9917f4bdabd2" class="toggle"  />
+    <label for="section-03b7629c50286af7810d9917f4bdabd2" class="flex justify-between">
+      <a href="/docs/errors/sections/checked/" class="">Checked vs unchecked</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-3add83584009ceb58c28b43e0a2280c9" class="toggle"  />
+    <label for="section-3add83584009ceb58c28b43e0a2280c9" class="flex justify-between">
+      <a href="/docs/errors/sections/custom/" class="">Custom exceptions</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-b9c696d05ab8cb944ddf9cef47a3abb4" class="toggle"  />
+    <label for="section-b9c696d05ab8cb944ddf9cef47a3abb4" class="flex justify-between">
+      <a href="/docs/errors/sections/errors/" class="">Java errors</a>
+    </label>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-1be866adbf7f2244d1773e0d2a159b91" class="toggle"  />
+    <label for="section-1be866adbf7f2244d1773e0d2a159b91" class="flex justify-between">
+      <a href="/docs/recursion/" class="">Recursion</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/recursion/sections/linear/" class="">Linear recursion</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/recursion/sections/nary/" class="">N-ary recursion</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/recursion/sections/correctness/" class="">Correctness</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-b7bc445f96cbe2bd1034c5f1c5d075bb" class="toggle"  />
+    <label for="section-b7bc445f96cbe2bd1034c5f1c5d075bb" class="flex justify-between">
+      <a href="/docs/input/" class="">I/O and serialization</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-09ea3b18445537bd77c25d3db6ab2fcf" class="toggle"  />
+    <label for="section-09ea3b18445537bd77c25d3db6ab2fcf" class="flex justify-between">
+      <a href="/docs/input/sections/files/" class="">Paths and files in Java</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-640b25aadb55f28505bfbbe5a5f7073d" class="toggle"  />
+    <label for="section-640b25aadb55f28505bfbbe5a5f7073d" class="flex justify-between">
+      <a href="/docs/input/sections/read/" class="">Reading from and writing to a file in Java</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-7efe7741b54b5b602db75415a7806ef4" class="toggle"  />
+    <label for="section-7efe7741b54b5b602db75415a7806ef4" class="flex justify-between">
+      <a href="/docs/input/sections/property/" class="">Configuration files</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-37fdfe811c449d15e51a84c19673df2f" class="toggle"  />
+    <label for="section-37fdfe811c449d15e51a84c19673df2f" class="flex justify-between">
+      <a href="/docs/input/sections/serialize/" class="">Serialization</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ec41b3fcd24b301058a1bd1bd7b5c8e7" class="toggle"  />
+    <label for="section-ec41b3fcd24b301058a1bd1bd7b5c8e7" class="flex justify-between">
+      <a href="/docs/input/sections/json/" class="">JSON Serialization</a>
+    </label>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-baf3ea6e28839ac044570d2d313c8794" class="toggle" checked />
+    <label for="section-baf3ea6e28839ac044570d2d313c8794" class="flex justify-between">
+      <a href="/docs/regex/" class="">Regular expressions</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/regex/sections/pattern/" class="active">Pattern matching</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-9d77b970a03dc72b048d9fce7bfe272f" class="toggle"  />
+    <label for="section-9d77b970a03dc72b048d9fce7bfe272f" class="flex justify-between">
+      <a href="/docs/unittests/" class="">Unit tests</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-796939dc839b82c2ff89d99e47011262" class="toggle"  />
+    <label for="section-796939dc839b82c2ff89d99e47011262" class="flex justify-between">
+      <a href="/docs/unittests/sections/structured/" class="">Code units</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ad5c3d825858d4a9ca4ad02d541f7121" class="toggle"  />
+    <label for="section-ad5c3d825858d4a9ca4ad02d541f7121" class="flex justify-between">
+      <a href="/docs/unittests/sections/tdd/" class="">Development driven by unit tests</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-7e09be54c45521908b57f9eaf194f5f6" class="toggle"  />
+    <label for="section-7e09be54c45521908b57f9eaf194f5f6" class="flex justify-between">
+      <a href="/docs/unittests/sections/junit/" class="">in Java</a>
+    </label>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-494fdb80ca3ad5d2868cb487a042ae27" class="toggle"  />
+    <label for="section-494fdb80ca3ad5d2868cb487a042ae27" class="flex justify-between">
+      <a href="/docs/env/" class="">Development environment</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/files/" class="">Hierarchical file system</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/backup/" class="">Backup</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/install/" class="">Software management</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/os/" class="">Operating system</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/requirements/" class="">Requirements for this course</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/ide/" class="">IDE</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/text_editor/" class="">Text editor</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/eval/" class="">Evaluation environment</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/terminal/" class="">Terminal</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-2870a15a3d2cff84408f43cbb1e77f97" class="toggle"  />
+    <label for="section-2870a15a3d2cff84408f43cbb1e77f97" class="flex justify-between">
+      <a href="/docs/git/" class="">git</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/basics/" class="">Basics: repository, commits and branches</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/collaboration/" class="">Basics: network and collaboration</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/config/" class="">Configuration</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/create/" class="">Create or clone a repository</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/commit/" class="">Add, commit, stash</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/branches/" class="">Branches</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/sharing/" class="">Synchronization: remote, push, pull</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/backtracking/" class="">Backtracking</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/ignore/" class="">Ignoring files</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/resources/" class="">To go further</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-44fa5eb3511a340ff4e9042080604b5c" class="toggle"  />
+    <label for="section-44fa5eb3511a340ff4e9042080604b5c" class="flex justify-between">
+      <a href="/docs/build/" class="">Build automation</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-0c816e62fd66eb322757addb01600cdd" class="toggle"  />
+    <label for="section-0c816e62fd66eb322757addb01600cdd" class="flex justify-between">
+      <a href="/docs/build/sections/packaging/" class="">Packaging a Java application</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-5537e478f301d8ff4f0b5a7a03c9db32" class="toggle"  />
+    <label for="section-5537e478f301d8ff4f0b5a7a03c9db32" class="flex justify-between">
+      <a href="/docs/build/sections/layout/" class="">Layout</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-33bd3456c4645cc966d192fba400a71a" class="toggle"  />
+    <label for="section-33bd3456c4645cc966d192fba400a71a" class="flex justify-between">
+      <a href="/docs/build/sections/pom/" class="">Configuration file</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-c956d0b428ebb6c853f314459a513393" class="toggle"  />
+    <label for="section-c956d0b428ebb6c853f314459a513393" class="flex justify-between">
+      <a href="/docs/build/sections/artifact/" class="">Artifact</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-d01a14431bc2161a8fed02d90e1a365b" class="toggle"  />
+    <label for="section-d01a14431bc2161a8fed02d90e1a365b" class="flex justify-between">
+      <a href="/docs/build/sections/dependencies/" class="">Dependencies</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-b838446830102a7dece872d673537390" class="toggle"  />
+    <label for="section-b838446830102a7dece872d673537390" class="flex justify-between">
+      <a href="/docs/build/sections/building/" class="">Building</a>
+    </label>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ffcf8551871937aae0ce60f2b3cc616b" class="toggle"  />
+    <label for="section-ffcf8551871937aae0ce60f2b3cc616b" class="flex justify-between">
+      <a href="/docs/background/" class="">Background</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/background/sections/problem/" class="">Computational problem</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/background/sections/set_tuple_map/" class="">Set, tuple, function</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/background/sections/order/" class="">Relation, preorder</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/background/sections/regular/" class="">Regular languages</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Pattern matching</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#segment">Segment</a></li>
+    <li><a href="#match">Match</a></li>
+    <li><a href="#best-first-match">Best first match</a>
+      <ul>
+        <li><a href="#left-to-right">Left-to-right</a></li>
+        <li><a href="#greedyness">Greedyness</a></li>
+      </ul>
+    </li>
+    <li><a href="#multiple-matches">Multiple matches</a></li>
+    <li><a href="#lazy-closure">Lazy closure</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="pattern-matching">
+  Pattern matching
+  <a class="anchor" href="#pattern-matching">#</a>
+</h1>
+<p>Two of the main uses of regexes are:</p>
+<ul>
+<li><strong>string validation</strong>, i.e. check whether a string satisfies certain constraints. For instance:
+<ul>
+<li>has at least one digit and one special character,</li>
+<li>is a valid address,</li>
+<li>etc.</li>
+</ul>
+</li>
+<li><strong>string search</strong>, i.e. identify occurrences of a pattern in a line or in a file. This can be useful for:
+<ul>
+<li>replacing strings in a file or a folder (e.g. within a codebase),</li>
+<li>splitting a sentence into (natural language) words,</li>
+<li>splitting a program into meaningful substrings, e.g. split the instruction <code>int a=5;</code> into <code>int</code>, <code>a</code>, <code>=</code>, <code>5</code> and <code>;</code>,</li>
+<li>filtering (e.g. with the <code>grep</code> command) of modifying (e.g. with the <code>sed</code> command) lines in a file,</li>
+<li>etc.</li>
+</ul>
+</li>
+</ul>
+<p>In both scenarios, a regex is viewed as a <em>pattern</em> that should be <em>matched</em> against a string.</p>
+<h2 id="segment">
+  Segment
+  <a class="anchor" href="#segment">#</a>
+</h2>
+<p>To make the notion of pattern matching more precise, we will represent a word $w$ as an array of characters, and a segment of $w$ as a (possibly empty) subarray of this array.</p>
+<blockquote class="book-hint warning">
+  <strong><em>Notation.</em></strong> If $w$ is a word,
+we use $w[i .. j)$ for the subsegment of $w$ that starts at index $i$ <em>included</em>, and ends at index $j$ <em>excluded</em>.
+</blockquote>
+
+<blockquote class="book-hint info">
+  <p><strong><em>Example.</em></strong>
+Let $w$ = <code>abca</code>.
+Then:</p>
+<ul>
+<li>$w[0 .. 1)$ is a segment of $w$ with length 1 and word <code>a</code>,</li>
+<li>$w[3 .. 4)$ is another segment of $w$ with length 1 and word <code>a</code></li>
+<li>$w[0 .. 3)$ is a segment of $w$ with length 3 and word <code>abc</code></li>
+<li>$w[0 .. 0)$ is a segment of $w$ with length 0 and word $\varepsilon$</li>
+<li>$w[1 .. 1)$ is another segment of $w$ with length 0 and word $\varepsilon$</li>
+</ul>
+</blockquote>
+
+<h2 id="match">
+  Match
+  <a class="anchor" href="#match">#</a>
+</h2>
+<p>We can now define what a match is:</p>
+<blockquote class="book-hint warning">
+  <p><strong><em>Definition.</em></strong>
+Let $w$ be a word (viewed as an array), and let $e$ be a regex that describes the language $L$.</p>
+<p>A <strong><em>match</em></strong> for $e$ in $w$ is a (possibly empty) segment of $w$ whose word belongs to $L$.</p>
+
+</blockquote>
+
+<blockquote class="book-hint info">
+  <p><strong><em>Example.</em></strong>
+Let $e$ be the regex <code>ab*</code>, and let $w$ be the word <code>aba</code>.</p>
+<p>There are 3 matches for $e$ in $w$:</p>
+<ul>
+<li>$w[0 .. 1)$ with word <code>a</code>,</li>
+<li>$w[0 .. 2)$ with word <code>ab</code>,</li>
+<li>$w[2 .. 3)$ with word <code>a</code></li>
+</ul>
+
+</blockquote>
+
+<blockquote class="book-hint danger">
+  <strong><em>Warning.</em></strong>
+Several matches may carry the same word (e.g. the first and third matches in the example above).
+</blockquote>
+
+<blockquote class="book-hint danger">
+  <strong><em>Warning.</em></strong> Some matches may overlap (e.g. the first and second matches in the example above).
+</blockquote>
+
+
+
+
+
+<div class="book-tabs"><input type="radio" class="toggle" name="tabs-exercise_matches" id="tabs-exercise_matches-0" checked="checked" />
+  <label for="tabs-exercise_matches-0">Exercise</label>
+  <div class="book-tabs-content markdown-inner"><p>Consider the regex $e$ = <code>a*</code> and the word $w$ = <code>aa</code>.</p>
+<p>How many matches are there for $e$ in $w$?</p>
+</div></div>
+
+<h2 id="best-first-match">
+  Best first match
+  <a class="anchor" href="#best-first-match">#</a>
+</h2>
+<p>In practice, (most) regex engines do not identify all matches for a regex in a word.
+Instead, they rely on the notion of <em>best first match</em>.
+<blockquote class="book-hint warning">
+  <p>Let $e$ be a regex, let $w$ be a word, and let $m_1$ and $m_2$ be two matches for $e$ in $w$.</p>
+<p>$m_1$ is <strong>preferred</strong> to $m_2$ if:</p>
+<ul>
+<li>$m_1$ starts before $m_2$: for instance $w[1 .. 4)$ is preferred to $w[3 .. 8)$, or</li>
+<li>they start at the same index and the regex engine favors $m_1$ over $m_2$.</li>
+</ul>
+
+</blockquote>
+</p>
+<p>Preference is a <a href="https://unibz-pp-23-24.github.io/docs/background/sections/order/#total">total order</a> over the matches for for $e$ in $w$, meaning that if there is a match, then there can be at most <em>one</em> best first match.</p>
+<blockquote class="book-hint info">
+  <p><strong><em>Note.</em></strong>
+When $m_1$ and $m_2$ start at the same index (second case above), whether $m_1$ is favored over $m_2$ can vary in subtle ways from one regex engine to the other.
+These preferences are usually explained in algorithmic terms (and half-informally).</p>
+<p>For a reasonably detailed tutorial about the behavior(s) of regex search engine, we refer to <a href="https://www.regular-expressions.info/tutorial.html">this website</a>.
+For Java, the <a href="https://docs.oracle.com/javase/tutorial/essential/regex/index.html">Oracle tutorial</a> on regexes can also be a good entry point (although less precise that the previous reference).</p>
+<p>In this section, we only introduce basic behaviors of regex engines.</p>
+
+</blockquote>
+
+<h3 id="left-to-right">
+  Left-to-right
+  <a class="anchor" href="#left-to-right">#</a>
+</h3>
+<p>Commutative operations are evaluated from <em>left-to-right</em>.</p>
+<blockquote class="book-hint info">
+  <p><strong><em>Example.</em></strong>
+Consider the word $w$ = <code>ab</code>.</p>
+<ul>
+<li>the best first match for the regex <code>ab|a</code> in $w$ is $w[0 .. 2) (with word <code>ab</code>)</li>
+<li>the best first match for the regex <code>a|ab</code> in $w$ is $w[0 .. 1) (with word <code>a</code>)</li>
+</ul>
+</blockquote>
+
+<blockquote class="book-hint danger">
+  <strong><em>Warning.</em></strong>
+As illustrated with the above example, two regexes that describe the same language may have different best first matches (in the same word).
+</blockquote>
+
+<h3 id="greedyness">
+  Greedyness
+  <a class="anchor" href="#greedyness">#</a>
+</h3>
+<p><code>*</code> operators are evaluated (by default) in a <strong>greedy</strong> way.
+This means that the engine
+tries to matches as many characters as possible for these operators.
+More precisely, when encountering a subexpression of the form $e$<code>*</code>:</p>
+<ul>
+<li>the engine first considers the longest possible match for $e$<code>*</code>,</li>
+<li>if this match does not result in a match for the whole expression, then the engine <strong>backtracks</strong> by one character (i.e. reduces the length of the match for $e$<code>*</code> by one), and tries again to find a match for the whole expression,</li>
+<li>if this fails again, then the engine backtracks again by one character,</li>
+<li>etc.</li>
+</ul>
+<blockquote class="book-hint info">
+  <p><strong><em>Examples.</em></strong></p>
+<ul>
+<li>The best first match for the regex <code>a*</code> in <code>aa</code> is the whole word.</li>
+<li>The best first match for the regex <code>a*</code> in <code>aab</code> is $[0 ..2)$ (with word <code>aa</code>).</li>
+<li>The best first match for the regex <code>a*</code> in <code>aabaa</code> is $[0 ..2)$ (with word <code>aa</code>).</li>
+<li>The best first match for the regex <code>(a|b)*b</code> in <code>abab</code> is the whole word. In this case,
+<ul>
+<li>the engine first tries to match <code>(a|b)*</code> against the whole word,</li>
+<li>this does not result in a match for the whole regex, because the trailing <code>b</code> in the regex is not matched,</li>
+<li>so the engine backtracks, and matches <code>(a|b)*</code> against $[0 .. 3)$ (with word <code>aba</code>),</li>
+<li>this results in a match for the whole expression.</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+
+<blockquote class="book-hint danger">
+  <strong><em>Warning.</em></strong>
+The interaction of left-to-right evaluation and greedy matching can be hard to predict.
+This is why we highly recommend writing and debugging regexes with a validation engine, such as this one:
+<a href="https://regex101.com/">https://regex101.com/</a>
+</blockquote>
+
+<blockquote class="book-hint danger">
+  <strong><em>Warning.</em></strong>
+Nested <code>*</code> operators can be costly, due to a combinatorial explosion of the number of attempts to find a match.
+This is sometimes referred to as <a href="https://www.regular-expressions.info/catastrophic.html">catastrophic backtracking</a>
+</blockquote>
+
+<h2 id="multiple-matches">
+  Multiple matches
+  <a class="anchor" href="#multiple-matches">#</a>
+</h2>
+<p>Most regex engines can return best matches in an iterative way.
+Intuitively, the engine &ldquo;consumes&rdquo; the best first matche.
+Then the next match is the best first match in the remaining string, etc.</p>
+<p>More precisely:
+<blockquote class="book-hint warning">
+  <p><strong><em>Definition.</em></strong>
+Let $e$ be regex, let $w$ be a word with lenght $n$, and let $w[i_1 .. j_1)$ be the best first match for $e$ in $w$.</p>
+<p>Then:</p>
+<ul>
+<li>the best second match $w[i_2 .. j_2)$ is the best first match (if any) in $w[j_1 .. n)$,</li>
+<li>the best third match $w[i_3 .. j_3)$ is the best first match (if any) in $w[j_2 .. n)$,</li>
+<li>etc.</li>
+</ul>
+
+</blockquote>
+</p>
+<blockquote class="book-hint info">
+  <p><strong><em>Example.</em></strong>
+Let $e$ be the regex <code>ab*</code>, and let $w$ be the word <code>abac</code>.</p>
+<ul>
+<li>
+<p>The best first match for $e$ in $w$ is $w[0 ..2)$, with word <code>ab</code>.</p>
+</li>
+<li>
+<p>The best second match is the best first match in the rest of $w$, i.e. in $w[2 .. 4)$.
+This match is $w[2 .. 3)$, with word <code>a</code>.</p>
+</li>
+<li>
+<p>There is no third match.</p>
+</li>
+</ul>
+
+</blockquote>
+
+
+
+
+
+<div class="book-tabs"><input type="radio" class="toggle" name="tabs-exercise_greedy_matches" id="tabs-exercise_greedy_matches-0" checked="checked" />
+  <label for="tabs-exercise_greedy_matches-0">Exercise</label>
+  <div class="book-tabs-content markdown-inner"><p>In each of the cases below, find all matches for the regex $e$ in word $w$:</p>
+<table>
+<thead>
+<tr>
+<th>regex $e$</th>
+<th>word $w$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>a</code></td>
+<td><code>aba</code></td>
+</tr>
+<tr>
+<td><code>a*b</code></td>
+<td><code>aba</code></td>
+</tr>
+<tr>
+<td><code>ab*</code></td>
+<td><code>ab</code></td>
+</tr>
+<tr>
+<td><code>ab*</code></td>
+<td><code>aba</code></td>
+</tr>
+<tr>
+<td><code>a*</code></td>
+<td><code>a</code></td>
+</tr>
+<tr>
+<td><code>a*</code></td>
+<td><code>aba</code></td>
+</tr>
+<tr>
+<td><code>(ab)*</code></td>
+<td><code>aba</code></td>
+</tr>
+<tr>
+<td><code>(ab)*</code></td>
+<td><code>abab</code></td>
+</tr>
+</tbody>
+</table></div></div>
+
+<h2 id="lazy-closure">
+  Lazy closure
+  <a class="anchor" href="#lazy-closure">#</a>
+</h2>
+<p>Some regex engines (notably the ones used by default in Java, Javascript, Python, etc.) support alternative ways to evaluate <code>*</code> operators.</p>
+<p>One of them is <strong>lazy</strong> evaluation (also called <strong>reluctant</strong>).
+In this case, the star operator matches the <em>shortest possible</em> segment.</p>
+<blockquote class="book-hint info">
+  <p><strong><em>Examples.</em></strong></p>
+<table>
+<thead>
+<tr>
+<th>regex $e$</th>
+<th>word $w$</th>
+<th>best first match with lazy evaluation of star operators</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>a*</code></td>
+<td><code>aa</code></td>
+<td>$[0 .. 0)$:$\varepsilon$</td>
+</tr>
+<tr>
+<td><code>a*ac</code></td>
+<td><code>ac</code></td>
+<td>$[0 .. 2)$:<code>ac</code></td>
+</tr>
+<tr>
+<td><code>a*ac</code></td>
+<td><code>aac</code></td>
+<td>$[0 .. 3)$:<code>aac</code></td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+
+<blockquote class="book-hint info">
+  <strong><em>Note.</em></strong>
+In a same regular expression, it is possible to specify that some <code>*</code> operators must be evaluated in a lazy way, and others in a greedy way.
+</blockquote>
+
+
+
+
+
+<div class="book-tabs"><input type="radio" class="toggle" name="tabs-exercise_lazy_matches" id="tabs-exercise_lazy_matches-0" checked="checked" />
+  <label for="tabs-exercise_lazy_matches-0">Exercise</label>
+  <div class="book-tabs-content markdown-inner"><p>In each of the cases below, find all matches for the regex $e$ in word $w$, where <code>*</code> operators are evaluated in a lazy way.</p>
+<table>
+<thead>
+<tr>
+<th>regex $e$</th>
+<th>word $w$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ab*</code></td>
+<td><code>ab</code></td>
+</tr>
+<tr>
+<td><code>a*b</code></td>
+<td><code>aba</code></td>
+</tr>
+<tr>
+<td><code>a*ab*</code></td>
+<td><code>ab</code></td>
+</tr>
+<tr>
+<td><code>a*</code></td>
+<td><code>a</code></td>
+</tr>
+<tr>
+<td><code>a*</code></td>
+<td><code>aa</code></td>
+</tr>
+<tr>
+<td><code>b*</code></td>
+<td><code>aa</code></td>
+</tr>
+</tbody>
+</table></div></div>
+
+<blockquote class="book-hint info">
+  <strong><em>Hint.</em></strong>
+Lazy <code>*</code> operators can be hard to predict.
+We will see in the next section how some of them can be avoided.
+</blockquote>
+
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#segment">Segment</a></li>
+    <li><a href="#match">Match</a></li>
+    <li><a href="#best-first-match">Best first match</a>
+      <ul>
+        <li><a href="#left-to-right">Left-to-right</a></li>
+        <li><a href="#greedyness">Greedyness</a></li>
+      </ul>
+    </li>
+    <li><a href="#multiple-matches">Multiple matches</a></li>
+    <li><a href="#lazy-closure">Lazy closure</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

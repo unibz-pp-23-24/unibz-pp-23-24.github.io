@@ -32,7 +32,7 @@ Word # Definition. A word over an alphabet $\Sigma$ is a (possibly empty) finite
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.0afbb8b7f0f9654ee2a1e8883613702295ace88ebe4c3ef033c500b67930817f.js" integrity="sha256-Cvu4t/D5ZU7ioeiINhNwIpWs6I6&#43;TD7wM8UAtnkwgX8=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.7dd27dc5ad6dbf08a61af86c09a2a4d36781ac7ffae81ed2a126767cfe9ae1b6.js" integrity="sha256-fdJ9xa1tvwimGvhsCaKk02eBrH/66B7SoSZ2fP6a4bY=" crossorigin="anonymous"></script>
 
   
 
@@ -842,7 +842,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/regex/sections/usage/" class="">Pattern matching</a>
+    <a href="/docs/regex/sections/pattern/" class="">Pattern matching</a>
   
 
         </li>
@@ -1462,11 +1462,11 @@ https://github.com/alex-shpak/hugo-book
     </li>
     <li><a href="#operations-on-languages">Operations on languages</a>
       <ul>
-        <li><a href="#element-wise-concatenation">Element-wise concatenation</a></li>
+        <li><a href="#concat">Element-wise concatenation</a></li>
         <li><a href="#closure">Closure</a></li>
       </ul>
     </li>
-    <li><a href="#regular-languages-1">Regular languages</a></li>
+    <li><a href="#reglanguage">Regular languages</a></li>
     <li><a href="#properties">Properties</a>
       <ul>
         <li><a href="#regular-expressions">Regular expressions</a></li>
@@ -1570,9 +1570,9 @@ Let $\Sigma$ be the alphabet { <code>a</code>, <code>b</code>}.</p>
   Operations on languages
   <a class="anchor" href="#operations-on-languages">#</a>
 </h2>
-<h3 id="element-wise-concatenation">
+<h3 id="concat">
   Element-wise concatenation
-  <a class="anchor" href="#element-wise-concatenation">#</a>
+  <a class="anchor" href="#concat">#</a>
 </h3>
 <blockquote class="book-hint warning">
   If $L_1$ and $L_2$ are languages, then we use $L_1 \circ L_2$ for the language that consists of the element-wise concatenation of all words in $L_1$ and $L_2$ (in that order).
@@ -1602,9 +1602,9 @@ $L_3 \circ L_4$ = { <code>ab</code>, <code>abac</code>, <code>b</code>, <code>ba
 <li>the set that consists of $L$, the empty word $\varepsilon$, and all possible concatenations of words in $L$.</li>
 <li>the smallest superset of $L\ \cup$ { $\varepsilon$ } that is closed under word concatenation (meaning that if $L^*$ contains two words $w_1$ and $w_2$, then it also contains the word $w_1 w_2$).</li>
 </ul>
-<h2 id="regular-languages-1">
+<h2 id="reglanguage">
   Regular languages
-  <a class="anchor" href="#regular-languages-1">#</a>
+  <a class="anchor" href="#reglanguage">#</a>
 </h2>
 <blockquote class="book-hint warning">
   <p><strong><em>Definition</em>.</strong>
@@ -1668,12 +1668,12 @@ If $\Sigma$ is an alphabet, then the language $\Sigma^*$ of all possible words o
   <a class="anchor" href="#regular-expressions">#</a>
 </h3>
 <p>A language is regular iff it can be described by a <strong>regular expression</strong>.</p>
-<p>Regular expressions are covered in the <a href="">dedicated chapter</a>.</p>
+<p>Regular expressions are covered in the <a href="https://unibz-pp-23-24.github.io/docs/regex/">dedicated chapter</a>.</p>
 <h3 id="finite-automata">
   Finite automata
   <a class="anchor" href="#finite-automata">#</a>
 </h3>
-<p>Regular languages have a close connection to so-called <a href="">finite automata</a>.</p>
+<p>Regular languages have a close connection to so-called <a href="https://en.wikipedia.org/wiki/Finite-state_machine">finite automata</a>.</p>
 <p>A finite automaton can be viewed as a simple program that recognizes a regular language $L$, meaning that the automaton takes as input a word $w$ and returns true iff $w$ belongs to $L$.</p>
 <p>Finite automata are one of the simplest (theoretical) models of computation.
 They (approximately) correspond to computers that cannot use memory.</p>
@@ -1728,11 +1728,11 @@ They (approximately) correspond to computers that cannot use memory.</p>
     </li>
     <li><a href="#operations-on-languages">Operations on languages</a>
       <ul>
-        <li><a href="#element-wise-concatenation">Element-wise concatenation</a></li>
+        <li><a href="#concat">Element-wise concatenation</a></li>
         <li><a href="#closure">Closure</a></li>
       </ul>
     </li>
-    <li><a href="#regular-languages-1">Regular languages</a></li>
+    <li><a href="#reglanguage">Regular languages</a></li>
     <li><a href="#properties">Properties</a>
       <ul>
         <li><a href="#regular-expressions">Regular expressions</a></li>
