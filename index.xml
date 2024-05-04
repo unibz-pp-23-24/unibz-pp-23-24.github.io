@@ -71,6 +71,13 @@
       <description>Paths and files in Java # Java&amp;rsquo;s initial package for input/output (I/O) is called java.io. A central class in this package is File.&#xA;Over the years, programmers realized that this package had limitations: limited error handling, limited support for file metadata (owner, access rights, etc.), and some performance issues.&#xA;With Java 7 (2011), A new I/O package called NIO2 was released, with additional features (and in some cases a more concise syntax).</description>
     </item>
     <item>
+      <title>Pattern matching</title>
+      <link>https://unibz-pp-23-24.github.io/docs/regex/sections/pattern/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/regex/sections/pattern/</guid>
+      <description>Pattern matching # Two of the main uses of regexes are:&#xA;string validation, i.e. check whether a string satisfies certain constraints. For instance: has at least one digit and one special character, is a valid address, etc. string search, i.e. identify occurrences of a pattern in a line or in a file. This can be useful for: replacing strings in a file or a folder (e.g. within a codebase), splitting a sentence into (natural language) words, splitting a program into meaningful substrings, e.</description>
+    </item>
+    <item>
       <title>Schedule</title>
       <link>https://unibz-pp-23-24.github.io/docs/intro/sections/schedule/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -127,7 +134,7 @@
       <description>Hierarchical file system # Tree # Most operating system expose files as a tree (or possibly several trees for Windows).&#xA;Definition. A (nonempty) tree is either:&#xA;a single node (called a leaf), or a node with one or several children that are trees. In this tree, non-leaf nodes are directories, and the leaves can be files, executables, links, empty directories, etc. For instance:&#xA;├── bin │ ├── echo │ └── .</description>
     </item>
     <item>
-      <title>In practice</title>
+      <title>in practice</title>
       <link>https://unibz-pp-23-24.github.io/docs/regex/sections/practice/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/regex/sections/practice/</guid>
@@ -160,13 +167,6 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/project/sections/board_game/</guid>
       <description>Option 2: board game # The second project option available to you consists in developing a video game with mechanics analogous to the ones of Might &amp;amp; Magic: Clash of Heroes or Legend of Solgard.&#xA;If you choose this option, you will be provided:&#xA;a basic graphical user interface (GUI) that you can reuse and/or customize, examples during lectures that you may adapt to your project. Requirements # The minimal requirement to submit your project is a player vs player game playable on a single machine.</description>
-    </item>
-    <item>
-      <title>Pattern matching</title>
-      <link>https://unibz-pp-23-24.github.io/docs/regex/sections/pattern/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://unibz-pp-23-24.github.io/docs/regex/sections/pattern/</guid>
-      <description>Pattern matching # Two of the main uses of regexes are:&#xA;string validation, i.e. check whether a string satisfies certain constraints. For instance: has at least one digit and one special character, is a valid address, etc. string search, i.e. identify occurrences of a pattern in a line or in a file. This can be useful for: replacing strings in a file or a folder (e.g. within a codebase), splitting a sentence into (natural language) words, splitting a program into meaningful substrings, e.</description>
     </item>
     <item>
       <title>Reading from and writing to a file in Java</title>
@@ -244,6 +244,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/objects/sections/inheritance/</guid>
       <description>Inheritance # Subclass # In most (class-based) object-oriented languages, a class A can extend another class B. In this case, A is called a subclass of B. The intuitive meaning is inclusion between their respective sets of instances, i.e. every instance of A is also an instance of B (but the converse may not hold).&#xA;This can be paraphrased in English by &amp;ldquo;every A is a B &amp;ldquo;. For instance:</description>
+    </item>
+    <item>
+      <title>Using Java regexes</title>
+      <link>https://unibz-pp-23-24.github.io/docs/regex/sections/java/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/regex/sections/java/</guid>
+      <description>Using Java regexes # Escaping \ # A regex in Java is a string.&#xA;Recall that within a Java string, a \ character must be escaped (i.e. written \\) to be read as a normal character. So in a Java string that represents a regex, every \ should be written \\.&#xA;Example. The string &amp;quot;[A-Z]\\d+&amp;quot; represents the regex [A-Z]\d+ Hint. This is another good reason for using a regex validation tool (e.</description>
     </item>
     <item>
       <title>Artifact</title>

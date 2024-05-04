@@ -10,19 +10,19 @@ Many regex engines support expressions with features (such as backreferences) th
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/regex/sections/practice/">
   <meta property="og:site_name" content="Programming project 2023-24">
-  <meta property="og:title" content="In practice">
+  <meta property="og:title" content="in practice">
   <meta property="og:description" content="Regexes in practice # Concrete regexes deviate from theoretical ones in several ways. In particular:
 Concrete syntaxes include a wide range of syntactic sugar, i.e. operators that could in theory be expressed in terms of |, * and concatenation.
 Many regex engines support expressions with features (such as backreferences) that go beyond the expressivity of theoretical regexes. Technically, such expressions do not qualify as as regexes (they may describe a language that is not regular).">
   <meta property="og:locale" content="en-us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-<title>In practice | Programming project 2023-24</title>
+<title>in practice | Programming project 2023-24</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.e528531d20b5cd543c1db05693403953a4d3938dcac49c97b3052c545c955970.js" integrity="sha256-5ShTHSC1zVQ8HbBWk0A5U6TTk43KxJyXswUsVFyVWXA=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.adbd2eed9560e9b27902ad001bb10d5a039f9970e511c1d63d2434abc46fa6bc.js" integrity="sha256-rb0u7ZVg6bJ5Aq0AG7ENWgOfmXDlEcHWPSQ0q8Rvprw=" crossorigin="anonymous"></script>
 
   
 
@@ -832,7 +832,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/regex/sections/practice/" class="active">In practice</a>
+    <a href="/docs/regex/sections/pattern/" class="">Pattern matching</a>
   
 
         </li>
@@ -845,7 +845,20 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/regex/sections/pattern/" class="">Pattern matching</a>
+    <a href="/docs/regex/sections/practice/" class="active">in practice</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/regex/sections/java/" class="">Using Java regexes</a>
   
 
         </li>
@@ -1440,7 +1453,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>In practice</strong>
+  <strong>in practice</strong>
 
   <label for="toc-control">
     
@@ -1463,7 +1476,7 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#syntactic-sugar">Syntactic sugar</a></li>
         <li><a href="#lazy-quantification">Lazy quantification</a></li>
         <li><a href="#boundary-matchers">Boundary matchers</a></li>
-        <li><a href="#groups">Groups</a></li>
+        <li><a href="#group">Group</a></li>
         <li><a href="#backreference">Backreference</a></li>
       </ul>
     </li>
@@ -1493,9 +1506,9 @@ In particular:</p>
 <!-- raw HTML omitted -->
 </li>
 <li>
-<p>Many regex engines support expressions with features (such as <a href="">backreferences</a>) that go beyond the expressivity of theoretical regexes.
-Technically, such expressions do not qualify as as regexes (they may describe a language that is not <a href="">regular</a>).
-However, in practice, they are still referred to as &ldquo;regular expressions&rdquo;.
+<p>Many regex engines support expressions with features (such as <a href="#backreference">backreferences</a>) that go beyond the expressivity of theoretical regexes.
+Technically, such expressions do not qualify as as regexes (they may describe a language that is not <a href="https://unibz-pp-23-24.github.io/docs/background/sections/regular/#language">regular</a>).
+However, in practice, they are still referred to as &ldquo;regexes&rdquo;.
 This is also what we will do in this section.</p>
 </li>
 </ol>
@@ -1518,7 +1531,7 @@ Besides, many programming languages (Java, Javascript, Python, C#, etc.) have ad
 <p>A detailed comparison of some the main flavours of regexes can be found <a href="https://gist.github.com/CMCDragonkai/6c933f4a7d713ef712145c5eb94a1816">here</a>.</p>
 <blockquote class="book-hint danger">
   <strong><em>Warning.</em></strong>
-The patterns used in <a href="">.gitigore</a> files are <em>not</em> regular expressions.
+The patterns used in <a href="https://unibz-pp-23-24.github.io/docs/git/sections/ignore/">.gitigore</a> files are <em>not</em> regular expressions.
 </blockquote>
 
 <h2 id="java-regexes">
@@ -1532,12 +1545,12 @@ Most of these are identical in other regex languages inspired by Perl&rsquo;s.</
   Characters
   <a class="anchor" href="#characters">#</a>
 </h3>
-<p>A character in a Java regex can alternatively be written using its <a href="">Unicode hexadecimal identifier</a>, preceded with <code>\u</code>.</p>
+<p>A character in a Java regex can alternatively be written using its <a href="https://en.wikipedia.org/wiki/List_of_Unicode_characters">Unicode hexadecimal identifier</a>, preceded with <code>\u</code>.</p>
 <p><blockquote class="book-hint info">
   <p><strong><em>Examples.</em></strong></p>
 <ul>
-<li>the character <code>A</code> can be written either in its normal form, or as <code>\u0041</code></li>
-<li>the carriage return character can be written <code>\u000D</code></li>
+<li>the character <code>A</code> can be written either in its normal form, or <code>\u0041</code></li>
+<li>the carriage return character can be written either <code>\r</code> or <code>\u000D</code></li>
 </ul>
 </blockquote>
 
@@ -1555,7 +1568,7 @@ In order to be treated as a standard character:</p>
   Syntactic sugar
   <a class="anchor" href="#syntactic-sugar">#</a>
 </h3>
-<p>We have seen in previous sections that in theory, regular expressions only admit <a href="">three operators</a>:</p>
+<p>We have seen in previous sections that in theory, regular expressions only admit <a href="https://unibz-pp-23-24.github.io/docs/regex/#definition">three operators</a>:</p>
 <ul>
 <li>concatenation ($e_1e_2$),</li>
 <li>union ($e_1$<code>|</code>$e_2$) and</li>
@@ -1564,17 +1577,17 @@ In order to be treated as a standard character:</p>
 <p>However, this is impractical for most implication.</p>
 <blockquote class="book-hint info">
   <p><strong><em>Example.</em></strong>
-In order to match a character that is <em>not</em> a digit, with these three operators only, one would need to write an expression that enumerates all other characters in the underlying <a href="">alphabet</a>, e.g.:</p>
+In order to match a character that is <em>not</em> a digit, with these three operators only, one would need to write an expression that enumerates all other characters in the underlying <a href="https://unibz-pp-23-24.github.io/docs/background/sections/regular/#alphabet">alphabet</a>, e.g.:</p>
 <p>$\qquad\qquad$ <code>a | b | c | .. | A | B | C | .. | &amp; | ! | &gt; | ..</code></p>
 <p>For the simple <a href="https://en.wikipedia.org/wiki/ASCII">ASCII</a> alphabet, this is already more than a hundred characters.
-For the <a href="https://en.wikipedia.org/wiki/Unicode">Unicode</a> alphabet, this is more than a million.</p>
+For the Unicode alphabet, this is more than 100 000.</p>
 
 </blockquote>
 
-<p>In practice, regexes include additional operators, most of which are <em>syntactic sugar</em>, i.e. could in theory be expressed with only union, closure and concatenation.</p>
-<h4 id="character-class">
+<p>In practice, regexes include additional operators, most of which are <em>syntactic sugar</em> (i.e. could in theory be expressed with only concatenation, union, and closure).</p>
+<h4 id="characterClass">
   Character class
-  <a class="anchor" href="#character-class">#</a>
+  <a class="anchor" href="#characterClass">#</a>
 </h4>
 <p><blockquote class="book-hint warning">
   Square brackets (<code>[</code> and <code>]</code>) are used to denote a set of characters, called a <strong>character class</strong>.
@@ -1635,10 +1648,10 @@ Most special characters (like <code>*</code> or <code>|</code>) can be used unes
 </blockquote>
 
 <blockquote class="book-hint info">
-  <p><strong><em>Example.</em></strong></p>
+  <p><strong><em>Examples.</em></strong></p>
 <ul>
+<li><code>..</code> matches any string of two characters</li>
 <li><code>.*</code> matches any Unicode string</li>
-<li><code>a|.</code> is equivalent to <code>.</code></li>
 </ul>
 </blockquote>
 
@@ -1661,7 +1674,7 @@ Most special characters (like <code>*</code> or <code>|</code>) can be used unes
 
 <div class="book-tabs"><input type="radio" class="toggle" name="tabs-exercise_html_tag_regex" id="tabs-exercise_html_tag_regex-0" checked="checked" />
   <label for="tabs-exercise_html_tag_regex-0">Exercise</label>
-  <div class="book-tabs-content markdown-inner"><p>Use the regex validation tool <a href="">https://regex101.com/</a> to write a regex whose evaluation matches HTML tags.
+  <div class="book-tabs-content markdown-inner"><p>Use the regex validation tool <a href="https://regex101.com">regex101</a> to write a regex whose evaluation matches HTML tags.
 For instance, in the word</p>
 <p>$\qquad\qquad$<code>&lt;span class=&quot;title&quot;&gt;My Title&lt;/span&gt;</code></p>
 <p>the regex should match
@@ -1677,18 +1690,15 @@ For instance, in the word</p>
 <p>Some escaped characters denote common character classes:</p>
 <p><blockquote class="book-hint warning">
   <ul>
-<li>
-<p><code>\d</code> is equivalent to <code>[0-9]</code></p>
-</li>
-<li>
-<p><code>\w</code> is equivalent to <code>[A-Za-z0-9]</code></p>
-</li>
-<li>
-<p><code>\s</code> stands for any whitespace character. It is equivalent to <code>[ \t\n\x0B\f\r]</code></p>
-</li>
+<li><code>\d</code> is equivalent to <code>[0-9]</code></li>
+<li><code>\w</code> is equivalent to <code>[A-Za-z0-9]</code></li>
+<li><code>\s</code> stands for any whitespace character. It is equivalent to</li>
+</ul>
+<p>$\qquad\qquad$<code>[ \t\n\x0B\f\r]</code></p>
+<ul>
 <li>
 <p><code>\R</code> stands for any Unicode linebreak sequence. It is equivalent to</p>
-<p>$\qquad\qquad$<code>\u000D\u000A|[\u000A\u000B\u000C\u000D\u0085\u2028\u2029]</code></p>
+<p>$\qquad$<code>\u000D\u000A|[\u000A\u000B\u000C\u000D\u0085\u2028\u2029]</code></p>
 </li>
 </ul>
 
@@ -1709,7 +1719,7 @@ The <em>complements</em> of some of these classes are also available:</p>
   <a class="anchor" href="#quantifiers">#</a>
 </h4>
 <p><blockquote class="book-hint warning">
-  If $i \le j \in \mathbb{N}$ then $e$<code>{</code>$i$<code>,</code>$j$<code>}</code> concatenates $e$ with itself at least $i$ times and at most $j$ times, and is evaluated in a <a href="">greedy</a> way.
+  If $i \le j \in \mathbb{N}$ then $e$<code>{</code>$i$<code>,</code>$j$<code>}</code> concatenates $e$ with itself at least $i$ times and at most $j$ times, and is evaluated in a <a href="https://unibz-pp-23-24.github.io/docs/regex/sections/pattern/#greedy">greedy</a> way.
 </blockquote>
 
 <blockquote class="book-hint info">
@@ -1764,7 +1774,7 @@ The <em>complements</em> of some of these classes are also available:</p>
   <a class="anchor" href="#lazy-quantification">#</a>
 </h3>
 <blockquote class="book-hint warning">
-  If $e$ ends with a quantifier (e.g. with <code>*</code> or <code>+</code>) then $e$<code>?</code> forces a <a href="">lazy</a> evaluation of this quantifier.
+  If $e$ ends with a quantifier (e.g. with <code>*</code> or <code>+</code>) then $e$<code>?</code> forces a <a href="https://unibz-pp-23-24.github.io/docs/regex/sections/pattern/#lazy">lazy</a> evaluation of this quantifier.
 </blockquote>
 
 <blockquote class="book-hint info">
@@ -1774,14 +1784,14 @@ The <em>complements</em> of some of these classes are also available:</p>
 <p>In the word $w$ = <code>ab</code>:</p>
 <ul>
 <li><code>ab*</code> matches $w$</li>
-<li><code>ab*?</code> matches $w[0 .. 1)$ (with word <code>a</code>)</li>
+<li><code>ab*?</code> matches $w[0 .. 1)$: <code>a</code></li>
 </ul>
 </li>
 <li>
 <p>In the word $w$ = <code>abbb</code>:</p>
 <ul>
 <li><code>ab{1,3}</code> matches $w$</li>
-<li><code>ab{1,3}?</code> matches $w[0 .. 2)$ (with word <code>ab</code>)</li>
+<li><code>ab{1,3}?</code> matches $w[0 .. 2)$: <code>ab</code></li>
 </ul>
 </li>
 </ul>
@@ -1796,7 +1806,7 @@ The <em>complements</em> of some of these classes are also available:</p>
 <p>In particular:</p>
 <blockquote class="book-hint warning">
   <ul>
-<li><code>^</code> (outside of a <a href="">character class</a> definition) matches the beginning of a string,</li>
+<li><code>^</code> (outside of a <a href="#characterClass">character class</a> definition) matches the beginning of a string,</li>
 <li><code>$</code> matches the end of a string.</li>
 </ul>
 
@@ -1844,9 +1854,9 @@ Consider the string $w$ = <code>User Alice797 is 55 years old</code></p>
 </ul>
 </blockquote>
 
-<h3 id="groups">
-  Groups
-  <a class="anchor" href="#groups">#</a>
+<h3 id="group">
+  Group
+  <a class="anchor" href="#group">#</a>
 </h3>
 <p><blockquote class="book-hint warning">
   A <strong>group</strong> in a regex is the content of a pair of parentheses.
@@ -1881,7 +1891,7 @@ In the regex <code>a(([\d]*)(a|b))</code></p>
 
 <div class="book-tabs"><input type="radio" class="toggle" name="tabs-exercise_html_tag_group_regex" id="tabs-exercise_html_tag_group_regex-0" checked="checked" />
   <label for="tabs-exercise_html_tag_group_regex-0">Exercise</label>
-  <div class="book-tabs-content markdown-inner"><p>Use the regex validation tool <a href="">https://regex101.com/</a> to write a regex with a group that matches what is inside a pair of opening and a closing HTML tags.
+  <div class="book-tabs-content markdown-inner"><p>Use the regex validation tool <a href="https://regex101.com">regex101</a> to write a regex with a group that matches what is inside a pair of opening and a closing HTML tags.
 For instance, in the word</p>
 <p>$\qquad\qquad$<code>&lt;span class=&quot;title&quot;&gt;My Title&lt;/span&gt;  &lt;span class=&quot;content&quot;&gt;Hello&lt;/span&gt;</code></p>
 <p>the group should match
@@ -1930,7 +1940,7 @@ The regex <code>(a|b)\1</code> is equivalent to <code>aa|bb</code>
 
 <blockquote class="book-hint info">
   <strong><em>Note.</em></strong>
-Regexes with backreferences go beyond the expressivity of traditional regular expressions, meaning that they can describe languages that are <em>not</em> <a href="">regular</a>.
+Regexes with backreferences go beyond the expressivity of traditional regular expressions, meaning that they can describe languages that are <em>not</em> <a href="https://unibz-pp-23-24.github.io/docs/background/sections/regular/#language">regular</a>.
 </blockquote>
 
 </article>
@@ -1981,7 +1991,7 @@ Regexes with backreferences go beyond the expressivity of traditional regular ex
         <li><a href="#syntactic-sugar">Syntactic sugar</a></li>
         <li><a href="#lazy-quantification">Lazy quantification</a></li>
         <li><a href="#boundary-matchers">Boundary matchers</a></li>
-        <li><a href="#groups">Groups</a></li>
+        <li><a href="#group">Group</a></li>
         <li><a href="#backreference">Backreference</a></li>
       </ul>
     </li>
