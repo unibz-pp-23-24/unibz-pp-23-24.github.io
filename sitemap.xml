@@ -32,7 +32,11 @@
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/objects/sections/classes/</loc>
   </url><url>
+    <loc>https://unibz-pp-23-24.github.io/docs/immutability/sections/structured/</loc>
+  </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/unittests/sections/structured/</loc>
+  </url><url>
+    <loc>https://unibz-pp-23-24.github.io/docs/immutability/sections/tdd/</loc>
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/unittests/sections/tdd/</loc>
   </url><url>
@@ -109,6 +113,8 @@
     <loc>https://unibz-pp-23-24.github.io/docs/build/sections/dependencies/</loc>
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/objects/sections/tostring/</loc>
+  </url><url>
+    <loc>https://unibz-pp-23-24.github.io/docs/immutability/sections/junit/</loc>
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/unittests/sections/junit/</loc>
   </url><url>
