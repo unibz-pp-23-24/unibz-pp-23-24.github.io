@@ -1,24 +1,31 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=46177&amp;path=livereload" data-no-instant defer></script>
+<head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content=" Mutability # ">
+<meta name="description" content="Mutability # Illustration # Exercise The Java method createUsers below is incorrect.
+Can you see why, and how to fix this?
+public class User { int id; String name; } /* Input: - ids: a nonempty array of user identifiers - names: an array of the same length as &#39;ids&#39; that contains user names Ouput: an array of users of the same lenght as &#39;ids&#39;, such as the i-th user has identifier ids[i] and name names[i] */ User[] createUsers(int[] ids, String[] names){ User[] users = new User[names.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="Mutability" />
-<meta property="og:description" content=" Mutability # " />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:46177/docs/objects/sections/mutability/" /><meta property="article:section" content="docs" />
-
-
-
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/objects/sections/mutability/">
+  <meta property="og:site_name" content="Programming project 2023-24">
+  <meta property="og:title" content="Mutability">
+  <meta property="og:description" content="Mutability # Illustration # Exercise The Java method createUsers below is incorrect.
+Can you see why, and how to fix this?
+public class User { int id; String name; } /* Input: - ids: a nonempty array of user identifiers - names: an array of the same length as &#39;ids&#39; that contains user names Ouput: an array of users of the same lenght as &#39;ids&#39;, such as the i-th user has identifier ids[i] and name names[i] */ User[] createUsers(int[] ids, String[] names){ User[] users = new User[names.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
 <title>Mutability | Programming project 2023-24</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.91af56820c47b19320625d36e40d51b02e71081f2e5ddec7e9c5d3ad34787686.js" integrity="sha256-ka9WggxHsZMgYl025A1RsC5xCB8uXd7H6cXTrTR4doY=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.cd34e7665e4582b3f20fd0a52ceca034c1e4065c86c599e748d998f84b39f3cf.js" integrity="sha256-zTTnZl5FgrPyD9ClLOygNMHkBlyGxZnnSNmY&#43;Es5888=" crossorigin="anonymous"></script>
+
+  
+
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -46,6 +53,17 @@ https://github.com/alex-shpak/hugo-book
   crossorigin="anonymous"
   onload="renderMathInElement(document.body);"
 ></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+      ],
+    });
+  });
+</script>
 
 </head>
 <body dir="ltr">
@@ -122,19 +140,6 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/intro/sections/evaluation/" class="">Evaluation</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
     <a href="/docs/intro/sections/lecturers/" class="">Teaching staff</a>
   
 
@@ -148,7 +153,33 @@ https://github.com/alex-shpak/hugo-book
   
 
   
+    <a href="/docs/intro/sections/evaluation/" class="">Evaluation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
     <a href="/docs/intro/sections/content/" class="">Content</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/board_game/" class="">Board game</a>
   
 
         </li>
@@ -195,7 +226,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/project/project/free_project/" class="">Option 1: free project</a>
+    <a href="/docs/project/sections/free_project/" class="">Option 1: free project</a>
   
 
         </li>
@@ -208,7 +239,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/project/project/board_game/" class="">Option 2: board game</a>
+    <a href="/docs/project/sections/board_game/" class="">Option 2: board game</a>
   
 
         </li>
@@ -255,7 +286,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/objects/sections/classes/" class="">Classes</a>
+    <a href="/docs/objects/sections/classes/" class="">Class and instance</a>
   
 
         </li>
@@ -294,7 +325,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/objects/sections/mutability/" class="active">Mutability</a>
+    <a href="/docs/objects/sections/tostring/" class="">Displaying objects</a>
   
 
         </li>
@@ -307,7 +338,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/objects/sections/comparison/" class="">Comparing objects</a>
+    <a href="/docs/objects/sections/comparing/" class="">Cast and equality</a>
   
 
         </li>
@@ -320,7 +351,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/objects/sections/encapsulation/" class="">Encapsulation</a>
+    <a href="/docs/objects/sections/classesasobjects/" class="">Classes as objects</a>
   
 
         </li>
@@ -333,7 +364,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/objects/sections/clone/" class="">Copying objects</a>
+    <a href="/docs/objects/sections/clone/" class="">Duplicating objects</a>
   
 
         </li>
@@ -359,13 +390,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/objects/sections/casts/" class="">Type checking and cast</a>
+    <a href="/docs/objects/sections/encapsulation/" class="">Encapsulation</a>
   
-
-        </li>
-      
-    
-  </ul>
 
         </li>
       
@@ -377,14 +403,11 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-06ca724a4caafd99788c5f8e355ee319" class="toggle"  />
-    <label for="section-06ca724a4caafd99788c5f8e355ee319" class="flex justify-between">
-      <a href="/docs/encapsulation/" class="">Encapsulation</a>
-    </label>
+    <a href="/docs/objects/sections/mutability/" class="active">Mutability</a>
   
 
-          
-  <ul>
+        </li>
+      
     
       
         <li>
@@ -393,7 +416,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/encapsulation/sections/visibility/" class="">Visibility</a>
+    <a href="/docs/objects/sections/quiz/" class="">Quiz</a>
   
 
         </li>
@@ -427,7 +450,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/interfaces/sections/specification/" class="">Problem, specification and programming interface</a>
+    <a href="/docs/interfaces/sections/specification/" class="">Specification and programming interface</a>
   
 
         </li>
@@ -458,14 +481,79 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-c6d765e331787103ea5a4c660ad9d263" class="toggle"  />
-    <label for="section-c6d765e331787103ea5a4c660ad9d263" class="flex justify-between">
-      <a href="/docs/collections/" class="">Collections</a>
+    <input type="checkbox" id="section-e06acd393c0cc6e5b27e2cd8945d3dd8" class="toggle"  />
+    <label for="section-e06acd393c0cc6e5b27e2cd8945d3dd8" class="flex justify-between">
+      <a href="/docs/abstractdatatypes/" class="">Abstract data types</a>
     </label>
   
 
           
   <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/list/" class="">List</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/set/" class="">Set</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/map/" class="">Associative array</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/queue/" class="">Stack, queue, priority queue</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/sorting/" class="">Sorting</a>
+  
+
+        </li>
+      
     
   </ul>
 
@@ -479,16 +567,27 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-5d60f9e6a9b7c875f51358c583373282" class="toggle"  />
-    <label for="section-5d60f9e6a9b7c875f51358c583373282" class="flex justify-between">
-      <a href="/docs/datastructures/" class="">Data structures</a>
+    <input type="checkbox" id="section-93b39c27c032f5f72bed81496cbb41e3" class="toggle"  />
+    <label for="section-93b39c27c032f5f72bed81496cbb41e3" class="flex justify-between">
+      <a href="/docs/errors/" class="">Errors</a>
     </label>
   
 
           
   <ul>
     
-  </ul>
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a2fa4d1523374519c87fe83f9d8226b6" class="toggle"  />
+    <label for="section-a2fa4d1523374519c87fe83f9d8226b6" class="flex justify-between">
+      <a href="/docs/errors/sections/callstack/" class="">Call stack</a>
+    </label>
+  
 
         </li>
       
@@ -500,14 +599,62 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-266852d187f25bd262cbe71071953925" class="toggle"  />
-    <label for="section-266852d187f25bd262cbe71071953925" class="flex justify-between">
-      <a href="/docs/factorization/" class="">Data structures</a>
+    <input type="checkbox" id="section-323953d2054911560fd76ed4505d5bb2" class="toggle"  />
+    <label for="section-323953d2054911560fd76ed4505d5bb2" class="flex justify-between">
+      <a href="/docs/errors/sections/exceptions/" class="">Exceptions</a>
     </label>
   
 
+        </li>
+      
+    
+      
+        <li>
           
-  <ul>
+  
+  
+
+  
+    <input type="checkbox" id="section-03b7629c50286af7810d9917f4bdabd2" class="toggle"  />
+    <label for="section-03b7629c50286af7810d9917f4bdabd2" class="flex justify-between">
+      <a href="/docs/errors/sections/checked/" class="">Checked vs unchecked</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-3add83584009ceb58c28b43e0a2280c9" class="toggle"  />
+    <label for="section-3add83584009ceb58c28b43e0a2280c9" class="flex justify-between">
+      <a href="/docs/errors/sections/custom/" class="">Custom exceptions</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-b9c696d05ab8cb944ddf9cef47a3abb4" class="toggle"  />
+    <label for="section-b9c696d05ab8cb944ddf9cef47a3abb4" class="flex justify-between">
+      <a href="/docs/errors/sections/errors/" class="">Java errors</a>
+    </label>
+  
+
+        </li>
+      
     
   </ul>
 
@@ -530,6 +677,45 @@ https://github.com/alex-shpak/hugo-book
           
   <ul>
     
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/recursion/sections/linear/" class="">Linear recursion</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/recursion/sections/nary/" class="">N-ary recursion</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/recursion/sections/correctness/" class="">Correctness</a>
+  
+
+        </li>
+      
+    
   </ul>
 
         </li>
@@ -550,6 +736,86 @@ https://github.com/alex-shpak/hugo-book
 
           
   <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-09ea3b18445537bd77c25d3db6ab2fcf" class="toggle"  />
+    <label for="section-09ea3b18445537bd77c25d3db6ab2fcf" class="flex justify-between">
+      <a href="/docs/input/sections/files/" class="">Paths and files in Java</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-640b25aadb55f28505bfbbe5a5f7073d" class="toggle"  />
+    <label for="section-640b25aadb55f28505bfbbe5a5f7073d" class="flex justify-between">
+      <a href="/docs/input/sections/read/" class="">Reading from and writing to a file in Java</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-7efe7741b54b5b602db75415a7806ef4" class="toggle"  />
+    <label for="section-7efe7741b54b5b602db75415a7806ef4" class="flex justify-between">
+      <a href="/docs/input/sections/property/" class="">Configuration files</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-37fdfe811c449d15e51a84c19673df2f" class="toggle"  />
+    <label for="section-37fdfe811c449d15e51a84c19673df2f" class="flex justify-between">
+      <a href="/docs/input/sections/serialize/" class="">Serialization</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ec41b3fcd24b301058a1bd1bd7b5c8e7" class="toggle"  />
+    <label for="section-ec41b3fcd24b301058a1bd1bd7b5c8e7" class="flex justify-between">
+      <a href="/docs/input/sections/json/" class="">JSON Serialization</a>
+    </label>
+  
+
+        </li>
+      
     
   </ul>
 
@@ -572,6 +838,45 @@ https://github.com/alex-shpak/hugo-book
           
   <ul>
     
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/regex/sections/pattern/" class="">Pattern matching</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/regex/sections/practice/" class="">in practice</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/regex/sections/java/" class="">Using Java regexes</a>
+  
+
+        </li>
+      
+    
   </ul>
 
         </li>
@@ -584,16 +889,27 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-2cb8fe711c517d9ace405264c9b77bcb" class="toggle"  />
-    <label for="section-2cb8fe711c517d9ace405264c9b77bcb" class="flex justify-between">
-      <a href="/docs/streams/" class="">Streams</a>
+    <input type="checkbox" id="section-9d77b970a03dc72b048d9fce7bfe272f" class="toggle"  />
+    <label for="section-9d77b970a03dc72b048d9fce7bfe272f" class="flex justify-between">
+      <a href="/docs/unittests/" class="">Unit tests</a>
     </label>
   
 
           
   <ul>
     
-  </ul>
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-796939dc839b82c2ff89d99e47011262" class="toggle"  />
+    <label for="section-796939dc839b82c2ff89d99e47011262" class="flex justify-between">
+      <a href="/docs/unittests/sections/structured/" class="">Code units</a>
+    </label>
+  
 
         </li>
       
@@ -605,14 +921,30 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-dfedb17969c9b09e6694374c71130ee4" class="toggle"  />
-    <label for="section-dfedb17969c9b09e6694374c71130ee4" class="flex justify-between">
-      <a href="/docs/concurrency/" class="">Concurrency</a>
+    <input type="checkbox" id="section-ad5c3d825858d4a9ca4ad02d541f7121" class="toggle"  />
+    <label for="section-ad5c3d825858d4a9ca4ad02d541f7121" class="flex justify-between">
+      <a href="/docs/unittests/sections/tdd/" class="">Development driven by unit tests</a>
     </label>
   
 
+        </li>
+      
+    
+      
+        <li>
           
-  <ul>
+  
+  
+
+  
+    <input type="checkbox" id="section-7e09be54c45521908b57f9eaf194f5f6" class="toggle"  />
+    <label for="section-7e09be54c45521908b57f9eaf194f5f6" class="flex justify-between">
+      <a href="/docs/unittests/sections/junit/" class="">in Java</a>
+    </label>
+  
+
+        </li>
+      
     
   </ul>
 
@@ -642,7 +974,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/env/sections/files/" class="">Hierarchical file systems</a>
+    <a href="/docs/env/sections/files/" class="">Hierarchical file system</a>
   
 
         </li>
@@ -733,6 +1065,19 @@ https://github.com/alex-shpak/hugo-book
   
 
   
+    <a href="/docs/env/sections/eval/" class="">Evaluation environment</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
     <a href="/docs/env/sections/terminal/" class="">Terminal</a>
   
 
@@ -753,12 +1098,142 @@ https://github.com/alex-shpak/hugo-book
   
     <input type="checkbox" id="section-2870a15a3d2cff84408f43cbb1e77f97" class="toggle"  />
     <label for="section-2870a15a3d2cff84408f43cbb1e77f97" class="flex justify-between">
-      <a href="/docs/git/" class="">Data structures</a>
+      <a href="/docs/git/" class="">git</a>
     </label>
   
 
           
   <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/basics/" class="">Basics: repository, commits and branches</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/collaboration/" class="">Basics: network and collaboration</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/config/" class="">Configuration</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/create/" class="">Create or clone a repository</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/commit/" class="">Add, commit, stash</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/branches/" class="">Branches</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/sharing/" class="">Synchronization: remote, push, pull</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/backtracking/" class="">Backtracking</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/ignore/" class="">Ignoring files</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/resources/" class="">To go further</a>
+  
+
+        </li>
+      
     
   </ul>
 
@@ -772,14 +1247,110 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-338e6fc8959ef8fe62f732a3aaafd413" class="toggle"  />
-    <label for="section-338e6fc8959ef8fe62f732a3aaafd413" class="flex justify-between">
-      <a href="/docs/automation/" class="">Build automation</a>
+    <input type="checkbox" id="section-44fa5eb3511a340ff4e9042080604b5c" class="toggle"  />
+    <label for="section-44fa5eb3511a340ff4e9042080604b5c" class="flex justify-between">
+      <a href="/docs/build/" class="">Build automation</a>
     </label>
   
 
           
   <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-0c816e62fd66eb322757addb01600cdd" class="toggle"  />
+    <label for="section-0c816e62fd66eb322757addb01600cdd" class="flex justify-between">
+      <a href="/docs/build/sections/packaging/" class="">Packaging a Java application</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-5537e478f301d8ff4f0b5a7a03c9db32" class="toggle"  />
+    <label for="section-5537e478f301d8ff4f0b5a7a03c9db32" class="flex justify-between">
+      <a href="/docs/build/sections/layout/" class="">Layout</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-33bd3456c4645cc966d192fba400a71a" class="toggle"  />
+    <label for="section-33bd3456c4645cc966d192fba400a71a" class="flex justify-between">
+      <a href="/docs/build/sections/pom/" class="">Configuration file</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-c956d0b428ebb6c853f314459a513393" class="toggle"  />
+    <label for="section-c956d0b428ebb6c853f314459a513393" class="flex justify-between">
+      <a href="/docs/build/sections/artifact/" class="">Artifact</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-d01a14431bc2161a8fed02d90e1a365b" class="toggle"  />
+    <label for="section-d01a14431bc2161a8fed02d90e1a365b" class="flex justify-between">
+      <a href="/docs/build/sections/dependencies/" class="">Dependencies</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-b838446830102a7dece872d673537390" class="toggle"  />
+    <label for="section-b838446830102a7dece872d673537390" class="flex justify-between">
+      <a href="/docs/build/sections/building/" class="">Building</a>
+    </label>
+  
+
+        </li>
+      
     
   </ul>
 
@@ -793,9 +1364,9 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-7b2555d3e7a30cbc7a76587392a99b26" class="toggle"  />
-    <label for="section-7b2555d3e7a30cbc7a76587392a99b26" class="flex justify-between">
-      <a href="/docs/fundamentals/" class="">Fundamentals</a>
+    <input type="checkbox" id="section-ffcf8551871937aae0ce60f2b3cc616b" class="toggle"  />
+    <label for="section-ffcf8551871937aae0ce60f2b3cc616b" class="flex justify-between">
+      <a href="/docs/background/" class="">Background</a>
     </label>
   
 
@@ -809,7 +1380,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/fundamentals/sections/problem/" class="">Computational problem</a>
+    <a href="/docs/background/sections/problem/" class="">Computational problem</a>
   
 
         </li>
@@ -822,7 +1393,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/fundamentals/sections/cost/" class="">Computational cost</a>
+    <a href="/docs/background/sections/set_tuple_map/" class="">Set, tuple, function</a>
   
 
         </li>
@@ -835,7 +1406,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/fundamentals/sections/graph/" class="">Graphs, trees and lists</a>
+    <a href="/docs/background/sections/order/" class="">Relation, preorder</a>
   
 
         </li>
@@ -848,20 +1419,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/fundamentals/sections/order/" class="">Orders</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/fundamentals/sections/set_tuple_map/" class="">Sets, tuples and maps</a>
+    <a href="/docs/background/sections/regular/" class="">Regular languages</a>
   
 
         </li>
@@ -922,7 +1480,24 @@ https://github.com/alex-shpak/hugo-book
   <aside class="hidden clearfix">
     
   
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#illustration">Illustration</a></li>
+    <li><a href="#immutable-object">Immutable object</a>
+      <ul>
+        <li><a href="#benefits">Benefits</a></li>
+        <li><a href="#drawbacks">Drawbacks</a></li>
+      </ul>
+    </li>
+    <li><a href="#in-java">in Java</a>
+      <ul>
+        <li><a href="#final"><code>final</code></a></li>
+        <li><a href="#final-vs-immutable"><code>final</code> vs immutable</a></li>
+        <li><a href="#immutable-types">&ldquo;Immutable&rdquo; types</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 
 
 
@@ -937,6 +1512,310 @@ https://github.com/alex-shpak/hugo-book
   Mutability
   <a class="anchor" href="#mutability">#</a>
 </h1>
+<h2 id="illustration">
+  Illustration
+  <a class="anchor" href="#illustration">#</a>
+</h2>
+<p>
+
+
+
+<div class="book-tabs"><input type="radio" class="toggle" name="tabs-exercise_mutability_intro" id="tabs-exercise_mutability_intro-0" checked="checked" />
+  <label for="tabs-exercise_mutability_intro-0">Exercise</label>
+  <div class="book-tabs-content markdown-inner"><p>The Java method <code>createUsers</code> below is incorrect.</p>
+<p>Can you see why, and how to fix this?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">User</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> id;
+</span></span><span style="display:flex;"><span>    String name;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">/*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">  Input:
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">      - ids: a nonempty array of user identifiers
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">      - names: an array of the same length as &#39;ids&#39; that contains
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">        user names
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">  Ouput: an array of users of the same lenght as &#39;ids&#39;,
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    such as the i-th user has identifier ids[i] and name names[i]
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span>User<span style="color:#f92672">[]</span> <span style="color:#a6e22e">createUsers</span>(<span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> ids, String<span style="color:#f92672">[]</span> names){
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    User<span style="color:#f92672">[]</span> users <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> User<span style="color:#f92672">[</span>names.<span style="color:#a6e22e">length</span><span style="color:#f92672">]</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    User currentUser <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> User();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0; i <span style="color:#f92672">&lt;</span> ids.<span style="color:#a6e22e">length</span>; i<span style="color:#f92672">++</span>){
+</span></span><span style="display:flex;"><span>        currentUser.<span style="color:#a6e22e">id</span> <span style="color:#f92672">=</span> ids<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span>;
+</span></span><span style="display:flex;"><span>        currentUser.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> names<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span>;
+</span></span><span style="display:flex;"><span>        users<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> currentUser;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> users;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></div></div>
+
+In this example, an instance of the class <code>User</code> is a <em>mutable</em> object, meaning that its attributes (<code>id</code> and <code>name</code>) can be modified after the object is created.
+However, these two values (or at least the value of the attribute <code>id</code>) are unlikely to change.</p>
+<p>In Java (or C#, C++, etc.), it is possible to forbid these two values to be modified.
+This would have prevented compilation of the incorrect program above.</p>
+<h2 id="immutable-object">
+  Immutable object
+  <a class="anchor" href="#immutable-object">#</a>
+</h2>
+<blockquote class="book-hint warning">
+  <strong><em>Definition.</em></strong>
+An object is <strong>immutable</strong> if it cannot be modified after its creation.
+</blockquote>
+
+<p>In Java, this means that the object cannot be modified after the execution of the constructor that created it.</p>
+<h3 id="benefits">
+  Benefits
+  <a class="anchor" href="#benefits">#</a>
+</h3>
+<ul>
+<li><strong><em>Easier debugging:</em></strong> as illustrated above, forcing an object to be immutable may prevent an incorrect program to compile.
+Compile-time errors are usually easier to fix that bugs.</li>
+<li><strong><em>Readability:</em></strong> code that modifies or reuses objects can be harder to understand (and <em>reason</em> about) than code that creates (fresh) immutable objects.</li>
+<li><strong><em>Thread-safety:</em></strong> multiple threads can access an immutable object concurrently without <a href="">race condition</a>.</li>
+<li><strong><em>Easier collaboration and maintenance:</em></strong> Alice can safely pass an immutable object to Bob (i.e. make the object visible to Bob&rsquo;s code).
+This will not affect the correctness of Alice&rsquo;s code (because Bob&rsquo;s code cannot modify this object).</li>
+</ul>
+<blockquote>
+<p><strong><em>Reference.</em></strong>
+For a more in-depth analysis of the benefits of immutability, we refer to <a href="https://unibz-pp-23-24.github.io/docs/intro/sections/bibliography/#effectiveJava">Effective Java</a>, item 17:</p>
+<p><em>&ldquo;Classes should be immutable unless there&rsquo;s a very good reason to make them mutable.&rdquo;</em></p>
+</blockquote>
+<blockquote class="book-hint info">
+  <strong><em>Observation.</em></strong>
+Some programming language (like Haskell or Rust), enforce (a form of) immutability by default.
+</blockquote>
+
+<h3 id="drawbacks">
+  Drawbacks
+  <a class="anchor" href="#drawbacks">#</a>
+</h3>
+<ul>
+<li><strong><em>Performance:</em></strong> on a large scale (e.g. thousands of objects), reusing existing object may be more efficient that creating (fresh) immutable ones.</li>
+</ul>
+<h2 id="in-java">
+  in Java
+  <a class="anchor" href="#in-java">#</a>
+</h2>
+<h3 id="final">
+  <code>final</code>
+  <a class="anchor" href="#final">#</a>
+</h3>
+<p>The Java keyword <code>final</code> ensures that a variable cannot change value after its initialization.</p>
+<blockquote class="book-hint info">
+  <p><strong><em>Example.</em></strong>
+The following Java program does not compile.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> a <span style="color:#f92672">=</span> 2;
+</span></span><span style="display:flex;"><span>a <span style="color:#f92672">=</span> 3;
+</span></span></code></pre></div>
+</blockquote>
+
+<p><blockquote class="book-hint danger">
+  <strong><em>Warning.</em></strong>
+This meaning of the keyword <code>final</code> is different from that we already saw in the section on <a href="https://unibz-pp-23-24.github.io/docs/objects/sections/encapsulation/#final">encapsulation</a>.
+</blockquote>
+
+When the variable is an instance attribute, this also forces the attributes to be explicitly instantiated <em>before the execution of the constructor terminates</em>.</p>
+<blockquote class="book-hint info">
+  <p><strong><em>Example.</em></strong>
+The following Java program does not compile.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">User</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> id;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">final</span> String name;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">User</span>(<span style="color:#66d9ef">int</span> id){
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">id</span> <span style="color:#f92672">=</span> id;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+</blockquote>
+
+<p><blockquote class="book-hint info">
+  <p><strong><em>Example.</em></strong>
+The following Java program compiles, and the instances of <code>User</code> are immutable.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">User</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> id;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">final</span> String name;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">User</span>(<span style="color:#66d9ef">int</span> id){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">id</span> <span style="color:#f92672">=</span> id;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+</blockquote>
+
+<blockquote class="book-hint info">
+  <p><strong><em>Note.</em></strong>
+Alternatively, a <code>final</code> instance attribute can be instantiated immediately after it is declared (because this instruction is executed before the constructor).
+For instance, the following program compiles.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">User</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> id;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">final</span> String name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Alice&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">User</span>(<span style="color:#66d9ef">int</span> id){
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">id</span> <span style="color:#f92672">=</span> id;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+</blockquote>
+</p>
+<blockquote class="book-hint info">
+  <strong><em>In practice.</em></strong>
+Your IDE is likely to create <code>final</code> (and <code>private</code>) instance attributes by default.
+</blockquote>
+
+<h3 id="final-vs-immutable">
+  <code>final</code> vs immutable
+  <a class="anchor" href="#final-vs-immutable">#</a>
+</h3>
+<blockquote class="book-hint danger">
+  <strong><em>Warning.</em></strong>
+The <code>final</code> keyword may not be sufficient to enforce immutability.
+In particular, if a <code>final</code> attribute refers to a mutable object.
+</blockquote>
+
+<blockquote class="book-hint info">
+  <p><strong><em>Example.</em></strong>
+Instances of the class <code>User</code> below are <em>not</em> immutable objects, because instances of <code>Address</code> are not immutable.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">User</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> id;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">final</span> Address address;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">User</span>(<span style="color:#66d9ef">int</span> id){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">id</span> <span style="color:#f92672">=</span> id;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">address</span> <span style="color:#f92672">=</span> address;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Address</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> streetNumber;
+</span></span><span style="display:flex;"><span>    String street;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> zipCode;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Address</span>(<span style="color:#66d9ef">int</span> streetNumber, String street, <span style="color:#66d9ef">int</span> zipCode){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">streetNumber</span> <span style="color:#f92672">=</span> streetNumber;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">street</span> <span style="color:#f92672">=</span> street;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">zipCode</span> <span style="color:#f92672">=</span> zipCode;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>For instance, the following code compiles.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Address myAddress <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Address(14, <span style="color:#e6db74">&#34;via Goethe&#34;</span>, 39100);
+</span></span><span style="display:flex;"><span>User myUser <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> User(1, myAddress);
+</span></span><span style="display:flex;"><span>myAddress.<span style="color:#a6e22e">streetNumber</span> <span style="color:#f92672">=</span> 12;
+</span></span></code></pre></div>
+</blockquote>
+
+<h3 id="immutable-types">
+  &ldquo;Immutable&rdquo; types
+  <a class="anchor" href="#immutable-types">#</a>
+</h3>
+<p>We already saw several types of Java object and quasi-objects that we called &ldquo;immutable&rdquo;, namely:</p>
+<ul>
+<li>records,</li>
+<li>sets (resp. lists, maps) that are declared with <code>Set.of()</code> (resp. <code>List.of()</code>, <code>Map.of()</code>),</li>
+<li>strings,</li>
+<li>boxed types (like <code>Integer</code> or <code>Boolean</code>).</li>
+</ul>
+<p>For the first two cases, &ldquo;immutable&rdquo; is a slight (albeit frequent) abuse of language.</p>
+<h4 id="record">
+  Record
+  <a class="anchor" href="#record">#</a>
+</h4>
+<p>The attributes of a record are (implicitly) final.
+Therefore the following records are immutable:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">record</span> <span style="color:#a6e22e">User</span>(<span style="color:#66d9ef">int</span> id, String name){};
+</span></span></code></pre></div><p>However, as we saw above, the following records are technically not immutable (unless <code>Address</code> is itself immutable):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">record</span> <span style="color:#a6e22e">User</span>(<span style="color:#66d9ef">int</span> id, String name, Address address){};
+</span></span></code></pre></div><h4 id="set-list-map">
+  Set, List, Map
+  <a class="anchor" href="#set-list-map">#</a>
+</h4>
+<p>If a set (resp. list, map) is created with <code>Set.of()</code> (resp. <code>List.of()</code>, <code>Map.of()</code>), then its content is final.</p>
+<p><blockquote class="book-hint info">
+  <p><strong><em>Example.</em></strong>
+The following Java program throws an <code>UnsupportedOperation</code> exception.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Set<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> mySet <span style="color:#f92672">=</span> Set.<span style="color:#a6e22e">of</span>(2, 3);
+</span></span><span style="display:flex;"><span>mySet.<span style="color:#a6e22e">add</span>(5);
+</span></span></code></pre></div>
+</blockquote>
+
+However, if the set (resp. list, map) contains references, then the objects that are referred to may be mutable.</p>
+<blockquote class="book-hint info">
+  <p><strong><em>Example.</em></strong>
+The following program compiles (assuming that the attribute <code>streetNumber</code> of the class <code>Address</code> is not final).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Address myAddress <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Address(14, <span style="color:#e6db74">&#34;via Goethe&#34;</span>, 39100);
+</span></span><span style="display:flex;"><span>Set<span style="color:#f92672">&lt;</span>Address<span style="color:#f92672">&gt;</span> mySet <span style="color:#f92672">=</span> Set.<span style="color:#a6e22e">of</span>(myAddress);
+</span></span><span style="display:flex;"><span>myAddress.<span style="color:#a6e22e">streetNumber</span> <span style="color:#f92672">=</span> 12;
+</span></span></code></pre></div>
+</blockquote>
+
+<p>By design, most other implementations of <code>List</code>, <code>Set</code> and <code>Map</code> are <em>not</em> final (this is expected, for performance reasons).</p>
+<p>However, in some scenarios, a program may create a (small) list (resp. set, map) that is not meant to be modified.
+For instance, the list of all files in a folder.
+In this case, the list (resp. set, map) can be made final.
+A common way to achieve this is the class <a href="https://guava.dev/releases/23.0/api/docs/com/google/common/collect/ImmutableList.html">ImmutableList</a> (resp. <a href="https://guava.dev/releases/23.0/api/docs/com/google/common/collect/ImmutableSet.html">ImmutableSet</a>, <a href="https://guava.dev/releases/23.0/api/docs/com/google/common/collect/ImmutableMap.html">ImmutableMap</a>) of the Guava library.</p>
+<p>To use Guava in a Maven project, declare this <a href="https://unibz-pp-23-24.github.io/docs/build/sections/dependencies/#mavenDep">dependency</a>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;dependencies&gt;</span>
+</span></span><span style="display:flex;"><span>  ...
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;groupId&gt;</span>com.google.guava<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;artifactId&gt;</span>guava<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;version&gt;</span>33.1.0-jre<span style="color:#f92672">&lt;/version&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;/dependency&gt;</span>
+</span></span><span style="display:flex;"><span>  ...
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/dependencies&gt;</span>
+</span></span></code></pre></div><p>or in a Gradle project:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span>implementation group: <span style="color:#e6db74">&#39;com.google.guava&#39;</span><span style="color:#f92672">,</span> name: <span style="color:#e6db74">&#39;guava&#39;</span><span style="color:#f92672">,</span> version: <span style="color:#e6db74">&#39;33.1.0-jre&#39;</span>
+</span></span></code></pre></div><h4 id="string">
+  String
+  <a class="anchor" href="#string">#</a>
+</h4>
+<p>Java&rsquo;s strings are immutable.</p>
+<p>However, the class <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/StringBuilder.html">StringBuilder</a> implements a mutable string.
+It provides instance methods like <code>append</code>, <code>insert</code>, <code>delete</code> (a substring), etc.</p>
+<h4 id="boxed-types">
+  Boxed types
+  <a class="anchor" href="#boxed-types">#</a>
+</h4>
+<p>Java&rsquo;s <a href="https://unibz-pp-23-24.github.io/docs/objects/sections/quasi-objects/#boxedTypes">boxed types</a> (like <code>Integer</code> or <code>Boolean</code>) are immutable.</p>
+<p>However, each boxed types has a mutable &ldquo;atomic&rdquo; counterpart, e.g. <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/atomic/AtomicInteger.html">AtomicInteger</a> for <code>Integer</code> and <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/atomic/AtomicBoolean.html">AtomicBoolean</a> for <code>Boolean</code>.</p>
+<p>The main purpose of these classes is to offer build-in <a href="">thread safety</a> for common sequences of operations.
+For instance, <code>AtomicInteger</code> provides a method equivalent to <code>i++</code>, but thread-safe (note that <code>i++</code> is a shortcut for three operations: read the value, increment it and write it back).</p>
+
+
+
+
+<div class="book-tabs"><input type="radio" class="toggle" name="tabs-exercise_mutability_atomic" id="tabs-exercise_mutability_atomic-0" checked="checked" />
+  <label for="tabs-exercise_mutability_atomic-0">Exercise</label>
+  <div class="book-tabs-content markdown-inner"><p>What does the following program output?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Boolean b <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Create an atomic boolean with value true</span>
+</span></span><span style="display:flex;"><span>AtomicBoolean ab <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> AtomicBoolean(<span style="color:#66d9ef">true</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Boolean<span style="color:#f92672">&gt;</span> booleans <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> LinkedList<span style="color:#f92672">&lt;&gt;</span>();
+</span></span><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>AtomicBoolean<span style="color:#f92672">&gt;</span> aBooleans <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> LinkedList<span style="color:#f92672">&lt;&gt;</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>booleans.<span style="color:#a6e22e">add</span>(b);
+</span></span><span style="display:flex;"><span>aBooleans.<span style="color:#a6e22e">add</span>(ab);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>b <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Set the value of the atomic boolean to false</span>
+</span></span><span style="display:flex;"><span>ab.<span style="color:#a6e22e">set</span>(<span style="color:#66d9ef">false</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>booleans.<span style="color:#a6e22e">add</span>(b);
+</span></span><span style="display:flex;"><span>aBooleans.<span style="color:#a6e22e">add</span>(ab);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(booleans);
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(aBooleans);
+</span></span></code></pre></div></div></div>
+
 </article>
  
       
@@ -976,7 +1855,24 @@ https://github.com/alex-shpak/hugo-book
       <div class="book-toc-content">
         
   
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#illustration">Illustration</a></li>
+    <li><a href="#immutable-object">Immutable object</a>
+      <ul>
+        <li><a href="#benefits">Benefits</a></li>
+        <li><a href="#drawbacks">Drawbacks</a></li>
+      </ul>
+    </li>
+    <li><a href="#in-java">in Java</a>
+      <ul>
+        <li><a href="#final"><code>final</code></a></li>
+        <li><a href="#final-vs-immutable"><code>final</code> vs immutable</a></li>
+        <li><a href="#immutable-types">&ldquo;Immutable&rdquo; types</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 
 
  

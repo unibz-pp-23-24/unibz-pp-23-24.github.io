@@ -78,6 +78,13 @@
       <description>Encapsulation # Encapsulation is a (vague) principle in object-oriented programming that refers to &amp;ldquo;bundling&amp;rdquo; data with the code that operates on it, and restrict visibility of this code and data to other components of a system. From Wikipedia: &amp;ldquo;Essentially, encapsulation prevents external code from being concerned [&amp;hellip;]&amp;rdquo;&#xA;Each component hides its internal logic by exposing only data and methods that other components may need.&#xA;Example. As we saw earlier, in our game, the &amp;ldquo;view&amp;rdquo; component (which is in charge of rendering the game on screen) may buffer the game snapshots that it receives from the backend, if these snapshots are received faster than they can be displayed.</description>
     </item>
     <item>
+      <title>Mutability</title>
+      <link>https://unibz-pp-23-24.github.io/docs/objects/sections/mutability/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/objects/sections/mutability/</guid>
+      <description>Mutability # Illustration # Exercise The Java method createUsers below is incorrect.&#xA;Can you see why, and how to fix this?&#xA;public class User { int id; String name; } /* Input: - ids: a nonempty array of user identifiers - names: an array of the same length as &amp;#39;ids&amp;#39; that contains user names Ouput: an array of users of the same lenght as &amp;#39;ids&amp;#39;, such as the i-th user has identifier ids[i] and name names[i] */ User[] createUsers(int[] ids, String[] names){ User[] users = new User[names.</description>
+    </item>
+    <item>
       <title>Quiz</title>
       <link>https://unibz-pp-23-24.github.io/docs/objects/sections/quiz/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

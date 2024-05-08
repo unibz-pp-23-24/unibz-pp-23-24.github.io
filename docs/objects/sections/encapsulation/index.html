@@ -22,7 +22,7 @@ Example. As we saw earlier, in our game, the “view” component (which is in c
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.6e9da1031bc401785bbe5398ab34b16f51e63ad03e09d80bfc9949101ff3c8ab.js" integrity="sha256-bp2hAxvEAXhbvlOYqzSxb1HmOtA&#43;CdgL/JlJEB/zyKs=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.cd34e7665e4582b3f20fd0a52ceca034c1e4065c86c599e748d998f84b39f3cf.js" integrity="sha256-zTTnZl5FgrPyD9ClLOygNMHkBlyGxZnnSNmY&#43;Es5888=" crossorigin="anonymous"></script>
 
   
 
@@ -391,6 +391,19 @@ https://github.com/alex-shpak/hugo-book
 
   
     <a href="/docs/objects/sections/encapsulation/" class="active">Encapsulation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/mutability/" class="">Mutability</a>
   
 
         </li>
@@ -1474,7 +1487,7 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#to-go-further-inheritance-violates-encapsulation">To go further: inheritance violates encapsulation</a>
       <ul>
         <li><a href="#composition">Composition</a></li>
-        <li><a href="#prevent-overriding-or-inheritance">Prevent overriding or inheritance</a></li>
+        <li><a href="#final">Prevent overriding or inheritance</a></li>
       </ul>
     </li>
   </ul>
@@ -1805,9 +1818,9 @@ However, this requires re-implementing all methods of the original class (albeit
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">isEmpty</span>(){
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> set.<span style="color:#a6e22e">isempty</span>();
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h3 id="prevent-overriding-or-inheritance">
+</span></span></code></pre></div><h3 id="final">
   Prevent overriding or inheritance
-  <a class="anchor" href="#prevent-overriding-or-inheritance">#</a>
+  <a class="anchor" href="#final">#</a>
 </h3>
 <p>As show by the example above, in order to improve encapsulation, one may want in some scenarios to forbid overriding a method or extending a class.
 In Java, this can be enforced with the keyword <code>final</code>, for instance:</p>
@@ -1866,7 +1879,7 @@ In Java, this can be enforced with the keyword <code>final</code>, for instance:
     <li><a href="#to-go-further-inheritance-violates-encapsulation">To go further: inheritance violates encapsulation</a>
       <ul>
         <li><a href="#composition">Composition</a></li>
-        <li><a href="#prevent-overriding-or-inheritance">Prevent overriding or inheritance</a></li>
+        <li><a href="#final">Prevent overriding or inheritance</a></li>
       </ul>
     </li>
   </ul>
