@@ -1,11 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Streams on Programming project 2023-24</title>
-    <link>http://localhost:1313/docs/streams/</link>
-    <description>Recent content in Streams on Programming project 2023-24</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <title>Lambda expressions and streams on Programming project 2023-24</title>
+    <link>https://unibz-pp-23-24.github.io/docs/streams/</link>
+    <description>Recent content in Lambda expressions and streams on Programming project 2023-24</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="http://localhost:1313/docs/streams/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://unibz-pp-23-24.github.io/docs/streams/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pure function</title>
+      <link>https://unibz-pp-23-24.github.io/docs/streams/sections/pure/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/streams/sections/pure/</guid>
+      <description>Pure function # Side effects # Definition. A method has side effects if it modifies resources (variable, object, array, etc.) that are accessible outside of the method&amp;rsquo;s scope. Definition # Intuitively, a pure function is a method that behaves like a mathematical function. More precisely:&#xA;Definition. A pure function is a method that:&#xA;returns a value (i.e. with a return type different from void in Java), returns the same value if called twice with the same arguments, has no side-effect.</description>
+    </item>
+    <item>
+      <title>Lambda expression</title>
+      <link>https://unibz-pp-23-24.github.io/docs/streams/sections/lambda/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/streams/sections/lambda/</guid>
+      <description>Lambda expressions # In programming languages like Java, C#, C++ or Javascript, the term lambda expression (sometimes called closure expression) is used to denote an anonymous method.&#xA;The term is a (loose) reference to lambda calculus, a model of computation exclusively based on function composition and application.&#xA;Example # An anonymous method is a method without a name.&#xA;For instance, the two following Java methods only differ by their name:</description>
+    </item>
   </channel>
 </rss>

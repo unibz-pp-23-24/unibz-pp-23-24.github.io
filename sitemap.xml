@@ -22,6 +22,8 @@
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/regex/sections/pattern/</loc>
   </url><url>
+    <loc>https://unibz-pp-23-24.github.io/docs/streams/sections/pure/</loc>
+  </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/intro/sections/schedule/</loc>
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/interfaces/sections/specification/</loc>
@@ -32,11 +34,7 @@
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/objects/sections/classes/</loc>
   </url><url>
-    <loc>https://unibz-pp-23-24.github.io/docs/immutability/sections/structured/</loc>
-  </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/unittests/sections/structured/</loc>
-  </url><url>
-    <loc>https://unibz-pp-23-24.github.io/docs/immutability/sections/tdd/</loc>
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/unittests/sections/tdd/</loc>
   </url><url>
@@ -47,6 +45,8 @@
     <loc>https://unibz-pp-23-24.github.io/docs/regex/sections/practice/</loc>
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/interfaces/sections/java_interfaces/</loc>
+  </url><url>
+    <loc>https://unibz-pp-23-24.github.io/docs/streams/sections/lambda/</loc>
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/build/sections/layout/</loc>
   </url><url>
@@ -114,8 +114,6 @@
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/objects/sections/tostring/</loc>
   </url><url>
-    <loc>https://unibz-pp-23-24.github.io/docs/immutability/sections/junit/</loc>
-  </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/unittests/sections/junit/</loc>
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/env/sections/os/</loc>
@@ -167,6 +165,8 @@
     <loc>https://unibz-pp-23-24.github.io/docs/regex/</loc>
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/env/sections/terminal/</loc>
+  </url><url>
+    <loc>https://unibz-pp-23-24.github.io/docs/streams/</loc>
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/objects/sections/encapsulation/</loc>
   </url><url>

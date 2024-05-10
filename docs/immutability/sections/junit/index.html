@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Unit tests in Java # Several frameworks are available in Java for unit tests. Popular frameworks include:
@@ -9,7 +9,7 @@ Install Junit 5 with Maven # Junit 5 can be used in a Maven project by declaring
 &lt;dependencies&gt; ... &lt;dependency&gt; &lt;groupId&gt;org.junit.jupiter&lt;/groupId&gt; &lt;artifactId&gt;junit-jupiter&lt;/artifactId&gt; &lt;version&gt;5.10.2&lt;/version&gt; &lt;scope&gt;test&lt;/scope&gt; &lt;/dependency&gt; ... &lt;/dependencies&gt; &lt;build&gt; &lt;plugins&gt; ... &lt;plugin&gt; &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt; &lt;artifactId&gt;maven-surefire-plugin&lt;/artifactId&gt; &lt;version&gt;3.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/immutability/sections/junit/">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/immutability/sections/junit/">
   <meta property="og:site_name" content="Programming project 2023-24">
   <meta property="og:title" content="in Java">
   <meta property="og:description" content="Unit tests in Java # Several frameworks are available in Java for unit tests. Popular frameworks include:
@@ -24,7 +24,7 @@ Install Junit 5 with Maven # Junit 5 can be used in a Maven project by declaring
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.cd34e7665e4582b3f20fd0a52ceca034c1e4065c86c599e748d998f84b39f3cf.js" integrity="sha256-zTTnZl5FgrPyD9ClLOygNMHkBlyGxZnnSNmY&#43;Es5888=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.676f1296c5029e645b25c1751a320f8fffcf6c95ed3c646f1fa26632f551dd92.js" integrity="sha256-Z28SlsUCnmRbJcF1GjIPj//PbJXtPGRvH6JmMvVR3ZI=" crossorigin="anonymous"></script>
 
   
 
@@ -1533,7 +1533,7 @@ Popular frameworks include:</p>
   Install Junit 5 with Maven
   <a class="anchor" href="#install-junit-5-with-maven">#</a>
 </h2>
-<p>Junit 5 can be used in a Maven project by declaring the following <a href="https://unibz-pp-23-24.github.io/docs/build/sections/dependencies/">dependency</a> and <a href="https://unibz-pp-23-24.github.io/docs/build/sections/building/#installPlugin">plugin</a></p>
+<p>Junit 5 can be used in a Maven project by declaring the following <a href="http://localhost:1313/docs/build/sections/dependencies/">dependency</a> and <a href="http://localhost:1313/docs/build/sections/building/#installPlugin">plugin</a></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;dependencies&gt;</span>
 </span></span><span style="display:flex;"><span>  ...
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;dependency&gt;</span>
@@ -1565,7 +1565,7 @@ Popular frameworks include:</p>
   Maven
   <a class="anchor" href="#maven">#</a>
 </h3>
-<p>Recall that in a <a href="https://unibz-pp-23-24.github.io/docs/build/sections/layout/">Maven project</a>, by default:</p>
+<p>Recall that in a <a href="http://localhost:1313/docs/build/sections/layout/">Maven project</a>, by default:</p>
 <ul>
 <li>source code for unit tests is located in the directory <code>src/test/java</code>,</li>
 <li>resources for unit tests (e.g. data) are located in the directory <code>src/test/resources</code>.</li>
@@ -1582,7 +1582,7 @@ Popular frameworks include:</p>
 <blockquote class="book-hint info">
   <strong><em>Hint.</em></strong>
 If you chose the
-<a href="https://unibz-pp-23-24.github.io/docs/project/sections/board_game/">board game</a> as your project,
+<a href="http://localhost:1313/docs/project/sections/board_game/">board game</a> as your project,
 then you can write JUnit 5 tests under <code>core/src/test/java</code>.
 You will also find (dummy) unit tests in the directory <code>core/src/test/java/dummy</code>.
 </blockquote>
@@ -1752,7 +1752,7 @@ For instance:</p>
 </h3>
 <p>For a Maven project, the command</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mvn test
-</span></span></code></pre></div><p>executes all phases that precede the <code>test</code> phase (e.g. <code>compile</code> and <code>test-compile</code>) in Maven&rsquo;s <a href="https://unibz-pp-23-24.github.io/docs/build/sections/building/#phases">default lifecycle</a>, and then executes all unit tests under <code>src/test/java</code>.</p>
+</span></span></code></pre></div><p>executes all phases that precede the <code>test</code> phase (e.g. <code>compile</code> and <code>test-compile</code>) in Maven&rsquo;s <a href="http://localhost:1313/docs/build/sections/building/#phases">default lifecycle</a>, and then executes all unit tests under <code>src/test/java</code>.</p>
 <blockquote class="book-hint info">
   <strong><em>Note.</em></strong>
 The source code of unit tests (and related resources) is by default <em>excluded</em> form the output of the <code>package</code> phase (e.g. from the jar produced by Maven).

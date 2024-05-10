@@ -78,6 +78,13 @@
       <description>Pattern matching # Two of the main uses of regexes are:&#xA;string validation, i.e. check whether a string satisfies certain constraints. For instance: has at least one digit and one special character, is a valid address, etc. string search, i.e. identify occurrences of a pattern in a line or in a file. This can be useful for: replacing strings in a file or a folder (e.g. within a codebase), splitting a sentence into (natural language) words, splitting a program into meaningful substrings, e.</description>
     </item>
     <item>
+      <title>Pure function</title>
+      <link>https://unibz-pp-23-24.github.io/docs/streams/sections/pure/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/streams/sections/pure/</guid>
+      <description>Pure function # Side effects # Definition. A method has side effects if it modifies resources (variable, object, array, etc.) that are accessible outside of the method&amp;rsquo;s scope. Definition # Intuitively, a pure function is a method that behaves like a mathematical function. More precisely:&#xA;Definition. A pure function is a method that:&#xA;returns a value (i.e. with a return type different from void in Java), returns the same value if called twice with the same arguments, has no side-effect.</description>
+    </item>
+    <item>
       <title>Schedule</title>
       <link>https://unibz-pp-23-24.github.io/docs/intro/sections/schedule/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -107,24 +114,10 @@
     </item>
     <item>
       <title>Code units</title>
-      <link>https://unibz-pp-23-24.github.io/docs/immutability/sections/structured/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://unibz-pp-23-24.github.io/docs/immutability/sections/structured/</guid>
-      <description>Code units # A unit test is meant to test to a small unit of code. This is only possible if the program contains small units of code.&#xA;Therefore unit testing is closely related to decomposing complex problems into smaller ones (and creating methods that solve these smaller problems).&#xA;Benefits # Possible benefits of decomposing complex methods into smaller ones are:&#xA;readability, easier debugging, opportunities to factorize code (the same small methods can be called in several places), easier collaboration (two person modifying the same method in parallel is less likely if the method is small), Some good indicators that auxiliary methods may be helpful are:</description>
-    </item>
-    <item>
-      <title>Code units</title>
       <link>https://unibz-pp-23-24.github.io/docs/unittests/sections/structured/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/unittests/sections/structured/</guid>
       <description>Code units # A unit test is meant to test to a small unit of code. This is only possible if the program contains small units of code.&#xA;Therefore unit testing is closely related to decomposing complex problems into smaller ones (and creating methods that solve these smaller problems).&#xA;Benefits # Possible benefits of decomposing complex methods into smaller ones are:&#xA;readability, easier debugging, opportunities to factorize code (the same small methods can be called in several places), easier collaboration (two person modifying the same method in parallel is less likely if the method is small), Some good indicators that auxiliary methods may be helpful are:</description>
-    </item>
-    <item>
-      <title>Development driven by unit tests</title>
-      <link>https://unibz-pp-23-24.github.io/docs/immutability/sections/tdd/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://unibz-pp-23-24.github.io/docs/immutability/sections/tdd/</guid>
-      <description>Development driven by unit tests # Test-driven development (TDD) consists in converting a program&amp;rsquo;s requirements into test cases, before the program is fully developed. Note that this approach is not restricted to unit tests.&#xA;In practice # For a non-trivial method:&#xA;Create a method stub (e.g. return null is the method&amp;rsquo;s return type is a reference type). Specify the expected behavior (input and expected output) of the method. Write one or several test(s) for this method, illustrating the specification.</description>
     </item>
     <item>
       <title>Development driven by unit tests</title>
@@ -160,6 +153,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/interfaces/sections/java_interfaces/</guid>
       <description>Java interfaces # A Java interface is a programming interface with additional (object-oriented) features.&#xA;Syntactically, a Java interface is similar to a class. But (in its simplest form), it contains no code. Instead, it specifies the behavior of some methods (which are implemented in some classes).&#xA;Examples # The implementation of our game contains an interface called Snapshot, which describes what a game snapshot is. This interface specifies (among others) a method called getSizeOfReinforcement, as follows:</description>
+    </item>
+    <item>
+      <title>Lambda expression</title>
+      <link>https://unibz-pp-23-24.github.io/docs/streams/sections/lambda/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/streams/sections/lambda/</guid>
+      <description>Lambda expressions # In programming languages like Java, C#, C++ or Javascript, the term lambda expression (sometimes called closure expression) is used to denote an anonymous method.&#xA;The term is a (loose) reference to lambda calculus, a model of computation exclusively based on function composition and application.&#xA;Example # An anonymous method is a method without a name.&#xA;For instance, the two following Java methods only differ by their name:</description>
     </item>
     <item>
       <title>Layout</title>
@@ -363,13 +363,6 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/objects/sections/tostring/</guid>
       <description>Displaying objects # The class Object # Java has a native class called Object with 11 instance methods. Every Java class implicitly extends Object, including user-defined classes. Therefore any Java class inherits these methods. The method toString # toString is one of the methods of the class Object. Here is (part of) its specification:&#xA;/** Returns a string representation of the object. * In general, the toString method returns a string that * &amp;#34;textually represents&amp;#34; this object.</description>
-    </item>
-    <item>
-      <title>in Java</title>
-      <link>https://unibz-pp-23-24.github.io/docs/immutability/sections/junit/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://unibz-pp-23-24.github.io/docs/immutability/sections/junit/</guid>
-      <description>Unit tests in Java # Several frameworks are available in Java for unit tests. Popular frameworks include:&#xA;JUnit 4 JUnit 5 TestNG Spock In this section, we focus on Junit 5.&#xA;Install Junit 5 with Maven # Junit 5 can be used in a Maven project by declaring the following dependency and plugin&#xA;&amp;lt;dependencies&amp;gt; ... &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.junit.jupiter&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;junit-jupiter&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;5.10.2&amp;lt;/version&amp;gt; &amp;lt;scope&amp;gt;test&amp;lt;/scope&amp;gt; &amp;lt;/dependency&amp;gt; ... &amp;lt;/dependencies&amp;gt; &amp;lt;build&amp;gt; &amp;lt;plugins&amp;gt; ... &amp;lt;plugin&amp;gt; &amp;lt;groupId&amp;gt;org.apache.maven.plugins&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;maven-surefire-plugin&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;3.</description>
     </item>
     <item>
       <title>in Java</title>
