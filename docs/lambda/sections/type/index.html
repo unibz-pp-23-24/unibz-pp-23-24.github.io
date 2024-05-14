@@ -24,7 +24,7 @@ In other words, this is a function with domain int and codomain int.">
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.0a1a860fcbd950a4054e41dc9f89869ecebb1ef96aecd4f3a2d9d9c04800bb92.js" integrity="sha256-ChqGD8vZUKQFTkHcn4mGns67Hvlq7NTzotnZwEgAu5I=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.bd9a760c2a99a65f988988e660aa6fd0f0614610382130f7a609cffd8fa6f59d.js" integrity="sha256-vZp2DCqZpl&#43;YiYjmYKpv0PBhRhA4ITD3pgnP/Y&#43;m9Z0=" crossorigin="anonymous"></script>
 
   
 
@@ -1681,7 +1681,7 @@ In this definition, &ldquo;standard&rdquo; method stands for a method that does 
 <blockquote class="book-hint info">
   <p><strong><em>Example.</em></strong>
 The following is a functional interface, which describes the type <code>Unit</code> $\times$ <code>Integer</code> $\to$ <code>Unit</code>.</p>
-<p>Any method with type <code>Unit</code> $\times$ <code>Integer</code> $\to$ <code>Unit</code> is a valid instance of this interface.</p>
+<p>Any method with type <code>Unit</code> $\times$ <code>Integer</code> $\to$ <code>Unit</code> implements this interface.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">UnitPerIntegerToUnit</span> {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    Unit <span style="color:#a6e22e">myMethod</span>(Unit unit, Integer x);
@@ -1730,8 +1730,8 @@ Its method is called <code>apply</code>.
 <blockquote class="book-hint info">
   <p><strong><em>Examples.</em></strong></p>
 <ul>
-<li>a method with type <code>Unit</code> $\to$ <code>Integer</code> is an instance of the functional interface <code>Function&lt;Unit, Integer&gt;</code></li>
-<li>a method with type <code>Unit</code> $\to$ <code>Unit</code> is an instance of the functional interface <code>Function&lt;Unit, Unit&gt;</code></li>
+<li>a method with type <code>Unit</code> $\to$ <code>Integer</code> implements the functional interface <code>Function&lt;Unit, Integer&gt;</code></li>
+<li>a method with type <code>Unit</code> $\to$ <code>Unit</code> implements the functional interface <code>Function&lt;Unit, Unit&gt;</code></li>
 </ul>
 </blockquote>
 
@@ -1747,8 +1747,8 @@ Its method is called <code>accept</code>.
 <blockquote class="book-hint info">
   <p><strong><em>Examples.</em></strong></p>
 <ul>
-<li>a method with type <code>Integer</code> $\to$ <code>void</code> is an instance of the functional interface <code>Consumer&lt;Integer&gt;</code></li>
-<li>a method with type <code>Unit</code> $\to$ <code>void</code> is an instance of the functional interface <code>Consumer&lt;Unit&gt;</code></li>
+<li>a method with type <code>Integer</code> $\to$ <code>void</code> implements the functional interface <code>Consumer&lt;Integer&gt;</code></li>
+<li>a method with type <code>Unit</code> $\to$ <code>void</code> implements the functional interface <code>Consumer&lt;Unit&gt;</code></li>
 </ul>
 </blockquote>
 
@@ -1764,8 +1764,8 @@ Its method is called <code>get</code>.
 <blockquote class="book-hint info">
   <p><strong><em>Examples.</em></strong></p>
 <ul>
-<li>a method with type <code>void</code> $\to$ <code>Integer</code> is an instance of the functional interface <code>Supplier&lt;Integer&gt;</code></li>
-<li>a method with type <code>void</code> $\to$ <code>Unit</code> is an instance of the functional interface <code>Supplier&lt;Integer&gt;</code></li>
+<li>a method with type <code>void</code> $\to$ <code>Integer</code> implements the functional interface <code>Supplier&lt;Integer&gt;</code></li>
+<li>a method with type <code>void</code> $\to$ <code>Unit</code> implements the functional interface <code>Supplier&lt;Integer&gt;</code></li>
 </ul>
 </blockquote>
 

@@ -22,7 +22,7 @@ returns a value, returns the same value if called twice with the same arguments,
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.0a1a860fcbd950a4054e41dc9f89869ecebb1ef96aecd4f3a2d9d9c04800bb92.js" integrity="sha256-ChqGD8vZUKQFTkHcn4mGns67Hvlq7NTzotnZwEgAu5I=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.bd9a760c2a99a65f988988e660aa6fd0f0614610382130f7a609cffd8fa6f59d.js" integrity="sha256-vZp2DCqZpl&#43;YiYjmYKpv0PBhRhA4ITD3pgnP/Y&#43;m9Z0=" crossorigin="anonymous"></script>
 
   
 
@@ -1676,6 +1676,20 @@ A <strong>pure function</strong> is a method that:</p>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0; i <span style="color:#f92672">&lt;</span> ids.<span style="color:#a6e22e">length</span>; i<span style="color:#f92672">++</span>){
 </span></span><span style="display:flex;"><span>        users<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> User(ids<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span>, names<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span>);
 </span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></div><input type="radio" class="toggle" name="tabs-exercise_pure_function" id="tabs-exercise_pure_function-1"  />
+  <label for="tabs-exercise_pure_function-1">Possible solution</label>
+  <div class="book-tabs-content markdown-inner"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> ids <span style="color:#f92672">=</span> parseIds();
+</span></span><span style="display:flex;"><span>String<span style="color:#f92672">[]</span> names <span style="color:#f92672">=</span> parseNames();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>User<span style="color:#f92672">[]</span> users <span style="color:#f92672">=</span> createUsers(ids, names);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>User<span style="color:#f92672">[]</span> <span style="color:#a6e22e">createUsers</span>(<span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> ids, String<span style="color:#f92672">[]</span> names) {
+</span></span><span style="display:flex;"><span>    User<span style="color:#f92672">[]</span> users <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> User<span style="color:#f92672">[</span>ids.<span style="color:#a6e22e">length</span><span style="color:#f92672">]</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0; i <span style="color:#f92672">&lt;</span> ids.<span style="color:#a6e22e">length</span>; i<span style="color:#f92672">++</span>){
+</span></span><span style="display:flex;"><span>        users<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> User(ids<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span>, names<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> users;
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div></div></div>
 
