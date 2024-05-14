@@ -1,31 +1,29 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Lambda and streams # Over the years, imperative languages (like Java, C\C&#43;&#43;, C#, Python, etc.) incorporated features borrowed from functional programming.
-Java 8 was an important step in this direction, with the introduction of lambda expressions, which are largely used in combination with streams.
-In this section, we provide a (shallow) introduction to streams and lambda expressions, with an emphasis on practice.">
+<meta name="description" content="Callback methods and lambda expressions # Over the years, imperative languages (like Java, C\C&#43;&#43;, C#, Python, etc.) incorporated features borrowed from functional programming.
+Java 8 was an important step in this direction, with the introduction of lambda expressions, which are largely used in combination with streams.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/streams/">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/streams/">
   <meta property="og:site_name" content="Programming project 2023-24">
-  <meta property="og:title" content="Lambda expressions and streams">
-  <meta property="og:description" content="Lambda and streams # Over the years, imperative languages (like Java, C\C&#43;&#43;, C#, Python, etc.) incorporated features borrowed from functional programming.
-Java 8 was an important step in this direction, with the introduction of lambda expressions, which are largely used in combination with streams.
-In this section, we provide a (shallow) introduction to streams and lambda expressions, with an emphasis on practice.">
+  <meta property="og:title" content="Callback methods and lamda expressions">
+  <meta property="og:description" content="Callback methods and lambda expressions # Over the years, imperative languages (like Java, C\C&#43;&#43;, C#, Python, etc.) incorporated features borrowed from functional programming.
+Java 8 was an important step in this direction, with the introduction of lambda expressions, which are largely used in combination with streams.">
   <meta property="og:locale" content="en-us">
   <meta property="og:type" content="website">
-<title>Lambda expressions and streams | Programming project 2023-24</title>
+<title>Callback methods and lamda expressions | Programming project 2023-24</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.f6dd360a00166dd346fe5cece6e0ce8f4a4d575a46f3418c0680ceab3d7e06aa.js" integrity="sha256-9t02CgAWbdNG/lzs5uDOj0pNV1pG80GMBoDOqz1&#43;Bqo=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.9b39820fd178d81bde755fce54c79ddd432178ae456613c225addc4a0af63966.js" integrity="sha256-mzmCD9F42BvedV/OVMed3UMheK5FZhPCJa3cSgr2OWY=" crossorigin="anonymous"></script>
 
   
 
-<link rel="alternate" type="application/rss+xml" href="https://unibz-pp-23-24.github.io/docs/streams/index.xml" title="Programming project 2023-24" />
+<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/docs/streams/index.xml" title="Programming project 2023-24" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -891,7 +889,7 @@ https://github.com/alex-shpak/hugo-book
   
     <input type="checkbox" id="section-2cb8fe711c517d9ace405264c9b77bcb" class="toggle" checked />
     <label for="section-2cb8fe711c517d9ace405264c9b77bcb" class="flex justify-between">
-      <a href="/docs/streams/" class="active">Lambda expressions and streams</a>
+      <a href="/docs/streams/" class="active">Callback methods and lamda expressions</a>
     </label>
   
 
@@ -918,7 +916,72 @@ https://github.com/alex-shpak/hugo-book
   
 
   
+    <a href="/docs/streams/sections/anonymous/" class="">Anonymous method</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/streams/sections/type/" class="">Type of a method</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/streams/sections/callback/" class="">Callback method</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
     <a href="/docs/streams/sections/lambda/" class="">Lambda expression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/streams/sections/captured/" class="">Captured variables</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/streams/sections/stream/" class="">Java stream pipeline</a>
   
 
         </li>
@@ -1513,7 +1576,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Lambda expressions and streams</strong>
+  <strong>Callback methods and lamda expressions</strong>
 
   <label for="toc-control">
     
@@ -1538,13 +1601,12 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown book-article"><h1 id="lambda-and-streams">
-  Lambda and streams
-  <a class="anchor" href="#lambda-and-streams">#</a>
+  <article class="markdown book-article"><h1 id="callback-methods-and-lambda-expressions">
+  Callback methods and lambda expressions
+  <a class="anchor" href="#callback-methods-and-lambda-expressions">#</a>
 </h1>
 <p>Over the years, imperative languages (like Java, C\C++, C#, Python, etc.) incorporated features borrowed from functional programming.</p>
 <p>Java 8 was an important step in this direction, with the introduction of <a href="">lambda expressions</a>, which are largely used in combination with <a href="">streams</a>.</p>
-<p>In this section, we provide a (shallow) introduction to streams and lambda expressions, with an emphasis on practice.</p>
 </article>
  
       
