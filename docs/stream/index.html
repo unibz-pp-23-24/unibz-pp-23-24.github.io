@@ -1,19 +1,15 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Streams in Java # A Java stream is a sequence of objects. When it is finite, a stream may be viewed as a list with limitations: a stream can only be iterated over, from left to right, and only once (this is called consuming a stream).
-Pipeline # Stream computations are specified as a pipeline, which consists of:
-a source (e.g. a collection or an I/O channel), a sequence of zero or more intermediate operations, each of which transforms a stream into another stream (e.">
+<meta name="description" content="Streams in Java # A Java stream is a sequence of objects. When it is finite, a stream may be viewed as a list with limitations: a stream can only be iterated over, from left to right, and only once (this is called consuming a stream).">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/stream/">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/stream/">
   <meta property="og:site_name" content="Programming project 2023-24">
   <meta property="og:title" content="Streams in Java">
-  <meta property="og:description" content="Streams in Java # A Java stream is a sequence of objects. When it is finite, a stream may be viewed as a list with limitations: a stream can only be iterated over, from left to right, and only once (this is called consuming a stream).
-Pipeline # Stream computations are specified as a pipeline, which consists of:
-a source (e.g. a collection or an I/O channel), a sequence of zero or more intermediate operations, each of which transforms a stream into another stream (e.">
+  <meta property="og:description" content="Streams in Java # A Java stream is a sequence of objects. When it is finite, a stream may be viewed as a list with limitations: a stream can only be iterated over, from left to right, and only once (this is called consuming a stream).">
   <meta property="og:locale" content="en-us">
   <meta property="og:type" content="website">
 <title>Streams in Java | Programming project 2023-24</title>
@@ -21,11 +17,11 @@ a source (e.g. a collection or an I/O channel), a sequence of zero or more inter
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.59728c52ee6e8bc37c780fb1e80ec3c4d9c5da9f7f47df5fdd9c19351cb0c3e3.js" integrity="sha256-WXKMUu5ui8N8eA&#43;x6A7DxNnF2p9/R99f3ZwZNRyww&#43;M=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.afa616ea1cc8137c4a6fc74fe7e03e03a8f2bdd96b19b3b5c68d5a50ad6de170.js" integrity="sha256-r6YW6hzIE3xKb8dP5&#43;A&#43;A6jyvdlrGbO1xo1aUK1t4XA=" crossorigin="anonymous"></script>
 
   
 
-<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/docs/stream/index.xml" title="Programming project 2023-24" />
+<link rel="alternate" type="application/rss+xml" href="https://unibz-pp-23-24.github.io/docs/stream/index.xml" title="Programming project 2023-24" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -997,6 +993,19 @@ https://github.com/alex-shpak/hugo-book
           
   <ul>
     
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/pipeline/" class="">Pipeline</a>
+  
+
+        </li>
+      
+    
   </ul>
 
         </li>
@@ -1600,19 +1609,7 @@ https://github.com/alex-shpak/hugo-book
   <aside class="hidden clearfix">
     
   
-<nav id="TableOfContents">
-  <ul>
-    <li><a href="#pipeline">Pipeline</a></li>
-    <li><a href="#example">Example</a></li>
-    <li><a href="#explanation">Explanation</a>
-      <ul>
-        <li><a href="#source">Source</a></li>
-        <li><a href="#intermediate-operations">Intermediate operations</a></li>
-        <li><a href="#terminal-operation">Terminal operation</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
+<nav id="TableOfContents"></nav>
 
 
 
@@ -1631,119 +1628,7 @@ https://github.com/alex-shpak/hugo-book
   A Java <strong>stream</strong> is a sequence of objects.
 </blockquote>
 
-When it is finite, a stream may be viewed as a <a href="http://localhost:1313/docs/abstractdatatypes/sections/list/">list</a> with limitations: a stream can only be iterated over, from left to right, and only <em>once</em> (this is called <strong>consuming</strong> a stream).</p>
-<h2 id="pipeline">
-  Pipeline
-  <a class="anchor" href="#pipeline">#</a>
-</h2>
-<blockquote class="book-hint warning">
-  <p>Stream computations are specified as a <strong>pipeline</strong>, which consists of:</p>
-<ol>
-<li>a <strong>source</strong> (e.g. a collection or an I/O channel),</li>
-<li>a sequence of zero or more <strong>intermediate operations</strong>, each of which transforms a stream into another stream (e.g. filtering or modifying its elements),</li>
-<li>one <strong>terminal operation</strong> (e.g. printing or collecting the elements of the transformed stream).</li>
-</ol>
-</blockquote>
-
-<p><img src="/img/stream/streams_explained.jpg" alt="" /></p>
-<p>Intermediate operations are generally specified via <a href="">callback methods</a> (some terminal operations may as well).
-More precisely, the Java interface <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/stream/Stream.html">Stream</a> provides instance methods (like <code>filter</code> or <code>map</code>) that take a callback method as argument, and transform the stream accordingly.</p>
-<h2 id="example">
-  Example
-  <a class="anchor" href="#example">#</a>
-</h2>
-<p>Consider the following classes <code>Unit</code>, <code>Butterfly</code> and <code>Unicorn</code>.</p>
-<p><img src="/img/diagrams/plantuml/interface_inherit_basic.svg" alt="" /></p>
-<p>Let us write a pipeline that:</p>
-<ul>
-<li>takes as input a list of units,</li>
-<li>retains only butterflies,</li>
-<li>extracts the color of each butterfly,</li>
-<li>collects these colors into a set.</li>
-</ul>
-<p>Our pipeline can be specified as follows:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> units <span style="color:#f92672">=</span> getUnits();
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Set<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> butterflyColors <span style="color:#f92672">=</span> units.<span style="color:#a6e22e">stream</span>()                        <span style="color:#75715e">// create a stream</span>
-</span></span><span style="display:flex;"><span>                              .<span style="color:#a6e22e">filter</span>(u <span style="color:#f92672">-&gt;</span> u <span style="color:#66d9ef">instanceof</span> Butterfly)  <span style="color:#75715e">// retain butterflies only</span>
-</span></span><span style="display:flex;"><span>                              .<span style="color:#a6e22e">map</span>(b <span style="color:#f92672">-&gt;</span> b.<span style="color:#a6e22e">color</span>)                    <span style="color:#75715e">// map each butterfly to its color</span>
-</span></span><span style="display:flex;"><span>                              .<span style="color:#a6e22e">collect</span>(Collectors.<span style="color:#a6e22e">toSet</span>());         <span style="color:#75715e">// collect the colors as a set</span>
-</span></span></code></pre></div><h2 id="explanation">
-  Explanation
-  <a class="anchor" href="#explanation">#</a>
-</h2>
-<p>This pipeline can be decomposed as follows:</p>
-<h3 id="source">
-  Source
-  <a class="anchor" href="#source">#</a>
-</h3>
-<p>The instance method <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Collection.html#stream%28%29">Collection.stream</a> generates a stream out of a collection (e.g. <code>List</code> or a <code>Set</code>):</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>units.<span style="color:#a6e22e">stream</span>()
-</span></span></code></pre></div><p>In this case, because the input list has type <code>List&lt;Unit&gt;</code>, the generated stream has type <code>Stream&lt;Unit&gt;</code>.</p>
-<h3 id="intermediate-operations">
-  Intermediate operations
-  <a class="anchor" href="#intermediate-operations">#</a>
-</h3>
-<h4 id="filter">
-  Filter
-  <a class="anchor" href="#filter">#</a>
-</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>.<span style="color:#a6e22e">filter</span>(u <span style="color:#f92672">-&gt;</span> u <span style="color:#66d9ef">instanceof</span> Butterfly)
-</span></span></code></pre></div><p>The instance method <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/stream/Stream.html#filter%28java.util.function.Predicate%29">Stream.filter</a> retains certain elements in the stream.</p>
-<p>Let us assume that the stream has type <code>Stream&lt;</code>$\mathit{InputType}$<code>&gt;</code> (for instance, in our example, $\mathit{InputType}$ is <code>Unit</code>).</p>
-<p>The method <code>filter</code> takes as argument a callback function of type</p>
-<p>$\qquad \mathit{InputType} \to$ <code>Boolean</code></p>
-<p>(equivalently, in Java&rsquo;s terminology, the callback function must implement the native <a href="">functional interface</a> <code>Predicate&lt;</code>$\mathit{InputType}$<code>&gt;</code>).</p>
-<p>In this example, the callback function is</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>u <span style="color:#f92672">-&gt;</span> u <span style="color:#66d9ef">instanceof</span> Butterfly
-</span></span></code></pre></div><p>which has type</p>
-<p>$\qquad$ <code>Unit</code> $\to$ <code>Boolean</code></p>
-<p>The method <code>filter</code> returns a <code>Stream&lt;</code>$\mathit{InputType}$<code>&gt;</code> (e.g. in this example a <code>Stream&lt;Unit&gt;</code>) that retains only the elements for which the callback method evaluates to <code>true</code> (in this case, it retains only butterflies).</p>
-<h4 id="map">
-  Map
-  <a class="anchor" href="#map">#</a>
-</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>.<span style="color:#a6e22e">map</span>(b <span style="color:#f92672">-&gt;</span> b.<span style="color:#a6e22e">color</span>)
-</span></span></code></pre></div><p>The instance method <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/stream/Stream.html#map%28java.util.function.Function%29">Stream.map</a> takes as argument a callback function of type</p>
-<p>$\qquad$ <code>InputType</code> $\to$ <code>OutputType</code></p>
-<p>(technically, such a callback function is an instance of the native functional interface <code>Function&lt;StreamElementsType, OutputStreamElementsType&gt;</code>, <a href="">seen earlier</a>).</p>
-<p>In this example, the callback function is</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>b <span style="color:#f92672">-&gt;</span> b.<span style="color:#a6e22e">color</span>
-</span></span></code></pre></div><p>which has type</p>
-<p>$\qquad$ <code>Unit</code> $\to$ <code>String</code></p>
-<p>Let us call this function $f$.
-Then the output stream consists of all objects $f(a)$ such that $a$ belongs to the input stream, in the <em>same order</em> as they appear in the input stream.</p>
-<h3 id="terminal-operation">
-  Terminal operation
-  <a class="anchor" href="#terminal-operation">#</a>
-</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>.<span style="color:#a6e22e">collect</span>(Collectors.<span style="color:#a6e22e">toSet</span>());
-</span></span></code></pre></div><p>The instance method <code>Stream.collect</code> takes as argument a so-called <a href="">Collector</a>, which is in charge of collecting the elements of its input stream into a Java <a href="">Collection</a> (e.g. <a href="">List</a> or <a href="">Set</a>) or <a href="">Map</a>.</p>
-<p>In this example, we call the static method <a href="">Collectors.toSet()</a>, which returns a collector that produces a set.
-Because the input stream at this stage consists of strings, the method <code>collect</code> returns a set of strings (i.e. an instance of <code>Set&lt;String&gt;</code>).</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+When it is finite, a stream may be viewed as a <a href="https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/list/">list</a> with limitations: a stream can only be iterated over, from left to right, and only <em>once</em> (this is called <strong>consuming</strong> a stream).</p>
 </article>
  
       
@@ -1783,19 +1668,7 @@ Because the input stream at this stage consists of strings, the method <code>col
       <div class="book-toc-content">
         
   
-<nav id="TableOfContents">
-  <ul>
-    <li><a href="#pipeline">Pipeline</a></li>
-    <li><a href="#example">Example</a></li>
-    <li><a href="#explanation">Explanation</a>
-      <ul>
-        <li><a href="#source">Source</a></li>
-        <li><a href="#intermediate-operations">Intermediate operations</a></li>
-        <li><a href="#terminal-operation">Terminal operation</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
+<nav id="TableOfContents"></nav>
 
 
  

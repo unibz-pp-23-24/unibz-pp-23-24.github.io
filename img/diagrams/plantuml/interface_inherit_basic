@@ -1,18 +1,22 @@
 @startuml
-scale 400 width
+scale 600 width
 
 abstract class Unit {
- int health
  String color
-}
-
-class Unicorn {
+ int health
 }
 
 class Butterfly {
 }
 
-Unit <|-- Unicorn : extends
+class Caterpillar {
+}
+
+class Unicorn {
+}
+
 Unit <|-- Butterfly : extends
+Unit <|-- Caterpillar : extends
+Unit <|-- Unicorn : extends
 
 @enduml
