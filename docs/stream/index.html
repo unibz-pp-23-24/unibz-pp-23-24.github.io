@@ -21,7 +21,7 @@ a source (e.g. a collection or an I/O channel), a sequence of zero or more inter
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.8e3dc2eb4ce1a3b47f84d4a28d50ad0dc5e9a51a95f363bd12884cd43209ad5b.js" integrity="sha256-jj3C60zho7R/hNSijVCtDcXppRqV82O9EohM1DIJrVs=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.e3bfd64b95d482d836221d2b3a231eb15e83b0ffbc3e979a035e2bfd7bbceb56.js" integrity="sha256-47/WS5XUgtg2Ih0rOiMesV6DsP&#43;8PpeaA14r/Xu861Y=" crossorigin="anonymous"></script>
 
   
 
@@ -1611,7 +1611,6 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#terminal-operation">Terminal operation</a></li>
       </ul>
     </li>
-    <li><a href="#exercise">Exercise</a></li>
   </ul>
 </nav>
 
@@ -1719,29 +1718,30 @@ Then the output stream consists of all objects $f(a)$ such that $a$ belongs to t
 </span></span></code></pre></div><p>The instance method <code>Stream.collect</code> takes as argument a so-called <a href="">Collector</a>, which is in charge of collecting the elements of its input stream into a Java <a href="">Collection</a> (e.g. <a href="">List</a> or <a href="">Set</a>) or <a href="">Map</a>.</p>
 <p>In this example, we call the static method <a href="">Collectors.toSet()</a>, which returns a collector that produces a set.
 Because the input stream at this stage consists of strings, the method <code>collect</code> returns a set of strings (i.e. an instance of <code>Set&lt;String&gt;</code>).</p>
-<h2 id="exercise">
-  Exercise
-  <a class="anchor" href="#exercise">#</a>
-</h2>
-<p>Can you guess what the following methods do?</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">mysteriousMethod1</span>(List<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> units){
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> units.<span style="color:#a6e22e">stream</span>()
-</span></span><span style="display:flex;"><span>          .<span style="color:#a6e22e">filter</span>(u <span style="color:#f92672">-&gt;</span> u.<span style="color:#a6e22e">health</span> <span style="color:#f92672">&lt;=</span> 0)
-</span></span><span style="display:flex;"><span>          .<span style="color:#a6e22e">collect</span>(Collectors.<span style="color:#a6e22e">toList</span>());
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">mysteriousMethod2</span>(List<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> units){
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> units.<span style="color:#a6e22e">stream</span>()
-</span></span><span style="display:flex;"><span>          . map(u <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">new</span> Butterfly(u.<span style="color:#a6e22e">health</span>, u.<span style="color:#a6e22e">color</span>))
-</span></span><span style="display:flex;"><span>          .<span style="color:#a6e22e">collect</span>(Collectors.<span style="color:#a6e22e">List</span>());
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">mysteriousMethod2</span>(Set<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> set1, Set<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> set2){
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> set1.<span style="color:#a6e22e">stream</span>()
-</span></span><span style="display:flex;"><span>          .<span style="color:#a6e22e">filter</span>(u <span style="color:#f92672">-&gt;</span> set2.<span style="color:#a6e22e">contains</span>(u))
-</span></span><span style="display:flex;"><span>          .<span style="color:#a6e22e">collect</span>(Collectors.<span style="color:#a6e22e">toSet</span>());
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div></article>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+</article>
  
       
 
@@ -1791,7 +1791,6 @@ Because the input stream at this stage consists of strings, the method <code>col
         <li><a href="#terminal-operation">Terminal operation</a></li>
       </ul>
     </li>
-    <li><a href="#exercise">Exercise</a></li>
   </ul>
 </nav>
 
