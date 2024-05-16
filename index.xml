@@ -82,7 +82,7 @@
       <link>https://unibz-pp-23-24.github.io/docs/stream/sections/pipeline/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/stream/sections/pipeline/</guid>
-      <description>Pipeline # Stream computations are specified as a pipeline, which consists of:&#xA;a source (e.g. a collection or an I/O channel), a sequence of zero or more intermediate operations, each of which transforms a stream into another stream (e.g. filtering or modifying the stream&amp;rsquo;s elements), at most one terminal operation (e.g. collecting the elements of the transformed stream). Intermediate operations are generally specified via callback methods (some terminal operations may as well).</description>
+      <description>Pipeline # Stream computations are specified as a pipeline, which consists of:&#xA;a source (e.g. a collection or an I/O channel), a sequence of zero or more intermediate operations, each of which transforms a stream into another stream (e.g. filtering or modifying the stream&amp;rsquo;s elements), one terminal operation (e.g. collecting the elements of the transformed stream). Intermediate operations are generally specified via callback methods (the terminal operation may as well).</description>
     </item>
     <item>
       <title>Pure function</title>
@@ -211,6 +211,13 @@
       <description>Set, tuple, function # Set # A set can be informally viewed as a collection of elements with no duplicate and in no specific order. Definition. The power set $\mathcal{P}(S)$ of a set $S$ is the set of all subsets of $S$. For instance, if \(S = \{a,b\}\) , then&#xA;\( \qquad \qquad \qquad \mathcal{P}(S) = \Big\{ \{\}, \{a\}, \{b\}, S \Big\} \) Note. An alternative notation for the power set of $S$ is $2^S$.</description>
     </item>
     <item>
+      <title>Source</title>
+      <link>https://unibz-pp-23-24.github.io/docs/stream/sections/init/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/stream/sections/init/</guid>
+      <description>Source # Collection # A stream can be created out of a Java Collection with the instance method stream.&#xA;Example.&#xA;List&amp;lt;Unit&amp;gt; units = getUnits(); units.stream(); If the collection has a predictable order of iteration (e.g. if the collection is a List), then the elements will appear in this order in the stream.&#xA;To create a stream out of the entries of a map, we can use the instance method Map.</description>
+    </item>
+    <item>
       <title>Teaching staff</title>
       <link>https://unibz-pp-23-24.github.io/docs/intro/sections/lecturers/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -265,6 +272,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/objects/sections/inheritance/</guid>
       <description>Inheritance # Subclass # In most (class-based) object-oriented languages, a class A can extend another class B. In this case, A is called a subclass of B. The intuitive meaning is inclusion between their respective sets of instances, i.e. every instance of A is also an instance of B (but the converse may not hold).&#xA;This can be paraphrased in English by &amp;ldquo;every A is a B &amp;ldquo;. For instance:</description>
+    </item>
+    <item>
+      <title>Intermediate operations</title>
+      <link>https://unibz-pp-23-24.github.io/docs/stream/sections/intermediate/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/stream/sections/intermediate/</guid>
+      <description>Intermediate operations # In a stream pipeline, an intermediate operation takes a stream as input, and produces another stream.&#xA;Stateless operations # A stateless intermediate operation processes each element of the input stream independently, and without the need to memorize information about previous elements in the stream. Stream.filter and Stream.map # These two instance methods allow specifying a stateless operation, via a callback method. We have already explained their behavior in detail in our initial pipeline example.</description>
     </item>
     <item>
       <title>Lambda expression</title>
@@ -344,6 +358,13 @@
       <description>Stack, queue, priority queue # Some abstract data types impose strong limitations on the set of operations allowed on a collection. These limitations provide opportunities for specialized implementations (i.e. specialized data structures), which can be very efficient in some contexts.&#xA;Stack # A stack (or Last In First Out queue or LIFO queue) simulates a collection organized as a physical stack (for instance a stack of plates). A stack exposes three main methods:</description>
     </item>
     <item>
+      <title>Terminal operation</title>
+      <link>https://unibz-pp-23-24.github.io/docs/stream/sections/terminal/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/stream/sections/terminal/</guid>
+      <description>Terminal operation # A stream pipeline contains one terminal operation.&#xA;This operation may for instance:&#xA;execute a method for each element of the stream (e.g. print the value of each of them), or collect these elements (e.g. into a list), or inspect these elements (check whether all of them satisfy a certain condition), or aggregate these elements (e.g. sum the values of a stream of integers). Stream.forEach # This instance method is similar to Stream.</description>
+    </item>
+    <item>
       <title>Add, commit, stash</title>
       <link>https://unibz-pp-23-24.github.io/docs/git/sections/commit/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -386,6 +407,13 @@
       <description>Unit tests in Java # Several frameworks are available in Java for unit tests. Popular frameworks include:&#xA;JUnit 4 JUnit 5 TestNG Spock In this section, we focus on Junit 5.&#xA;Install Junit 5 with Maven # Junit 5 can be used in a Maven project by declaring the following dependency and plugin&#xA;&amp;lt;dependencies&amp;gt; ... &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.junit.jupiter&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;junit-jupiter&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;5.10.2&amp;lt;/version&amp;gt; &amp;lt;scope&amp;gt;test&amp;lt;/scope&amp;gt; &amp;lt;/dependency&amp;gt; ... &amp;lt;/dependencies&amp;gt; &amp;lt;build&amp;gt; &amp;lt;plugins&amp;gt; ... &amp;lt;plugin&amp;gt; &amp;lt;groupId&amp;gt;org.apache.maven.plugins&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;maven-surefire-plugin&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;3.</description>
     </item>
     <item>
+      <title>Numeric stream</title>
+      <link>https://unibz-pp-23-24.github.io/docs/stream/sections/numeric/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/stream/sections/numeric/</guid>
+      <description>Numeric stream # In addition to the interface Stream, Java 8 introduced the interface IntStream (resp. DoubleStream, LongStream) that represents a stream of (unboxed) int (resp. long, double).&#xA;It provides operations that are not available in Stream&amp;lt;Integer&amp;gt; (resp. Streanm&amp;lt;Double&amp;gt;, Stream&amp;lt;Long&amp;gt;).&#xA;Warning. The interface IntStream (resp. DoubleStream, LongStream) does not extend the interface Stream. Conversion # A instance of Stream&amp;lt;$T$&amp;gt; can be converted to an instance to an instance of IntStream (resp.</description>
+    </item>
+    <item>
       <title>Operating system</title>
       <link>https://unibz-pp-23-24.github.io/docs/env/sections/os/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -426,6 +454,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/objects/sections/comparing/</guid>
       <description>Cast and Equality # Cast # Java (as well as C# and C++) provides mechanisms to change the type associated with an object o, using either a supertype of o (this is an upcast), or a subtype of o (this is a downcast). Upcast # Explicit upcasts are uncommon, but may still be useful in some scenarios, e.g. to disambiguate two method calls.&#xA;Implicit upcasts on the other hand are very frequent, when the type of an object cannot be determined at compile time.</description>
+    </item>
+    <item>
+      <title>Multithreading and order</title>
+      <link>https://unibz-pp-23-24.github.io/docs/stream/sections/order/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/stream/sections/order/</guid>
+      <description>Multithreading and order # Multithreading # The execution of a stream pipeline can be easily parallelized, for instance with the instance method Stream.parallel, as follows:&#xA;Example.&#xA;List&amp;lt;Integer&amp;gt;list = List.of(1, 2, 3); // Contains [3,4,5] List&amp;lt;Integer&amp;gt; ouputList = list.stream() .parallel() .map(i -&amp;gt; i + 2) .toList(); This allows the JVM to take advantage of available resources (e.g. cores) to execute operations (like the map operation in this example) in several threads, concurrently.</description>
     </item>
     <item>
       <title>Regular languages</title>
@@ -482,6 +517,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/errors/sections/errors/</guid>
       <description>Java errors # Aside from exceptions, a Java program can throw a so-called Error.&#xA;According to the Javadoc for the class Error:&#xA;An Error [&amp;hellip;] indicates serious problems that a reasonable application should not try to catch. Most such errors are abnormal conditions.&#xA;For instance, some subclasses or Error are OutOfMemoryError and StackOverflowError.</description>
+    </item>
+    <item>
+      <title>Optional</title>
+      <link>https://unibz-pp-23-24.github.io/docs/stream/sections/optional/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/stream/sections/optional/</guid>
+      <description>Optional # The class Optional was introduced in Java 8. An Optional is a container object that may or may not contain a value. Its main purpose is to indicate that the object returned by a function may be null.&#xA;Example. In our game, the interface Board provides a method getUnit(int rowIndex, columnIndex), that returns the unit standing on the tile with these coordinates, if any.&#xA;This could be implemented with a method</description>
     </item>
     <item>
       <title>Synchronization: remote, push, pull</title>

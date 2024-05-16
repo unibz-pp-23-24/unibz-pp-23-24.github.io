@@ -1,0 +1,15 @@
+@startuml
+scale 500 width
+
+class Region {
+    String name
+    List<City> cities
+}
+
+class City {
+    String name
+    int zipCode
+}
+
+
+@enduml

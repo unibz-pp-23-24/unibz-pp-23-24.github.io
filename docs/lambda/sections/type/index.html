@@ -24,7 +24,7 @@ In other words, this is a function with domain int and codomain int.">
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.afa616ea1cc8137c4a6fc74fe7e03e03a8f2bdd96b19b3b5c68d5a50ad6de170.js" integrity="sha256-r6YW6hzIE3xKb8dP5&#43;A&#43;A6jyvdlrGbO1xo1aUK1t4XA=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.f4d1c62edb219637f225040888cdda4195b43e7e9cd67da685c110e36a51f6b9.js" integrity="sha256-9NHGLtshljfyJQQIiM3aQZW0Pn6c1n2mhcEQ42pR9rk=" crossorigin="anonymous"></script>
 
   
 
@@ -1012,6 +1012,84 @@ https://github.com/alex-shpak/hugo-book
         </li>
       
     
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/init/" class="">Source</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/intermediate/" class="">Intermediate operations</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/terminal/" class="">Terminal operation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/numeric/" class="">Numeric stream</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/order/" class="">Multithreading and order</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/optional/" class="">Optional</a>
+  
+
+        </li>
+      
+    
   </ul>
 
         </li>
@@ -1753,7 +1831,7 @@ Its method is called <code>apply</code>.
   <a class="anchor" href="#consumer">#</a>
 </h4>
 <blockquote class="book-hint warning">
-  The interface <code>Consumer&lt;InputType&gt;</code> stands for the type <code>InputType</code> $\to$ <code>void</code>.
+  The functional interface <code>Consumer&lt;InputType&gt;</code> stands for the type <code>InputType</code> $\to$ <code>void</code>.
 Its method is called <code>accept</code>.
 </blockquote>
 
@@ -1770,7 +1848,7 @@ Its method is called <code>accept</code>.
   <a class="anchor" href="#supplier">#</a>
 </h4>
 <blockquote class="book-hint warning">
-  The interface <code>Supplier&lt;OutputType&gt;</code> stands for the type <code>void</code> $\to$ <code>OutputType</code>.
+  The functional interface <code>Supplier&lt;OutputType&gt;</code> stands for the type <code>void</code> $\to$ <code>OutputType</code>.
 Its method is called <code>get</code>.
 </blockquote>
 
@@ -1782,6 +1860,12 @@ Its method is called <code>get</code>.
 </ul>
 </blockquote>
 
+<h4 id="comparator">
+  <code>Comparator</code>
+  <a class="anchor" href="#comparator">#</a>
+</h4>
+<p>The interface <code>Comparator&lt;T&gt;</code> (already seen in the section dedicated to <a href="">sorting</a>) is functional.
+Its method is called <code>compare</code>, and has type <code>T</code> $\times$ <code>T</code> $to$ <code>int</code>.</p>
 </article>
  
       

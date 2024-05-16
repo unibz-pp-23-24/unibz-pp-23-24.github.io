@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Pipeline # Stream computations are specified as a pipeline, which consists of:
-a source (e.g. a collection or an I/O channel), a sequence of zero or more intermediate operations, each of which transforms a stream into another stream (e.g. filtering or modifying the stream&rsquo;s elements), at most one terminal operation (e.g. collecting the elements of the transformed stream). Intermediate operations are generally specified via callback methods (some terminal operations may as well).">
+a source (e.g. a collection or an I/O channel), a sequence of zero or more intermediate operations, each of which transforms a stream into another stream (e.g. filtering or modifying the stream&rsquo;s elements), one terminal operation (e.g. collecting the elements of the transformed stream). Intermediate operations are generally specified via callback methods (the terminal operation may as well).">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/stream/sections/pipeline/">
   <meta property="og:site_name" content="Programming project 2023-24">
   <meta property="og:title" content="Pipeline">
   <meta property="og:description" content="Pipeline # Stream computations are specified as a pipeline, which consists of:
-a source (e.g. a collection or an I/O channel), a sequence of zero or more intermediate operations, each of which transforms a stream into another stream (e.g. filtering or modifying the stream’s elements), at most one terminal operation (e.g. collecting the elements of the transformed stream). Intermediate operations are generally specified via callback methods (some terminal operations may as well).">
+a source (e.g. a collection or an I/O channel), a sequence of zero or more intermediate operations, each of which transforms a stream into another stream (e.g. filtering or modifying the stream’s elements), one terminal operation (e.g. collecting the elements of the transformed stream). Intermediate operations are generally specified via callback methods (the terminal operation may as well).">
   <meta property="og:locale" content="en-us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -20,7 +20,7 @@ a source (e.g. a collection or an I/O channel), a sequence of zero or more inter
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.afa616ea1cc8137c4a6fc74fe7e03e03a8f2bdd96b19b3b5c68d5a50ad6de170.js" integrity="sha256-r6YW6hzIE3xKb8dP5&#43;A&#43;A6jyvdlrGbO1xo1aUK1t4XA=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.f4d1c62edb219637f225040888cdda4195b43e7e9cd67da685c110e36a51f6b9.js" integrity="sha256-9NHGLtshljfyJQQIiM3aQZW0Pn6c1n2mhcEQ42pR9rk=" crossorigin="anonymous"></script>
 
   
 
@@ -1008,6 +1008,84 @@ https://github.com/alex-shpak/hugo-book
         </li>
       
     
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/init/" class="">Source</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/intermediate/" class="">Intermediate operations</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/terminal/" class="">Terminal operation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/numeric/" class="">Numeric stream</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/order/" class="">Multithreading and order</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/optional/" class="">Optional</a>
+  
+
+        </li>
+      
+    
   </ul>
 
         </li>
@@ -1643,12 +1721,12 @@ https://github.com/alex-shpak/hugo-book
 <ol>
 <li>a <strong>source</strong> (e.g. a collection or an I/O channel),</li>
 <li>a sequence of zero or more <strong>intermediate operations</strong>, each of which transforms a stream into another stream (e.g. filtering or modifying the stream&rsquo;s elements),</li>
-<li>at most <em>one</em> <strong>terminal operation</strong> (e.g. collecting the elements of the transformed stream).</li>
+<li><em>one</em> <strong>terminal operation</strong> (e.g. collecting the elements of the transformed stream).</li>
 </ol>
 </blockquote>
 
 <p><img src="/img/stream/streams_explained.jpg" alt="" /></p>
-<p>Intermediate operations are generally specified via <a href="">callback methods</a> (some terminal operations may as well).
+<p>Intermediate operations are generally specified via <a href="">callback methods</a> (the terminal operation may as well).
 More precisely, the Java interface <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/stream/Stream.html">Stream</a> provides instance methods (like <code>filter</code> or <code>map</code>) that take a callback method as argument, and transform the stream accordingly.</p>
 <h2 id="example">
   Example
@@ -1714,14 +1792,14 @@ More precisely, the Java interface <a href="https://docs.oracle.com/en/java/java
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>b <span style="color:#f92672">-&gt;</span> b.<span style="color:#a6e22e">color</span>
 </span></span></code></pre></div><p>which has type</p>
 <p>$\qquad$ <code>Unit</code> $\to$ <code>String</code></p>
-<p>Let us call this function $f$.</p>
-<p>The method <code>map</code> returns a <code>Stream&lt;</code>$\mathit{T&rsquo;}$<code>&gt;</code> (e.g. in this example a <code>Stream&lt;String&gt;</code>) that consists of all objects $f(a)$ such that $a$ belongs to the input stream.</p>
+<p>Let us name this callback function $f$.</p>
+<p>The method <code>map</code> returns a <code>Stream&lt;</code>$\mathit{T&rsquo;}$<code>&gt;</code> (e.g. in this example a <code>Stream&lt;String&gt;</code>) that consists of all objects $f(a)$ such that $a$ belongs to the original stream.</p>
 <h3 id="terminal-operation">
   Terminal operation
   <a class="anchor" href="#terminal-operation">#</a>
 </h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>.<span style="color:#a6e22e">collect</span>(Collectors.<span style="color:#a6e22e">toSet</span>());
-</span></span></code></pre></div><p>The instance method <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/stream/Stream.html#collect%28java.util.stream.Collector%29">Stream.collect</a> takes as argument a so-called <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/stream/Collector.html">Collector</a>, which is in charge of collecting the elements of its input stream into a <a href="">Collection</a> (e.g. <a href="">List</a> or <a href="">Set</a>), or a <a href="">Map</a>, or a <a href="">String</a>, etc.</p>
+</span></span></code></pre></div><p>The instance method <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/stream/Stream.html#collect%28java.util.stream.Collector%29">Stream.collect</a> takes as argument a so-called <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/stream/Collector.html">Collector</a>, which is in charge of collecting the elements of the stream into a <a href="">Collection</a> (e.g. <a href="">List</a> or <a href="">Set</a>), or a <a href="">Map</a>, or a <a href="">String</a>, etc.</p>
 <p>In this example, we call the static method <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/stream/Collectors.html#toSet%28%29">Collectors.toSet</a>, which returns a collector that produces a set.
 Because the stream has type <code>Stream&lt;String&gt;</code>, the instruction <code>.collect(Collectors.toSet())</code> returns a set with type <code>Set&lt;String&gt;</code>.</p>
 <h2 id="reading-a-pipeline">
@@ -1762,7 +1840,7 @@ Because the stream has type <code>Stream&lt;String&gt;</code>, the instruction <
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">method2</span>(Stream<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> stream) {
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> stream.<span style="color:#a6e22e">map</span>(u <span style="color:#f92672">-&gt;</span> transform(u))
-</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">collect</span>(Collectors.<span style="color:#a6e22e">toList</span>());
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">toList</span>();   <span style="color:#75715e">// collects the stream into a list</span>
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>Unit <span style="color:#a6e22e">transform</span>(Unit u) {
@@ -1783,7 +1861,7 @@ Because the stream has type <code>Stream&lt;String&gt;</code>, the instruction <
 </span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">new</span> Butterfly(u.<span style="color:#a6e22e">color</span>, u.<span style="color:#a6e22e">health</span>) :
 </span></span><span style="display:flex;"><span>                    u
 </span></span><span style="display:flex;"><span>            )
-</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">collect</span>(Collectors.<span style="color:#a6e22e">toList</span>());
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">toList</span>();
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div></div></div>
 
