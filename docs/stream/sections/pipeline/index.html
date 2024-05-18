@@ -12,7 +12,7 @@ a source (e.g. a collection or an I/O channel), a sequence of zero or more inter
   <meta property="og:title" content="Pipeline">
   <meta property="og:description" content="Pipeline # Stream computations are specified as a pipeline, which consists of:
 a source (e.g. a collection or an I/O channel), a sequence of zero or more intermediate operations, each of which transforms a stream into another stream (e.g. filtering or modifying the stream’s elements), one terminal operation (e.g. collecting the elements of the transformed stream). Intermediate operations are generally specified via callback methods (the terminal operation may as well).">
-  <meta property="og:locale" content="en-us">
+  <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
 <title>Pipeline | Programming project 2023-24</title>
@@ -20,7 +20,7 @@ a source (e.g. a collection or an I/O channel), a sequence of zero or more inter
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.b8a8d778b1780b6d61d3f54d444ea73ac393a4dd89cbf1061e00d5e1a64ef996.js" integrity="sha256-uKjXeLF4C21h0/VNRE6nOsOTpN2Jy/EGHgDV4aZO&#43;ZY=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.6ff808bb3dbccda5e0384ca3e28522c4a55e09c4cf48a085704fa468372e6f50.js" integrity="sha256-b/gIuz28zaXgOEyj4oUixKVeCcTPSKCFcE&#43;kaDcub1A=" crossorigin="anonymous"></script>
 
   
 
@@ -1726,7 +1726,7 @@ https://github.com/alex-shpak/hugo-book
 </blockquote>
 
 <p><img src="/img/stream/streams_explained.jpg" alt="" /></p>
-<p>Intermediate operations are generally specified via <a href="">callback methods</a> (the terminal operation may as well).
+<p>Intermediate operations are generally specified via <a href="https://unibz-pp-23-24.github.io/docs/lambda/sections/callback/">callback methods</a> (the terminal operation may as well).
 More precisely, the Java interface <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/stream/Stream.html">Stream</a> provides instance methods (like <code>filter</code> or <code>map</code>) that take a callback method as argument, and transform the stream accordingly.</p>
 <h2 id="example">
   Example
@@ -1772,7 +1772,7 @@ More precisely, the Java interface <a href="https://docs.oracle.com/en/java/java
 <p>Let us assume that the stream has type <code>Stream&lt;</code>$\mathit{T}$<code>&gt;</code> (for instance, in our example, $\mathit{T}$ is <code>Unit</code>).</p>
 <p>The method <code>filter</code> takes as argument a callback function of type</p>
 <p>$\qquad \mathit{T} \to$ <code>Boolean</code></p>
-<p>(equivalently, in Java&rsquo;s terminology, the callback function must implement the native <a href="">functional interface</a> <code>Predicate&lt;</code>$\mathit{T}$<code>&gt;</code>).</p>
+<p>(equivalently, in Java&rsquo;s terminology, the callback function must implement the native <a href="https://unibz-pp-23-24.github.io/docs/lambda/sections/type/#functionalInterface">functional interface</a> <code>Predicate&lt;</code>$\mathit{T}$<code>&gt;</code>).</p>
 <p>In this example, the callback function is</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>u <span style="color:#f92672">-&gt;</span> u <span style="color:#66d9ef">instanceof</span> Butterfly
 </span></span></code></pre></div><p>which has type</p>
@@ -1787,7 +1787,7 @@ More precisely, the Java interface <a href="https://docs.oracle.com/en/java/java
 <p>Let us assume that the stream has type <code>Stream&lt;</code>$\mathit{T}$<code>&gt;</code> (for instance, in our example, $\mathit{T}$ is <code>Unit</code>).</p>
 <p>The method <code>map</code> takes as argument a callback function of type</p>
 <p>$\qquad T \to T'$</p>
-<p>where $T&rsquo;$ can be any type (equivalently, in Java&rsquo;s terminology, the callback function must implement the native functional interface <code>Function&lt;</code>$T$<code>,</code>$T&rsquo;$<code>&gt;</code>, <a href="">seen earlier</a>).</p>
+<p>where $T&rsquo;$ can be any type (equivalently, in Java&rsquo;s terminology, the callback function must implement the native functional interface <code>Function&lt;</code>$T$<code>,</code>$T&rsquo;$<code>&gt;</code>, <a href="https://unibz-pp-23-24.github.io/docs/lambda/sections/type/#function">seen earlier</a>).</p>
 <p>In this example, the callback function is</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>b <span style="color:#f92672">-&gt;</span> b.<span style="color:#a6e22e">color</span>
 </span></span></code></pre></div><p>which has type</p>
@@ -1799,7 +1799,7 @@ More precisely, the Java interface <a href="https://docs.oracle.com/en/java/java
   <a class="anchor" href="#terminal-operation">#</a>
 </h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>.<span style="color:#a6e22e">collect</span>(Collectors.<span style="color:#a6e22e">toSet</span>());
-</span></span></code></pre></div><p>The instance method <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/stream/Stream.html#collect%28java.util.stream.Collector%29">Stream.collect</a> takes as argument a so-called <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/stream/Collector.html">Collector</a>, which is in charge of collecting the elements of the stream into a <a href="">Collection</a> (e.g. <a href="">List</a> or <a href="">Set</a>), or a <a href="">Map</a>, or a <a href="">String</a>, etc.</p>
+</span></span></code></pre></div><p>The instance method <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/stream/Stream.html#collect%28java.util.stream.Collector%29">Stream.collect</a> takes as argument a so-called <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/stream/Collector.html">Collector</a>, which is in charge of collecting the elements of the stream into a <a href="https://unibz-pp-23-24.github.io/docs/abstractdatatypes/#collection">Collection</a> (e.g. <code>List</code> or <code>Set</code>), or a <code>Map</code>, or a string, etc.</p>
 <p>In this example, we call the static method <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/stream/Collectors.html#toSet%28%29">Collectors.toSet</a>, which returns a collector that produces a set.
 Because the stream has type <code>Stream&lt;String&gt;</code>, the instruction <code>.collect(Collectors.toSet())</code> returns a set with type <code>Set&lt;String&gt;</code>.</p>
 <h2 id="reading-a-pipeline">

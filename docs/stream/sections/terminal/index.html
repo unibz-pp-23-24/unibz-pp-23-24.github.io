@@ -14,7 +14,7 @@ execute a method for each element of the stream (e.g. print the value of each of
   <meta property="og:description" content="Terminal operation # A stream pipeline contains one terminal operation.
 This operation may for instance:
 execute a method for each element of the stream (e.g. print the value of each of them), or collect these elements (e.g. into a list), or inspect these elements (check whether all of them satisfy a certain condition), or aggregate these elements (e.g. sum the values of a stream of integers). Stream.forEach # This instance method is similar to Stream.">
-  <meta property="og:locale" content="en-us">
+  <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
 <title>Terminal operation | Programming project 2023-24</title>
@@ -22,7 +22,7 @@ execute a method for each element of the stream (e.g. print the value of each of
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.b8a8d778b1780b6d61d3f54d444ea73ac393a4dd89cbf1061e00d5e1a64ef996.js" integrity="sha256-uKjXeLF4C21h0/VNRE6nOsOTpN2Jy/EGHgDV4aZO&#43;ZY=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.6ff808bb3dbccda5e0384ca3e28522c4a55e09c4cf48a085704fa468372e6f50.js" integrity="sha256-b/gIuz28zaXgOEyj4oUixKVeCcTPSKCFcE&#43;kaDcub1A=" crossorigin="anonymous"></script>
 
   
 
@@ -1700,13 +1700,13 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#streamcollect"><code>Stream.collect</code></a></li>
       </ul>
     </li>
-    <li><a href="#boolean-checks">Boolean checks</a>
+    <li><a href="#checks">Boolean checks</a>
       <ul>
         <li><a href="#streamanymatch"><code>Stream.anyMatch</code></a></li>
         <li><a href="#streamallmatch"><code>Stream.allMatch</code></a></li>
       </ul>
     </li>
-    <li><a href="#aggregation">Aggregation</a>
+    <li><a href="#aggregate">Aggregation</a>
       <ul>
         <li><a href="#streamfindfirst"><code>Stream.findFirst</code></a></li>
         <li><a href="#streamcount"><code>Stream.count</code></a></li>
@@ -1733,10 +1733,10 @@ https://github.com/alex-shpak/hugo-book
 <p>A stream pipeline contains one terminal operation.</p>
 <p>This operation may for instance:</p>
 <ul>
-<li><a href="">execute a method</a> for each element of the stream (e.g. print the value of each of them), or</li>
-<li><a href="">collect</a> these elements (e.g. into a list), or</li>
-<li><a href="">inspect</a> these elements (check whether all of them satisfy a certain condition), or</li>
-<li><a href="">aggregate</a> these elements (e.g. sum the values of a stream of integers).</li>
+<li><a href="#forEach">execute a method</a> for each element of the stream (e.g. print the value of each of them), or</li>
+<li><a href="#collect">collect</a> these elements (e.g. into a list), or</li>
+<li><a href="#checks">inspect</a> these elements (check whether all of them satisfy a certain condition), or</li>
+<li><a href="#aggregate">aggregate</a> these elements (e.g. sum the values of a stream of integers).</li>
 </ul>
 <h2 id="forEach">
   <code>Stream.forEach</code>
@@ -1748,7 +1748,7 @@ However, in this case, the callback method is not a function (i.e. it has no ret
 <p>In other words, if the stream has type <code>Stream&lt;</code>$\mathit{T}$<code>&gt;</code>,
 then <code>foreach</code> takes as argument a callback method of type</p>
 <p>$\qquad \mathit{T} \to$ <code>void</code></p>
-<p>(equivalently, in Java&rsquo;s terminology, the callback method must implement the native <a href="">functional interface</a> <code>Consumer&lt;</code>$\mathit{T}$<code>&gt;</code>).</p>
+<p>(equivalently, in Java&rsquo;s terminology, the callback method must implement the native functional interface <code>Consumer&lt;</code>$\mathit{T}$<code>&gt;</code>, <a href="https://unibz-pp-23-24.github.io/docs/lambda/sections/type/#consumer">seen earlier</a>).</p>
 <blockquote class="book-hint info">
   <p><strong><em>Example.</em></strong></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span>list <span style="color:#f92672">=</span> List.<span style="color:#a6e22e">of</span>(4, 1, 3, 2, 4);
@@ -1776,7 +1776,7 @@ In the absence of intermediate operation, the instance method <code>Collection.f
   <code>Stream.toList</code>
   <a class="anchor" href="#streamtolist">#</a>
 </h3>
-<p>This instance method outputs a <a href="">final</a> list with the elements of the stream.</p>
+<p>This instance method outputs a <a href="https://unibz-pp-23-24.github.io/docs/objects/sections/mutability/#final">final</a> list with the elements of the stream.</p>
 <blockquote class="book-hint info">
   <p><strong><em>Example.</em></strong>
 We already used this method in several of our examples.
@@ -1794,7 +1794,7 @@ For instance</p>
   <code>Stream.collect</code>
   <a class="anchor" href="#streamcollect">#</a>
 </h3>
-<p>This instance method takes as argument a so-called <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/stream/Collector.html">Collector</a>, which is in charge of collecting the elements of the stream into a <a href="">Collection</a> (e.g. <a href="">List</a> or <a href="">Set</a>), or a <a href="">Map</a>, or a <a href="">String</a>, etc.</p>
+<p>This instance method takes as argument a so-called <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/stream/Collector.html">Collector</a>, which is in charge of collecting the elements of the stream into a <a href="https://unibz-pp-23-24.github.io/docs/abstractdatatypes/#collection">Collection</a> (e.g. <code>List</code> or <code>Set</code>, or a <code>Map</code>, or a <code>String</code>, etc.</p>
 <p>The utility class <code>Collectors</code> provides a variety of static methods that return a collector.</p>
 <h4 id="collectorsjoining">
   <code>Collectors.joining</code>
@@ -1863,7 +1863,7 @@ and returns an instance of <code>Stream&lt;Path&gt;</code>, whose elements are t
   <code>Collectors.toSet</code>
   <a class="anchor" href="#collectorstoset">#</a>
 </h4>
-<p>As we saw in our <a href="">initial pipeline example</a>, this static method takes no argument, and returns a collector that produces a Java <code>Set</code>.</p>
+<p>As we saw in our <a href="https://unibz-pp-23-24.github.io/docs/stream/sections/pipeline/#example">initial pipeline example</a>, this static method takes no argument, and returns a collector that produces a Java <code>Set</code>.</p>
 <p>The Java specification does <em>not</em> require a specific implementation.
 So this set could for instance be a <code>HashSet</code>or a <code>TreeSet</code>, depending on the Java Virtual Machine that executes the program.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span>list <span style="color:#f92672">=</span> List.<span style="color:#a6e22e">of</span>(2, 1, 3, 1, 2);
@@ -1904,7 +1904,7 @@ The following method takes a list of cities, and returns a map from city name to
 
 <blockquote class="book-hint danger">
   <strong><em>Warning.</em></strong>
-This method may throw an exception at runtime, in case of conflicting keys (in other words, if the first callback function is not <a href="">injective</a>).
+This method may throw an exception at runtime, in case of conflicting keys (in other words, if the first callback function is not <a href="https://unibz-pp-23-24.github.io/docs/background/sections/set_tuple_map/#function">injective</a>).
 To make it robust, it is possible to pass it a <a href="https://www.baeldung.com/java-collectors-tomap#solving_key_conflicts">third callback method</a>, in charge of solving conflicts.
 </blockquote>
 
@@ -1944,16 +1944,16 @@ The following method take a list of units as argument, and returns a map from co
 </span></span></code></pre></div>
 </blockquote>
 
-<h2 id="boolean-checks">
+<h2 id="checks">
   Boolean checks
-  <a class="anchor" href="#boolean-checks">#</a>
+  <a class="anchor" href="#checks">#</a>
 </h2>
 <h3 id="streamanymatch">
   <code>Stream.anyMatch</code>
   <a class="anchor" href="#streamanymatch">#</a>
 </h3>
 <p>This instance method checks whether at least one element in the stream satisfies a certain Boolean condition.</p>
-<p>Similarly to the method <a href="">filter</a>, if the stream has type <code>Stream&lt;</code>$\mathit{T}$<code>&gt;</code>,
+<p>Similarly to the method <a href="https://unibz-pp-23-24.github.io/docs/stream/sections/intermediate/#filterAndMap">filter</a>, if the stream has type <code>Stream&lt;</code>$\mathit{T}$<code>&gt;</code>,
 then <code>anyMatch</code> takes as argument a callback function of type</p>
 <p>$\qquad \mathit{T} \to$ <code>Boolean</code></p>
 <p>which specifies the Boolean condition.</p>
@@ -2021,9 +2021,9 @@ A stream with a short-circuiting operation (like <code>anyMatch</code>) can be a
 </h3>
 <p>This instance method is analogous to <code>Stream.anyMatch</code>, but checks whether <em>all</em> elements in the stream satisfy the Boolean condition.</p>
 <p>This is also a short-circuiting operation (if an element does not satisfy the criterion).</p>
-<h2 id="aggregation">
+<h2 id="aggregate">
   Aggregation
-  <a class="anchor" href="#aggregation">#</a>
+  <a class="anchor" href="#aggregate">#</a>
 </h2>
 <h3 id="streamfindfirst">
   <code>Stream.findFirst</code>
@@ -2071,7 +2071,7 @@ The following two programs are equivalent:</p>
   <code>Stream.max</code>
   <a class="anchor" href="#streammax">#</a>
 </h3>
-<p>This instance method takes as argument a <a href="">Comparator</a>, and returns (one of the) maximal element(s) in the stream w.r.t. this comparator (if any).</p>
+<p>This instance method takes as argument a <a href="https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/sorting/#comparator">Comparator</a>, and returns (one of the) maximal element(s) in the stream w.r.t. this comparator (if any).</p>
 <blockquote class="book-hint info">
   <p><strong><em>Example.</em></strong></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>City ancona <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Ancona&#34;</span>, 60100);,
@@ -2181,13 +2181,13 @@ For instance,</p>
         <li><a href="#streamcollect"><code>Stream.collect</code></a></li>
       </ul>
     </li>
-    <li><a href="#boolean-checks">Boolean checks</a>
+    <li><a href="#checks">Boolean checks</a>
       <ul>
         <li><a href="#streamanymatch"><code>Stream.anyMatch</code></a></li>
         <li><a href="#streamallmatch"><code>Stream.allMatch</code></a></li>
       </ul>
     </li>
-    <li><a href="#aggregation">Aggregation</a>
+    <li><a href="#aggregate">Aggregation</a>
       <ul>
         <li><a href="#streamfindfirst"><code>Stream.findFirst</code></a></li>
         <li><a href="#streamcount"><code>Stream.count</code></a></li>
