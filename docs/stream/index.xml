@@ -40,7 +40,7 @@
       <link>https://unibz-pp-23-24.github.io/docs/stream/sections/numeric/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/stream/sections/numeric/</guid>
-      <description>Numeric stream # In addition to the interface Stream, Java 8 introduced the interface IntStream (resp. DoubleStream, LongStream) that represents a stream of (unboxed) int (resp. long, double).&#xA;It provides operations that are not available in Stream&amp;lt;Integer&amp;gt; (resp. Streanm&amp;lt;Double&amp;gt;, Stream&amp;lt;Long&amp;gt;).&#xA;Warning. The interface IntStream (resp. DoubleStream, LongStream) does not extend the interface Stream. Conversion # A instance of Stream&amp;lt;$T$&amp;gt; can be converted to an instance to an instance of IntStream (resp.</description>
+      <description>Numeric stream # In addition to the interface Stream, Java 8 introduced the interface IntStream (resp. DoubleStream, LongStream) that represents a stream of (unboxed) int (resp. long, double).&#xA;It provides operations that are not available in Stream&amp;lt;Integer&amp;gt; (resp. Streanm&amp;lt;Double&amp;gt;, Stream&amp;lt;Long&amp;gt;).&#xA;Warning. The interface IntStream (resp. DoubleStream, LongStream) does not extend the interface Stream. Conversion # A instance of Stream&amp;lt;$T$&amp;gt; can be converted to an instance of IntStream (resp. DoubleStream, LongStream) with the instance method Stream.</description>
     </item>
     <item>
       <title>Multithreading and order</title>
