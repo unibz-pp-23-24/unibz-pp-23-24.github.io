@@ -4,16 +4,14 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Generics # Terminology. The term generics usually refers to generic types and generic methods. Type variable # A type variable is a variable ranging over types. For instance, in the chapter dedicated to streams, we repeatedly used the variable $T$ to refer to the type of the elements of a stream.
-Generic method # Example # Consider the following interface Unit and its two implementations Butterfly and Unicorn.
-Let us assume a method healthiestButterfly with type">
+Generic method # Example # Consider the following abstract class Unit and its two subclasses Butterfly and Unicorn.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/generics/sections/generics/">
   <meta property="og:site_name" content="Programming project 2023-24">
   <meta property="og:title" content="Generics">
   <meta property="og:description" content="Generics # Terminology. The term generics usually refers to generic types and generic methods. Type variable # A type variable is a variable ranging over types. For instance, in the chapter dedicated to streams, we repeatedly used the variable $T$ to refer to the type of the elements of a stream.
-Generic method # Example # Consider the following interface Unit and its two implementations Butterfly and Unicorn.
-Let us assume a method healthiestButterfly with type">
+Generic method # Example # Consider the following abstract class Unit and its two subclasses Butterfly and Unicorn.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -22,7 +20,7 @@ Let us assume a method healthiestButterfly with type">
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.5ae687af763d1134abb5a64f1a6b4570b4cf0e6b0fca79d74774ddaee0099899.js" integrity="sha256-WuaHr3Y9ETSrtaZPGmtFcLTPDmsPynnXR3TdruAJmJk=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.167ba96f674ca2d4829f9f0267a1e77cad9e1ee7d53f871e26a963a1a81b6c20.js" integrity="sha256-Fnupb2dMotSCn58CZ6HnfK2eHufVP4ceJqljoagbbCA=" crossorigin="anonymous"></script>
 
   
 
@@ -1792,7 +1790,8 @@ For instance, in the chapter dedicated to <a href="">streams</a>, we repeatedly 
   Example
   <a class="anchor" href="#example">#</a>
 </h3>
-<p>Consider the following interface <code>Unit</code> and its two implementations <code>Butterfly</code> and <code>Unicorn</code>.</p>
+<p>Consider the following abstract class <code>Unit</code> and its two subclasses <code>Butterfly</code> and <code>Unicorn</code>.</p>
+<p><img src="/img/diagrams/plantuml/interface_inherit_basic_noColor.svg" alt="" /></p>
 <p>Let us assume a method <code>healthiestButterfly</code> with type</p>
 <p>$\qquad$ <code>Butterfly[]</code> $\to$ <code>Butterfly</code></p>
 <p>that returns one of the healthiest butterflies in the input array (or <code>null</code> if the array is empty).</p>

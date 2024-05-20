@@ -19,7 +19,7 @@
       <link>https://unibz-pp-23-24.github.io/docs/generics/sections/generics/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/generics/sections/generics/</guid>
-      <description>Generics # Terminology. The term generics usually refers to generic types and generic methods. Type variable # A type variable is a variable ranging over types. For instance, in the chapter dedicated to streams, we repeatedly used the variable $T$ to refer to the type of the elements of a stream.&#xA;Generic method # Example # Consider the following interface Unit and its two implementations Butterfly and Unicorn.&#xA;Let us assume a method healthiestButterfly with type</description>
+      <description>Generics # Terminology. The term generics usually refers to generic types and generic methods. Type variable # A type variable is a variable ranging over types. For instance, in the chapter dedicated to streams, we repeatedly used the variable $T$ to refer to the type of the elements of a stream.&#xA;Generic method # Example # Consider the following abstract class Unit and its two subclasses Butterfly and Unicorn.</description>
     </item>
   </channel>
 </rss>
