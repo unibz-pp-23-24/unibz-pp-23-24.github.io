@@ -1,29 +1,31 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Streams in Java # A Java stream is a sequence of objects. When it is finite, a stream may be viewed as a list with limitations: a stream can only be iterated over, from left to right, and only once (this is called consuming a stream).
-Stream vs Collection # The Javadoc for the package java.util.stream summarizes key differences between a Java Stream and a Java Collection (like a List):">
+<meta name="description" content="Generic programming # Generic programming consists in writing algorithms while abstracting from data types, leaving the possibility for these data types to be specified as parameters. Many statically typed imperative languages support such mechanisms: C&#43;&#43;, C#, Go, Java, Rust, Typescript, etc. In functional programming languages (such as Haskell), generic programming is known as parametric polymorphism.
+Java only integrated generic programming in 2004 (with Java 5).
+Java&rsquo;s generic types were influenced by the Standard Template Library for C&#43;&#43; (released in 1994), but the implementation (and semantics in some cases) is significantly different, based on a mechanism called type erasure (which guarantees backward compatibility with prior versions of Java).">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/generics/">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/generics/">
   <meta property="og:site_name" content="Programming project 2023-24">
-  <meta property="og:title" content="Streams in Java">
-  <meta property="og:description" content="Streams in Java # A Java stream is a sequence of objects. When it is finite, a stream may be viewed as a list with limitations: a stream can only be iterated over, from left to right, and only once (this is called consuming a stream).
-Stream vs Collection # The Javadoc for the package java.util.stream summarizes key differences between a Java Stream and a Java Collection (like a List):">
+  <meta property="og:title" content="Generic programming">
+  <meta property="og:description" content="Generic programming # Generic programming consists in writing algorithms while abstracting from data types, leaving the possibility for these data types to be specified as parameters. Many statically typed imperative languages support such mechanisms: C&#43;&#43;, C#, Go, Java, Rust, Typescript, etc. In functional programming languages (such as Haskell), generic programming is known as parametric polymorphism.
+Java only integrated generic programming in 2004 (with Java 5).
+Java’s generic types were influenced by the Standard Template Library for C&#43;&#43; (released in 1994), but the implementation (and semantics in some cases) is significantly different, based on a mechanism called type erasure (which guarantees backward compatibility with prior versions of Java).">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="website">
-<title>Streams in Java | Programming project 2023-24</title>
+<title>Generic programming | Programming project 2023-24</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.afed8db25ff77336b8f8e79b080b54995ece76029b816d4e24fb76a4d0d7ce05.js" integrity="sha256-r&#43;2Nsl/3cza4&#43;OebCAtUmV7OdgKbgW1OJPt2pNDXzgU=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.5ae687af763d1134abb5a64f1a6b4570b4cf0e6b0fca79d74774ddaee0099899.js" integrity="sha256-WuaHr3Y9ETSrtaZPGmtFcLTPDmsPynnXR3TdruAJmJk=" crossorigin="anonymous"></script>
 
   
 
-<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/docs/generics/index.xml" title="Programming project 2023-24" />
+<link rel="alternate" type="application/rss+xml" href="https://unibz-pp-23-24.github.io/docs/generics/index.xml" title="Programming project 2023-24" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -986,27 +988,6 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-87d53bbeb97db8aab24c02b4d45460f2" class="toggle" checked />
-    <label for="section-87d53bbeb97db8aab24c02b4d45460f2" class="flex justify-between">
-      <a href="/docs/generics/" class="active">Streams in Java</a>
-    </label>
-  
-
-          
-  <ul>
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
     <input type="checkbox" id="section-41a2765a9682fb1ce579fb1661f1250d" class="toggle"  />
     <label for="section-41a2765a9682fb1ce579fb1661f1250d" class="flex justify-between">
       <a href="/docs/stream/" class="">Streams in Java</a>
@@ -1102,6 +1083,53 @@ https://github.com/alex-shpak/hugo-book
 
   
     <a href="/docs/stream/sections/optional/" class="">Optional</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-87d53bbeb97db8aab24c02b4d45460f2" class="toggle" checked />
+    <label for="section-87d53bbeb97db8aab24c02b4d45460f2" class="flex justify-between">
+      <a href="/docs/generics/" class="active">Generic programming</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/generics/sections/type_checking/" class="">Type checking</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/generics/sections/generics/" class="">Generics</a>
   
 
         </li>
@@ -1696,7 +1724,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Streams in Java</strong>
+  <strong>Generic programming</strong>
 
   <label for="toc-control">
     
@@ -1710,12 +1738,7 @@ https://github.com/alex-shpak/hugo-book
   <aside class="hidden clearfix">
     
   
-<nav id="TableOfContents">
-  <ul>
-    <li><a href="#stream-vs-collection">Stream vs Collection</a></li>
-    <li><a href="#parallelization">Parallelization</a></li>
-  </ul>
-</nav>
+<nav id="TableOfContents"></nav>
 
 
 
@@ -1726,34 +1749,18 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown book-article"><h1 id="streams-in-java">
-  Streams in Java
-  <a class="anchor" href="#streams-in-java">#</a>
+  <article class="markdown book-article"><h1 id="generic-programming">
+  Generic programming
+  <a class="anchor" href="#generic-programming">#</a>
 </h1>
 <p><blockquote class="book-hint warning">
-  A Java <strong>stream</strong> is a sequence of objects.
+  <strong>Generic programming</strong> consists in writing algorithms while <em>abstracting</em> from data types, leaving the possibility for these data types to be specified as <strong>parameters</strong>.
 </blockquote>
 
-When it is finite, a stream may be viewed as a <a href="http://localhost:1313/docs/abstractdatatypes/sections/list/">list</a> with limitations: a stream can only be iterated over, from left to right, and only <em>once</em> (this is called <strong>consuming</strong> a stream).</p>
-<h2 id="stream-vs-collection">
-  Stream vs Collection
-  <a class="anchor" href="#stream-vs-collection">#</a>
-</h2>
-<p>The Javadoc for the package <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/stream/package-summary.html">java.util.stream</a> summarizes key differences between a Java <code>Stream</code> and a Java <code>Collection</code> (like a <code>List</code>):</p>
-<blockquote>
-<ul>
-<li><strong><em>No storage.</em></strong> A stream is not a data structure that stores elements; instead, it <em>conveys</em> elements from a source (such as an array) through a <em>pipeline</em> of computational operations.</li>
-<li><strong><em>Functional in nature.</em></strong> An operation on a stream produces a result, but does not modify its source. For example, filtering a stream obtained from a collection produces a new stream without the filtered elements, rather than removing elements from the source collection.</li>
-<li><strong><em>Laziness-seeking.</em></strong> Many stream operations, such as filtering, mapping, or duplicate removal, can be implemented lazily, exposing opportunities for optimization.</li>
-<li><strong><em>Possibly unbounded.</em></strong> While collections have a finite size, streams need not.</li>
-<li><strong><em>Consumable.</em></strong> The elements of a stream are only visited <em>once</em> during the life of a stream.</li>
-</ul>
-</blockquote>
-<h2 id="parallelization">
-  Parallelization
-  <a class="anchor" href="#parallelization">#</a>
-</h2>
-<p>Another important feature of Java stream is native support for multithreading, with a high-level syntax.</p>
+Many statically typed imperative languages support such mechanisms: C++, C#, Go, Java, Rust, Typescript, etc.
+In functional programming languages (such as Haskell), generic programming is known as <strong>parametric polymorphism</strong>.</p>
+<p>Java only integrated generic programming in 2004 (with Java 5).</p>
+<p>Java&rsquo;s generic types were influenced by the Standard Template Library for C++ (released in 1994), but the implementation (and semantics in some cases) is significantly different, based on a mechanism called <a href="">type erasure</a> (which guarantees backward compatibility with prior versions of Java).</p>
 </article>
  
       
@@ -1793,12 +1800,7 @@ When it is finite, a stream may be viewed as a <a href="http://localhost:1313/do
       <div class="book-toc-content">
         
   
-<nav id="TableOfContents">
-  <ul>
-    <li><a href="#stream-vs-collection">Stream vs Collection</a></li>
-    <li><a href="#parallelization">Parallelization</a></li>
-  </ul>
-</nav>
+<nav id="TableOfContents"></nav>
 
 
  

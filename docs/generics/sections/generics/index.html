@@ -1,0 +1,2253 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Generics # Terminology. The term generics usually refers to generic types and generic methods. Type variable # A type variable is a variable ranging over types. For instance, in the chapter dedicated to streams, we repeatedly used the variable $T$ to refer to the type of the elements of a stream.
+Generic method # Example # Consider the following interface Unit and its two implementations Butterfly and Unicorn.
+Let us assume a method healthiestButterfly with type">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/generics/sections/generics/">
+  <meta property="og:site_name" content="Programming project 2023-24">
+  <meta property="og:title" content="Generics">
+  <meta property="og:description" content="Generics # Terminology. The term generics usually refers to generic types and generic methods. Type variable # A type variable is a variable ranging over types. For instance, in the chapter dedicated to streams, we repeatedly used the variable $T$ to refer to the type of the elements of a stream.
+Generic method # Example # Consider the following interface Unit and its two implementations Butterfly and Unicorn.
+Let us assume a method healthiestButterfly with type">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Generics | Programming project 2023-24</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" >
+<link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.5ae687af763d1134abb5a64f1a6b4570b4cf0e6b0fca79d74774ddaee0099899.js" integrity="sha256-WuaHr3Y9ETSrtaZPGmtFcLTPDmsPynnXR3TdruAJmJk=" crossorigin="anonymous"></script>
+
+  
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
+  integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0"
+  crossorigin="anonymous"
+/>
+
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
+  integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
+  crossorigin="anonymous"
+></script>
+
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
+  integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);"
+></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+      ],
+    });
+  });
+</script>
+
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Programming project 2023-24</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f1c1e874f9c9473478447bba6c7db644" class="toggle"  />
+    <label for="section-f1c1e874f9c9473478447bba6c7db644" class="flex justify-between">
+      <a href="/docs/intro/" class="">This course</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/schedule/" class="">Schedule</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/lecturers/" class="">Teaching staff</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/evaluation/" class="">Evaluation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/content/" class="">Content</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/board_game/" class="">Board game</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/bibliography/" class="">Bibliography</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-bc4d9392f5af16481cccf0c311076888" class="toggle"  />
+    <label for="section-bc4d9392f5af16481cccf0c311076888" class="flex justify-between">
+      <a href="/docs/project/" class="">Project</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/project/sections/free_project/" class="">Option 1: free project</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/project/sections/board_game/" class="">Option 2: board game</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-3435ead23eba75b5ffeeb8d422f70dea" class="toggle"  />
+    <label for="section-3435ead23eba75b5ffeeb8d422f70dea" class="flex justify-between">
+      <a href="/docs/objects/" class="">Objects and classes</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/objects/" class="">Objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classes/" class="">Class and instance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/inheritance/" class="">Inheritance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/methods/" class="">Instance methods</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/tostring/" class="">Displaying objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/comparing/" class="">Cast and equality</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classesasobjects/" class="">Classes as objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/clone/" class="">Duplicating objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/quasi-objects/" class="">Quasi-objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/encapsulation/" class="">Encapsulation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/mutability/" class="">Mutability</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/quiz/" class="">Quiz</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-48bc13e86f573c257821b397e779b02e" class="toggle"  />
+    <label for="section-48bc13e86f573c257821b397e779b02e" class="flex justify-between">
+      <a href="/docs/interfaces/" class="">Interfaces</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/interfaces/sections/specification/" class="">Specification and programming interface</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/interfaces/sections/java_interfaces/" class="">Java interfaces</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-e06acd393c0cc6e5b27e2cd8945d3dd8" class="toggle"  />
+    <label for="section-e06acd393c0cc6e5b27e2cd8945d3dd8" class="flex justify-between">
+      <a href="/docs/abstractdatatypes/" class="">Abstract data types</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/list/" class="">List</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/set/" class="">Set</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/map/" class="">Associative array</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/queue/" class="">Stack, queue, priority queue</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/sorting/" class="">Sorting</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-93b39c27c032f5f72bed81496cbb41e3" class="toggle"  />
+    <label for="section-93b39c27c032f5f72bed81496cbb41e3" class="flex justify-between">
+      <a href="/docs/errors/" class="">Errors</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a2fa4d1523374519c87fe83f9d8226b6" class="toggle"  />
+    <label for="section-a2fa4d1523374519c87fe83f9d8226b6" class="flex justify-between">
+      <a href="/docs/errors/sections/callstack/" class="">Call stack</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-323953d2054911560fd76ed4505d5bb2" class="toggle"  />
+    <label for="section-323953d2054911560fd76ed4505d5bb2" class="flex justify-between">
+      <a href="/docs/errors/sections/exceptions/" class="">Exceptions</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-03b7629c50286af7810d9917f4bdabd2" class="toggle"  />
+    <label for="section-03b7629c50286af7810d9917f4bdabd2" class="flex justify-between">
+      <a href="/docs/errors/sections/checked/" class="">Checked vs unchecked</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-3add83584009ceb58c28b43e0a2280c9" class="toggle"  />
+    <label for="section-3add83584009ceb58c28b43e0a2280c9" class="flex justify-between">
+      <a href="/docs/errors/sections/custom/" class="">Custom exceptions</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-b9c696d05ab8cb944ddf9cef47a3abb4" class="toggle"  />
+    <label for="section-b9c696d05ab8cb944ddf9cef47a3abb4" class="flex justify-between">
+      <a href="/docs/errors/sections/errors/" class="">Java errors</a>
+    </label>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-1be866adbf7f2244d1773e0d2a159b91" class="toggle"  />
+    <label for="section-1be866adbf7f2244d1773e0d2a159b91" class="flex justify-between">
+      <a href="/docs/recursion/" class="">Recursion</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/recursion/sections/linear/" class="">Linear recursion</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/recursion/sections/nary/" class="">N-ary recursion</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/recursion/sections/correctness/" class="">Correctness</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-b7bc445f96cbe2bd1034c5f1c5d075bb" class="toggle"  />
+    <label for="section-b7bc445f96cbe2bd1034c5f1c5d075bb" class="flex justify-between">
+      <a href="/docs/input/" class="">I/O and serialization</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-09ea3b18445537bd77c25d3db6ab2fcf" class="toggle"  />
+    <label for="section-09ea3b18445537bd77c25d3db6ab2fcf" class="flex justify-between">
+      <a href="/docs/input/sections/files/" class="">Paths and files in Java</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-640b25aadb55f28505bfbbe5a5f7073d" class="toggle"  />
+    <label for="section-640b25aadb55f28505bfbbe5a5f7073d" class="flex justify-between">
+      <a href="/docs/input/sections/read/" class="">Reading from and writing to a file in Java</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-7efe7741b54b5b602db75415a7806ef4" class="toggle"  />
+    <label for="section-7efe7741b54b5b602db75415a7806ef4" class="flex justify-between">
+      <a href="/docs/input/sections/property/" class="">Configuration files</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-37fdfe811c449d15e51a84c19673df2f" class="toggle"  />
+    <label for="section-37fdfe811c449d15e51a84c19673df2f" class="flex justify-between">
+      <a href="/docs/input/sections/serialize/" class="">Serialization</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ec41b3fcd24b301058a1bd1bd7b5c8e7" class="toggle"  />
+    <label for="section-ec41b3fcd24b301058a1bd1bd7b5c8e7" class="flex justify-between">
+      <a href="/docs/input/sections/json/" class="">JSON Serialization</a>
+    </label>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-baf3ea6e28839ac044570d2d313c8794" class="toggle"  />
+    <label for="section-baf3ea6e28839ac044570d2d313c8794" class="flex justify-between">
+      <a href="/docs/regex/" class="">Regular expressions</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/regex/sections/pattern/" class="">Pattern matching</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/regex/sections/practice/" class="">in practice</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/regex/sections/java/" class="">Using Java regexes</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ae8fba9e927e4c55801a4e71f6b7d054" class="toggle"  />
+    <label for="section-ae8fba9e927e4c55801a4e71f6b7d054" class="flex justify-between">
+      <a href="/docs/lambda/" class="">Callback methods and lamda expressions</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/pure/" class="">Pure function</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/anonymous/" class="">Anonymous method</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/lambda/" class="">Lambda expression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/type/" class="">Type of a method</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/callback/" class="">Callback method</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/captured/" class="">Captured variables</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-41a2765a9682fb1ce579fb1661f1250d" class="toggle"  />
+    <label for="section-41a2765a9682fb1ce579fb1661f1250d" class="flex justify-between">
+      <a href="/docs/stream/" class="">Streams in Java</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/pipeline/" class="">Pipeline</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/init/" class="">Source</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/intermediate/" class="">Intermediate operations</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/terminal/" class="">Terminal operation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/numeric/" class="">Numeric stream</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/order/" class="">Multithreading and order</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/optional/" class="">Optional</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-87d53bbeb97db8aab24c02b4d45460f2" class="toggle" checked />
+    <label for="section-87d53bbeb97db8aab24c02b4d45460f2" class="flex justify-between">
+      <a href="/docs/generics/" class="">Generic programming</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/generics/sections/type_checking/" class="">Type checking</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/generics/sections/generics/" class="active">Generics</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-9d77b970a03dc72b048d9fce7bfe272f" class="toggle"  />
+    <label for="section-9d77b970a03dc72b048d9fce7bfe272f" class="flex justify-between">
+      <a href="/docs/unittests/" class="">Unit tests</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-796939dc839b82c2ff89d99e47011262" class="toggle"  />
+    <label for="section-796939dc839b82c2ff89d99e47011262" class="flex justify-between">
+      <a href="/docs/unittests/sections/structured/" class="">Code units</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ad5c3d825858d4a9ca4ad02d541f7121" class="toggle"  />
+    <label for="section-ad5c3d825858d4a9ca4ad02d541f7121" class="flex justify-between">
+      <a href="/docs/unittests/sections/tdd/" class="">Development driven by unit tests</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-7e09be54c45521908b57f9eaf194f5f6" class="toggle"  />
+    <label for="section-7e09be54c45521908b57f9eaf194f5f6" class="flex justify-between">
+      <a href="/docs/unittests/sections/junit/" class="">in Java</a>
+    </label>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-494fdb80ca3ad5d2868cb487a042ae27" class="toggle"  />
+    <label for="section-494fdb80ca3ad5d2868cb487a042ae27" class="flex justify-between">
+      <a href="/docs/env/" class="">Development environment</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/files/" class="">Hierarchical file system</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/backup/" class="">Backup</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/install/" class="">Software management</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/os/" class="">Operating system</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/requirements/" class="">Requirements for this course</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/ide/" class="">IDE</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/text_editor/" class="">Text editor</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/eval/" class="">Evaluation environment</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/terminal/" class="">Terminal</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-2870a15a3d2cff84408f43cbb1e77f97" class="toggle"  />
+    <label for="section-2870a15a3d2cff84408f43cbb1e77f97" class="flex justify-between">
+      <a href="/docs/git/" class="">git</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/basics/" class="">Basics: repository, commits and branches</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/collaboration/" class="">Basics: network and collaboration</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/config/" class="">Configuration</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/create/" class="">Create or clone a repository</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/commit/" class="">Add, commit, stash</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/branches/" class="">Branches</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/sharing/" class="">Synchronization: remote, push, pull</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/backtracking/" class="">Backtracking</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/ignore/" class="">Ignoring files</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/resources/" class="">To go further</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-44fa5eb3511a340ff4e9042080604b5c" class="toggle"  />
+    <label for="section-44fa5eb3511a340ff4e9042080604b5c" class="flex justify-between">
+      <a href="/docs/build/" class="">Build automation</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-0c816e62fd66eb322757addb01600cdd" class="toggle"  />
+    <label for="section-0c816e62fd66eb322757addb01600cdd" class="flex justify-between">
+      <a href="/docs/build/sections/packaging/" class="">Packaging a Java application</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-5537e478f301d8ff4f0b5a7a03c9db32" class="toggle"  />
+    <label for="section-5537e478f301d8ff4f0b5a7a03c9db32" class="flex justify-between">
+      <a href="/docs/build/sections/layout/" class="">Layout</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-33bd3456c4645cc966d192fba400a71a" class="toggle"  />
+    <label for="section-33bd3456c4645cc966d192fba400a71a" class="flex justify-between">
+      <a href="/docs/build/sections/pom/" class="">Configuration file</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-c956d0b428ebb6c853f314459a513393" class="toggle"  />
+    <label for="section-c956d0b428ebb6c853f314459a513393" class="flex justify-between">
+      <a href="/docs/build/sections/artifact/" class="">Artifact</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-d01a14431bc2161a8fed02d90e1a365b" class="toggle"  />
+    <label for="section-d01a14431bc2161a8fed02d90e1a365b" class="flex justify-between">
+      <a href="/docs/build/sections/dependencies/" class="">Dependencies</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-b838446830102a7dece872d673537390" class="toggle"  />
+    <label for="section-b838446830102a7dece872d673537390" class="flex justify-between">
+      <a href="/docs/build/sections/building/" class="">Building</a>
+    </label>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ffcf8551871937aae0ce60f2b3cc616b" class="toggle"  />
+    <label for="section-ffcf8551871937aae0ce60f2b3cc616b" class="flex justify-between">
+      <a href="/docs/background/" class="">Background</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/background/sections/problem/" class="">Computational problem</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/background/sections/set_tuple_map/" class="">Set, tuple, function</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/background/sections/order/" class="">Relation, preorder</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/background/sections/regular/" class="">Regular languages</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Generics</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#type-variable">Type variable</a></li>
+    <li><a href="#generic-method">Generic method</a>
+      <ul>
+        <li><a href="#terminology">Terminology</a></li>
+        <li><a href="#syntax-in-java">Syntax in Java</a></li>
+      </ul>
+    </li>
+    <li><a href="#generic-type">Generic type</a>
+      <ul>
+        <li><a href="#usage">Usage</a></li>
+        <li><a href="#syntax-in-java-1">Syntax in Java</a></li>
+      </ul>
+    </li>
+    <li><a href="#more-examples">More examples</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="generics">
+  Generics
+  <a class="anchor" href="#generics">#</a>
+</h1>
+<blockquote class="book-hint warning">
+  <strong><em>Terminology.</em></strong> The term <strong>generics</strong> usually refers to <a href="">generic types</a> and <a href="">generic methods</a>.
+</blockquote>
+
+<h2 id="type-variable">
+  Type variable
+  <a class="anchor" href="#type-variable">#</a>
+</h2>
+<p><blockquote class="book-hint warning">
+  A <strong>type variable</strong> is a variable ranging over types.
+</blockquote>
+
+For instance, in the chapter dedicated to <a href="">streams</a>, we repeatedly used the variable $T$ to refer to the type of the elements of a stream.</p>
+<h2 id="generic-method">
+  Generic method
+  <a class="anchor" href="#generic-method">#</a>
+</h2>
+<blockquote class="book-hint info">
+  <h3 id="example">
+  Example
+  <a class="anchor" href="#example">#</a>
+</h3>
+<p>Consider the following interface <code>Unit</code> and its two implementations <code>Butterfly</code> and <code>Unicorn</code>.</p>
+<p>Let us assume a method <code>healthiestButterfly</code> with type</p>
+<p>$\qquad$ <code>Butterfly[]</code> $\to$ <code>Butterfly</code></p>
+<p>that returns one of the healthiest butterflies in the input array (or <code>null</code> if the array is empty).</p>
+<p>The following program does not compile, <em>as expected</em> :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Butterfly<span style="color:#f92672">[]</span> butterflies <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Butterfly<span style="color:#f92672">[]</span>{ <span style="color:#66d9ef">new</span> Butterfly(12), <span style="color:#66d9ef">new</span> Butterfly(5) };
+</span></span><span style="display:flex;"><span>Unicorn u <span style="color:#f92672">=</span> healthiestButterfly(butterflies);
+</span></span></code></pre></div><p>Neither does the following program (<em>as expected</em> still):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Butterfly<span style="color:#f92672">[]</span> butterflies <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Butterfly<span style="color:#f92672">[]</span>{ <span style="color:#66d9ef">new</span> Butterfly(12), <span style="color:#66d9ef">new</span> Unicorn(5) };
+</span></span><span style="display:flex;"><span>Butterfly b <span style="color:#f92672">=</span> healthiestButterfly(butterflies);
+</span></span></code></pre></div><p>Now let us assume that we need to perform the same operation on arrays of unicorns.</p>
+<p>We could write a nearly identical method <code>healthiestUnicorn</code>, with type:</p>
+<p>$\qquad$ <code>Unicorn[]</code> $\to$ <code>Unicorn</code></p>
+<p>which returns one of the healthiest unicorns in the input array (if any).</p>
+<p>However, this approach is not scalable for a larger number $n$ of units types, because:</p>
+<ul>
+<li>modifying the implementation requires modifying $n$ methods, and</li>
+<li>duplicated code means duplicated bugs.</li>
+</ul>
+<p>Alternatively, we could factorize our code by writing a single method <code>healthiest</code> with type:</p>
+<p>$\qquad$ <code>Unit[]</code> $\to$ <code>Unit</code></p>
+<p>However, with this solution, the two compile-time type checks that we saw above would be lost.
+The compiler cannot enforce anymore that:</p>
+<ol>
+<li>the returned <code>Unit</code> has the same type as the units of the input array,</li>
+<li>the input units must have the same type.
+For instance, the following program would compile:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Unit<span style="color:#f92672">[]</span> units <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Butterfly<span style="color:#f92672">[]</span>{ <span style="color:#66d9ef">new</span> Butterfly(12), <span style="color:#66d9ef">new</span> Unicorn(5) };
+</span></span><span style="display:flex;"><span>Unit healthiest <span style="color:#f92672">=</span> healthiest(units);
+</span></span></code></pre></div><h4 id="solution">
+  Solution
+  <a class="anchor" href="#solution">#</a>
+</h4>
+<p>We can factorize our code without sacrificing type safety, by using a type variable $T$ that stands for &ldquo;any subtype of <code>Unit</code>&rdquo;.
+In order words, we can create a method <code>healthiest</code> with type:</p>
+<p>$\qquad T[] \to T$</p>
+<p>where $T$ can be any subtype of <code>Unit</code>.</p>
+
+</blockquote>
+
+<h3 id="terminology">
+  Terminology
+  <a class="anchor" href="#terminology">#</a>
+</h3>
+<blockquote class="book-hint warning">
+  A method with (one or several) type variables is called a <strong>generic method</strong>.
+</blockquote>
+
+<h3 id="syntax-in-java">
+  Syntax in Java
+  <a class="anchor" href="#syntax-in-java">#</a>
+</h3>
+<h4 id="declaration">
+  Declaration
+  <a class="anchor" href="#declaration">#</a>
+</h4>
+<p>The generic method in our example can be written as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span>T <span style="color:#66d9ef">extends</span> Unit<span style="color:#f92672">&gt;</span> T <span style="color:#a6e22e">healthiest</span> (T<span style="color:#f92672">[]</span> units) {
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The block <code>&lt;T extends Unit&gt;</code>:</p>
+<ul>
+<li><em>declares</em> the type variable <code>T</code>, and</li>
+<li>specifies that the type <code>Unit</code> is an <strong>upper bound</strong> on the value of <code>T</code>.</li>
+</ul>
+<p>This variable <code>T</code> can be used not only in the method&rsquo;s signature, but also in its body.</p>
+<blockquote class="book-hint info">
+  <p><strong><em>Example.</em></strong>
+We could implement our method in the following (unnecessarily verbose) way.
+Observe that the type <code>T</code> also appears in the body of the method:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span>T <span style="color:#66d9ef">extends</span> Unit<span style="color:#f92672">&gt;</span> T <span style="color:#a6e22e">healthiest</span> (T<span style="color:#f92672">[]</span> units) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    T selected <span style="color:#f92672">=</span> Arrays.<span style="color:#a6e22e">stream</span>(units)
+</span></span><span style="display:flex;"><span>                    .<span style="color:#a6e22e">max</span>((u1, u2) <span style="color:#f92672">-&gt;</span> u1.<span style="color:#a6e22e">health</span> <span style="color:#f92672">-</span> u2.<span style="color:#a6e22e">health</span>)
+</span></span><span style="display:flex;"><span>                    .<span style="color:#a6e22e">orElse</span>(<span style="color:#66d9ef">null</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> selected;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+</blockquote>
+
+<blockquote class="book-hint danger">
+  <p><strong><em>Warning.</em></strong>
+In this example, <code>T</code> is a (type) <em>variable</em>.
+So any other variable name could be used, for instance</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span>X <span style="color:#66d9ef">extends</span> Unit<span style="color:#f92672">&gt;</span> X <span style="color:#a6e22e">healthiest</span> (X<span style="color:#f92672">[]</span> units) {
+</span></span><span style="display:flex;"><span>   ...
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>or</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span>TypeOfUnit <span style="color:#66d9ef">extends</span> Unit<span style="color:#f92672">&gt;</span> TypeOfUnit <span style="color:#a6e22e">healthiest</span> (TypeOfUnit<span style="color:#f92672">[]</span> units) {
+</span></span><span style="display:flex;"><span>   ...
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>By convention, the letters <code>T</code>, <code>E</code> and <code>V</code> are often used for type variables (as well as <code>R</code> if the type variable is used for the return type of a method).</p>
+
+</blockquote>
+
+<p>If there is no upper bound on the type variable (in other words, if the upper bound is <code>Object</code>), then the <code>extends</code> statement can be omitted.</p>
+<blockquote class="book-hint info">
+  <p><strong><em>Example.</em></strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> T <span style="color:#a6e22e">myMethod</span> (T arg1, String arg2) {
+</span></span><span style="display:flex;"><span>   ...
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+</blockquote>
+
+<p>It is also possible to declare several type variables, for instance:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span>T <span style="color:#66d9ef">extends</span> Unit, V<span style="color:#f92672">&gt;</span> Unit <span style="color:#a6e22e">myMethod</span> (T arg1, String arg2) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    V myUnit <span style="color:#f92672">=</span> ...
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>A question mark (<code>?</code>) can be used for a type whose name does not need to be reused.</p>
+<blockquote class="book-hint info">
+  <p><strong><em>Example.</em></strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> Unit <span style="color:#a6e22e">myMethod</span> (T arg1, <span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">extends</span> T<span style="color:#f92672">&gt;</span> arg2) {
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+</blockquote>
+
+<h4 id="method-call">
+  Method call
+  <a class="anchor" href="#method-call">#</a>
+</h4>
+<p>A generic method can be called by replacing types variables with concrete types (in a way that is consistent with the method declaration).</p>
+<blockquote class="book-hint info">
+  <p><strong><em>Examples.</em></strong>
+Let us recall the signature of our generic method above:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span>T <span style="color:#66d9ef">extends</span> Unit<span style="color:#f92672">&gt;</span> T <span style="color:#a6e22e">healthiest</span>(T<span style="color:#f92672">[]</span> units) {
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The following program will compile (and run as expected):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Butterfly<span style="color:#f92672">[]</span> butterflies <span style="color:#f92672">=</span> getButterflies();
+</span></span><span style="display:flex;"><span>Butterfly b <span style="color:#f92672">=</span> healthiest(butterflies);
+</span></span><span style="display:flex;"><span>Unit u <span style="color:#f92672">=</span> healthiest(butterflies);
+</span></span></code></pre></div><p>However, the following program will not compile, <em>as expected</em> :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Butterfly<span style="color:#f92672">[]</span> butterflies <span style="color:#f92672">=</span> getButterflies();
+</span></span><span style="display:flex;"><span>Unicorn u <span style="color:#f92672">=</span> healthiest(butterflies);
+</span></span></code></pre></div><p>The following program will not compile either, <em>as expected</em> :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String<span style="color:#f92672">[]</span> strings <span style="color:#f92672">=</span> getStrings();
+</span></span><span style="display:flex;"><span>String u <span style="color:#f92672">=</span> healthiest(strings);
+</span></span></code></pre></div>
+</blockquote>
+
+<h2 id="generic-type">
+  Generic type
+  <a class="anchor" href="#generic-type">#</a>
+</h2>
+<blockquote class="book-hint warning">
+  <strong><em>Terminology.</em></strong>
+A <strong>generic type</strong> is a type with type variable(s).
+</blockquote>
+
+<p><blockquote class="book-hint info">
+  <p><strong><em>Examples.</em></strong>
+Let <code>T</code>, <code>E</code> and <code>R</code> be type variables.
+Then in Java:</p>
+<ul>
+<li>
+<p><code>Set&lt;E&gt;</code> is a generic type,</p>
+</li>
+<li>
+<p><code>Set&lt;T&gt;</code> is equivalent to <code>Set&lt;E&gt;</code>,</p>
+</li>
+<li>
+<p><code>Function&lt;T,R&gt;</code> is another generic type.</p>
+</li>
+</ul>
+
+</blockquote>
+
+<blockquote class="book-hint warning">
+  <strong><em>Terminology.</em></strong>
+A <strong>parameterized type</strong> is a generic type whose type variables are instantiated.
+</blockquote>
+</p>
+<blockquote class="book-hint info">
+  <p><strong><em>Examples.</em></strong>
+In Java:</p>
+<ul>
+<li>
+<p><code>Set&lt;String&gt;</code> is a parameterized type,</p>
+</li>
+<li>
+<p><code>Function&lt;Unit, Boolean&gt;</code> is another parameterized type.</p>
+</li>
+</ul>
+
+</blockquote>
+
+<h3 id="usage">
+  Usage
+  <a class="anchor" href="#usage">#</a>
+</h3>
+<p>Generic types serve the same purpose as generic methods, i.e. factorizing code without sacrificing type safety.</p>
+<p>For some object-oriented languages (like Java or C++), generic types are instrumental in factorizing the implementation of <a href="">abstract data types</a> (such as lists, sets, associative arrays or queues).</p>
+<blockquote class="book-hint info">
+  <strong><em>Example.</em></strong>
+The Java class <code>HashSet&lt;E&gt;</code> provides a <em>unique</em> instance method to add an element to the set.
+This method has signature <code>boolean add(E e)</code>.
+</blockquote>
+
+<h3 id="syntax-in-java-1">
+  Syntax in Java
+  <a class="anchor" href="#syntax-in-java-1">#</a>
+</h3>
+<h4 id="declaration-1">
+  Declaration
+  <a class="anchor" href="#declaration-1">#</a>
+</h4>
+<p>Type variables can be associated to a Java class (resp. interface, record).</p>
+<p>The declaration of these type variables is identical to the one we saw above for methods, but the &ldquo;diamond&rdquo; is immediately next to the class (resp. record, interface) name (rather than left of the method declaration):</p>
+<blockquote class="book-hint info">
+  <p><strong><em>Example.</em></strong>
+We can create a generic wrapper class <code>Box</code> (similar to Java&rsquo;s <a href="">Optional</a>), as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Box</span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+</blockquote>
+
+<p>These type variables are visible in the whole the class (resp. record, interface) body.</p>
+<blockquote class="book-hint info">
+  <p><strong><em>Example.</em></strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Box</span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    T boxedValue;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    Box(T boxedValue){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">boxedValue</span> <span style="color:#f92672">=</span> boxedValue;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    T <span style="color:#a6e22e">get</span>(){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>(boxedValue <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> boxedValue;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        ...
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+</blockquote>
+
+<blockquote class="book-hint danger">
+  <p><strong><em>Warning.</em></strong>
+The value of the type variables (e.g. the value of <code>T</code> in the above example) may vary from one instance of the generic class to the other.
+Therefore a type variable <em>cannot</em> be used in a static method (or as the type of a static attribute).</p>
+<p>For instance, the following class does not compile:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Box</span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">static</span> T myAttribute;
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+</blockquote>
+
+<h4 id="instantiation">
+  Instantiation
+  <a class="anchor" href="#instantiation">#</a>
+</h4>
+<p>An instance of a generic class (resp. record) can be created by providing parameter types when calling its constructor.</p>
+<blockquote class="book-hint info">
+  <p><strong><em>Example.</em></strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Box<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> myBoxedString <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Box<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span>(<span style="color:#e6db74">&#34;banana&#34;</span>);
+</span></span></code></pre></div>
+</blockquote>
+
+<blockquote class="book-hint info">
+  <p><strong><em>Syntactic sugar.</em></strong>
+In this example, the second type parameter <code>String</code> (used with the constructor) is redundant.
+So it can be safely be omitted:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Box<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> myBoxedString <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Box<span style="color:#f92672">&lt;&gt;</span>(<span style="color:#e6db74">&#34;banana&#34;</span>);
+</span></span></code></pre></div>
+</blockquote>
+
+<h4 id="instance-method-call">
+  Instance method call
+  <a class="anchor" href="#instance-method-call">#</a>
+</h4>
+<p>A method declared in a generic class (or interface or record) can be called like a generic method (with the same restriction as the ones <a href="">described above</a>).</p>
+<blockquote class="book-hint info">
+  <p><strong><em>Example.</em></strong>
+Let us recall our generic class <code>Box&lt;T&gt;</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Box</span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    T boxedValue;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    Box(T boxedValue){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">boxedValue</span> <span style="color:#f92672">=</span> boxedValue;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    T <span style="color:#a6e22e">get</span>(){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>(boxedValue <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> boxedValue;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        ...
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The following program will compile (and run as expected).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Box<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> myBoxedString <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Box<span style="color:#f92672">&lt;&gt;</span>(<span style="color:#e6db74">&#34;banana&#34;</span>);
+</span></span><span style="display:flex;"><span>String unboxedString <span style="color:#f92672">=</span> myBoxedString.<span style="color:#a6e22e">get</span>();
+</span></span></code></pre></div><p>The following program will not compile, <em>as expected</em> :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Box<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> myBoxedString <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Box<span style="color:#f92672">&lt;&gt;</span>(<span style="color:#e6db74">&#34;banana&#34;</span>);
+</span></span><span style="display:flex;"><span>Integer unboxedInteger <span style="color:#f92672">=</span> myBoxedString.<span style="color:#a6e22e">get</span>();
+</span></span></code></pre></div>
+</blockquote>
+
+<h2 id="more-examples">
+  More examples
+  <a class="anchor" href="#more-examples">#</a>
+</h2>
+
+
+
+
+<div class="book-tabs"><input type="radio" class="toggle" name="tabs-exercise_generics" id="tabs-exercise_generics-0" checked="checked" />
+  <label for="tabs-exercise_generics-0">Exercise</label>
+  <div class="book-tabs-content markdown-inner"><p>Consider the following generic class.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Pair</span><span style="color:#f92672">&lt;</span>T, V <span style="color:#66d9ef">extends</span> T<span style="color:#f92672">&gt;</span>{
+</span></span><span style="display:flex;"><span>    T arg1;
+</span></span><span style="display:flex;"><span>    V arg2;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Pair</span>(T arg1, V arg2){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">arg1</span> <span style="color:#f92672">=</span> arg1;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">arg2</span> <span style="color:#f92672">=</span> arg2;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    V <span style="color:#a6e22e">someMethod</span>(V mArg){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> mArg;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Which of the following Java programs compile?</p>
+<ol>
+<li></li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Pair<span style="color:#f92672">&lt;</span>Number, Integer<span style="color:#f92672">&gt;</span> myPair <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Pair<span style="color:#f92672">&lt;&gt;</span>(15, 32);
+</span></span><span style="display:flex;"><span>Double someNumber <span style="color:#f92672">=</span> myPair.<span style="color:#a6e22e">someMethod</span>(6.<span style="color:#a6e22e">0</span>);
+</span></span></code></pre></div><ol start="2">
+<li></li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Pair<span style="color:#f92672">&lt;</span>Number, Integer<span style="color:#f92672">&gt;</span> myPair <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Pair<span style="color:#f92672">&lt;&gt;</span>(15, 32);
+</span></span><span style="display:flex;"><span>Number someNumber <span style="color:#f92672">=</span> myPair.<span style="color:#a6e22e">someMethod</span>(6.<span style="color:#a6e22e">0</span>);
+</span></span></code></pre></div><ol start="3">
+<li></li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Pair<span style="color:#f92672">&lt;</span>Number, Integer<span style="color:#f92672">&gt;</span> myPair <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Pair<span style="color:#f92672">&lt;&gt;</span>(15, 32);
+</span></span><span style="display:flex;"><span>Number someNumber <span style="color:#f92672">=</span> myPair.<span style="color:#a6e22e">someMethod</span>(6);
+</span></span></code></pre></div><ol start="4">
+<li></li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Pair<span style="color:#f92672">&lt;</span>Number, Number<span style="color:#f92672">&gt;</span> myPair <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Pair<span style="color:#f92672">&lt;&gt;</span>(15, 32);
+</span></span><span style="display:flex;"><span>Number someNumber <span style="color:#f92672">=</span> myPair.<span style="color:#a6e22e">someMethod</span>(6.<span style="color:#a6e22e">0</span>);
+</span></span></code></pre></div><ol start="5">
+<li></li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Pair<span style="color:#f92672">&lt;</span>Integer, Number<span style="color:#f92672">&gt;</span> myPair <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Pair<span style="color:#f92672">&lt;&gt;</span>(32, 15);
+</span></span><span style="display:flex;"><span>Integer someNumber <span style="color:#f92672">=</span> myPair.<span style="color:#a6e22e">someMethod</span>(6.<span style="color:#a6e22e">0</span>);
+</span></span></code></pre></div><ol start="6">
+<li></li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Pair<span style="color:#f92672">&lt;</span>Integer, Number<span style="color:#f92672">&gt;</span> myPair <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Pair<span style="color:#f92672">&lt;&gt;</span>(32, 15);
+</span></span><span style="display:flex;"><span>Number someNumber <span style="color:#f92672">=</span> myPair.<span style="color:#a6e22e">someMethod</span>(6.<span style="color:#a6e22e">0</span>);
+</span></span></code></pre></div><ol start="7">
+<li></li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Pair<span style="color:#f92672">&lt;</span>Integer, Integer<span style="color:#f92672">&gt;</span> myPair <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Pair<span style="color:#f92672">&lt;&gt;</span>(32, 15);
+</span></span><span style="display:flex;"><span>Integer someNumber <span style="color:#f92672">=</span> myPair.<span style="color:#a6e22e">someMethod</span>(6.<span style="color:#a6e22e">0</span>);
+</span></span></code></pre></div><ol start="8">
+<li></li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Pair<span style="color:#f92672">&lt;</span>Integer, Integer<span style="color:#f92672">&gt;</span> myPair <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Pair<span style="color:#f92672">&lt;&gt;</span>(32, 15);
+</span></span><span style="display:flex;"><span>Integer someNumber <span style="color:#f92672">=</span> myPair.<span style="color:#a6e22e">someMethod</span>(6);
+</span></span></code></pre></div><ol start="9">
+<li></li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Pair<span style="color:#f92672">&lt;</span>Number, Number<span style="color:#f92672">&gt;</span> myPair <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Pair<span style="color:#f92672">&lt;&gt;</span>(32, 15);
+</span></span><span style="display:flex;"><span>Double someNumber <span style="color:#f92672">=</span> myPair.<span style="color:#a6e22e">someMethod</span>(6.<span style="color:#a6e22e">0</span>);
+</span></span></code></pre></div></div></div>
+
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#type-variable">Type variable</a></li>
+    <li><a href="#generic-method">Generic method</a>
+      <ul>
+        <li><a href="#terminology">Terminology</a></li>
+        <li><a href="#syntax-in-java">Syntax in Java</a></li>
+      </ul>
+    </li>
+    <li><a href="#generic-type">Generic type</a>
+      <ul>
+        <li><a href="#usage">Usage</a></li>
+        <li><a href="#syntax-in-java-1">Syntax in Java</a></li>
+      </ul>
+    </li>
+    <li><a href="#more-examples">More examples</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -106,6 +106,13 @@
       <description>Specification and programming interface # Specification # The specification of a method usually consists of:&#xA;the computational problem that the method solves (if any), and (if needed,) a description of the format of the input and expected output, and (if applicable,) a description of the behavior of the program for invalid inputs (e.g. errors thrown by the method), and (if useful,) information about the implementation (e.g. if this may have an impact on performance for certain inputs).</description>
     </item>
     <item>
+      <title>Type checking</title>
+      <link>https://unibz-pp-23-24.github.io/docs/generics/sections/type_checking/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/generics/sections/type_checking/</guid>
+      <description>Type checking # Statically vs dynamically typed languages # A compiled programming language is said to be statically typed if (most) type checks are performed during the compilation of a program, rather than during its execution. Such languages include , C/C++, C#, Go, Java, Kotlin, Typescript, Rust, etc., as well as functional (or functional-like) languages like Haskell or Scala.&#xA;Example. The following Java program does not compile.&#xA;String banana = &amp;#34;banana&amp;#34;; banana += 1; Languages that are not statically typed are called dynamically typed.</description>
+    </item>
+    <item>
       <title>Anonymous method</title>
       <link>https://unibz-pp-23-24.github.io/docs/lambda/sections/anonymous/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -146,6 +153,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/errors/sections/exceptions/</guid>
       <description>Exceptions # Programming languages may significantly differ in the way they support errors messages.&#xA;Java relies on a mechanism called exceptions. Several other languages use exceptions, for instance C++, C#, PHP, Python or Ruby. However, the purpose of exceptions may vary from one language to another.&#xA;An exception is an object or data structure that stores information about an exceptional condition encountered during the execution of a program. in Java # In Java, an exception is an object, instance of the native class Exception.</description>
+    </item>
+    <item>
+      <title>Generics</title>
+      <link>https://unibz-pp-23-24.github.io/docs/generics/sections/generics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/generics/sections/generics/</guid>
+      <description>Generics # Terminology. The term generics usually refers to generic types and generic methods. Type variable # A type variable is a variable ranging over types. For instance, in the chapter dedicated to streams, we repeatedly used the variable $T$ to refer to the type of the elements of a stream.&#xA;Generic method # Example # Consider the following interface Unit and its two implementations Butterfly and Unicorn.&#xA;Let us assume a method healthiestButterfly with type</description>
     </item>
     <item>
       <title>Hierarchical file system</title>
