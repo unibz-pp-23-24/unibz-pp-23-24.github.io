@@ -4,14 +4,16 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Generics # Terminology. The term generics usually refers to generic types and generic methods. Type variable # A type variable is a variable ranging over types. For instance, in the chapter dedicated to streams, we repeatedly used the variable $T$ to refer to the type of the elements of a stream.
-Generic method # Example # Consider the following abstract class Unit and its two subclasses Butterfly and Unicorn.">
+Generic method # Example # Consider the following interface Unit and its two implementations Butterfly and Unicorn.
+Let us assume a method healthiestButterfly with type">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/generics/sections/generics/">
   <meta property="og:site_name" content="Programming project 2023-24">
   <meta property="og:title" content="Generics">
   <meta property="og:description" content="Generics # Terminology. The term generics usually refers to generic types and generic methods. Type variable # A type variable is a variable ranging over types. For instance, in the chapter dedicated to streams, we repeatedly used the variable $T$ to refer to the type of the elements of a stream.
-Generic method # Example # Consider the following abstract class Unit and its two subclasses Butterfly and Unicorn.">
+Generic method # Example # Consider the following interface Unit and its two implementations Butterfly and Unicorn.
+Let us assume a method healthiestButterfly with type">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -20,7 +22,7 @@ Generic method # Example # Consider the following abstract class Unit and its tw
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.167ba96f674ca2d4829f9f0267a1e77cad9e1ee7d53f871e26a963a1a81b6c20.js" integrity="sha256-Fnupb2dMotSCn58CZ6HnfK2eHufVP4ceJqljoagbbCA=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.466c2e60c87fbc45652cbc4dbb22eeea00c29ec0620f44285ad00453084e9bdb.js" integrity="sha256-RmwuYMh/vEVlLLxNuyLu6gDCnsBiD0QoWtAEUwhOm9s=" crossorigin="anonymous"></script>
 
   
 
@@ -1790,7 +1792,7 @@ For instance, in the chapter dedicated to <a href="">streams</a>, we repeatedly 
   Example
   <a class="anchor" href="#example">#</a>
 </h3>
-<p>Consider the following abstract class <code>Unit</code> and its two subclasses <code>Butterfly</code> and <code>Unicorn</code>.</p>
+<p>Consider the following interface <code>Unit</code> and its two implementations <code>Butterfly</code> and <code>Unicorn</code>.</p>
 <p><img src="/img/diagrams/plantuml/interface_inherit_basic_noColor.svg" alt="" /></p>
 <p>Let us assume a method <code>healthiestButterfly</code> with type</p>
 <p>$\qquad$ <code>Butterfly[]</code> $\to$ <code>Butterfly</code></p>
@@ -1819,7 +1821,7 @@ The compiler cannot enforce anymore that:</p>
 <li>the input units must have the same type.
 For instance, the following program would compile:</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Unit<span style="color:#f92672">[]</span> units <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Butterfly<span style="color:#f92672">[]</span>{ <span style="color:#66d9ef">new</span> Butterfly(12), <span style="color:#66d9ef">new</span> Unicorn(5) };
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Unit<span style="color:#f92672">[]</span> units <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Unit<span style="color:#f92672">[]</span>{ <span style="color:#66d9ef">new</span> Butterfly(12), <span style="color:#66d9ef">new</span> Unicorn(5) };
 </span></span><span style="display:flex;"><span>Unit healthiest <span style="color:#f92672">=</span> healthiest(units);
 </span></span></code></pre></div><h4 id="solution">
   Solution
@@ -1896,16 +1898,11 @@ So any other variable name could be used, for instance</p>
 </span></span></code></pre></div>
 </blockquote>
 
-<p>It is also possible to declare several type variables, for instance:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span>T <span style="color:#66d9ef">extends</span> Unit, V<span style="color:#f92672">&gt;</span> Unit <span style="color:#a6e22e">myMethod</span> (T arg1, String arg2) {
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    V myUnit <span style="color:#f92672">=</span> ...
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>A question mark (<code>?</code>) can be used for a type whose name does not need to be reused.</p>
+<p>It is also possible to declare several type variables.</p>
 <blockquote class="book-hint info">
   <p><strong><em>Example.</em></strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> Unit <span style="color:#a6e22e">myMethod</span> (T arg1, <span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">extends</span> T<span style="color:#f92672">&gt;</span> arg2) {
-</span></span><span style="display:flex;"><span>    ...
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span>T <span style="color:#66d9ef">extends</span> Unit, V<span style="color:#f92672">&gt;</span> Unit <span style="color:#a6e22e">myMethod</span> (T arg1, V arg2) {
+</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div>
 </blockquote>
@@ -2018,7 +2015,7 @@ We can create a generic wrapper class <code>Box</code> (similar to Java&rsquo;s 
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    T boxedValue;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    Box(T boxedValue){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Box</span>(T boxedValue){
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">boxedValue</span> <span style="color:#f92672">=</span> boxedValue;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>
@@ -2077,7 +2074,7 @@ Let us recall our generic class <code>Box&lt;T&gt;</code>:</p>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    T boxedValue;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    Box(T boxedValue){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Box</span>(T boxedValue){
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">boxedValue</span> <span style="color:#f92672">=</span> boxedValue;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>
