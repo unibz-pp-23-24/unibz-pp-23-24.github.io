@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Optional # The class Optional was introduced in Java 8. An Optional is a container object that may or may not contain a value. Its main purpose is to indicate that the object returned by a function may be null.
-Example. In our game, the interface Board provides a method getUnit(int rowIndex, columnIndex), that returns the unit standing on the tile with these coordinates, if any.
+Example. In our game, the interface Board provides a method getUnit(int rowIndex, int columnIndex), that returns the unit standing on the tile with these coordinates, if any.
 This could be implemented with a method">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
@@ -12,7 +12,7 @@ This could be implemented with a method">
   <meta property="og:site_name" content="Programming project 2023-24">
   <meta property="og:title" content="Optional">
   <meta property="og:description" content="Optional # The class Optional was introduced in Java 8. An Optional is a container object that may or may not contain a value. Its main purpose is to indicate that the object returned by a function may be null.
-Example. In our game, the interface Board provides a method getUnit(int rowIndex, columnIndex), that returns the unit standing on the tile with these coordinates, if any.
+Example. In our game, the interface Board provides a method getUnit(int rowIndex, int columnIndex), that returns the unit standing on the tile with these coordinates, if any.
 This could be implemented with a method">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
@@ -22,7 +22,7 @@ This could be implemented with a method">
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.466c2e60c87fbc45652cbc4dbb22eeea00c29ec0620f44285ad00453084e9bdb.js" integrity="sha256-RmwuYMh/vEVlLLxNuyLu6gDCnsBiD0QoWtAEUwhOm9s=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.f6e16fc007b170e74ce57b179fc6400d27efc4912772bf53949b777f3f2efa6f.js" integrity="sha256-9uFvwAexcOdM5XsXn8ZADSfvxJEncr9TlJt3fz8u&#43;m8=" crossorigin="anonymous"></script>
 
   
 
@@ -1135,6 +1135,19 @@ https://github.com/alex-shpak/hugo-book
         </li>
       
     
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/generics/sections/erasure/" class="">Type erasure</a>
+  
+
+        </li>
+      
+    
   </ul>
 
         </li>
@@ -1770,9 +1783,9 @@ An <code>Optional</code> is a container object that may or may not contain a val
 Its main purpose is to indicate that the object returned by a function may be <code>null</code>.</p>
 <blockquote class="book-hint info">
   <p><strong><em>Example.</em></strong>
-In our <a href="https://unibz-pp-23-24.github.io/docs/intro/sections/board_game/">game</a>, the interface <code>Board</code> provides a method <code>getUnit(int rowIndex, columnIndex)</code>, that returns the unit standing on the tile with these coordinates, <em>if any</em>.</p>
+In our <a href="https://unibz-pp-23-24.github.io/docs/intro/sections/board_game/">game</a>, the interface <code>Board</code> provides a method <code>getUnit(int rowIndex, int columnIndex)</code>, that returns the unit standing on the tile with these coordinates, <em>if any</em>.</p>
 <p>This could be implemented with a method</p>
-<p>$\qquad$ <code>Unit getUnit(int rowIndex, columnIndex)</code></p>
+<p>$\qquad$ <code>Unit getUnit(int rowIndex, int columnIndex)</code></p>
 <p>that returns <code>null</code> if there is no unit on this tile (and returns the unit otherwise).</p>
 <p>However, from the signature of this method, it is not immediately clear that the returned unit may be <code>null</code>.
 This may cause a <code>NullPointerException</code> at runtime, if the method is called by some program that does not check whether this unit is <code>null</code>.</p>

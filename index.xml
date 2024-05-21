@@ -159,7 +159,7 @@
       <link>https://unibz-pp-23-24.github.io/docs/generics/sections/generics/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/generics/sections/generics/</guid>
-      <description>Generics # Terminology. The term generics usually refers to generic types and generic methods. Type variable # A type variable is a variable ranging over types. For instance, in the chapter dedicated to streams, we repeatedly used the variable $T$ to refer to the type of the elements of a stream.&#xA;Generic method # Example # Consider the following interface Unit and its two implementations Butterfly and Unicorn.&#xA;Let us assume a method healthiestButterfly with type</description>
+      <description>Generics # Terminology. The term generics usually refers to generic methods and generic types. Type variable # A type variable is a variable ranging over types. For instance, in the chapter dedicated to streams, we repeatedly used the variable $T$ to refer to the type of the elements of a stream.&#xA;Generic method # Example # Consider the following interface Unit and its two implementations Butterfly and Unicorn.&#xA;Let us assume a method healthiestButterfly with type</description>
     </item>
     <item>
       <title>Hierarchical file system</title>
@@ -379,6 +379,13 @@
       <description>Terminal operation # A stream pipeline contains one terminal operation.&#xA;This operation may for instance:&#xA;execute a method for each element of the stream (e.g. print the value of each of them), or collect these elements (e.g. into a list), or inspect these elements (check whether all of them satisfy a certain condition), or aggregate these elements (e.g. sum the values of a stream of integers). Stream.forEach # This instance method is similar to Stream.</description>
     </item>
     <item>
+      <title>Type erasure</title>
+      <link>https://unibz-pp-23-24.github.io/docs/generics/sections/erasure/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/generics/sections/erasure/</guid>
+      <description> Type erasure # </description>
+    </item>
+    <item>
       <title>Add, commit, stash</title>
       <link>https://unibz-pp-23-24.github.io/docs/git/sections/commit/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -537,7 +544,7 @@
       <link>https://unibz-pp-23-24.github.io/docs/stream/sections/optional/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/stream/sections/optional/</guid>
-      <description>Optional # The class Optional was introduced in Java 8. An Optional is a container object that may or may not contain a value. Its main purpose is to indicate that the object returned by a function may be null.&#xA;Example. In our game, the interface Board provides a method getUnit(int rowIndex, columnIndex), that returns the unit standing on the tile with these coordinates, if any.&#xA;This could be implemented with a method</description>
+      <description>Optional # The class Optional was introduced in Java 8. An Optional is a container object that may or may not contain a value. Its main purpose is to indicate that the object returned by a function may be null.&#xA;Example. In our game, the interface Board provides a method getUnit(int rowIndex, int columnIndex), that returns the unit standing on the tile with these coordinates, if any.&#xA;This could be implemented with a method</description>
     </item>
     <item>
       <title>Synchronization: remote, push, pull</title>

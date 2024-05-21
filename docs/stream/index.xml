@@ -54,7 +54,7 @@
       <link>https://unibz-pp-23-24.github.io/docs/stream/sections/optional/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/stream/sections/optional/</guid>
-      <description>Optional # The class Optional was introduced in Java 8. An Optional is a container object that may or may not contain a value. Its main purpose is to indicate that the object returned by a function may be null.&#xA;Example. In our game, the interface Board provides a method getUnit(int rowIndex, columnIndex), that returns the unit standing on the tile with these coordinates, if any.&#xA;This could be implemented with a method</description>
+      <description>Optional # The class Optional was introduced in Java 8. An Optional is a container object that may or may not contain a value. Its main purpose is to indicate that the object returned by a function may be null.&#xA;Example. In our game, the interface Board provides a method getUnit(int rowIndex, int columnIndex), that returns the unit standing on the tile with these coordinates, if any.&#xA;This could be implemented with a method</description>
     </item>
   </channel>
 </rss>
