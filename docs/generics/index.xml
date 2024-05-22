@@ -29,11 +29,18 @@
       <description>Subtype # As we saw in the previous sections, the purpose of generic programming is to write abstract code while enforcing type constraints. As a result, when we write a program that uses a generic type (e.g. a native Java Collection), we need to make sure that our code complies with these type constraints.&#xA;In some situations, this requires reasoning about types and their hierarchy (notably for programs that use callback methods).</description>
     </item>
     <item>
+      <title>Variance</title>
+      <link>https://unibz-pp-23-24.github.io/docs/generics/sections/variance/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/generics/sections/variance/</guid>
+      <description>Variance # Subtype # Notation. If $A$ and $B$ are types, we will use $A \sqsubseteq B$ to to denote the fact that $A$ is a subtype of $B$. Subtype and substitution # The Liskov substitution principle intuitively states that If $A \sqsubseteq B$, then it should be possible to replace $B$ by $A$ in a program, without affecting the correctness of type checks. Examples.&#xA;If Integer $\sqsubseteq$ Number, then a method that takes a Number as input should also accept an Integer.</description>
+    </item>
+    <item>
       <title>Type erasure</title>
       <link>https://unibz-pp-23-24.github.io/docs/generics/sections/erasure/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/generics/sections/erasure/</guid>
-      <description> Type erasure # </description>
+      <description>Type erasure in Java # Java compilers rely on an approach called type erasure to compile:&#xA;type parameters (e.g. Box&amp;lt;Integer&amp;gt;), type variables (e.g. Box&amp;lt;T&amp;gt;), and question marks (e.g. Box&amp;lt;? extends Number&amp;gt;). More often than not, when a Java program does not compile, we can understand why without understanding the compilation procedure. However, for generics, some basic understanding of type erasure can help.&#xA;Procedure # Intuitively, type erasure consists in producing a program equivalent to the initial one, but free of generic or parameterized types (i.</description>
     </item>
   </channel>
 </rss>

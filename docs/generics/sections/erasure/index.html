@@ -3,13 +3,17 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content=" Type erasure # ">
+<meta name="description" content="Type erasure in Java # Java compilers rely on an approach called type erasure to compile:
+type parameters (e.g. Box&lt;Integer&gt;), type variables (e.g. Box&lt;T&gt;), and question marks (e.g. Box&lt;? extends Number&gt;). More often than not, when a Java program does not compile, we can understand why without understanding the compilation procedure. However, for generics, some basic understanding of type erasure can help.
+Procedure # Intuitively, type erasure consists in producing a program equivalent to the initial one, but free of generic or parameterized types (i.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/generics/sections/erasure/">
   <meta property="og:site_name" content="Programming project 2023-24">
   <meta property="og:title" content="Type erasure">
-  <meta property="og:description" content=" Type erasure # ">
+  <meta property="og:description" content="Type erasure in Java # Java compilers rely on an approach called type erasure to compile:
+type parameters (e.g. Box&lt;Integer&gt;), type variables (e.g. Box&lt;T&gt;), and question marks (e.g. Box&lt;? extends Number&gt;). More often than not, when a Java program does not compile, we can understand why without understanding the compilation procedure. However, for generics, some basic understanding of type erasure can help.
+Procedure # Intuitively, type erasure consists in producing a program equivalent to the initial one, but free of generic or parameterized types (i.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -18,7 +22,7 @@
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.5d134a19998d6b24c40d90ad7d98aff9162f9f9430374177077cb3f69386fc42.js" integrity="sha256-XRNKGZmNayTEDZCtfZiv&#43;RYvn5QwN0F3B3yz9pOG/EI=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.b07a5819b79019b93d793dc3cde5673a633e7428d3346a8042e3204addf02e72.js" integrity="sha256-sHpYGbeQGbk9eT3DzeVnOmM&#43;dCjTNGqAQuMgSt3wLnI=" crossorigin="anonymous"></script>
 
   
 
@@ -1151,6 +1155,19 @@ https://github.com/alex-shpak/hugo-book
   
 
   
+    <a href="/docs/generics/sections/variance/" class="">Variance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
     <a href="/docs/generics/sections/erasure/" class="active">Type erasure</a>
   
 
@@ -1760,7 +1777,18 @@ https://github.com/alex-shpak/hugo-book
   <aside class="hidden clearfix">
     
   
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#procedure">Procedure</a></li>
+    <li><a href="#illustrations">Illustrations</a></li>
+    <li><a href="#consequences">Consequences</a>
+      <ul>
+        <li><a href="#runtime">Runtime</a></li>
+        <li><a href="#compile-time">Compile-time</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 
 
 
@@ -1771,10 +1799,169 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown book-article"><h1 id="type-erasure">
-  Type erasure
-  <a class="anchor" href="#type-erasure">#</a>
+  <article class="markdown book-article"><h1 id="type-erasure-in-java">
+  Type erasure in Java
+  <a class="anchor" href="#type-erasure-in-java">#</a>
 </h1>
+<blockquote class="book-hint warning">
+  <p>Java compilers rely on an approach called <strong><em>type erasure</em></strong> to compile:</p>
+<ul>
+<li>type parameters (e.g. <code>Box&lt;Integer&gt;</code>),</li>
+<li>type variables (e.g. <code>Box&lt;T&gt;</code>), and</li>
+<li>question marks (e.g. <code>Box&lt;? extends Number&gt;</code>).</li>
+</ul>
+</blockquote>
+
+<p>More often than not, when a Java program does not compile, we can understand why without understanding the compilation procedure.
+However, for generics, some basic understanding of type erasure can help.</p>
+<h2 id="procedure">
+  Procedure
+  <a class="anchor" href="#procedure">#</a>
+</h2>
+<p>Intuitively, type erasure consists in producing a program equivalent to the initial one,
+but free of generic or parameterized types (i.e. intuitively with no &ldquo;diamond&rdquo;).</p>
+<p>Informally, a Java compiler first performs all type checks specified in the program.
+If all type checks succeed, then:</p>
+<ul>
+<li>each type variable or question mark is replaced with its (upper or lower) bound (if any), or <code>Object</code> if there is none,</li>
+<li>explicit casts are introduced where they become necessary (as well as so-called <a href="https://docs.oracle.com/javase/tutorial/java/generics/bridgeMethods.html">bridge methods</a> if needed, to ensure that overriden methods remain overriden),</li>
+<li>all type parameters, type variables and question marks are deleted.</li>
+</ul>
+<h2 id="illustrations">
+  Illustrations
+  <a class="anchor" href="#illustrations">#</a>
+</h2>
+<blockquote class="book-hint danger">
+  <strong><em>Warning.</em></strong>
+Type erasure is traditionally illustrated with a Java program before and after erasure (for instance, in Oracle&rsquo;s <a href="https://docs.oracle.com/javase/tutorial/java/generics/erasure.html">Java tutorials</a>).
+However, these illustrations should <em>not</em> be taken literally, because compilation produces <em>byte code</em>, not source code.
+</blockquote>
+
+<blockquote class="book-hint info">
+  <p><strong><em>Example.</em></strong>
+Consider the generic class <code>Box&lt;T&gt;</code> that we used <a href="">earlier</a> illustrate covariance and contravariance, together with the methods <code>unbox</code> and <code>replaceValue</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Box</span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    T boxedValue;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Box</span>(T boxedValue){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">boxedValue</span> <span style="color:#f92672">=</span> boxedValue;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    T <span style="color:#a6e22e">getValue</span>(){
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">return</span> boxedValue;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setValue</span>(T newValue){
+</span></span><span style="display:flex;"><span>          boxedValue <span style="color:#f92672">=</span> value;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>$\qquad$</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Number <span style="color:#a6e22e">unbox</span>(Box<span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">extends</span> Number<span style="color:#f92672">&gt;</span> box){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> box.<span style="color:#a6e22e">getValue</span>();
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">replaceValue</span>(Box<span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">super</span> Integer<span style="color:#f92672">&gt;</span> box, Integer integer){
+</span></span><span style="display:flex;"><span>    box.<span style="color:#a6e22e">setValue</span>(integer);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The bytecode generated after type erasure may be equivalent to bytecode generated for the following program:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Box</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    Object boxedValue;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Box</span>(Object boxedValue){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">boxedValue</span> <span style="color:#f92672">=</span> boxedValue;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    Object <span style="color:#a6e22e">getValue</span>(){
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">return</span> boxedValue;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setValue</span>(Object newValue){
+</span></span><span style="display:flex;"><span>          boxedValue <span style="color:#f92672">=</span> value;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>$\qquad$</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Number <span style="color:#a6e22e">unbox</span>(Box box){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> (Number) box.<span style="color:#a6e22e">getValue</span>();
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">replaceValue</span>(Box box, Integer integer){
+</span></span><span style="display:flex;"><span>    box.<span style="color:#a6e22e">setValue</span>(integer);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+</blockquote>
+
+<blockquote class="book-hint info">
+  <p><strong><em>Example.</em></strong>
+Generic methods are compiled in a similar way.</p>
+<p>For instance, consider once again our generic method</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span>T <span style="color:#66d9ef">extends</span> Unit<span style="color:#f92672">&gt;</span> T <span style="color:#a6e22e">healthiest</span>(T<span style="color:#f92672">[]</span> units) {
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The bytecode generated after type erasure may be equivalent to bytecode generated for a method:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Unit <span style="color:#a6e22e">healthiest</span>(Unit<span style="color:#f92672">[]</span> units) {
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+</blockquote>
+
+<h2 id="consequences">
+  Consequences
+  <a class="anchor" href="#consequences">#</a>
+</h2>
+<h3 id="runtime">
+  Runtime
+  <a class="anchor" href="#runtime">#</a>
+</h3>
+<p>A first important consequence of type erasure (e.g. for debugging) is that parameterized types do <em>not</em> exist at runtime (as opposed C++ or C#).</p>
+<p>For instance, a JVM cannot distinguish an instance of <code>Box&lt;Integer&gt;</code> from an instance of <code>Box&lt;String&gt;</code>.
+Both are instances of the same class <code>Box</code>.</p>
+<h3 id="compile-time">
+  Compile-time
+  <a class="anchor" href="#compile-time">#</a>
+</h3>
+<p>Type erasure may also explain in some cases why a Java program are invalid.</p>
+<p>We list here two simple cases (among others).</p>
+<h4 id="ambiguity">
+  Ambiguity
+  <a class="anchor" href="#ambiguity">#</a>
+</h4>
+<p>Java (like C++ or C#) allows defining two methods with the same name in the same class, as long as they have different argument types (this is called <strong><em>method overloading</em></strong>).
+However, after type erasure, this may result in two methods with the same name and arguments (which is forbidden).</p>
+<blockquote class="book-hint info">
+  <p><strong><em>Example.</em></strong>
+The following program does <em>not</em> compile:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyClass</span><span style="color:#f92672">&lt;</span>T,V<span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">myMethod</span>(String s, T t) {
+</span></span><span style="display:flex;"><span>        ...
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">myMethod</span>(String w, V v) {
+</span></span><span style="display:flex;"><span>        ...
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+</blockquote>
+
+<h5 id="constructor">
+  Constructor
+  <a class="anchor" href="#constructor">#</a>
+</h5>
+<p>A type parameter cannot be instantiated.</p>
+<blockquote class="book-hint info">
+  <p><strong><em>Example.</em></strong>
+The following program does <em>not</em> compile:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Box</span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    T <span style="color:#a6e22e">create</span>(){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> T();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+</blockquote>
+
 </article>
  
       
@@ -1814,7 +2001,18 @@ https://github.com/alex-shpak/hugo-book
       <div class="book-toc-content">
         
   
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#procedure">Procedure</a></li>
+    <li><a href="#illustrations">Illustrations</a></li>
+    <li><a href="#consequences">Consequences</a>
+      <ul>
+        <li><a href="#runtime">Runtime</a></li>
+        <li><a href="#compile-time">Compile-time</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 
 
  

@@ -22,7 +22,7 @@ Let us assume a method healthiestButterfly with type">
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.5d134a19998d6b24c40d90ad7d98aff9162f9f9430374177077cb3f69386fc42.js" integrity="sha256-XRNKGZmNayTEDZCtfZiv&#43;RYvn5QwN0F3B3yz9pOG/EI=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.b07a5819b79019b93d793dc3cde5673a633e7428d3346a8042e3204addf02e72.js" integrity="sha256-sHpYGbeQGbk9eT3DzeVnOmM&#43;dCjTNGqAQuMgSt3wLnI=" crossorigin="anonymous"></script>
 
   
 
@@ -1155,6 +1155,19 @@ https://github.com/alex-shpak/hugo-book
   
 
   
+    <a href="/docs/generics/sections/variance/" class="">Variance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
     <a href="/docs/generics/sections/erasure/" class="">Type erasure</a>
   
 
@@ -1779,7 +1792,6 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#syntax-in-java-1">Syntax in Java</a></li>
       </ul>
     </li>
-    <li><a href="#more-examples">More examples</a></li>
   </ul>
 </nav>
 
@@ -1877,7 +1889,7 @@ In order words, we can create a method <code>healthiest</code> with type:</p>
   <a class="anchor" href="#declaration">#</a>
 </h4>
 <p>The generic method in our example can be written as follows:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span>T <span style="color:#66d9ef">extends</span> Unit<span style="color:#f92672">&gt;</span> T <span style="color:#a6e22e">healthiest</span> (T<span style="color:#f92672">[]</span> units) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span>T <span style="color:#66d9ef">extends</span> Unit<span style="color:#f92672">&gt;</span> T <span style="color:#a6e22e">healthiest</span>(T<span style="color:#f92672">[]</span> units) {
 </span></span><span style="display:flex;"><span>    ...
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>The block <code>&lt;T extends Unit&gt;</code>:</p>
@@ -2011,7 +2023,7 @@ In Java:</p>
 <p>For some object-oriented languages (like Java or C++), generic types are instrumental in factorizing the implementation of <a href="https://unibz-pp-23-24.github.io/docs/abstractdatatypes/">abstract data types</a> (such as lists, sets, associative arrays or queues).</p>
 <blockquote class="book-hint info">
   <strong><em>Example.</em></strong>
-The Java class <code>HashSet&lt;E&gt;</code> provides a <em>unique</em> instance method to add an element to the set.
+The generic Java class <code>HashSet&lt;E&gt;</code> provides a <em>unique</em> instance method to add an element to the set.
 This method has signature <code>boolean add(E e)</code>.
 </blockquote>
 
@@ -2023,7 +2035,7 @@ This method has signature <code>boolean add(E e)</code>.
   Declaration
   <a class="anchor" href="#declaration-1">#</a>
 </h4>
-<p>Type variables can be associated to a Java class (resp. interface, record).</p>
+<p>We can declare type variables whose scope is an entire Java class (resp. interface, record).</p>
 <p>The declaration of these type variables is identical to the one we saw above for methods, but the &ldquo;diamond&rdquo; is immediately next to the class (resp. record, interface) name (rather than left of the method declaration):</p>
 <blockquote class="book-hint info">
   <p><strong><em>Example.</em></strong>
@@ -2059,7 +2071,11 @@ We can create a generic wrapper class <code>Box</code> (similar to Java&rsquo;s 
 <blockquote class="book-hint danger">
   <p><strong><em>Warning.</em></strong>
 The value of the type variables (e.g. the value of <code>T</code> in the above example) may vary from one instance of the generic class to the other.
-Therefore a type variable <em>cannot</em> be used in a static method (or as the type of a static attribute).</p>
+Therefore a type variable associated to a class (resp. interface) <em>cannot</em> be used:</p>
+<ul>
+<li>in a static method of this class (resp. interface), or</li>
+<li>as the type of a static attribute of this class (resp. interface).</li>
+</ul>
 <p>For instance, the following class does not compile:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Box</span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> {
 </span></span><span style="display:flex;"><span>
@@ -2121,10 +2137,10 @@ Let us recall our generic class <code>Box&lt;T&gt;</code>:</p>
 </span></span></code></pre></div>
 </blockquote>
 
-<h2 id="more-examples">
+<h4 id="more-examples">
   More examples
   <a class="anchor" href="#more-examples">#</a>
-</h2>
+</h4>
 
 
 
@@ -2193,6 +2209,76 @@ Let us recall our generic class <code>Box&lt;T&gt;</code>:</p>
 </span></span><span style="display:flex;"><span>Double someNumber <span style="color:#f92672">=</span> myPair.<span style="color:#a6e22e">someMethod</span>(6.<span style="color:#a6e22e">0</span>);
 </span></span></code></pre></div></div></div>
 
+<h4 id="inheritance">
+  Inheritance
+  <a class="anchor" href="#inheritance">#</a>
+</h4>
+<p>If a class extends a generic class, then the subclass must redeclare the type variables of the superclass, or instantiate them (with a type).</p>
+<blockquote class="book-hint info">
+  <p><strong><em>Example.</em></strong>
+The following program does <em>not</em> compile:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Superclass</span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>      ...
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Subclass</span> <span style="color:#66d9ef">extends</span> Superclass<span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>However, the following are all valid:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Superclass</span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>      ...
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Subclass</span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">extends</span> Superclass<span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>$\qquad$</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Superclass</span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>      ...
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Subclass</span><span style="color:#f92672">&lt;</span>T <span style="color:#66d9ef">extends</span> Unit<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">extends</span> Superclass<span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>$\qquad$</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Superclass</span><span style="color:#f92672">&lt;</span>T,V<span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>      ...
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Subclass</span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">extends</span> Superclass<span style="color:#f92672">&lt;</span>T,T<span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>$\qquad$</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Superclass</span><span style="color:#f92672">&lt;</span>T,V<span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>      ...
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Subclass</span><span style="color:#f92672">&lt;</span>T <span style="color:#66d9ef">extends</span> Unit<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">extends</span> Superclass<span style="color:#f92672">&lt;</span>T,T<span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>$\qquad$</p>
+
+</blockquote>
+
+<p>The subclass can also declare additional type variable</p>
+<blockquote class="book-hint info">
+  <p><strong><em>Example.</em></strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Superclass</span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>      ...
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Subclass</span><span style="color:#f92672">&lt;</span>T,V<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">extends</span> Superclass<span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+</blockquote>
+
+<p>These rules also apply to:</p>
+<ul>
+<li>an interface that extends an interface,</li>
+<li>a class that implements an interface,</li>
+<li>etc.</li>
+</ul>
 </article>
  
       
@@ -2247,7 +2333,6 @@ Let us recall our generic class <code>Box&lt;T&gt;</code>:</p>
         <li><a href="#syntax-in-java-1">Syntax in Java</a></li>
       </ul>
     </li>
-    <li><a href="#more-examples">More examples</a></li>
   </ul>
 </nav>
 

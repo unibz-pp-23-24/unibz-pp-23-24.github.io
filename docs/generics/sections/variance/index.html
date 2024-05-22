@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Variance # Subtype # { Notation. If $A$ and $B$ are types, we will use $A \sqsubseteq B$ to to denote the fact that $A$ is a subtype of $B$. { Example. In Java, $A \sqsubseteq B$ if:
-$A$ and $B$ are classes and $A$ extends $B$ (directly or transitively), $A$ and $B$ are interfaces and $A$ extends $B$ (directly or transitively), $A$ is a class, $B$ is an interface and $A$ implements $B$ (directly or transitively), etc.">
+<meta name="description" content="Variance # Subtype # Notation. If $A$ and $B$ are types, we will use $A \sqsubseteq B$ to to denote the fact that $A$ is a subtype of $B$. Subtype and substitution # The Liskov substitution principle intuitively states that If $A \sqsubseteq B$, then it should be possible to replace $B$ by $A$ in a program, without affecting the correctness of type checks. Examples.
+If Integer $\sqsubseteq$ Number, then a method that takes a Number as input should also accept an Integer.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/generics/sections/variance/">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/generics/sections/variance/">
   <meta property="og:site_name" content="Programming project 2023-24">
   <meta property="og:title" content="Variance">
-  <meta property="og:description" content="Variance # Subtype # { Notation. If $A$ and $B$ are types, we will use $A \sqsubseteq B$ to to denote the fact that $A$ is a subtype of $B$. { Example. In Java, $A \sqsubseteq B$ if:
-$A$ and $B$ are classes and $A$ extends $B$ (directly or transitively), $A$ and $B$ are interfaces and $A$ extends $B$ (directly or transitively), $A$ is a class, $B$ is an interface and $A$ implements $B$ (directly or transitively), etc.">
+  <meta property="og:description" content="Variance # Subtype # Notation. If $A$ and $B$ are types, we will use $A \sqsubseteq B$ to to denote the fact that $A$ is a subtype of $B$. Subtype and substitution # The Liskov substitution principle intuitively states that If $A \sqsubseteq B$, then it should be possible to replace $B$ by $A$ in a program, without affecting the correctness of type checks. Examples.
+If Integer $\sqsubseteq$ Number, then a method that takes a Number as input should also accept an Integer.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -20,7 +20,7 @@ $A$ and $B$ are classes and $A$ extends $B$ (directly or transitively), $A$ and 
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.eff6983e7605c23afd62f9bfc96633fb0cff5737b22fd3a4dfadd384571db705.js" integrity="sha256-7/aYPnYFwjr9Yvm/yWYz&#43;wz/VzeyL9Ok363ThFcdtwU=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.b07a5819b79019b93d793dc3cde5673a633e7428d3346a8042e3204addf02e72.js" integrity="sha256-sHpYGbeQGbk9eT3DzeVnOmM&#43;dCjTNGqAQuMgSt3wLnI=" crossorigin="anonymous"></script>
 
   
 
@@ -1140,6 +1140,19 @@ https://github.com/alex-shpak/hugo-book
   
 
   
+    <a href="/docs/generics/sections/subtype/" class="">Subtype</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
     <a href="/docs/generics/sections/variance/" class="active">Variance</a>
   
 
@@ -1771,6 +1784,7 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#covariance">Covariance</a></li>
         <li><a href="#contravariance">Contravariance</a></li>
         <li><a href="#invariance">Invariance</a></li>
+        <li><a href="#variance-in-several-type-variables">Variance in several type variables</a></li>
       </ul>
     </li>
     <li><a href="#implementation">Implementation</a>
@@ -1798,183 +1812,263 @@ https://github.com/alex-shpak/hugo-book
   Subtype
   <a class="anchor" href="#subtype">#</a>
 </h2>
-<p>{<blockquote class="book-hint warning">
+<blockquote class="book-hint warning">
   <strong><em>Notation.</em></strong>
-If $A$ and $B$ are types, we will use $A \sqsubseteq B$ to to denote the fact that $A$ is a subtype of $B$.
+If $A$ and $B$ are types, we will use $A \sqsubseteq B$ to to denote the fact that $A$ is a <a href="">subtype</a> of $B$.
 </blockquote>
 
-{<blockquote class="book-hint info">
-  <p><strong><em>Example.</em></strong>
-In Java, $A \sqsubseteq B$ if:</p>
-<ul>
-<li>$A$ and $B$ are classes and $A$ extends $B$ (directly or transitively),</li>
-<li>$A$ and $B$ are interfaces and $A$ extends $B$ (directly or transitively),</li>
-<li>$A$ is a class, $B$ is an interface and $A$ implements $B$ (directly or transitively),</li>
-<li>etc.</li>
-</ul>
-</blockquote>
-</p>
 <h2 id="subtype-and-substitution">
   Subtype and substitution
   <a class="anchor" href="#subtype-and-substitution">#</a>
 </h2>
-<p>{<blockquote class="book-hint warning">
-  The <a href="https://en.wikipedia.org/wiki/Liskov_substitution_principle">Liskov substitution principle</a> intuitively states that If $A$ is a subtype of $B$, then it should be possible to replace $B$ by $A$ in a program, without affecting the correctness of type checks.
+<blockquote class="book-hint warning">
+  The <a href="https://en.wikipedia.org/wiki/Liskov_substitution_principle">Liskov substitution principle</a> intuitively states that If $A \sqsubseteq B$, then it should be possible to replace $B$ by $A$ in a program, without affecting the correctness of type checks.
 </blockquote>
 
-{<blockquote class="book-hint info">
+<blockquote class="book-hint info">
   <p><strong><em>Examples.</em></strong></p>
 <ul>
 <li>If <code>Integer</code> $\sqsubseteq$ <code>Number</code>, then a method that takes a <code>Number</code> as input should also accept an <code>Integer</code>.</li>
 <li>If <code>Butterfly</code> $\sqsubseteq$ <code>Unit</code>, then a method that takes a <code>Unit</code> as input should also accept a <code>Butterfly</code>.</li>
 </ul>
 </blockquote>
-</p>
+
 <h2 id="type-parameters-and-subtyping">
   Type parameters and subtyping
   <a class="anchor" href="#type-parameters-and-subtyping">#</a>
 </h2>
-<p>A natural question is whether the subtyping relation between [parameterized types]({http://localhost:1313/docs/generics/sections/generics/#genericType should be determined by subtyping between their parameters.</p>
+<p>A natural question is whether subtyping between <a href="https://unibz-pp-23-24.github.io/docs/generics/sections/generics/#genericType">parameterized types</a> should be determined by subtyping between their parameters.</p>
 <h3 id="covariance">
   Covariance
   <a class="anchor" href="#covariance">#</a>
 </h3>
-<p>{<blockquote class="book-hint info">
+<p><blockquote class="book-hint info">
   <p><strong><em>Example.</em></strong>
 Consider the generic type <code>Set&lt;T&gt;</code> (where <code>T</code> is a type variable).</p>
 <ul>
 <li>Should <code>Set&lt;Integer&gt;</code> be treated as a subtype of <code>Set&lt;Number&gt;</code>?</li>
 <li>Should <code>Set&lt;Butterfly&gt;</code> be treated as a subtype of <code>Set&lt;Unit&gt;</code>?</li>
 </ul>
-<p>More generally, if <code>A</code> is a subtype of <code>B</code>, then should <code>Set&lt;A&gt;</code> be considered a subtype of <code>Set&lt;B&gt;</code>?</p>
+<p>More generally, if <code>A</code> $\sqsubseteq$ <code>B</code>, then should <code>Set&lt;A&gt;</code> be considered a subtype of <code>Set&lt;B&gt;</code>?</p>
 
 </blockquote>
+
 In this example, the intuitively answer to this question seems to be <em>positive</em>.</p>
 <p>When this holds, the generic type (i.e. <code>Set&lt;T&gt;</code> in this example) is said to be covariant.</p>
-<p>{<blockquote class="book-hint warning">
+<blockquote class="book-hint warning">
   <p><strong><em>Definition.</em></strong>
 Let <code>Gen&lt;T&gt;</code> be a generic type (where <code>T</code> is a type variable).</p>
 <p><code>Gen&lt;T&gt;</code> is <strong>covariant</strong> if for any types <code>A</code> and <code>B</code>,</p>
 <p>$\qquad$ <code>A</code> $\sqsubseteq$ <code>B</code> implies <code>Gen&lt;A&gt;</code> $\sqsubseteq$ <code>Gen&lt;B&gt;</code></p>
 
 </blockquote>
-</p>
+
 <h3 id="contravariance">
   Contravariance
   <a class="anchor" href="#contravariance">#</a>
 </h3>
-<p>{<blockquote class="book-hint info">
+<p>What intuitively holds above for sets does not seem to hold for all generic types.</p>
+<blockquote class="book-hint info">
   <p><strong><em>Example.</em></strong>
-Consider the generic type <code>Predicate&lt;T&gt;</code> (where <code>T</code> is a type variable), which stands for of all functions that return a Boolean value, i.e. all functions with type</p>
+Consider the Java functional interface <code>Predicate&lt;T&gt;</code> (where <code>T</code> is a type variable), which stands for all functions that return a Boolean value, i.e. all functions with type</p>
 <p>$\qquad$ <code>T</code> $\to$ <code>Boolean</code></p>
-<p>for any type <code>T</code>.</p>
-<ul>
-<li>Should <code>Predicate&lt;Integer&gt;</code> be treated as a subtype of <code>Predicate&lt;Number&gt;</code>?</li>
-<li>Should <code>Predicate&lt;Butterfly&gt;</code> be treated as a subtype of <code>Predicate&lt;Unit&gt;</code>?</li>
-</ul>
-<p>More generally, if <code>A</code> is a subtype of <code>B</code>, then should <code>Predicate&lt;A&gt;</code> be considered a subtype of <code>Predicate&lt;B&gt;</code>?</p>
-<p>In other words:</p>
-<ul>
-<li>Does a function that maps (any) <code>Integer</code> to a <code>Boolean</code> also map (any) <code>Number</code> to a <code>Boolean</code>?</li>
-<li>Does a function that maps (any) <code>Butterfly</code> to a <code>Boolean</code> also map (any) <code>Unit</code> to a <code>Boolean</code>?</li>
-</ul>
-<p>More generally, if <code>A</code> is a subtype of <code>B</code>:</p>
-<ul>
-<li>does a function that maps (any) <code>A</code> to a <code>Boolean</code> also map (any) <code>B</code> to a <code>Boolean</code>?</li>
-</ul>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>The answer is intuitively <em>negative</em>.</p>
-<p>For instance, consider the function <code>isEven</code> (that return <code>true</code> if a number is even).
-This function is defined for integers, bur not for arbitrary numbers.</p>
-<p>Instead, the converse seems to hold:</p>
-<ul>
-<li>a function that maps (any) <code>Number</code> to a <code>Boolean</code> also map (any) <code>Integer</code> to a <code>Boolean</code></li>
-<li>a function that maps (any) <code>Unit</code> to a <code>Boolean</code> also map (any) <code>Butterfly</code> to a <code>Boolean</code></li>
-</ul>
-<p>For instance, the function <code>isPositive</code> (that return <code>true</code> if as number is positive) is defined for any number, therefore also for any integer.</p>
-<p>So in this case, we probably want the following to hold:</p>
-<ul>
-<li>if <code>A</code> is a subtype of <code>B</code>, then <code>Predicate&lt;B&gt;</code> should be considered a subtype of <code>Predicate&lt;A&gt;</code>.</li>
-</ul>
+<p>As we saw in the <a href="">dedicated section</a>, if <code>A</code> $\sqsubseteq$ <code>B</code>, then</p>
+<p>$\qquad$ <code>B</code> $\to$ <code>Boolean</code></p>
+<p>should intuitively be considered a subtype of</p>
+<p>$\qquad$ <code>A</code> $\to$ <code>Boolean</code></p>
+<p>Therefore in this case, we would like to treat <code>Predicate&lt;B&gt;</code> as a subtype of <code>Predicate&lt;A&gt;</code>.</p>
 
 </blockquote>
 
-{<blockquote class="book-hint warning">
+<blockquote class="book-hint warning">
   <p><strong><em>Definition.</em></strong>
 Let <code>Gen&lt;T&gt;</code> be a generic type, where <code>T</code> is a type variable.</p>
 <p><code>Gen&lt;T&gt;</code> is <strong>contravariant</strong> if for any types <code>A</code> and <code>B</code>,</p>
 <p>$\qquad$ <code>A</code> $\sqsubseteq$ <code>B</code> implies <code>Gen&lt;B&gt;</code> $\sqsubseteq$ <code>Gen&lt;A&gt;</code></p>
 
 </blockquote>
-</p>
+
 <h3 id="invariance">
   Invariance
   <a class="anchor" href="#invariance">#</a>
 </h3>
-<p>{<blockquote class="book-hint warning">
-  <p><strong><em>Definition.</em></strong>
-Let <code>Gen&lt;T&gt;</code> be a generic type, where <code>T</code> is a type variable.</p>
-<p><code>Gen&lt;T&gt;</code> is <strong>invariant</strong> if it is neither covariant nor contravariant.</p>
+<blockquote class="book-hint warning">
+  <strong><em>Definition.</em></strong>
+A generic type is <strong>invariant</strong> if it is neither covariant nor contravariant.
+</blockquote>
+
+<h3 id="variance-in-several-type-variables">
+  Variance in several type variables
+  <a class="anchor" href="#variance-in-several-type-variables">#</a>
+</h3>
+<p>If a generic type has several type variables, then it can be independently covariant, contravariant or invariant in <em>each</em> of them.</p>
+<blockquote class="book-hint info">
+  <p><strong><em>Example.</em></strong>
+Consider the Java functional interface <code>Function&lt;T,R&gt;</code> (where <code>T</code> and <code>R</code> are type variables), which stands for all functions with type</p>
+<p>$\qquad$ <code>T</code> $\to$ <code>R</code></p>
+<p>As we saw in the <a href="">dedicated section</a>,
+if <code>X1</code> $\sqsubseteq$ <code>X2</code> and
+<code>Y1</code> $\sqsubseteq$ <code>Y2</code>, then</p>
+<p>$\qquad$ <code>X2</code> $\to$ <code>Y1</code></p>
+<p>should intuitively be considered a subtype of</p>
+<p>$\qquad$ <code>X1</code> $\to$ <code>Y2</code></p>
+<p>Therefore in this case, we would like to treat <code>Function&lt;T,R&gt;</code> as:</p>
+<ul>
+<li>contravariant in <code>T</code>, and</li>
+<li>covariant in <code>R</code>.</li>
+</ul>
 
 </blockquote>
-</p>
+
 <h2 id="implementation">
   Implementation
   <a class="anchor" href="#implementation">#</a>
 </h2>
-<p>As we saw with the previous examples, some generic types are naturally covariant, while other are naturally contravariant.
-Some languages (like C#) provide a syntax to specify whether a generic type should be treated as covariant, contravariant or none (i.e. invariant) by the compiler.</p>
-<p>Java doe <em>not</em> provide this option.</p>
+<p>As we just saw with the previous examples, some generic types are naturally covariant and/or contravariant in (some of) their type variables.</p>
+<p>Some languages (like C#) provide a syntax to declare that a generic type should <em>always</em> be treated by the compiler as covariant, contravariant, invariant or a combination of them.
+However, Java does <em>not</em> offer this possibility.</p>
 <h3 id="in-java">
   in Java
   <a class="anchor" href="#in-java">#</a>
 </h3>
-<p>Java generic types are <em>invariant</em>.</p>
-<p>{<blockquote class="book-hint info">
+<h4 id="arrays">
+  Arrays
+  <a class="anchor" href="#arrays">#</a>
+</h4>
+<p>Java arrays predate (by almost 10 years) the introduction of generics.
+Technically, in Java, &ldquo;array&rdquo; is not a generic type.
+But conceptually, it can be thought of as a &ldquo;generic-like&rdquo; type.</p>
+<blockquote class="book-hint danger">
+  <strong><em>Warning.</em></strong>
+Java arrays are <em>covariant</em>.
+</blockquote>
+
+<blockquote class="book-hint info">
+  <p><strong><em>Example.</em></strong>
+The following Java program compiles:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Number<span style="color:#f92672">[]</span> anArray;
+</span></span><span style="display:flex;"><span>Integer<span style="color:#f92672">[]</span> anotherArray <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Integer<span style="color:#f92672">[]</span>{};
+</span></span><span style="display:flex;"><span>anArray <span style="color:#f92672">=</span> anotherArray;
+</span></span></code></pre></div>
+</blockquote>
+
+<h4 id="generic-types">
+  Generic types
+  <a class="anchor" href="#generic-types">#</a>
+</h4>
+<blockquote class="book-hint danger">
+  <strong><em>Warning.</em></strong>
+Java generic types are <em>invariant</em>.
+</blockquote>
+
+<blockquote class="book-hint info">
   <p><strong><em>Example.</em></strong>
 The following Java program does <em>not</em> compile:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Set<span style="color:#f92672">&lt;</span>Object<span style="color:#f92672">&gt;</span> aSet;
-</span></span><span style="display:flex;"><span>Set<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> anotherSet <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashSet<span style="color:#f92672">&lt;&gt;</span>();
-</span></span><span style="display:flex;"><span>aSet <span style="color:#f92672">=</span> anotherSet;
-</span></span></code></pre></div><p>However, each time we <em>use</em> a generic type, we can specify that it should be interpreted by the compiler as co or contravariant in this context, thanks to additional keywords.</p>
-<h4 id="covariance">
-  Covariance
-  <a class="anchor" href="#covariance">#</a>
-</h4>
-<p>We saw <a href="">earlier</a> that the keyword <code>extends</code> allows specifying an upper bound on the value of a type variable.
-A generic type like <code>Set&lt;T&gt;</code></p>
-<p><strong>Example</strong>
-The following Java program does compiles:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Set<span style="color:#f92672">&lt;</span>T <span style="color:#66d9ef">extends</span> Object<span style="color:#f92672">&gt;</span> aSet;
-</span></span><span style="display:flex;"><span>Set<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> anotherSet <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashSet<span style="color:#f92672">&lt;&gt;</span>();
-</span></span><span style="display:flex;"><span>aSet <span style="color:#f92672">=</span> anotherSet;
-</span></span></code></pre></div><p><strong><em>Syntax.</em></strong>
-When a type variable is not reused, it can be be safely replaced with a <code>?</code>.</p>
-<p><strong><em>Example (continued).</em></strong>
-In the example above, the type variable <code>T</code> is used only once.
-So it can be replaced with a <code>?</code>, as follows:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Set<span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">extends</span> Object<span style="color:#f92672">&gt;</span> aSet;
-</span></span><span style="display:flex;"><span>Set<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> anotherSet <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashSet<span style="color:#f92672">&lt;&gt;</span>();
-</span></span><span style="display:flex;"><span>aSet <span style="color:#f92672">=</span> anotherSet;
-</span></span></code></pre></div><h4 id="contravariance">
-  Contravariance
-  <a class="anchor" href="#contravariance">#</a>
-</h4>
-<hr>
-<p>Let <code>Gen&lt;T&gt;</code> be a generic type, where <code>T</code> is a type variable.</p>
-<p><code>Gen&lt;T&gt;</code> is <strong>contravariant</strong> if for any types <code>A</code> and <code>B</code>,</p>
-<p>$\qquad$ <code>A</code> $\sqsubseteq$ <code>B</code> implies <code>Gen&lt;B&gt;</code> $\sqsubseteq$ <code>Gen&lt;A&gt;</code></p>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Number<span style="color:#f92672">&gt;</span> aList;
+</span></span><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> anotherList <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;&gt;</span>();
+</span></span><span style="display:flex;"><span>aList <span style="color:#f92672">=</span> anotherList;
+</span></span></code></pre></div>
 </blockquote>
-am.filter<code>takes as argument a</code>Predicat</p>
+
+<p>So a Java generic type cannot be <em>declared</em> as covariant or contravariant.
+However, each time we <em>use</em> a generic type,
+we can specify that it should be interpreted by the compiler as covariant or contravariant.</p>
+<h5 id="covariance-1">
+  Covariance
+  <a class="anchor" href="#covariance-1">#</a>
+</h5>
+<p>We saw <a href="">earlier</a> that the keyword <code>extends</code> specifies an upper bound on the value of a type variable.
+We can also use it with a <code>?</code> to allow covariance.</p>
+<blockquote class="book-hint info">
+  <p><strong><em>Example.</em></strong>
+The following Java program does compiles:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">extends</span> Number<span style="color:#f92672">&gt;</span> aList;
+</span></span><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> anotherList <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;&gt;</span>();
+</span></span><span style="display:flex;"><span>aList <span style="color:#f92672">=</span> anotherList;
+</span></span></code></pre></div>
+</blockquote>
+
+<h5 id="contravariance-1">
+  Contravariance
+  <a class="anchor" href="#contravariance-1">#</a>
+</h5>
+<p>The keyword <code>super</code> is symmetric to the keyword <code>extends</code>.
+It can be used to specify a <strong>lower bound</strong> on the value of a type variable, or to allow contravariance (in combination with <code>?</code>).</p>
+<blockquote class="book-hint info">
+  <p><strong><em>Example.</em></strong>
+The instance method <code>Stream.filter</code> takes as argument a callback function with type <code>Predicate&lt;T&gt;</code>, where <code>T</code> is the type of the elements of the stream.</p>
+<p>As we saw above, <code>Predicate&lt;T&gt;</code> should intuitively be interpreted as contravariant.
+Accordingly, the signature of the method <code>filter</code> is</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Stream<span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">filter</span>(Predicate<span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">super</span> T<span style="color:#f92672">&gt;</span> predicate)
+</span></span></code></pre></div><p>It accepts as argument any <code>Predicate&lt;V&gt;</code> such that <code>T</code> $\sqsubseteq$ <code>V</code>.
+So the following program compiles:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> integers <span style="color:#f92672">=</span> getIntegers();
+</span></span><span style="display:flex;"><span>integers.<span style="color:#a6e22e">stream</span>()
+</span></span><span style="display:flex;"><span>          .<span style="color:#a6e22e">filter</span>(MyClass::myPredicate);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyClass</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">myPredicate</span>(Number number) {
+</span></span><span style="display:flex;"><span>        ...
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+</blockquote>
+
+<h5 id="combinations">
+  Combinations
+  <a class="anchor" href="#combinations">#</a>
+</h5>
+<blockquote class="book-hint info">
+  <p><strong><em>Example.</em></strong>
+The instance method <code>Stream.map</code> takes as argument a callback function with type <code>Function&lt;T,R&gt;</code>, where <code>T</code> is the type of the elements of the stream.</p>
+<p>As we saw above, the generic type <code>Function&lt;T,R&gt;</code> should intuitively be interpreted as contravariant in <code>T</code> and covariant in <code>R</code>.
+Accordingly, the signature of the method <code>map</code> is:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span>R<span style="color:#f92672">&gt;</span> Stream<span style="color:#f92672">&lt;</span>R<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">map</span>(Function<span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">super</span> T,<span style="color:#f92672">?</span> <span style="color:#66d9ef">extends</span> R<span style="color:#f92672">&gt;</span> mapper)
+</span></span></code></pre></div>
+</blockquote>
+
+<h5 id="when-to-use-covariance-or-contravariance-in-java">
+  When to use covariance or contravariance in Java?
+  <a class="anchor" href="#when-to-use-covariance-or-contravariance-in-java">#</a>
+</h5>
+<p>Let us assume a generic type <code>Gen</code> with a type variable <code>T</code> .
+As a rule of thumb:</p>
+<ul>
+<li>if we use an instance method of <code>Gen</code> that does not <em>take</em> a <code>T</code> as argument, then we may allow <code>Gen</code> to be covariant in <code>T</code>,</li>
+<li>if we use a method of <code>Gen</code> that does not <em>return</em> a <code>T</code>, then we may allow <code>Gen</code> to be contravariant in <code>T</code>.</li>
+</ul>
+<blockquote class="book-hint info">
+  <p><strong><em>Example.</em></strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Box</span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    T boxedValue;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Box</span>(T boxedValue){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">boxedValue</span> <span style="color:#f92672">=</span> boxedValue;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    T <span style="color:#a6e22e">getValue</span>(){
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">return</span> boxedValue;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setValue</span>(T newValue){
+</span></span><span style="display:flex;"><span>          boxedValue <span style="color:#f92672">=</span> value;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>$\qquad$</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Covariance can be used, because the method Box.getValue() does not take a T as argument.</span>
+</span></span><span style="display:flex;"><span>Number <span style="color:#a6e22e">unbox</span>(Box<span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">extends</span> Number<span style="color:#f92672">&gt;</span> box){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> box.<span style="color:#a6e22e">getValue</span>();
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Contravariance can be used, because the method Box.setValue() does not return a T.</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">replaceValue</span>(Box<span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">super</span> Integer<span style="color:#f92672">&gt;</span> box, <span style="color:#66d9ef">int</span> integer){
+</span></span><span style="display:flex;"><span>    box.<span style="color:#a6e22e">setValue</span>(integer);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+</blockquote>
+
 </article>
  
       
@@ -2023,6 +2117,7 @@ am.filter<code>takes as argument a</code>Predicat</p>
         <li><a href="#covariance">Covariance</a></li>
         <li><a href="#contravariance">Contravariance</a></li>
         <li><a href="#invariance">Invariance</a></li>
+        <li><a href="#variance-in-several-type-variables">Variance in several type variables</a></li>
       </ul>
     </li>
     <li><a href="#implementation">Implementation</a>

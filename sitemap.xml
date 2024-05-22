@@ -118,7 +118,7 @@
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/stream/sections/terminal/</loc>
   </url><url>
-    <loc>https://unibz-pp-23-24.github.io/docs/generics/sections/erasure/</loc>
+    <loc>https://unibz-pp-23-24.github.io/docs/generics/sections/variance/</loc>
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/abstractdatatypes/</loc>
   </url><url>
@@ -137,6 +137,8 @@
     <loc>https://unibz-pp-23-24.github.io/docs/stream/sections/numeric/</loc>
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/env/sections/os/</loc>
+  </url><url>
+    <loc>https://unibz-pp-23-24.github.io/docs/generics/sections/erasure/</loc>
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/lambda/sections/type/</loc>
   </url><url>
