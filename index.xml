@@ -302,6 +302,13 @@
       <description>Lambda expression # In certain programming languages like Java, C#, C++ or JavaScript, the term lambda expression (sometimes called closure expression) is used to denote an anonymous method with a certain syntax.&#xA;The term is a (loose) reference to lambda calculus, a model of computation exclusively based on function composition and application.&#xA;Syntax in Java # A Java method&#xA;&amp;lt;ReturnType&amp;gt; myMethod (&amp;lt;Type 1&amp;gt; &amp;lt;argument 1&amp;gt;, .., &amp;lt;Type n&amp;gt; &amp;lt;argument n&amp;gt;){ &amp;lt;Body&amp;gt; } can be written anonymously as the lambda expression:</description>
     </item>
     <item>
+      <title>Subtype</title>
+      <link>https://unibz-pp-23-24.github.io/docs/generics/sections/subtype/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/generics/sections/subtype/</guid>
+      <description>Subtype # As we saw in the previous sections, the purpose of generic programming is to write abstract code while enforcing type constraints. As a result, when we write a program that uses a generic type (e.g. a native Java Collection), we need to make sure that our code complies with these type constraints.&#xA;In some situations, this requires reasoning about types and their hierarchy (notably for programs that use callback methods).</description>
+    </item>
+    <item>
       <title>Using Java regexes</title>
       <link>https://unibz-pp-23-24.github.io/docs/regex/sections/java/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

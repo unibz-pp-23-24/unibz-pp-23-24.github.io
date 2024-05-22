@@ -22,6 +22,13 @@
       <description>Generics # Terminology. The term generics usually refers to generic methods and generic types. Type variable # A type variable is a variable ranging over types. For instance, in the chapter dedicated to streams, we repeatedly used the variable $T$ to refer to the type of the elements of a stream.&#xA;Generic method # Example # Consider the following interface Unit and its two implementations Butterfly and Unicorn.&#xA;Let us assume a method healthiestButterfly with type</description>
     </item>
     <item>
+      <title>Subtype</title>
+      <link>https://unibz-pp-23-24.github.io/docs/generics/sections/subtype/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/generics/sections/subtype/</guid>
+      <description>Subtype # As we saw in the previous sections, the purpose of generic programming is to write abstract code while enforcing type constraints. As a result, when we write a program that uses a generic type (e.g. a native Java Collection), we need to make sure that our code complies with these type constraints.&#xA;In some situations, this requires reasoning about types and their hierarchy (notably for programs that use callback methods).</description>
+    </item>
+    <item>
       <title>Type erasure</title>
       <link>https://unibz-pp-23-24.github.io/docs/generics/sections/erasure/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
