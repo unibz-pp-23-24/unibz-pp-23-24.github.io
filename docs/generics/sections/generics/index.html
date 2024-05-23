@@ -22,7 +22,7 @@ Let us assume a method healthiestButterfly with type">
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.b07a5819b79019b93d793dc3cde5673a633e7428d3346a8042e3204addf02e72.js" integrity="sha256-sHpYGbeQGbk9eT3DzeVnOmM&#43;dCjTNGqAQuMgSt3wLnI=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.d4d5865caf6a94b9d18b8846d9ac4d0e3f6e6c6f0e5b36ebb8b81bbe6562c8ed.js" integrity="sha256-1NWGXK9qlLnRi4hG2axNDj9ubG8OWzbruLgbvmViyO0=" crossorigin="anonymous"></script>
 
   
 
@@ -1884,9 +1884,9 @@ In order words, we can create a method <code>healthiest</code> with type:</p>
   Syntax in Java
   <a class="anchor" href="#syntax-in-java">#</a>
 </h3>
-<h4 id="declaration">
+<h4 id="extendsSyntax">
   Declaration
-  <a class="anchor" href="#declaration">#</a>
+  <a class="anchor" href="#extendsSyntax">#</a>
 </h4>
 <p>The generic method in our example can be written as follows:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span>T <span style="color:#66d9ef">extends</span> Unit<span style="color:#f92672">&gt;</span> T <span style="color:#a6e22e">healthiest</span>(T<span style="color:#f92672">[]</span> units) {
@@ -2031,9 +2031,9 @@ This method has signature <code>boolean add(E e)</code>.
   Syntax in Java
   <a class="anchor" href="#syntax-in-java-1">#</a>
 </h3>
-<h4 id="declaration-1">
+<h4 id="declaration">
   Declaration
-  <a class="anchor" href="#declaration-1">#</a>
+  <a class="anchor" href="#declaration">#</a>
 </h4>
 <p>We can declare type variables whose scope is an entire Java class (resp. interface, record).</p>
 <p>The declaration of these type variables is identical to the one we saw above for methods, but the &ldquo;diamond&rdquo; is immediately next to the class (resp. record, interface) name (rather than left of the method declaration):</p>
@@ -2207,7 +2207,9 @@ Let us recall our generic class <code>Box&lt;T&gt;</code>:</p>
 </ol>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Pair<span style="color:#f92672">&lt;</span>Number, Number<span style="color:#f92672">&gt;</span> myPair <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Pair<span style="color:#f92672">&lt;&gt;</span>(32, 15);
 </span></span><span style="display:flex;"><span>Double someNumber <span style="color:#f92672">=</span> myPair.<span style="color:#a6e22e">someMethod</span>(6.<span style="color:#a6e22e">0</span>);
-</span></span></code></pre></div></div></div>
+</span></span></code></pre></div></div><input type="radio" class="toggle" name="tabs-exercise_generics" id="tabs-exercise_generics-1"  />
+  <label for="tabs-exercise_generics-1">Solution</label>
+  <div class="book-tabs-content markdown-inner">3, 4 and 8.</div></div>
 
 <h4 id="inheritance">
   Inheritance

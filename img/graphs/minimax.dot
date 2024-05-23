@@ -1,0 +1,36 @@
+digraph tree {
+graph [size="8.5!"]
+    node [shape=circle]
+    a[label=""];
+    b[label=""]
+    c[label=""]
+    d[label=""]
+    e[label="9"]
+    f[label=""]
+    g[label="0"]
+    h[label=""]
+    i[label="0"]
+    j[label=""]
+    k[label="0"]
+    l[label="9"]
+    m[label="9"]
+    n[label="9"]
+
+    a -> b[color="blue"];
+    a -> c[color="blue"];
+    b -> d[color="green"];
+    c -> e[color="green"];
+    c -> f[color="green"];
+    
+    d -> g[color="blue"];
+    d -> h[color="blue"];
+    d -> i[color="blue"];
+    
+    f -> j[color="blue"];
+    f -> k[color="blue"];
+
+    h -> l[color="green"];
+    h -> m[color="green"];
+
+    j -> n[color="green"];
+}
