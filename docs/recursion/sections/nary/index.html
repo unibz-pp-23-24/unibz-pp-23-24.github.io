@@ -24,7 +24,7 @@ All the binary tree algorithms seen earlier use binary recursion.">
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.d4d5865caf6a94b9d18b8846d9ac4d0e3f6e6c6f0e5b36ebb8b81bbe6562c8ed.js" integrity="sha256-1NWGXK9qlLnRi4hG2axNDj9ubG8OWzbruLgbvmViyO0=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.c55c1275b2fa0fe47ec98da29fa3005a08d41fd4bd633ed39a392cf98eb1d576.js" integrity="sha256-xVwSdbL6D&#43;R&#43;yY2in6MAWgjUH9S9Yz7Tmjks&#43;Y6x1XY=" crossorigin="anonymous"></script>
 
   
 
@@ -1787,6 +1787,15 @@ https://github.com/alex-shpak/hugo-book
       </ul>
     </li>
     <li><a href="#tree-and-graph-traversal">Tree and graph traversal</a></li>
+    <li><a href="#minimaxmaximin">Minimax/Maximin</a>
+      <ul>
+        <li><a href="#winning-strategy">Winning strategy</a></li>
+        <li><a href="#naive-algorithm">Naive algorithm</a></li>
+        <li><a href="#application">Application</a></li>
+        <li><a href="#generalization">Generalization</a></li>
+        <li><a href="#optimization">Optimization</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
@@ -2041,53 +2050,250 @@ which indicates whether a node has already been visited during a traversal:</p>
   <label for="tabs-exercise_graph_traversal-1">Solution</label>
   <div class="book-tabs-content markdown-inner">A B D F C E</div></div>
 
+<h2 id="minimaxmaximin">
+  Minimax/Maximin
+  <a class="anchor" href="#minimaxmaximin">#</a>
+</h2>
+<p>Minimax is a recursive algorithm with applications in games, robotics, decision making, etc.</p>
+<p>Minimax may be easier to explain in the context of a turn-based <strong>zero-sum game</strong>, i.e. a game (like chess or tic tac toe) where players compete with each other (as opposed for instance to a <strong>collaborative game</strong>).</p>
+<p>Zero-sum two player games can be used to model decisions that minimize risk, assuming that the worst will happen if it can.
+In other words, one the two players represents the decision maker, and the other player represents &ldquo;bad luck&rdquo;.</p>
+<p>Numerous extensions and heuristics have been devise for Minimax.
+Here we only focus on the algorithm in its basic form.</p>
+<h3 id="winning-strategy">
+  Winning strategy
+  <a class="anchor" href="#winning-strategy">#</a>
+</h3>
+<p>Let Alice and Bob be our two players.</p>
+
+
+
+
+<div class="book-tabs"><input type="radio" class="toggle" name="tabs-exercise_tictactoe" id="tabs-exercise_tictactoe-0" checked="checked" />
+  <label for="tabs-exercise_tictactoe-0">Exercise</label>
+  <div class="book-tabs-content markdown-inner"><p>Consider the following state of a game of tic-tac-toe, where Alice plays with crosses, and is the next person to play.</p>
+<p><img src="/img/tictactoe/state/tictactoe.svg" alt="" /></p>
+<p>Assuming that Alice plays optimally, she already has won the game.
+Can you see why?</p>
+</div><input type="radio" class="toggle" name="tabs-exercise_tictactoe" id="tabs-exercise_tictactoe-1"  />
+  <label for="tabs-exercise_tictactoe-1">Solution</label>
+  <div class="book-tabs-content markdown-inner"><p><img src="/img/tictactoe/state/tictactoe.svg" alt="" /></p>
+<p>If Alice plays top right or bottom right, then <em>regardless</em> of Bob&rsquo;s action, she can complete a line or a diagonal as her next move.</p>
+</div></div>
+
+<p>Let us generalize this observation.</p>
+<blockquote class="book-hint warning">
+  <p>In a turn-based two player game, a sequence of moves can be viewed as a <strong>list</strong> of board states, whose head is the initial board state.</p>
+<p>The <strong>tree</strong> that consists of all these lists represents all possible sequences of moves from the initial board state.</p>
+
+</blockquote>
+
+<blockquote class="book-hint info">
+  <p><strong><em>Example.</em></strong>
+In the following tree, the root is a board state (of an imaginary game), and each branch represents a possible sequence of moves.
+Alice&rsquo;s possible moves are the green edges, and Bob&rsquo;s possible moves are the red edges.</p>
+<p>The numbers on the leaves represent the payoff for Alice:</p>
+<ul>
+<li>9 if this is a winning state for Alice, and</li>
+<li>0 if this is a winning sate for Bob.</li>
+</ul>
+<p><img src="/img/graphs/minimax.svg" alt="" /></p>
+
+</blockquote>
+
+<blockquote class="book-hint danger">
+  <strong><em>Warning.</em></strong>
+In such a tree, several nodes may represent the <em>same</em> board state (e.g. in a chess game, where different sequences of moves may lead to the same board state).
+</blockquote>
+
+
+
+
+
+<div class="book-tabs"><input type="radio" class="toggle" name="tabs-exercise_tree_winning" id="tabs-exercise_tree_winning-0" checked="checked" />
+  <label for="tabs-exercise_tree_winning-0">Exercise</label>
+  <div class="book-tabs-content markdown-inner">In the tree above, determine whether Alice has already has won the game (assuming that she plays optimally).</div><input type="radio" class="toggle" name="tabs-exercise_tree_winning" id="tabs-exercise_tree_winning-1"  />
+  <label for="tabs-exercise_tree_winning-1">Solution</label>
+  <div class="book-tabs-content markdown-inner">The answer is yes, if Alice selects the right child of the tree&rsquo;s root.</div></div>
+
+<p><blockquote class="book-hint info">
+  <p><strong><em>Observation.</em></strong>
+In both exercises above, we were able to determine that Alice had already won the game, <em>regardless</em> of Bob&rsquo;s actions.
+Intuitively, this holds iff:</p>
+<ul>
+<li><em>there is</em> a move for Alice such that,</li>
+<li>for <em>every</em> possible move of Bob,</li>
+<li><em>there is</em> a move for Alice such that,</li>
+<li>for <em>every</em> possible move of Bob,</li>
+<li>&hellip;</li>
+<li>either:
+<ul>
+<li><em>there is</em> a move for Alice that produces a winning state for Alice, or</li>
+<li><em>every</em> possible move of Bob produces a winning state for Alice.</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+
+This observation leads to a natural recursive definition.</p>
+<p><blockquote class="book-hint warning">
+  <strong><em>Terminology.</em></strong>
+In our tree, let us assuming that the root has depth $0$.
+We call a node <strong>existential</strong> if its depth is even, and <strong>universal</strong> if its depth is odd.
+</blockquote>
+
+Existential (resp. universal) nodes are the ones selected by Alice (resp. Bob).</p>
+<blockquote class="book-hint warning">
+  <p><strong><em>Definition.</em></strong>
+A node $n$ is a <strong>winning node</strong> (for Alice) if:</p>
+<ul>
+<li>it represents a winning state for Alice, or</li>
+<li>$n$ is existential and <em>some</em> child of $n$ is a winning node, or</li>
+<li>$n$ is universal and <em>all</em> children of $n$ are a winning nodes.</li>
+</ul>
+</blockquote>
+
+<h3 id="naive-algorithm">
+  Naive algorithm
+  <a class="anchor" href="#naive-algorithm">#</a>
+</h3>
+<p>Let us start with a naive algorithm for games where:</p>
+<ul>
+<li>the depth the tree is finite (as opposed to chess for instance, where there can be infinite sequences of moves).</li>
+<li>each leaf is a winning state for either Alice or Bob (as opposed to tic-tac-toe for instance, where there can be a draw).</li>
+</ul>
+<p>In such a game, every node of tree must be a winning node for Alice or for Bob.
+In order to determine this, we can intuitively propagate labels up the tree:</p>
+<p><img src="/img/graphs/minimax_labeled.svg" alt="" /></p>
+<p>Let us assume that nodes in our tree are instance of the following class <code>Node</code>.</p>
+<p><img src="/img/diagrams/plantuml/node_game.svg" alt="" /></p>
+<blockquote class="book-hint warning">
+  <p><strong><em>Notation.</em></strong></p>
+<p>If <code>nodes</code> is an array of nodes and <code>f</code> a function that takes a node as argument, we will use:</p>
+<p>$\qquad$ <code>[ f(n) | n in nodes ]</code></p>
+<p>for the array obtained by applying <code>f</code> to each element of <code>nodes</code>.</p>
+
+</blockquote>
+
+<!-- raw HTML omitted -->
+<blockquote class="book-hint info">
+  <p><strong><em>Observation.</em></strong>
+Let <code>n</code> be a non-leaf node whose children have label <code>0</code> or <code>9</code>.
+Then:</p>
+<ul>
+<li><em>there exists</em> a child of <code>n</code> with label <code>9</code> iff
+<code>max [ c.label | c in n.children ] = 9</code></li>
+<li><em>every child</em> of $n$ is labeled with <code>9</code> iff
+<code>min [ c.label | c in n.children ] = 9</code></li>
+</ul>
+</blockquote>
+
+<p>Using this observation and our definition of a winning node (above), we can write the following recursive algorithm (in pseudocode):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// existential node</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">maxiMin</span>(Node n){
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// base case (leaf node)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(n.<span style="color:#a6e22e">children</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">==</span> 0){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> n.<span style="color:#a6e22e">label</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// inductive case: return the largest label computed for a child</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> max <span style="color:#f92672">[</span> miniMax(c) <span style="color:#f92672">|</span> c in n.<span style="color:#a6e22e">children</span> <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// universal node</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">miniMax</span>(Node n){
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// base case (leaf node)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(n.<span style="color:#a6e22e">children</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">==</span> 0){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> n.<span style="color:#a6e22e">label</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// inductive case: return the least label computed for a child</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> min <span style="color:#f92672">[</span> maxiMin(c) <span style="color:#f92672">|</span> c in n.<span style="color:#a6e22e">children</span> <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>In this algorithm, the method <code>maxiMin</code> (resp. <code>miniMax</code>) takes an existential (resp. universal) node as input,
+and returns:</p>
+<ul>
+<li><code>9</code> if this node is a winning node for Alice, or</li>
+<li><code>0</code> if this node is a winning node for Bob.</li>
+</ul>
+<blockquote class="book-hint info">
+  <p><strong><em>Note.</em></strong>
+The code can be (slightly) factorized by writing a unique recursive method, with an additional boolean argument that indicates whether the input node is existential or universal.</p>
+<p>This is usually how the algorithm is presented.
+We used two methods instead for didactic reasons.</p>
+
+</blockquote>
+
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<h3 id="application">
+  Application
+  <a class="anchor" href="#application">#</a>
+</h3>
+<p>In practice, in order to apply this algorithm to a game, the class <code>Node</code> is unnecessary.
+Instead, we can use:</p>
+<ul>
+<li>an auxiliary procedure that compute the &ldquo;children of a node&rdquo;, i.e. takes as argument a board state, and enumerates all board states that can be reached from it in one move.</li>
+<li>an auxiliary procedure <code>score</code> that determines whether a &ldquo;node&rdquo; is a leaf, and its &ldquo;label&rdquo; if it is a leaf.
+This procedure takes a state as input, and determines whether this state is a winning state for Alice or Bob.</li>
+</ul>
+<p>Then Alice can decide her next move by calling <code>miniMax(s)</code> for each successor state <code>s</code> of the current state, and select any of the states with the highest score.</p>
+<h3 id="generalization">
+  Generalization
+  <a class="anchor" href="#generalization">#</a>
+</h3>
+<h4 id="arbitrary-weights">
+  Arbitrary weights
+  <a class="anchor" href="#arbitrary-weights">#</a>
+</h4>
+<p>The Minimax algorithm can be generalized to scenarios where a leaf node may not represent a winning state for Alice or Bob.
+For instance, in order to model tic-tac-toe, we may label some leaves with the value <code>4</code> for a draw.</p>
+<p>More generally, any function <code>score</code> that assigns a score to a node can be used, as long as it assigns a <em>maximal</em> value to a winning state for Alice, and a <em>minimal</em> value to a winning state for Bob.</p>
+<p>The algorithm is unchanged.</p>
+<h4 id="large-or-infinite-trees">
+  Large or infinite trees
+  <a class="anchor" href="#large-or-infinite-trees">#</a>
+</h4>
+<blockquote class="book-hint danger">
+  <p><strong><em>Warning</em></strong>
+Minimax can be <em>prohibitive</em> for games with an important tree depth (since the number of board states to explore may grow exponentially with the depth of the tree).</p>
+<p>Besides, Minimax does <em>not</em> terminate if the tree has infinite branches (for instance in a chess game).</p>
+
+</blockquote>
+
+<p>This is why the tree of game states is usually explored <em>up to a certain depth</em>.</p>
+<p><blockquote class="book-hint info">
+  <strong><em>Example.</em></strong>
+<a href="https://en.wikipedia.org/wiki/Deep_Blue_%28chess_computer%29">Deep Blue</a> (the first program that defeated a chess world champion) was only looking 12 moves ahead.
+</blockquote>
+
+The algorithm becomes:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// existential node</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">maxiMin</span>(Node n, <span style="color:#66d9ef">int</span> depth){
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// base case</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(n.<span style="color:#a6e22e">children</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">==</span> 0 <span style="color:#f92672">|</span> depth <span style="color:#f92672">==</span> 0){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> score(n)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// inductive case: return the largest label computed for a child</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> max <span style="color:#f92672">[</span> miniMax(c, depth <span style="color:#f92672">-</span> 1) <span style="color:#f92672">|</span> c in n.<span style="color:#a6e22e">children</span> <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// universal node</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">miniMax</span>(Node n, <span style="color:#66d9ef">int</span> depth){
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// base case</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(n.<span style="color:#a6e22e">children</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">==</span> 0 <span style="color:#f92672">|</span> depth <span style="color:#f92672">==</span> 0){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> score(n)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// inductive case: return the least label computed for a child</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> min <span style="color:#f92672">[</span> maxiMin(c, depth <span style="color:#f92672">-</span> 1) <span style="color:#f92672">|</span> c in n.<span style="color:#a6e22e">children</span> <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="optimization">
+  Optimization
+  <a class="anchor" href="#optimization">#</a>
+</h3>
+<p>A wide rage of optimization techniques have been proposed for Minimax.
+They are beyond the scope of this course.</p>
 </article>
  
       
@@ -2135,6 +2341,15 @@ which indicates whether a node has already been visited during a traversal:</p>
       </ul>
     </li>
     <li><a href="#tree-and-graph-traversal">Tree and graph traversal</a></li>
+    <li><a href="#minimaxmaximin">Minimax/Maximin</a>
+      <ul>
+        <li><a href="#winning-strategy">Winning strategy</a></li>
+        <li><a href="#naive-algorithm">Naive algorithm</a></li>
+        <li><a href="#application">Application</a></li>
+        <li><a href="#generalization">Generalization</a></li>
+        <li><a href="#optimization">Optimization</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 

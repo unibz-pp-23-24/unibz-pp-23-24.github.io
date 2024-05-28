@@ -4,33 +4,51 @@ graph [size="8.5!"]
     a[label=""];
     b[label=""]
     c[label=""]
-    d[label=""]
-    e[label="9"]
+    d[label="9"]
+    e[label=""]
     f[label=""]
-    g[label="0"]
+    g[label=""]
     h[label=""]
-    i[label="0"]
-    j[label=""]
-    k[label="0"]
+    i[label="9"]
+    j[label="0"]
+    k[label=""]
     l[label="9"]
-    m[label="9"]
-    n[label="9"]
+    m[label="0"]
+    n[label=""]
+    o[label="0"]
+    p[label="9"]
+    q[label="9"]
+    r[label=""]
+    s[label="0"]
+    t[label="9"]
 
-    a -> b[color="blue"];
-    a -> c[color="blue"];
-    b -> d[color="green"];
-    c -> e[color="green"];
-    c -> f[color="green"];
+    a -> b[color="green"];
+    a -> c[color="green"];
     
-    d -> g[color="blue"];
-    d -> h[color="blue"];
-    d -> i[color="blue"];
-    
-    f -> j[color="blue"];
-    f -> k[color="blue"];
 
-    h -> l[color="green"];
+    b -> d[color="red"];
+    b -> e[color="red"];
+    b -> f[color="red"];
+ 
+    c -> g[color="red"];
+    c -> h[color="red"];
+
+    e -> i[color="green"];
+    
+    f -> j[color="green"];
+    f -> k[color="green"];
+    
+    g -> l[color="green"];
+    
     h -> m[color="green"];
+    h -> n[color="green"];
 
-    j -> n[color="green"];
+    k -> o[color="red"];
+    k -> p[color="red"];
+    
+    n -> q[color="red"];
+    n -> r[color="red"];
+    
+    r -> s[color="green"];
+    r -> t[color="green"];
 }

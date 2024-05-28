@@ -3,22 +3,31 @@
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content=" Computational cost # Time or memory # Worst-case cost, average cost # Asymptotic cost # Classes # ">
+<meta name="description" content="Computational cost # In this section, we briefly introduce the standard way to estimate the cost of an algorithm, as a function $f(n)$ of the size $n$ of its input.
+Size # The size $n$ of the input may be the size of its representation in bits.
+Other common measures are:
+the number of entries for array, the number of nodes for tree, etc. Time or memory # Among others, the function $f(n)$ may estimate:">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="Computational cost" />
-<meta property="og:description" content=" Computational cost # Time or memory # Worst-case cost, average cost # Asymptotic cost # Classes # " />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/docs/background/sections/cost/" /><meta property="article:section" content="docs" />
-
-
-
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/background/sections/cost/">
+  <meta property="og:site_name" content="Programming project 2023-24">
+  <meta property="og:title" content="Computational cost">
+  <meta property="og:description" content="Computational cost # In this section, we briefly introduce the standard way to estimate the cost of an algorithm, as a function $f(n)$ of the size $n$ of its input.
+Size # The size $n$ of the input may be the size of its representation in bits.
+Other common measures are:
+the number of entries for array, the number of nodes for tree, etc. Time or memory # Among others, the function $f(n)$ may estimate:">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
 <title>Computational cost | Programming project 2023-24</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.c159bcc34148094cb7100ffff20f51e4193a61f47e9e93427ea7ef4730469cb0.js" integrity="sha256-wVm8w0FICUy3EA//8g9R5Bk6YfR&#43;npNCfqfvRzBGnLA=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.cfd4250f99a47a04620a7bbff781de449f172bacb92d9b4a5283991ef8a574eb.js" integrity="sha256-z9QlD5mkegRiCnu/94HeRJ8XK6y5LZtKUoOZHvildOs=" crossorigin="anonymous"></script>
+
+  
+
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -46,6 +55,17 @@ https://github.com/alex-shpak/hugo-book
   crossorigin="anonymous"
   onload="renderMathInElement(document.body);"
 ></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+      ],
+    });
+  });
+</script>
 
 </head>
 <body dir="ltr">
@@ -307,7 +327,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/objects/sections/comparison/" class="">Comparing objects</a>
+    <a href="/docs/objects/sections/tostring/" class="">Displaying objects</a>
   
 
         </li>
@@ -320,7 +340,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/objects/sections/encapsulation/" class="">Encapsulation</a>
+    <a href="/docs/objects/sections/comparing/" class="">Cast and equality</a>
   
 
         </li>
@@ -333,7 +353,20 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/objects/sections/clone/" class="">Copying objects</a>
+    <a href="/docs/objects/sections/classesasobjects/" class="">Classes as objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/clone/" class="">Duplicating objects</a>
   
 
         </li>
@@ -359,13 +392,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/objects/sections/casts/" class="">Type checking and cast</a>
+    <a href="/docs/objects/sections/encapsulation/" class="">Encapsulation</a>
   
-
-        </li>
-      
-    
-  </ul>
 
         </li>
       
@@ -377,14 +405,11 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-06ca724a4caafd99788c5f8e355ee319" class="toggle"  />
-    <label for="section-06ca724a4caafd99788c5f8e355ee319" class="flex justify-between">
-      <a href="/docs/encapsulation/" class="">Encapsulation</a>
-    </label>
+    <a href="/docs/objects/sections/mutability/" class="">Mutability</a>
   
 
-          
-  <ul>
+        </li>
+      
     
       
         <li>
@@ -393,7 +418,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/encapsulation/sections/visibility/" class="">Visibility</a>
+    <a href="/docs/objects/sections/quiz/" class="">Quiz</a>
   
 
         </li>
@@ -458,14 +483,79 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-c6d765e331787103ea5a4c660ad9d263" class="toggle"  />
-    <label for="section-c6d765e331787103ea5a4c660ad9d263" class="flex justify-between">
-      <a href="/docs/collections/" class="">Collections</a>
+    <input type="checkbox" id="section-e06acd393c0cc6e5b27e2cd8945d3dd8" class="toggle"  />
+    <label for="section-e06acd393c0cc6e5b27e2cd8945d3dd8" class="flex justify-between">
+      <a href="/docs/abstractdatatypes/" class="">Abstract data types</a>
     </label>
   
 
           
   <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/list/" class="">List</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/set/" class="">Set</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/map/" class="">Associative array</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/queue/" class="">Stack, queue, priority queue</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/sorting/" class="">Sorting</a>
+  
+
+        </li>
+      
     
   </ul>
 
@@ -479,14 +569,94 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-5d60f9e6a9b7c875f51358c583373282" class="toggle"  />
-    <label for="section-5d60f9e6a9b7c875f51358c583373282" class="flex justify-between">
-      <a href="/docs/datastructures/" class="">Data structures</a>
+    <input type="checkbox" id="section-93b39c27c032f5f72bed81496cbb41e3" class="toggle"  />
+    <label for="section-93b39c27c032f5f72bed81496cbb41e3" class="flex justify-between">
+      <a href="/docs/errors/" class="">Errors</a>
     </label>
   
 
           
   <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a2fa4d1523374519c87fe83f9d8226b6" class="toggle"  />
+    <label for="section-a2fa4d1523374519c87fe83f9d8226b6" class="flex justify-between">
+      <a href="/docs/errors/sections/callstack/" class="">Call stack</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-323953d2054911560fd76ed4505d5bb2" class="toggle"  />
+    <label for="section-323953d2054911560fd76ed4505d5bb2" class="flex justify-between">
+      <a href="/docs/errors/sections/exceptions/" class="">Exceptions</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-03b7629c50286af7810d9917f4bdabd2" class="toggle"  />
+    <label for="section-03b7629c50286af7810d9917f4bdabd2" class="flex justify-between">
+      <a href="/docs/errors/sections/checked/" class="">Checked vs unchecked</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-3add83584009ceb58c28b43e0a2280c9" class="toggle"  />
+    <label for="section-3add83584009ceb58c28b43e0a2280c9" class="flex justify-between">
+      <a href="/docs/errors/sections/custom/" class="">Custom exceptions</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-b9c696d05ab8cb944ddf9cef47a3abb4" class="toggle"  />
+    <label for="section-b9c696d05ab8cb944ddf9cef47a3abb4" class="flex justify-between">
+      <a href="/docs/errors/sections/errors/" class="">Java errors</a>
+    </label>
+  
+
+        </li>
+      
     
   </ul>
 
@@ -509,6 +679,45 @@ https://github.com/alex-shpak/hugo-book
           
   <ul>
     
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/recursion/sections/linear/" class="">Linear recursion</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/recursion/sections/nary/" class="">N-ary recursion</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/recursion/sections/correctness/" class="">Correctness</a>
+  
+
+        </li>
+      
+    
   </ul>
 
         </li>
@@ -529,6 +738,86 @@ https://github.com/alex-shpak/hugo-book
 
           
   <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-09ea3b18445537bd77c25d3db6ab2fcf" class="toggle"  />
+    <label for="section-09ea3b18445537bd77c25d3db6ab2fcf" class="flex justify-between">
+      <a href="/docs/input/sections/files/" class="">Paths and files in Java</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-640b25aadb55f28505bfbbe5a5f7073d" class="toggle"  />
+    <label for="section-640b25aadb55f28505bfbbe5a5f7073d" class="flex justify-between">
+      <a href="/docs/input/sections/read/" class="">Reading from and writing to a file in Java</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-7efe7741b54b5b602db75415a7806ef4" class="toggle"  />
+    <label for="section-7efe7741b54b5b602db75415a7806ef4" class="flex justify-between">
+      <a href="/docs/input/sections/property/" class="">Configuration files</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-37fdfe811c449d15e51a84c19673df2f" class="toggle"  />
+    <label for="section-37fdfe811c449d15e51a84c19673df2f" class="flex justify-between">
+      <a href="/docs/input/sections/serialize/" class="">Serialization</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ec41b3fcd24b301058a1bd1bd7b5c8e7" class="toggle"  />
+    <label for="section-ec41b3fcd24b301058a1bd1bd7b5c8e7" class="flex justify-between">
+      <a href="/docs/input/sections/json/" class="">JSON Serialization</a>
+    </label>
+  
+
+        </li>
+      
     
   </ul>
 
@@ -551,6 +840,45 @@ https://github.com/alex-shpak/hugo-book
           
   <ul>
     
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/regex/sections/pattern/" class="">Pattern matching</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/regex/sections/practice/" class="">in practice</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/regex/sections/java/" class="">Using Java regexes</a>
+  
+
+        </li>
+      
+    
   </ul>
 
         </li>
@@ -563,14 +891,92 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-2cb8fe711c517d9ace405264c9b77bcb" class="toggle"  />
-    <label for="section-2cb8fe711c517d9ace405264c9b77bcb" class="flex justify-between">
-      <a href="/docs/streams/" class="">Streams</a>
+    <input type="checkbox" id="section-ae8fba9e927e4c55801a4e71f6b7d054" class="toggle"  />
+    <label for="section-ae8fba9e927e4c55801a4e71f6b7d054" class="flex justify-between">
+      <a href="/docs/lambda/" class="">Callback methods and lamda expressions</a>
     </label>
   
 
           
   <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/pure/" class="">Pure function</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/anonymous/" class="">Anonymous method</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/lambda/" class="">Lambda expression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/type/" class="">Type of a method</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/callback/" class="">Callback method</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/captured/" class="">Captured variables</a>
+  
+
+        </li>
+      
     
   </ul>
 
@@ -584,14 +990,191 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-dfedb17969c9b09e6694374c71130ee4" class="toggle"  />
-    <label for="section-dfedb17969c9b09e6694374c71130ee4" class="flex justify-between">
-      <a href="/docs/concurrency/" class="">Concurrency</a>
+    <input type="checkbox" id="section-41a2765a9682fb1ce579fb1661f1250d" class="toggle"  />
+    <label for="section-41a2765a9682fb1ce579fb1661f1250d" class="flex justify-between">
+      <a href="/docs/stream/" class="">Streams in Java</a>
     </label>
   
 
           
   <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/pipeline/" class="">Pipeline</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/init/" class="">Source</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/intermediate/" class="">Intermediate operations</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/terminal/" class="">Terminal operation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/numeric/" class="">Numeric stream</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/order/" class="">Multithreading and order</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/optional/" class="">Optional</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-87d53bbeb97db8aab24c02b4d45460f2" class="toggle"  />
+    <label for="section-87d53bbeb97db8aab24c02b4d45460f2" class="flex justify-between">
+      <a href="/docs/generics/" class="">Generic programming</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/generics/sections/type_checking/" class="">Type checking</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/generics/sections/generics/" class="">Generics</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/generics/sections/subtype/" class="">Subtype</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/generics/sections/variance/" class="">Variance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/generics/sections/erasure/" class="">Type erasure</a>
+  
+
+        </li>
+      
     
   </ul>
 
@@ -614,7 +1197,18 @@ https://github.com/alex-shpak/hugo-book
           
   <ul>
     
-  </ul>
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-796939dc839b82c2ff89d99e47011262" class="toggle"  />
+    <label for="section-796939dc839b82c2ff89d99e47011262" class="flex justify-between">
+      <a href="/docs/unittests/sections/structured/" class="">Code units</a>
+    </label>
+  
 
         </li>
       
@@ -626,16 +1220,11 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-1de498fc5e7787931a737882aa193936" class="toggle"  />
-    <label for="section-1de498fc5e7787931a737882aa193936" class="flex justify-between">
-      <a href="/docs/ide/" class="">Using an IDE</a>
+    <input type="checkbox" id="section-ad5c3d825858d4a9ca4ad02d541f7121" class="toggle"  />
+    <label for="section-ad5c3d825858d4a9ca4ad02d541f7121" class="flex justify-between">
+      <a href="/docs/unittests/sections/tdd/" class="">Development driven by unit tests</a>
     </label>
   
-
-          
-  <ul>
-    
-  </ul>
 
         </li>
       
@@ -647,14 +1236,14 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-266852d187f25bd262cbe71071953925" class="toggle"  />
-    <label for="section-266852d187f25bd262cbe71071953925" class="flex justify-between">
-      <a href="/docs/factorization/" class="">Code factorization</a>
+    <input type="checkbox" id="section-7e09be54c45521908b57f9eaf194f5f6" class="toggle"  />
+    <label for="section-7e09be54c45521908b57f9eaf194f5f6" class="flex justify-between">
+      <a href="/docs/unittests/sections/junit/" class="">in Java</a>
     </label>
   
 
-          
-  <ul>
+        </li>
+      
     
   </ul>
 
@@ -822,7 +1411,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/git/sections/basics/" class="">Basics: repository, commit and merge</a>
+    <a href="/docs/git/sections/basics/" class="">Basics: repository, commits and branches</a>
   
 
         </li>
@@ -861,7 +1450,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/git/sections/create/" class="">Commands: create or clone a repository</a>
+    <a href="/docs/git/sections/create/" class="">Create or clone a repository</a>
   
 
         </li>
@@ -874,7 +1463,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/git/sections/navigate/" class="">Commands: status, log and checkout</a>
+    <a href="/docs/git/sections/commit/" class="">Add, commit, stash</a>
   
 
         </li>
@@ -887,7 +1476,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/git/sections/commit/" class="">Commands: commit, add and push</a>
+    <a href="/docs/git/sections/branches/" class="">Branches</a>
   
 
         </li>
@@ -900,7 +1489,20 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/git/sections/branches/" class="">Commands: branches</a>
+    <a href="/docs/git/sections/sharing/" class="">Synchronization: remote, push, pull</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/backtracking/" class="">Backtracking</a>
   
 
         </li>
@@ -914,19 +1516,6 @@ https://github.com/alex-shpak/hugo-book
 
   
     <a href="/docs/git/sections/ignore/" class="">Ignoring files</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/git/sections/tips/" class="">Tips</a>
   
 
         </li>
@@ -965,6 +1554,102 @@ https://github.com/alex-shpak/hugo-book
 
           
   <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-0c816e62fd66eb322757addb01600cdd" class="toggle"  />
+    <label for="section-0c816e62fd66eb322757addb01600cdd" class="flex justify-between">
+      <a href="/docs/build/sections/packaging/" class="">Packaging a Java application</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-5537e478f301d8ff4f0b5a7a03c9db32" class="toggle"  />
+    <label for="section-5537e478f301d8ff4f0b5a7a03c9db32" class="flex justify-between">
+      <a href="/docs/build/sections/layout/" class="">Layout</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-33bd3456c4645cc966d192fba400a71a" class="toggle"  />
+    <label for="section-33bd3456c4645cc966d192fba400a71a" class="flex justify-between">
+      <a href="/docs/build/sections/pom/" class="">Configuration file</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-c956d0b428ebb6c853f314459a513393" class="toggle"  />
+    <label for="section-c956d0b428ebb6c853f314459a513393" class="flex justify-between">
+      <a href="/docs/build/sections/artifact/" class="">Artifact</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-d01a14431bc2161a8fed02d90e1a365b" class="toggle"  />
+    <label for="section-d01a14431bc2161a8fed02d90e1a365b" class="flex justify-between">
+      <a href="/docs/build/sections/dependencies/" class="">Dependencies</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-b838446830102a7dece872d673537390" class="toggle"  />
+    <label for="section-b838446830102a7dece872d673537390" class="flex justify-between">
+      <a href="/docs/build/sections/building/" class="">Building</a>
+    </label>
+  
+
+        </li>
+      
     
   </ul>
 
@@ -1020,7 +1705,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/background/sections/graph/" class="">Graphs, trees and lists</a>
+    <a href="/docs/background/sections/set_tuple_map/" class="">Set, tuple, function</a>
   
 
         </li>
@@ -1033,7 +1718,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/background/sections/order/" class="">Orders</a>
+    <a href="/docs/background/sections/order/" class="">Relation, preorder</a>
   
 
         </li>
@@ -1046,41 +1731,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/background/sections/set_tuple_map/" class="">Sets, tuples and maps</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-7fbf8d635a58977782e16dc9419d8cdc" class="toggle"  />
-    <label for="section-7fbf8d635a58977782e16dc9419d8cdc" class="flex justify-between">
-      <a href="/docs/template/" class="">Web page template</a>
-    </label>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/template/sections/template/" class="">Stubs</a>
+    <a href="/docs/background/sections/regular/" class="">Regular languages</a>
   
 
         </li>
@@ -1143,11 +1794,22 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
+    <li><a href="#size">Size</a></li>
     <li><a href="#time-or-memory">Time or memory</a></li>
-    <li><a href="#worst-case-cost-average-cost">Worst-case cost, average cost</a></li>
+    <li><a href="#worst-case-average">Worst case, average</a></li>
     <li><a href="#asymptotic-cost">Asymptotic cost</a>
       <ul>
-        <li><a href="#classes">Classes</a></li>
+        <li><a href="#comparison-of-cost-functions">Comparison of cost functions</a></li>
+        <li><a href="#equivalence-classes">Equivalence classes</a></li>
+        <li><a href="#useful-simplifications">Useful simplifications</a></li>
+        <li><a href="#big-o">Big $O$</a></li>
+        <li><a href="#overloaded-equality">Overloaded equality</a></li>
+      </ul>
+    </li>
+    <li><a href="#application">Application</a>
+      <ul>
+        <li><a href="#ram-cost-model">RAM cost model</a></li>
+        <li><a href="#comparing-two-sorting-algorithms">Comparing two sorting algorithms</a></li>
       </ul>
     </li>
   </ul>
@@ -1166,22 +1828,565 @@ https://github.com/alex-shpak/hugo-book
   Computational cost
   <a class="anchor" href="#computational-cost">#</a>
 </h1>
+<p>In this section, we briefly introduce the standard way to estimate the <em>cost</em> of an algorithm, as a function $f(n)$ of the size $n$ of its input.</p>
+<h2 id="size">
+  Size
+  <a class="anchor" href="#size">#</a>
+</h2>
+<blockquote class="book-hint warning">
+  <p>The <strong>size</strong> $n$ of the input may be the size of its representation in bits.</p>
+<p>Other common measures are:</p>
+<ul>
+<li>the number of entries for array,</li>
+<li>the number of nodes for tree,</li>
+<li>etc.</li>
+</ul>
+
+</blockquote>
+
 <h2 id="time-or-memory">
   Time or memory
   <a class="anchor" href="#time-or-memory">#</a>
 </h2>
-<h2 id="worst-case-cost-average-cost">
-  Worst-case cost, average cost
-  <a class="anchor" href="#worst-case-cost-average-cost">#</a>
+<blockquote class="book-hint warning">
+  <p>Among others, the function $f(n)$ may estimate:</p>
+<ul>
+<li>the <strong>running time</strong> of the algorithm, or</li>
+<li>its <strong>memory consumption</strong>.</li>
+</ul>
+</blockquote>
+
+<h2 id="worst-case-average">
+  Worst case, average
+  <a class="anchor" href="#worst-case-average">#</a>
 </h2>
+<blockquote class="book-hint warning">
+  <p>Among others, the function $f(n)$ may estimate:</p>
+<ul>
+<li>cost in the <strong>worst case</strong>, i.e. for the worst possible inputs of size $n$</li>
+<li><strong>average</strong> cost over all possible inputs of size $n$.</li>
+</ul>
+</blockquote>
+
+
+
+
+
+<div class="book-tabs"><input type="radio" class="toggle" name="tabs-exercise_linear" id="tabs-exercise_linear-0" checked="checked" />
+  <label for="tabs-exercise_linear-0">Exercise</label>
+  <div class="book-tabs-content markdown-inner"><p>Consider the following algorithm, which returns true iff the input array <code>A</code> contains the input value <code>a</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span>boolean contains(int<span style="color:#f92672">[]</span> A, int a){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">foreach</span> (v in A) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>(v <span style="color:#f92672">==</span> a){
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> true
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> false
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Consider all possible inputs where the array has size $n$ (for a given $n$).
+Among these inputs, what are the worst possible ones?</p>
+<p>How many times would the loop be executed for such an input?</p>
+</div><input type="radio" class="toggle" name="tabs-exercise_linear" id="tabs-exercise_linear-1"  />
+  <label for="tabs-exercise_linear-1">Solution</label>
+  <div class="book-tabs-content markdown-inner"></div></div>
+
+
+
+
+
+<div class="book-tabs"><input type="radio" class="toggle" name="tabs-exercise_logarithmic" id="tabs-exercise_logarithmic-0" checked="checked" />
+  <label for="tabs-exercise_logarithmic-0">Exercise</label>
+  <div class="book-tabs-content markdown-inner"><p>Consider the following algorithm (known as binary search), which solves the same problem as the previous one, but assuming that the input array is <em>sorted</em>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">contains</span>(<span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> A, input a){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> begin <span style="color:#f92672">=</span> 0
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> end <span style="color:#f92672">=</span> A.<span style="color:#a6e22e">lenghth</span> <span style="color:#f92672">-</span> 1
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">while</span>(begin <span style="color:#f92672">&lt;=</span> end){
+</span></span><span style="display:flex;"><span>        mid <span style="color:#f92672">=</span> (begin <span style="color:#f92672">+</span> end) <span style="color:#f92672">/</span> 2
+</span></span><span style="display:flex;"><span>        v <span style="color:#f92672">=</span> A<span style="color:#f92672">[</span>mid<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">if</span>(v <span style="color:#f92672">&lt;=</span> a){
+</span></span><span style="display:flex;"><span>            end <span style="color:#f92672">=</span> mid
+</span></span><span style="display:flex;"><span>        } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>            begin <span style="color:#f92672">=</span> mid
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> A<span style="color:#f92672">[</span>begin<span style="color:#f92672">]</span> <span style="color:#f92672">==</span> a
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Again, for a given array length $n$, what are the worst possible inputs?
+And how many times would the loop be executed for such an input?</p>
+</div><input type="radio" class="toggle" name="tabs-exercise_logarithmic" id="tabs-exercise_logarithmic-1"  />
+  <label for="tabs-exercise_logarithmic-1">Solution</label>
+  <div class="book-tabs-content markdown-inner"></div></div>
+
 <h2 id="asymptotic-cost">
   Asymptotic cost
   <a class="anchor" href="#asymptotic-cost">#</a>
 </h2>
-<h3 id="classes">
-  Classes
-  <a class="anchor" href="#classes">#</a>
+<p>When comparing the costs of algorithms, we are usually interested in <strong>scalability</strong>, i.e. how they behave when the input becomes large.</p>
+<p>let $f(n)$ measure the (worst case or average) running time of an algorithm.</p>
+<p>If $n$ doubles, does $f(n)$ double as well?
+I.e. does $f(2 n) = 2 f(n)$?</p>
+<p>If this is the case, then $f$ is a <em>linear</em> function.</p>
+<blockquote class="book-hint info">
+  <strong><em>Examples.</em></strong>
+$f(n) = n$, $g(n) = 5n$ and $h(n) = \frac{1}{2} n$ are linear functions.
+</blockquote>
+
+<p>Alternatively, if $f(2 n) &gt; 2 f(n)$, then the cost grows <em>more than</em> linearly with the size of the input.</p>
+<p><blockquote class="book-hint info">
+  <p><strong><em>Examples.</em></strong></p>
+<ul>
+<li>if $f(n) = n^2$, then $f(2n) = 4 f(n)$,</li>
+<li>if $f(n) = c n^2$ for some c, then $f(2n) = 4 f(n)$ as well,</li>
+<li>if $f(n) = n^3$, then $f(2n) = 8 f(n)$,</li>
+<li>if $f(n) = 2^n$, then $f(n+1) = 2 f(n)$</li>
+</ul>
+</blockquote>
+
+Alternatively, $f(n)$ may grow <em>less than</em> linearly with $n$.
+For instance:</p>
+<blockquote class="book-hint info">
+  <p><strong><em>Examples.</em></strong></p>
+<ul>
+<li>if $f(n) = \sqrt{n}$, then $f(4n)$ = 2f(n)$</li>
+<li>if $f(n) = \sqrt[3]{n}$, then $f(8n)$ = 2f(n)$</li>
+<li>if $f(n) = \log_2 n$, then $f(n+1) = 2 f(n)$</li>
+</ul>
+</blockquote>
+
+<h3 id="comparison-of-cost-functions">
+  Comparison of cost functions
+  <a class="anchor" href="#comparison-of-cost-functions">#</a>
 </h3>
+<blockquote class="book-hint warning">
+  Two cost functions $f$ and $g$ have the same <strong>asymptotic behavior</strong> if they intuitively have the same growth.
+</blockquote>
+
+<blockquote class="book-hint info">
+  <p><strong><em>Examples.</em></strong>
+All linear functions have the same asymptotic behavior.</p>
+<p>Similarly (as illustrated above), the functions
+$f(n) = n^2$ and $g(n) = 3n^2$
+have the same asymptotic behavior.</p>
+
+</blockquote>
+
+<blockquote class="book-hint warning">
+  <strong><em>Terminology.</em></strong>
+A function $f: X \to Y$ is <strong>monotone</strong> if $x_1 \le x_2$ implies $f(x_1) \le f(x_2)$ for any $x_1, x_2 \in X$.
+</blockquote>
+
+<blockquote class="book-hint warning">
+  <p><strong><em>Definition.</em></strong>
+Let $f$ and $g$ be two monotone functions over $\mathbb{n}$ such that
+$\lim_{n \to  \infty} \frac{f(n)}{g(n)}$ is defined.
+And let $l$ be this limit.</p>
+<ul>
+<li>if $l = 0$ then $g$ <strong>outgrows</strong> $f$,</li>
+<li>if $l = \infty$ then $f$ <strong>outgrows</strong> $g$,</li>
+<li>otherwise (i.e. if $l \in \mathbb{R}$ and $l \neq 0$) $f$ and $g$ are <strong>asymptotically equivalent</strong>.</li>
+</ul>
+</blockquote>
+
+<blockquote class="book-hint info">
+  <strong><em>Hint.</em></strong>
+$f$ outgrows $g$ iff the derivative of $f$ outgrows the derivative of $g$.
+</blockquote>
+
+<blockquote class="book-hint info">
+  <p><strong><em>Example.</em></strong>
+let $f(n) = 5n^2$ and
+let $g(n) = n^3$.</p>
+<p>Then
+$\lim_{n \to  \infty} \frac{f(n)}{g(n)} = \lim_{n \to  \infty} \frac{5n^2}{n^3} = \lim_{n \to  \infty} \frac{10n}{3n^2} =  \lim_{n \to  \infty} \frac{10}{6n} = 0$</p>
+<p>So $g$ outgrows $f$.</p>
+
+</blockquote>
+
+<blockquote class="book-hint info">
+  <p><strong><em>Example.</em></strong>
+let $f(n) = 5n^2$ and
+let $g(n) = n^2$.</p>
+<p>Then
+$\lim_{n \to  \infty} \frac{f(n)}{g(n)} = \lim_{n \to  \infty} \frac{5n^2}{n^2} = \lim_{n \to  \infty} \frac{10n}{2n} = 5$</p>
+<!-- raw HTML omitted -->
+<p>Since $5 &gt; 0$, we can conclude that $f$ and $g$ are asymptotically equivalent.</p>
+
+</blockquote>
+
+<blockquote class="book-hint info">
+  <p><strong><em>Hint.</em></strong>
+If there exists a function $h$ over $\mathbb{N}$ such that</p>
+<ul>
+<li>$\lim_{n \to \infty} h(n) = \infty$ and</li>
+<li>$f(n) = g(n)h(n)$,</li>
+</ul>
+<p>then $f$ outgrows $g$.</p>
+
+</blockquote>
+
+<blockquote class="book-hint info">
+  <p><strong><em>Example.</em></strong>
+let $f(n) = n \cdot log_2 n$ and
+let $g(n) = n$.</p>
+<p>Take $h(n) = log_2 n$.
+Then</p>
+<ul>
+<li>$\lim_{n \to \infty} h(n) = \lim_{n \to \infty} \log_2(n) = \infty$, and</li>
+<li>$f(n) = n \cdot log_2 n = g(n) h(n)$,</li>
+</ul>
+<p>Therefore $f$ outgrows $g$.</p>
+
+</blockquote>
+
+<h3 id="equivalence-classes">
+  Equivalence classes
+  <a class="anchor" href="#equivalence-classes">#</a>
+</h3>
+<blockquote class="book-hint warning">
+  <strong><em>Notation.</em></strong>
+If $f$ is a cost function, then $\Theta(f)$ is used to denote the set of all cost functions that are asymptotically equivalent to $f$ (including $f$ itself).
+</blockquote>
+
+<blockquote class="book-hint info">
+  <p><strong><em>Example.</em></strong>
+If $f(n) = n$, then the class $\Theta(f)$ contains the functions:</p>
+<ul>
+<li>$g(n) = 2n$,</li>
+<li>$h(n) = \frac{n}{2}$,</li>
+<li>$j(n) = 3n + 4$,</li>
+<li>etc.</li>
+</ul>
+</blockquote>
+
+<blockquote class="book-hint info">
+  <strong><em>Note.</em></strong> If $g$ is in $\Theta(f)$, then $\Theta(f)$ and $\Theta(g)$ are the same class.
+</blockquote>
+
+<blockquote class="book-hint warning">
+  <strong><em>Notation.</em></strong> If $\Theta(f)$ is a class of cost functions, then the name of the function (&quot;$f$&quot; here) is often omitted to refer it.
+The definition of $f$ is often used instead, with $n$ as variable.
+</blockquote>
+
+<blockquote class="book-hint info">
+  <p><strong><em>Examples.</em></strong></p>
+<ul>
+<li>if $f(n) = n$, then the class $Theta(f)$ is usually dented with $Theta(n)$,</li>
+<li>if $f(n) = n^2$, then the class $Theta(f)$ is usually denoted with $Theta(n^2)$,</li>
+<li>etc.</li>
+</ul>
+</blockquote>
+
+<p>A simple, representative function in each class is usually preferred to denote it.</p>
+<blockquote class="book-hint info">
+  <p><strong><em>Example.</em></strong>
+$Theta(n)$, $\Theta(\frac{n}{2})$ and $Theta(3n+4)$ are three alternative notations for the same class of cost functions.</p>
+<p>For readability, the former is usually preferred.</p>
+
+</blockquote>
+
+<p>Some of the most frequent classes of algorithm cost functions are (from lower to higher cost):</p>
+<ul>
+<li>$\Theta(1)$ (a.k.a. <em>constant</em> cost)</li>
+<li>$\Theta(\log n)$ (a.k.a. <em>logarithmic</em> cost)</li>
+<li>$\Theta(n)$ (a.k.a. <em>linear</em> cost)</li>
+<li>$\Theta(n \log n)$</li>
+<li>$\Theta(n^2)$ (a.k.a. <em>quadratic</em> cost)</li>
+<li>$\Theta(n^3)$ (a.k.a. <em>cubic</em> cost)</li>
+<li>$\Theta(2^n)$</li>
+</ul>
+<h3 id="useful-simplifications">
+  Useful simplifications
+  <a class="anchor" href="#useful-simplifications">#</a>
+</h3>
+<p>The definition above imply that the cost function of an algorithm can often be simplified into an equivalent one, using simple rules.</p>
+<blockquote class="book-hint warning">
+  <strong><em>Hint.</em></strong>
+If $f(n) = c \cdot g(n)$ for some constant $c$, then $f(n)$ is in $\Theta(g)$.
+</blockquote>
+
+<blockquote class="book-hint info">
+  <p><strong><em>Examples.</em></strong></p>
+<ul>
+<li>$f(n) = 3n$ is in $\Theta(n)$</li>
+<li>$f(n) = 2n^3$ is in $\Theta(n^3)$</li>
+<li>$f(n) = 5 \log n$ is in $\Theta(\log n)$</li>
+<li>etc.</li>
+</ul>
+</blockquote>
+
+<p><blockquote class="book-hint warning">
+  <p><strong><em>Hint.</em></strong></p>
+<ul>
+<li>if $h(n) = \log_a n$ (for some base $a$), then $h$ is in $\Theta(\log n)$</li>
+<li>if $h(n) = n \log_a n$ (for some base $a$), then $h$ is in $\Theta(n \log n)$</li>
+</ul>
+</blockquote>
+
+<blockquote class="book-hint info">
+  <p><strong><em>Examples.</em></strong></p>
+<ul>
+<li>$f(n) = \log_2 n$ is in $Theta(\log n)$</li>
+<li>$f(n) = \frac{1}{5} \log_3 n$ is in $Theta(\log_3 n) = $Theta(\log n)$</li>
+<li>$f(n) = 4n \log_2 n$ is in $Theta(n \log_2 n) = $Theta(n \log n)$</li>
+</ul>
+</blockquote>
+</p>
+<blockquote class="book-hint warning">
+  <strong><em>Hint.</em></strong>
+If $f(n)$ is a sum of terms (e.g. a polynomial), then it belongs to the class that represents the highest order term.
+</blockquote>
+
+<blockquote class="book-hint info">
+  <p><strong><em>Examples.</em></strong></p>
+<ul>
+<li>$f(n) = 2n^2 + 3n + 20$ is in $\Theta(2n^2) = \Theta(n^2)$</li>
+<li>$f(n) = \frac{3}{2}n^3 + 2n^2 + 3n + 20$ is in $\Theta(n^3)$</li>
+<li>$f(n) = 2 n\log(n) + 3n + \sqrt{n}$ is in $\Theta(n \log n)$</li>
+</ul>
+</blockquote>
+
+<h3 id="big-o">
+  Big $O$
+  <a class="anchor" href="#big-o">#</a>
+</h3>
+<blockquote class="book-hint warning">
+  <strong><em>Notation.</em></strong>
+$O(f)$ denotes the union of all classes of functions that are at most as expensive as $f$ (asymptotically).
+</blockquote>
+
+<blockquote class="book-hint info">
+  <p><strong><em>Example.</em></strong>
+$f(n) = 3n + 5$ is in $\Theta(n)$, therefore the following also hold:</p>
+<ul>
+<li>$f$ is in $O(n^2)$</li>
+<li>$f$ is in $O(n^2 \log n)$</li>
+<li>$f$ is in $O(n^{2.5})$</li>
+<li>$f$ is in $O(n^3)$</li>
+<li>$f$ is in $O(2^n)$</li>
+</ul>
+</blockquote>
+
+<blockquote class="book-hint info">
+  <p><strong><em>Note.</em></strong>
+As a consequence,</p>
+<p>$\qquad f$ is in $\Theta(g)$</p>
+<p>is syntactic sugar for</p>
+<p>$\qquad f$ is in $O(g)$ and $g$ is in $O(f)$</p>
+
+</blockquote>
+
+<h3 id="overloaded-equality">
+  Overloaded equality
+  <a class="anchor" href="#overloaded-equality">#</a>
+</h3>
+<blockquote class="book-hint danger">
+  <p><strong><em>Warning.</em></strong>
+Instead of &ldquo;$f$ is in $\Theta(g)$&rdquo;, it is customary to write:</p>
+<p>$\qquad f = \Theta(g)$</p>
+<p>(and similarly for $O$), thus overloading the meaning of the symbol &ldquo;$=$&rdquo;.</p>
+
+</blockquote>
+
+<blockquote class="book-hint info">
+  <p><strong><em>Examples.</em></strong></p>
+<ul>
+<li>$f(n) = 3n^2 + 5 = \Theta(n^2)$</li>
+<li>$f(n) = 2 n^2 \log n = \Theta(n^2 \log n)$</li>
+<li>$f(n) = 2 n^2 = O(n^2)$</li>
+<li>$f(n) = 2 n^2 = O(n^3)$</li>
+</ul>
+</blockquote>
+
+<h2 id="application">
+  Application
+  <a class="anchor" href="#application">#</a>
+</h2>
+<p>Let us now evaluate the asymptotic cost of some algorithms.</p>
+<p>For simplicity, we will focus of the <a href="">worst-case</a> <a href="">running time</a> (but the same notion of asymptotic cost function is used for average cost and/or memory consumption).</p>
+<h3 id="ram-cost-model">
+  RAM cost model
+  <a class="anchor" href="#ram-cost-model">#</a>
+</h3>
+<p>$
+The so-called <strong>Random Access Machine</strong> model of computation makes several assumptions about computational cost.
+In particular, for a given index $i$, the cost of accessing the $i$^th element of an array does <em>not</em> depend on the size of this array.</p>
+<p>Another simplification that is often made (although not consistently by all authors) in the RAM model is that the cost of a value comparison or basic arithmetic operation (e.g. addition or mutiplication) does <em>not</em> depend on the values of its operands.</p>
+<p><strong><em>Example.</em></strong>
+Consider the following method</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">contains</span>(<span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> A, <span style="color:#66d9ef">int</span> i){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> A<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span> <span style="color:#f92672">+</span> A.<span style="color:#a6e22e">length</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Let $n$ be the size of the input array $A$, and let us express the running time of this method as a function of $n$.
+Observe that:</p>
+<ul>
+<li>the cost $c_1$ of reading the value $A[i]$ is independent of $n$ (in the RAM cost model),</li>
+<li>the cost $c_2$ of reading the length of <code>A</code> is also independent of $n$</li>
+<li>the cost $c_3$ of summing these two values is also independent of $n$</li>
+</ul>
+<p>Therefore expressed as a function $f$ of $n$, the cost of this method is</p>
+<p>$\qquad f(n) = c_1 + c_2 + c_3$,</p>
+<p>which is in $Theta(1)$.</p>
+<p>In other words, the running time of this method is <em>constant</em> in the size of the array.</p>
+<p><strong><em>Example.</em></strong>
+Consider the same algorithm as above (but where the meaning of <code>for each</code> is made explicit)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">contains</span>(<span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> A, <span style="color:#66d9ef">int</span> a){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0; i <span style="color:#f92672">&lt;</span> A.<span style="color:#a6e22e">length</span>; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>(A<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span> <span style="color:#f92672">==</span> a){
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Let $n$ be once again the size of the input array <code>A</code>, and let us express the <em>worst case</em> running time of this method as a function of $n$.</p>
+<p>Recall that the worst case is the one where the input value <code>a</code> does not appear in <code>A</code>.
+In this case, the loop is executed $n$ times.</p>
+<p>Observe that (in the RAM cost model):</p>
+<ul>
+<li>the cost $c_1$ of <em>one</em> execution of the loop is independent of $n$, and</li>
+<li>the cost $c_2$ of the final <code>return</code> statement is also independent of $n$.</li>
+</ul>
+<p>Therefore, expressed as a function $f$ of $n$, the cost of this method is</p>
+<p>$\qquad f(n) = c_1 n + c_2$,</p>
+<p>which is in $Theta(n)$.</p>
+<p>In other words, the worst-case running time of this method is <em>linear</em> in the size of the array.</p>
+<p><strong><em>Exercise.</em></strong>
+What is the asymptotic running time of the binary search algorithm seen above, expressed as function of the size of <code>A</code>?</p>
+<p><strong><em>Solution.</em></strong></p>
+<p>The running time of this algorithm is logarithmic in the size $n$ of the array (i.e. in $Theta(\log n)$).</p>
+<p><strong><em>Exercise.</em></strong>
+What is the asymptotic running time of the following method, expressed as function of the size of <code>A</code>?</p>
+<p>Can you think of a more efficient algorithm for the same problem (and what would be its running time)?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">myMethod</span>(<span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> A){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> val <span style="color:#f92672">=</span> 0;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0; i <span style="color:#f92672">&lt;</span> A.<span style="color:#a6e22e">length</span>; i<span style="color:#f92672">++</span>){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> 0; j <span style="color:#f92672">&lt;=</span> A.<span style="color:#a6e22e">length</span> ; j<span style="color:#f92672">++</span>){
+</span></span><span style="display:flex;"><span>            val <span style="color:#f92672">+=</span> A<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span> <span style="color:#f92672">+</span> A<span style="color:#f92672">[</span>j<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> val;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Solution</p>
+<p>The method has quadratic running time (i.e. its running time is in $Theta(n^2)$).</p>
+<p>A more efficient algorithm (with <em>linear</em> running time ) is:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">myMethod</span>(<span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> A){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> val <span style="color:#f92672">=</span> 0;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0; i <span style="color:#f92672">&lt;</span> A.<span style="color:#a6e22e">length</span>; i<span style="color:#f92672">++</span>){
+</span></span><span style="display:flex;"><span>        val <span style="color:#f92672">+=</span> A<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> val <span style="color:#f92672">*</span> val;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="comparing-two-sorting-algorithms">
+  Comparing two sorting algorithms
+  <a class="anchor" href="#comparing-two-sorting-algorithms">#</a>
+</h3>
+<h4 id="selection-sort">
+  Selection sort
+  <a class="anchor" href="#selection-sort">#</a>
+</h4>
+<p>The following algorithm is called selection sort.</p>
+<p>It sorts the input array <code>A</code> by building an initial segment <code>A[0 .. i]</code> that consists of the sorted <code>i + 1</code> least elements.
+Each iteration of the main loop:</p>
+<ol>
+<li>selects the least <code>min</code> in the remainder of the array (i.e. in the segment <code>A[i + 1 .. A.length]</code>),</li>
+<li>appends <code>min</code> to the sorted segment.</li>
+</ol>
+<p>In the worst case, how many times is the inner loop (i.e. the loop of the auxiliary method <code>selectMin</code> executed)?
+What does this tell us about the wort case asymptotic running time of this algorithm?</p>
+<h4 id="mergesort">
+  Mergesort
+  <a class="anchor" href="#mergesort">#</a>
+</h4>
+<p>Mergesort is another sorting algorithm, that we discussed <a href="">when studying recursion</a>.</p>
+<p>We reproduce it here for convenience:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> <span style="color:#a6e22e">mergesort</span>(<span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> A) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Base case: the input array has size 1, it is already sorted.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(A.<span style="color:#a6e22e">length</span> <span style="color:#f92672">==</span> 1){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> A
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Inductive case (the input array has size &gt; 1)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Compute the middle index (rounded down)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> m <span style="color:#f92672">=</span> (A.<span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> 1) <span style="color:#f92672">/</span> 2
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Copy the left half of A into a new array</span>
+</span></span><span style="display:flex;"><span>    Type<span style="color:#f92672">[]</span> leftHalf <span style="color:#f92672">=</span> copy(A<span style="color:#f92672">[</span>0 .. m<span style="color:#f92672">]</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Sort it</span>
+</span></span><span style="display:flex;"><span>    leftHalf <span style="color:#f92672">=</span> mergesort(leftHalf)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Copy the right half of A into a new array</span>
+</span></span><span style="display:flex;"><span>    Type<span style="color:#f92672">[]</span> rightHalf <span style="color:#f92672">=</span>  copy(A<span style="color:#f92672">[</span>m <span style="color:#f92672">+</span> 1 .. A.<span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> 1<span style="color:#f92672">]</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Sort it</span>
+</span></span><span style="display:flex;"><span>    rightHalf <span style="color:#f92672">=</span> mergesort(rightHalf)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// merge the two sorted halves</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> merge(leftHalf, rightHalf)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Let us analyze the worst-case asymptotic cost of this algorithm, as a function of the size $n$ of the <em>initial</em> input array.
+For simplicity, we will assume that $n$ is a power of two.</p>
+<p>First, let us analyze the cost of this method, <em>omitting</em> the two recursive calls.</p>
+<ol>
+<li>
+<p>In the base case, the cost is a constant $c_0$</p>
+</li>
+<li>
+<p>In the inductive case, let $s$ be the size of the <em>current</em> input array <code>A</code>.</p>
+</li>
+<li>
+<p>computing the middle index <code>m</code> has constant cost $c_1$,</p>
+</li>
+<li>
+<p>copying both halves of the input array into two new arrays has linear cost, i.e. $c_2 s$ for some constant $c_2$,</p>
+</li>
+<li>
+<p>merging the two halves halves has linear cost, i.e. $c_3 s$ for some constant $c_3$.</p>
+</li>
+</ol>
+<p>Now consider the following tree, where each node represents a recursive calls to <code>mergesort</code>, labeled with the corresponding input size.
+In this picture $n$ stands for the size of the <em>initial</em> array.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>Observe that in this tree, the cumulated size of the arrays at each depth is $n$.
+For instance:</p>
+<ul>
+<li>$n$ at depth 0,</li>
+<li>$2\frac{n}{2}$ at depth 1,</li>
+<li>$4\frac{n}{4}$ at depth 2,</li>
+<li>etc.</li>
+</ul>
+<p>We can decompose the total running time as follows:</p>
+<ol>
+<li>
+<p><strong><em>Base cases.</em></strong> The base case is execute $n$ times, each with a constant cost $c_0$.
+So the cumulated cost for the deepest level of the tree is $c_0 n$</p>
+</li>
+<li>
+<p><strong><em>Inductive cases.</em></strong></p>
+<p>1.1. The middle index <code>m</code> is computed once for each non-leaf node, i.e. 1 + 2 + 4 + 8 + .. + \frac{n}{2} = n-1$ times.
+So the cumulated cost for this operation is $c_1 n-1 = c_1 n - c_1$.</p>
+<p>1.1. The cost of copying the input array into two new arrays is
+1.1.1. $c_2 n$ at depth $0$
+1.1.1. $2 c_2 \frac{n}{2} = c_2 n$ at depth $1$
+1.1.1. $4 c_2 \frac{n}{4} = c_2 n$ at depth $2$
+1.1.1. etc.
+Since the tree has depth $\log_2 n$, the cumulated cost of these operations is $c_2 n \log_2 n$
+1.1. Similarly, the cumulated cost of the merging operations is $c_3 n \log_2 n$</p>
+</li>
+</ol>
+<p>Summing up all these costs, we get:</p>
+<p>$$
+\qquad f(n) =
+c_0 n +
+c_1 n - c_1 +
+c_2 n \log_2 n +
+c_3 n \log_2 n =</p>
+<p>(c_2 + c_3) n \log_2 n +
+(c_0 + c_1) n - c_1
+$$</p>
+<p>which is in $Theta(n \log n)$.</p>
 </article>
  
       
@@ -1223,11 +2428,22 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
+    <li><a href="#size">Size</a></li>
     <li><a href="#time-or-memory">Time or memory</a></li>
-    <li><a href="#worst-case-cost-average-cost">Worst-case cost, average cost</a></li>
+    <li><a href="#worst-case-average">Worst case, average</a></li>
     <li><a href="#asymptotic-cost">Asymptotic cost</a>
       <ul>
-        <li><a href="#classes">Classes</a></li>
+        <li><a href="#comparison-of-cost-functions">Comparison of cost functions</a></li>
+        <li><a href="#equivalence-classes">Equivalence classes</a></li>
+        <li><a href="#useful-simplifications">Useful simplifications</a></li>
+        <li><a href="#big-o">Big $O$</a></li>
+        <li><a href="#overloaded-equality">Overloaded equality</a></li>
+      </ul>
+    </li>
+    <li><a href="#application">Application</a>
+      <ul>
+        <li><a href="#ram-cost-model">RAM cost model</a></li>
+        <li><a href="#comparing-two-sorting-algorithms">Comparing two sorting algorithms</a></li>
       </ul>
     </li>
   </ul>
