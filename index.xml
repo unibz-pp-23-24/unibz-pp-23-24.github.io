@@ -491,6 +491,13 @@
       <description>Cast and Equality # Cast # Java (as well as C# and C++) provides mechanisms to change the type associated with an object o, using either a supertype of o (this is an upcast), or a subtype of o (this is a downcast). Upcast # Explicit upcasts are uncommon, but may still be useful in some scenarios, e.g. to disambiguate two method calls.&#xA;Implicit upcasts on the other hand are very frequent, when the type of an object cannot be determined at compile time.</description>
     </item>
     <item>
+      <title>Computational cost</title>
+      <link>https://unibz-pp-23-24.github.io/docs/background/sections/cost/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/background/sections/cost/</guid>
+      <description>Computational cost # In this section, we briefly introduce the standard way to estimate the cost of an algorithm, as a function $f(n)$ of the size $n$ of its input.&#xA;Size # The size $n$ of the input may be the size of its representation in bits.&#xA;Other common measures include:&#xA;the number of entries for array, the number of nodes for tree, etc. Time or memory # Among others, the function $f(n)$ may estimate:</description>
+    </item>
+    <item>
       <title>Multithreading and order</title>
       <link>https://unibz-pp-23-24.github.io/docs/stream/sections/order/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
