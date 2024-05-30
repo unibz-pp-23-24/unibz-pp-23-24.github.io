@@ -29,7 +29,7 @@
       <description>Computational problem # A computational problem is (usually) specified as:&#xA;a set of possible inputs, and the expected outputs (for these inputs). Problem vs algorithm # For instance, here is a problem that you may have encountered already:&#xA;Input: a sorted array A of integers, an integer a Output: true if a appears in A, false otherwise There are (infinitely) many algorithms that can solve this problem. But some of them are more efficient than others.</description>
     </item>
     <item>
-      <title>Dynaic array and linked list</title>
+      <title>Dynamic array and linked list</title>
       <link>https://unibz-pp-23-24.github.io/docs/datastructures/sections/list/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/datastructures/sections/list/</guid>
