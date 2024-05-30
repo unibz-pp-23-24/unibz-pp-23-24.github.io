@@ -1,0 +1,2399 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Hash table # A hash table is a data structure often used to implement an associative array (like a Java Map).
+Associative array # Reminder. An associative array (or map) is a finite set of key-value pairs, where keys are distinct. Terminology. A key-value pair is also called an entry. Running example. The following associative array has 5 entries.
+$\qquad$ 1 $\mapsto$ Alice $\qquad$ 3 $\mapsto$ Bob $\qquad$ 4 $\mapsto$ Carol $\qquad$ 9 $\mapsto$ Dan $\qquad$ 12 $\mapsto$ Eve">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/datastructures/sections/hash/">
+  <meta property="og:site_name" content="Programming project 2023-24">
+  <meta property="og:title" content="Hash table">
+  <meta property="og:description" content="Hash table # A hash table is a data structure often used to implement an associative array (like a Java Map).
+Associative array # Reminder. An associative array (or map) is a finite set of key-value pairs, where keys are distinct. Terminology. A key-value pair is also called an entry. Running example. The following associative array has 5 entries.
+$\qquad$ 1 $\mapsto$ Alice $\qquad$ 3 $\mapsto$ Bob $\qquad$ 4 $\mapsto$ Carol $\qquad$ 9 $\mapsto$ Dan $\qquad$ 12 $\mapsto$ Eve">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Hash table | Programming project 2023-24</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" >
+<link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.c5aff7469adabf536bf68f65bfae99b2dad2f63b2cd7d89f5e59ef385df484f6.js" integrity="sha256-xa/3Rprav1Nr9o9lv66ZstrS9jss19ifXlnvOF30hPY=" crossorigin="anonymous"></script>
+
+  
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
+  integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0"
+  crossorigin="anonymous"
+/>
+
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
+  integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
+  crossorigin="anonymous"
+></script>
+
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
+  integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);"
+></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+      ],
+    });
+  });
+</script>
+
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Programming project 2023-24</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f1c1e874f9c9473478447bba6c7db644" class="toggle"  />
+    <label for="section-f1c1e874f9c9473478447bba6c7db644" class="flex justify-between">
+      <a href="/docs/intro/" class="">This course</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/schedule/" class="">Schedule</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/lecturers/" class="">Teaching staff</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/evaluation/" class="">Evaluation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/content/" class="">Content</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/board_game/" class="">Board game</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/bibliography/" class="">Bibliography</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-bc4d9392f5af16481cccf0c311076888" class="toggle"  />
+    <label for="section-bc4d9392f5af16481cccf0c311076888" class="flex justify-between">
+      <a href="/docs/project/" class="">Project</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/project/sections/free_project/" class="">Option 1: free project</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/project/sections/board_game/" class="">Option 2: board game</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-3435ead23eba75b5ffeeb8d422f70dea" class="toggle"  />
+    <label for="section-3435ead23eba75b5ffeeb8d422f70dea" class="flex justify-between">
+      <a href="/docs/objects/" class="">Objects and classes</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/objects/" class="">Objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classes/" class="">Class and instance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/inheritance/" class="">Inheritance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/methods/" class="">Instance methods</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/tostring/" class="">Displaying objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/comparing/" class="">Cast and equality</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classesasobjects/" class="">Classes as objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/clone/" class="">Duplicating objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/quasi-objects/" class="">Quasi-objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/encapsulation/" class="">Encapsulation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/mutability/" class="">Mutability</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/quiz/" class="">Quiz</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-48bc13e86f573c257821b397e779b02e" class="toggle"  />
+    <label for="section-48bc13e86f573c257821b397e779b02e" class="flex justify-between">
+      <a href="/docs/interfaces/" class="">Interfaces</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/interfaces/sections/specification/" class="">Specification and programming interface</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/interfaces/sections/java_interfaces/" class="">Java interfaces</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-e06acd393c0cc6e5b27e2cd8945d3dd8" class="toggle"  />
+    <label for="section-e06acd393c0cc6e5b27e2cd8945d3dd8" class="flex justify-between">
+      <a href="/docs/abstractdatatypes/" class="">Abstract data types</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/list/" class="">List</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/set/" class="">Set</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/map/" class="">Associative array</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/queue/" class="">Stack, queue, priority queue</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/sorting/" class="">Sorting</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-5d60f9e6a9b7c875f51358c583373282" class="toggle" checked />
+    <label for="section-5d60f9e6a9b7c875f51358c583373282" class="flex justify-between">
+      <a href="/docs/datastructures/" class="">Data structures</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/datastructures/sections/list/" class="">Dynaic array and linked list</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/datastructures/sections/hash/" class="active">Hash table</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-93b39c27c032f5f72bed81496cbb41e3" class="toggle"  />
+    <label for="section-93b39c27c032f5f72bed81496cbb41e3" class="flex justify-between">
+      <a href="/docs/errors/" class="">Errors</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a2fa4d1523374519c87fe83f9d8226b6" class="toggle"  />
+    <label for="section-a2fa4d1523374519c87fe83f9d8226b6" class="flex justify-between">
+      <a href="/docs/errors/sections/callstack/" class="">Call stack</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-323953d2054911560fd76ed4505d5bb2" class="toggle"  />
+    <label for="section-323953d2054911560fd76ed4505d5bb2" class="flex justify-between">
+      <a href="/docs/errors/sections/exceptions/" class="">Exceptions</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-03b7629c50286af7810d9917f4bdabd2" class="toggle"  />
+    <label for="section-03b7629c50286af7810d9917f4bdabd2" class="flex justify-between">
+      <a href="/docs/errors/sections/checked/" class="">Checked vs unchecked</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-3add83584009ceb58c28b43e0a2280c9" class="toggle"  />
+    <label for="section-3add83584009ceb58c28b43e0a2280c9" class="flex justify-between">
+      <a href="/docs/errors/sections/custom/" class="">Custom exceptions</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-b9c696d05ab8cb944ddf9cef47a3abb4" class="toggle"  />
+    <label for="section-b9c696d05ab8cb944ddf9cef47a3abb4" class="flex justify-between">
+      <a href="/docs/errors/sections/errors/" class="">Java errors</a>
+    </label>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-1be866adbf7f2244d1773e0d2a159b91" class="toggle"  />
+    <label for="section-1be866adbf7f2244d1773e0d2a159b91" class="flex justify-between">
+      <a href="/docs/recursion/" class="">Recursion</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/recursion/sections/linear/" class="">Linear recursion</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/recursion/sections/nary/" class="">N-ary recursion</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/recursion/sections/correctness/" class="">Correctness</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-b7bc445f96cbe2bd1034c5f1c5d075bb" class="toggle"  />
+    <label for="section-b7bc445f96cbe2bd1034c5f1c5d075bb" class="flex justify-between">
+      <a href="/docs/input/" class="">I/O and serialization</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-09ea3b18445537bd77c25d3db6ab2fcf" class="toggle"  />
+    <label for="section-09ea3b18445537bd77c25d3db6ab2fcf" class="flex justify-between">
+      <a href="/docs/input/sections/files/" class="">Paths and files in Java</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-640b25aadb55f28505bfbbe5a5f7073d" class="toggle"  />
+    <label for="section-640b25aadb55f28505bfbbe5a5f7073d" class="flex justify-between">
+      <a href="/docs/input/sections/read/" class="">Reading from and writing to a file in Java</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-7efe7741b54b5b602db75415a7806ef4" class="toggle"  />
+    <label for="section-7efe7741b54b5b602db75415a7806ef4" class="flex justify-between">
+      <a href="/docs/input/sections/property/" class="">Configuration files</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-37fdfe811c449d15e51a84c19673df2f" class="toggle"  />
+    <label for="section-37fdfe811c449d15e51a84c19673df2f" class="flex justify-between">
+      <a href="/docs/input/sections/serialize/" class="">Serialization</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ec41b3fcd24b301058a1bd1bd7b5c8e7" class="toggle"  />
+    <label for="section-ec41b3fcd24b301058a1bd1bd7b5c8e7" class="flex justify-between">
+      <a href="/docs/input/sections/json/" class="">JSON Serialization</a>
+    </label>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-baf3ea6e28839ac044570d2d313c8794" class="toggle"  />
+    <label for="section-baf3ea6e28839ac044570d2d313c8794" class="flex justify-between">
+      <a href="/docs/regex/" class="">Regular expressions</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/regex/sections/pattern/" class="">Pattern matching</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/regex/sections/practice/" class="">in practice</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/regex/sections/java/" class="">Using Java regexes</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ae8fba9e927e4c55801a4e71f6b7d054" class="toggle"  />
+    <label for="section-ae8fba9e927e4c55801a4e71f6b7d054" class="flex justify-between">
+      <a href="/docs/lambda/" class="">Callback methods and lamda expressions</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/pure/" class="">Pure function</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/anonymous/" class="">Anonymous method</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/lambda/" class="">Lambda expression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/type/" class="">Type of a method</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/callback/" class="">Callback method</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/captured/" class="">Captured variables</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-41a2765a9682fb1ce579fb1661f1250d" class="toggle"  />
+    <label for="section-41a2765a9682fb1ce579fb1661f1250d" class="flex justify-between">
+      <a href="/docs/stream/" class="">Streams in Java</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/pipeline/" class="">Pipeline</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/init/" class="">Source</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/intermediate/" class="">Intermediate operations</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/terminal/" class="">Terminal operation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/numeric/" class="">Numeric stream</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/order/" class="">Multithreading and order</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/optional/" class="">Optional</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-87d53bbeb97db8aab24c02b4d45460f2" class="toggle"  />
+    <label for="section-87d53bbeb97db8aab24c02b4d45460f2" class="flex justify-between">
+      <a href="/docs/generics/" class="">Generic programming</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/generics/sections/type_checking/" class="">Type checking</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/generics/sections/generics/" class="">Generics</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/generics/sections/subtype/" class="">Subtype</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/generics/sections/variance/" class="">Variance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/generics/sections/erasure/" class="">Type erasure</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-9d77b970a03dc72b048d9fce7bfe272f" class="toggle"  />
+    <label for="section-9d77b970a03dc72b048d9fce7bfe272f" class="flex justify-between">
+      <a href="/docs/unittests/" class="">Unit tests</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-796939dc839b82c2ff89d99e47011262" class="toggle"  />
+    <label for="section-796939dc839b82c2ff89d99e47011262" class="flex justify-between">
+      <a href="/docs/unittests/sections/structured/" class="">Code units</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ad5c3d825858d4a9ca4ad02d541f7121" class="toggle"  />
+    <label for="section-ad5c3d825858d4a9ca4ad02d541f7121" class="flex justify-between">
+      <a href="/docs/unittests/sections/tdd/" class="">Development driven by unit tests</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-7e09be54c45521908b57f9eaf194f5f6" class="toggle"  />
+    <label for="section-7e09be54c45521908b57f9eaf194f5f6" class="flex justify-between">
+      <a href="/docs/unittests/sections/junit/" class="">in Java</a>
+    </label>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-494fdb80ca3ad5d2868cb487a042ae27" class="toggle"  />
+    <label for="section-494fdb80ca3ad5d2868cb487a042ae27" class="flex justify-between">
+      <a href="/docs/env/" class="">Development environment</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/files/" class="">Hierarchical file system</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/backup/" class="">Backup</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/install/" class="">Software management</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/os/" class="">Operating system</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/requirements/" class="">Requirements for this course</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/ide/" class="">IDE</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/text_editor/" class="">Text editor</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/eval/" class="">Evaluation environment</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/terminal/" class="">Terminal</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-2870a15a3d2cff84408f43cbb1e77f97" class="toggle"  />
+    <label for="section-2870a15a3d2cff84408f43cbb1e77f97" class="flex justify-between">
+      <a href="/docs/git/" class="">git</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/basics/" class="">Basics: repository, commits and branches</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/collaboration/" class="">Basics: network and collaboration</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/config/" class="">Configuration</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/create/" class="">Create or clone a repository</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/commit/" class="">Add, commit, stash</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/branches/" class="">Branches</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/sharing/" class="">Synchronization: remote, push, pull</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/backtracking/" class="">Backtracking</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/ignore/" class="">Ignoring files</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/resources/" class="">To go further</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-44fa5eb3511a340ff4e9042080604b5c" class="toggle"  />
+    <label for="section-44fa5eb3511a340ff4e9042080604b5c" class="flex justify-between">
+      <a href="/docs/build/" class="">Build automation</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-0c816e62fd66eb322757addb01600cdd" class="toggle"  />
+    <label for="section-0c816e62fd66eb322757addb01600cdd" class="flex justify-between">
+      <a href="/docs/build/sections/packaging/" class="">Packaging a Java application</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-5537e478f301d8ff4f0b5a7a03c9db32" class="toggle"  />
+    <label for="section-5537e478f301d8ff4f0b5a7a03c9db32" class="flex justify-between">
+      <a href="/docs/build/sections/layout/" class="">Layout</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-33bd3456c4645cc966d192fba400a71a" class="toggle"  />
+    <label for="section-33bd3456c4645cc966d192fba400a71a" class="flex justify-between">
+      <a href="/docs/build/sections/pom/" class="">Configuration file</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-c956d0b428ebb6c853f314459a513393" class="toggle"  />
+    <label for="section-c956d0b428ebb6c853f314459a513393" class="flex justify-between">
+      <a href="/docs/build/sections/artifact/" class="">Artifact</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-d01a14431bc2161a8fed02d90e1a365b" class="toggle"  />
+    <label for="section-d01a14431bc2161a8fed02d90e1a365b" class="flex justify-between">
+      <a href="/docs/build/sections/dependencies/" class="">Dependencies</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-b838446830102a7dece872d673537390" class="toggle"  />
+    <label for="section-b838446830102a7dece872d673537390" class="flex justify-between">
+      <a href="/docs/build/sections/building/" class="">Building</a>
+    </label>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ffcf8551871937aae0ce60f2b3cc616b" class="toggle"  />
+    <label for="section-ffcf8551871937aae0ce60f2b3cc616b" class="flex justify-between">
+      <a href="/docs/background/" class="">Background</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/background/sections/problem/" class="">Computational problem</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/background/sections/set_tuple_map/" class="">Set, tuple, function</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/background/sections/order/" class="">Relation, preorder</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/background/sections/cost/" class="">Computational cost</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/background/sections/regular/" class="">Regular languages</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Hash table</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#associative-array">Associative array</a></li>
+    <li><a href="#structure">Structure</a>
+      <ul>
+        <li><a href="#hash-function">Hash function</a></li>
+      </ul>
+    </li>
+    <li><a href="#collision">Collision</a></li>
+    <li><a href="#performance">Performance</a>
+      <ul>
+        <li><a href="#worst-case">Worst case</a></li>
+        <li><a href="#load-factor-and-rehashing">Load factor and rehashing</a></li>
+        <li><a href="#average-running-time">Average running time</a></li>
+      </ul>
+    </li>
+    <li><a href="#open-indexing">Open indexing</a>
+      <ul>
+        <li><a href="#performance-1">Performance</a></li>
+      </ul>
+    </li>
+    <li><a href="#in-java">in Java</a>
+      <ul>
+        <li><a href="#implementation">Implementation</a></li>
+        <li><a href="#hashcode"><code>hashCode</code></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="hash-table">
+  Hash table
+  <a class="anchor" href="#hash-table">#</a>
+</h1>
+<p>A hash table is a data structure often used to implement an <a href="">associative array</a> (like a Java <code>Map</code>).</p>
+<!-- raw HTML omitted -->
+<h2 id="associative-array">
+  Associative array
+  <a class="anchor" href="#associative-array">#</a>
+</h2>
+<blockquote class="book-hint warning">
+  <strong><em>Reminder.</em></strong> An <strong>associative array</strong> (or <strong>map</strong>) is a finite set of key-value pairs, where keys are distinct.
+</blockquote>
+
+<blockquote class="book-hint warning">
+  <strong><em>Terminology.</em></strong>
+A key-value pair is also called an <strong>entry</strong>.
+</blockquote>
+
+<blockquote class="book-hint info">
+  <p><strong><em>Running example.</em></strong>
+The following associative array has 5 entries.</p>
+<p>$\qquad$
+1 $\mapsto$ <code>Alice</code>
+$\qquad$
+3 $\mapsto$ <code>Bob</code>
+$\qquad$
+4 $\mapsto$ <code>Carol</code>
+$\qquad$
+9 $\mapsto$ <code>Dan</code>
+$\qquad$
+12 $\mapsto$ <code>Eve</code></p>
+<p>In this associative array, keys are integers, and values are strings.</p>
+
+</blockquote>
+
+<blockquote class="book-hint warning">
+  <strong><em>Notation.</em></strong>
+We will use $K$ for the type of the keys (integers in this example), and $V$ for the type of the values (strings in this example).
+</blockquote>
+
+<h2 id="structure">
+  Structure
+  <a class="anchor" href="#structure">#</a>
+</h2>
+<blockquote class="book-hint warning">
+  A hash table is an array $A$, whose entries are called <strong>slots</strong> (or <strong>buckets</strong>).
+</blockquote>
+
+<p>Hash tables come in two varieties:</p>
+<ul>
+<li>chaining hash tables and</li>
+<li>hash tables with open indexing.</li>
+</ul>
+<blockquote class="book-hint warning">
+  In a <strong>chaining hash table</strong>, each slot is a pointer to a data structure (typically a linked list).
+These data structures store the entries (a.k.a. key-value pairs) of the associative array.
+</blockquote>
+
+<blockquote class="book-hint info">
+  <p><strong><em>Example (continued).</em></strong>
+The following is a chaining hash table, which stores our associative array.</p>
+<p><img src="/img/hashTable/ex/hashTable.svg" alt="" /></p>
+<p>The array has 4 slots, each of which points to a (possibly empty) linked list.</p>
+
+</blockquote>
+
+<p>In a hash table with <strong>open indexing</strong>, each slot stores one entry of the associative array.
+We will discuss open indexing later in this section (and focus for now on chaining hash tables).</p>
+<h3 id="hash-function">
+  Hash function
+  <a class="anchor" href="#hash-function">#</a>
+</h3>
+<p>In the hash table, whether a certain entry is assigned to a certain slot is determined by a so-called hash function.</p>
+<blockquote class="book-hint warning">
+  <strong><em>Definition.</em></strong>
+A <strong>hash function</strong> maps each key in $K$ to an index in $A$.
+</blockquote>
+
+<blockquote class="book-hint info">
+  <p><strong><em>Example (continued).</em></strong>
+In the above example, we used</p>
+<p>$\qquad h(k) = k \mod 4$</p>
+<p>as our hash function.</p>
+<p>For instance,</p>
+<p>$\qquad h(9) = 9 \mod 4 = 1$</p>
+<p>which explains why the entry</p>
+<p>$\qquad$ $9 \mapsto$ <code>Dan</code></p>
+<p>is assigned to slot $1$.</p>
+
+</blockquote>
+
+<h2 id="collision">
+  Collision
+  <a class="anchor" href="#collision">#</a>
+</h2>
+<p>The size of the set $K$ of possible keys is often (much) larger than the size of the hash table $A$.</p>
+<p><blockquote class="book-hint info">
+  <strong><em>Example (continued).</em></strong>
+In our example, $K$ is the set of integers.
+In Java, this set has size $2^{32}$ (i.e. more than 4 billion), which is unrealistic for the size of $A$.
+</blockquote>
+
+As a consequence, hashing functions are usually not <a href="">injective</a>.</p>
+<blockquote class="book-hint warning">
+  <p><strong><em>Terminology.</em></strong>
+A <strong>collision</strong> occurs when two entries of an associative array are assigned to the same slot.</p>
+<p>In other words, a collision occurs if the associative array contains two entries ${k_1 \mapsto v_1}$ and ${k_2 \mapsto v_1}$ such that $h(k_1) = h(k_2)$.</p>
+
+</blockquote>
+
+<blockquote class="book-hint info">
+  <p><strong><em>Example (continued).</em></strong>
+In the example above,
+1 $\mapsto$ <code>Alice</code> and 9 $\mapsto$ <code>Dan</code> are assigned to the same slot, because</p>
+<p>$$
+h(1) = h(9) = 1
+$$</p>
+
+</blockquote>
+
+<p>Collisions are often unavoidable (this is a consequence of what is sometimes called the <a href="https://en.wikipedia.org/wiki/Birthday_problem">birthday paradox</a>).</p>
+<blockquote class="book-hint info">
+  <p><strong><em>Example.</em></strong></p>
+<p>Let us assume that our hashing function $h$ partitions $K$ evenly across slots (like the function $h(x) = x \mod 4$ used above).</p>
+<ul>
+<li>
+<p>If $A$ has $16$ slots (which is the default size of a hashmap in Java), then
+the probability of a collision is $\ge 0.5$ for $5$ entries already</p>
+</li>
+<li>
+<p>If $A$ has $1000$ slots, then
+the probability of a collision is $\ge 0.5$ for $38$ entries already, and $\ge 0.9$ for $69$ entries already.</p>
+</li>
+</ul>
+
+</blockquote>
+
+<h2 id="performance">
+  Performance
+  <a class="anchor" href="#performance">#</a>
+</h2>
+<blockquote class="book-hint warning">
+  <p><strong><em>Reminder.</em></strong>
+An associative array exposes (at least) the following methods:</p>
+<ul>
+<li><strong>lookup</strong> (or <strong>get</strong>) takes a key as input, and returns the value for this key (if any).</li>
+<li><strong>insert</strong> (or <strong>put</strong> ) inserts a pair <em>(key, value)</em>. If an entry for this key was already present, then overwrites its value.</li>
+<li><strong>remove</strong> (or <strong>delete</strong>) deletes the entry for a given key (if any).</li>
+</ul>
+</blockquote>
+
+<h3 id="worst-case">
+  Worst case
+  <a class="anchor" href="#worst-case">#</a>
+</h3>
+<p>In a chained hash table, in order to check whether the structure contains an entry for an input key $k$,
+we need to:</p>
+<ul>
+<li>compute $h(k)$</li>
+<li>search for an entry with key $k$ in the data structure that $A[h(k)]$ refers to (if any).</li>
+</ul>
+
+
+
+
+<div class="book-tabs"><input type="radio" class="toggle" name="tabs-exercise_hash_wc" id="tabs-exercise_hash_wc-0" checked="checked" />
+  <label for="tabs-exercise_hash_wc-0">Exercise</label>
+  <div class="book-tabs-content markdown-inner"><p>Consider a associative array with $n$ entries, stored as a chained hash table with linked lists (as above).</p>
+<p>What is the worst case asymptotic running time of the lookup operation?</p>
+<p>Instead, what would be the best possible scenario?</p>
+</div></div>
+
+<h3 id="load-factor-and-rehashing">
+  Load factor and rehashing
+  <a class="anchor" href="#load-factor-and-rehashing">#</a>
+</h3>
+<blockquote class="book-hint warning">
+  <strong><em>Definition.</em></strong>
+Let $n$ be the number of entries in the associative array, and let $m$ be the size of $A$.
+The ratio $\alpha = \frac{n}{m}$ is called the <strong>load factor</strong> of the hash table.
+</blockquote>
+
+<p>A high load factor increases the chances of collision, thus affecting performance.</p>
+<p>When the load factor becomes too high, the hash table is typically <strong>rehashed</strong>, meaning that a larger hash table is created (thus with a <em>different</em> hashing function), in which entries are re-inserted.</p>
+<p>From <a href="https://en.wikipedia.org/wiki/Hash_table#Load_factor_for_separate_chaining">Wikipedia</a>, for a chaining hash table, the maximal acceptable load factor is between 1 and 3.</p>
+<h3 id="average-running-time">
+  Average running time
+  <a class="anchor" href="#average-running-time">#</a>
+</h3>
+<p>A good hash function is usually expected to distribute keys evenly across slots.</p>
+<p>In a chaining hash table, this means that all lists should have length close to the load factor $\alpha$.</p>
+<p><a href="https://en.wikipedia.org/wiki/Universal_hashing">Universal hashing</a> refers to using not one, but a <em>collection</em> of hash functions that satisfies certain properties, and randomly selecting one of these functions at runtime.</p>
+<p>This guarantees that for a fixed set $S \subset K$ of keys with size $n$, and for a fixed $k \in S$, the <em>average</em> length of the slot for $k$ is the load factor $\alpha$.</p>
+<p>In other words, the <em>average</em> running time of lookup, insertion and deletion is $\alpha = \frac{n}{m}$.</p>
+<p>If we assume that the size $m$ of $A$ is always reasonable for the number $n$ of entries of the associate array,
+then $\alpha$ is independent of $n$.
+So under this assumption, the <em>average</em> running time of lookup, insertion and deletion is constant (i.e. is in $\Theta(1)$.</p>
+<h2 id="open-indexing">
+  Open indexing
+  <a class="anchor" href="#open-indexing">#</a>
+</h2>
+<blockquote class="book-hint warning">
+  In a hash table with <strong>open indexing</strong>, each slot stores at most <em>one</em> entry of the associative array.
+In case of collision between two entries, one of them is assigned to a free slot.
+</blockquote>
+
+<p>This is achieved via a so-called <strong>probing</strong> function (from indices to indices), which defines an order over indices.
+More precisely:</p>
+<ul>
+<li><strong><em>Insert.</em></strong> When inserting an entry with key $k$, if the slot $A[h(k)]$ is already occupied, then the &ldquo;next&rdquo; free slot is used instead (where &ldquo;next&rdquo; depends on the probing function).</li>
+<li><strong><em>Lookup.</em></strong> When searching for the entry with key $k$, the first investigated slot is $A[h(k)]$, then its successor $s$ (according to the probing function), then the successor of $s$, etc.,
+until we reach the entry with key $k$ (if present) or an empty slot.</li>
+<li><strong><em>Delete.</em></strong> When deleting a entry, the slot that it was occupying cannot be deleted, because the resulting empty slot may break future searches.
+Instead, the slot is marked as a so called <strong>tombstone</strong>, which does not interrupt a search, but can still be used for future insertions.</li>
+</ul>
+<h3 id="performance-1">
+  Performance
+  <a class="anchor" href="#performance-1">#</a>
+</h3>
+<p>The (average and worst case) asymptotic costs of these operations are identical to the ones for chained hash tables.</p>
+<p>Open addressing can be more efficient in practice than chaining, because it is more likely to benefit from caching (since the whole hash table it an array, it is likely to be contiguous in memory).</p>
+<p>A downside compared is the maximal acceptable load factor, which is (necessarily) $\le 1$ (from <a href="https://en.wikipedia.org/wiki/Hash_table#Load_factor_for_open_addressing">Wikipedia</a> still, between 0.6 and 0.75).</p>
+<h2 id="in-java">
+  in Java
+  <a class="anchor" href="#in-java">#</a>
+</h2>
+<h3 id="implementation">
+  Implementation
+  <a class="anchor" href="#implementation">#</a>
+</h3>
+<p>Java uses chained hash tables internally, with 16 slots by default.</p>
+<p>Each slot points to a <a href="">linked list</a> by default.</p>
+<p>If the maximal acceptable load factor is exceeded, then the has table is rehashed (as expected).
+In addition, Java uses a maximal load threshold for an individual slot.
+If this value is exceeded (but the maximal load factor is not), then the linked list for this slot is converted to a <a href="">red black tree</a>.</p>
+<h4 id="associative-array-1">
+  Associative array
+  <a class="anchor" href="#associative-array-1">#</a>
+</h4>
+<p>As we saw in the <a href="">dedicated chapter</a>, the interface <code>java.util.Map</code> represents an associative array.</p>
+<p>The class <code>java.util.HashMap</code> implements this interface as a hash table.</p>
+<p>The class <code>java.util.LinkedHashMap</code> also implements this interface as a hash table.
+However, in addition, each entry contains two additional pointers to its processor and successor (if any) in the order of <em>insertion</em>, thus forming a double linked list, <em>independent</em> of the hash table itself.</p>
+<p>This allows <em>iterating</em> over the entries of a map in a predictable order (precisely, their insertion order), which is not possible with a <code>HashMap</code>.</p>
+<blockquote class="book-hint danger">
+  <strong><em>Warning.</em></strong>
+In a <code>LinkedHashMap</code>, overwriting the value of an entry (with the method <code>Map.put</code>) does <em>not</em> affect the order of insertion.
+</blockquote>
+
+<h4 id="set">
+  Set
+  <a class="anchor" href="#set">#</a>
+</h4>
+<p>As we saw in the <a href="">dedicated chapter</a>, the interface <code>java.util.Set</code> represents a set.</p>
+<p>The class <code>java.util.Hashset</code> implements this interface as a hash table, where keys are the elements of the set, and an &ldquo;entry&rdquo; consists of a key only (i.e. has no value).
+The class <code>java.util.LinkedHashSet</code> also implements this interface as a hash table.
+It is analogous to <code>LinkedHashMap</code>, i.e. guarantees that iteration preserves the order of insertion.</p>
+<h3 id="hashcode">
+  <code>hashCode</code>
+  <a class="anchor" href="#hashcode">#</a>
+</h3>
+<p>In Java, the keys of a <code>Map</code> and the entries of a <code>Set</code> are <em>objects</em>.</p>
+<p>So a Java hash function must map an <em>object</em> to a hash table slot.
+Technically, this function is the composition of:</p>
+<ul>
+<li>the function <code>hashCode</code>, which maps an object to an <code>int</code>, and</li>
+<li>a proper hash function $h$ that maps this <code>int</code> to a hash table slot.</li>
+</ul>
+<p>The function <code>hashCode</code> is an instance method of the class <code>Object</code>, thus it is inherited by default by all objects.
+This function must behave like a <a href="">pure function</a> (even if it is overriden), in the sense that it must return twice the same <code>int</code> if it is called twice for the same object.</p>
+<p>The hash function $h$ is also a function in the mathematical sense.</p>
+<p>Therefore the composition of these two functions is has this property.
+As a consequence, a same key is always mapped to the same slot.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h4 id="hashcode-and-equals">
+  <code>hashCode</code> and <code>equals</code>
+  <a class="anchor" href="#hashcode-and-equals">#</a>
+</h4>
+<blockquote class="book-hint danger">
+  <strong><em>Warning.</em></strong>
+In a Java hash table, two keys $o_1$ and $o_2$ are considered equal iff $o_1$.<code>equals(</code>$o_2$<code>)</code> returns <code>true</code>.
+</blockquote>
+
+
+
+
+
+<div class="book-tabs"><input type="radio" class="toggle" name="tabs-exercise_hashCode" id="tabs-exercise_hashCode-0" checked="checked" />
+  <label for="tabs-exercise_hashCode-0">Exercise</label>
+  <div class="book-tabs-content markdown-inner"><p>Consider the following Java class <code>City</code>, which overrides the method <a href="">equals</a>, so that two cities are considered equal iff they have the same name and zip code.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">City</span>(){
+</span></span><span style="display:flex;"><span>    String name;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> zipCode;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">City</span>(String name, <span style="color:#66d9ef">int</span> zipCode){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">zipCode</span> <span style="color:#f92672">=</span> zipCode;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">equals</span>(Object o) {
+</span></span><span style="display:flex;"><span>       <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span> <span style="color:#f92672">==</span> o) { <span style="color:#75715e">// same reference</span>
+</span></span><span style="display:flex;"><span>           <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>       }
+</span></span><span style="display:flex;"><span>       <span style="color:#66d9ef">if</span> (o <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">||</span> getClass() <span style="color:#f92672">!=</span> o.<span style="color:#a6e22e">getClass</span>())
+</span></span><span style="display:flex;"><span>           <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>; <span style="color:#75715e">// o is null or has a different type</span>
+</span></span><span style="display:flex;"><span>       }
+</span></span><span style="display:flex;"><span>       City downcastObject <span style="color:#f92672">=</span> (City) o;
+</span></span><span style="display:flex;"><span>       <span style="color:#66d9ef">return</span> zipCode <span style="color:#f92672">==</span> downcastObject.<span style="color:#a6e22e">zipCode</span> <span style="color:#f92672">&amp;&amp;</span>
+</span></span><span style="display:flex;"><span>           name.<span style="color:#a6e22e">equals</span>(downcastObject.<span style="color:#a6e22e">name</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span></code></pre></div><p>What does the following program output?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>City bologna <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Bologna&#34;</span>, 40100);
+</span></span><span style="display:flex;"><span>City bolognaAgain <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Bologna&#34;</span>, 40100);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Set<span style="color:#f92672">&lt;</span>City<span style="color:#f92672">&gt;</span> cities <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashSet();
+</span></span><span style="display:flex;"><span>cities.<span style="color:#a6e22e">add</span>(bologna);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(cities.<span style="color:#a6e22e">contains</span>(bolognaAgain));
+</span></span></code></pre></div></div><input type="radio" class="toggle" name="tabs-exercise_hashCode" id="tabs-exercise_hashCode-1"  />
+  <label for="tabs-exercise_hashCode-1">Solution</label>
+  <div class="book-tabs-content markdown-inner"><p>Solution.</p>
+<p>The output is unpredictable.</p>
+<p>Observe that the variables
+<code>bologna</code> and
+<code>bolognaAgain</code> point to two different objects $o_1$ and $o_2$.</p>
+<p>In the hash table that stores the set <code>cities</code>:</p>
+<ul>
+<li>the slot associated to $o_1$ is $i_1 = h$($o_1$.<code>hashCode()</code>),</li>
+<li>the slot associated to $o_2$ is $i_2 = h$($o_2$.<code>hashCode()</code>).</li>
+</ul>
+<p>Since $o_1$ and $o_2$ are different objects, $i_1$ and $i_2$ may of may not be identical.</p>
+<p>The instruction <code>cities.add(bologna)</code> adds a node with key $o_1$ to $A[i_1]$.</p>
+<p>Then the instruction <code>cities.contains(bolognaAgain)</code> searches for a node with a key equal to $o_2$ in $A[i_2]$.</p>
+<ul>
+<li>
+<p>If $i_1 = i_2$ (i.e. if we have a collision),
+since $o_1$<code>.equals(</code>$o_2$<code>)</code> evaluates to true,
+the method <code>contains</code> will return <code>true</code>.</p>
+</li>
+<li>
+<p>If $i_1 \neq i_2$, since the slot $A[i_2]$ is empty,
+the method <code>contains</code> will return <code>false</code>.</p>
+</li>
+</ul>
+</div></div>
+
+<blockquote class="book-hint danger">
+  <strong><em>Warning.</em></strong>
+As show with this exercise, if a class overrides <code>equals</code> without overriding <code>hashCode</code>,
+then the behavior of the three basic operations on hash tables (insertion, lookup and deletion) may depend on collisions.
+</blockquote>
+
+<p>This makes the behavior of most methods implemented by <code>HashMap</code>, <code>LinkedHashMap</code>, <code>HashSet</code> and <code>LinkedHashSet</code> (among others) unpredictable.</p>
+<p>To avoid this, whenever <code>equals</code> is override, <code>hashCode</code> should be overriden accordingly.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p><blockquote class="book-hint info">
+  <p><strong><em>Example(continued).</em></strong>
+<code>hashCode</code> could be implemented as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">City</span>(){
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">hashCode</span>(){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> name.<span style="color:#a6e22e">length</span> <span style="color:#f92672">+</span> zipCode;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+</blockquote>
+
+In the example above,
+<em>any</em> (pure) function that produces an <code>int</code> out of <code>name</code> and <code>zipCode</code> could in theory be used to implement <code>hashCode</code> in the class <code>City</code>.</p>
+<p>However, the choice of this function may affect performance.</p>
+<p><blockquote class="book-hint info">
+  <p><strong><em>Example(continued).</em></strong>
+The following implementation of <code>hashCode</code> also complies with the implementation of <code>equals</code> above.
+However, it has the effect of mapping all keys with type <code>City</code> to the same hash table slot.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">City</span>(){
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">hashCode</span>(){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> 1;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+</blockquote>
+
+This is why a common practice consists in implementing <code>hashCode</code> in terms of the method <code>hashCode</code> of the selected attributes (and the method <code>hashCode</code> of these attributes if needed, recursively).</p>
+<blockquote class="book-hint info">
+  <strong><em>Note.</em></strong>
+Most native Java classes (like <code>String</code>, <code>Integer</code>, <code>Boolean</code>, <code>ArrayList</code>, <code>HasSet</code>, etc.) already implement <code>hashCode</code> (in accordance with <code>equals</code>).
+</blockquote>
+
+<p>The utility method <code>Objects.hash</code> takes any number of arguments, wraps the ones that have primitive types (e.g. <code>int</code> into <code>Integer</code>), and
+returns a function of their respective <code>hashCode</code> methods.</p>
+<blockquote class="book-hint info">
+  <p><strong><em>Example(continued).</em></strong>
+In our example, we can implement <code>hashCode</code> as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">City</span>(){
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">hashCode</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> Objects.<span style="color:#a6e22e">hash</span>(name, zipCode);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+</blockquote>
+
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#associative-array">Associative array</a></li>
+    <li><a href="#structure">Structure</a>
+      <ul>
+        <li><a href="#hash-function">Hash function</a></li>
+      </ul>
+    </li>
+    <li><a href="#collision">Collision</a></li>
+    <li><a href="#performance">Performance</a>
+      <ul>
+        <li><a href="#worst-case">Worst case</a></li>
+        <li><a href="#load-factor-and-rehashing">Load factor and rehashing</a></li>
+        <li><a href="#average-running-time">Average running time</a></li>
+      </ul>
+    </li>
+    <li><a href="#open-indexing">Open indexing</a>
+      <ul>
+        <li><a href="#performance-1">Performance</a></li>
+      </ul>
+    </li>
+    <li><a href="#in-java">in Java</a>
+      <ul>
+        <li><a href="#implementation">Implementation</a></li>
+        <li><a href="#hashcode"><code>hashCode</code></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

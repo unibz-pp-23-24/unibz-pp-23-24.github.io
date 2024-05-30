@@ -2,10 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Data structures on Programming project 2023-24</title>
-    <link>http://localhost:1313/docs/datastructures/</link>
+    <link>https://unibz-pp-23-24.github.io/docs/datastructures/</link>
     <description>Recent content in Data structures on Programming project 2023-24</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="http://localhost:1313/docs/datastructures/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://unibz-pp-23-24.github.io/docs/datastructures/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Dynaic array and linked list</title>
+      <link>https://unibz-pp-23-24.github.io/docs/datastructures/sections/list/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/datastructures/sections/list/</guid>
+      <description>Dynamic arrays and linked lists # Dynamic array # A dynamic array is typically used to implement the abstract data type list.&#xA;Structure # A dynamic array stores the elements of a list in a regular array $A$, and keeps track of the size of the list. If the size of the list exceeds the capacity of $A$, then the content of $A$ is copied into a larger array $A&amp;rsquo;$, and $A$ is replaced with $A&amp;rsquo;$.</description>
+    </item>
+    <item>
+      <title>Hash table</title>
+      <link>https://unibz-pp-23-24.github.io/docs/datastructures/sections/hash/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/datastructures/sections/hash/</guid>
+      <description>Hash table # A hash table is a data structure often used to implement an associative array (like a Java Map).&#xA;Associative array # Reminder. An associative array (or map) is a finite set of key-value pairs, where keys are distinct. Terminology. A key-value pair is also called an entry. Running example. The following associative array has 5 entries.&#xA;$\qquad$ 1 $\mapsto$ Alice $\qquad$ 3 $\mapsto$ Bob $\qquad$ 4 $\mapsto$ Carol $\qquad$ 9 $\mapsto$ Dan $\qquad$ 12 $\mapsto$ Eve</description>
+    </item>
   </channel>
 </rss>

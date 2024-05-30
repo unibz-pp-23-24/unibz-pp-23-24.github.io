@@ -29,6 +29,13 @@
       <description>Computational problem # A computational problem is (usually) specified as:&#xA;a set of possible inputs, and the expected outputs (for these inputs). Problem vs algorithm # For instance, here is a problem that you may have encountered already:&#xA;Input: a sorted array A of integers, an integer a Output: true if a appears in A, false otherwise There are (infinitely) many algorithms that can solve this problem. But some of them are more efficient than others.</description>
     </item>
     <item>
+      <title>Dynaic array and linked list</title>
+      <link>https://unibz-pp-23-24.github.io/docs/datastructures/sections/list/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/datastructures/sections/list/</guid>
+      <description>Dynamic arrays and linked lists # Dynamic array # A dynamic array is typically used to implement the abstract data type list.&#xA;Structure # A dynamic array stores the elements of a list in a regular array $A$, and keeps track of the size of the list. If the size of the list exceeds the capacity of $A$, then the content of $A$ is copied into a larger array $A&amp;rsquo;$, and $A$ is replaced with $A&amp;rsquo;$.</description>
+    </item>
+    <item>
       <title>Linear recursion</title>
       <link>https://unibz-pp-23-24.github.io/docs/recursion/sections/linear/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -279,6 +286,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/intro/sections/evaluation/</guid>
       <description>Evaluation # Evaluation for this course is based on:&#xA;assignments: up to 30 points, a group project: up to 60 points, and an oral exam: up to 10 points. Your final grade is the sum of the above, multiplied by 0.3.&#xA;Assignments # There will be 8 or 9 assignments for this course. These are standard programming exercises, related to notions seen during the lectures. The labs are (mostly) dedicated to these assignments.</description>
+    </item>
+    <item>
+      <title>Hash table</title>
+      <link>https://unibz-pp-23-24.github.io/docs/datastructures/sections/hash/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/datastructures/sections/hash/</guid>
+      <description>Hash table # A hash table is a data structure often used to implement an associative array (like a Java Map).&#xA;Associative array # Reminder. An associative array (or map) is a finite set of key-value pairs, where keys are distinct. Terminology. A key-value pair is also called an entry. Running example. The following associative array has 5 entries.&#xA;$\qquad$ 1 $\mapsto$ Alice $\qquad$ 3 $\mapsto$ Bob $\qquad$ 4 $\mapsto$ Carol $\qquad$ 9 $\mapsto$ Dan $\qquad$ 12 $\mapsto$ Eve</description>
     </item>
     <item>
       <title>Inheritance</title>
