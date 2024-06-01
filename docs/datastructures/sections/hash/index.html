@@ -22,7 +22,7 @@ $\qquad$ 1 $\mapsto$ Alice $\qquad$ 3 $\mapsto$ Bob $\qquad$ 4 $\mapsto$ Carol $
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.9ad98f7f3fc1702e3fa4d59c947ac9094ed8206c78cf2250f1c43a1b0906384e.js" integrity="sha256-mtmPfz/BcC4/pNWclHrJCU7YIGx4zyJQ8cQ6GwkGOE4=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.fa2688dd1cf2d0f4ba7870f8d2e7490072a5eed59a820d8fc7d947b631781b89.js" integrity="sha256-&#43;iaI3Rzy0PS6eHD40udJAHKl7tWagg2Px9lHtjF4G4k=" crossorigin="anonymous"></script>
 
   
 
@@ -1999,8 +1999,8 @@ $$</p>
 
 <p>Collisions are often unavoidable (this is a consequence of what is sometimes called the <a href="https://en.wikipedia.org/wiki/Birthday_problem">birthday paradox</a>).</p>
 <blockquote class="book-hint info">
-  <p><strong><em>Example.</em></strong></p>
-<p>Let us assume that our hashing function $h$ partitions $K$ evenly across slots (like the function $h(x) = x \mod 4$ used above).</p>
+  <p><strong><em>Example.</em></strong>
+Let us assume that our hashing function $h$ partitions $K$ evenly across slots (like the function $h(x) = x \mod 4$ used above).</p>
 <ul>
 <li>
 <p>If $A$ has $16$ slots (which is the default size of a hashmap in Java), then
@@ -2111,7 +2111,7 @@ Instead, the slot is marked as a so called <strong>tombstone</strong>, which doe
 <p>Each slot points to a <a href="">linked list</a> by default.</p>
 <p>If the maximal acceptable load factor is exceeded, then the has table is rehashed (as expected).
 In addition, Java uses a maximal load threshold for an individual slot.
-If this value is exceeded (but the maximal load factor is not), then the linked list for this slot is converted to a <a href="">red black tree</a>.</p>
+If this value is exceeded (but the maximal load factor is not), then the linked list for this slot is converted to a <a href="">red-black tree</a>.</p>
 <h4 id="associative-array-1">
   Associative array
   <a class="anchor" href="#associative-array-1">#</a>

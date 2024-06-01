@@ -24,7 +24,7 @@ the number of entries for array, the number of nodes for tree, etc. Time or memo
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.9ad98f7f3fc1702e3fa4d59c947ac9094ed8206c78cf2250f1c43a1b0906384e.js" integrity="sha256-mtmPfz/BcC4/pNWclHrJCU7YIGx4zyJQ8cQ6GwkGOE4=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.fa2688dd1cf2d0f4ba7870f8d2e7490072a5eed59a820d8fc7d947b631781b89.js" integrity="sha256-&#43;iaI3Rzy0PS6eHD40udJAHKl7tWagg2Px9lHtjF4G4k=" crossorigin="anonymous"></script>
 
   
 
@@ -1844,7 +1844,7 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#size">Size</a></li>
     <li><a href="#timeOrMemory">Time or memory</a></li>
     <li><a href="#worstCaseOrAverage">Worst case, average</a></li>
-    <li><a href="#asymptotic-cost">Asymptotic cost</a>
+    <li><a href="#asymptoticCost">Asymptotic cost</a>
       <ul>
         <li><a href="#comparing-cost-functions">Comparing cost functions</a></li>
         <li><a href="#in-practice">In practice</a></li>
@@ -1856,7 +1856,7 @@ https://github.com/alex-shpak/hugo-book
     </li>
     <li><a href="#application">Application</a>
       <ul>
-        <li><a href="#ram-cost-model">RAM cost model</a></li>
+        <li><a href="#RAM">RAM cost model</a></li>
       </ul>
     </li>
   </ul>
@@ -1960,9 +1960,9 @@ https://github.com/alex-shpak/hugo-book
   <label for="tabs-exercise_logarithmic-1">Solution</label>
   <div class="book-tabs-content markdown-inner">$\log_2 n + 1$ times, rounded down.</div></div>
 
-<h2 id="asymptotic-cost">
+<h2 id="asymptoticCost">
   Asymptotic cost
-  <a class="anchor" href="#asymptotic-cost">#</a>
+  <a class="anchor" href="#asymptoticCost">#</a>
 </h2>
 <p>When comparing the costs of algorithms, we are usually interested in <strong>scalability</strong>, i.e. how they behave when the input gets large.</p>
 <p>Let $f(n)$ measure the (worst case or average) running time of an algorithm.</p>
@@ -2254,9 +2254,9 @@ Instead of &ldquo;$f$ is in $\Theta(g)$&rdquo;, it is customary to write:</p>
 </h2>
 <p>Let us now evaluate the asymptotic cost of some algorithms.</p>
 <p>For simplicity, we will focus of the <a href="#worstCaseOrAverage">worst-case</a> <a href="#timeOrMemory">running time</a> (but the same notion of asymptotic cost can be used for <a href="#worstCaseOrAverage">average cost</a> and/or <a href="#timeOrMemory">memory usage</a>).</p>
-<h3 id="ram-cost-model">
+<h3 id="RAM">
   RAM cost model
-  <a class="anchor" href="#ram-cost-model">#</a>
+  <a class="anchor" href="#RAM">#</a>
 </h3>
 <p>The so-called <strong>Random Access Machine</strong> (RAM) model of computation makes several assumptions about computational cost.
 In particular, for a given index $i$, the cost of accessing the $i^\text{th}$ element of an array does <em>not</em> depend on the size of this array.</p>
@@ -2551,7 +2551,7 @@ $$</p>
     <li><a href="#size">Size</a></li>
     <li><a href="#timeOrMemory">Time or memory</a></li>
     <li><a href="#worstCaseOrAverage">Worst case, average</a></li>
-    <li><a href="#asymptotic-cost">Asymptotic cost</a>
+    <li><a href="#asymptoticCost">Asymptotic cost</a>
       <ul>
         <li><a href="#comparing-cost-functions">Comparing cost functions</a></li>
         <li><a href="#in-practice">In practice</a></li>
@@ -2563,7 +2563,7 @@ $$</p>
     </li>
     <li><a href="#application">Application</a>
       <ul>
-        <li><a href="#ram-cost-model">RAM cost model</a></li>
+        <li><a href="#RAM">RAM cost model</a></li>
       </ul>
     </li>
   </ul>

@@ -19,7 +19,7 @@ one that checks whether the queue is empty, one that takes as input an element a
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.9ad98f7f3fc1702e3fa4d59c947ac9094ed8206c78cf2250f1c43a1b0906384e.js" integrity="sha256-mtmPfz/BcC4/pNWclHrJCU7YIGx4zyJQ8cQ6GwkGOE4=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.fa2688dd1cf2d0f4ba7870f8d2e7490072a5eed59a820d8fc7d947b631781b89.js" integrity="sha256-&#43;iaI3Rzy0PS6eHD40udJAHKl7tWagg2Px9lHtjF4G4k=" crossorigin="anonymous"></script>
 
   
 
@@ -1839,7 +1839,7 @@ https://github.com/alex-shpak/hugo-book
   <ul>
     <li><a href="#in-java">in Java</a>
       <ul>
-        <li><a href="#generic-types">Generic types</a></li>
+        <li><a href="#parameterized-types">Parameterized types</a></li>
         <li><a href="#collection">The interface <code>Collection</code></a></li>
         <li><a href="#external-libraries">External libraries</a></li>
       </ul>
@@ -1861,7 +1861,7 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#abstract-data-types">#</a>
 </h1>
 <blockquote class="book-hint warning">
-  An <strong>abstract data type</strong> (ADT) is a programming <a href="https://unibz-pp-23-24.github.io/docs/interfaces/sections/specification/">interface</a>
+  An <strong>abstract data type</strong> (ADT) is a programming <a href="https://unibz-pp-23-24.github.io/docs/interfaces/sections/specification/#programmingInterface">interface</a>
 to access and manipulate a collection of elements.
 </blockquote>
 
@@ -1880,7 +1880,7 @@ For instance, a queue may be implemented as an array or as a linked list (among 
 Each implementation may have advantages and drawbacks (in terms of performance, memory footprint, parallelization opportunities, etc.) for different tasks (reading, writing, etc.).</p>
 <blockquote class="book-hint danger">
   A <strong>data structure</strong> (e.g. an array, a linked list, a hash map, etc.) is <em>not</em> an ADT, but a (concrete) way to store a collection of elements (values, objects, etc.) in memory.
-However, a data structure can <a href="">implement</a> one or several ADT(s).
+However, a data structure can implement one or several ADT(s).
 </blockquote>
 
 <p>Some ADTs correspond to <a href="https://unibz-pp-23-24.github.io/docs/background/sections/set_tuple_map/">basic mathematical objects</a> (set, tuple, function, etc.), and are therefore easy to understand and manipulate.
@@ -1892,9 +1892,9 @@ For instance, if your program manipulates a collection of objects without duplic
   in Java
   <a class="anchor" href="#in-java">#</a>
 </h2>
-<h3 id="generic-types">
-  Generic types
-  <a class="anchor" href="#generic-types">#</a>
+<h3 id="parameterized-types">
+  Parameterized types
+  <a class="anchor" href="#parameterized-types">#</a>
 </h3>
 <p>An ADT in Java is usually a <a href="">parameterized</a> type, meaning that it has one or several types as parameter.</p>
 <p>For instance, a set of strings in Java has type <code>Set&lt;String&gt;</code>.</p>
@@ -1984,7 +1984,7 @@ But <a href="https://github.com/google/guava">Guava</a> provides additional ones
   <ul>
     <li><a href="#in-java">in Java</a>
       <ul>
-        <li><a href="#generic-types">Generic types</a></li>
+        <li><a href="#parameterized-types">Parameterized types</a></li>
         <li><a href="#collection">The interface <code>Collection</code></a></li>
         <li><a href="#external-libraries">External libraries</a></li>
       </ul>
