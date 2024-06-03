@@ -8,6 +8,8 @@
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/background/sections/problem/</loc>
   </url><url>
+    <loc>https://unibz-pp-23-24.github.io/docs/multithreading/sections/concurrency/</loc>
+  </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/datastructures/sections/list/</loc>
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/recursion/sections/linear/</loc>
@@ -62,6 +64,8 @@
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/project/sections/board_game/</loc>
   </url><url>
+    <loc>https://unibz-pp-23-24.github.io/docs/multithreading/sections/thread/</loc>
+  </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/project/</loc>
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/input/sections/read/</loc>
@@ -73,6 +77,8 @@
     <loc>https://unibz-pp-23-24.github.io/docs/stream/sections/init/</loc>
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/intro/sections/lecturers/</loc>
+  </url><url>
+    <loc>https://unibz-pp-23-24.github.io/docs/multithreading/sections/simple/</loc>
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/map/</loc>
   </url><url>
@@ -119,6 +125,10 @@
     <loc>https://unibz-pp-23-24.github.io/docs/env/sections/install/</loc>
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/queue/</loc>
+  </url><url>
+    <loc>https://unibz-pp-23-24.github.io/docs/multithreading/sections/synchronization/</loc>
+  </url><url>
+    <loc>https://unibz-pp-23-24.github.io/docs/multithreading/sections/varia/</loc>
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/stream/sections/terminal/</loc>
   </url><url>
@@ -183,6 +193,8 @@
     <loc>https://unibz-pp-23-24.github.io/docs/recursion/</loc>
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/git/sections/sharing/</loc>
+  </url><url>
+    <loc>https://unibz-pp-23-24.github.io/docs/multithreading/sections/abstractions/</loc>
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/git/sections/backtracking/</loc>
   </url><url>

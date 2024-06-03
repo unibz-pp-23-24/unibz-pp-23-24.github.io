@@ -29,6 +29,13 @@
       <description>Computational problem # A computational problem is (usually) specified as:&#xA;a set of possible inputs, and the expected outputs (for these inputs). Problem vs algorithm # For instance, here is a problem that you may have encountered already:&#xA;Input: a sorted array A of integers, an integer a Output: true if a appears in A, false otherwise There are (infinitely) many algorithms that can solve this problem. But some of them are more efficient than others.</description>
     </item>
     <item>
+      <title>Concurrency</title>
+      <link>https://unibz-pp-23-24.github.io/docs/multithreading/sections/concurrency/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/multithreading/sections/concurrency/</guid>
+      <description>Concurrency # Core # A core is a basic processing unit. A Central Processing Unit (CPU) contains one or several cores (e.g. 4 or 8). A Graphical Processing Unit (GPU) can contain thousands of cores.&#xA;Parallelism vs concurrency # Terminology We call time span of a computational tasks the time interval comprised between the task&amp;rsquo;s start and completion.&#xA;The time spans of two tasks may overlap.&#xA;Example While downloading a video, Alice may use git to commit changes to her repository.</description>
+    </item>
+    <item>
       <title>Dynamic array and linked list</title>
       <link>https://unibz-pp-23-24.github.io/docs/datastructures/sections/list/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -211,6 +218,13 @@
       <description>Option 2: board game # The second project option available to you consists in developing a video game with mechanics analogous to the ones of Might &amp;amp; Magic: Clash of Heroes or Legend of Solgard.&#xA;If you choose this option, you will be provided:&#xA;a basic graphical user interface (GUI) that you can reuse and/or customize, examples during lectures that you may adapt to your project. Requirements # The minimal requirement to submit your project is a player vs player game playable on a single machine.</description>
     </item>
     <item>
+      <title>Process vs thread</title>
+      <link>https://unibz-pp-23-24.github.io/docs/multithreading/sections/thread/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/multithreading/sections/thread/</guid>
+      <description>Thread # Process # A process is an instance of a computer program.&#xA;Processes can interact in several ways. In particular:&#xA;a process may spawn and/or kill another process, a process may wait for another process to finish, two processes may have access to a same resource (and possibly acquire a lock on this resource). Thread # A process consists of one or several threads.&#xA;Conceptually, a thread is similar to a process.</description>
+    </item>
+    <item>
       <title>Reading from and writing to a file in Java</title>
       <link>https://unibz-pp-23-24.github.io/docs/input/sections/read/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -244,6 +258,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/intro/sections/lecturers/</guid>
       <description>Teaching staff # Julien Corman will teach the lectures and one lab.&#xA;Albulen Pano will teach the other lab.&#xA;Office hours # If you need additional help with the content of the course, the assignments and/or your project, you can ask for office hours with any (or both) of us.&#xA;These appointments must be scheduled via email (follow the links above for our email addresses).</description>
+    </item>
+    <item>
+      <title>A simplified model</title>
+      <link>https://unibz-pp-23-24.github.io/docs/multithreading/sections/simple/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/multithreading/sections/simple/</guid>
+      <description>A simplified model # As we saw earlier, parallelism and concurrency are two different execution strategy. However, (as we discussed) in a high-level programming language like Java, if a program allows two threads to be executed concurrently (on the same core), then it also allows them to be executed in parallel (on different cores).&#xA;From an abstract perspective, in order to understand the properties of a such program it can be convenient to assume an simplified, ideal machine that:</description>
     </item>
     <item>
       <title>Associative array</title>
@@ -391,6 +412,20 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/queue/</guid>
       <description>Stack, queue, priority queue # Some abstract data types impose strong limitations on the set of operations allowed on a collection. These limitations provide opportunities for specialized implementations (i.e. specialized data structures), which can be very efficient in some contexts.&#xA;Stack # A stack (or Last In First Out queue or LIFO queue) simulates a collection organized as a physical stack (for instance a stack of plates). A stack exposes three main methods:</description>
+    </item>
+    <item>
+      <title>Synchronization</title>
+      <link>https://unibz-pp-23-24.github.io/docs/multithreading/sections/synchronization/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/multithreading/sections/synchronization/</guid>
+      <description>Synchronization # Race condition # Example&#xA;Atomic classes.&#xA;Mutex # Precedence # Let $a$ (resp. $b$) be an instruction executed in a thread $A$ (resp. $B$).&#xA;By default, if $A$ and $B$ are executed concurrently, there is no guarantee that $a$ is executed before $b$. However, we can enforce it.&#xA;in Java # The Javadoc of the package java.util.concurrent summarizes the situations that ensures that $a$ is executed before $b$.</description>
+    </item>
+    <item>
+      <title>Synchronization</title>
+      <link>https://unibz-pp-23-24.github.io/docs/multithreading/sections/varia/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/multithreading/sections/varia/</guid>
+      <description>Synchronization # Race condition # Example&#xA;Atomic classes.&#xA;Mutex # Precedence # Let $a$ (resp. $b$) be an instruction executed in a thread $A$ (resp. $B$).&#xA;By default, if $A$ and $B$ are executed concurrently, there is no guarantee that $a$ is executed before $b$. However, we can enforce it.&#xA;in Java # The Javadoc of the package java.util.concurrent summarizes the situations that ensures that $a$ is executed before $b$.</description>
     </item>
     <item>
       <title>Terminal operation</title>
@@ -587,6 +622,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/git/sections/sharing/</guid>
       <description>Synchronization: remote, push, pull # List remotes # To list the remote(s) associated to your repository (name and address of each remote), you can run&#xA;git remote -v Upload # If the current branch is already shared with a remote, you can upload it with&#xA;git push Otherwise, you can share this branch (and its commits) with&#xA;git push -u &amp;lt;remoteName&amp;gt; &amp;lt;branchName&amp;gt; To delete a remote branch, run&#xA;git push &amp;lt;remoteName&amp;gt; -d &amp;lt;branchName&amp;gt; Alternatively, you can delete a remote branch using the web interface of your hosting service.</description>
+    </item>
+    <item>
+      <title>Abstractions</title>
+      <link>https://unibz-pp-23-24.github.io/docs/multithreading/sections/abstractions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/multithreading/sections/abstractions/</guid>
+      <description>Abstractions # Atomic operation # Thread safety # A method is said to be tread-safe if it can be accessed by concurrently by several threads without &amp;ldquo;unexpected behavior&amp;rdquo;.&#xA;Thread-safety is a vague term, but often refers to implementations that forbid race conditions.&#xA;Most high-level libraries or frameworks that exploit concurrency provide methods that are (to some extent) thread-safe.&#xA;In particular, this is the case of virtually all Graphical User Interface frameworks (such as JavaFx or Swing in Java).</description>
     </item>
     <item>
       <title>Backtracking</title>
