@@ -3,17 +3,15 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Race condition # Definition. A race condition occurs when the outcome of a program may vary depending on the order in which two threads access a resource.
-Illustrations # Example. The following program apparently increaments variable x twice. Howver, it may ouput either 1 or 2, dependending on the execution environemnt:
-int i = 0 spawn i&#43;&#43; i&#43;&#43; sync print(i) The reason is that a processor core does not increment the value of a variable as an atomic operation.">
+<meta name="description" content="Race condition # Definition. A race condition occurs when the outcome of a program may vary depending on the order in which two threads access a resource. Illustrations # Example. The following program (in pseudocode) apparently increments variable i twice. However, it may output either 1 or 2, depending on the execution environment:
+int i = 0 spawn i&#43;&#43; i&#43;&#43; sync print(i) The reason is that a core does not increment the value of a variable as an atomic operation.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/multithreading/sections/race/">
   <meta property="og:site_name" content="Programming project 2023-24">
   <meta property="og:title" content="Race condition">
-  <meta property="og:description" content="Race condition # Definition. A race condition occurs when the outcome of a program may vary depending on the order in which two threads access a resource.
-Illustrations # Example. The following program apparently increaments variable x twice. Howver, it may ouput either 1 or 2, dependending on the execution environemnt:
-int i = 0 spawn i&#43;&#43; i&#43;&#43; sync print(i) The reason is that a processor core does not increment the value of a variable as an atomic operation.">
+  <meta property="og:description" content="Race condition # Definition. A race condition occurs when the outcome of a program may vary depending on the order in which two threads access a resource. Illustrations # Example. The following program (in pseudocode) apparently increments variable i twice. However, it may output either 1 or 2, depending on the execution environment:
+int i = 0 spawn i&#43;&#43; i&#43;&#43; sync print(i) The reason is that a core does not increment the value of a variable as an atomic operation.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -22,7 +20,7 @@ int i = 0 spawn i&#43;&#43; i&#43;&#43; sync print(i) The reason is that a proce
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.52049172bce163c1c1d028c8feeb602577ebc2648da41446260b2460f7786ca0.js" integrity="sha256-UgSRcrzhY8HB0CjI/utgJXfrwmSNpBRGJgskYPd4bKA=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.41a90f2659ee58d00d7ba9da8e2f77b6528c428bd7db8529dccb05714355745e.js" integrity="sha256-QakPJlnuWNANe6naji93tlKMQovX24Up3MsFcUNVdF4=" crossorigin="anonymous"></script>
 
   
 
@@ -1246,6 +1244,118 @@ https://github.com/alex-shpak/hugo-book
   
 
   
+    <input type="checkbox" id="section-5dcccd15580bb824ba055538c97bdea6" class="toggle" checked />
+    <label for="section-5dcccd15580bb824ba055538c97bdea6" class="flex justify-between">
+      <a href="/docs/multithreading/" class="">Multithreading</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/multithreading/sections/concurrency/" class="">Concurrency</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/multithreading/sections/thread/" class="">Process vs thread</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/multithreading/sections/simple/" class="">A simplified view</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/multithreading/sections/race/" class="active">Race condition</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/multithreading/sections/synchronization/" class="">Synchronization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/multithreading/sections/troubleshooting/" class="">Troubleshooting</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/multithreading/sections/abstractions/" class="">Abstractions</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
     <input type="checkbox" id="section-9d77b970a03dc72b048d9fce7bfe272f" class="toggle"  />
     <label for="section-9d77b970a03dc72b048d9fce7bfe272f" class="flex justify-between">
       <a href="/docs/unittests/" class="">Unit tests</a>
@@ -1853,15 +1963,8 @@ https://github.com/alex-shpak/hugo-book
 <nav id="TableOfContents">
   <ul>
     <li><a href="#illustrations">Illustrations</a></li>
-    <li><a href="#bugs">Bugs</a></li>
+    <li><a href="#non-determinism">Non determinism</a></li>
     <li><a href="#caution">Caution</a></li>
-    <li><a href="#mutex">Mutex</a></li>
-    <li><a href="#precedence">Precedence</a>
-      <ul>
-        <li><a href="#in-java">in Java</a></li>
-        <li><a href="#intrinsic-lock">Intrinsic lock</a></li>
-      </ul>
-    </li>
   </ul>
 </nav>
 
@@ -1878,15 +1981,19 @@ https://github.com/alex-shpak/hugo-book
   Race condition
   <a class="anchor" href="#race-condition">#</a>
 </h1>
-<p><strong><em>Definition.</em></strong>
-A <strong>race</strong> condition occurs when the outcome of a program may vary depending on the order in which two threads access a resource.</p>
+<blockquote class="book-hint warning">
+  <strong><em>Definition.</em></strong>
+A <strong>race condition</strong> occurs when the outcome of a program may vary depending on the order in which two threads access a resource.
+</blockquote>
+
 <h2 id="illustrations">
   Illustrations
   <a class="anchor" href="#illustrations">#</a>
 </h2>
-<p><strong><em>Example.</em></strong>
-The following program apparently increaments variable <code>x</code> twice.
-Howver, it may ouput either <code>1</code> or <code>2</code>, dependending on the execution environemnt:</p>
+<blockquote class="book-hint info">
+  <p><strong><em>Example.</em></strong>
+The following program (in pseudocode) apparently increments variable <code>i</code> twice.
+However, it may output either <code>1</code> or <code>2</code>, depending on the execution environment:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span>int i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>spawn i<span style="color:#f92672">++</span>
@@ -1896,27 +2003,43 @@ Howver, it may ouput either <code>1</code> or <code>2</code>, dependending on th
 </span></span><span style="display:flex;"><span>sync
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">print</span>(i)
-</span></span></code></pre></div><p>The reason is that a processor core does not increment the value of a variable as an <a href="">atomic operation</a>.
-Instead, this is a sequence of three instructions:</p>
+</span></span></code></pre></div><p>The reason is that a core does not increment the value of a variable as an <a href="">atomic operation</a>.
+Instead, an increment is a sequence of three instructions:</p>
 <ol>
-<li>read the value of <code>i</code> and fetch it to one of the core&rsquo;s registers.</li>
-<li>increment the value of this register.</li>
-<li>write the register&rsquo;s value back to memory.</li>
+<li>read the value of <code>i</code> and fetch it to one of the core&rsquo;s registers</li>
+<li>increment the value of this register</li>
+<li>write the register&rsquo;s value back to memory</li>
 </ol>
-<p>If a <a href="">context switch</a> occurs during the execution of these three operations, or if the two thread are executed in parallel (i.e. on different cores),
-then the outcome may be unexpected.
-Among other possibilities, the following sequence of actions may be performed:</p>
+<p>If a <a href="">context switch</a> occurs during the execution of these three operations, or if the two threads are executed in parallel (i.e. on different cores),
+then the outcome <em>may</em> be unexpected.
+Among other possibilities, the following may happen:</p>
 <ul>
-<li>the current executes step 1, copying the value <code>0</code> from memory to a register,</li>
+<li>the current thread executes step 1, copying the value <code>0</code> from memory to a register,</li>
 <li>then the child thread executes step 1 as well, copying the value <code>0</code> to another register,</li>
-<li>then the current thread executes steps 2 and 3, writing the value <code>1</code> back to memory.</li>
+<li>then the current thread executes steps 2 and 3, writing the value <code>1</code> back to memory,</li>
 <li>then the child thread executes step 2 and 3, writing the value <code>1</code> back again to memory.</li>
 </ul>
-<p><strong><em>Note.</em></strong>
-A race condition can only occur if two threads access a same resource and at least one of them modifies it.</p>
-<p><strong><em>Example.</em></strong>
+<p>However, the following sequence of actions would (for instance) produce the expected result:</p>
+<ul>
+<li>the current thread executes steps 1, 2 and 3,</li>
+<li>then the child thread executes steps 1, 2 and 3.</li>
+</ul>
+
+</blockquote>
+
+<blockquote class="book-hint info">
+  <p><strong><em>Note.</em></strong>
+A race condition can only occur if:</p>
+<ul>
+<li>two threads access a same resource, and</li>
+<li>at least one of them modifies it.</li>
+</ul>
+</blockquote>
+
+<blockquote class="book-hint info">
+  <p><strong><em>Example.</em></strong>
 The following algorithm performs a matrix by vector multiplication with a &ldquo;parallel&rdquo; loop, and is free of race conditions:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span>product(int<span style="color:#f92672">[][]</span> M, int<span style="color:#f92672">[]</span>v){
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span>product(int<span style="color:#f92672">[][]</span> M, int<span style="color:#f92672">[]</span> v){
 </span></span><span style="display:flex;"><span>    int<span style="color:#f92672">[]</span> w <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> int[M<span style="color:#f92672">.</span>length]
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> parallel (int i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> M<span style="color:#f92672">.</span>length; i<span style="color:#f92672">++</span>){
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> (int j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> v<span style="color:#f92672">.</span>length; j<span style="color:#f92672">++</span>){
@@ -1926,7 +2049,7 @@ The following algorithm performs a matrix by vector multiplication with a &ldquo
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> w
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>However, adding the keyword <code>parallel</code> to the inner loop may yield an incorrect output.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span>product(int<span style="color:#f92672">[][]</span> M, int<span style="color:#f92672">[]</span>v){
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span>product(int<span style="color:#f92672">[][]</span> M, int<span style="color:#f92672">[]</span> v){
 </span></span><span style="display:flex;"><span>    int<span style="color:#f92672">[]</span> w <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> int[M<span style="color:#f92672">.</span>length]
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> parallel (int i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> M<span style="color:#f92672">.</span>length; i<span style="color:#f92672">++</span>){
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> parallel (int j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> v<span style="color:#f92672">.</span>length; j<span style="color:#f92672">++</span>){
@@ -1936,23 +2059,29 @@ The following algorithm performs a matrix by vector multiplication with a &ldquo
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> w
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>The reason is that two threads may now modify the value of <code>w[i]</code> concurrently, for the same <code>i</code> (but different values of <code>j</code>).</p>
-<p><strong><em>Exercise.</em></strong>
-Modify this method so that the inner loop is executed in a concurrent fashion, but ruling out race conditions.</p>
-<h2 id="bugs">
-  Bugs
-  <a class="anchor" href="#bugs">#</a>
+
+</blockquote>
+
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h2 id="non-determinism">
+  Non determinism
+  <a class="anchor" href="#non-determinism">#</a>
 </h2>
-<p><strong><em>Warning.</em></strong>
-In general, a bug caused by a race condition cannot be consistently reproduced, <em>even on the same hardware</em>.</p>
-<p>This is why race conditions are notoriously difficult to identify and/or debug, even for software that has been extensively tested (an example of a race condition with dramatic impact is the <a href="https://en.wikipedia.org/wiki/Northeast_blackout_of_2003">Northeast amerixca blackout of 2003</a>).</p>
+<blockquote class="book-hint danger">
+  <strong><em>Warning.</em></strong>
+In general, a bug caused by a race condition cannot be consistently reproduced, <em>even on the same hardware</em>.
+</blockquote>
+
+<p>This is why race conditions are notoriously difficult to identify and/or debug, even for software that has been extensively tested (an notorious example of a race condition with a dramatic impact is the <a href="https://en.wikipedia.org/wiki/Northeast_blackout_of_2003">Northeast america blackout of 2003</a>).</p>
 <h2 id="caution">
   Caution
   <a class="anchor" href="#caution">#</a>
 </h2>
 <p>Multithreading is a good example (together for instance with caching the results of a computation) of an <em>error-prone</em> optimization technique,
-which may have an impact on code readability and correctness.</p>
+which may impact on code readability and correctness.</p>
 <p>A common mistake made by less experienced developers is to use multithreading &ldquo;because we can&rdquo;.</p>
-<p>Instead, it is usually recommended to use multithreading cautiously, and only if a performance bottleneck has been identified in an application
+<p>Instead, it is usually recommended to use multithreading cautiously, and only if some bottleneck has been identified in an application
 (e.g. with a
 <a href="https://en.wikipedia.org/wiki/Profiling_%28computer_programming%29">profiler</a>):
 unacceptable processing time, non-responsive GUI, etc.</p>
@@ -1971,97 +2100,6 @@ Rule 1. Don’t do it.
 Rule 2 (for experts only). Don’t do it yet — that is, not until you have a perfectly clear and unoptimized solution.</p>
 <p>M. A. Jackson, 1975</p>
 </blockquote>
-<p>We also reproduce</p>
-<p>We reprouced
-b
-ottlenec</p>
-<p>Race conditions in a pogram may be</p>
-<p>Recall our simple algorithm to multiply a matrix by a vector:</p>
-<p>as well, copying again the value <code>0</code> from a meory to a register,</p>
-<p>2 and 3 as well</p>
-<ul>
-<li>then a conctext
-thread reads the vaue
-of the program may
-is not an <a href="">atomic operation</a> for a core.</li>
-</ul>
-<p>Instead</p>
-<p>Atomic classes.</p>
-<h2 id="mutex">
-  Mutex
-  <a class="anchor" href="#mutex">#</a>
-</h2>
-<h2 id="precedence">
-  Precedence
-  <a class="anchor" href="#precedence">#</a>
-</h2>
-<p>Let $a$ (resp. $b$) be an instruction executed in a thread $A$ (resp. $B$).</p>
-<p>By default, if $A$ and $B$ are executed concurrently, there is no guarantee that $a$ is executed before $b$.
-However, we can enforce it.</p>
-<h3 id="in-java">
-  in Java
-  <a class="anchor" href="#in-java">#</a>
-</h3>
-<p>The Javadoc of the package <a href="">java.util.concurrent</a> summarizes the situations that ensures that $a$ is executed before $b$.</p>
-<p>We only present here a few of them.</p>
-<h3 id="intrinsic-lock">
-  Intrinsic lock
-  <a class="anchor" href="#intrinsic-lock">#</a>
-</h3>
-<p>Every Java object is associated to a <a href="">mutex</a>, i.e. intuively lock</p>
-<h4 id="synchronized-methods">
-  Synchronized methods
-  <a class="anchor" href="#synchronized-methods">#</a>
-</h4>
-<p>A java method can be declared as <code>synchronized</code>, as follows:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">synchronized</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">myMethod</span>() {
-</span></span><span style="display:flex;"><span>    ...
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>For an instance method $m$, this has two consequences.
-Let $o$ be and object, let $A$ and $B$ be two threads, and let use assume that $A$ executes $o.m$ (i.e. executes the method $m$ for object $o$).
-Then:</p>
-<ul>
-<li>$B$ cannot execute <em>any</em> synchronized method for $o$ before the termination of $o.m$,</li>
-<li>after completion of $o.m$, if $m$ modified $o$, then these modifications will be visible to any <em>synchronized</em> method executed for $o$ by $B$).</li>
-</ul>
-<p>For a static method, the effect is the same, the object $o$ is the instance of <code>Class</code> that represents the class itself.</p>
-<p><strong><em>Warning.</em></strong>
-A constructor <em>cannot</em> be synchronized (the program will not compile).</p>
-<h4 id="synchronized-statemtns">
-  Synchronized statemtns
-  <a class="anchor" href="#synchronized-statemtns">#</a>
-</h4>
-<p>these modifications will be visible to future</p>
-<p>and if $B$ $B$ cannot execute <em>any</em> synchronized method for $o$ before the termination of $o.m$,</p>
-<p>has not in and , all modifications
-, .
-a thread $A$ executes $m$, the $B$ all other threads that invoke synchronized methods for the same object block (suspend execution) until the first thread is done with the object.</p>
-<p>First, it is not possible for two invocations of synchronized methods on the same object to interleave.
-Second, when a synchronized method exits, it automatically establishes a happens-before relationship with any subsequent invocation of a synchronized method for the same object. This guarantees that changes to the state of the object are visible to all threads.</p>
-<h4 id="synchronized-object">
-  Synchronized object
-  <a class="anchor" href="#synchronized-object">#</a>
-</h4>
-<p>SynchronizedRGB color =
-new SynchronizedRGB(0, 0, 0, &ldquo;Pitch Black&rdquo;);
-&hellip;
-int myColorInt = color.getRGB(); //Statement 1
-String myColorName = color.getName(); //Statement 2</p>
-<p>If another thread invokes color.set after Statement 1 but before Statement 2, the value of myColorInt won&rsquo;t match the value of myColorName. To avoid this outcome, the two statements must be bound together:</p>
-<p>synchronized (color) {
-int myColorInt = color.getRGB();
-String myColorName = color.getName();
-}</p>
-<h4 id="immutable-objects">
-  Immutable objects
-  <a class="anchor" href="#immutable-objects">#</a>
-</h4>
-<p>By default:</p>
-<ul>
-<li>make all instance attributes final and</li>
-<li>If this is not possible, then restrict visibility (with keywords like <code>private</code>)</li>
-</ul>
-<p><a href="https://docs.oracle.com/javase%2Ftutorial%2F/essential/concurrency/imstrat.html">https://docs.oracle.com/javase%2Ftutorial%2F/essential/concurrency/imstrat.html</a></p>
 </article>
  
       
@@ -2104,15 +2142,8 @@ String myColorName = color.getName();
 <nav id="TableOfContents">
   <ul>
     <li><a href="#illustrations">Illustrations</a></li>
-    <li><a href="#bugs">Bugs</a></li>
+    <li><a href="#non-determinism">Non determinism</a></li>
     <li><a href="#caution">Caution</a></li>
-    <li><a href="#mutex">Mutex</a></li>
-    <li><a href="#precedence">Precedence</a>
-      <ul>
-        <li><a href="#in-java">in Java</a></li>
-        <li><a href="#intrinsic-lock">Intrinsic lock</a></li>
-      </ul>
-    </li>
   </ul>
 </nav>
 

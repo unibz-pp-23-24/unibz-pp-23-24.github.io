@@ -33,7 +33,7 @@
       <link>https://unibz-pp-23-24.github.io/docs/multithreading/sections/concurrency/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/multithreading/sections/concurrency/</guid>
-      <description>Concurrency # Core # A core is a basic processing unit. A Central Processing Unit (CPU) contains one or several cores (e.g. 4 or 8). A Graphical Processing Unit (GPU) can contain thousands of cores.&#xA;Parallelism vs concurrency # Terminology We call time span of a computational tasks the time interval comprised between the task&amp;rsquo;s start and completion.&#xA;The time spans of two tasks may overlap.&#xA;Example While downloading a video, Alice may use git to commit changes to her repository.</description>
+      <description>Concurrency # Core # A core is a basic processing unit. A Central Processing Unit (CPU) contains one or several cores (e.g. 4 or 8).&#xA;A Graphical Processing Unit (GPU) can contain thousands of cores.&#xA;Parallelism vs concurrency # Terminology. We call time span of a (computational) tasks the time interval comprised between the task&amp;rsquo;s start and completion. The time spans of two tasks may overlap.&#xA;Example. While downloading a video, Alice may use git to commit changes to her repository.</description>
     </item>
     <item>
       <title>Dynamic array and linked list</title>
@@ -229,7 +229,7 @@
       <link>https://unibz-pp-23-24.github.io/docs/multithreading/sections/thread/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/multithreading/sections/thread/</guid>
-      <description>Thread # Process # A process is an instance of a computer program.&#xA;Processes can interact in several ways. In particular:&#xA;a process may spawn another process, a process may wait for another process to finish, two processes may have access to a same resource (and possibly acquire a lock on this resource). Thread # A process consists of one or several threads.&#xA;Conceptually, a thread is similar to a process.</description>
+      <description>Thread # Process # A process is (usually) an instance of a computer program. Processes can interact in several ways. In particular:&#xA;a process may spawn another process, a process may wait for another process to finish, two processes may have access the same resources. Thread # A process consists of one or several threads. Conceptually, a thread is similar to a process. In particular, threads can interact analogously to processes.</description>
     </item>
     <item>
       <title>Reading from and writing to a file in Java</title>
@@ -267,11 +267,11 @@
       <description>Teaching staff # Julien Corman will teach the lectures and one lab.&#xA;Albulen Pano will teach the other lab.&#xA;Office hours # If you need additional help with the content of the course, the assignments and/or your project, you can ask for office hours with any (or both) of us.&#xA;These appointments must be scheduled via email (follow the links above for our email addresses).</description>
     </item>
     <item>
-      <title>A simplified model</title>
+      <title>A simplified view</title>
       <link>https://unibz-pp-23-24.github.io/docs/multithreading/sections/simple/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/multithreading/sections/simple/</guid>
-      <description>A simplified model # As we saw earlier, parallelism and concurrency are two different execution strategy. However, (as we discussed) in a high-level programming language like Java, if a program allows two threads to be executed concurrently (on the same core), then it also allows them to be executed in parallel (on different cores).&#xA;From an abstract perspective, in order to understand the properties of a such program it can be convenient to assume an simplified, ideal machine that:</description>
+      <description>A simplified view # From an abstract perspective, in order to understand the properties of a program that allows concurrency and/or parallelism, it can be convenient to assume an simplified, ideal machine that:&#xA;has an unlimited number of cores, and relies exclusively on parallelism. Parallel computation # In this section, we borrow the simple syntax for parallel computation used in the popular textbook Introduction to algorithms.&#xA;This syntax extends imperative pseudocode with three keywords:</description>
     </item>
     <item>
       <title>Associative array</title>
@@ -372,13 +372,6 @@
       <description>Checked vs unchecked # Unchecked exceptions # The simplest type of exception in Java is called an unchecked exception. An unchecked exception is an instances of the native class RuntimeException.&#xA;The class RuntimeException has several native subclasses. You may be familiar wit some of them: NullPointerException, ArrayIndexOutOfBoundsException, IllegalArgumentException, etc.&#xA;An unchecked exception that is not caught is automatically rethrown. Checked exceptions # In Java, an Exception that is not a RuntimeException is a checked exception.</description>
     </item>
     <item>
-      <title>Condition variables</title>
-      <link>https://unibz-pp-23-24.github.io/docs/multithreading/sections/signalling/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://unibz-pp-23-24.github.io/docs/multithreading/sections/signalling/</guid>
-      <description>Signalling # in Java # The method&#xA;Spurious wakeup # Mutex # Precedence # Let $a$ (resp. $b$) be an instruction executed in a thread $A$ (resp. $B$).&#xA;By default, if $A$ and $B$ are executed concurrently, there is no guarantee that $a$ is executed before $b$. However, we can enforce it.&#xA;in Java # The Javadoc of the package java.util.concurrent summarizes the different situations that ensures that $a$ is executed before $b$.</description>
-    </item>
-    <item>
       <title>Configuration files</title>
       <link>https://unibz-pp-23-24.github.io/docs/input/sections/property/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -411,7 +404,7 @@
       <link>https://unibz-pp-23-24.github.io/docs/multithreading/sections/race/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/multithreading/sections/race/</guid>
-      <description>Race condition # Definition. A race condition occurs when the outcome of a program may vary depending on the order in which two threads access a resource.&#xA;Illustrations # Example. The following program apparently increaments variable x twice. Howver, it may ouput either 1 or 2, dependending on the execution environemnt:&#xA;int i = 0 spawn i++ i++ sync print(i) The reason is that a processor core does not increment the value of a variable as an atomic operation.</description>
+      <description>Race condition # Definition. A race condition occurs when the outcome of a program may vary depending on the order in which two threads access a resource. Illustrations # Example. The following program (in pseudocode) apparently increments variable i twice. However, it may output either 1 or 2, depending on the execution environment:&#xA;int i = 0 spawn i++ i++ sync print(i) The reason is that a core does not increment the value of a variable as an atomic operation.</description>
     </item>
     <item>
       <title>Relation, preorder</title>
@@ -439,14 +432,7 @@
       <link>https://unibz-pp-23-24.github.io/docs/multithreading/sections/synchronization/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/multithreading/sections/synchronization/</guid>
-      <description>Synchronization # Precedence # Let $a_1$ (resp. $a_2$) be an instruction executed in a thread $t_1$ (resp. $t_2$).&#xA;By default, if $t_1$ and $t_2$ are executed concurrently, there is no guarantee that $a_1$ is executed before $a_2$. However, most programming languages provide mechanisms to enforce it.&#xA;in Java # The Javadoc of the package java.util.concurrent summarizes the situations that where an instruction must be executed before another (in Java&amp;rsquo;s terminology, this is called the &amp;ldquo;happens before&amp;rdquo; relation before instructions).</description>
-    </item>
-    <item>
-      <title>Synchronization</title>
-      <link>https://unibz-pp-23-24.github.io/docs/multithreading/sections/varia/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://unibz-pp-23-24.github.io/docs/multithreading/sections/varia/</guid>
-      <description>Synchronization # Race condition # Example&#xA;Atomic classes.&#xA;Mutex # Precedence # Let $a$ (resp. $b$) be an instruction executed in a thread $A$ (resp. $B$).&#xA;By default, if $A$ and $B$ are executed concurrently, there is no guarantee that $a$ is executed before $b$. However, we can enforce it.&#xA;in Java # The Javadoc of the package java.util.concurrent summarizes the situations that ensures that $a$ is executed before $b$.</description>
+      <description>Synchronization # Precedence # Let $a_1$ (resp. $a_2$) be an instruction executed in a thread $t_1$ (resp. $t_2$). By default, if $t_1$ and $t_2$ are executed concurrently, there is no guarantee that $a_1$ is executed before $a_2$. However, most programming languages provide mechanisms to enforce it.&#xA;in Java # The Javadoc of the package java.util.concurrent summarizes the situations where a statement must be executed before another. In Java&amp;rsquo;s terminology, this binary relation over statements is called the &amp;ldquo;happens before&amp;rdquo; relation.</description>
     </item>
     <item>
       <title>Terminal operation</title>
@@ -649,14 +635,14 @@
       <link>https://unibz-pp-23-24.github.io/docs/multithreading/sections/troubleshooting/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/multithreading/sections/troubleshooting/</guid>
-      <description>Troubleshooting # Aside from [race conditions] here are some common reasons why a program involving concurrency may not behave as intended.&#xA;Deadlock # A deadlock occurs when two threads wait for each other to release a lock. Or more generally, if a thread $t_1$ waits for a $thread t_2$ &amp;hellip; that waits for $thread t_n$ that waits for thread $t_1$.&#xA;In Java, this may for instance be caused by synchronized methods or statements.</description>
+      <description>Troubleshooting # Aside from race conditions, here are some common reasons why a program involving concurrency may not behave as intended.&#xA;Deadlock # Terminology. A deadlock occurs when two threads wait for each other to release a lock. This notion also generalizes to cyclic deadlocks involving more than two threads.&#xA;In Java, this may for instance be caused by synchronized methods or statements. A simple illustration can be found here.</description>
     </item>
     <item>
       <title>Abstractions</title>
       <link>https://unibz-pp-23-24.github.io/docs/multithreading/sections/abstractions/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/multithreading/sections/abstractions/</guid>
-      <description>Abstractions # We review here some higher-level utilities available in Java to implement concurrency while reducing the risk of unwanted behaviors.&#xA;Thread safety # A method is said to be tread-safe if it can be accessed by concurrently by several threads without &amp;ldquo;unexpected behavior&amp;rdquo;.&#xA;Thread-safety is a vague term, which may for instance refers to implementations that forbid race conditions.&#xA;Most high-level libraries or frameworks that exploit concurrency provide methods some from of thread-safety.</description>
+      <description>Abstractions # We review here some higher-level utilities available in Java to implement concurrency while reducing the risk of unwanted behaviors.&#xA;Thread safety # Terminology. A method is said to be tread-safe if it can be accessed by concurrently by several threads without &amp;ldquo;unexpected behavior&amp;rdquo;. Thread safety is a vague term, which may for instance refers to implementations that are free of race conditions.&#xA;Most high-level libraries or frameworks that exploit concurrency provide methods with some from of thread safety.</description>
     </item>
     <item>
       <title>Backtracking</title>

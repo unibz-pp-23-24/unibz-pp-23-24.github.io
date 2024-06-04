@@ -3,19 +3,15 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Thread # Process # A process is an instance of a computer program.
-Processes can interact in several ways. In particular:
-a process may spawn another process, a process may wait for another process to finish, two processes may have access to a same resource (and possibly acquire a lock on this resource). Thread # A process consists of one or several threads.
-Conceptually, a thread is similar to a process.">
+<meta name="description" content="Thread # Process # A process is (usually) an instance of a computer program. Processes can interact in several ways. In particular:
+a process may spawn another process, a process may wait for another process to finish, two processes may have access the same resources. Thread # A process consists of one or several threads. Conceptually, a thread is similar to a process. In particular, threads can interact analogously to processes.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/multithreading/sections/thread/">
   <meta property="og:site_name" content="Programming project 2023-24">
   <meta property="og:title" content="Process vs thread">
-  <meta property="og:description" content="Thread # Process # A process is an instance of a computer program.
-Processes can interact in several ways. In particular:
-a process may spawn another process, a process may wait for another process to finish, two processes may have access to a same resource (and possibly acquire a lock on this resource). Thread # A process consists of one or several threads.
-Conceptually, a thread is similar to a process.">
+  <meta property="og:description" content="Thread # Process # A process is (usually) an instance of a computer program. Processes can interact in several ways. In particular:
+a process may spawn another process, a process may wait for another process to finish, two processes may have access the same resources. Thread # A process consists of one or several threads. Conceptually, a thread is similar to a process. In particular, threads can interact analogously to processes.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -24,7 +20,7 @@ Conceptually, a thread is similar to a process.">
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.52049172bce163c1c1d028c8feeb602577ebc2648da41446260b2460f7786ca0.js" integrity="sha256-UgSRcrzhY8HB0CjI/utgJXfrwmSNpBRGJgskYPd4bKA=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.41a90f2659ee58d00d7ba9da8e2f77b6528c428bd7db8529dccb05714355745e.js" integrity="sha256-QakPJlnuWNANe6naji93tlKMQovX24Up3MsFcUNVdF4=" crossorigin="anonymous"></script>
 
   
 
@@ -1248,6 +1244,118 @@ https://github.com/alex-shpak/hugo-book
   
 
   
+    <input type="checkbox" id="section-5dcccd15580bb824ba055538c97bdea6" class="toggle" checked />
+    <label for="section-5dcccd15580bb824ba055538c97bdea6" class="flex justify-between">
+      <a href="/docs/multithreading/" class="">Multithreading</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/multithreading/sections/concurrency/" class="">Concurrency</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/multithreading/sections/thread/" class="active">Process vs thread</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/multithreading/sections/simple/" class="">A simplified view</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/multithreading/sections/race/" class="">Race condition</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/multithreading/sections/synchronization/" class="">Synchronization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/multithreading/sections/troubleshooting/" class="">Troubleshooting</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/multithreading/sections/abstractions/" class="">Abstractions</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
     <input type="checkbox" id="section-9d77b970a03dc72b048d9fce7bfe272f" class="toggle"  />
     <label for="section-9d77b970a03dc72b048d9fce7bfe272f" class="flex justify-between">
       <a href="/docs/unittests/" class="">Unit tests</a>
@@ -1855,13 +1963,12 @@ https://github.com/alex-shpak/hugo-book
 <nav id="TableOfContents">
   <ul>
     <li><a href="#process">Process</a></li>
-    <li><a href="#thread-1">Thread</a></li>
-    <li><a href="#programming-with-threads">Programming with threads.</a></li>
-    <li><a href="#in-java">in Java</a></li>
-    <li><a href="#core">Core</a></li>
-    <li><a href="#parallelism-vs-concurrency">Parallelism vs concurrency</a></li>
-    <li><a href="#thread-vs-process">Thread vs process</a></li>
-    <li><a href="#in-java-1">in Java</a></li>
+    <li><a href="#thread-1">Thread</a>
+      <ul>
+        <li><a href="#in-java">in Java</a></li>
+      </ul>
+    </li>
+    <li><a href="#programming-with-threads">Programming with threads</a></li>
   </ul>
 </nav>
 
@@ -1882,110 +1989,45 @@ https://github.com/alex-shpak/hugo-book
   Process
   <a class="anchor" href="#process">#</a>
 </h2>
-<p>A <strong>process</strong> is an instance of a computer program.</p>
-<p>Processes can interact in several ways.
+<blockquote class="book-hint warning">
+  A <strong>process</strong> is (usually) an instance of a computer program.
+</blockquote>
+
+<p>Processes can <em>interact</em> in several ways.
 In particular:</p>
 <ul>
-<li>a process may spawn another process,</li>
-<li>a process may wait for another process to finish,</li>
-<li>two processes may have access to a same resource (and possibly acquire a lock on this resource).</li>
+<li>a process may <em>spawn</em> another process,</li>
+<li>a process may <em>wait</em> for another process to finish,</li>
+<li>two processes may have access the same <em>resources</em>.</li>
 </ul>
 <h2 id="thread-1">
   Thread
   <a class="anchor" href="#thread-1">#</a>
 </h2>
-<p>A process consists of one or several <strong>threads</strong>.</p>
-<p>Conceptually, a thread is similar to a process.
+<p><blockquote class="book-hint warning">
+  A process consists of one or several <strong>threads</strong>.
+</blockquote>
+
+Conceptually, a thread is similar to a process.
 In particular, threads can interact analogously to processes.</p>
-<p>However, threads are designed to allow fast <a href="">context switch</a>, thus heavier concurrency.</p>
-<h2 id="programming-with-threads">
-  Programming with threads.
-  <a class="anchor" href="#programming-with-threads">#</a>
-</h2>
-<p>Most high-level programming languages (like Java) allow creating and killing threads,</p>
-<p>However, by default, a program does not specify whether two threads are executed on the same core (i.e. concurrently) or not (i.e. in a parallel fashion).</p>
-<p>The decision is typically left to the operating system, and depends on the resources available at runtime.</p>
-<p>are executed in parallel or in an interleaved fashion.</p>
-<p>Whether two threads</p>
-<p>facilitate interaction.</p>
-<p>and similarly for a thread,</p>
-<ul>
-<li>a process can be interrupted or killed, and similarly for a thread,</li>
-</ul>
-<p>another process, and similarly for threads,</p>
-<p>A Java program is normally executed by a single process.
-This process consists a main thread, and (possibly) additional ones.</p>
-<h2 id="in-java">
+<p>However, threads are designed to allow heavier [concurrency], thanks a shared address space and fast <a href="">context switches</a>.</p>
+<h3 id="in-java">
   in Java
   <a class="anchor" href="#in-java">#</a>
+</h3>
+<p>A Java program is normally executed by a single process.</p>
+<p>This process consists of several threads.
+Among these, the <strong>main thread</strong> is the one that executes the main method of the application (e.g. the method <code>public static void main</code> of the main class).</p>
+<h2 id="programming-with-threads">
+  Programming with threads
+  <a class="anchor" href="#programming-with-threads">#</a>
 </h2>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<h2 id="core">
-  Core
-  <a class="anchor" href="#core">#</a>
-</h2>
-<p>A <strong>core</strong> is a basic processing unit.
-A Central Processing Unit (CPU) contains one or several cores (e.g. 4 or 8).
-A Graphical Processing Unit (GPU) can contain thousands of cores.</p>
-<h2 id="parallelism-vs-concurrency">
-  Parallelism vs concurrency
-  <a class="anchor" href="#parallelism-vs-concurrency">#</a>
-</h2>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>Terminology
-We call <strong>time span</strong> of a computational tasks the time interval comprised between the task&rsquo;s start and completion.</p>
-<p>The time spans of two tasks may overlap.</p>
-<p><strong>Example</strong>
-While downloading a video, Alice may use git to commit changes to her repository.
-These two tasks overlap.</p>
-<p>Two overlapping tasks can be executed either:</p>
-<ul>
-<li>on <em>different cores</em>: this is called <strong>parallelism</strong>.</li>
-<li>on the <em>same core</em>, in an interleaved fashion: this is called <strong>concurrency</strong>.</li>
-</ul>
-<p>Consider a core that executes (sequentially) a program $p_1$ that repeatedly reads data from a database (stored on a hard drive).
-The core is likely to remain unused while data is being fetched from the hard drive.
-Instead, while $p_1$ is fetching data, the same core could be used to perform computations for a program $p_2$.</p>
-<p>A <strong>context switch</strong> is the operation that consists in replacing (in memory registers) the state of $p_1$ with the state of $p_2$ (storing the state of $p_1$ beforehand, so that in can be restored later on).</p>
-<h2 id="thread-vs-process">
-  Thread vs process
-  <a class="anchor" href="#thread-vs-process">#</a>
-</h2>
-<p>A <strong>process</strong> is an instance of a computer program.</p>
-<p>Processes can interact in several ways.
-In particular:</p>
-<ul>
-<li>a process may spawn and/or kill another process,</li>
-<li>a process may wait for another process to finish,</li>
-<li>two processes may have access to a same resource (and possibly acquire a lock on this resource).</li>
-</ul>
-<p>A process consists of one or several <strong>threads</strong>.</p>
-<p>Conceptually, a thread is similar to a process.
-In particular, threads can interact analogously to processes.
-However, threads are designed for efficient interactions</p>
-<p>facilitate interaction.</p>
-<p>and similarly for a thread,</p>
-<ul>
-<li>a process can be interrupted or killed, and similarly for a thread,</li>
-</ul>
-<p>another process, and similarly for threads,</p>
-<p>A Java program is normally executed by a single process.
-This process consists a main thread, and (possibly) additional ones.</p>
-<h2 id="in-java-1">
-  in Java
-  <a class="anchor" href="#in-java-1">#</a>
-</h2>
-<p>Most high-level programming languages (like Java) allow creating threads.</p>
+<p>Many high-level programming languages (like Java) allow creating threads and assigning tasks to these threads.
+However, by default, a program does not specify whether two threads are executed on the same core (i.e. concurrently) or not (i.e. in a parallel fashion).
+The decision is usually left to the operating system, and depends on the resources available at runtime.</p>
+<p>In particular,
+if a program allows two threads to be executed concurrently (on the same core),
+then it also allows them to be executed in parallel (on different cores).</p>
 </article>
  
       
@@ -2028,13 +2070,12 @@ This process consists a main thread, and (possibly) additional ones.</p>
 <nav id="TableOfContents">
   <ul>
     <li><a href="#process">Process</a></li>
-    <li><a href="#thread-1">Thread</a></li>
-    <li><a href="#programming-with-threads">Programming with threads.</a></li>
-    <li><a href="#in-java">in Java</a></li>
-    <li><a href="#core">Core</a></li>
-    <li><a href="#parallelism-vs-concurrency">Parallelism vs concurrency</a></li>
-    <li><a href="#thread-vs-process">Thread vs process</a></li>
-    <li><a href="#in-java-1">in Java</a></li>
+    <li><a href="#thread-1">Thread</a>
+      <ul>
+        <li><a href="#in-java">in Java</a></li>
+      </ul>
+    </li>
+    <li><a href="#programming-with-threads">Programming with threads</a></li>
   </ul>
 </nav>
 

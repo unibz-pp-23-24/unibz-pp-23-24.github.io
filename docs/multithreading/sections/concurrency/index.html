@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Concurrency # Core # A core is a basic processing unit. A Central Processing Unit (CPU) contains one or several cores (e.g. 4 or 8). A Graphical Processing Unit (GPU) can contain thousands of cores.
-Parallelism vs concurrency # Terminology We call time span of a computational tasks the time interval comprised between the task&rsquo;s start and completion.
-The time spans of two tasks may overlap.
-Example While downloading a video, Alice may use git to commit changes to her repository.">
+<meta name="description" content="Concurrency # Core # A core is a basic processing unit. A Central Processing Unit (CPU) contains one or several cores (e.g. 4 or 8).
+A Graphical Processing Unit (GPU) can contain thousands of cores.
+Parallelism vs concurrency # Terminology. We call time span of a (computational) tasks the time interval comprised between the task&rsquo;s start and completion. The time spans of two tasks may overlap.
+Example. While downloading a video, Alice may use git to commit changes to her repository.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/multithreading/sections/concurrency/">
   <meta property="og:site_name" content="Programming project 2023-24">
   <meta property="og:title" content="Concurrency">
-  <meta property="og:description" content="Concurrency # Core # A core is a basic processing unit. A Central Processing Unit (CPU) contains one or several cores (e.g. 4 or 8). A Graphical Processing Unit (GPU) can contain thousands of cores.
-Parallelism vs concurrency # Terminology We call time span of a computational tasks the time interval comprised between the task’s start and completion.
-The time spans of two tasks may overlap.
-Example While downloading a video, Alice may use git to commit changes to her repository.">
+  <meta property="og:description" content="Concurrency # Core # A core is a basic processing unit. A Central Processing Unit (CPU) contains one or several cores (e.g. 4 or 8).
+A Graphical Processing Unit (GPU) can contain thousands of cores.
+Parallelism vs concurrency # Terminology. We call time span of a (computational) tasks the time interval comprised between the task’s start and completion. The time spans of two tasks may overlap.
+Example. While downloading a video, Alice may use git to commit changes to her repository.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -24,7 +24,7 @@ Example While downloading a video, Alice may use git to commit changes to her re
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.52049172bce163c1c1d028c8feeb602577ebc2648da41446260b2460f7786ca0.js" integrity="sha256-UgSRcrzhY8HB0CjI/utgJXfrwmSNpBRGJgskYPd4bKA=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.41a90f2659ee58d00d7ba9da8e2f77b6528c428bd7db8529dccb05714355745e.js" integrity="sha256-QakPJlnuWNANe6naji93tlKMQovX24Up3MsFcUNVdF4=" crossorigin="anonymous"></script>
 
   
 
@@ -1248,6 +1248,118 @@ https://github.com/alex-shpak/hugo-book
   
 
   
+    <input type="checkbox" id="section-5dcccd15580bb824ba055538c97bdea6" class="toggle" checked />
+    <label for="section-5dcccd15580bb824ba055538c97bdea6" class="flex justify-between">
+      <a href="/docs/multithreading/" class="">Multithreading</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/multithreading/sections/concurrency/" class="active">Concurrency</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/multithreading/sections/thread/" class="">Process vs thread</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/multithreading/sections/simple/" class="">A simplified view</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/multithreading/sections/race/" class="">Race condition</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/multithreading/sections/synchronization/" class="">Synchronization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/multithreading/sections/troubleshooting/" class="">Troubleshooting</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/multithreading/sections/abstractions/" class="">Abstractions</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
     <input type="checkbox" id="section-9d77b970a03dc72b048d9fce7bfe272f" class="toggle"  />
     <label for="section-9d77b970a03dc72b048d9fce7bfe272f" class="flex justify-between">
       <a href="/docs/unittests/" class="">Unit tests</a>
@@ -1876,9 +1988,12 @@ https://github.com/alex-shpak/hugo-book
   Core
   <a class="anchor" href="#core">#</a>
 </h2>
-<p>A <strong>core</strong> is a basic processing unit.
-A Central Processing Unit (CPU) contains one or several cores (e.g. 4 or 8).
-A Graphical Processing Unit (GPU) can contain thousands of cores.</p>
+<blockquote class="book-hint warning">
+  A <strong>core</strong> is a basic processing unit.
+</blockquote>
+
+<p>A Central Processing Unit (CPU) contains one or several cores (e.g. 4 or 8).</p>
+<p>A Graphical Processing Unit (GPU) can contain thousands of cores.</p>
 <h2 id="parallelism-vs-concurrency">
   Parallelism vs concurrency
   <a class="anchor" href="#parallelism-vs-concurrency">#</a>
@@ -1893,21 +2008,38 @@ A Graphical Processing Unit (GPU) can contain thousands of cores.</p>
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-<p>Terminology
-We call <strong>time span</strong> of a computational tasks the time interval comprised between the task&rsquo;s start and completion.</p>
-<p>The time spans of two tasks may overlap.</p>
-<p><strong>Example</strong>
+<p><blockquote class="book-hint warning">
+  <strong><em>Terminology.</em></strong>
+We call <strong>time span</strong> of a (computational) tasks the time interval comprised between the task&rsquo;s start and completion.
+</blockquote>
+
+The time spans of two tasks may overlap.</p>
+<blockquote class="book-hint info">
+  <strong><em>Example.</em></strong>
 While downloading a video, Alice may use git to commit changes to her repository.
-These two tasks overlap.</p>
-<p>Two overlapping tasks can be executed either:</p>
+These two tasks overlap.
+</blockquote>
+
+<blockquote class="book-hint warning">
+  <p><strong><em>Definitions.</em></strong>
+Two overlapping tasks can be executed either:</p>
 <ul>
-<li>on <em>different cores</em>: this is called <strong>parallelism</strong>.</li>
-<li>on the <em>same core</em>, in an interleaved fashion: this is called <strong>concurrency</strong>.</li>
+<li>on <em>different</em> cores: this is called <strong>parallelism</strong>, or</li>
+<li>on the <em>same</em> core, in an interleaved fashion: this is called <strong>concurrency</strong>.</li>
 </ul>
-<p>Consider a core that executes (sequentially) a program $p_1$ that repeatedly reads data from a database (stored on a hard drive).
+</blockquote>
+
+<blockquote class="book-hint info">
+  <strong><em>Example.</em></strong>
+Consider a core that executes (sequentially) a task $t_1$ that repeatedly reads data from a database (stored on a hard drive).
 The core is likely to remain unused while data is being fetched from the hard drive.
-Instead, while $p_1$ is fetching data, the same core could be used to perform computations for a program $p_2$.</p>
-<p>A <strong>context switch</strong> is the operation that consists in replacing (in memory registers) the state of $p_1$ with the state of $p_2$ (storing the state of $p_1$ beforehand, so that in can be restored later on).</p>
+Instead, while $t_1$ is fetching data, the same core could be used to perform computations for a task $t_2$.
+</blockquote>
+
+<blockquote class="book-hint warning">
+  A <strong>context switch</strong> is the operation that consists in storing the system&rsquo;s state for a running task, so that this task can be paused and another task resumed.
+</blockquote>
+
 </article>
  
       
