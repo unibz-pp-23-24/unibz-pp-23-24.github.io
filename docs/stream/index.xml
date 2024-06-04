@@ -47,7 +47,7 @@
       <link>https://unibz-pp-23-24.github.io/docs/stream/sections/order/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/stream/sections/order/</guid>
-      <description>Multithreading and order # Multithreading # The execution of a stream pipeline can be easily parallelized, for instance with the instance method Stream.parallel, as follows:&#xA;Example.&#xA;List&amp;lt;Integer&amp;gt;list = List.of(1, 2, 3); // Contains [3,4,5] List&amp;lt;Integer&amp;gt; ouputList = list.stream() .parallel() .map(i -&amp;gt; i + 2) .toList(); This allows the JVM to take advantage of available resources (e.g. cores) to execute operations (like the map operation in this example) in several threads, concurrently.</description>
+      <description>Multithreading and order # Multithreading # We can allow a whole stream pipeline to be executed in a concurrent fashion, for instance with the instance method Stream.parallel, as follows:&#xA;Example.&#xA;List&amp;lt;Integer&amp;gt;list = List.of(1, 2, 3); // Contains [3,4,5] List&amp;lt;Integer&amp;gt; ouputList = list.stream() .parallel() .map(i -&amp;gt; i + 2) .toList(); This allows the JVM to take advantage of available resources to execute operations (like the map operation in this example) in several threads, concurrently.</description>
     </item>
     <item>
       <title>Optional</title>

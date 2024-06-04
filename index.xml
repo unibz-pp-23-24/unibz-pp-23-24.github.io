@@ -176,6 +176,13 @@
       <description>Generics # Terminology. The term generics usually refers to generic methods and generic types. Type variable # A type variable is a variable ranging over types. For instance, in the chapter dedicated to streams, we repeatedly used the variable $T$ to refer to the type of the elements of a stream.&#xA;Generic method # Example # Consider the following interface Unit and its two implementations Butterfly and Unicorn.&#xA;Let us assume a method healthiestButterfly with type</description>
     </item>
     <item>
+      <title>Hash table</title>
+      <link>https://unibz-pp-23-24.github.io/docs/datastructures/sections/hash/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/datastructures/sections/hash/</guid>
+      <description>Hash table # A hash table is a data structure often used to implement an associative array (like a Java Map).&#xA;Associative array # Reminder. An associative array (or map) is a finite set of key-value pairs, where keys are distinct. Terminology. A key-value pair is also called an entry. Running example. The following associative array has 5 entries.&#xA;$\qquad$ 1 $\mapsto$ Alice $\qquad$ 3 $\mapsto$ Bob $\qquad$ 4 $\mapsto$ Carol $\qquad$ 9 $\mapsto$ Dan $\qquad$ 12 $\mapsto$ Eve</description>
+    </item>
+    <item>
       <title>Hierarchical file system</title>
       <link>https://unibz-pp-23-24.github.io/docs/env/sections/files/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -222,7 +229,7 @@
       <link>https://unibz-pp-23-24.github.io/docs/multithreading/sections/thread/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/multithreading/sections/thread/</guid>
-      <description>Thread # Process # A process is an instance of a computer program.&#xA;Processes can interact in several ways. In particular:&#xA;a process may spawn and/or kill another process, a process may wait for another process to finish, two processes may have access to a same resource (and possibly acquire a lock on this resource). Thread # A process consists of one or several threads.&#xA;Conceptually, a thread is similar to a process.</description>
+      <description>Thread # Process # A process is an instance of a computer program.&#xA;Processes can interact in several ways. In particular:&#xA;a process may spawn another process, a process may wait for another process to finish, two processes may have access to a same resource (and possibly acquire a lock on this resource). Thread # A process consists of one or several threads.&#xA;Conceptually, a thread is similar to a process.</description>
     </item>
     <item>
       <title>Reading from and writing to a file in Java</title>
@@ -281,6 +288,13 @@
       <description>Backup # Make sure that your work does not depend on your laptop. You should be able to resume your work easily on another computer if your laptop gets lost, damaged, etc.&#xA;You should also be able to recover your data if you accidentally delete it from your hard drive.&#xA;Which information to back up # As a priority, make sure that there exist copies (outside of your hard drive) of:</description>
     </item>
     <item>
+      <title>Binary search tree</title>
+      <link>https://unibz-pp-23-24.github.io/docs/datastructures/sections/tree/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/datastructures/sections/tree/</guid>
+      <description>Binary search tree # A Binary Search Tree (BST) is another data structure used to store an associative array (e.g. a Java Map).&#xA;Definition. A BST is a binary tree such that each node&amp;rsquo;s label is:&#xA;larger than its left child&amp;rsquo;s label (if any), and smaller than its right child&amp;rsquo;s label (if any). Equivalently, a BST is a binary tree whose nodes are sorted w.r.t. in-order traversal.&#xA;Associative array as a binary search tree # Recall that an associative array is a finite set of key-value pairs.</description>
+    </item>
+    <item>
       <title>Configuration</title>
       <link>https://unibz-pp-23-24.github.io/docs/git/sections/config/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -307,13 +321,6 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/intro/sections/evaluation/</guid>
       <description>Evaluation # Evaluation for this course is based on:&#xA;assignments: up to 30 points, a group project: up to 60 points, and an oral exam: up to 10 points. Your final grade is the sum of the above, multiplied by 0.3.&#xA;Assignments # There will be 8 or 9 assignments for this course. These are standard programming exercises, related to notions seen during the lectures. The labs are (mostly) dedicated to these assignments.</description>
-    </item>
-    <item>
-      <title>Hash table</title>
-      <link>https://unibz-pp-23-24.github.io/docs/datastructures/sections/hash/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://unibz-pp-23-24.github.io/docs/datastructures/sections/hash/</guid>
-      <description>Hash table # A hash table is a data structure often used to implement an associative array (like a Java Map).&#xA;Associative array # Reminder. An associative array (or map) is a finite set of key-value pairs, where keys are distinct. Terminology. A key-value pair is also called an entry. Running example. The following associative array has 5 entries.&#xA;$\qquad$ 1 $\mapsto$ Alice $\qquad$ 3 $\mapsto$ Bob $\qquad$ 4 $\mapsto$ Carol $\qquad$ 9 $\mapsto$ Dan $\qquad$ 12 $\mapsto$ Eve</description>
     </item>
     <item>
       <title>Inheritance</title>
@@ -365,6 +372,13 @@
       <description>Checked vs unchecked # Unchecked exceptions # The simplest type of exception in Java is called an unchecked exception. An unchecked exception is an instances of the native class RuntimeException.&#xA;The class RuntimeException has several native subclasses. You may be familiar wit some of them: NullPointerException, ArrayIndexOutOfBoundsException, IllegalArgumentException, etc.&#xA;An unchecked exception that is not caught is automatically rethrown. Checked exceptions # In Java, an Exception that is not a RuntimeException is a checked exception.</description>
     </item>
     <item>
+      <title>Condition variables</title>
+      <link>https://unibz-pp-23-24.github.io/docs/multithreading/sections/signalling/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/multithreading/sections/signalling/</guid>
+      <description>Signalling # in Java # The method&#xA;Spurious wakeup # Mutex # Precedence # Let $a$ (resp. $b$) be an instruction executed in a thread $A$ (resp. $B$).&#xA;By default, if $A$ and $B$ are executed concurrently, there is no guarantee that $a$ is executed before $b$. However, we can enforce it.&#xA;in Java # The Javadoc of the package java.util.concurrent summarizes the different situations that ensures that $a$ is executed before $b$.</description>
+    </item>
+    <item>
       <title>Configuration files</title>
       <link>https://unibz-pp-23-24.github.io/docs/input/sections/property/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -393,6 +407,13 @@
       <description>Instance methods # In most object-oriented languages (like Java), methods are implemented within class declarations.&#xA;An instance method can only be called using an instance of the class where it is declared.&#xA;For instance, in Java, an instance method declared in MyClass can be called by appending . to a variable of type MyClass. The object referenced by the variable is accessible in the method, as well as its attributes.</description>
     </item>
     <item>
+      <title>Race condition</title>
+      <link>https://unibz-pp-23-24.github.io/docs/multithreading/sections/race/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/multithreading/sections/race/</guid>
+      <description>Race condition # Definition. A race condition occurs when the outcome of a program may vary depending on the order in which two threads access a resource.&#xA;Illustrations # Example. The following program apparently increaments variable x twice. Howver, it may ouput either 1 or 2, dependending on the execution environemnt:&#xA;int i = 0 spawn i++ i++ sync print(i) The reason is that a processor core does not increment the value of a variable as an atomic operation.</description>
+    </item>
+    <item>
       <title>Relation, preorder</title>
       <link>https://unibz-pp-23-24.github.io/docs/background/sections/order/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -418,7 +439,7 @@
       <link>https://unibz-pp-23-24.github.io/docs/multithreading/sections/synchronization/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/multithreading/sections/synchronization/</guid>
-      <description>Synchronization # Race condition # Example&#xA;Atomic classes.&#xA;Mutex # Precedence # Let $a$ (resp. $b$) be an instruction executed in a thread $A$ (resp. $B$).&#xA;By default, if $A$ and $B$ are executed concurrently, there is no guarantee that $a$ is executed before $b$. However, we can enforce it.&#xA;in Java # The Javadoc of the package java.util.concurrent summarizes the situations that ensures that $a$ is executed before $b$.</description>
+      <description>Synchronization # Precedence # Let $a_1$ (resp. $a_2$) be an instruction executed in a thread $t_1$ (resp. $t_2$).&#xA;By default, if $t_1$ and $t_2$ are executed concurrently, there is no guarantee that $a_1$ is executed before $a_2$. However, most programming languages provide mechanisms to enforce it.&#xA;in Java # The Javadoc of the package java.util.concurrent summarizes the situations that where an instruction must be executed before another (in Java&amp;rsquo;s terminology, this is called the &amp;ldquo;happens before&amp;rdquo; relation before instructions).</description>
     </item>
     <item>
       <title>Synchronization</title>
@@ -551,7 +572,7 @@
       <link>https://unibz-pp-23-24.github.io/docs/stream/sections/order/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/stream/sections/order/</guid>
-      <description>Multithreading and order # Multithreading # The execution of a stream pipeline can be easily parallelized, for instance with the instance method Stream.parallel, as follows:&#xA;Example.&#xA;List&amp;lt;Integer&amp;gt;list = List.of(1, 2, 3); // Contains [3,4,5] List&amp;lt;Integer&amp;gt; ouputList = list.stream() .parallel() .map(i -&amp;gt; i + 2) .toList(); This allows the JVM to take advantage of available resources (e.g. cores) to execute operations (like the map operation in this example) in several threads, concurrently.</description>
+      <description>Multithreading and order # Multithreading # We can allow a whole stream pipeline to be executed in a concurrent fashion, for instance with the instance method Stream.parallel, as follows:&#xA;Example.&#xA;List&amp;lt;Integer&amp;gt;list = List.of(1, 2, 3); // Contains [3,4,5] List&amp;lt;Integer&amp;gt; ouputList = list.stream() .parallel() .map(i -&amp;gt; i + 2) .toList(); This allows the JVM to take advantage of available resources to execute operations (like the map operation in this example) in several threads, concurrently.</description>
     </item>
     <item>
       <title>Regular languages</title>
@@ -624,11 +645,18 @@
       <description>Synchronization: remote, push, pull # List remotes # To list the remote(s) associated to your repository (name and address of each remote), you can run&#xA;git remote -v Upload # If the current branch is already shared with a remote, you can upload it with&#xA;git push Otherwise, you can share this branch (and its commits) with&#xA;git push -u &amp;lt;remoteName&amp;gt; &amp;lt;branchName&amp;gt; To delete a remote branch, run&#xA;git push &amp;lt;remoteName&amp;gt; -d &amp;lt;branchName&amp;gt; Alternatively, you can delete a remote branch using the web interface of your hosting service.</description>
     </item>
     <item>
+      <title>Troubleshooting</title>
+      <link>https://unibz-pp-23-24.github.io/docs/multithreading/sections/troubleshooting/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/multithreading/sections/troubleshooting/</guid>
+      <description>Troubleshooting # Aside from [race conditions] here are some common reasons why a program involving concurrency may not behave as intended.&#xA;Deadlock # A deadlock occurs when two threads wait for each other to release a lock. Or more generally, if a thread $t_1$ waits for a $thread t_2$ &amp;hellip; that waits for $thread t_n$ that waits for thread $t_1$.&#xA;In Java, this may for instance be caused by synchronized methods or statements.</description>
+    </item>
+    <item>
       <title>Abstractions</title>
       <link>https://unibz-pp-23-24.github.io/docs/multithreading/sections/abstractions/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/multithreading/sections/abstractions/</guid>
-      <description>Abstractions # Atomic operation # Thread safety # A method is said to be tread-safe if it can be accessed by concurrently by several threads without &amp;ldquo;unexpected behavior&amp;rdquo;.&#xA;Thread-safety is a vague term, but often refers to implementations that forbid race conditions.&#xA;Most high-level libraries or frameworks that exploit concurrency provide methods that are (to some extent) thread-safe.&#xA;In particular, this is the case of virtually all Graphical User Interface frameworks (such as JavaFx or Swing in Java).</description>
+      <description>Abstractions # We review here some higher-level utilities available in Java to implement concurrency while reducing the risk of unwanted behaviors.&#xA;Thread safety # A method is said to be tread-safe if it can be accessed by concurrently by several threads without &amp;ldquo;unexpected behavior&amp;rdquo;.&#xA;Thread-safety is a vague term, which may for instance refers to implementations that forbid race conditions.&#xA;Most high-level libraries or frameworks that exploit concurrency provide methods some from of thread-safety.</description>
     </item>
     <item>
       <title>Backtracking</title>

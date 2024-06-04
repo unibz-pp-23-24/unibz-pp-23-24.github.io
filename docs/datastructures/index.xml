@@ -21,5 +21,12 @@
       <guid>https://unibz-pp-23-24.github.io/docs/datastructures/sections/hash/</guid>
       <description>Hash table # A hash table is a data structure often used to implement an associative array (like a Java Map).&#xA;Associative array # Reminder. An associative array (or map) is a finite set of key-value pairs, where keys are distinct. Terminology. A key-value pair is also called an entry. Running example. The following associative array has 5 entries.&#xA;$\qquad$ 1 $\mapsto$ Alice $\qquad$ 3 $\mapsto$ Bob $\qquad$ 4 $\mapsto$ Carol $\qquad$ 9 $\mapsto$ Dan $\qquad$ 12 $\mapsto$ Eve</description>
     </item>
+    <item>
+      <title>Binary search tree</title>
+      <link>https://unibz-pp-23-24.github.io/docs/datastructures/sections/tree/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/datastructures/sections/tree/</guid>
+      <description>Binary search tree # A Binary Search Tree (BST) is another data structure used to store an associative array (e.g. a Java Map).&#xA;Definition. A BST is a binary tree such that each node&amp;rsquo;s label is:&#xA;larger than its left child&amp;rsquo;s label (if any), and smaller than its right child&amp;rsquo;s label (if any). Equivalently, a BST is a binary tree whose nodes are sorted w.r.t. in-order traversal.&#xA;Associative array as a binary search tree # Recall that an associative array is a finite set of key-value pairs.</description>
+    </item>
   </channel>
 </rss>

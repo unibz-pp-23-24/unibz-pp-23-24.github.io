@@ -20,7 +20,7 @@ From an abstract perspective, in order to understand the properties of a such pr
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.b8abef5163f4f05417b79e38a0c436e2ae476522193b73a0fe73254bee06ae88.js" integrity="sha256-uKvvUWP08FQXt544oMQ24q5HZSIZO3Og/nMlS&#43;4Grog=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.52049172bce163c1c1d028c8feeb602577ebc2648da41446260b2460f7786ca0.js" integrity="sha256-UgSRcrzhY8HB0CjI/utgJXfrwmSNpBRGJgskYPd4bKA=" crossorigin="anonymous"></script>
 
   
 
@@ -600,6 +600,19 @@ https://github.com/alex-shpak/hugo-book
         </li>
       
     
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/datastructures/sections/tree/" class="">Binary search tree</a>
+  
+
+        </li>
+      
+    
   </ul>
 
         </li>
@@ -936,7 +949,7 @@ https://github.com/alex-shpak/hugo-book
   
     <input type="checkbox" id="section-ae8fba9e927e4c55801a4e71f6b7d054" class="toggle"  />
     <label for="section-ae8fba9e927e4c55801a4e71f6b7d054" class="flex justify-between">
-      <a href="/docs/lambda/" class="">Callback methods and lamda expressions</a>
+      <a href="/docs/lambda/" class="">Callback methods and lambda expressions</a>
     </label>
   
 
@@ -1843,6 +1856,15 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#parallel"><code>parallel</code></a></li>
       </ul>
     </li>
+    <li><a href="#in-java">in Java</a>
+      <ul>
+        <li><a href="#creating-a-thread">Creating a thread</a></li>
+        <li><a href="#spawning-a-thread">Spawning a thread</a></li>
+        <li><a href="#waiting-for-a-thread-to-terminate">Waiting for a thread to terminate</a></li>
+        <li><a href="#loop">Loop</a></li>
+        <li><a href="#pause">Pause</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
@@ -1976,98 +1998,114 @@ The above example can be rewritten as follows</p>
 </span></span><span style="display:flex;"><span>    sync
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> leftSum <span style="color:#f92672">+</span> rightSum
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>execute(v, 0, v.length -1)</p>
-<p>void execute(int[] v, int i, int max){
-// base case
-if(i = max){
-&lt;myLoopBody(v, i)&gt;
-}
-// inductive case
-// compute the middle index
-int mid = (i + max) / 2</p>
-<pre><code>// recursive call on the left half, in a separate thread thread
-spawn execute(v, i, mid)
-
-// recursive call on the right half (in the current thread)
-execute(v, mid + 1, max)
-</code></pre>
-<p>}</p>
-<pre tabindex="0"><code>
-In this model:
-
-int sum(int )
-
-int x = 0
-
-// spawn a child tread that executes this instrucion
-spawn int y = doSomething()
-
-print(&#34;here&#34;)
-int z = 5
-
-// pause execution until the child thread has terminated
-sync
-
-x = y + z
-
-int doSomething(){
-print(&#34;we are&#34;)
-return 2
-}
-</code></pre><p>IN this</p>
-<ul>
-<li>&ldquo;spawn&rdquo; precedes an instruction.
-It has the effect of creating a thread that executes this instruction (and thus instruction only).</li>
-<li>&ldquo;sync&rdquo; is an instruction by itself. It pauses the execution of the correct thread and must be called after a</li>
-</ul>
-<p>can &ldquo;sync&rdquo; and &ldquo;parallel&rdquo;.</p>
-<pre tabindex="0"><code>
-## Precedence
-
-Let $a$ (resp. $b$) be an instruction executed in a thread $A$ (resp. $B$).
-
-By default, if $A$ and $B$ are executed concurrently, there is no guarantee that $a$ is executed before $b$.
-However, we can enforce it.
-
-### in Java
-
-The Javadoc of the package [java.util.concurrent]() summarizes the situations that ensures that $a$ is executed before $b$.
-
-We only present here a few of them.
-
-### Intrinsic lock
-
-Every Java object is associated to a [mutex](), i.e. intuively lock
-
-#### Synchronized methods
-
-A java method can be declared with the `synchronized` keyword, as follows:
-
-```java
-public synchronized int myMethod() {
-    ...
-}
-</code></pre><p>For an instance method $m$, this has two consequences.
-Let $o$ be and object, let $A$ and $B$ be two threads, and let use assume that $A$ executes $o.m$ (i.e. executes the method $m$ for object $o$).
-Then:</p>
-<ul>
-<li>$B$ cannot execute <em>any</em> synchronized method for $o$ before the termination of $o.m$,</li>
-<li>after completion of $o.m$, if $m$ modified $o$, then these modifications will be visible to any <em>synchronized</em> method executed for $o$ by $B$).</li>
-</ul>
-<p>For a static method, the effect is the same, the object $o$ is the instance of <code>Class</code> that represents the class itself.</p>
-<p><strong><em>Warning.</em></strong>
-A constructor <em>cannot</em> be synchronized (the program will not compile).</p>
-<h4 id="synchronized-statemtns">
-  Synchronized statemtns
-  <a class="anchor" href="#synchronized-statemtns">#</a>
+</span></span></code></pre></div><p><strong><em>Definition.</em></strong>
+The <strong>span</strong> of a program&rsquo;s execution is the maximal number of instructions it has to perform <em>sequentially</em>.</p>
+<p>Exercise:
+Let $f(n)$ measure the span of the program above, where $n$ d=is the size of the input vector.
+Assuming a number of cores $\ge n$, which asymptotic class of cost functions does $f$ belong to?</p>
+<p>Solution:
+$f$ is in $Theta(log n)$</p>
+<p><strong><em>Note.</em></strong>
+In this example, it may be tempting to spawn the threads sequentially, rather than recursively.
+However, the benefit of parallelization is lost:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span>int sumElts(int<span style="color:#f92672">[]</span> v){
+</span></span><span style="display:flex;"><span>    int sum <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (int i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i v<span style="color:#f92672">.</span>length; i<span style="color:#f92672">++</span>){
+</span></span><span style="display:flex;"><span>        spawn sum <span style="color:#f92672">+=</span> v[i]
+</span></span><span style="display:flex;"><span>        sync
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> sum
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="in-java">
+  in Java
+  <a class="anchor" href="#in-java">#</a>
+</h2>
+<p>The main method of a Java program is executed in a thread called the <strong>main thread</strong>.</p>
+<h3 id="creating-a-thread">
+  Creating a thread
+  <a class="anchor" href="#creating-a-thread">#</a>
+</h3>
+<p>A Java thread is an instance of the class <code>Thread</code>.</p>
+<p>There are many alternative syntaxes to create an instance of this class.</p>
+<p>We cover here two of the most common ones.</p>
+<h4 id="instantiate-runnable">
+  instantiate Runnable
+  <a class="anchor" href="#instantiate-runnable">#</a>
 </h4>
-<p>these modifications will be visible to future</p>
-<p>and if $B$ $B$ cannot execute <em>any</em> synchronized method for $o$ before the termination of $o.m$,</p>
-<p>has not in and , all modifications
-, .
-a thread $A$ executes $m$, the $B$ all other threads that invoke synchronized methods for the same object block (suspend execution) until the first thread is done with the object.</p>
-<p>First, it is not possible for two invocations of synchronized methods on the same object to interleave.
-Second, when a synchronized method exits, it automatically establishes a happens-before relationship with any subsequent invocation of a synchronized method for the same object. This guarantees that changes to the state of the object are visible to all threads.</p>
+<p>The constructor <code>Thread(Runnable runnable)</code> takes ans input an instance of the interface <code>Runnable</code>.</p>
+<p>Runnable is a <a href="">function interface</a> (whose method is called <code>run</code>).</p>
+<p>Therefore is can be instantiated with a lambda expression.</p>
+<p><strong><em>Example.</em></strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Thread myThread <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Thread(() <span style="color:#f92672">-&gt;</span> {System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Hello World&#34;</span>);});
+</span></span></code></pre></div><p>Alternatively, in order to pass an argument to the thread, we can create a class that implemented <code>Runnable</code>, and pass the argument to the constructor if this class.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyRunnable</span> <span style="color:#66d9ef">implements</span> Runnable {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> arg;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">MyRunnable</span>(<span style="color:#66d9ef">int</span> arg){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">arg</span> <span style="color:#f92672">=</span> arg;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span>() {
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(arg);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Thread myThread <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Thread(<span style="color:#66d9ef">new</span> MyRunnable(4));
+</span></span></code></pre></div><h4 id="create-a-subclass-of-thread">
+  create a subclass of Thread
+  <a class="anchor" href="#create-a-subclass-of-thread">#</a>
+</h4>
+<h3 id="spawning-a-thread">
+  Spawning a thread
+  <a class="anchor" href="#spawning-a-thread">#</a>
+</h3>
+<p>The instance method <code>Thread.start</code> spawns a thread.</p>
+<p><strong><em>Example.</em></strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Thread myThread <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Thread(() <span style="color:#f92672">-&gt;</span> {System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Hello World&#34;</span>);});
+</span></span><span style="display:flex;"><span>myThread.<span style="color:#a6e22e">start</span>();
+</span></span></code></pre></div><h3 id="waiting-for-a-thread-to-terminate">
+  Waiting for a thread to terminate
+  <a class="anchor" href="#waiting-for-a-thread-to-terminate">#</a>
+</h3>
+<p>Java provides a functionality analogous to the <code>sync</code> keyword seen above, but with a more fine-grained control.</p>
+<p>The instance method <code>Thread.join</code> called on a thread $t$ causes the <em>current</em> thread to pause its execution until termination of $t$.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Thread myThread <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Thread(() <span style="color:#f92672">-&gt;</span> { myExpensiveMethod(); });
+</span></span><span style="display:flex;"><span>myThread.<span style="color:#a6e22e">start</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// wait for the spawned thread to terminate</span>
+</span></span><span style="display:flex;"><span>myThread.<span style="color:#a6e22e">join</span>()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Job done, resuming execution&#34;</span>);
+</span></span></code></pre></div><h3 id="loop">
+  Loop
+  <a class="anchor" href="#loop">#</a>
+</h3>
+<p>In Java, an analogous of the keyword <code>sleep</code> is the instance method <code>Stream.parallel</code> that we saw in the <a href="">dedicated chapter</a>.</p>
+<p><strong><em>Example.</em></strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> vector <span style="color:#f92672">=</span> getVector();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>vector.<span style="color:#a6e22e">stream</span>
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">parallel</span>
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">filter</span>(<span style="color:#f92672">&lt;</span>myPredicate<span style="color:#f92672">&gt;</span>)
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">map</span>(<span style="color:#f92672">&lt;</span>myFunction<span style="color:#f92672">&gt;</span>)
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">forEach</span>(<span style="color:#f92672">&lt;</span>myConsumer<span style="color:#f92672">&gt;</span>);
+</span></span></code></pre></div><p>In this case, the <em>whole</em> stream pipeline is executed in a concurrent fashion (or parallel if some cores are available).</p>
+<p>By default, a pool of threads of size $k - 1$ is used, where $k$ is the number of cores of the CPU (but a larger pool can be manually configured).</p>
+<h3 id="pause">
+  Pause
+  <a class="anchor" href="#pause">#</a>
+</h3>
+<p>The static method <code>Thread.sleep</code> can be used to pause the current thread for a given amount of time.</p>
+<p><strong><em>Example.</em></strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">ptinln</span>(<span style="color:#e6db74">&#34;Going to sleep...&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// sleep 4 seconds</span>
+</span></span><span style="display:flex;"><span>Thread.<span style="color:#a6e22e">sleep</span>(4000);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">ptinln</span>(<span style="color:#e6db74">&#34;Waking up&#34;</span>);
+</span></span></code></pre></div><p><strong><em>Warning.</em></strong>
+The method <code>Thread.sleep</code> does not guarantee that the input duration is precisely enforced.
+Therefore sleeping times should <em>not</em> be used to synchronize the activity of two threads.</p>
 </article>
  
       
@@ -2113,6 +2151,15 @@ Second, when a synchronized method exits, it automatically establishes a happens
       <ul>
         <li><a href="#spawn-and-sync"><code>spawn</code> and <code>sync</code></a></li>
         <li><a href="#parallel"><code>parallel</code></a></li>
+      </ul>
+    </li>
+    <li><a href="#in-java">in Java</a>
+      <ul>
+        <li><a href="#creating-a-thread">Creating a thread</a></li>
+        <li><a href="#spawning-a-thread">Spawning a thread</a></li>
+        <li><a href="#waiting-for-a-thread-to-terminate">Waiting for a thread to terminate</a></li>
+        <li><a href="#loop">Loop</a></li>
+        <li><a href="#pause">Pause</a></li>
       </ul>
     </li>
   </ul>

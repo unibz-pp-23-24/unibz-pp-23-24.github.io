@@ -52,6 +52,8 @@
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/generics/sections/generics/</loc>
   </url><url>
+    <loc>https://unibz-pp-23-24.github.io/docs/datastructures/sections/hash/</loc>
+  </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/env/sections/files/</loc>
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/regex/sections/practice/</loc>
@@ -84,6 +86,8 @@
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/env/sections/backup/</loc>
   </url><url>
+    <loc>https://unibz-pp-23-24.github.io/docs/datastructures/sections/tree/</loc>
+  </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/git/sections/config/</loc>
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/build/sections/pom/</loc>
@@ -91,8 +95,6 @@
     <loc>https://unibz-pp-23-24.github.io/docs/recursion/sections/correctness/</loc>
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/intro/sections/evaluation/</loc>
-  </url><url>
-    <loc>https://unibz-pp-23-24.github.io/docs/datastructures/sections/hash/</loc>
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/objects/sections/inheritance/</loc>
   </url><url>
@@ -110,6 +112,8 @@
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/errors/sections/checked/</loc>
   </url><url>
+    <loc>https://unibz-pp-23-24.github.io/docs/multithreading/sections/signalling/</loc>
+  </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/input/sections/property/</loc>
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/intro/sections/content/</loc>
@@ -119,6 +123,8 @@
     <loc>https://unibz-pp-23-24.github.io/docs/objects/sections/methods/</loc>
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/interfaces/</loc>
+  </url><url>
+    <loc>https://unibz-pp-23-24.github.io/docs/multithreading/sections/race/</loc>
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/background/sections/order/</loc>
   </url><url>
@@ -193,6 +199,8 @@
     <loc>https://unibz-pp-23-24.github.io/docs/recursion/</loc>
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/git/sections/sharing/</loc>
+  </url><url>
+    <loc>https://unibz-pp-23-24.github.io/docs/multithreading/sections/troubleshooting/</loc>
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/multithreading/sections/abstractions/</loc>
   </url><url>
