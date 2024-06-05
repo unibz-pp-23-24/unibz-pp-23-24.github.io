@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Hash table # A hash table is a data structure often used to implement an associative array (like a Java Map).
-Associative array # Reminder. An associative array (or map) is a finite set of key-value pairs, where keys are distinct. Terminology. A key-value pair is also called an entry. Running example. The following associative array has 5 entries.
+Associative array # Reminder. An associative array (or map) is a finite set of key-value pairs, where keys are distinct. Terminology. A key-value pair in associative array is also called an entry. Running example. The following associative array has 5 entries.
 $\qquad$ 1 $\mapsto$ Alice $\qquad$ 3 $\mapsto$ Bob $\qquad$ 4 $\mapsto$ Carol $\qquad$ 9 $\mapsto$ Dan $\qquad$ 12 $\mapsto$ Eve">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
@@ -12,7 +12,7 @@ $\qquad$ 1 $\mapsto$ Alice $\qquad$ 3 $\mapsto$ Bob $\qquad$ 4 $\mapsto$ Carol $
   <meta property="og:site_name" content="Programming project 2023-24">
   <meta property="og:title" content="Hash table">
   <meta property="og:description" content="Hash table # A hash table is a data structure often used to implement an associative array (like a Java Map).
-Associative array # Reminder. An associative array (or map) is a finite set of key-value pairs, where keys are distinct. Terminology. A key-value pair is also called an entry. Running example. The following associative array has 5 entries.
+Associative array # Reminder. An associative array (or map) is a finite set of key-value pairs, where keys are distinct. Terminology. A key-value pair in associative array is also called an entry. Running example. The following associative array has 5 entries.
 $\qquad$ 1 $\mapsto$ Alice $\qquad$ 3 $\mapsto$ Bob $\qquad$ 4 $\mapsto$ Carol $\qquad$ 9 $\mapsto$ Dan $\qquad$ 12 $\mapsto$ Eve">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
@@ -22,7 +22,7 @@ $\qquad$ 1 $\mapsto$ Alice $\qquad$ 3 $\mapsto$ Bob $\qquad$ 4 $\mapsto$ Carol $
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.43ac31575511e76bcefde5222339fa66aef0247052de4f945849adb68bd2aee1.js" integrity="sha256-Q6wxV1UR52vO/eUiIzn6Zq7wJHBS3k&#43;UWEmttovSruE=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.5b2a1cb56a14546cf4c25c34189fbef96250e32796639c60d2828e86891d5851.js" integrity="sha256-WyoctWoUVGz0wlw0GJ&#43;&#43;&#43;WJQ4yeWY5xg0oKOhokdWFE=" crossorigin="anonymous"></script>
 
   
 
@@ -2005,7 +2005,7 @@ https://github.com/alex-shpak/hugo-book
   Hash table
   <a class="anchor" href="#hash-table">#</a>
 </h1>
-<p>A hash table is a data structure often used to implement an <a href="">associative array</a> (like a Java <code>Map</code>).</p>
+<p>A hash table is a data structure often used to implement an <a href="https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/map/">associative array</a> (like a Java <code>Map</code>).</p>
 <!-- raw HTML omitted -->
 <h2 id="associative-array">
   Associative array
@@ -2017,7 +2017,7 @@ https://github.com/alex-shpak/hugo-book
 
 <blockquote class="book-hint warning">
   <strong><em>Terminology.</em></strong>
-A key-value pair is also called an <strong>entry</strong>.
+A key-value pair in associative array is also called an <strong>entry</strong>.
 </blockquote>
 
 <blockquote class="book-hint info">
@@ -2068,13 +2068,16 @@ The following is a chaining hash table, which stores our associative array.</p>
 
 </blockquote>
 
-<p>In a hash table with <strong>open indexing</strong>, each slot stores one entry of the associative array.
+<p><blockquote class="book-hint warning">
+  In a hash table with <strong>open indexing</strong>, each slot stores one entry of the associative array.
+</blockquote>
+
 We will discuss open indexing later in this section (and focus for now on chaining hash tables).</p>
 <h3 id="hash-function">
   Hash function
   <a class="anchor" href="#hash-function">#</a>
 </h3>
-<p>In the hash table, whether a certain entry is assigned to a certain slot is determined by a so-called hash function.</p>
+<p>In a hash table, whether a certain entry is assigned to a certain slot is determined by a so-called hash function.</p>
 <blockquote class="book-hint warning">
   <strong><em>Definition.</em></strong>
 A <strong>hash function</strong> maps each key in $K$ to an index in $A$.
@@ -2104,7 +2107,7 @@ In our example, $K$ is the set of integers.
 In Java, this set has size $2^{32}$ (i.e. more than 4 billion), which is unrealistic for the size of $A$.
 </blockquote>
 
-As a consequence, hashing functions are usually not <a href="">injective</a>.</p>
+As a consequence, hashing functions are usually not <a href="https://unibz-pp-23-24.github.io/docs/background/sections/set_tuple_map/#function">injective</a>.</p>
 <blockquote class="book-hint warning">
   <p><strong><em>Terminology.</em></strong>
 A <strong>collision</strong> occurs when two entries of an associative array are assigned to the same slot.</p>
@@ -2128,7 +2131,7 @@ $$</p>
 Let us assume that our hashing function $h$ partitions $K$ evenly across slots (like the function $h(x) = x \mod 4$ used above).</p>
 <ul>
 <li>
-<p>If $A$ has $16$ slots (which is the default size of a hashmap in Java), then
+<p>If $A$ has $16$ slots (which is the default size of a hash table in Java), then
 the probability of a collision is $\ge 0.5$ for $5$ entries already</p>
 </li>
 <li>
@@ -2172,6 +2175,18 @@ we need to:</p>
   <div class="book-tabs-content markdown-inner"><p>Consider a associative array with $n$ entries, stored as a chained hash table with linked lists (as above).</p>
 <p>What is the worst case asymptotic running time of the lookup operation?</p>
 <p>Instead, what would be the best possible scenario?</p>
+</div><input type="radio" class="toggle" name="tabs-exercise_hash_wc" id="tabs-exercise_hash_wc-1"  />
+  <label for="tabs-exercise_hash_wc-1">Solution</label>
+  <div class="book-tabs-content markdown-inner"><p>A worst possible input (of size $n$) for the lookup operation consists of an input key $k$ and an input hash table $A$ with hash function $h$ such that,
+for each pair $k&rsquo; \mapsto v$ stored in $A$:</p>
+<ul>
+<li>$k&rsquo; \neq k$ and</li>
+<li>$h(k&rsquo;) = h(k)$.</li>
+</ul>
+<p>In this case, any algorithm for lookup would need to inspect the whole list $A[h(k)]$.
+So the worst-case running time of such an algorithm is in $\Theta(n)$.</p>
+<p>A best possible input consists of an input key $k$ and an input hash table $A$ with hash function $h$ such that $h(k&rsquo;) \neq h(k)$ for each pair $k&rsquo; \mapsto v$ stored in $A$.
+A standard algorithm for lookup in this case would have constant running time (expressed as function of $n$).</p>
 </div></div>
 
 <h3 id="load-factor-and-rehashing">
@@ -2223,7 +2238,7 @@ Instead, the slot is marked as a so called <strong>tombstone</strong>, which doe
 </h3>
 <p>The (average and worst case) asymptotic costs of these operations are identical to the ones for chained hash tables.</p>
 <p>Open addressing can be more efficient in practice than chaining, because it is more likely to benefit from caching (since the whole hash table it an array, it is likely to be contiguous in memory).</p>
-<p>A downside compared is the maximal acceptable load factor, which is (necessarily) $\le 1$ (from <a href="https://en.wikipedia.org/wiki/Hash_table#Load_factor_for_open_addressing">Wikipedia</a> still, between 0.6 and 0.75).</p>
+<p>A downside is the maximal acceptable load factor, which is (necessarily) $\le 1$ (from <a href="https://en.wikipedia.org/wiki/Hash_table#Load_factor_for_open_addressing">Wikipedia</a> still, between 0.6 and 0.75).</p>
 <h2 id="in-java">
   in Java
   <a class="anchor" href="#in-java">#</a>
@@ -2233,19 +2248,25 @@ Instead, the slot is marked as a so called <strong>tombstone</strong>, which doe
   <a class="anchor" href="#implementation">#</a>
 </h3>
 <p>Java uses chained hash tables internally, with 16 slots by default.</p>
-<p>Each slot points to a <a href="">linked list</a> by default.</p>
-<p>If the maximal acceptable load factor is exceeded, then the has table is rehashed (as expected).
-In addition, Java uses a maximal load threshold for an individual slot.
-If this value is exceeded (but the maximal load factor is not), then the linked list for this slot is converted to a <a href="">red-black tree</a>.</p>
+<p>Each slot points to a <a href="https://unibz-pp-23-24.github.io/docs/datastructures/sections/list/#linkedList">linked list</a> by default.</p>
+<p>If the maximal acceptable load factor is exceeded, then the hash table is rehashed (as expected).</p>
+<p>In addition, Java uses a maximal load threshold for an individual slot.
+If this value is exceeded (but the maximal load factor is not), then the linked list for this slot is converted to a <a href="https://unibz-pp-23-24.github.io/docs/datastructures/sections/tree/#selfBalancing">red-black tree</a>.</p>
 <h4 id="associative-array-1">
   Associative array
   <a class="anchor" href="#associative-array-1">#</a>
 </h4>
-<p>As we saw in the <a href="">dedicated chapter</a>, the interface <code>java.util.Map</code> represents an associative array.</p>
-<p>The class <code>java.util.HashMap</code> implements this interface as a hash table.</p>
+<p>As we saw in the <a href="https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/map/#java">dedicated chapter</a>, the interface <code>java.util.Map</code> represents an associative array.</p>
+<ul>
+<li>
+<p>The class <code>java.util.HashMap</code> implements the interface as a hash table.</p>
+</li>
+<li>
 <p>The class <code>java.util.LinkedHashMap</code> also implements this interface as a hash table.
-However, in addition, each entry contains two additional pointers to its processor and successor (if any) in the order of <em>insertion</em>, thus forming a double linked list, <em>independent</em> of the hash table itself.</p>
-<p>This allows <em>iterating</em> over the entries of a map in a predictable order (precisely, their insertion order), which is not possible with a <code>HashMap</code>.</p>
+However, in addition, each entry contains two pointers to its processor and successor (if any) in the order of <em>insertion</em>, thus forming a double linked list, <em>independent</em> of the hash table itself.
+This allows <em>iterating</em> over the entries of a map in a predictable order (precisely, their insertion order), which is not possible with a <code>HashMap</code>.</p>
+</li>
+</ul>
 <blockquote class="book-hint danger">
   <strong><em>Warning.</em></strong>
 In a <code>LinkedHashMap</code>, overwriting the value of an entry (with the method <code>Map.put</code>) does <em>not</em> affect the order of insertion.
@@ -2255,25 +2276,36 @@ In a <code>LinkedHashMap</code>, overwriting the value of an entry (with the met
   Set
   <a class="anchor" href="#set">#</a>
 </h4>
-<p>As we saw in the <a href="">dedicated chapter</a>, the interface <code>java.util.Set</code> represents a set.</p>
-<p>The class <code>java.util.Hashset</code> implements this interface as a hash table, where keys are the elements of the set, and an &ldquo;entry&rdquo; consists of a key only (i.e. has no value).
-The class <code>java.util.LinkedHashSet</code> also implements this interface as a hash table.
-It is analogous to <code>LinkedHashMap</code>, i.e. guarantees that iteration preserves the order of insertion.</p>
+<p>As we saw in the <a href="https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/set/#java">dedicated chapter</a>, the interface <code>java.util.Set</code> represents a set.</p>
+<ul>
+<li>
+<p>The class <code>java.util.Hashset</code> implements this interface as a hash table, where keys are the elements of the set, and an &ldquo;entry&rdquo; consists of a key only (i.e. has no value).</p>
+</li>
+<li>
+<p>The class <code>java.util.LinkedHashSet</code> also implements this interface as a hash table.
+It is analogous to <code>LinkedHashMap</code>, i.e. it guarantees that iteration preserves the order of <em>insertion</em>.</p>
+</li>
+</ul>
 <h3 id="hashcode">
   <code>hashCode</code>
   <a class="anchor" href="#hashcode">#</a>
 </h3>
-<p>In Java, the keys of a <code>Map</code> and the entries of a <code>Set</code> are <em>objects</em>.</p>
+<blockquote class="book-hint warning">
+  <p>In Java, the keys of a <code>Map</code> and the entries of a <code>Set</code> are <em>objects</em>.</p>
 <p>So a Java hash function must map an <em>object</em> to a hash table slot.
 Technically, this function is the composition of:</p>
 <ul>
 <li>the function <code>hashCode</code>, which maps an object to an <code>int</code>, and</li>
 <li>a proper hash function $h$ that maps this <code>int</code> to a hash table slot.</li>
 </ul>
+
+</blockquote>
+
 <p>The function <code>hashCode</code> is an instance method of the class <code>Object</code>, thus it is inherited by default by all objects.
-This function must behave like a <a href="">pure function</a> (even if it is overriden), in the sense that it must return twice the same <code>int</code> if it is called twice for the same object.</p>
-<p>The hash function $h$ is also a function in the mathematical sense.</p>
-<p>Therefore the composition of these two functions is has this property.
+This function behaves like a <a href="https://unibz-pp-23-24.github.io/docs/lambda/sections/pure/">pure function</a>, in the sense that it must return twice the same <code>int</code> if it is called twice for the same object.
+This property <em>must be preserved</em> if the method is overridden.</p>
+<p>The hash function $h$ is also a function in the mathematical sense.
+Therefore the composition of these two functions has this property.
 As a consequence, a same key is always mapped to the same slot.</p>
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
@@ -2302,8 +2334,11 @@ As a consequence, a same key is always mapped to the same slot.</p>
   <a class="anchor" href="#hashcode-and-equals">#</a>
 </h4>
 <blockquote class="book-hint danger">
-  <strong><em>Warning.</em></strong>
-In a Java hash table, two keys $o_1$ and $o_2$ are considered equal iff $o_1$.<code>equals(</code>$o_2$<code>)</code> returns <code>true</code>.
+  <p><strong><em>Warning.</em></strong>
+In a Java hash table, two keys $o_1$ and $o_2$ are considered equal iff</p>
+<p>$\qquad o_1$.<code>equals(</code>$o_2$<code>)</code></p>
+<p>returns <code>true</code>.</p>
+
 </blockquote>
 
 
@@ -2312,7 +2347,7 @@ In a Java hash table, two keys $o_1$ and $o_2$ are considered equal iff $o_1$.<c
 
 <div class="book-tabs"><input type="radio" class="toggle" name="tabs-exercise_hashCode" id="tabs-exercise_hashCode-0" checked="checked" />
   <label for="tabs-exercise_hashCode-0">Exercise</label>
-  <div class="book-tabs-content markdown-inner"><p>Consider the following Java class <code>City</code>, which overrides the method <a href="">equals</a>, so that two cities are considered equal iff they have the same name and zip code.</p>
+  <div class="book-tabs-content markdown-inner"><p>Consider the following Java class <code>City</code>, which overrides the method <a href="https://unibz-pp-23-24.github.io/docs/objects/sections/comparing/#equals">equals</a>, so that two cities are considered equal iff they have the same name and zip code.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">City</span>(){
 </span></span><span style="display:flex;"><span>    String name;
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> zipCode;
@@ -2344,8 +2379,7 @@ In a Java hash table, two keys $o_1$ and $o_2$ are considered equal iff $o_1$.<c
 </span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(cities.<span style="color:#a6e22e">contains</span>(bolognaAgain));
 </span></span></code></pre></div></div><input type="radio" class="toggle" name="tabs-exercise_hashCode" id="tabs-exercise_hashCode-1"  />
   <label for="tabs-exercise_hashCode-1">Solution</label>
-  <div class="book-tabs-content markdown-inner"><p>Solution.</p>
-<p>The output is unpredictable.</p>
+  <div class="book-tabs-content markdown-inner"><p>The output is unpredictable.</p>
 <p>Observe that the variables
 <code>bologna</code> and
 <code>bolognaAgain</code> point to two different objects $o_1$ and $o_2$.</p>
@@ -2354,7 +2388,7 @@ In a Java hash table, two keys $o_1$ and $o_2$ are considered equal iff $o_1$.<c
 <li>the slot associated to $o_1$ is $i_1 = h$($o_1$.<code>hashCode()</code>),</li>
 <li>the slot associated to $o_2$ is $i_2 = h$($o_2$.<code>hashCode()</code>).</li>
 </ul>
-<p>Since $o_1$ and $o_2$ are different objects, $i_1$ and $i_2$ may of may not be identical.</p>
+<p>Since $o_1$ and $o_2$ are different objects, $i_1$ and $i_2$ <em>may of may not</em> be identical.</p>
 <p>The instruction <code>cities.add(bologna)</code> adds a node with key $o_1$ to $A[i_1]$.</p>
 <p>Then the instruction <code>cities.contains(bolognaAgain)</code> searches for a node with a key equal to $o_2$ in $A[i_2]$.</p>
 <ul>
@@ -2373,11 +2407,11 @@ the method <code>contains</code> will return <code>false</code>.</p>
 <blockquote class="book-hint danger">
   <strong><em>Warning.</em></strong>
 As show with this exercise, if a class overrides <code>equals</code> without overriding <code>hashCode</code>,
-then the behavior of the three basic operations on hash tables (insertion, lookup and deletion) may depend on collisions.
+then the behavior of the three basic operations on hash tables (insertion, lookup and deletion) may depend on <a href="#collision">collisions</a>.
 </blockquote>
 
-<p>This makes the behavior of most methods implemented by <code>HashMap</code>, <code>LinkedHashMap</code>, <code>HashSet</code> and <code>LinkedHashSet</code> (among others) unpredictable.</p>
-<p>To avoid this, whenever <code>equals</code> is override, <code>hashCode</code> should be overriden accordingly.</p>
+<p>This makes the behavior of several methods implemented by <code>HashMap</code>, <code>LinkedHashMap</code>, <code>HashSet</code> and <code>LinkedHashSet</code> (among others) unpredictable.</p>
+<p>To avoid this, whenever <code>equals</code> is override, <code>hashCode</code> should be overridden accordingly.</p>
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <p><blockquote class="book-hint info">
@@ -2394,7 +2428,7 @@ then the behavior of the three basic operations on hash tables (insertion, looku
 </blockquote>
 
 In the example above,
-<em>any</em> (pure) function that produces an <code>int</code> out of <code>name</code> and <code>zipCode</code> could in theory be used to implement <code>hashCode</code> in the class <code>City</code>.</p>
+<em>any</em> (pure) function that produces an <code>int</code> out of the values of <code>name</code> and <code>zipCode</code> could in theory be used to implement <code>hashCode</code> in the class <code>City</code>.</p>
 <p>However, the choice of this function may affect performance.</p>
 <p><blockquote class="book-hint info">
   <p><strong><em>Example(continued).</em></strong>
@@ -2410,14 +2444,14 @@ However, it has the effect of mapping all keys with type <code>City</code> to th
 </span></span></code></pre></div>
 </blockquote>
 
-This is why a common practice consists in implementing <code>hashCode</code> in terms of the method <code>hashCode</code> of the selected attributes (and the method <code>hashCode</code> of these attributes if needed, recursively).</p>
+This is why a common practice consists in implementing <code>hashCode</code> in terms of the method <code>hashCode</code> of the selected attributes (and implement the method <code>hashCode</code> of these attributes similarly, in a recursive fashion).</p>
 <blockquote class="book-hint info">
   <strong><em>Note.</em></strong>
 Most native Java classes (like <code>String</code>, <code>Integer</code>, <code>Boolean</code>, <code>ArrayList</code>, <code>HasSet</code>, etc.) already implement <code>hashCode</code> (in accordance with <code>equals</code>).
 </blockquote>
 
-<p>The utility method <code>Objects.hash</code> takes any number of arguments, wraps the ones that have primitive types (e.g. <code>int</code> into <code>Integer</code>), and
-returns a function of their respective <code>hashCode</code> methods.</p>
+<p>The utility method <code>Objects.hash</code> takes any number of arguments, and wraps the ones that have primitive types (e.g. <code>int</code> into <code>Integer</code>).
+It returns an <code>int</code> whose value is a function of the outputs of the respective <code>hashCode</code> methods of the arguments.</p>
 <blockquote class="book-hint info">
   <p><strong><em>Example(continued).</em></strong>
 In our example, we can implement <code>hashCode</code> as follows:</p>
@@ -2428,7 +2462,9 @@ In our example, we can implement <code>hashCode</code> as follows:</p>
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> Objects.<span style="color:#a6e22e">hash</span>(name, zipCode);
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div>
+</span></span></code></pre></div><p>The returned value depends on the values of <code>name.hashCode()</code> and
+<code>Integer.valueOf(zipCode).hashCode()</code>.</p>
+
 </blockquote>
 
 </article>

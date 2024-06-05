@@ -180,7 +180,7 @@
       <link>https://unibz-pp-23-24.github.io/docs/datastructures/sections/hash/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/datastructures/sections/hash/</guid>
-      <description>Hash table # A hash table is a data structure often used to implement an associative array (like a Java Map).&#xA;Associative array # Reminder. An associative array (or map) is a finite set of key-value pairs, where keys are distinct. Terminology. A key-value pair is also called an entry. Running example. The following associative array has 5 entries.&#xA;$\qquad$ 1 $\mapsto$ Alice $\qquad$ 3 $\mapsto$ Bob $\qquad$ 4 $\mapsto$ Carol $\qquad$ 9 $\mapsto$ Dan $\qquad$ 12 $\mapsto$ Eve</description>
+      <description>Hash table # A hash table is a data structure often used to implement an associative array (like a Java Map).&#xA;Associative array # Reminder. An associative array (or map) is a finite set of key-value pairs, where keys are distinct. Terminology. A key-value pair in associative array is also called an entry. Running example. The following associative array has 5 entries.&#xA;$\qquad$ 1 $\mapsto$ Alice $\qquad$ 3 $\mapsto$ Bob $\qquad$ 4 $\mapsto$ Carol $\qquad$ 9 $\mapsto$ Dan $\qquad$ 12 $\mapsto$ Eve</description>
     </item>
     <item>
       <title>Hierarchical file system</title>
