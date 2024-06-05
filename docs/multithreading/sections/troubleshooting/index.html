@@ -3,17 +3,19 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Troubleshooting # Aside from race conditions, here are some common reasons why a program involving concurrency may not behave as intended.
+<meta name="description" content="Troubleshooting # Alongside race conditions, there are several reasons why a program that uses multithreading may not behave as intended.
+Two common ones are deadlocks and (to a lesser extent) starvation.
 Deadlock # Terminology. A deadlock occurs when two threads wait for each other to release a lock. This notion also generalizes to cyclic deadlocks involving more than two threads.
-In Java, this may for instance be caused by synchronized methods or statements. A simple illustration can be found here.">
+In Java, this may be caused by synchronized methods or statements.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/multithreading/sections/troubleshooting/">
   <meta property="og:site_name" content="Programming project 2023-24">
   <meta property="og:title" content="Troubleshooting">
-  <meta property="og:description" content="Troubleshooting # Aside from race conditions, here are some common reasons why a program involving concurrency may not behave as intended.
+  <meta property="og:description" content="Troubleshooting # Alongside race conditions, there are several reasons why a program that uses multithreading may not behave as intended.
+Two common ones are deadlocks and (to a lesser extent) starvation.
 Deadlock # Terminology. A deadlock occurs when two threads wait for each other to release a lock. This notion also generalizes to cyclic deadlocks involving more than two threads.
-In Java, this may for instance be caused by synchronized methods or statements. A simple illustration can be found here.">
+In Java, this may be caused by synchronized methods or statements.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -22,7 +24,7 @@ In Java, this may for instance be caused by synchronized methods or statements. 
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.867b3dcab60edd90a7c857f7cfb6444400a1bc5010c5e91ffc524a9bb2956527.js" integrity="sha256-hns9yrYO3ZCnyFf3z7ZERAChvFAQxekf/FJKm7KVZSc=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.c1ea6c286b7d275697741633baa967a88492554faa66aa6a784d8a52450c3ecf.js" integrity="sha256-wepsKGt9J1aXdBYzuqlnqISSVU&#43;qZqpqeE2KUkUMPs8=" crossorigin="anonymous"></script>
 
   
 
@@ -1982,7 +1984,8 @@ https://github.com/alex-shpak/hugo-book
   Troubleshooting
   <a class="anchor" href="#troubleshooting">#</a>
 </h1>
-<p>Aside from <a href="">race conditions</a>, here are some common reasons why a program involving concurrency may not behave as intended.</p>
+<p>Alongside <a href="https://unibz-pp-23-24.github.io/docs/multithreading/sections/race/">race conditions</a>, there are several reasons why a program that uses multithreading may not behave as intended.</p>
+<p>Two common ones are deadlocks and (to a lesser extent) starvation.</p>
 <h2 id="deadlock">
   Deadlock
   <a class="anchor" href="#deadlock">#</a>
@@ -1993,7 +1996,7 @@ A <strong>deadlock</strong> occurs when two threads wait for each other to relea
 </blockquote>
 
 This notion also generalizes to cyclic deadlocks involving more than two threads.</p>
-<p>In Java, this may for instance be caused by synchronized methods or statements.
+<p>In Java, this may be caused by synchronized methods or statements.
 A simple illustration can be found <a href="https://docs.oracle.com/javase%2Ftutorial%2F/essential/concurrency/deadlock.html">here</a>.</p>
 <h2 id="starvation">
   Starvation
@@ -2001,9 +2004,9 @@ A simple illustration can be found <a href="https://docs.oracle.com/javase%2Ftut
 </h2>
 <blockquote class="book-hint warning">
   A thread is <strong><em>starving</em></strong> if it does not get regular access to a shared resource, and as a result cannot progress in its execution.
-This situation can often be avoided with a <a href="">queue</a>.
 </blockquote>
 
+<p>This situation can often be avoided with a <a href="https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/queue/#queue">queue</a>.</p>
 </article>
  
       

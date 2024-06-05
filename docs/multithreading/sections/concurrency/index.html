@@ -24,7 +24,7 @@ Example. While downloading a video, Alice may use git to commit changes to her r
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.867b3dcab60edd90a7c857f7cfb6444400a1bc5010c5e91ffc524a9bb2956527.js" integrity="sha256-hns9yrYO3ZCnyFf3z7ZERAChvFAQxekf/FJKm7KVZSc=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.c1ea6c286b7d275697741633baa967a88492554faa66aa6a784d8a52450c3ecf.js" integrity="sha256-wepsKGt9J1aXdBYzuqlnqISSVU&#43;qZqpqeE2KUkUMPs8=" crossorigin="anonymous"></script>
 
   
 
@@ -1967,7 +1967,8 @@ https://github.com/alex-shpak/hugo-book
 <nav id="TableOfContents">
   <ul>
     <li><a href="#core">Core</a></li>
-    <li><a href="#parallelism-vs-concurrency">Parallelism vs concurrency</a></li>
+    <li><a href="#parallelVsConcurrent">Parallelism vs concurrency</a></li>
+    <li><a href="#switch">Context switch</a></li>
   </ul>
 </nav>
 
@@ -1994,9 +1995,9 @@ https://github.com/alex-shpak/hugo-book
 
 <p>A Central Processing Unit (CPU) contains one or several cores (e.g. 4 or 8).</p>
 <p>A Graphical Processing Unit (GPU) can contain thousands of cores.</p>
-<h2 id="parallelism-vs-concurrency">
+<h2 id="parallelVsConcurrent">
   Parallelism vs concurrency
-  <a class="anchor" href="#parallelism-vs-concurrency">#</a>
+  <a class="anchor" href="#parallelVsConcurrent">#</a>
 </h2>
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
@@ -2036,8 +2037,13 @@ The core is likely to remain unused while data is being fetched from the hard dr
 Instead, while $t_1$ is fetching data, the same core could be used to perform computations for a task $t_2$.
 </blockquote>
 
+<h2 id="switch">
+  Context switch
+  <a class="anchor" href="#switch">#</a>
+</h2>
 <blockquote class="book-hint warning">
-  A <strong>context switch</strong> is the operation that consists in storing the system&rsquo;s state for a running task, so that this task can be paused and another task resumed.
+  <strong><em>Definition.</em></strong>
+A <strong>context switch</strong> is the operation that consists in storing the system&rsquo;s state for a running task (so that it can be paused and resumed later on), and restoring a different, previously saved state.
 </blockquote>
 
 </article>
@@ -2082,7 +2088,8 @@ Instead, while $t_1$ is fetching data, the same core could be used to perform co
 <nav id="TableOfContents">
   <ul>
     <li><a href="#core">Core</a></li>
-    <li><a href="#parallelism-vs-concurrency">Parallelism vs concurrency</a></li>
+    <li><a href="#parallelVsConcurrent">Parallelism vs concurrency</a></li>
+    <li><a href="#switch">Context switch</a></li>
   </ul>
 </nav>
 

@@ -229,7 +229,7 @@
       <link>https://unibz-pp-23-24.github.io/docs/multithreading/sections/thread/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/multithreading/sections/thread/</guid>
-      <description>Thread # Process # A process is (usually) an instance of a computer program. Processes can interact in several ways. In particular:&#xA;a process may spawn another process, a process may wait for another process to finish, two processes may have access the same resources. Thread # A process consists of one or several threads. Conceptually, a thread is similar to a process. In particular, threads can interact analogously to processes.</description>
+      <description>Thread # Process # A process is (usually) an instance of a computer program. Processes can interact in several ways. In particular:&#xA;a process may spawn another process, a process may wait for another process to terminate or release a lock on some resource. Thread # A process consists of one or several threads. Conceptually, a thread is similar to a process. In particular, threads can interact analogously to processes.</description>
     </item>
     <item>
       <title>Reading from and writing to a file in Java</title>
@@ -432,7 +432,7 @@
       <link>https://unibz-pp-23-24.github.io/docs/multithreading/sections/synchronization/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/multithreading/sections/synchronization/</guid>
-      <description>Synchronization # Precedence # Let $a_1$ (resp. $a_2$) be an instruction executed in a thread $t_1$ (resp. $t_2$). By default, if $t_1$ and $t_2$ are executed concurrently, there is no guarantee that $a_1$ is executed before $a_2$. However, most programming languages provide mechanisms to enforce it.&#xA;in Java # The Javadoc of the package java.util.concurrent summarizes the situations where a statement must be executed before another. In Java&amp;rsquo;s terminology, this binary relation over statements is called the &amp;ldquo;happens before&amp;rdquo; relation.</description>
+      <description>Synchronization # The behavior of a program that runs multiple threads can be hard to predict. In particular, two threads may compete to access a same resource (e.g. the value of some object&amp;rsquo;s attribute), without guarantee on the order in which they access it. This may lead (among other things) to a race condition&#xA;Programming languages that support multithreading also allow expressing constraints on the order of execution of some instructions.</description>
     </item>
     <item>
       <title>Terminal operation</title>
@@ -635,14 +635,14 @@
       <link>https://unibz-pp-23-24.github.io/docs/multithreading/sections/troubleshooting/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/multithreading/sections/troubleshooting/</guid>
-      <description>Troubleshooting # Aside from race conditions, here are some common reasons why a program involving concurrency may not behave as intended.&#xA;Deadlock # Terminology. A deadlock occurs when two threads wait for each other to release a lock. This notion also generalizes to cyclic deadlocks involving more than two threads.&#xA;In Java, this may for instance be caused by synchronized methods or statements. A simple illustration can be found here.</description>
+      <description>Troubleshooting # Alongside race conditions, there are several reasons why a program that uses multithreading may not behave as intended.&#xA;Two common ones are deadlocks and (to a lesser extent) starvation.&#xA;Deadlock # Terminology. A deadlock occurs when two threads wait for each other to release a lock. This notion also generalizes to cyclic deadlocks involving more than two threads.&#xA;In Java, this may be caused by synchronized methods or statements.</description>
     </item>
     <item>
       <title>Abstractions</title>
       <link>https://unibz-pp-23-24.github.io/docs/multithreading/sections/abstractions/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/multithreading/sections/abstractions/</guid>
-      <description>Abstractions # We review here some higher-level utilities available in Java to implement concurrency while reducing the risk of unwanted behaviors.&#xA;Thread safety # Terminology. A method is said to be tread-safe if it can be accessed by concurrently by several threads without &amp;ldquo;unexpected behavior&amp;rdquo;. Thread safety is a vague term, which may for instance refers to implementations that are free of race conditions.&#xA;Most high-level libraries or frameworks that exploit concurrency provide methods with some from of thread safety.</description>
+      <description>Abstractions # We review here some higher-level utilities available in Java to use multithreading, while reducing the risk of unwanted behaviors.&#xA;Thread safety # Terminology. A method is said to be tread-safe if it can be accessed by concurrently by several threads without &amp;ldquo;unexpected&amp;rdquo; consequences. Thread safety is a vague term, which may for instance refers to implementations that are free of race conditions.&#xA;Most high-level libraries or frameworks that exploit concurrency provide methods with some from of thread safety.</description>
     </item>
     <item>
       <title>Backtracking</title>

@@ -20,7 +20,7 @@ int i = 0 spawn i&#43;&#43; i&#43;&#43; sync print(i) The reason is that a core 
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.867b3dcab60edd90a7c857f7cfb6444400a1bc5010c5e91ffc524a9bb2956527.js" integrity="sha256-hns9yrYO3ZCnyFf3z7ZERAChvFAQxekf/FJKm7KVZSc=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.c1ea6c286b7d275697741633baa967a88492554faa66aa6a784d8a52450c3ecf.js" integrity="sha256-wepsKGt9J1aXdBYzuqlnqISSVU&#43;qZqpqeE2KUkUMPs8=" crossorigin="anonymous"></script>
 
   
 
@@ -2003,14 +2003,14 @@ However, it may output either <code>1</code> or <code>2</code>, depending on the
 </span></span><span style="display:flex;"><span>sync
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">print</span>(i)
-</span></span></code></pre></div><p>The reason is that a core does not increment the value of a variable as an <a href="">atomic operation</a>.
+</span></span></code></pre></div><p>The reason is that a core does not increment the value of a variable as an <a href="https://unibz-pp-23-24.github.io/docs/multithreading/sections/abstractions/#atomic">atomic operation</a>.
 Instead, an increment is a sequence of three instructions:</p>
 <ol>
 <li>read the value of <code>i</code> and fetch it to one of the core&rsquo;s registers</li>
 <li>increment the value of this register</li>
 <li>write the register&rsquo;s value back to memory</li>
 </ol>
-<p>If a <a href="">context switch</a> occurs during the execution of these three operations, or if the two threads are executed in parallel (i.e. on different cores),
+<p>If a <a href="https://unibz-pp-23-24.github.io/docs/multithreading/sections/concurrency/#switch">context switch</a> occurs during the execution of these three operations, or if the two threads are executed in parallel (i.e. on different cores),
 then the outcome <em>may</em> be unexpected.
 Among other possibilities, the following may happen:</p>
 <ul>
@@ -2073,19 +2073,19 @@ The following algorithm performs a matrix by vector multiplication with a &ldquo
 In general, a bug caused by a race condition cannot be consistently reproduced, <em>even on the same hardware</em>.
 </blockquote>
 
-<p>This is why race conditions are notoriously difficult to identify and/or debug, even for software that has been extensively tested (an notorious example of a race condition with a dramatic impact is the <a href="https://en.wikipedia.org/wiki/Northeast_blackout_of_2003">Northeast america blackout of 2003</a>).</p>
+<p>This is why race conditions are notoriously difficult to identify and/or debug, even for programs that has been extensively tested (a famous example of a race condition with a dramatic impact is the <a href="https://en.wikipedia.org/wiki/Northeast_blackout_of_2003">Northeastern United States blackout of 2003</a>).</p>
 <h2 id="caution">
   Caution
   <a class="anchor" href="#caution">#</a>
 </h2>
-<p>Multithreading is a good example (together for instance with caching the results of a computation) of an <em>error-prone</em> optimization technique,
+<p>Multithreading is a good example (together for instance with <em>caching</em> the results of a computation) of an <em>error-prone</em> optimization technique,
 which may impact on code readability and correctness.</p>
 <p>A common mistake made by less experienced developers is to use multithreading &ldquo;because we can&rdquo;.</p>
-<p>Instead, it is usually recommended to use multithreading cautiously, and only if some bottleneck has been identified in an application
+<p>Instead, it is often recommended to use multithreading cautiously, and only if some bottleneck has been identified in an application
 (e.g. with a
 <a href="https://en.wikipedia.org/wiki/Profiling_%28computer_programming%29">profiler</a>):
 unacceptable processing time, non-responsive GUI, etc.</p>
-<p>We reproduce here three citations made in <a href="">Effective Java</a> (Item 67, &ldquo;Optimize judiciously&rdquo;):</p>
+<p>We reproduce here three (loosely) related citations made in <a href="https://unibz-pp-23-24.github.io/docs/intro/sections/bibliography/#effectiveJava">Effective Java</a> (Item 67, &ldquo;Optimize judiciously&rdquo;):</p>
 <blockquote>
 <p>More computing sins are committed in the name of efficiency (without necessarily achieving it) than for any other single reason—including blind stupidity.</p>
 <p>William A. Wulf, 1972</p>
