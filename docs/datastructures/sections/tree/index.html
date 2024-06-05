@@ -24,7 +24,7 @@ Associative array as a binary search tree # Recall that an associative array is 
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.41a90f2659ee58d00d7ba9da8e2f77b6528c428bd7db8529dccb05714355745e.js" integrity="sha256-QakPJlnuWNANe6naji93tlKMQovX24Up3MsFcUNVdF4=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.43ac31575511e76bcefde5222339fa66aef0247052de4f945849adb68bd2aee1.js" integrity="sha256-Q6wxV1UR52vO/eUiIzn6Zq7wJHBS3k&#43;UWEmttovSruE=" crossorigin="anonymous"></script>
 
   
 
@@ -2059,7 +2059,7 @@ Again, let us assume keys have type $K$, and that values have type $V$.</p>
 
 <div class="book-tabs"><input type="radio" class="toggle" name="tabs-exercise_binTree" id="tabs-exercise_binTree-0" checked="checked" />
   <label for="tabs-exercise_binTree-0">Exercise</label>
-  <div class="book-tabs-content markdown-inner">If $d$ is the depth of the tree, what is the asymptotic worst case running time of this algorithm, expressed as a function of $d$?</div><input type="radio" class="toggle" name="tabs-exercise_binTree" id="tabs-exercise_binTree-1"  />
+  <div class="book-tabs-content markdown-inner">If $h$ is the height of the tree, what is the asymptotic worst case running time of this algorithm, expressed as a function of $h$?</div><input type="radio" class="toggle" name="tabs-exercise_binTree" id="tabs-exercise_binTree-1"  />
   <label for="tabs-exercise_binTree-1">Solution</label>
   <div class="book-tabs-content markdown-inner">$\Theta(d)$</div></div>
 
@@ -2067,7 +2067,7 @@ Again, let us assume keys have type $K$, and that values have type $V$.</p>
   Insert and delete
   <a class="anchor" href="#insert-and-delete">#</a>
 </h3>
-<p>Insertion and deletion can also be performed in linear time in the depth $d$ of the tree.</p>
+<p>Insertion and deletion can also be performed in linear time in the height $h$ of the tree.</p>
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <h2 id="benefits">
@@ -2083,7 +2083,7 @@ Besides, any <a href="">total order</a> can be used for this purpose (e.g. alpha
   <a class="anchor" href="#self-balancing-trees">#</a>
 </h2>
 <p><blockquote class="book-hint warning">
-  A <strong>self balancing tree</strong> is a specific type of BSTm which guarantees that the tree remains balanced after an insertion or deletion, meaning that its depth remains <em>logarithmic</em> in the number of nodes.
+  A <strong>self balancing tree</strong> is a specific type of BSTm which guarantees that the tree remains balanced after an insertion or deletion, meaning that its height remains <em>logarithmic</em> in the number of nodes.
 </blockquote>
 
 Two widely used types of self balancing trees are <a href="">red-black trees</a> and <a href="">AVL trees</a>.</p>

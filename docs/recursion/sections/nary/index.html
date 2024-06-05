@@ -24,7 +24,7 @@ All the binary tree algorithms seen earlier use binary recursion.">
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.41a90f2659ee58d00d7ba9da8e2f77b6528c428bd7db8529dccb05714355745e.js" integrity="sha256-QakPJlnuWNANe6naji93tlKMQovX24Up3MsFcUNVdF4=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.43ac31575511e76bcefde5222339fa66aef0247052de4f945849adb68bd2aee1.js" integrity="sha256-Q6wxV1UR52vO/eUiIzn6Zq7wJHBS3k&#43;UWEmttovSruE=" crossorigin="anonymous"></script>
 
   
 
@@ -2344,7 +2344,7 @@ A node $n$ is a <strong>winning node</strong> (for Alice) if:</p>
 </h3>
 <p>Let us start with a naive algorithm for games where:</p>
 <ul>
-<li>the depth the tree is finite (as opposed to chess for instance, where there can be infinite sequences of moves).</li>
+<li>the height of the tree is finite (as opposed to chess for instance, where there can be infinite sequences of moves).</li>
 <li>each leaf is a winning state for either Alice or Bob (as opposed to tic-tac-toe for instance, where there can be a draw).</li>
 </ul>
 <p>In such a game, every node of tree must be a winning node for Alice or for Bob.
@@ -2442,7 +2442,7 @@ For instance, in order to model tic-tac-toe, we may label some leaves with the v
 </h4>
 <blockquote class="book-hint danger">
   <p><strong><em>Warning</em></strong>
-Minimax can be <em>prohibitive</em> for games with an important tree depth (since the number of board states to explore may grow exponentially with the depth of the tree).</p>
+Minimax can be <em>prohibitive</em> for games with an important tree height (since the number of board states to explore may grow exponentially with the height of the tree).</p>
 <p>Besides, Minimax does <em>not</em> terminate if the tree has infinite branches (for instance in a chess game).</p>
 
 </blockquote>
