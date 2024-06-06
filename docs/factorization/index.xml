@@ -1,11 +1,32 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Code factorization on Programming project 2023-24</title>
+    <title>Simplifying code on Programming project 2023-24</title>
     <link>http://localhost:1313/docs/factorization/</link>
-    <description>Recent content in Code factorization on Programming project 2023-24</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Simplifying code on Programming project 2023-24</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/docs/factorization/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Code factorization</title>
+      <link>http://localhost:1313/docs/factorization/sections/factorization/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/factorization/sections/factorization/</guid>
+      <description>Code factorization # Duplicate code # generally produces programs&#xA;However, this approach is not scalable for a larger number nn of units types, because:&#xA;modifying the implementation requires modifying nn methods, and duplicated code means duplicated bugs. Duplicate code within a same project has notoriously undesirable consequences. In particular:&#xA;The program is harder to extend: adding a new feature may require modifying several nearly identical methods amd/or classes. duplicate code means duplicate bugs.</description>
+    </item>
+    <item>
+      <title>Break/continue statements and boolean flags</title>
+      <link>http://localhost:1313/docs/factorization/sections/break/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/factorization/sections/break/</guid>
+      <description>Break/continue statements and boolean variables # A method with multiple boolean flags can be complex to read and/or debug, in particular when combined with break and/or continue statements.&#xA;This situation can usually be avoided, for instance:&#xA;using auxiliary functions (e.g. replacing break statements with return statements), and/or (in Java) using streams with anyMatch, allMatch or findFirst. Example # Exercise&#xA;Rewrite the following Java method:&#xA;without boolean flag and without break statement.</description>
+    </item>
+    <item>
+      <title>Boolean conditions</title>
+      <link>http://localhost:1313/docs/factorization/sections/boolean/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/factorization/sections/boolean/</guid>
+      <description>Boolean conditions # A complex boolean sub-expression in the scope of a negation can be difficult to read and/or debug.&#xA;Example.&#xA;The two following expressions are equivalent, but the latter is arguably more readable:&#xA;$$ \neg(\neg(a \lor b) \land \neg (\neg c \lor d)) $$&#xA;$$ a \lor b \lor \neg c \lor d $$&#xA;Simplification # In a Boolean expression, negations can always be &amp;ldquo;pushed&amp;rdquo; inside parentheses, as follows:</description>
+    </item>
   </channel>
 </rss>

@@ -43,6 +43,13 @@
       <description>Dynamic arrays and linked lists # Dynamic array # A dynamic array is typically used to implement the abstract data type list.&#xA;Structure # A dynamic array stores the elements of a list in a regular array $A$, and keeps track of the size of the list. If the size of the list exceeds the capacity of $A$, then the content of $A$ is copied into a larger array $A&amp;rsquo;$, and $A$ is replaced with $A&amp;rsquo;$.</description>
     </item>
     <item>
+      <title>Factorizing</title>
+      <link>https://unibz-pp-23-24.github.io/docs/simplify/sections/factorization/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/simplify/sections/factorization/</guid>
+      <description>Factorizing # Duplicate code # Duplicate code within a same project has undesirable consequences. In particular:&#xA;Duplicate code means duplicate bugs. The application may be harder to extend: adding a new feature may require modifying several nearly identical copies of the same method and/or class. Factorizing # By code factorization, we mean eliminating duplicate statements or expressions, by analogy to the factorization of an algebraic expression (e.g. $(ab) + (ac)$ can be rewritten $a(b+c)$).</description>
+    </item>
+    <item>
       <title>Linear recursion</title>
       <link>https://unibz-pp-23-24.github.io/docs/recursion/sections/linear/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -139,6 +146,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/git/sections/collaboration/</guid>
       <description>Basics: network and collaboration # Network # In the previous section, Alice created and manipulated a git repository (with two branches).&#xA;She may also want to backup her work. To this end, she can upload some of her branches to a remote machine (often called &amp;ldquo;a remote&amp;rdquo;). For instance use a cloud hosting service for git repositories (such as GitHub, Gitlab, Bitbucket, etc.).&#xA;Whenever Alice wants to upload the content of a branch, she can push this branch to the remote.</description>
+    </item>
+    <item>
+      <title>Break statements and flags</title>
+      <link>https://unibz-pp-23-24.github.io/docs/simplify/sections/break/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/simplify/sections/break/</guid>
+      <description>Break statements and flags # A method with multiple boolean flags can be complex to read and/or debug, in particular when combined with break and/or continue statements.&#xA;This can usually be avoided:&#xA;using auxiliary functions, and/or (in Java) using streams with anyMatch, allMatch or findFirst. Example # Exercise Rewrite the following Java method:&#xA;without boolean flag and without break statement. /** * Returns true iff each of the input lists contains a number &amp;gt; 20 */ boolean check(List&amp;lt;List&amp;lt;Integer&amp;gt;&amp;gt; lists) { boolean flag1 = true; boolean flag2 = false; for (List&amp;lt;Integer&amp;gt; list : lists) { for (Integer value : list) { if (value &amp;gt; 20) { flag2 = true; break; } } if (!</description>
     </item>
     <item>
       <title>Class and instance</title>
@@ -293,6 +307,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/datastructures/sections/tree/</guid>
       <description>Binary search tree # A Binary Search Tree (BST) is another data structure used to store an associative array (e.g. a Java Map).&#xA;Definition. A BST is a binary tree such that each node&amp;rsquo;s label is:&#xA;larger than its left child&amp;rsquo;s label (if any), and smaller than its right child&amp;rsquo;s label (if any). Equivalently, a BST is a binary tree whose nodes are sorted w.r.t. in-order traversal.&#xA;Associative array as a binary search tree # Recall that an associative array is a finite set of key-value pairs.</description>
+    </item>
+    <item>
+      <title>Boolean conditions</title>
+      <link>https://unibz-pp-23-24.github.io/docs/simplify/sections/boolean/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/simplify/sections/boolean/</guid>
+      <description>Boolean conditions # A complex boolean sub-expression in the scope of a negation can be difficult to read and/or debug.&#xA;Example. The two following expressions are equivalent (but the latter is arguably easier to read):&#xA;$$ \neg(\neg(a \lor b) \land \neg (\neg c \lor d)) $$&#xA;$$ a \lor b \lor \neg c \lor d $$&#xA;Simplification # In a Boolean expression, negations can always be &amp;ldquo;pushed&amp;rdquo; inside parentheses, as follows:</description>
     </item>
     <item>
       <title>Configuration</title>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Simplifying code on Programming project 2023-24</title>
+    <link>https://unibz-pp-23-24.github.io/docs/simplify/</link>
+    <description>Recent content in Simplifying code on Programming project 2023-24</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://unibz-pp-23-24.github.io/docs/simplify/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Factorizing</title>
+      <link>https://unibz-pp-23-24.github.io/docs/simplify/sections/factorization/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/simplify/sections/factorization/</guid>
+      <description>Factorizing # Duplicate code # Duplicate code within a same project has undesirable consequences. In particular:&#xA;Duplicate code means duplicate bugs. The application may be harder to extend: adding a new feature may require modifying several nearly identical copies of the same method and/or class. Factorizing # By code factorization, we mean eliminating duplicate statements or expressions, by analogy to the factorization of an algebraic expression (e.g. $(ab) + (ac)$ can be rewritten $a(b+c)$).</description>
+    </item>
+    <item>
+      <title>Break statements and flags</title>
+      <link>https://unibz-pp-23-24.github.io/docs/simplify/sections/break/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/simplify/sections/break/</guid>
+      <description>Break statements and flags # A method with multiple boolean flags can be complex to read and/or debug, in particular when combined with break and/or continue statements.&#xA;This can usually be avoided:&#xA;using auxiliary functions, and/or (in Java) using streams with anyMatch, allMatch or findFirst. Example # Exercise Rewrite the following Java method:&#xA;without boolean flag and without break statement. /** * Returns true iff each of the input lists contains a number &amp;gt; 20 */ boolean check(List&amp;lt;List&amp;lt;Integer&amp;gt;&amp;gt; lists) { boolean flag1 = true; boolean flag2 = false; for (List&amp;lt;Integer&amp;gt; list : lists) { for (Integer value : list) { if (value &amp;gt; 20) { flag2 = true; break; } } if (!</description>
+    </item>
+    <item>
+      <title>Boolean conditions</title>
+      <link>https://unibz-pp-23-24.github.io/docs/simplify/sections/boolean/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://unibz-pp-23-24.github.io/docs/simplify/sections/boolean/</guid>
+      <description>Boolean conditions # A complex boolean sub-expression in the scope of a negation can be difficult to read and/or debug.&#xA;Example. The two following expressions are equivalent (but the latter is arguably easier to read):&#xA;$$ \neg(\neg(a \lor b) \land \neg (\neg c \lor d)) $$&#xA;$$ a \lor b \lor \neg c \lor d $$&#xA;Simplification # In a Boolean expression, negations can always be &amp;ldquo;pushed&amp;rdquo; inside parentheses, as follows:</description>
+    </item>
+  </channel>
+</rss>
