@@ -47,7 +47,7 @@
       <link>https://unibz-pp-23-24.github.io/docs/intro/sections/bibliography/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/intro/sections/bibliography/</guid>
-      <description>Bibliography # Java&amp;rsquo;s syntax # In each chapter of this course, you will find Java code snippets that illustrate how to perform certain operations. However, this documentation is far from exhaustive (on purpose).&#xA;So when it comes to syntax, the first two sources of complementary material for this course are:&#xA;the Javadoc of the libraries (standard and auxiliary) used in your project/assignments. Your IDE is often the fastest way to navigate through it, the web.</description>
+      <description>Bibliography # Java&amp;rsquo;s syntax # This website contains Java code snippets that illustrate how to perform certain operations. However, this documentation is far from exhaustive (on purpose).&#xA;When it comes to syntax, the first two sources of complementary material for this course are:&#xA;the Javadoc of the libraries (standard and auxiliary) used in projects and assignments. An IDE is often the fastest way to navigate through it, the web. Books # A reading list for this course is available in the catalogue of the Unibz&amp;rsquo;s library.</description>
     </item>
   </channel>
 </rss>

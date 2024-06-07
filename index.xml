@@ -152,7 +152,7 @@
       <link>https://unibz-pp-23-24.github.io/docs/simplify/sections/break/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/simplify/sections/break/</guid>
-      <description>Break statements and flags # A method with multiple boolean flags can be complex to read and/or debug, in particular when combined with break and/or continue statements.&#xA;This can usually be avoided:&#xA;using auxiliary functions, and/or (in Java) using streams with anyMatch, allMatch or findFirst. Example # Exercise Rewrite the following Java method:&#xA;without boolean flag and without break statement. /** * Returns true iff each of the input lists contains a number &amp;gt; 20 */ boolean check(List&amp;lt;List&amp;lt;Integer&amp;gt;&amp;gt; lists) { boolean flag1 = true; boolean flag2 = false; for (List&amp;lt;Integer&amp;gt; list : lists) { for (Integer value : list) { if (value &amp;gt; 20) { flag2 = true; break; } } if (!</description>
+      <description>Break statements and flags # A method with multiple boolean flags can be complex to read and/or debug, in particular when combined with break and/or continue statements.&#xA;This can usually be avoided:&#xA;using return statements (possibly with auxiliary functions), and/or (in Java) using streams with anyMatch, allMatch or findFirst. Example # Exercise Rewrite the following Java method:&#xA;without boolean flag and without break statement. /** * Returns true iff each of the input lists contains a number &amp;gt; 20 */ boolean check(List&amp;lt;List&amp;lt;Integer&amp;gt;&amp;gt; lists) { boolean flag1 = true; boolean flag2 = false; for (List&amp;lt;Integer&amp;gt; list : lists) { for (Integer value : list) { if (value &amp;gt; 20) { flag2 = true; break; } } if (!</description>
     </item>
     <item>
       <title>Class and instance</title>
@@ -544,7 +544,7 @@
       <link>https://unibz-pp-23-24.github.io/docs/intro/sections/bibliography/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://unibz-pp-23-24.github.io/docs/intro/sections/bibliography/</guid>
-      <description>Bibliography # Java&amp;rsquo;s syntax # In each chapter of this course, you will find Java code snippets that illustrate how to perform certain operations. However, this documentation is far from exhaustive (on purpose).&#xA;So when it comes to syntax, the first two sources of complementary material for this course are:&#xA;the Javadoc of the libraries (standard and auxiliary) used in your project/assignments. Your IDE is often the fastest way to navigate through it, the web.</description>
+      <description>Bibliography # Java&amp;rsquo;s syntax # This website contains Java code snippets that illustrate how to perform certain operations. However, this documentation is far from exhaustive (on purpose).&#xA;When it comes to syntax, the first two sources of complementary material for this course are:&#xA;the Javadoc of the libraries (standard and auxiliary) used in projects and assignments. An IDE is often the fastest way to navigate through it, the web. Books # A reading list for this course is available in the catalogue of the Unibz&amp;rsquo;s library.</description>
     </item>
     <item>
       <title>Building</title>
