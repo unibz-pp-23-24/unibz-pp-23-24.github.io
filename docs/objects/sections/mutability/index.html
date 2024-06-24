@@ -22,7 +22,7 @@ public class User { int id; String name; } /* Input: - ids: a nonempty array of 
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.92a56eda498087be6e972cb25e8b0cc7e594122f410fe985c249d673b045adf7.js" integrity="sha256-kqVu2kmAh75ulyyyXosMx&#43;WUEi9BD&#43;mFwknWc7BFrfc=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.9df8480389b66566145460de768be5431529b076246e90021ed54016154c7210.js" integrity="sha256-nfhIA4m2ZWYUVGDedovlQxUpsHYkbpACHtVAFhVMchA=" crossorigin="anonymous"></script>
 
   
 
@@ -1427,6 +1427,66 @@ https://github.com/alex-shpak/hugo-book
   
 
   
+    <input type="checkbox" id="section-0407f110c1b3ed4992fcb7fc5f05aa12" class="toggle"  />
+    <label for="section-0407f110c1b3ed4992fcb7fc5f05aa12" class="flex justify-between">
+      <a href="/docs/simplify/" class="">Simplifying code</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/simplify/sections/factorization/" class="">Factorizing</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/simplify/sections/break/" class="">Break statements and flags</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/simplify/sections/boolean/" class="">Boolean conditions</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
     <input type="checkbox" id="section-494fdb80ca3ad5d2868cb487a042ae27" class="toggle"  />
     <label for="section-494fdb80ca3ad5d2868cb487a042ae27" class="flex justify-between">
       <a href="/docs/env/" class="">Development environment</a>
@@ -1548,66 +1608,6 @@ https://github.com/alex-shpak/hugo-book
 
   
     <a href="/docs/env/sections/terminal/" class="">Terminal</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-0407f110c1b3ed4992fcb7fc5f05aa12" class="toggle"  />
-    <label for="section-0407f110c1b3ed4992fcb7fc5f05aa12" class="flex justify-between">
-      <a href="/docs/simplify/" class="">Simplifying code</a>
-    </label>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/simplify/sections/factorization/" class="">Factorizing</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/simplify/sections/break/" class="">Break statements and flags</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/simplify/sections/boolean/" class="">Boolean conditions</a>
   
 
         </li>
@@ -2141,7 +2141,7 @@ This would have prevented compilation of the incorrect program above.</p>
 <li><strong><em>Easier debugging:</em></strong> as illustrated above, forcing an object to be immutable may prevent an incorrect program to compile.
 Compile-time errors are usually easier to fix that bugs.</li>
 <li><strong><em>Readability:</em></strong> code that modifies or reuses objects can be harder to understand (and <em>reason</em> about) than code that creates (fresh) immutable objects.</li>
-<li><strong><em>Thread-safety:</em></strong> multiple threads can access an immutable object concurrently without <a href="">race condition</a>.</li>
+<li><strong><em>Thread-safety:</em></strong> multiple threads can access an immutable object concurrently without <a href="https://unibz-pp-23-24.github.io/docs/multithreading/sections/race/">race condition</a>.</li>
 <li><strong><em>Easier collaboration and maintenance:</em></strong> Alice can safely pass an immutable object to Bob (i.e. make the object visible to Bob&rsquo;s code).
 This will not affect the correctness of Alice&rsquo;s code (because Bob&rsquo;s code cannot modify this object).</li>
 </ul>
@@ -2389,7 +2389,7 @@ It provides instance methods like <code>append</code>, <code>insert</code>, <cod
 </h4>
 <p>Java&rsquo;s <a href="https://unibz-pp-23-24.github.io/docs/objects/sections/quasi-objects/#boxedTypes">boxed types</a> (like <code>Integer</code> or <code>Boolean</code>) are immutable.</p>
 <p>However, each boxed types has a mutable &ldquo;atomic&rdquo; counterpart, e.g. <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/atomic/AtomicInteger.html">AtomicInteger</a> for <code>Integer</code> and <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/atomic/AtomicBoolean.html">AtomicBoolean</a> for <code>Boolean</code>.</p>
-<p>The main purpose of these classes is to offer build-in <a href="">thread safety</a> for common sequences of operations.
+<p>The main purpose of these classes is to offer build-in <a href="https://unibz-pp-23-24.github.io/docs/multithreading/sections/abstractions/#atomic">thread safety</a> for common sequences of operations.
 For instance, <code>AtomicInteger</code> provides a method equivalent to <code>i++</code>, but thread-safe (note that <code>i++</code> is a shortcut for three operations: read the value, increment it and write it back).</p>
 
 

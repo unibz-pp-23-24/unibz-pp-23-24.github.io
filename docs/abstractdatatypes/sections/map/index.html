@@ -20,7 +20,7 @@ lookup (or get) takes a key as input, and returns the value for this key (if any
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.92a56eda498087be6e972cb25e8b0cc7e594122f410fe985c249d673b045adf7.js" integrity="sha256-kqVu2kmAh75ulyyyXosMx&#43;WUEi9BD&#43;mFwknWc7BFrfc=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.9df8480389b66566145460de768be5431529b076246e90021ed54016154c7210.js" integrity="sha256-nfhIA4m2ZWYUVGDedovlQxUpsHYkbpACHtVAFhVMchA=" crossorigin="anonymous"></script>
 
   
 
@@ -1425,6 +1425,66 @@ https://github.com/alex-shpak/hugo-book
   
 
   
+    <input type="checkbox" id="section-0407f110c1b3ed4992fcb7fc5f05aa12" class="toggle"  />
+    <label for="section-0407f110c1b3ed4992fcb7fc5f05aa12" class="flex justify-between">
+      <a href="/docs/simplify/" class="">Simplifying code</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/simplify/sections/factorization/" class="">Factorizing</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/simplify/sections/break/" class="">Break statements and flags</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/simplify/sections/boolean/" class="">Boolean conditions</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
     <input type="checkbox" id="section-494fdb80ca3ad5d2868cb487a042ae27" class="toggle"  />
     <label for="section-494fdb80ca3ad5d2868cb487a042ae27" class="flex justify-between">
       <a href="/docs/env/" class="">Development environment</a>
@@ -1546,66 +1606,6 @@ https://github.com/alex-shpak/hugo-book
 
   
     <a href="/docs/env/sections/terminal/" class="">Terminal</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-0407f110c1b3ed4992fcb7fc5f05aa12" class="toggle"  />
-    <label for="section-0407f110c1b3ed4992fcb7fc5f05aa12" class="flex justify-between">
-      <a href="/docs/simplify/" class="">Simplifying code</a>
-    </label>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/simplify/sections/factorization/" class="">Factorizing</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/simplify/sections/break/" class="">Break statements and flags</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/simplify/sections/boolean/" class="">Boolean conditions</a>
   
 
         </li>
@@ -2175,13 +2175,13 @@ For instance, a map from integers to strings has type <code>Map&lt;Integer, Stri
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Holds the entry&#39;s value</span>
 </span></span><span style="display:flex;"><span>    City city <span style="color:#f92672">=</span> entry.<span style="color:#a6e22e">getValue</span>();
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>Again, we refer to the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html">Javadoc</a> for an exhaustive documentation.</p>
+</span></span></code></pre></div><p>Again, we refer to the <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html">Javadoc</a> for an exhaustive documentation.</p>
 <h3 id="comparing-keys">
   Comparing keys
   <a class="anchor" href="#comparing-keys">#</a>
 </h3>
-<p>The identity of two keys in Java is determined by the method <code>equals</code>, analogously to what we saw <a href="">already</a> for the identity of two elements in a set.</p>
-<p>For instance, consider once again the classes <code>City</code> and <code>SmartCity</code> that we used in the section on <a href="">sets</a>, where <code>SmartCity</code> overrides <code>equals</code> (and <code>hashCode</code>), whereas <code>City</code> does not:</p>
+<p>The identity of two keys in Java is determined by the method <code>equals</code>, analogously to what we saw <a href="https://unibz-pp-23-24.github.io/docs/objects/sections/comparing/#equals">already</a> for the identity of two elements in a set.</p>
+<p>For instance, consider once again the classes <code>City</code> and <code>SmartCity</code> that we used in the section on <a href="https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/set/#duplicates">sets</a>, where <code>SmartCity</code> overrides <code>equals</code> (and <code>hashCode</code>), whereas <code>City</code> does not:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>City trento <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Trento&#34;</span>, 38100);
 </span></span><span style="display:flex;"><span>City trentoAgain <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Trento&#34;</span>, 38100);
 </span></span><span style="display:flex;"><span>Country italy <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Country(<span style="color:#e6db74">&#34;Italy&#34;</span>);

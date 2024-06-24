@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content=" I/O and serialization # This chapter mostly focuses on Java.
 It provides (mostly syntactic) information about:
-navigating or manipulating files and directories, reading from and writing to a test file, property files, serializing (and deserializing) a Java object, either natively, or as a JSON object (via Jackson). ">
+navigating or manipulating files and directories, reading from and writing to a file, property files, serializing (and deserializing) a Java object, either natively, or as a JSON object (via Jackson). ">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/input/">
@@ -13,7 +13,7 @@ navigating or manipulating files and directories, reading from and writing to a 
   <meta property="og:title" content="I/O and serialization">
   <meta property="og:description" content=" I/O and serialization # This chapter mostly focuses on Java.
 It provides (mostly syntactic) information about:
-navigating or manipulating files and directories, reading from and writing to a test file, property files, serializing (and deserializing) a Java object, either natively, or as a JSON object (via Jackson). ">
+navigating or manipulating files and directories, reading from and writing to a file, property files, serializing (and deserializing) a Java object, either natively, or as a JSON object (via Jackson). ">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="website">
 <title>I/O and serialization | Programming project 2023-24</title>
@@ -21,7 +21,7 @@ navigating or manipulating files and directories, reading from and writing to a 
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.92a56eda498087be6e972cb25e8b0cc7e594122f410fe985c249d673b045adf7.js" integrity="sha256-kqVu2kmAh75ulyyyXosMx&#43;WUEi9BD&#43;mFwknWc7BFrfc=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.9df8480389b66566145460de768be5431529b076246e90021ed54016154c7210.js" integrity="sha256-nfhIA4m2ZWYUVGDedovlQxUpsHYkbpACHtVAFhVMchA=" crossorigin="anonymous"></script>
 
   
 
@@ -1427,6 +1427,66 @@ https://github.com/alex-shpak/hugo-book
   
 
   
+    <input type="checkbox" id="section-0407f110c1b3ed4992fcb7fc5f05aa12" class="toggle"  />
+    <label for="section-0407f110c1b3ed4992fcb7fc5f05aa12" class="flex justify-between">
+      <a href="/docs/simplify/" class="">Simplifying code</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/simplify/sections/factorization/" class="">Factorizing</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/simplify/sections/break/" class="">Break statements and flags</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/simplify/sections/boolean/" class="">Boolean conditions</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
     <input type="checkbox" id="section-494fdb80ca3ad5d2868cb487a042ae27" class="toggle"  />
     <label for="section-494fdb80ca3ad5d2868cb487a042ae27" class="flex justify-between">
       <a href="/docs/env/" class="">Development environment</a>
@@ -1548,66 +1608,6 @@ https://github.com/alex-shpak/hugo-book
 
   
     <a href="/docs/env/sections/terminal/" class="">Terminal</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-0407f110c1b3ed4992fcb7fc5f05aa12" class="toggle"  />
-    <label for="section-0407f110c1b3ed4992fcb7fc5f05aa12" class="flex justify-between">
-      <a href="/docs/simplify/" class="">Simplifying code</a>
-    </label>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/simplify/sections/factorization/" class="">Factorizing</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/simplify/sections/break/" class="">Break statements and flags</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/simplify/sections/boolean/" class="">Boolean conditions</a>
   
 
         </li>
@@ -2041,7 +2041,7 @@ https://github.com/alex-shpak/hugo-book
 <p>It provides (mostly syntactic) information about:</p>
 <ul>
 <li><a href="https://unibz-pp-23-24.github.io/docs/input/sections/files/#navigation">navigating</a> or <a href="https://unibz-pp-23-24.github.io/docs/input/sections/files/#manipulation">manipulating</a> files and directories,</li>
-<li><a href="https://unibz-pp-23-24.github.io/docs/input/sections/read/#read">reading</a> from and <a href="https://unibz-pp-23-24.github.io/docs/input/sections/read/#write">writing</a> to a test file,</li>
+<li><a href="https://unibz-pp-23-24.github.io/docs/input/sections/read/#read">reading</a> from and <a href="https://unibz-pp-23-24.github.io/docs/input/sections/read/#write">writing</a> to a file,</li>
 <li><a href="https://unibz-pp-23-24.github.io/docs/input/sections/property/">property files</a>,</li>
 <li>serializing (and deserializing) a Java object, either <a href="https://unibz-pp-23-24.github.io/docs/input/sections/serialize/">natively</a>, or as a <a href="https://unibz-pp-23-24.github.io/docs/input/sections/json/">JSON object</a> (via Jackson).</li>
 </ul>

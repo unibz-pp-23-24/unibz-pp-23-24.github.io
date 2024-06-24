@@ -20,7 +20,7 @@ Static attributes and methods # Static attributes # Java (as well as C# and C&#4
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.92a56eda498087be6e972cb25e8b0cc7e594122f410fe985c249d673b045adf7.js" integrity="sha256-kqVu2kmAh75ulyyyXosMx&#43;WUEi9BD&#43;mFwknWc7BFrfc=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.9df8480389b66566145460de768be5431529b076246e90021ed54016154c7210.js" integrity="sha256-nfhIA4m2ZWYUVGDedovlQxUpsHYkbpACHtVAFhVMchA=" crossorigin="anonymous"></script>
 
   
 
@@ -1425,6 +1425,66 @@ https://github.com/alex-shpak/hugo-book
   
 
   
+    <input type="checkbox" id="section-0407f110c1b3ed4992fcb7fc5f05aa12" class="toggle"  />
+    <label for="section-0407f110c1b3ed4992fcb7fc5f05aa12" class="flex justify-between">
+      <a href="/docs/simplify/" class="">Simplifying code</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/simplify/sections/factorization/" class="">Factorizing</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/simplify/sections/break/" class="">Break statements and flags</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/simplify/sections/boolean/" class="">Boolean conditions</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
     <input type="checkbox" id="section-494fdb80ca3ad5d2868cb487a042ae27" class="toggle"  />
     <label for="section-494fdb80ca3ad5d2868cb487a042ae27" class="flex justify-between">
       <a href="/docs/env/" class="">Development environment</a>
@@ -1546,66 +1606,6 @@ https://github.com/alex-shpak/hugo-book
 
   
     <a href="/docs/env/sections/terminal/" class="">Terminal</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-0407f110c1b3ed4992fcb7fc5f05aa12" class="toggle"  />
-    <label for="section-0407f110c1b3ed4992fcb7fc5f05aa12" class="flex justify-between">
-      <a href="/docs/simplify/" class="">Simplifying code</a>
-    </label>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/simplify/sections/factorization/" class="">Factorizing</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/simplify/sections/break/" class="">Break statements and flags</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/simplify/sections/boolean/" class="">Boolean conditions</a>
   
 
         </li>
@@ -2025,7 +2025,7 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#static-attributes-and-methods">Static attributes and methods</a>
       <ul>
         <li><a href="#staticAttributes">Static attributes</a></li>
-        <li><a href="#static-methods">Static methods</a></li>
+        <li><a href="#staticMethods">Static methods</a></li>
         <li><a href="#inheritance">Inheritance</a></li>
       </ul>
     </li>
@@ -2088,9 +2088,9 @@ But the value of <code>configFile</code> is <em>unique</em>.</p>
 <p>For instance, the following program creates in memory a <em>unique</em> string for <code>configFile</code>, which is carried by the class.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Unicorn u1 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Unicorn();
 </span></span><span style="display:flex;"><span>Unicorn u2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Unicorn();
-</span></span></code></pre></div><h3 id="static-methods">
+</span></span></code></pre></div><h3 id="staticMethods">
   Static methods
-  <a class="anchor" href="#static-methods">#</a>
+  <a class="anchor" href="#staticMethods">#</a>
 </h3>
 <blockquote class="book-hint warning">
   Similarly to a static attribute, a <strong>static method</strong> does not depend on a specific object, as opposed to an <a href="https://unibz-pp-23-24.github.io/docs/objects/sections/methods/">instance method</a>.
@@ -2176,7 +2176,7 @@ It can be accessed either:</p>
 <li>or via the qualified name of the class (assuming for instance that the file <code>Unicorn.java</code> is in the folder <code>&lt;workingDirectory&gt;/src/main/java/org/units</code>):</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Class unicornClass <span style="color:#f92672">=</span> Class.<span style="color:#a6e22e">forName</span>(<span style="color:#e6db74">&#34;org.units.Unicorn&#34;</span>);
-</span></span></code></pre></div><p>The instance methods of the class <code>Class</code> are listed <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html">here</a>.
+</span></span></code></pre></div><p>The instance methods of the class <code>Class</code> are listed <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html">here</a>.
 Among others, they allow:</p>
 <ul>
 <li>listing the attributes of the class,</li>
@@ -2231,7 +2231,7 @@ Notably, it is used (internally) by numerous <a href="https://en.wikipedia.org/w
     <li><a href="#static-attributes-and-methods">Static attributes and methods</a>
       <ul>
         <li><a href="#staticAttributes">Static attributes</a></li>
-        <li><a href="#static-methods">Static methods</a></li>
+        <li><a href="#staticMethods">Static methods</a></li>
         <li><a href="#inheritance">Inheritance</a></li>
       </ul>
     </li>
