@@ -2378,15 +2378,30 @@ In such a tree, several nodes may represent the <em>same</em> board state (e.g. 
 In both exercises above, we were able to determine that Alice had already won the game, <em>regardless</em> of Bob&rsquo;s actions.
 Intuitively, this holds iff:</p>
 <ul>
-<li><em>there is</em> a move for Alice such that,</li>
-<li>for <em>every</em> possible move of Bob,</li>
-<li><em>there is</em> a move for Alice such that,</li>
-<li>for <em>every</em> possible move of Bob,</li>
-<li>&hellip;</li>
+<li><em>there is</em> a move for Alice such that,
+<ul>
+<li>for <em>every</em> possible move of Bob,
+<ul>
+<li><em>there is</em> a move for Alice such that,
+<ul>
+<li>for <em>every</em> possible move of Bob,
+<ul>
+<li>&hellip;
+<ul>
 <li>either:
 <ul>
 <li><em>there is</em> a move for Alice that produces a winning state for Alice, or</li>
 <li><em>every</em> possible move of Bob produces a winning state for Alice.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
