@@ -3,15 +3,42 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Dynamic arrays and linked lists # Dynamic array # A dynamic array is typically used to implement the abstract data type list.
-Structure # A dynamic array stores the elements of a list in a regular array $A$, and keeps track of the size of the list. If the size of the list exceeds the capacity of $A$, then the content of $A$ is copied into a larger array $A&rsquo;$, and $A$ is replaced with $A&rsquo;$.">
+<meta name="description" content="
+  Dynamic arrays and linked lists
+  #
+
+
+  Dynamic array
+  #
+
+A dynamic array is typically used to implement the abstract data type list.
+
+  Structure
+  #
+
+
+  A dynamic array stores the elements of a list in a regular array $A$, and keeps track of the size of the list.
+If the size of the list exceeds the capacity of $A$, then the content of $A$ is copied into a larger array $A&rsquo;$,
+and $A$ is replaced with $A&rsquo;$.
+
+
+
+  Array dequeue
+  #
+
+
+  An array dequeue is a variant of a dynamic array that allows the list to be extended in both directions.
+The array is initially populated from its middle index.
+
+
+In addition to a list, an array dequeue is commonly used to implement a queue and/or a stack.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/datastructures/sections/list/">
   <meta property="og:site_name" content="Programming project 2023-24">
   <meta property="og:title" content="Dynamic array and linked list">
-  <meta property="og:description" content="Dynamic arrays and linked lists # Dynamic array # A dynamic array is typically used to implement the abstract data type list.
-Structure # A dynamic array stores the elements of a list in a regular array $A$, and keeps track of the size of the list. If the size of the list exceeds the capacity of $A$, then the content of $A$ is copied into a larger array $A’$, and $A$ is replaced with $A’$.">
+  <meta property="og:description" content=" Dynamic arrays and linked lists # Dynamic array # A dynamic array is typically used to implement the abstract data type list.
+Structure # A dynamic array stores the elements of a list in a regular array $A$, and keeps track of the size of the list. If the size of the list exceeds the capacity of $A$, then the content of $A$ is copied into a larger array $A’$, and $A$ is replaced with $A’$. Array dequeue # An array dequeue is a variant of a dynamic array that allows the list to be extended in both directions. The array is initially populated from its middle index. In addition to a list, an array dequeue is commonly used to implement a queue and/or a stack.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -20,10 +47,7 @@ Structure # A dynamic array stores the elements of a list in a regular array $A$
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.59ce44e9d32a867364e12192f656795ca69303cdacf4449ae53dbb628c693ecd.js" integrity="sha256-Wc5E6dMqhnNk4SGS9lZ5XKaTA82s9ESa5T27YoxpPs0=" crossorigin="anonymous"></script>
-
-  
-
+  <script defer src="/en.search.min.06f98e7788ab7028d5ccc8a006fe303731be4d5640f5deb619455f9721568fd2.js" integrity="sha256-BvmOd4ircCjVzMigBv4wNzG&#43;TVZA9d62GUVflyFWj9I=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -2160,58 +2184,58 @@ In addition to a <a href="https://unibz-pp-23-24.github.io/docs/abstractdatatype
 </div><input type="radio" class="toggle" name="tabs-my_exercise" id="tabs-my_exercise-1"  />
   <label for="tabs-my_exercise-1">Solution</label>
   <div class="book-tabs-content markdown-inner"><table>
-<thead>
-<tr>
-<th>problem</th>
-<th>dynamic array</th>
-<th>linked list</th>
-<th>doubly linked list</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>read or modify the value at position $i$</td>
-<td>$\Theta(1)$</td>
-<td>$\Theta(i)$</td>
-<td>$\Theta(i)$</td>
-</tr>
-<tr>
-<td>remove the element at position $i$</td>
-<td>$\Theta(n)$</td>
-<td>$\Theta(n)$</td>
-<td>$\Theta(n)$</td>
-</tr>
-<tr>
-<td>add an element at the beginning of the list</td>
-<td>$\Theta(n)$</td>
-<td>$\Theta(1)$</td>
-<td>$\Theta(1)$</td>
-</tr>
-<tr>
-<td>add an element at the end of the list</td>
-<td>$\Theta(1)$</td>
-<td>$\Theta(n)$</td>
-<td>$\Theta(n)$</td>
-</tr>
-<tr>
-<td>remove the first element of the list</td>
-<td>$\Theta(n)$</td>
-<td>$\Theta(1)$</td>
-<td>$\Theta(1)$</td>
-</tr>
-<tr>
-<td>remove the last element of the list</td>
-<td>$\Theta(1)$</td>
-<td>$\Theta(n)$</td>
-<td>$\Theta(1)$</td>
-</tr>
-<tr>
-<td>concatenate two lists</td>
-<td>$\Theta(n)$</td>
-<td>$\Theta(n)$</td>
-<td>$\Theta(1)$</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left">problem</th>
+          <th style="text-align: left">dynamic array</th>
+          <th style="text-align: left">linked list</th>
+          <th style="text-align: left">doubly linked list</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">read or modify the value at position $i$</td>
+          <td style="text-align: left">$\Theta(1)$</td>
+          <td style="text-align: left">$\Theta(i)$</td>
+          <td style="text-align: left">$\Theta(i)$</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">remove the element at position $i$</td>
+          <td style="text-align: left">$\Theta(n)$</td>
+          <td style="text-align: left">$\Theta(n)$</td>
+          <td style="text-align: left">$\Theta(n)$</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">add an element at the beginning of the list</td>
+          <td style="text-align: left">$\Theta(n)$</td>
+          <td style="text-align: left">$\Theta(1)$</td>
+          <td style="text-align: left">$\Theta(1)$</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">add an element at the end of the list</td>
+          <td style="text-align: left">$\Theta(1)$</td>
+          <td style="text-align: left">$\Theta(n)$</td>
+          <td style="text-align: left">$\Theta(n)$</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">remove the first element of the list</td>
+          <td style="text-align: left">$\Theta(n)$</td>
+          <td style="text-align: left">$\Theta(1)$</td>
+          <td style="text-align: left">$\Theta(1)$</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">remove the last element of the list</td>
+          <td style="text-align: left">$\Theta(1)$</td>
+          <td style="text-align: left">$\Theta(n)$</td>
+          <td style="text-align: left">$\Theta(1)$</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">concatenate two lists</td>
+          <td style="text-align: left">$\Theta(n)$</td>
+          <td style="text-align: left">$\Theta(n)$</td>
+          <td style="text-align: left">$\Theta(1)$</td>
+      </tr>
+  </tbody>
 </table>
 </div></div>
 

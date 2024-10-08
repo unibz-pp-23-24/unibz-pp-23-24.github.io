@@ -3,17 +3,35 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Duplicating objects # In some scenarios, it may be useful to duplicate an object.
-In Java, as we saw earlier, copying the value of a variable with reference type does not copy the object that it references. For instance, the following program outputs &ldquo;yellow&rdquo;:
-Unicorn unicorn = new Unicorn(&#34;green&#34;); Unicorn shallowCopy = unicorn; unicorn.color = &#34;yellow&#34;; System.out.println(shallowCopy.color); The need to duplicate objects may notably appear in a program that rely on concurrency.">
+<meta name="description" content="
+  Duplicating objects
+  #
+
+In some scenarios, it may be useful to duplicate an object.
+In Java, as we saw earlier, copying the value of a variable with reference type does not copy the object that it references.
+For instance, the following program outputs &ldquo;yellow&rdquo;:
+Unicorn unicorn = new Unicorn(&#34;green&#34;);
+Unicorn shallowCopy = unicorn;
+
+unicorn.color = &#34;yellow&#34;;
+System.out.println(shallowCopy.color);
+The need to duplicate objects may notably appear in a program that rely on concurrency.
+
+
+
+
+
+  Exercise
+  In our game, the &ldquo;view&rdquo; component is in charge of rendering the game visually.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/objects/sections/clone/">
   <meta property="og:site_name" content="Programming project 2023-24">
   <meta property="og:title" content="Duplicating objects">
-  <meta property="og:description" content="Duplicating objects # In some scenarios, it may be useful to duplicate an object.
+  <meta property="og:description" content=" Duplicating objects # In some scenarios, it may be useful to duplicate an object.
 In Java, as we saw earlier, copying the value of a variable with reference type does not copy the object that it references. For instance, the following program outputs “yellow”:
-Unicorn unicorn = new Unicorn(&#34;green&#34;); Unicorn shallowCopy = unicorn; unicorn.color = &#34;yellow&#34;; System.out.println(shallowCopy.color); The need to duplicate objects may notably appear in a program that rely on concurrency.">
+Unicorn unicorn = new Unicorn(&#34;green&#34;); Unicorn shallowCopy = unicorn; unicorn.color = &#34;yellow&#34;; System.out.println(shallowCopy.color); The need to duplicate objects may notably appear in a program that rely on concurrency.
+Exercise In our game, the “view” component is in charge of rendering the game visually.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -22,10 +40,7 @@ Unicorn unicorn = new Unicorn(&#34;green&#34;); Unicorn shallowCopy = unicorn; u
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.59ce44e9d32a867364e12192f656795ca69303cdacf4449ae53dbb628c693ecd.js" integrity="sha256-Wc5E6dMqhnNk4SGS9lZ5XKaTA82s9ESa5T27YoxpPs0=" crossorigin="anonymous"></script>
-
-  
-
+  <script defer src="/en.search.min.06f98e7788ab7028d5ccc8a006fe303731be4d5640f5deb619455f9721568fd2.js" integrity="sha256-BvmOd4ircCjVzMigBv4wNzG&#43;TVZA9d62GUVflyFWj9I=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
