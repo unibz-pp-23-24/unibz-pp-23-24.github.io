@@ -3,44 +3,17 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="
-  Race condition
-  #
-
-
-  Definition.
-A race condition occurs when the outcome of a program may vary depending on the order in which two threads access a resource.
-
-
-
-  Illustrations
-  #
-
-
-  Example.
-The following program (in pseudocode) apparently increments variable i twice.
-However, it may output either 1 or 2, depending on the execution environment:
-int i = 0
-
-spawn i&#43;&#43;
-
-i&#43;&#43;
-
-sync
-
-print(i)
-The reason is that a core does not increment the value of a variable as an atomic operation.
-Instead, an increment is a sequence of three instructions:">
+<meta name="description" content="Race condition # Definition. A race condition occurs when the outcome of a program may vary depending on the order in which two threads access a resource. Illustrations # Example. The following program (in pseudocode) apparently increments variable i twice. However, it may output either 1 or 2, depending on the execution environment:
+int i = 0 spawn i&#43;&#43; i&#43;&#43; sync print(i) The reason is that a core does not increment the value of a variable as an atomic operation.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/multithreading/sections/race/">
-  <meta property="og:site_name" content="Programming project 2023-24">
-  <meta property="og:title" content="Race condition">
-  <meta property="og:description" content=" Race condition # Definition. A race condition occurs when the outcome of a program may vary depending on the order in which two threads access a resource. Illustrations # Example. The following program (in pseudocode) apparently increments variable i twice. However, it may output either 1 or 2, depending on the execution environment:
-int i = 0 spawn i&#43;&#43; i&#43;&#43; sync print(i) The reason is that a core does not increment the value of a variable as an atomic operation. Instead, an increment is a sequence of three instructions:">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="docs">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Race condition" />
+<meta property="og:description" content="Race condition # Definition. A race condition occurs when the outcome of a program may vary depending on the order in which two threads access a resource. Illustrations # Example. The following program (in pseudocode) apparently increments variable i twice. However, it may output either 1 or 2, depending on the execution environment:
+int i = 0 spawn i&#43;&#43; i&#43;&#43; sync print(i) The reason is that a core does not increment the value of a variable as an atomic operation." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/multithreading/sections/race/" /><meta property="article:section" content="docs" />
+
+
 <title>Race condition | Programming project 2023-24</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" >

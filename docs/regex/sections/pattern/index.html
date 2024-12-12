@@ -3,40 +3,17 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="
-  Pattern matching
-  #
-
-Two of the main uses of regexes are:
-
-string validation, i.e. check whether a string satisfies certain constraints. For instance:
-
-has at least one digit and one special character,
-is a valid address,
-etc.
-
-
-string search, i.e. identify occurrences of a pattern in a line or in a file. This can be useful for:
-
-replacing strings in a file or a folder (e.g. within a codebase),
-splitting a sentence into (natural language) words,
-splitting a program into meaningful substrings, e.g. split the instruction int a=5; into int, a, =, 5 and ;,
-filtering (e.g. with the grep command) of modifying (e.g. with the sed command) lines in a file,
-etc.
-
-
-
-In both scenarios, a regex is viewed as a pattern that should be matched against a string.">
+<meta name="description" content="Pattern matching # Two of the main uses of regexes are:
+string validation, i.e. check whether a string satisfies certain constraints. For instance: has at least one digit and one special character, is a valid address, etc. string search, i.e. identify occurrences of a pattern in a line or in a file. This can be useful for: replacing strings in a file or a folder (e.g. within a codebase), splitting a sentence into (natural language) words, splitting a program into meaningful substrings, e.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/regex/sections/pattern/">
-  <meta property="og:site_name" content="Programming project 2023-24">
-  <meta property="og:title" content="Pattern matching">
-  <meta property="og:description" content=" Pattern matching # Two of the main uses of regexes are:
-string validation, i.e. check whether a string satisfies certain constraints. For instance: has at least one digit and one special character, is a valid address, etc. string search, i.e. identify occurrences of a pattern in a line or in a file. This can be useful for: replacing strings in a file or a folder (e.g. within a codebase), splitting a sentence into (natural language) words, splitting a program into meaningful substrings, e.g. split the instruction int a=5; into int, a, =, 5 and ;, filtering (e.g. with the grep command) of modifying (e.g. with the sed command) lines in a file, etc. In both scenarios, a regex is viewed as a pattern that should be matched against a string.">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="docs">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Pattern matching" />
+<meta property="og:description" content="Pattern matching # Two of the main uses of regexes are:
+string validation, i.e. check whether a string satisfies certain constraints. For instance: has at least one digit and one special character, is a valid address, etc. string search, i.e. identify occurrences of a pattern in a line or in a file. This can be useful for: replacing strings in a file or a folder (e.g. within a codebase), splitting a sentence into (natural language) words, splitting a program into meaningful substrings, e." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/regex/sections/pattern/" /><meta property="article:section" content="docs" />
+
+
 <title>Pattern matching | Programming project 2023-24</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" >
@@ -2118,7 +2095,7 @@ Then:</p>
 <blockquote class="book-hint warning">
   <p><strong><em>Definition.</em></strong>
 Let $w$ be a word (viewed as an array), and let $e$ be a regex that describes the language $L$.</p>
-<p>A <strong><em>match</em></strong> for $e$ in $w$ is a (possibly empty) segment of $w$ whose word belongs to $L$.</p>
+<p>A <strong>match</strong> for $e$ in $w$ is a (possibly empty) segment of $w$ whose word belongs to $L$.</p>
 
 </blockquote>
 
@@ -2311,80 +2288,80 @@ This match is $w[2 .. 3)$, with word <code>a</code>.</p>
   <label for="tabs-exercise_greedy_matches-0">Exercise</label>
   <div class="book-tabs-content markdown-inner"><p>In each of the cases below, find all successive best first matches for the regex $e$ in word $w$:</p>
 <table>
-  <thead>
-      <tr>
-          <th style="text-align: left">regex $e$</th>
-          <th style="text-align: left">word $w$</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left"><code>a</code></td>
-          <td style="text-align: left"><code>aba</code></td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><code>a*b</code></td>
-          <td style="text-align: left"><code>aba</code></td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><code>a*</code></td>
-          <td style="text-align: left"><code>a</code></td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><code>a*</code></td>
-          <td style="text-align: left"><code>aba</code></td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><code>(ab)*</code></td>
-          <td style="text-align: left"><code>aba</code></td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><code>(ab)*</code></td>
-          <td style="text-align: left"><code>abab</code></td>
-      </tr>
-  </tbody>
+<thead>
+<tr>
+<th>regex $e$</th>
+<th>word $w$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>a</code></td>
+<td><code>aba</code></td>
+</tr>
+<tr>
+<td><code>a*b</code></td>
+<td><code>aba</code></td>
+</tr>
+<tr>
+<td><code>a*</code></td>
+<td><code>a</code></td>
+</tr>
+<tr>
+<td><code>a*</code></td>
+<td><code>aba</code></td>
+</tr>
+<tr>
+<td><code>(ab)*</code></td>
+<td><code>aba</code></td>
+</tr>
+<tr>
+<td><code>(ab)*</code></td>
+<td><code>abab</code></td>
+</tr>
+</tbody>
 </table></div><input type="radio" class="toggle" name="tabs-exercise_greedy_matches" id="tabs-exercise_greedy_matches-1"  />
   <label for="tabs-exercise_greedy_matches-1">Solution</label>
   <div class="book-tabs-content markdown-inner"><table>
-  <thead>
-      <tr>
-          <th style="text-align: left">regex $e$</th>
-          <th style="text-align: left">word $w$</th>
-          <th style="text-align: left">matches</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left"><code>a</code></td>
-          <td style="text-align: left"><code>aba</code></td>
-          <td style="text-align: left">$[0 .. 1)$:<code>a</code>, $[2 .. 3)$:<code>a</code></td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><code>a*b</code></td>
-          <td style="text-align: left"><code>aba</code></td>
-          <td style="text-align: left">$[0 .. 2)$:<code>ab</code></td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><code>a*</code></td>
-          <td style="text-align: left"><code>a</code></td>
-          <td style="text-align: left">$[0 .. 1)$:<code>a</code>, $[1 .. 1)$: $\varepsilon$</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><code>a*</code></td>
-          <td style="text-align: left"><code>aba</code></td>
-          <td style="text-align: left">$[0 .. 1)$:<code>a</code>, $[1 .. 1)$: $\varepsilon$, $[2 .. 3)$:<code>a</code>, $[3 .. 3)$: $\varepsilon$</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><code>(ab)*</code></td>
-          <td style="text-align: left"><code>aba</code></td>
-          <td style="text-align: left">$[0 .. 1)$:<code>ab</code>, $[2 .. 2)$: $\varepsilon$, $[3 .. 3)$: $\varepsilon$</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><code>(ab)*</code></td>
-          <td style="text-align: left"><code>abab</code></td>
-          <td style="text-align: left">$[0 .. 3)$:<code>abab</code>, $[3 .. 3)$: $\varepsilon$</td>
-      </tr>
-  </tbody>
+<thead>
+<tr>
+<th>regex $e$</th>
+<th>word $w$</th>
+<th>matches</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>a</code></td>
+<td><code>aba</code></td>
+<td>$[0 .. 1)$:<code>a</code>, $[2 .. 3)$:<code>a</code></td>
+</tr>
+<tr>
+<td><code>a*b</code></td>
+<td><code>aba</code></td>
+<td>$[0 .. 2)$:<code>ab</code></td>
+</tr>
+<tr>
+<td><code>a*</code></td>
+<td><code>a</code></td>
+<td>$[0 .. 1)$:<code>a</code>, $[1 .. 1)$: $\varepsilon$</td>
+</tr>
+<tr>
+<td><code>a*</code></td>
+<td><code>aba</code></td>
+<td>$[0 .. 1)$:<code>a</code>, $[1 .. 1)$: $\varepsilon$, $[2 .. 3)$:<code>a</code>, $[3 .. 3)$: $\varepsilon$</td>
+</tr>
+<tr>
+<td><code>(ab)*</code></td>
+<td><code>aba</code></td>
+<td>$[0 .. 1)$:<code>ab</code>, $[2 .. 2)$: $\varepsilon$, $[3 .. 3)$: $\varepsilon$</td>
+</tr>
+<tr>
+<td><code>(ab)*</code></td>
+<td><code>abab</code></td>
+<td>$[0 .. 3)$:<code>abab</code>, $[3 .. 3)$: $\varepsilon$</td>
+</tr>
+</tbody>
 </table>
 </div></div>
 
@@ -2398,30 +2375,30 @@ In this case, the star operator matches the <em>shortest possible</em> segment.<
 <blockquote class="book-hint info">
   <p><strong><em>Examples.</em></strong></p>
 <table>
-  <thead>
-      <tr>
-          <th style="text-align: left">regex $e$</th>
-          <th style="text-align: left">word $w$</th>
-          <th style="text-align: left">best first match with lazy evaluation of star operators</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left"><code>a*</code></td>
-          <td style="text-align: left"><code>aa</code></td>
-          <td style="text-align: left">$[0 .. 0)$:$\varepsilon$</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><code>a*ac</code></td>
-          <td style="text-align: left"><code>ac</code></td>
-          <td style="text-align: left">$[0 .. 2)$:<code>ac</code></td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><code>a*ac</code></td>
-          <td style="text-align: left"><code>aac</code></td>
-          <td style="text-align: left">$[0 .. 3)$:<code>aac</code></td>
-      </tr>
-  </tbody>
+<thead>
+<tr>
+<th>regex $e$</th>
+<th>word $w$</th>
+<th>best first match with lazy evaluation of star operators</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>a*</code></td>
+<td><code>aa</code></td>
+<td>$[0 .. 0)$:$\varepsilon$</td>
+</tr>
+<tr>
+<td><code>a*ac</code></td>
+<td><code>ac</code></td>
+<td>$[0 .. 2)$:<code>ac</code></td>
+</tr>
+<tr>
+<td><code>a*ac</code></td>
+<td><code>aac</code></td>
+<td>$[0 .. 3)$:<code>aac</code></td>
+</tr>
+</tbody>
 </table>
 </blockquote>
 
@@ -2438,80 +2415,80 @@ In a same regular expression, it is possible to specify that some <code>*</code>
   <label for="tabs-exercise_lazy_matches-0">Exercise</label>
   <div class="book-tabs-content markdown-inner"><p>In each of the cases below, find all successive best first matches for the regex $e$ in word $w$, where <code>*</code> operators are evaluated in a lazy way.</p>
 <table>
-  <thead>
-      <tr>
-          <th style="text-align: left">regex $e$</th>
-          <th style="text-align: left">word $w$</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left"><code>ab*</code></td>
-          <td style="text-align: left"><code>ab</code></td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><code>a*b</code></td>
-          <td style="text-align: left"><code>aba</code></td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><code>a*ab*</code></td>
-          <td style="text-align: left"><code>ab</code></td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><code>a*</code></td>
-          <td style="text-align: left"><code>a</code></td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><code>a*</code></td>
-          <td style="text-align: left"><code>aa</code></td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><code>b*</code></td>
-          <td style="text-align: left"><code>aa</code></td>
-      </tr>
-  </tbody>
+<thead>
+<tr>
+<th>regex $e$</th>
+<th>word $w$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ab*</code></td>
+<td><code>ab</code></td>
+</tr>
+<tr>
+<td><code>a*b</code></td>
+<td><code>aba</code></td>
+</tr>
+<tr>
+<td><code>a*ab*</code></td>
+<td><code>ab</code></td>
+</tr>
+<tr>
+<td><code>a*</code></td>
+<td><code>a</code></td>
+</tr>
+<tr>
+<td><code>a*</code></td>
+<td><code>aa</code></td>
+</tr>
+<tr>
+<td><code>b*</code></td>
+<td><code>aa</code></td>
+</tr>
+</tbody>
 </table></div><input type="radio" class="toggle" name="tabs-exercise_lazy_matches" id="tabs-exercise_lazy_matches-1"  />
   <label for="tabs-exercise_lazy_matches-1">Solution</label>
   <div class="book-tabs-content markdown-inner"><table>
-  <thead>
-      <tr>
-          <th style="text-align: left">regex $e$</th>
-          <th style="text-align: left">word $w$</th>
-          <th style="text-align: left">lazy matches</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left"><code>ab*</code></td>
-          <td style="text-align: left"><code>ab</code></td>
-          <td style="text-align: left">$[0 .. 1)$:<code>a</code></td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><code>a*b</code></td>
-          <td style="text-align: left"><code>aba</code></td>
-          <td style="text-align: left">$[0 .. 2)$:<code>ab</code></td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><code>a*ab*</code></td>
-          <td style="text-align: left"><code>ab</code></td>
-          <td style="text-align: left">$[0 .. 1)$:<code>a</code></td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><code>a*</code></td>
-          <td style="text-align: left"><code>a</code></td>
-          <td style="text-align: left">$[0 .. 0)$:$\varepsilon$, $[1 .. 1)$:$\varepsilon$</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><code>a*</code></td>
-          <td style="text-align: left"><code>aa</code></td>
-          <td style="text-align: left">$[0 .. 0)$:$\varepsilon$, $[1 .. 1)$:$\varepsilon$, $[2 .. 2)$:$\varepsilon$</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><code>b*</code></td>
-          <td style="text-align: left"><code>aa</code></td>
-          <td style="text-align: left">$[0 .. 0)$:$\varepsilon$, $[1 .. 1)$:$\varepsilon$, $[2 .. 2)$:$\varepsilon$</td>
-      </tr>
-  </tbody>
+<thead>
+<tr>
+<th>regex $e$</th>
+<th>word $w$</th>
+<th>lazy matches</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ab*</code></td>
+<td><code>ab</code></td>
+<td>$[0 .. 1)$:<code>a</code></td>
+</tr>
+<tr>
+<td><code>a*b</code></td>
+<td><code>aba</code></td>
+<td>$[0 .. 2)$:<code>ab</code></td>
+</tr>
+<tr>
+<td><code>a*ab*</code></td>
+<td><code>ab</code></td>
+<td>$[0 .. 1)$:<code>a</code></td>
+</tr>
+<tr>
+<td><code>a*</code></td>
+<td><code>a</code></td>
+<td>$[0 .. 0)$:$\varepsilon$, $[1 .. 1)$:$\varepsilon$</td>
+</tr>
+<tr>
+<td><code>a*</code></td>
+<td><code>aa</code></td>
+<td>$[0 .. 0)$:$\varepsilon$, $[1 .. 1)$:$\varepsilon$, $[2 .. 2)$:$\varepsilon$</td>
+</tr>
+<tr>
+<td><code>b*</code></td>
+<td><code>aa</code></td>
+<td>$[0 .. 0)$:$\varepsilon$, $[1 .. 1)$:$\varepsilon$, $[2 .. 2)$:$\varepsilon$</td>
+</tr>
+</tbody>
 </table>
 </div></div>
 

@@ -1,0 +1,2264 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  Notes
+  #
+
+Purpose of mvn clean: if the name of a file was changed, then the compiled version of the file with the previous name remains in the target folder.
+Maven:
+
+has an easier learning curve than Gradle,
+is more widely used,
+is less customizable
+is less efficient (less advanced caching strategies)
+
+MAven does not suppo
+mvn dependency:analyze
+mvn dependency:tree
+validate: check if all information necessary for the build is available
+compile: compile the source code
+test-compile: compile the test source code
+test: run unit tests
+package: package compiled source code into the distributable format (jar, war, …)
+integration-test: process and deploy the package if needed to run integration tests
+install: install the package to a local repository
+deploy: copy the package to the remote repository
+
+2.12. Maven and Git">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/build/sections/notes/">
+  <meta property="og:site_name" content="Programming project 2023-24">
+  <meta property="og:title" content="Notes">
+  <meta property="og:description" content="Notes # Purpose of mvn clean: if the name of a file was changed, then the compiled version of the file with the previous name remains in the target folder.
+Maven:
+has an easier learning curve than Gradle, is more widely used, is less customizable is less efficient (less advanced caching strategies) MAven does not suppo
+mvn dependency:analyze
+mvn dependency:tree
+validate: check if all information necessary for the build is available compile: compile the source code test-compile: compile the test source code test: run unit tests package: package compiled source code into the distributable format (jar, war, …) integration-test: process and deploy the package if needed to run integration tests install: install the package to a local repository deploy: copy the package to the remote repository 2.12. Maven and Git">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Notes | Programming project 2023-24</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" >
+<link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.75c93015edc930a6c5d020e1041dd844fca04394b84c131197c171c5b8fae44c.js" integrity="sha256-dckwFe3JMKbF0CDhBB3YRPygQ5S4TBMRl8Fxxbj65Ew=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
+  integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0"
+  crossorigin="anonymous"
+/>
+
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
+  integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
+  crossorigin="anonymous"
+></script>
+
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
+  integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);"
+></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+      ],
+    });
+  });
+</script>
+
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a
+    class="flex align-center"
+    href="/"
+  ><span>Programming project 2023-24</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-c890067e1b2be12edfb1f228b47c126b" class="toggle"  />
+    <label for="section-c890067e1b2be12edfb1f228b47c126b" class="flex justify-between">
+      <a href="/docs/intro/" class="">This course</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/schedule/" class="">Schedule</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/lecturers/" class="">Teaching staff</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/evaluation/" class="">Evaluation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/content/" class="">Content</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/board_game/" class="">Board game</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/intro/sections/bibliography/" class="">Bibliography</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-643bd129d7fc1033f7c77ed31c0b60d9" class="toggle"  />
+    <label for="section-643bd129d7fc1033f7c77ed31c0b60d9" class="flex justify-between">
+      <a href="/docs/project/" class="">Project</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/project/sections/free_project/" class="">Option 1: free project</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/project/sections/board_game/" class="">Option 2: board game</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-42249671417d6ca84fc3b439951d4b75" class="toggle"  />
+    <label for="section-42249671417d6ca84fc3b439951d4b75" class="flex justify-between">
+      <a href="/docs/objects/" class="">Objects and classes</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/objects/" class="">Objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classes/" class="">Class and instance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/inheritance/" class="">Inheritance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/methods/" class="">Instance methods</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/tostring/" class="">Displaying objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/comparing/" class="">Cast and equality</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/classesasobjects/" class="">Classes as objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/clone/" class="">Duplicating objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/quasi-objects/" class="">Quasi-objects</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/encapsulation/" class="">Encapsulation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/mutability/" class="">Mutability</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/objects/sections/quiz/" class="">Quiz</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-df5e612c7e488f57476007f7acef7616" class="toggle"  />
+    <label for="section-df5e612c7e488f57476007f7acef7616" class="flex justify-between">
+      <a href="/docs/interfaces/" class="">Interfaces</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/interfaces/sections/specification/" class="">Specification and programming interface</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/interfaces/sections/java_interfaces/" class="">Java interfaces</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-1fb52611c5d6aef8b58d816834bff5f7" class="toggle"  />
+    <label for="section-1fb52611c5d6aef8b58d816834bff5f7" class="flex justify-between">
+      <a href="/docs/abstractdatatypes/" class="">Abstract data types</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/list/" class="">List</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/set/" class="">Set</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/map/" class="">Associative array</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/queue/" class="">Stack, queue, priority queue</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/abstractdatatypes/sections/sorting/" class="">Sorting</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-e367263d4852a0ccbeaf706ded2dc790" class="toggle"  />
+    <label for="section-e367263d4852a0ccbeaf706ded2dc790" class="flex justify-between">
+      <a href="/docs/datastructures/" class="">Data structures</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/datastructures/sections/list/" class="">Dynamic array and linked list</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/datastructures/sections/hash/" class="">Hash table</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/datastructures/sections/tree/" class="">Binary search tree</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f4d23b0e9cf15c51faf98639aeb04d15" class="toggle"  />
+    <label for="section-f4d23b0e9cf15c51faf98639aeb04d15" class="flex justify-between">
+      <a href="/docs/errors/" class="">Errors</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-2a83c309a437b102e921989a4b41c25b" class="toggle"  />
+    <label for="section-2a83c309a437b102e921989a4b41c25b" class="flex justify-between">
+      <a href="/docs/errors/sections/callstack/" class="">Call stack</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-e0491ed96c099ca3ee716e3ebc755056" class="toggle"  />
+    <label for="section-e0491ed96c099ca3ee716e3ebc755056" class="flex justify-between">
+      <a href="/docs/errors/sections/exceptions/" class="">Exceptions</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a7ee445a12e4404cd9b1864493ad9d6b" class="toggle"  />
+    <label for="section-a7ee445a12e4404cd9b1864493ad9d6b" class="flex justify-between">
+      <a href="/docs/errors/sections/checked/" class="">Checked vs unchecked</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-adcdbcbeb3a4211aab7c00147a5d4931" class="toggle"  />
+    <label for="section-adcdbcbeb3a4211aab7c00147a5d4931" class="flex justify-between">
+      <a href="/docs/errors/sections/custom/" class="">Custom exceptions</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-5965708dab4767d79af7a03d7aab3264" class="toggle"  />
+    <label for="section-5965708dab4767d79af7a03d7aab3264" class="flex justify-between">
+      <a href="/docs/errors/sections/errors/" class="">Java errors</a>
+    </label>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-b913a3f65a6aca72bc502176c049a48f" class="toggle"  />
+    <label for="section-b913a3f65a6aca72bc502176c049a48f" class="flex justify-between">
+      <a href="/docs/recursion/" class="">Recursion</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/recursion/sections/linear/" class="">Linear recursion</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/recursion/sections/nary/" class="">N-ary recursion</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/recursion/sections/correctness/" class="">Correctness</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-d4f92e130aad4dc78de3e1e44c0e04c4" class="toggle"  />
+    <label for="section-d4f92e130aad4dc78de3e1e44c0e04c4" class="flex justify-between">
+      <a href="/docs/input/" class="">I/O and serialization</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-7dfe03396d234073671c822b801b2a32" class="toggle"  />
+    <label for="section-7dfe03396d234073671c822b801b2a32" class="flex justify-between">
+      <a href="/docs/input/sections/files/" class="">Paths and files in Java</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-3a8bc90f4dac5359a02e3754ebc872c2" class="toggle"  />
+    <label for="section-3a8bc90f4dac5359a02e3754ebc872c2" class="flex justify-between">
+      <a href="/docs/input/sections/read/" class="">Reading from and writing to a file in Java</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-d27adcdb2ca96634e1eae96948b5b4ec" class="toggle"  />
+    <label for="section-d27adcdb2ca96634e1eae96948b5b4ec" class="flex justify-between">
+      <a href="/docs/input/sections/property/" class="">Configuration files</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-5076a64b515a4d42be542a242967924b" class="toggle"  />
+    <label for="section-5076a64b515a4d42be542a242967924b" class="flex justify-between">
+      <a href="/docs/input/sections/serialize/" class="">Serialization</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-d66d169e10b99e55c3a27a23bbf59f0a" class="toggle"  />
+    <label for="section-d66d169e10b99e55c3a27a23bbf59f0a" class="flex justify-between">
+      <a href="/docs/input/sections/json/" class="">JSON Serialization</a>
+    </label>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-56259d2072667691e916ebf650ad8955" class="toggle"  />
+    <label for="section-56259d2072667691e916ebf650ad8955" class="flex justify-between">
+      <a href="/docs/regex/" class="">Regular expressions</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/regex/sections/pattern/" class="">Pattern matching</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/regex/sections/practice/" class="">in practice</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/regex/sections/java/" class="">Using Java regexes</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-c04a912b75d292e7c80e9ca23b0f2868" class="toggle"  />
+    <label for="section-c04a912b75d292e7c80e9ca23b0f2868" class="flex justify-between">
+      <a href="/docs/lambda/" class="">Callback methods and lambda expressions</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/pure/" class="">Pure function</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/anonymous/" class="">Anonymous method</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/lambda/" class="">Lambda expression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/type/" class="">Type of a method</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/callback/" class="">Callback method</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/lambda/sections/captured/" class="">Captured variables</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-b0683a1d7e7ca8ad280db5f5669518a0" class="toggle"  />
+    <label for="section-b0683a1d7e7ca8ad280db5f5669518a0" class="flex justify-between">
+      <a href="/docs/stream/" class="">Streams in Java</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/pipeline/" class="">Pipeline</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/init/" class="">Source</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/intermediate/" class="">Intermediate operations</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/terminal/" class="">Terminal operation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/numeric/" class="">Numeric stream</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/order/" class="">Multithreading and order</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/stream/sections/optional/" class="">Optional</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a91f0718348ead92c9e33d043d0d3290" class="toggle"  />
+    <label for="section-a91f0718348ead92c9e33d043d0d3290" class="flex justify-between">
+      <a href="/docs/generics/" class="">Generic programming</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/generics/sections/type_checking/" class="">Type checking</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/generics/sections/generics/" class="">Generics</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/generics/sections/subtype/" class="">Subtype</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/generics/sections/variance/" class="">Variance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/generics/sections/erasure/" class="">Type erasure</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-d9d4a5e82f104889338f2b5f681532dd" class="toggle"  />
+    <label for="section-d9d4a5e82f104889338f2b5f681532dd" class="flex justify-between">
+      <a href="/docs/multithreading/" class="">Multithreading</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/multithreading/sections/concurrency/" class="">Concurrency</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/multithreading/sections/thread/" class="">Process vs thread</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/multithreading/sections/simple/" class="">A simplified view</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/multithreading/sections/race/" class="">Race condition</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/multithreading/sections/synchronization/" class="">Synchronization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/multithreading/sections/troubleshooting/" class="">Troubleshooting</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/multithreading/sections/abstractions/" class="">Abstractions</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-aa2fee5cbeaf5d4e80bd5e28955a16c4" class="toggle"  />
+    <label for="section-aa2fee5cbeaf5d4e80bd5e28955a16c4" class="flex justify-between">
+      <a href="/docs/unittests/" class="">Unit tests</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-289cc28ce4779e667d47960927ddee4f" class="toggle"  />
+    <label for="section-289cc28ce4779e667d47960927ddee4f" class="flex justify-between">
+      <a href="/docs/unittests/sections/structured/" class="">Code units</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-d94c0bbb032e9f8ea52ef7a8ba63d904" class="toggle"  />
+    <label for="section-d94c0bbb032e9f8ea52ef7a8ba63d904" class="flex justify-between">
+      <a href="/docs/unittests/sections/tdd/" class="">Development driven by unit tests</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-5537d9dd77bb5ce7eb73ef75aca0d6bb" class="toggle"  />
+    <label for="section-5537d9dd77bb5ce7eb73ef75aca0d6bb" class="flex justify-between">
+      <a href="/docs/unittests/sections/junit/" class="">in Java</a>
+    </label>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-b0a6232f897619836afb68dd7958fae1" class="toggle"  />
+    <label for="section-b0a6232f897619836afb68dd7958fae1" class="flex justify-between">
+      <a href="/docs/ide/" class="">Using an IDE</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-cdae225b3ccb853d0fc0eb2bb0eac2a2" class="toggle"  />
+    <label for="section-cdae225b3ccb853d0fc0eb2bb0eac2a2" class="flex justify-between">
+      <a href="/docs/simplify/" class="">Simplifying code</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/simplify/sections/factorization/" class="">Factorizing</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/simplify/sections/break/" class="">Break statements and flags</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/simplify/sections/boolean/" class="">Boolean conditions</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-7eb267aee310f5218738027ad7317ad6" class="toggle"  />
+    <label for="section-7eb267aee310f5218738027ad7317ad6" class="flex justify-between">
+      <a href="/docs/env/" class="">Development environment</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/files/" class="">Hierarchical file system</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/backup/" class="">Backup</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/install/" class="">Software management</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/os/" class="">Operating system</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/requirements/" class="">Requirements for this course</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/ide/" class="">IDE</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/text_editor/" class="">Text editor</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/eval/" class="">Evaluation environment</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/env/sections/terminal/" class="">Terminal</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-e0bc145201bfdc42d94812126fb83221" class="toggle"  />
+    <label for="section-e0bc145201bfdc42d94812126fb83221" class="flex justify-between">
+      <a href="/docs/git/" class="">git</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/basics/" class="">Basics: repository, commits and branches</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/collaboration/" class="">Basics: network and collaboration</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/config/" class="">Configuration</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/create/" class="">Create or clone a repository</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/navigate/" class="">Navigation, status and history: status, log, checkout, diff, show</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/commit/" class="">Add, commit, stash</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/branches/" class="">Branches</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/sharing/" class="">Synchronization: remote, push, pull</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/backtracking/" class="">Backtracking</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/ignore/" class="">Ignoring files</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/git/sections/resources/" class="">To go further</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-7e535e92ba4ac2db7304568c75085f7f" class="toggle" checked />
+    <label for="section-7e535e92ba4ac2db7304568c75085f7f" class="flex justify-between">
+      <a href="/docs/build/" class="">Build automation</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-5288dffd76cd9299578a90db26253bdd" class="toggle"  />
+    <label for="section-5288dffd76cd9299578a90db26253bdd" class="flex justify-between">
+      <a href="/docs/build/sections/packaging/" class="">Packaging a Java application</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-d6fad5ea8e45c413ebde561a844779e6" class="toggle"  />
+    <label for="section-d6fad5ea8e45c413ebde561a844779e6" class="flex justify-between">
+      <a href="/docs/build/sections/layout/" class="">Layout</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-67084ead78731d41275db4d01f397238" class="toggle"  />
+    <label for="section-67084ead78731d41275db4d01f397238" class="flex justify-between">
+      <a href="/docs/build/sections/pom/" class="">Configuration file</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-dc0feb1ee2e82ccfac867e9246197aa4" class="toggle"  />
+    <label for="section-dc0feb1ee2e82ccfac867e9246197aa4" class="flex justify-between">
+      <a href="/docs/build/sections/artifact/" class="">Artifact</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-fcb6a3aa7427560dc956041518a3b1f0" class="toggle"  />
+    <label for="section-fcb6a3aa7427560dc956041518a3b1f0" class="flex justify-between">
+      <a href="/docs/build/sections/dependencies/" class="">Dependencies</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-68141027e68af46c6eedd805768276f6" class="toggle"  />
+    <label for="section-68141027e68af46c6eedd805768276f6" class="flex justify-between">
+      <a href="/docs/build/sections/building/" class="">Building</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-d6c8dbeeb04002ac239b7c5508f9c30e" class="toggle" checked />
+    <label for="section-d6c8dbeeb04002ac239b7c5508f9c30e" class="flex justify-between">
+      <a href="/docs/build/sections/notes/" class="active">Notes</a>
+    </label>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-871fd93574548a0ed3707ffc0daf2956" class="toggle"  />
+    <label for="section-871fd93574548a0ed3707ffc0daf2956" class="flex justify-between">
+      <a href="/docs/background/" class="">Background</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/background/sections/problem/" class="">Computational problem</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/background/sections/graph/" class="">Graphs, trees and lists</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/background/sections/set_tuple_map/" class="">Set, tuple, function</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/background/sections/order/" class="">Relation, preorder</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/background/sections/cost/" class="">Computational cost</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/background/sections/regular/" class="">Regular languages</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-d1f4f07515cf45d5bac662ebfc30e4c2" class="toggle"  />
+    <label for="section-d1f4f07515cf45d5bac662ebfc30e4c2" class="flex justify-between">
+      <a href="/docs/template/" class="">Web page template</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/template/sections/template/" class="">Stubs</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Notes</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents"></nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="notes">
+  Notes
+  <a class="anchor" href="#notes">#</a>
+</h1>
+<p>Purpose of mvn clean: if the name of a file was changed, then the compiled version of the file with the previous name remains in the <code>target</code> folder.</p>
+<p>Maven:</p>
+<ul>
+<li>has an easier learning curve than Gradle,</li>
+<li>is more widely used,</li>
+<li>is less customizable</li>
+<li>is less efficient (less advanced caching strategies)</li>
+</ul>
+<p>MAven does not suppo</p>
+<p>mvn dependency:analyze</p>
+<p>mvn dependency:tree</p>
+<pre><code>validate: check if all information necessary for the build is available
+compile: compile the source code
+test-compile: compile the test source code
+test: run unit tests
+package: package compiled source code into the distributable format (jar, war, …)
+integration-test: process and deploy the package if needed to run integration tests
+install: install the package to a local repository
+deploy: copy the package to the remote repository
+</code></pre>
+<p>2.12. Maven and Git</p>
+<p>Which Maven files should you commit to your git repository?</p>
+<pre><code>The pom.xml file.
+Optionally, the Maven wrapper files.
+    .mvn folder
+    mvnw file
+    mvnw.cmd folder
+</code></pre>
+<p>Which should you ignore?</p>
+<pre><code>The target folder.
+Everything else that you generate during build.
+</code></pre>
+<p>A POM can inherit properties from a parent POM.</p>
+<p>Super POM</p>
+<pre><code>Maven's default POM.
+All POMs extend the Super POM unless explicitly set.
+</code></pre>
+<p>Effective POM</p>
+<pre><code>The complete POM after inheriting properties.
+</code></pre>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents"></nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

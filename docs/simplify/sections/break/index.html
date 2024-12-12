@@ -3,68 +3,21 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="
-  Break statements and flags
-  #
-
-A method with multiple boolean flags can be complex to read and/or debug, in particular when combined with break and/or continue statements.
-This can usually be avoided:
-
-using return statements (possibly with auxiliary functions), and/or
-(in Java) using streams with anyMatch, allMatch or findFirst.
-
-
-  Example
-  #
-
-
-
-
-
-
-  Exercise
-  Rewrite the following Java method:
-
-without boolean flag and
-without break statement.
-
-/**
- * Returns true iff each of the input lists contains a number &gt; 20
- */
-boolean check(List&lt;List&lt;Integer&gt;&gt; lists) {
-
-    boolean flag1 = true;
-    boolean flag2 = false;
-
-    for (List&lt;Integer&gt; list : lists) {
-        for (Integer value : list) {
-            if (value &gt; 20) {
-                flag2 = true;
-                break;
-            }
-        }
-        if (!flag2) {
-            flag1 = false;
-            break;
-        }
-    }
-    return flag1;
-}
-
-  Solution 1
-  With an auxiliary method:">
-<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
-<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/simplify/sections/break/">
-  <meta property="og:site_name" content="Programming project 2023-24">
-  <meta property="og:title" content="Break statements and flags">
-  <meta property="og:description" content=" Break statements and flags # A method with multiple boolean flags can be complex to read and/or debug, in particular when combined with break and/or continue statements.
+<meta name="description" content="Break statements and flags # A method with multiple boolean flags can be complex to read and/or debug, in particular when combined with break and/or continue statements.
 This can usually be avoided:
 using return statements (possibly with auxiliary functions), and/or (in Java) using streams with anyMatch, allMatch or findFirst. Example # Exercise Rewrite the following Java method:
-without boolean flag and without break statement. /** * Returns true iff each of the input lists contains a number &gt; 20 */ boolean check(List&lt;List&lt;Integer&gt;&gt; lists) { boolean flag1 = true; boolean flag2 = false; for (List&lt;Integer&gt; list : lists) { for (Integer value : list) { if (value &gt; 20) { flag2 = true; break; } } if (!flag2) { flag1 = false; break; } } return flag1; } Solution 1 With an auxiliary method:">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="docs">
+without boolean flag and without break statement. /** * Returns true iff each of the input lists contains a number &gt; 20 */ boolean check(List&lt;List&lt;Integer&gt;&gt; lists) { boolean flag1 = true; boolean flag2 = false; for (List&lt;Integer&gt; list : lists) { for (Integer value : list) { if (value &gt; 20) { flag2 = true; break; } } if (!">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Break statements and flags" />
+<meta property="og:description" content="Break statements and flags # A method with multiple boolean flags can be complex to read and/or debug, in particular when combined with break and/or continue statements.
+This can usually be avoided:
+using return statements (possibly with auxiliary functions), and/or (in Java) using streams with anyMatch, allMatch or findFirst. Example # Exercise Rewrite the following Java method:
+without boolean flag and without break statement. /** * Returns true iff each of the input lists contains a number &gt; 20 */ boolean check(List&lt;List&lt;Integer&gt;&gt; lists) { boolean flag1 = true; boolean flag2 = false; for (List&lt;Integer&gt; list : lists) { for (Integer value : list) { if (value &gt; 20) { flag2 = true; break; } } if (!" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/simplify/sections/break/" /><meta property="article:section" content="docs" />
+
+
 <title>Break statements and flags | Programming project 2023-24</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" >

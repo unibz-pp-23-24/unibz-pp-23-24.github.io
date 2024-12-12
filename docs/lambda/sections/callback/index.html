@@ -3,51 +3,19 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="
-  Callback method
-  #
-
-
-  When a method takes another method as argument, the latter is a callback method.
-
-
-Anonymous methods are often used as callback methods.
-
-  in Java
-  #
-
-
-  Running example
-  #
-
-
-  Example.
-The two following Java methods have the same structure: both modify each unit in the input list.
-void boostUnits(List&lt;Unit&gt; units){
-  for(Unit unit: units){
-      unit.health&#43;&#43;;
-  }
-}
-
-void penalizeGreenUnits(List&lt;Unit&gt; units){
-    for(Unit unit: units){
-        if(unit.color.equals(&#34;green&#34;)){
-            unit.health--;
-        }
-    }
-}
-In each case, let us isolate the modification that is applied to a single unit, with a dedicated method (called boost and penalizeGreen respectively).">
-<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
-<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/lambda/sections/callback/">
-  <meta property="og:site_name" content="Programming project 2023-24">
-  <meta property="og:title" content="Callback method">
-  <meta property="og:description" content=" Callback method # When a method takes another method as argument, the latter is a callback method. Anonymous methods are often used as callback methods.
+<meta name="description" content="Callback method # When a method takes another method as argument, the latter is a callback method. Anonymous methods are often used as callback methods.
 in Java # Running example # Example. The two following Java methods have the same structure: both modify each unit in the input list.
 void boostUnits(List&lt;Unit&gt; units){ for(Unit unit: units){ unit.health&#43;&#43;; } } void penalizeGreenUnits(List&lt;Unit&gt; units){ for(Unit unit: units){ if(unit.color.equals(&#34;green&#34;)){ unit.health--; } } } In each case, let us isolate the modification that is applied to a single unit, with a dedicated method (called boost and penalizeGreen respectively).">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="docs">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Callback method" />
+<meta property="og:description" content="Callback method # When a method takes another method as argument, the latter is a callback method. Anonymous methods are often used as callback methods.
+in Java # Running example # Example. The two following Java methods have the same structure: both modify each unit in the input list.
+void boostUnits(List&lt;Unit&gt; units){ for(Unit unit: units){ unit.health&#43;&#43;; } } void penalizeGreenUnits(List&lt;Unit&gt; units){ for(Unit unit: units){ if(unit.color.equals(&#34;green&#34;)){ unit.health--; } } } In each case, let us isolate the modification that is applied to a single unit, with a dedicated method (called boost and penalizeGreen respectively)." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/lambda/sections/callback/" /><meta property="article:section" content="docs" />
+
+
 <title>Callback method | Programming project 2023-24</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" >

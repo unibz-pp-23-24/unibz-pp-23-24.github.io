@@ -3,34 +3,19 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="
-  Encapsulation
-  #
-
-
-  Encapsulation is a (vague) principle in object-oriented programming that refers to &ldquo;bundling&rdquo; data with the code that operates on it, and restrict visibility of this code and data to other components of a system.
-
-
-
-From Wikipedia:
-&ldquo;Essentially, encapsulation prevents external code from being concerned [&hellip;]&rdquo;
-
+<meta name="description" content="Encapsulation # Encapsulation is a (vague) principle in object-oriented programming that refers to &ldquo;bundling&rdquo; data with the code that operates on it, and restrict visibility of this code and data to other components of a system. From Wikipedia: &ldquo;Essentially, encapsulation prevents external code from being concerned [&hellip;]&rdquo;
 Each component hides its internal logic by exposing only data and methods that other components may need.
-
-  Example. As we saw earlier, in our game,
-the &ldquo;view&rdquo; component (which is in charge of rendering the game on screen) may buffer the game snapshots that it receives from the backend,
-if these snapshots are received faster than they can be displayed.">
+Example. As we saw earlier, in our game, the &ldquo;view&rdquo; component (which is in charge of rendering the game on screen) may buffer the game snapshots that it receives from the backend, if these snapshots are received faster than they can be displayed.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/objects/sections/encapsulation/">
-  <meta property="og:site_name" content="Programming project 2023-24">
-  <meta property="og:title" content="Encapsulation">
-  <meta property="og:description" content=" Encapsulation # Encapsulation is a (vague) principle in object-oriented programming that refers to “bundling” data with the code that operates on it, and restrict visibility of this code and data to other components of a system. From Wikipedia: “Essentially, encapsulation prevents external code from being concerned […]”
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Encapsulation" />
+<meta property="og:description" content="Encapsulation # Encapsulation is a (vague) principle in object-oriented programming that refers to &ldquo;bundling&rdquo; data with the code that operates on it, and restrict visibility of this code and data to other components of a system. From Wikipedia: &ldquo;Essentially, encapsulation prevents external code from being concerned [&hellip;]&rdquo;
 Each component hides its internal logic by exposing only data and methods that other components may need.
-Example. As we saw earlier, in our game, the “view” component (which is in charge of rendering the game on screen) may buffer the game snapshots that it receives from the backend, if these snapshots are received faster than they can be displayed.">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="docs">
+Example. As we saw earlier, in our game, the &ldquo;view&rdquo; component (which is in charge of rendering the game on screen) may buffer the game snapshots that it receives from the backend, if these snapshots are received faster than they can be displayed." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/objects/sections/encapsulation/" /><meta property="article:section" content="docs" />
+
+
 <title>Encapsulation | Programming project 2023-24</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" >
@@ -2122,45 +2107,45 @@ For instance, in the example below, the attribute <code>myAttribute</code> is pa
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> myAttribute;
 </span></span></code></pre></div><p>Here is a recap table from the <a href="https://docs.oracle.com/javase/tutorial/java/javaOO/accesscontrol.html">Oracle tutorials</a>:</p>
 <table>
-  <thead>
-      <tr>
-          <th style="text-align: left">keyword</th>
-          <th style="text-align: left">class</th>
-          <th style="text-align: left">package</th>
-          <th style="text-align: left">subclasses</th>
-          <th style="text-align: left">world</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left"><code>private</code></td>
-          <td style="text-align: left">yes</td>
-          <td style="text-align: left">no</td>
-          <td style="text-align: left">no</td>
-          <td style="text-align: left">no</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">none</td>
-          <td style="text-align: left">yes</td>
-          <td style="text-align: left">yes</td>
-          <td style="text-align: left">no</td>
-          <td style="text-align: left">no</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><code>protected</code></td>
-          <td style="text-align: left">yes</td>
-          <td style="text-align: left">yes</td>
-          <td style="text-align: left">yes</td>
-          <td style="text-align: left">no</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><code>public</code></td>
-          <td style="text-align: left">yes</td>
-          <td style="text-align: left">yes</td>
-          <td style="text-align: left">yes</td>
-          <td style="text-align: left">yes</td>
-      </tr>
-  </tbody>
+<thead>
+<tr>
+<th>keyword</th>
+<th>class</th>
+<th>package</th>
+<th>subclasses</th>
+<th>world</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>private</code></td>
+<td>yes</td>
+<td>no</td>
+<td>no</td>
+<td>no</td>
+</tr>
+<tr>
+<td>none</td>
+<td>yes</td>
+<td>yes</td>
+<td>no</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>protected</code></td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>public</code></td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+</tr>
+</tbody>
 </table>
 <p><blockquote class="book-hint danger">
   <strong><em>Warning.</em></strong>

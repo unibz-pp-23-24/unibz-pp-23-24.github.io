@@ -3,39 +3,19 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="
-  Custom exception
-  #
-
-Custom exceptions can be created by extending one of Java&rsquo;s native exception types.
-For instance:
-public class WrongNumberOfRowsException extends IllegalArgumentException {
-
-    public WrongNumberOfRowsException(int numberOfRows) {
-        super(&#34;This sudoku grid has &#34;&#43;numberOfRows&#43;&#34; rows, whereas it should have 9&#34;).
-    }
-}
-A custom exception can be thrown like a regular one:
-if(sudokuGrid.length != 9){
-    throw new WrongNumberOfRowsException(sudokuGrid.length);
-}
-
-  Observation.
-In this example, WrongNumberOfRowsException extends IllegalArgumentException, which extends RuntimeException.
-Recall that an instance of a subclass of RuntimeException is unchecked.
-Therefore an instance of WrongNumberOfRowsException is an unchecked exception.
-">
+<meta name="description" content="Custom exception # Custom exceptions can be created by extending one of Java&rsquo;s native exception types. For instance:
+public class WrongNumberOfRowsException extends IllegalArgumentException { public WrongNumberOfRowsException(int numberOfRows) { super(&#34;This sudoku grid has &#34;&#43;numberOfRows&#43;&#34; rows, whereas it should have 9&#34;). } } A custom exception can be thrown like a regular one:
+if(sudokuGrid.length != 9){ throw new WrongNumberOfRowsException(sudokuGrid.length); } Observation. In this example, WrongNumberOfRowsException extends IllegalArgumentException, which extends RuntimeException. Recall that an instance of a subclass of RuntimeException is unchecked.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/errors/sections/custom/">
-  <meta property="og:site_name" content="Programming project 2023-24">
-  <meta property="og:title" content="Custom exceptions">
-  <meta property="og:description" content=" Custom exception # Custom exceptions can be created by extending one of Java’s native exception types. For instance:
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Custom exceptions" />
+<meta property="og:description" content="Custom exception # Custom exceptions can be created by extending one of Java&rsquo;s native exception types. For instance:
 public class WrongNumberOfRowsException extends IllegalArgumentException { public WrongNumberOfRowsException(int numberOfRows) { super(&#34;This sudoku grid has &#34;&#43;numberOfRows&#43;&#34; rows, whereas it should have 9&#34;). } } A custom exception can be thrown like a regular one:
-if(sudokuGrid.length != 9){ throw new WrongNumberOfRowsException(sudokuGrid.length); } Observation. In this example, WrongNumberOfRowsException extends IllegalArgumentException, which extends RuntimeException. Recall that an instance of a subclass of RuntimeException is unchecked. Therefore an instance of WrongNumberOfRowsException is an unchecked exception. ">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="docs">
+if(sudokuGrid.length != 9){ throw new WrongNumberOfRowsException(sudokuGrid.length); } Observation. In this example, WrongNumberOfRowsException extends IllegalArgumentException, which extends RuntimeException. Recall that an instance of a subclass of RuntimeException is unchecked." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/errors/sections/custom/" /><meta property="article:section" content="docs" />
+
+
 <title>Custom exceptions | Programming project 2023-24</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" >
