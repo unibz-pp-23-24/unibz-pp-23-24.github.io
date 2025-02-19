@@ -1,6 +1,0 @@
-digraph rebb {
-graph [size="3!"]
-    a -> a;
-    a -> b;
-    b -> a;
-}

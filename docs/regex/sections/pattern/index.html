@@ -3,23 +3,47 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Pattern matching # Two of the main uses of regexes are:
-string validation, i.e. check whether a string satisfies certain constraints. For instance: has at least one digit and one special character, is a valid address, etc. string search, i.e. identify occurrences of a pattern in a line or in a file. This can be useful for: replacing strings in a file or a folder (e.g. within a codebase), splitting a sentence into (natural language) words, splitting a program into meaningful substrings, e.">
+<meta name="description" content="
+  Pattern matching
+  #
+
+Two of the main uses of regexes are:
+
+string validation, i.e. check whether a string satisfies certain constraints. For instance:
+
+has at least one digit and one special character,
+is a valid address,
+etc.
+
+
+string search, i.e. identify occurrences of a pattern in a line or in a file. This can be useful for:
+
+replacing strings in a file or a folder (e.g. within a codebase),
+splitting a sentence into (natural language) words,
+splitting a program into meaningful substrings, e.g. split the instruction int a=5; into int, a, =, 5 and ;,
+filtering (e.g. with the grep command) of modifying (e.g. with the sed command) lines in a file,
+etc.
+
+
+
+In both scenarios, a regex is viewed as a pattern that should be matched against a string.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="Pattern matching" />
-<meta property="og:description" content="Pattern matching # Two of the main uses of regexes are:
-string validation, i.e. check whether a string satisfies certain constraints. For instance: has at least one digit and one special character, is a valid address, etc. string search, i.e. identify occurrences of a pattern in a line or in a file. This can be useful for: replacing strings in a file or a folder (e.g. within a codebase), splitting a sentence into (natural language) words, splitting a program into meaningful substrings, e." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/regex/sections/pattern/" /><meta property="article:section" content="docs" />
-
-
-<title>Pattern matching | Programming project 2023-24</title>
-<link rel="manifest" href="/manifest.json">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/regex/sections/pattern/">
+  <meta property="og:site_name" content="Programming project 2024-25">
+  <meta property="og:title" content="Pattern matching">
+  <meta property="og:description" content="Pattern matching # Two of the main uses of regexes are:
+string validation, i.e. check whether a string satisfies certain constraints. For instance: has at least one digit and one special character, is a valid address, etc. string search, i.e. identify occurrences of a pattern in a line or in a file. This can be useful for: replacing strings in a file or a folder (e.g. within a codebase), splitting a sentence into (natural language) words, splitting a program into meaningful substrings, e.g. split the instruction int a=5; into int, a, =, 5 and ;, filtering (e.g. with the grep command) of modifying (e.g. with the sed command) lines in a file, etc. In both scenarios, a regex is viewed as a pattern that should be matched against a string.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Pattern matching | Programming project 2024-25</title>
 <link rel="icon" href="/favicon.png" >
-<link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
-  <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.4e5dd21f0324d689aa628cb546e70eda39fb9e0b5daabb2a2c7da954eec10dab.js" integrity="sha256-Tl3SHwMk1omqYoy1RucO2jn7ngtdqrsqLH2pVO7BDas=" crossorigin="anonymous"></script>
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/regex/sections/pattern/">
+<link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.ef6ce3f581865a34e7a0361facaa520c0f023938171236d76684573e7df35a2c.js" integrity="sha256-72zj9YGGWjTnoDYfrKpSDA8COTgXEjbXZoRXPn3zWiw=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -69,16 +93,17 @@ https://github.com/alex-shpak/hugo-book
         
   <nav>
 <h2 class="book-brand">
-  <a class="flex align-center" href="/"><span>Programming project 2023-24</span>
+  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
   </a>
 </h2>
 
 
-<div class="book-search">
+<div class="book-search hidden">
   <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
 
 
 
@@ -91,7 +116,6 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  
 
 
 
@@ -105,8 +129,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-f1c1e874f9c9473478447bba6c7db644" class="toggle"  />
-    <label for="section-f1c1e874f9c9473478447bba6c7db644" class="flex justify-between">
+    <input type="checkbox" id="section-9c72579f4feaa5ed1d8188779488d483" class="toggle"  />
+    <label for="section-9c72579f4feaa5ed1d8188779488d483" class="flex justify-between">
       <a href="/docs/intro/" class="">This course</a>
     </label>
   
@@ -204,8 +228,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-bc4d9392f5af16481cccf0c311076888" class="toggle"  />
-    <label for="section-bc4d9392f5af16481cccf0c311076888" class="flex justify-between">
+    <input type="checkbox" id="section-0af90824fe38d1d85af672be7208f3fa" class="toggle"  />
+    <label for="section-0af90824fe38d1d85af672be7208f3fa" class="flex justify-between">
       <a href="/docs/project/" class="">Project</a>
     </label>
   
@@ -251,8 +275,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-3435ead23eba75b5ffeeb8d422f70dea" class="toggle"  />
-    <label for="section-3435ead23eba75b5ffeeb8d422f70dea" class="flex justify-between">
+    <input type="checkbox" id="section-f8aa8cff3b51717ecd2ebfbd81d061ce" class="toggle"  />
+    <label for="section-f8aa8cff3b51717ecd2ebfbd81d061ce" class="flex justify-between">
       <a href="/docs/objects/" class="">Objects and classes</a>
     </label>
   
@@ -428,8 +452,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-48bc13e86f573c257821b397e779b02e" class="toggle"  />
-    <label for="section-48bc13e86f573c257821b397e779b02e" class="flex justify-between">
+    <input type="checkbox" id="section-84375da4f2da0b5ee2a224e67daa47cd" class="toggle"  />
+    <label for="section-84375da4f2da0b5ee2a224e67daa47cd" class="flex justify-between">
       <a href="/docs/interfaces/" class="">Interfaces</a>
     </label>
   
@@ -475,8 +499,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-e06acd393c0cc6e5b27e2cd8945d3dd8" class="toggle"  />
-    <label for="section-e06acd393c0cc6e5b27e2cd8945d3dd8" class="flex justify-between">
+    <input type="checkbox" id="section-dd500264748ddf6db6c4f8c13c5fa45b" class="toggle"  />
+    <label for="section-dd500264748ddf6db6c4f8c13c5fa45b" class="flex justify-between">
       <a href="/docs/abstractdatatypes/" class="">Abstract data types</a>
     </label>
   
@@ -561,8 +585,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-5d60f9e6a9b7c875f51358c583373282" class="toggle"  />
-    <label for="section-5d60f9e6a9b7c875f51358c583373282" class="flex justify-between">
+    <input type="checkbox" id="section-10a993a702eb9f53bd9244a93734d095" class="toggle"  />
+    <label for="section-10a993a702eb9f53bd9244a93734d095" class="flex justify-between">
       <a href="/docs/datastructures/" class="">Data structures</a>
     </label>
   
@@ -621,8 +645,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-93b39c27c032f5f72bed81496cbb41e3" class="toggle"  />
-    <label for="section-93b39c27c032f5f72bed81496cbb41e3" class="flex justify-between">
+    <input type="checkbox" id="section-58aec3ab091b08c257b626cc09af78c5" class="toggle"  />
+    <label for="section-58aec3ab091b08c257b626cc09af78c5" class="flex justify-between">
       <a href="/docs/errors/" class="">Errors</a>
     </label>
   
@@ -637,10 +661,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-a2fa4d1523374519c87fe83f9d8226b6" class="toggle"  />
-    <label for="section-a2fa4d1523374519c87fe83f9d8226b6" class="flex justify-between">
-      <a href="/docs/errors/sections/callstack/" class="">Call stack</a>
-    </label>
+    <a href="/docs/errors/sections/callstack/" class="">Call stack</a>
   
 
         </li>
@@ -653,10 +674,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-323953d2054911560fd76ed4505d5bb2" class="toggle"  />
-    <label for="section-323953d2054911560fd76ed4505d5bb2" class="flex justify-between">
-      <a href="/docs/errors/sections/exceptions/" class="">Exceptions</a>
-    </label>
+    <a href="/docs/errors/sections/exceptions/" class="">Exceptions</a>
   
 
         </li>
@@ -669,10 +687,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-03b7629c50286af7810d9917f4bdabd2" class="toggle"  />
-    <label for="section-03b7629c50286af7810d9917f4bdabd2" class="flex justify-between">
-      <a href="/docs/errors/sections/checked/" class="">Checked vs unchecked</a>
-    </label>
+    <a href="/docs/errors/sections/checked/" class="">Checked vs unchecked</a>
   
 
         </li>
@@ -685,10 +700,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-3add83584009ceb58c28b43e0a2280c9" class="toggle"  />
-    <label for="section-3add83584009ceb58c28b43e0a2280c9" class="flex justify-between">
-      <a href="/docs/errors/sections/custom/" class="">Custom exceptions</a>
-    </label>
+    <a href="/docs/errors/sections/custom/" class="">Custom exceptions</a>
   
 
         </li>
@@ -701,10 +713,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-b9c696d05ab8cb944ddf9cef47a3abb4" class="toggle"  />
-    <label for="section-b9c696d05ab8cb944ddf9cef47a3abb4" class="flex justify-between">
-      <a href="/docs/errors/sections/errors/" class="">Java errors</a>
-    </label>
+    <a href="/docs/errors/sections/errors/" class="">Java errors</a>
   
 
         </li>
@@ -722,8 +731,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-1be866adbf7f2244d1773e0d2a159b91" class="toggle"  />
-    <label for="section-1be866adbf7f2244d1773e0d2a159b91" class="flex justify-between">
+    <input type="checkbox" id="section-759e82ae41b9619c78e632572d50480a" class="toggle"  />
+    <label for="section-759e82ae41b9619c78e632572d50480a" class="flex justify-between">
       <a href="/docs/recursion/" class="">Recursion</a>
     </label>
   
@@ -782,8 +791,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-b7bc445f96cbe2bd1034c5f1c5d075bb" class="toggle"  />
-    <label for="section-b7bc445f96cbe2bd1034c5f1c5d075bb" class="flex justify-between">
+    <input type="checkbox" id="section-a1720661345b5872c845343fb6615be9" class="toggle"  />
+    <label for="section-a1720661345b5872c845343fb6615be9" class="flex justify-between">
       <a href="/docs/input/" class="">I/O and serialization</a>
     </label>
   
@@ -798,10 +807,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-09ea3b18445537bd77c25d3db6ab2fcf" class="toggle"  />
-    <label for="section-09ea3b18445537bd77c25d3db6ab2fcf" class="flex justify-between">
-      <a href="/docs/input/sections/files/" class="">Paths and files in Java</a>
-    </label>
+    <a href="/docs/input/sections/files/" class="">Paths and files in Java</a>
   
 
         </li>
@@ -814,10 +820,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-640b25aadb55f28505bfbbe5a5f7073d" class="toggle"  />
-    <label for="section-640b25aadb55f28505bfbbe5a5f7073d" class="flex justify-between">
-      <a href="/docs/input/sections/read/" class="">Reading from and writing to a file in Java</a>
-    </label>
+    <a href="/docs/input/sections/read/" class="">Reading from and writing to a file in Java</a>
   
 
         </li>
@@ -830,10 +833,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-7efe7741b54b5b602db75415a7806ef4" class="toggle"  />
-    <label for="section-7efe7741b54b5b602db75415a7806ef4" class="flex justify-between">
-      <a href="/docs/input/sections/property/" class="">Configuration files</a>
-    </label>
+    <a href="/docs/input/sections/property/" class="">Configuration files</a>
   
 
         </li>
@@ -846,10 +846,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-37fdfe811c449d15e51a84c19673df2f" class="toggle"  />
-    <label for="section-37fdfe811c449d15e51a84c19673df2f" class="flex justify-between">
-      <a href="/docs/input/sections/serialize/" class="">Serialization</a>
-    </label>
+    <a href="/docs/input/sections/serialize/" class="">Serialization</a>
   
 
         </li>
@@ -862,10 +859,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-ec41b3fcd24b301058a1bd1bd7b5c8e7" class="toggle"  />
-    <label for="section-ec41b3fcd24b301058a1bd1bd7b5c8e7" class="flex justify-between">
-      <a href="/docs/input/sections/json/" class="">JSON Serialization</a>
-    </label>
+    <a href="/docs/input/sections/json/" class="">JSON Serialization</a>
   
 
         </li>
@@ -883,8 +877,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-baf3ea6e28839ac044570d2d313c8794" class="toggle" checked />
-    <label for="section-baf3ea6e28839ac044570d2d313c8794" class="flex justify-between">
+    <input type="checkbox" id="section-9bfff01f1c5ef64a53927faf30620ccf" class="toggle" checked />
+    <label for="section-9bfff01f1c5ef64a53927faf30620ccf" class="flex justify-between">
       <a href="/docs/regex/" class="">Regular expressions</a>
     </label>
   
@@ -943,8 +937,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-ae8fba9e927e4c55801a4e71f6b7d054" class="toggle"  />
-    <label for="section-ae8fba9e927e4c55801a4e71f6b7d054" class="flex justify-between">
+    <input type="checkbox" id="section-882764aad745f79e099c5a43798784f9" class="toggle"  />
+    <label for="section-882764aad745f79e099c5a43798784f9" class="flex justify-between">
       <a href="/docs/lambda/" class="">Callback methods and lambda expressions</a>
     </label>
   
@@ -1042,8 +1036,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-41a2765a9682fb1ce579fb1661f1250d" class="toggle"  />
-    <label for="section-41a2765a9682fb1ce579fb1661f1250d" class="flex justify-between">
+    <input type="checkbox" id="section-7783f19754a3a0ec1529ed7ac208c3ab" class="toggle"  />
+    <label for="section-7783f19754a3a0ec1529ed7ac208c3ab" class="flex justify-between">
       <a href="/docs/stream/" class="">Streams in Java</a>
     </label>
   
@@ -1154,8 +1148,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-87d53bbeb97db8aab24c02b4d45460f2" class="toggle"  />
-    <label for="section-87d53bbeb97db8aab24c02b4d45460f2" class="flex justify-between">
+    <input type="checkbox" id="section-793e09c315e082fb44de3238b9ad707b" class="toggle"  />
+    <label for="section-793e09c315e082fb44de3238b9ad707b" class="flex justify-between">
       <a href="/docs/generics/" class="">Generic programming</a>
     </label>
   
@@ -1240,8 +1234,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-5dcccd15580bb824ba055538c97bdea6" class="toggle"  />
-    <label for="section-5dcccd15580bb824ba055538c97bdea6" class="flex justify-between">
+    <input type="checkbox" id="section-3876422a93470dcccad1a719c99a8e17" class="toggle"  />
+    <label for="section-3876422a93470dcccad1a719c99a8e17" class="flex justify-between">
       <a href="/docs/multithreading/" class="">Multithreading</a>
     </label>
   
@@ -1352,8 +1346,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-9d77b970a03dc72b048d9fce7bfe272f" class="toggle"  />
-    <label for="section-9d77b970a03dc72b048d9fce7bfe272f" class="flex justify-between">
+    <input type="checkbox" id="section-990bc84b6dc3891b1963528a24b45e2e" class="toggle"  />
+    <label for="section-990bc84b6dc3891b1963528a24b45e2e" class="flex justify-between">
       <a href="/docs/unittests/" class="">Unit tests</a>
     </label>
   
@@ -1368,10 +1362,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-796939dc839b82c2ff89d99e47011262" class="toggle"  />
-    <label for="section-796939dc839b82c2ff89d99e47011262" class="flex justify-between">
-      <a href="/docs/unittests/sections/structured/" class="">Code units</a>
-    </label>
+    <a href="/docs/unittests/sections/structured/" class="">Code units</a>
   
 
         </li>
@@ -1384,10 +1375,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-ad5c3d825858d4a9ca4ad02d541f7121" class="toggle"  />
-    <label for="section-ad5c3d825858d4a9ca4ad02d541f7121" class="flex justify-between">
-      <a href="/docs/unittests/sections/tdd/" class="">Development driven by unit tests</a>
-    </label>
+    <a href="/docs/unittests/sections/tdd/" class="">Development driven by unit tests</a>
   
 
         </li>
@@ -1400,10 +1388,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-7e09be54c45521908b57f9eaf194f5f6" class="toggle"  />
-    <label for="section-7e09be54c45521908b57f9eaf194f5f6" class="flex justify-between">
-      <a href="/docs/unittests/sections/junit/" class="">in Java</a>
-    </label>
+    <a href="/docs/unittests/sections/junit/" class="">in Java</a>
   
 
         </li>
@@ -1421,8 +1406,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-0407f110c1b3ed4992fcb7fc5f05aa12" class="toggle"  />
-    <label for="section-0407f110c1b3ed4992fcb7fc5f05aa12" class="flex justify-between">
+    <input type="checkbox" id="section-4aed4e1c4b6179fd330f627f75eb18b3" class="toggle"  />
+    <label for="section-4aed4e1c4b6179fd330f627f75eb18b3" class="flex justify-between">
       <a href="/docs/simplify/" class="">Simplifying code</a>
     </label>
   
@@ -1481,8 +1466,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-494fdb80ca3ad5d2868cb487a042ae27" class="toggle"  />
-    <label for="section-494fdb80ca3ad5d2868cb487a042ae27" class="flex justify-between">
+    <input type="checkbox" id="section-ba3d9d7fa2d604a47f68a6d7a7a9d2a2" class="toggle"  />
+    <label for="section-ba3d9d7fa2d604a47f68a6d7a7a9d2a2" class="flex justify-between">
       <a href="/docs/env/" class="">Development environment</a>
     </label>
   
@@ -1619,8 +1604,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-2870a15a3d2cff84408f43cbb1e77f97" class="toggle"  />
-    <label for="section-2870a15a3d2cff84408f43cbb1e77f97" class="flex justify-between">
+    <input type="checkbox" id="section-3c6a8c431d500080599ec572e56415d8" class="toggle"  />
+    <label for="section-3c6a8c431d500080599ec572e56415d8" class="flex justify-between">
       <a href="/docs/git/" class="">git</a>
     </label>
   
@@ -1770,8 +1755,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-44fa5eb3511a340ff4e9042080604b5c" class="toggle"  />
-    <label for="section-44fa5eb3511a340ff4e9042080604b5c" class="flex justify-between">
+    <input type="checkbox" id="section-39b7a0b404320b4007d4505305b8f4f4" class="toggle"  />
+    <label for="section-39b7a0b404320b4007d4505305b8f4f4" class="flex justify-between">
       <a href="/docs/build/" class="">Build automation</a>
     </label>
   
@@ -1786,10 +1771,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-0c816e62fd66eb322757addb01600cdd" class="toggle"  />
-    <label for="section-0c816e62fd66eb322757addb01600cdd" class="flex justify-between">
-      <a href="/docs/build/sections/packaging/" class="">Packaging a Java application</a>
-    </label>
+    <a href="/docs/build/sections/packaging/" class="">Packaging a Java application</a>
   
 
         </li>
@@ -1802,10 +1784,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-5537e478f301d8ff4f0b5a7a03c9db32" class="toggle"  />
-    <label for="section-5537e478f301d8ff4f0b5a7a03c9db32" class="flex justify-between">
-      <a href="/docs/build/sections/layout/" class="">Layout</a>
-    </label>
+    <a href="/docs/build/sections/layout/" class="">Layout</a>
   
 
         </li>
@@ -1818,10 +1797,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-33bd3456c4645cc966d192fba400a71a" class="toggle"  />
-    <label for="section-33bd3456c4645cc966d192fba400a71a" class="flex justify-between">
-      <a href="/docs/build/sections/pom/" class="">Configuration file</a>
-    </label>
+    <a href="/docs/build/sections/pom/" class="">Configuration file</a>
   
 
         </li>
@@ -1834,10 +1810,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-c956d0b428ebb6c853f314459a513393" class="toggle"  />
-    <label for="section-c956d0b428ebb6c853f314459a513393" class="flex justify-between">
-      <a href="/docs/build/sections/artifact/" class="">Artifact</a>
-    </label>
+    <a href="/docs/build/sections/artifact/" class="">Artifact</a>
   
 
         </li>
@@ -1850,10 +1823,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-d01a14431bc2161a8fed02d90e1a365b" class="toggle"  />
-    <label for="section-d01a14431bc2161a8fed02d90e1a365b" class="flex justify-between">
-      <a href="/docs/build/sections/dependencies/" class="">Dependencies</a>
-    </label>
+    <a href="/docs/build/sections/dependencies/" class="">Dependencies</a>
   
 
         </li>
@@ -1866,10 +1836,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-b838446830102a7dece872d673537390" class="toggle"  />
-    <label for="section-b838446830102a7dece872d673537390" class="flex justify-between">
-      <a href="/docs/build/sections/building/" class="">Building</a>
-    </label>
+    <a href="/docs/build/sections/building/" class="">Building</a>
   
 
         </li>
@@ -1887,8 +1854,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-ffcf8551871937aae0ce60f2b3cc616b" class="toggle"  />
-    <label for="section-ffcf8551871937aae0ce60f2b3cc616b" class="flex justify-between">
+    <input type="checkbox" id="section-48bf1202a7e278154d3a51c618c94cd6" class="toggle"  />
+    <label for="section-48bf1202a7e278154d3a51c618c94cd6" class="flex justify-between">
       <a href="/docs/background/" class="">Background</a>
     </label>
   
@@ -1981,7 +1948,6 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-
 </nav>
 
 
@@ -2002,7 +1968,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Pattern matching</strong>
+  <h3>Pattern matching</h3>
 
   <label for="toc-control">
     
@@ -2070,12 +2036,11 @@ https://github.com/alex-shpak/hugo-book
 </h2>
 <p>To make the notion of pattern matching more precise, we will represent a word $w$ as an array of characters, and a segment of $w$ as a (possibly empty) subarray of this array.</p>
 <blockquote class="book-hint warning">
-  <strong><em>Notation.</em></strong> If $w$ is a word,
-we use $w[i .. j)$ for the subsegment of $w$ that starts at index $i$ <em>included</em>, and ends at index $j$ <em>excluded</em>.
+<p><strong><em>Notation.</em></strong> If $w$ is a word,
+we use $w[i .. j)$ for the subsegment of $w$ that starts at index $i$ <em>included</em>, and ends at index $j$ <em>excluded</em>.</p>
 </blockquote>
-
 <blockquote class="book-hint info">
-  <p><strong><em>Example.</em></strong>
+<p><strong><em>Example.</em></strong>
 Let $w$ = <code>abca</code>.
 Then:</p>
 <ul>
@@ -2086,21 +2051,18 @@ Then:</p>
 <li>$w[1 .. 1)$ is another segment of $w$ with length 0 and word $\varepsilon$</li>
 </ul>
 </blockquote>
-
 <h2 id="match">
   Match
   <a class="anchor" href="#match">#</a>
 </h2>
 <p>We can now define what a match is:</p>
 <blockquote class="book-hint warning">
-  <p><strong><em>Definition.</em></strong>
+<p><strong><em>Definition.</em></strong>
 Let $w$ be a word (viewed as an array), and let $e$ be a regex that describes the language $L$.</p>
 <p>A <strong>match</strong> for $e$ in $w$ is a (possibly empty) segment of $w$ whose word belongs to $L$.</p>
-
 </blockquote>
-
 <blockquote class="book-hint info">
-  <p><strong><em>Example.</em></strong>
+<p><strong><em>Example.</em></strong>
 Let $e$ be the regex <code>ab*</code>, and let $w$ be the word <code>aba</code>.</p>
 <p>There are 3 matches for $e$ in $w$:</p>
 <ul>
@@ -2108,29 +2070,23 @@ Let $e$ be the regex <code>ab*</code>, and let $w$ be the word <code>aba</code>.
 <li>$w[0 .. 2)$ with word <code>ab</code>,</li>
 <li>$w[2 .. 3)$ with word <code>a</code></li>
 </ul>
-
 </blockquote>
-
 <blockquote class="book-hint danger">
-  <strong><em>Warning.</em></strong>
-Several matches may carry the same word (e.g. the first and third matches in the example above).
+<p><strong><em>Warning.</em></strong>
+Several matches may carry the same word (e.g. the first and third matches in the example above).</p>
 </blockquote>
-
 <blockquote class="book-hint danger">
-  <strong><em>Warning.</em></strong> Some matches may overlap (e.g. the first and second matches in the example above).
+<p><strong><em>Warning.</em></strong> Some matches may overlap (e.g. the first and second matches in the example above).</p>
 </blockquote>
-
-
-
-
-
-<div class="book-tabs"><input type="radio" class="toggle" name="tabs-exercise_matches" id="tabs-exercise_matches-0" checked="checked" />
-  <label for="tabs-exercise_matches-0">Exercise</label>
-  <div class="book-tabs-content markdown-inner"><p>Consider the regex $e$ = <code>a*</code> and the word $w$ = <code>aa</code>.</p>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-exercise_matches" id="tabs-exercise_matches-0" checked="checked" />
+<label for="tabs-exercise_matches-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>Consider the regex $e$ = <code>a*</code> and the word $w$ = <code>aa</code>.</p>
 <p>How many matches are there for $e$ in $w$?</p>
-</div><input type="radio" class="toggle" name="tabs-exercise_matches" id="tabs-exercise_matches-1"  />
-  <label for="tabs-exercise_matches-1">Solution</label>
-  <div class="book-tabs-content markdown-inner"><p>There are 6 matches for the regex <code>a*</code> in the word <code>aa</code>:</p>
+</div>
+<input type="radio" class="toggle" name="tabs-exercise_matches" id="tabs-exercise_matches-1"  />
+<label for="tabs-exercise_matches-1">Solution</label>
+<div class="book-tabs-content markdown-inner"><p>There are 6 matches for the regex <code>a*</code> in the word <code>aa</code>:</p>
 <ul>
 <li>$w[0 .. 0)$: $\varepsilon$</li>
 <li>$w[0 .. 1)$: <code>a</code></li>
@@ -2138,8 +2094,9 @@ Several matches may carry the same word (e.g. the first and third matches in the
 <li>$w[1 .. 1)$: $\varepsilon$</li>
 <li>$w[1 .. 2)$: <code>a</code></li>
 <li>$w[2 .. 2)$: $\varepsilon$</li>
-</ul></div></div>
-
+</ul>
+</div>
+</div>
 <h2 id="bestFirstMatch">
   Best first match
   <a class="anchor" href="#bestFirstMatch">#</a>
@@ -2152,52 +2109,45 @@ Reasons include:</p>
 <li>avoiding overlapping matches (e.g. when performing a global &ldquo;search and replace&rdquo;).</li>
 </ul>
 <blockquote class="book-hint warning">
-  <p>Let $e$ be a regex, let $w$ be a word, and let $m_1$ and $m_2$ be two matches for $e$ in $w$.</p>
+<p>Let $e$ be a regex, let $w$ be a word, and let $m_1$ and $m_2$ be two matches for $e$ in $w$.</p>
 <p>$m_1$ is <strong>preferred</strong> to $m_2$ if:</p>
 <ul>
 <li>$m_1$ starts before $m_2$: for instance $w[1 .. 4)$ is preferred to $w[3 .. 8)$, or</li>
 <li>they start at the same index and the regex engine favors $m_1$ over $m_2$.</li>
 </ul>
-
 </blockquote>
-
-<p>Preference is a <a href="https://unibz-pp-23-24.github.io/docs/background/sections/order/#total">total order</a> over the matches for for $e$ in $w$, meaning that if there is a match, then there can be at most <em>one</em> best first match.</p>
+<p>Preference is a <a href="https://unibz-pp-24-25.github.io/docs/background/sections/order/#total">total order</a> over the matches for for $e$ in $w$, meaning that if there is a match, then there can be at most <em>one</em> best first match.</p>
 <blockquote class="book-hint info">
-  <p><strong><em>Note.</em></strong>
+<p><strong><em>Note.</em></strong>
 When $m_1$ and $m_2$ start at the same index (second case above), whether $m_1$ is favored over $m_2$ can vary in subtle ways from one regex engine to the other.
 These preferences are usually explained in algorithmic terms (and half-informally).</p>
 <p>For a reasonably detailed tutorial about the behavior(s) of regex search engine, we refer to <a href="https://www.regular-expressions.info/tutorial.html">this website</a>.
 For Java, the <a href="https://docs.oracle.com/javase/tutorial/essential/regex/index.html">Oracle tutorial</a> on regexes can also be a good entry point (although less precise that the previous reference).</p>
 <p>In this section, we only introduce basic behaviors of regex engines.</p>
-
 </blockquote>
-
 <h3 id="left-to-right">
   Left-to-right
   <a class="anchor" href="#left-to-right">#</a>
 </h3>
 <p>Commutative operations are evaluated from <em>left-to-right</em>.</p>
 <blockquote class="book-hint info">
-  <p><strong><em>Example.</em></strong>
+<p><strong><em>Example.</em></strong>
 Consider the word $w$ = <code>ab</code>.</p>
 <ul>
 <li>the best first match for the regex <code>ab|a</code> in $w$ is $w[0 .. 2) (with word <code>ab</code>)</li>
 <li>the best first match for the regex <code>a|ab</code> in $w$ is $w[0 .. 1) (with word <code>a</code>)</li>
 </ul>
 </blockquote>
-
 <blockquote class="book-hint danger">
-  <strong><em>Exception.</em></strong>
+<p><strong><em>Exception.</em></strong>
 In this example,
-A <a href="https://unibz-pp-23-24.github.io/docs/regex/sections/practice/#flavours">POSIX-compliant</a> regex engine would produce
-$w[0 .. 2) (with word <code>ab</code>) as best first match for both expressions.
+A <a href="https://unibz-pp-24-25.github.io/docs/regex/sections/practice/#flavours">POSIX-compliant</a> regex engine would produce
+$w[0 .. 2) (with word <code>ab</code>) as best first match for both expressions.</p>
 </blockquote>
-
 <blockquote class="book-hint danger">
-  <strong><em>Warning.</em></strong>
-As illustrated with the above example, two regexes that describe the same language may have different best first matches (in the same word).
+<p><strong><em>Warning.</em></strong>
+As illustrated with the above example, two regexes that describe the same language may have different best first matches (in the same word).</p>
 </blockquote>
-
 <h3 id="greedy">
   Greedyness
   <a class="anchor" href="#greedy">#</a>
@@ -2213,7 +2163,7 @@ More precisely, when encountering a subexpression of the form $e$<code>*</code>:
 <li>etc.</li>
 </ul>
 <blockquote class="book-hint info">
-  <p><strong><em>Examples.</em></strong></p>
+<p><strong><em>Examples.</em></strong></p>
 <ul>
 <li>The best first match for the regex <code>a*</code> in <code>aa</code> is the whole word.</li>
 <li>The best first match for the regex <code>a*</code> in <code>aab</code> is $[0 ..2)$ (with word <code>aa</code>).</li>
@@ -2228,19 +2178,16 @@ More precisely, when encountering a subexpression of the form $e$<code>*</code>:
 </li>
 </ul>
 </blockquote>
-
 <blockquote class="book-hint danger">
-  <strong><em>Warning.</em></strong>
+<p><strong><em>Warning.</em></strong>
 The interaction of left-to-right evaluation and greedy matching can be hard to predict.
-This is why we highly recommend writing and debugging regexes with a validation engine, such as <a href="https://regex101.com">regex101</a>.
+This is why we highly recommend writing and debugging regexes with a validation engine, such as <a href="https://regex101.com">regex101</a>.</p>
 </blockquote>
-
 <blockquote class="book-hint danger">
-  <strong><em>Warning.</em></strong>
+<p><strong><em>Warning.</em></strong>
 Nested <code>*</code> operators can be costly, due to a combinatorial explosion of the number of attempts to find a match.
-This is sometimes referred to as <a href="https://www.regular-expressions.info/catastrophic.html">catastrophic backtracking</a>.
+This is sometimes referred to as <a href="https://www.regular-expressions.info/catastrophic.html">catastrophic backtracking</a>.</p>
 </blockquote>
-
 <h2 id="successiveMatches">
   Successive best first matches
   <a class="anchor" href="#successiveMatches">#</a>
@@ -2248,9 +2195,9 @@ This is sometimes referred to as <a href="https://www.regular-expressions.info/c
 <p>Most regex engines can return best first matches in an iterative way.
 Intuitively, the engine &ldquo;consumes&rdquo; the best first match.
 Then the next match is the best first match in the remaining string, etc.</p>
-<p>More precisely:
+<p>More precisely:</p>
 <blockquote class="book-hint warning">
-  <p><strong><em>Definition.</em></strong>
+<p><strong><em>Definition.</em></strong>
 Let $e$ be regex and let $w$ be a word with lenght $n$.</p>
 <p>Then:</p>
 <ul>
@@ -2259,11 +2206,9 @@ Let $e$ be regex and let $w$ be a word with lenght $n$.</p>
 <li>the <strong>third match</strong> $w[i_3 .. j_3)$ for $e$ in $w$ is the best first match (if any) for $e$ in $w[j_2 .. n)$,</li>
 <li>etc.</li>
 </ul>
-
 </blockquote>
-</p>
 <blockquote class="book-hint info">
-  <p><strong><em>Example.</em></strong>
+<p><strong><em>Example.</em></strong>
 Let $e$ be the regex <code>ab*</code>, and let $w$ be the word <code>abac</code>.</p>
 <ul>
 <li>
@@ -2277,94 +2222,91 @@ This match is $w[2 .. 3)$, with word <code>a</code>.</p>
 <p>There is no third match.</p>
 </li>
 </ul>
-
 </blockquote>
-
-
-
-
-
-<div class="book-tabs"><input type="radio" class="toggle" name="tabs-exercise_greedy_matches" id="tabs-exercise_greedy_matches-0" checked="checked" />
-  <label for="tabs-exercise_greedy_matches-0">Exercise</label>
-  <div class="book-tabs-content markdown-inner"><p>In each of the cases below, find all successive best first matches for the regex $e$ in word $w$:</p>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-exercise_greedy_matches" id="tabs-exercise_greedy_matches-0" checked="checked" />
+<label for="tabs-exercise_greedy_matches-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>In each of the cases below, find all successive best first matches for the regex $e$ in word $w$:</p>
 <table>
-<thead>
-<tr>
-<th>regex $e$</th>
-<th>word $w$</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>a</code></td>
-<td><code>aba</code></td>
-</tr>
-<tr>
-<td><code>a*b</code></td>
-<td><code>aba</code></td>
-</tr>
-<tr>
-<td><code>a*</code></td>
-<td><code>a</code></td>
-</tr>
-<tr>
-<td><code>a*</code></td>
-<td><code>aba</code></td>
-</tr>
-<tr>
-<td><code>(ab)*</code></td>
-<td><code>aba</code></td>
-</tr>
-<tr>
-<td><code>(ab)*</code></td>
-<td><code>abab</code></td>
-</tr>
-</tbody>
-</table></div><input type="radio" class="toggle" name="tabs-exercise_greedy_matches" id="tabs-exercise_greedy_matches-1"  />
-  <label for="tabs-exercise_greedy_matches-1">Solution</label>
-  <div class="book-tabs-content markdown-inner"><table>
-<thead>
-<tr>
-<th>regex $e$</th>
-<th>word $w$</th>
-<th>matches</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>a</code></td>
-<td><code>aba</code></td>
-<td>$[0 .. 1)$:<code>a</code>, $[2 .. 3)$:<code>a</code></td>
-</tr>
-<tr>
-<td><code>a*b</code></td>
-<td><code>aba</code></td>
-<td>$[0 .. 2)$:<code>ab</code></td>
-</tr>
-<tr>
-<td><code>a*</code></td>
-<td><code>a</code></td>
-<td>$[0 .. 1)$:<code>a</code>, $[1 .. 1)$: $\varepsilon$</td>
-</tr>
-<tr>
-<td><code>a*</code></td>
-<td><code>aba</code></td>
-<td>$[0 .. 1)$:<code>a</code>, $[1 .. 1)$: $\varepsilon$, $[2 .. 3)$:<code>a</code>, $[3 .. 3)$: $\varepsilon$</td>
-</tr>
-<tr>
-<td><code>(ab)*</code></td>
-<td><code>aba</code></td>
-<td>$[0 .. 1)$:<code>ab</code>, $[2 .. 2)$: $\varepsilon$, $[3 .. 3)$: $\varepsilon$</td>
-</tr>
-<tr>
-<td><code>(ab)*</code></td>
-<td><code>abab</code></td>
-<td>$[0 .. 3)$:<code>abab</code>, $[3 .. 3)$: $\varepsilon$</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>regex $e$</th>
+          <th>word $w$</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>a</code></td>
+          <td><code>aba</code></td>
+      </tr>
+      <tr>
+          <td><code>a*b</code></td>
+          <td><code>aba</code></td>
+      </tr>
+      <tr>
+          <td><code>a*</code></td>
+          <td><code>a</code></td>
+      </tr>
+      <tr>
+          <td><code>a*</code></td>
+          <td><code>aba</code></td>
+      </tr>
+      <tr>
+          <td><code>(ab)*</code></td>
+          <td><code>aba</code></td>
+      </tr>
+      <tr>
+          <td><code>(ab)*</code></td>
+          <td><code>abab</code></td>
+      </tr>
+  </tbody>
 </table>
-</div></div>
-
+</div>
+<input type="radio" class="toggle" name="tabs-exercise_greedy_matches" id="tabs-exercise_greedy_matches-1"  />
+<label for="tabs-exercise_greedy_matches-1">Solution</label>
+<div class="book-tabs-content markdown-inner"><table>
+  <thead>
+      <tr>
+          <th>regex $e$</th>
+          <th>word $w$</th>
+          <th>matches</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>a</code></td>
+          <td><code>aba</code></td>
+          <td>$[0 .. 1)$:<code>a</code>, $[2 .. 3)$:<code>a</code></td>
+      </tr>
+      <tr>
+          <td><code>a*b</code></td>
+          <td><code>aba</code></td>
+          <td>$[0 .. 2)$:<code>ab</code></td>
+      </tr>
+      <tr>
+          <td><code>a*</code></td>
+          <td><code>a</code></td>
+          <td>$[0 .. 1)$:<code>a</code>, $[1 .. 1)$: $\varepsilon$</td>
+      </tr>
+      <tr>
+          <td><code>a*</code></td>
+          <td><code>aba</code></td>
+          <td>$[0 .. 1)$:<code>a</code>, $[1 .. 1)$: $\varepsilon$, $[2 .. 3)$:<code>a</code>, $[3 .. 3)$: $\varepsilon$</td>
+      </tr>
+      <tr>
+          <td><code>(ab)*</code></td>
+          <td><code>aba</code></td>
+          <td>$[0 .. 1)$:<code>ab</code>, $[2 .. 2)$: $\varepsilon$, $[3 .. 3)$: $\varepsilon$</td>
+      </tr>
+      <tr>
+          <td><code>(ab)*</code></td>
+          <td><code>abab</code></td>
+          <td>$[0 .. 3)$:<code>abab</code>, $[3 .. 3)$: $\varepsilon$</td>
+      </tr>
+  </tbody>
+</table>
+</div>
+</div>
 <h2 id="lazy">
   Lazy closure
   <a class="anchor" href="#lazy">#</a>
@@ -2373,130 +2315,126 @@ This match is $w[2 .. 3)$, with word <code>a</code>.</p>
 <p>One of them is <strong>lazy</strong> evaluation (also called <strong>reluctant</strong>).
 In this case, the star operator matches the <em>shortest possible</em> segment.</p>
 <blockquote class="book-hint info">
-  <p><strong><em>Examples.</em></strong></p>
+<p><strong><em>Examples.</em></strong></p>
 <table>
-<thead>
-<tr>
-<th>regex $e$</th>
-<th>word $w$</th>
-<th>best first match with lazy evaluation of star operators</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>a*</code></td>
-<td><code>aa</code></td>
-<td>$[0 .. 0)$:$\varepsilon$</td>
-</tr>
-<tr>
-<td><code>a*ac</code></td>
-<td><code>ac</code></td>
-<td>$[0 .. 2)$:<code>ac</code></td>
-</tr>
-<tr>
-<td><code>a*ac</code></td>
-<td><code>aac</code></td>
-<td>$[0 .. 3)$:<code>aac</code></td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>regex $e$</th>
+          <th>word $w$</th>
+          <th>best first match with lazy evaluation of star operators</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>a*</code></td>
+          <td><code>aa</code></td>
+          <td>$[0 .. 0)$:$\varepsilon$</td>
+      </tr>
+      <tr>
+          <td><code>a*ac</code></td>
+          <td><code>ac</code></td>
+          <td>$[0 .. 2)$:<code>ac</code></td>
+      </tr>
+      <tr>
+          <td><code>a*ac</code></td>
+          <td><code>aac</code></td>
+          <td>$[0 .. 3)$:<code>aac</code></td>
+      </tr>
+  </tbody>
 </table>
 </blockquote>
-
 <blockquote class="book-hint info">
-  <strong><em>Note.</em></strong>
-In a same regular expression, it is possible to specify that some <code>*</code> operators must be evaluated in a lazy way, and others in a greedy way.
+<p><strong><em>Note.</em></strong>
+In a same regular expression, it is possible to specify that some <code>*</code> operators must be evaluated in a lazy way, and others in a greedy way.</p>
 </blockquote>
-
-
-
-
-
-<div class="book-tabs"><input type="radio" class="toggle" name="tabs-exercise_lazy_matches" id="tabs-exercise_lazy_matches-0" checked="checked" />
-  <label for="tabs-exercise_lazy_matches-0">Exercise</label>
-  <div class="book-tabs-content markdown-inner"><p>In each of the cases below, find all successive best first matches for the regex $e$ in word $w$, where <code>*</code> operators are evaluated in a lazy way.</p>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-exercise_lazy_matches" id="tabs-exercise_lazy_matches-0" checked="checked" />
+<label for="tabs-exercise_lazy_matches-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>In each of the cases below, find all successive best first matches for the regex $e$ in word $w$, where <code>*</code> operators are evaluated in a lazy way.</p>
 <table>
-<thead>
-<tr>
-<th>regex $e$</th>
-<th>word $w$</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>ab*</code></td>
-<td><code>ab</code></td>
-</tr>
-<tr>
-<td><code>a*b</code></td>
-<td><code>aba</code></td>
-</tr>
-<tr>
-<td><code>a*ab*</code></td>
-<td><code>ab</code></td>
-</tr>
-<tr>
-<td><code>a*</code></td>
-<td><code>a</code></td>
-</tr>
-<tr>
-<td><code>a*</code></td>
-<td><code>aa</code></td>
-</tr>
-<tr>
-<td><code>b*</code></td>
-<td><code>aa</code></td>
-</tr>
-</tbody>
-</table></div><input type="radio" class="toggle" name="tabs-exercise_lazy_matches" id="tabs-exercise_lazy_matches-1"  />
-  <label for="tabs-exercise_lazy_matches-1">Solution</label>
-  <div class="book-tabs-content markdown-inner"><table>
-<thead>
-<tr>
-<th>regex $e$</th>
-<th>word $w$</th>
-<th>lazy matches</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>ab*</code></td>
-<td><code>ab</code></td>
-<td>$[0 .. 1)$:<code>a</code></td>
-</tr>
-<tr>
-<td><code>a*b</code></td>
-<td><code>aba</code></td>
-<td>$[0 .. 2)$:<code>ab</code></td>
-</tr>
-<tr>
-<td><code>a*ab*</code></td>
-<td><code>ab</code></td>
-<td>$[0 .. 1)$:<code>a</code></td>
-</tr>
-<tr>
-<td><code>a*</code></td>
-<td><code>a</code></td>
-<td>$[0 .. 0)$:$\varepsilon$, $[1 .. 1)$:$\varepsilon$</td>
-</tr>
-<tr>
-<td><code>a*</code></td>
-<td><code>aa</code></td>
-<td>$[0 .. 0)$:$\varepsilon$, $[1 .. 1)$:$\varepsilon$, $[2 .. 2)$:$\varepsilon$</td>
-</tr>
-<tr>
-<td><code>b*</code></td>
-<td><code>aa</code></td>
-<td>$[0 .. 0)$:$\varepsilon$, $[1 .. 1)$:$\varepsilon$, $[2 .. 2)$:$\varepsilon$</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>regex $e$</th>
+          <th>word $w$</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>ab*</code></td>
+          <td><code>ab</code></td>
+      </tr>
+      <tr>
+          <td><code>a*b</code></td>
+          <td><code>aba</code></td>
+      </tr>
+      <tr>
+          <td><code>a*ab*</code></td>
+          <td><code>ab</code></td>
+      </tr>
+      <tr>
+          <td><code>a*</code></td>
+          <td><code>a</code></td>
+      </tr>
+      <tr>
+          <td><code>a*</code></td>
+          <td><code>aa</code></td>
+      </tr>
+      <tr>
+          <td><code>b*</code></td>
+          <td><code>aa</code></td>
+      </tr>
+  </tbody>
 </table>
-</div></div>
-
+</div>
+<input type="radio" class="toggle" name="tabs-exercise_lazy_matches" id="tabs-exercise_lazy_matches-1"  />
+<label for="tabs-exercise_lazy_matches-1">Solution</label>
+<div class="book-tabs-content markdown-inner"><table>
+  <thead>
+      <tr>
+          <th>regex $e$</th>
+          <th>word $w$</th>
+          <th>lazy matches</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>ab*</code></td>
+          <td><code>ab</code></td>
+          <td>$[0 .. 1)$:<code>a</code></td>
+      </tr>
+      <tr>
+          <td><code>a*b</code></td>
+          <td><code>aba</code></td>
+          <td>$[0 .. 2)$:<code>ab</code></td>
+      </tr>
+      <tr>
+          <td><code>a*ab*</code></td>
+          <td><code>ab</code></td>
+          <td>$[0 .. 1)$:<code>a</code></td>
+      </tr>
+      <tr>
+          <td><code>a*</code></td>
+          <td><code>a</code></td>
+          <td>$[0 .. 0)$:$\varepsilon$, $[1 .. 1)$:$\varepsilon$</td>
+      </tr>
+      <tr>
+          <td><code>a*</code></td>
+          <td><code>aa</code></td>
+          <td>$[0 .. 0)$:$\varepsilon$, $[1 .. 1)$:$\varepsilon$, $[2 .. 2)$:$\varepsilon$</td>
+      </tr>
+      <tr>
+          <td><code>b*</code></td>
+          <td><code>aa</code></td>
+          <td>$[0 .. 0)$:$\varepsilon$, $[1 .. 1)$:$\varepsilon$, $[2 .. 2)$:$\varepsilon$</td>
+      </tr>
+  </tbody>
+</table>
+</div>
+</div>
 <blockquote class="book-hint danger">
-  <strong><em>Warning.</em></strong>
-Lazy <code>*</code> operators can be hard to predict.
+<p><strong><em>Warning.</em></strong>
+Lazy <code>*</code> operators can be hard to predict.</p>
 </blockquote>
-
 </article>
  
       

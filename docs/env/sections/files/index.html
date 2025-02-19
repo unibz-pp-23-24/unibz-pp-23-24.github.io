@@ -3,27 +3,76 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Hierarchical file system # Tree # Most operating system expose files as a tree (or possibly several trees for Windows).
+<meta name="description" content="
+  Hierarchical file system
+  #
+
+
+  Tree
+  #
+
+Most operating system expose files as a tree (or possibly several trees for Windows).
+
 Definition. A (nonempty) tree is either:
-a single node (called a leaf), or a node with one or several children that are trees. In this tree, non-leaf nodes are directories, and the leaves can be files, executables, links, empty directories, etc. For instance:
-├── bin │ ├── echo │ └── .">
+
+a single node (called a leaf), or
+a node with one or several children that are trees.
+
+
+In this tree, non-leaf nodes are directories, and the leaves can be files, executables, links, empty directories, etc.
+For instance:
+├── bin
+│   ├── echo
+│   └── ...
+├── home
+│   ├── alice
+│   │   ├── .bashrc
+│   │   ├── .m2
+│   │   │   └── ...
+│   │   ├── Desktop
+│   │   │   └── ...
+│   │   ├── music
+│   │   │   └── thatSong.mp3
+│   │   └── workspace
+│   │       └── pp
+│   │           ├── assignments
+│   │           │   └── ...
+│   │           └── project
+│   │               ├── .git
+│   │               │   └── ...
+│   │               ├── src
+│   │               │   └── HelloWorld.java
+│   │               └── test
+│   │                   └── testHelloWorld.java
+│   └── bob
+│       ├── .bashrc
+│       ├── Desktop
+│       │   └── ...
+│       └── music
+│           ├── thatSong.mp3
+│           └── anotherSong.mp3
+└── ...
+
+Terminology. In this course, we will use the terms &ldquo;folder&rdquo; and &ldquo;directory&rdquo; interchangeably.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="Hierarchical file system" />
-<meta property="og:description" content="Hierarchical file system # Tree # Most operating system expose files as a tree (or possibly several trees for Windows).
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/env/sections/files/">
+  <meta property="og:site_name" content="Programming project 2024-25">
+  <meta property="og:title" content="Hierarchical file system">
+  <meta property="og:description" content="Hierarchical file system # Tree # Most operating system expose files as a tree (or possibly several trees for Windows).
 Definition. A (nonempty) tree is either:
 a single node (called a leaf), or a node with one or several children that are trees. In this tree, non-leaf nodes are directories, and the leaves can be files, executables, links, empty directories, etc. For instance:
-├── bin │ ├── echo │ └── ." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/env/sections/files/" /><meta property="article:section" content="docs" />
-
-
-<title>Hierarchical file system | Programming project 2023-24</title>
-<link rel="manifest" href="/manifest.json">
+├── bin │ ├── echo │ └── ... ├── home │ ├── alice │ │ ├── .bashrc │ │ ├── .m2 │ │ │ └── ... │ │ ├── Desktop │ │ │ └── ... │ │ ├── music │ │ │ └── thatSong.mp3 │ │ └── workspace │ │ └── pp │ │ ├── assignments │ │ │ └── ... │ │ └── project │ │ ├── .git │ │ │ └── ... │ │ ├── src │ │ │ └── HelloWorld.java │ │ └── test │ │ └── testHelloWorld.java │ └── bob │ ├── .bashrc │ ├── Desktop │ │ └── ... │ └── music │ ├── thatSong.mp3 │ └── anotherSong.mp3 └── ... Terminology. In this course, we will use the terms “folder” and “directory” interchangeably.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Hierarchical file system | Programming project 2024-25</title>
 <link rel="icon" href="/favicon.png" >
-<link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
-  <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.4e5dd21f0324d689aa628cb546e70eda39fb9e0b5daabb2a2c7da954eec10dab.js" integrity="sha256-Tl3SHwMk1omqYoy1RucO2jn7ngtdqrsqLH2pVO7BDas=" crossorigin="anonymous"></script>
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/env/sections/files/">
+<link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.ef6ce3f581865a34e7a0361facaa520c0f023938171236d76684573e7df35a2c.js" integrity="sha256-72zj9YGGWjTnoDYfrKpSDA8COTgXEjbXZoRXPn3zWiw=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -73,16 +122,17 @@ https://github.com/alex-shpak/hugo-book
         
   <nav>
 <h2 class="book-brand">
-  <a class="flex align-center" href="/"><span>Programming project 2023-24</span>
+  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
   </a>
 </h2>
 
 
-<div class="book-search">
+<div class="book-search hidden">
   <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
 
 
 
@@ -95,7 +145,6 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  
 
 
 
@@ -109,8 +158,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-f1c1e874f9c9473478447bba6c7db644" class="toggle"  />
-    <label for="section-f1c1e874f9c9473478447bba6c7db644" class="flex justify-between">
+    <input type="checkbox" id="section-9c72579f4feaa5ed1d8188779488d483" class="toggle"  />
+    <label for="section-9c72579f4feaa5ed1d8188779488d483" class="flex justify-between">
       <a href="/docs/intro/" class="">This course</a>
     </label>
   
@@ -208,8 +257,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-bc4d9392f5af16481cccf0c311076888" class="toggle"  />
-    <label for="section-bc4d9392f5af16481cccf0c311076888" class="flex justify-between">
+    <input type="checkbox" id="section-0af90824fe38d1d85af672be7208f3fa" class="toggle"  />
+    <label for="section-0af90824fe38d1d85af672be7208f3fa" class="flex justify-between">
       <a href="/docs/project/" class="">Project</a>
     </label>
   
@@ -255,8 +304,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-3435ead23eba75b5ffeeb8d422f70dea" class="toggle"  />
-    <label for="section-3435ead23eba75b5ffeeb8d422f70dea" class="flex justify-between">
+    <input type="checkbox" id="section-f8aa8cff3b51717ecd2ebfbd81d061ce" class="toggle"  />
+    <label for="section-f8aa8cff3b51717ecd2ebfbd81d061ce" class="flex justify-between">
       <a href="/docs/objects/" class="">Objects and classes</a>
     </label>
   
@@ -432,8 +481,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-48bc13e86f573c257821b397e779b02e" class="toggle"  />
-    <label for="section-48bc13e86f573c257821b397e779b02e" class="flex justify-between">
+    <input type="checkbox" id="section-84375da4f2da0b5ee2a224e67daa47cd" class="toggle"  />
+    <label for="section-84375da4f2da0b5ee2a224e67daa47cd" class="flex justify-between">
       <a href="/docs/interfaces/" class="">Interfaces</a>
     </label>
   
@@ -479,8 +528,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-e06acd393c0cc6e5b27e2cd8945d3dd8" class="toggle"  />
-    <label for="section-e06acd393c0cc6e5b27e2cd8945d3dd8" class="flex justify-between">
+    <input type="checkbox" id="section-dd500264748ddf6db6c4f8c13c5fa45b" class="toggle"  />
+    <label for="section-dd500264748ddf6db6c4f8c13c5fa45b" class="flex justify-between">
       <a href="/docs/abstractdatatypes/" class="">Abstract data types</a>
     </label>
   
@@ -565,8 +614,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-5d60f9e6a9b7c875f51358c583373282" class="toggle"  />
-    <label for="section-5d60f9e6a9b7c875f51358c583373282" class="flex justify-between">
+    <input type="checkbox" id="section-10a993a702eb9f53bd9244a93734d095" class="toggle"  />
+    <label for="section-10a993a702eb9f53bd9244a93734d095" class="flex justify-between">
       <a href="/docs/datastructures/" class="">Data structures</a>
     </label>
   
@@ -625,8 +674,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-93b39c27c032f5f72bed81496cbb41e3" class="toggle"  />
-    <label for="section-93b39c27c032f5f72bed81496cbb41e3" class="flex justify-between">
+    <input type="checkbox" id="section-58aec3ab091b08c257b626cc09af78c5" class="toggle"  />
+    <label for="section-58aec3ab091b08c257b626cc09af78c5" class="flex justify-between">
       <a href="/docs/errors/" class="">Errors</a>
     </label>
   
@@ -641,10 +690,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-a2fa4d1523374519c87fe83f9d8226b6" class="toggle"  />
-    <label for="section-a2fa4d1523374519c87fe83f9d8226b6" class="flex justify-between">
-      <a href="/docs/errors/sections/callstack/" class="">Call stack</a>
-    </label>
+    <a href="/docs/errors/sections/callstack/" class="">Call stack</a>
   
 
         </li>
@@ -657,10 +703,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-323953d2054911560fd76ed4505d5bb2" class="toggle"  />
-    <label for="section-323953d2054911560fd76ed4505d5bb2" class="flex justify-between">
-      <a href="/docs/errors/sections/exceptions/" class="">Exceptions</a>
-    </label>
+    <a href="/docs/errors/sections/exceptions/" class="">Exceptions</a>
   
 
         </li>
@@ -673,10 +716,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-03b7629c50286af7810d9917f4bdabd2" class="toggle"  />
-    <label for="section-03b7629c50286af7810d9917f4bdabd2" class="flex justify-between">
-      <a href="/docs/errors/sections/checked/" class="">Checked vs unchecked</a>
-    </label>
+    <a href="/docs/errors/sections/checked/" class="">Checked vs unchecked</a>
   
 
         </li>
@@ -689,10 +729,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-3add83584009ceb58c28b43e0a2280c9" class="toggle"  />
-    <label for="section-3add83584009ceb58c28b43e0a2280c9" class="flex justify-between">
-      <a href="/docs/errors/sections/custom/" class="">Custom exceptions</a>
-    </label>
+    <a href="/docs/errors/sections/custom/" class="">Custom exceptions</a>
   
 
         </li>
@@ -705,10 +742,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-b9c696d05ab8cb944ddf9cef47a3abb4" class="toggle"  />
-    <label for="section-b9c696d05ab8cb944ddf9cef47a3abb4" class="flex justify-between">
-      <a href="/docs/errors/sections/errors/" class="">Java errors</a>
-    </label>
+    <a href="/docs/errors/sections/errors/" class="">Java errors</a>
   
 
         </li>
@@ -726,8 +760,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-1be866adbf7f2244d1773e0d2a159b91" class="toggle"  />
-    <label for="section-1be866adbf7f2244d1773e0d2a159b91" class="flex justify-between">
+    <input type="checkbox" id="section-759e82ae41b9619c78e632572d50480a" class="toggle"  />
+    <label for="section-759e82ae41b9619c78e632572d50480a" class="flex justify-between">
       <a href="/docs/recursion/" class="">Recursion</a>
     </label>
   
@@ -786,8 +820,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-b7bc445f96cbe2bd1034c5f1c5d075bb" class="toggle"  />
-    <label for="section-b7bc445f96cbe2bd1034c5f1c5d075bb" class="flex justify-between">
+    <input type="checkbox" id="section-a1720661345b5872c845343fb6615be9" class="toggle"  />
+    <label for="section-a1720661345b5872c845343fb6615be9" class="flex justify-between">
       <a href="/docs/input/" class="">I/O and serialization</a>
     </label>
   
@@ -802,10 +836,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-09ea3b18445537bd77c25d3db6ab2fcf" class="toggle"  />
-    <label for="section-09ea3b18445537bd77c25d3db6ab2fcf" class="flex justify-between">
-      <a href="/docs/input/sections/files/" class="">Paths and files in Java</a>
-    </label>
+    <a href="/docs/input/sections/files/" class="">Paths and files in Java</a>
   
 
         </li>
@@ -818,10 +849,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-640b25aadb55f28505bfbbe5a5f7073d" class="toggle"  />
-    <label for="section-640b25aadb55f28505bfbbe5a5f7073d" class="flex justify-between">
-      <a href="/docs/input/sections/read/" class="">Reading from and writing to a file in Java</a>
-    </label>
+    <a href="/docs/input/sections/read/" class="">Reading from and writing to a file in Java</a>
   
 
         </li>
@@ -834,10 +862,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-7efe7741b54b5b602db75415a7806ef4" class="toggle"  />
-    <label for="section-7efe7741b54b5b602db75415a7806ef4" class="flex justify-between">
-      <a href="/docs/input/sections/property/" class="">Configuration files</a>
-    </label>
+    <a href="/docs/input/sections/property/" class="">Configuration files</a>
   
 
         </li>
@@ -850,10 +875,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-37fdfe811c449d15e51a84c19673df2f" class="toggle"  />
-    <label for="section-37fdfe811c449d15e51a84c19673df2f" class="flex justify-between">
-      <a href="/docs/input/sections/serialize/" class="">Serialization</a>
-    </label>
+    <a href="/docs/input/sections/serialize/" class="">Serialization</a>
   
 
         </li>
@@ -866,10 +888,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-ec41b3fcd24b301058a1bd1bd7b5c8e7" class="toggle"  />
-    <label for="section-ec41b3fcd24b301058a1bd1bd7b5c8e7" class="flex justify-between">
-      <a href="/docs/input/sections/json/" class="">JSON Serialization</a>
-    </label>
+    <a href="/docs/input/sections/json/" class="">JSON Serialization</a>
   
 
         </li>
@@ -887,8 +906,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-baf3ea6e28839ac044570d2d313c8794" class="toggle"  />
-    <label for="section-baf3ea6e28839ac044570d2d313c8794" class="flex justify-between">
+    <input type="checkbox" id="section-9bfff01f1c5ef64a53927faf30620ccf" class="toggle"  />
+    <label for="section-9bfff01f1c5ef64a53927faf30620ccf" class="flex justify-between">
       <a href="/docs/regex/" class="">Regular expressions</a>
     </label>
   
@@ -947,8 +966,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-ae8fba9e927e4c55801a4e71f6b7d054" class="toggle"  />
-    <label for="section-ae8fba9e927e4c55801a4e71f6b7d054" class="flex justify-between">
+    <input type="checkbox" id="section-882764aad745f79e099c5a43798784f9" class="toggle"  />
+    <label for="section-882764aad745f79e099c5a43798784f9" class="flex justify-between">
       <a href="/docs/lambda/" class="">Callback methods and lambda expressions</a>
     </label>
   
@@ -1046,8 +1065,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-41a2765a9682fb1ce579fb1661f1250d" class="toggle"  />
-    <label for="section-41a2765a9682fb1ce579fb1661f1250d" class="flex justify-between">
+    <input type="checkbox" id="section-7783f19754a3a0ec1529ed7ac208c3ab" class="toggle"  />
+    <label for="section-7783f19754a3a0ec1529ed7ac208c3ab" class="flex justify-between">
       <a href="/docs/stream/" class="">Streams in Java</a>
     </label>
   
@@ -1158,8 +1177,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-87d53bbeb97db8aab24c02b4d45460f2" class="toggle"  />
-    <label for="section-87d53bbeb97db8aab24c02b4d45460f2" class="flex justify-between">
+    <input type="checkbox" id="section-793e09c315e082fb44de3238b9ad707b" class="toggle"  />
+    <label for="section-793e09c315e082fb44de3238b9ad707b" class="flex justify-between">
       <a href="/docs/generics/" class="">Generic programming</a>
     </label>
   
@@ -1244,8 +1263,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-5dcccd15580bb824ba055538c97bdea6" class="toggle"  />
-    <label for="section-5dcccd15580bb824ba055538c97bdea6" class="flex justify-between">
+    <input type="checkbox" id="section-3876422a93470dcccad1a719c99a8e17" class="toggle"  />
+    <label for="section-3876422a93470dcccad1a719c99a8e17" class="flex justify-between">
       <a href="/docs/multithreading/" class="">Multithreading</a>
     </label>
   
@@ -1356,8 +1375,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-9d77b970a03dc72b048d9fce7bfe272f" class="toggle"  />
-    <label for="section-9d77b970a03dc72b048d9fce7bfe272f" class="flex justify-between">
+    <input type="checkbox" id="section-990bc84b6dc3891b1963528a24b45e2e" class="toggle"  />
+    <label for="section-990bc84b6dc3891b1963528a24b45e2e" class="flex justify-between">
       <a href="/docs/unittests/" class="">Unit tests</a>
     </label>
   
@@ -1372,10 +1391,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-796939dc839b82c2ff89d99e47011262" class="toggle"  />
-    <label for="section-796939dc839b82c2ff89d99e47011262" class="flex justify-between">
-      <a href="/docs/unittests/sections/structured/" class="">Code units</a>
-    </label>
+    <a href="/docs/unittests/sections/structured/" class="">Code units</a>
   
 
         </li>
@@ -1388,10 +1404,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-ad5c3d825858d4a9ca4ad02d541f7121" class="toggle"  />
-    <label for="section-ad5c3d825858d4a9ca4ad02d541f7121" class="flex justify-between">
-      <a href="/docs/unittests/sections/tdd/" class="">Development driven by unit tests</a>
-    </label>
+    <a href="/docs/unittests/sections/tdd/" class="">Development driven by unit tests</a>
   
 
         </li>
@@ -1404,10 +1417,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-7e09be54c45521908b57f9eaf194f5f6" class="toggle"  />
-    <label for="section-7e09be54c45521908b57f9eaf194f5f6" class="flex justify-between">
-      <a href="/docs/unittests/sections/junit/" class="">in Java</a>
-    </label>
+    <a href="/docs/unittests/sections/junit/" class="">in Java</a>
   
 
         </li>
@@ -1425,8 +1435,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-0407f110c1b3ed4992fcb7fc5f05aa12" class="toggle"  />
-    <label for="section-0407f110c1b3ed4992fcb7fc5f05aa12" class="flex justify-between">
+    <input type="checkbox" id="section-4aed4e1c4b6179fd330f627f75eb18b3" class="toggle"  />
+    <label for="section-4aed4e1c4b6179fd330f627f75eb18b3" class="flex justify-between">
       <a href="/docs/simplify/" class="">Simplifying code</a>
     </label>
   
@@ -1485,8 +1495,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-494fdb80ca3ad5d2868cb487a042ae27" class="toggle" checked />
-    <label for="section-494fdb80ca3ad5d2868cb487a042ae27" class="flex justify-between">
+    <input type="checkbox" id="section-ba3d9d7fa2d604a47f68a6d7a7a9d2a2" class="toggle" checked />
+    <label for="section-ba3d9d7fa2d604a47f68a6d7a7a9d2a2" class="flex justify-between">
       <a href="/docs/env/" class="">Development environment</a>
     </label>
   
@@ -1623,8 +1633,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-2870a15a3d2cff84408f43cbb1e77f97" class="toggle"  />
-    <label for="section-2870a15a3d2cff84408f43cbb1e77f97" class="flex justify-between">
+    <input type="checkbox" id="section-3c6a8c431d500080599ec572e56415d8" class="toggle"  />
+    <label for="section-3c6a8c431d500080599ec572e56415d8" class="flex justify-between">
       <a href="/docs/git/" class="">git</a>
     </label>
   
@@ -1774,8 +1784,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-44fa5eb3511a340ff4e9042080604b5c" class="toggle"  />
-    <label for="section-44fa5eb3511a340ff4e9042080604b5c" class="flex justify-between">
+    <input type="checkbox" id="section-39b7a0b404320b4007d4505305b8f4f4" class="toggle"  />
+    <label for="section-39b7a0b404320b4007d4505305b8f4f4" class="flex justify-between">
       <a href="/docs/build/" class="">Build automation</a>
     </label>
   
@@ -1790,10 +1800,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-0c816e62fd66eb322757addb01600cdd" class="toggle"  />
-    <label for="section-0c816e62fd66eb322757addb01600cdd" class="flex justify-between">
-      <a href="/docs/build/sections/packaging/" class="">Packaging a Java application</a>
-    </label>
+    <a href="/docs/build/sections/packaging/" class="">Packaging a Java application</a>
   
 
         </li>
@@ -1806,10 +1813,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-5537e478f301d8ff4f0b5a7a03c9db32" class="toggle"  />
-    <label for="section-5537e478f301d8ff4f0b5a7a03c9db32" class="flex justify-between">
-      <a href="/docs/build/sections/layout/" class="">Layout</a>
-    </label>
+    <a href="/docs/build/sections/layout/" class="">Layout</a>
   
 
         </li>
@@ -1822,10 +1826,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-33bd3456c4645cc966d192fba400a71a" class="toggle"  />
-    <label for="section-33bd3456c4645cc966d192fba400a71a" class="flex justify-between">
-      <a href="/docs/build/sections/pom/" class="">Configuration file</a>
-    </label>
+    <a href="/docs/build/sections/pom/" class="">Configuration file</a>
   
 
         </li>
@@ -1838,10 +1839,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-c956d0b428ebb6c853f314459a513393" class="toggle"  />
-    <label for="section-c956d0b428ebb6c853f314459a513393" class="flex justify-between">
-      <a href="/docs/build/sections/artifact/" class="">Artifact</a>
-    </label>
+    <a href="/docs/build/sections/artifact/" class="">Artifact</a>
   
 
         </li>
@@ -1854,10 +1852,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-d01a14431bc2161a8fed02d90e1a365b" class="toggle"  />
-    <label for="section-d01a14431bc2161a8fed02d90e1a365b" class="flex justify-between">
-      <a href="/docs/build/sections/dependencies/" class="">Dependencies</a>
-    </label>
+    <a href="/docs/build/sections/dependencies/" class="">Dependencies</a>
   
 
         </li>
@@ -1870,10 +1865,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-b838446830102a7dece872d673537390" class="toggle"  />
-    <label for="section-b838446830102a7dece872d673537390" class="flex justify-between">
-      <a href="/docs/build/sections/building/" class="">Building</a>
-    </label>
+    <a href="/docs/build/sections/building/" class="">Building</a>
   
 
         </li>
@@ -1891,8 +1883,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-ffcf8551871937aae0ce60f2b3cc616b" class="toggle"  />
-    <label for="section-ffcf8551871937aae0ce60f2b3cc616b" class="flex justify-between">
+    <input type="checkbox" id="section-48bf1202a7e278154d3a51c618c94cd6" class="toggle"  />
+    <label for="section-48bf1202a7e278154d3a51c618c94cd6" class="flex justify-between">
       <a href="/docs/background/" class="">Background</a>
     </label>
   
@@ -1985,7 +1977,6 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-
 </nav>
 
 
@@ -2006,7 +1997,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Hierarchical file system</strong>
+  <h3>Hierarchical file system</h3>
 
   <label for="toc-control">
     
@@ -2060,13 +2051,12 @@ https://github.com/alex-shpak/hugo-book
 </h2>
 <p>Most operating system expose files as a <em>tree</em> (or possibly several trees for Windows).</p>
 <blockquote class="book-hint warning">
-  <p><strong><em>Definition.</em></strong> A (nonempty) <strong>tree</strong> is either:</p>
+<p><strong><em>Definition.</em></strong> A (nonempty) <strong>tree</strong> is either:</p>
 <ul>
 <li>a single node (called a <strong>leaf</strong>), or</li>
 <li>a node with one or several children that are trees.</li>
 </ul>
 </blockquote>
-
 <p>In this tree, non-leaf nodes are directories, and the leaves can be files, executables, links, empty directories, etc.
 For instance:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>├── bin
@@ -2100,22 +2090,20 @@ For instance:</p>
 </span></span><span style="display:flex;"><span>│           ├── thatSong.mp3
 </span></span><span style="display:flex;"><span>│           └── anotherSong.mp3
 </span></span><span style="display:flex;"><span>└── ...
-</span></span></code></pre></div><p><blockquote class="book-hint warning">
-  <strong><em>Terminology.</em></strong> In this course, we will use the terms &ldquo;folder&rdquo; and &ldquo;directory&rdquo; interchangeably.
+</span></span></code></pre></div><blockquote class="book-hint warning">
+<p><strong><em>Terminology.</em></strong> In this course, we will use the terms &ldquo;folder&rdquo; and &ldquo;directory&rdquo; interchangeably.</p>
 </blockquote>
-
 <blockquote class="book-hint warning">
-  <strong><em>Terminology.</em></strong> &ldquo;File&rdquo; is sometimes used (e.g. in the Linux documentation) as a generic term for all nodes in this tree (in combination with &ldquo;directory file&rdquo;, &ldquo;executable file&rdquo;, &ldquo;regular file&rdquo;, etc.)
-We will <em>not</em> follow this terminology.
+<p><strong><em>Terminology.</em></strong> &ldquo;File&rdquo; is sometimes used (e.g. in the Linux documentation) as a generic term for all nodes in this tree (in combination with &ldquo;directory file&rdquo;, &ldquo;executable file&rdquo;, &ldquo;regular file&rdquo;, etc.)
+We will <em>not</em> follow this terminology.</p>
 </blockquote>
-</p>
 <p>Windows may expose several trees (e.g. one per physical device).</p>
 <h2 id="path">
   Path
   <a class="anchor" href="#path">#</a>
 </h2>
-<p><blockquote class="book-hint warning">
-  <p><strong><em>Definition.</em></strong> In such a tree, a <strong>path</strong> from a directory <em>s</em> to an arbitrary node <em>t</em> is either:</p>
+<blockquote class="book-hint warning">
+<p><strong><em>Definition.</em></strong> In such a tree, a <strong>path</strong> from a directory <em>s</em> to an arbitrary node <em>t</em> is either:</p>
 <ul>
 <li><code>.</code> if <em>s</em> and <em>t</em> are the same node, or</li>
 <li><code>..</code> if <em>t</em> is the parent of <em>s</em>, or</li>
@@ -2123,55 +2111,49 @@ We will <em>not</em> follow this terminology.
 <li>a path from <em>s</em> to some node <em>i</em>, followed by <code>/</code> (or <code>\</code>on Windows), followed by a path from <em>i</em> to <em>t</em>.</li>
 </ul>
 </blockquote>
-
-For instance (on macOS, Linux, etc.), in the tree above:</p>
+<p>For instance (on macOS, Linux, etc.), in the tree above:</p>
 <ul>
 <li><code>home/alice/workspace/pp/project/src/HelloWorld.java</code> is a path from the root to the file <code>HelloWorld.java</code>,</li>
 <li><code>workspace/pp/project/src/HelloWorld.java</code> is a path from the directory <code>alice</code> to the file <code>HelloWorld.java</code>,</li>
 <li><code>../../bob/Desktop</code> is a path from Alice&rsquo;s Desktop to Bob&rsquo;s Desktop,</li>
 <li><code>../../bob/../bob/./Desktop</code> is another path from Alice&rsquo;s Desktop to Bob&rsquo;s Desktop.</li>
 </ul>
-
-
-
-
-<div class="book-tabs"><input type="radio" class="toggle" name="tabs-number_of_paths" id="tabs-number_of_paths-0" checked="checked" />
-  <label for="tabs-number_of_paths-0">Exercise</label>
-  <div class="book-tabs-content markdown-inner">How many paths are there from a directory to an arbitrary node?</div><input type="radio" class="toggle" name="tabs-number_of_paths" id="tabs-number_of_paths-1"  />
-  <label for="tabs-number_of_paths-1">Solution</label>
-  <div class="book-tabs-content markdown-inner">(Countably) infinitely many.</div></div>
-
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-number_of_paths" id="tabs-number_of_paths-0" checked="checked" />
+<label for="tabs-number_of_paths-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>How many paths are there from a directory to an arbitrary node?</p>
+</div>
+<input type="radio" class="toggle" name="tabs-number_of_paths" id="tabs-number_of_paths-1"  />
+<label for="tabs-number_of_paths-1">Solution</label>
+<div class="book-tabs-content markdown-inner"><p>(Countably) infinitely many.</p>
+</div>
+</div>
 <blockquote class="book-hint danger">
-  <p><strong><em>Warning.</em></strong> Some operating system (Windows, macOS) use <em>case-insensitive</em> paths, whereas others (Linux, Android) use <em>case-sensitive</em> paths (this may also vary depending on physical storage devices).</p>
+<p><strong><em>Warning.</em></strong> Some operating system (Windows, macOS) use <em>case-insensitive</em> paths, whereas others (Linux, Android) use <em>case-sensitive</em> paths (this may also vary depending on physical storage devices).</p>
 <p>For instance, on Windows, <code>src/HelloWorld.java</code> and <code>src/helloworld.java</code> are the <em>same path</em>.</p>
 <p>In order to make sure that your code is portable:</p>
 <ul>
 <li>always use <em>case-sensitive</em> paths in your code (i.e. respect the names of your files, folders, executables, etc.),</li>
 <li>do not create two files (or subfolders, executables, etc.) in the <em>same</em> folder with identical names modulo upper/lower case (e.g. <code>Readme.md</code> and <code>README.md</code>).</li>
 </ul>
-
 </blockquote>
-
 <blockquote class="book-hint warning">
-  <strong><em>Convention.</em></strong> In what follows (unless explicitly stated), we will adopt by default the conventions for path names adopted on Linux.
-In particular, we will use <code>/</code> as a separator, and case-sensitive file and folder names.
+<p><strong><em>Convention.</em></strong> In what follows (unless explicitly stated), we will adopt by default the conventions for path names adopted on Linux.
+In particular, we will use <code>/</code> as a separator, and case-sensitive file and folder names.</p>
 </blockquote>
-
 <h3 id="absolute">
   Absolute path
   <a class="anchor" href="#absolute">#</a>
 </h3>
 <blockquote class="book-hint warning">
-  <p><strong><em>Definition.</em></strong> An <strong>absolute path</strong> is a path prefixed with:</p>
+<p><strong><em>Definition.</em></strong> An <strong>absolute path</strong> is a path prefixed with:</p>
 <ul>
 <li><code>/</code> on macOS, Linux, Android, IOs, etc.</li>
 <li>a capital letter followed by <code>:\</code> on Windows, where the letter identifies a physical device, disk partition, etc.
 In particular, the identifier of the main partition is often the letter <code>C</code>, in which case absolute paths (within this partition) are prefixed with <code>C:\</code>.</li>
 </ul>
 <p>An absolute path is always a path <em>from the root of the tree</em>.</p>
-
 </blockquote>
-
 <p>For instance (on macOS, Linux, etc.), <code>/home/alice/workspace/pp/project/src/HelloWorld.java</code> is an absolute path to the file <code>HelloWorld.java</code></p>
 <p>A few simple observations:</p>
 <ul>
@@ -2183,9 +2165,8 @@ In particular, the identifier of the main partition is often the letter <code>C<
   <a class="anchor" href="#relative-path">#</a>
 </h3>
 <blockquote class="book-hint warning">
-  <strong><em>Definition.</em></strong> A <strong>relative path</strong> is a path that is not absolute.
+<p><strong><em>Definition.</em></strong> A <strong>relative path</strong> is a path that is not absolute.</p>
 </blockquote>
-
 <p>For instance (on macOS, Linux, etc.), <code>../../bob/Desktop</code> is a path to to Bob&rsquo;s Desktop <em>relative to</em> Alice&rsquo;s Desktop.</p>
 <p>Note that if <em>p</em> is a relative path, then <em>p</em> prefixed with <code>./</code> (or <code>.\</code> on Windows) is a path equivalent to <em>p</em>.
 This prefix is sometimes used to emphasize that a path is relative (among other purposes).</p>
@@ -2213,9 +2194,8 @@ E.g. in this example:</p>
 <li><code>/home/bob/</code> for Bob</li>
 </ul>
 <blockquote class="book-hint danger">
-  <strong><em>Warning.</em></strong> The home directory is usually <em>not</em> the root of the tree (even if there is a single user on the machine).
+<p><strong><em>Warning.</em></strong> The home directory is usually <em>not</em> the root of the tree (even if there is a single user on the machine).</p>
 </blockquote>
-
 <h3 id="absolute-paths-to-the-home-directory">
   Absolute paths to the home directory
   <a class="anchor" href="#absolute-paths-to-the-home-directory">#</a>
@@ -2251,17 +2231,16 @@ For instance, the <a href="https://en.wikipedia.org/wiki/Configuration_file">con
 <code>~/.gitconfig</code>
 can be used to declare parameters (e.g. user identifier, etc.) or options (e.g. disable default fast-forward merge, etc.) to be used with git.</p>
 <blockquote class="book-hint info">
-  <strong><em>Hint.</em></strong> Configuration files are a convenient way to save your personal preferences and use them on several machines.
+<p><strong><em>Hint.</em></strong> Configuration files are a convenient way to save your personal preferences and use them on several machines.
 For instance, you may need to logging to a remote server via <a href="https://en.wikipedia.org/wiki/Secure_Shell">ssh</a> to perform some tasks (e.g. deploy a database or run costly computations).
-In such a scenario, you can upload dot files to your home directory on this server.
+In such a scenario, you can upload dot files to your home directory on this server.</p>
 </blockquote>
-
 <p>Hidden files or directories may serve other purposes.
 For instance, the dot folder
 <code>~/.m2</code>
 is used by Maven to store (in one place) the Java libraries that are required (as dependencies) by any Java project present in the home directory.</p>
 <p>Hidden files or directories may also contain information specific to a subdirectory.
-For instance, every git <a href="https://unibz-pp-23-24.github.io/docs/git/sections/basics/#repository">repository</a> (a.k.a. &ldquo;project&rdquo;) contains a dot folder <code>.git</code> that stores the full history of modification made to the repository.</p>
+For instance, every git <a href="https://unibz-pp-24-25.github.io/docs/git/sections/basics/#repository">repository</a> (a.k.a. &ldquo;project&rdquo;) contains a dot folder <code>.git</code> that stores the full history of modification made to the repository.</p>
 <h3 id="usage-and-layout">
   Usage and layout
   <a class="anchor" href="#usage-and-layout">#</a>
@@ -2269,9 +2248,9 @@ For instance, every git <a href="https://unibz-pp-23-24.github.io/docs/git/secti
 <p>Your home directory is where you generally want to store your projects, documents, scripts, etc.</p>
 <p>You are free to structure it as you like (using sub-directories).
 Make sure that this structure allows you to <em>retrieve your own work</em> easily.</p>
-<!-- raw HTML omitted -->
+<!-- You may also create dedicated (sub)directories for content that requires no [back up]() (such as generated files, downloadable data, etc.). -->
 <blockquote class="book-hint danger">
-  <p><strong><em>Warning</em></strong>. When you download or create a project/document in your home directory, <em>choose its location</em>.
+<p><strong><em>Warning</em></strong>. When you download or create a project/document in your home directory, <em>choose its location</em>.
 Do <em>not</em>:</p>
 <ul>
 <li>let an application decide this location for you,</li>
@@ -2279,13 +2258,11 @@ Do <em>not</em>:</p>
 <li>store files and project directly at the root of your home directory.</li>
 </ul>
 </blockquote>
-
 <blockquote class="book-hint danger">
-  <strong><em>Warning</em></strong>. Aside from a few exceptional cases, your home directory should <em>not</em> contain multiple copies of a project or document.
+<p><strong><em>Warning</em></strong>. Aside from a few exceptional cases, your home directory should <em>not</em> contain multiple copies of a project or document.</p>
 </blockquote>
-
 <blockquote class="book-hint info">
-  <p><strong><em>Hint.</em></strong> It can be difficult for a new developer to figure out when to accept the default directory or layout suggested by a program, and when to overwrite it.
+<p><strong><em>Hint.</em></strong> It can be difficult for a new developer to figure out when to accept the default directory or layout suggested by a program, and when to overwrite it.
 As a (soft) rule of thumb, you generally want to <em>choose the location</em> of:</p>
 <ul>
 <li>a file downloaded from your browser (or mail client),</li>
@@ -2296,14 +2273,12 @@ As a (soft) rule of thumb, you generally want to <em>choose the location</em> of
 </ul>
 <p>Conversely, it is generally recommended to <em>follow suggestions</em> in the following cases:</p>
 <ul>
-<li>internal structure of a project (typically the one generated by an IDE): e.g. the <a href="https://unibz-pp-23-24.github.io/docs/build/sections/layout/">standard directory layout</a> for a Maven project, or the <a href="https://www.geeksforgeeks.org/folder-structure-for-a-node-js-project/">standard directory structure</a> of a Node JS project.</li>
+<li>internal structure of a project (typically the one generated by an IDE): e.g. the <a href="https://unibz-pp-24-25.github.io/docs/build/sections/layout/">standard directory layout</a> for a Maven project, or the <a href="https://www.geeksforgeeks.org/folder-structure-for-a-node-js-project/">standard directory structure</a> of a Node JS project.</li>
 <li>software installed outside of your home directory,</li>
 <li>location of dot files and folders,</li>
 <li>etc.</li>
 </ul>
-
 </blockquote>
-
 </article>
  
       

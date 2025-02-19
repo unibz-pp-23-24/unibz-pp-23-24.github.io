@@ -3,23 +3,49 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Recursion # Warmup # Exercise In this exercise, we assume that a folder can only contain files or other folders.
+<meta name="description" content="
+  Recursion
+  #
+
+
+  Warmup
+  #
+
+
+
+Exercise
+In this exercise, we assume that a folder can only contain files or other folders.
 Write (in pseudocode) a method void printFiles(String folder) that:
-takes as input a path to an (existing) folder, and prints a path to each file contained recursively in this folder (in any order). For instance, in the following example,
-└── foo ├── fred.txt └── bar ├── thud.txt └── waldo.txt printFiles(&quot;foo&quot;) could print:">
+
+takes as input a path to an (existing) folder, and
+prints a path to each file contained recursively in this folder (in any order).
+
+For instance, in the following example,
+└── foo
+    ├── fred.txt
+    └── bar
+       ├── thud.txt
+       └── waldo.txt
+printFiles(&quot;foo&quot;) could print:">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="Recursion" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/recursion/" />
-<title>Recursion | Programming project 2023-24</title>
-<link rel="manifest" href="/manifest.json">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/recursion/">
+  <meta property="og:site_name" content="Programming project 2024-25">
+  <meta property="og:title" content="Recursion">
+  <meta property="og:description" content="Recursion # Warmup # Exercise In this exercise, we assume that a folder can only contain files or other folders.
+Write (in pseudocode) a method void printFiles(String folder) that:
+takes as input a path to an (existing) folder, and prints a path to each file contained recursively in this folder (in any order). For instance, in the following example,
+└── foo ├── fred.txt └── bar ├── thud.txt └── waldo.txt printFiles(&#34;foo&#34;) could print:">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="website">
+<title>Recursion | Programming project 2024-25</title>
 <link rel="icon" href="/favicon.png" >
-<link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
-  <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.4e5dd21f0324d689aa628cb546e70eda39fb9e0b5daabb2a2c7da954eec10dab.js" integrity="sha256-Tl3SHwMk1omqYoy1RucO2jn7ngtdqrsqLH2pVO7BDas=" crossorigin="anonymous"></script>
-<link rel="alternate" type="application/rss+xml" href="https://unibz-pp-23-24.github.io/docs/recursion/index.xml" title="Programming project 2023-24" />
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/recursion/">
+<link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.ef6ce3f581865a34e7a0361facaa520c0f023938171236d76684573e7df35a2c.js" integrity="sha256-72zj9YGGWjTnoDYfrKpSDA8COTgXEjbXZoRXPn3zWiw=" crossorigin="anonymous"></script>
+<link rel="alternate" type="application/rss+xml" href="https://unibz-pp-24-25.github.io/docs/recursion/index.xml" title="Programming project 2024-25" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -69,16 +95,17 @@ https://github.com/alex-shpak/hugo-book
         
   <nav>
 <h2 class="book-brand">
-  <a class="flex align-center" href="/"><span>Programming project 2023-24</span>
+  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
   </a>
 </h2>
 
 
-<div class="book-search">
+<div class="book-search hidden">
   <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
 
 
 
@@ -91,7 +118,6 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  
 
 
 
@@ -105,8 +131,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-f1c1e874f9c9473478447bba6c7db644" class="toggle"  />
-    <label for="section-f1c1e874f9c9473478447bba6c7db644" class="flex justify-between">
+    <input type="checkbox" id="section-9c72579f4feaa5ed1d8188779488d483" class="toggle"  />
+    <label for="section-9c72579f4feaa5ed1d8188779488d483" class="flex justify-between">
       <a href="/docs/intro/" class="">This course</a>
     </label>
   
@@ -204,8 +230,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-bc4d9392f5af16481cccf0c311076888" class="toggle"  />
-    <label for="section-bc4d9392f5af16481cccf0c311076888" class="flex justify-between">
+    <input type="checkbox" id="section-0af90824fe38d1d85af672be7208f3fa" class="toggle"  />
+    <label for="section-0af90824fe38d1d85af672be7208f3fa" class="flex justify-between">
       <a href="/docs/project/" class="">Project</a>
     </label>
   
@@ -251,8 +277,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-3435ead23eba75b5ffeeb8d422f70dea" class="toggle"  />
-    <label for="section-3435ead23eba75b5ffeeb8d422f70dea" class="flex justify-between">
+    <input type="checkbox" id="section-f8aa8cff3b51717ecd2ebfbd81d061ce" class="toggle"  />
+    <label for="section-f8aa8cff3b51717ecd2ebfbd81d061ce" class="flex justify-between">
       <a href="/docs/objects/" class="">Objects and classes</a>
     </label>
   
@@ -428,8 +454,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-48bc13e86f573c257821b397e779b02e" class="toggle"  />
-    <label for="section-48bc13e86f573c257821b397e779b02e" class="flex justify-between">
+    <input type="checkbox" id="section-84375da4f2da0b5ee2a224e67daa47cd" class="toggle"  />
+    <label for="section-84375da4f2da0b5ee2a224e67daa47cd" class="flex justify-between">
       <a href="/docs/interfaces/" class="">Interfaces</a>
     </label>
   
@@ -475,8 +501,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-e06acd393c0cc6e5b27e2cd8945d3dd8" class="toggle"  />
-    <label for="section-e06acd393c0cc6e5b27e2cd8945d3dd8" class="flex justify-between">
+    <input type="checkbox" id="section-dd500264748ddf6db6c4f8c13c5fa45b" class="toggle"  />
+    <label for="section-dd500264748ddf6db6c4f8c13c5fa45b" class="flex justify-between">
       <a href="/docs/abstractdatatypes/" class="">Abstract data types</a>
     </label>
   
@@ -561,8 +587,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-5d60f9e6a9b7c875f51358c583373282" class="toggle"  />
-    <label for="section-5d60f9e6a9b7c875f51358c583373282" class="flex justify-between">
+    <input type="checkbox" id="section-10a993a702eb9f53bd9244a93734d095" class="toggle"  />
+    <label for="section-10a993a702eb9f53bd9244a93734d095" class="flex justify-between">
       <a href="/docs/datastructures/" class="">Data structures</a>
     </label>
   
@@ -621,8 +647,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-93b39c27c032f5f72bed81496cbb41e3" class="toggle"  />
-    <label for="section-93b39c27c032f5f72bed81496cbb41e3" class="flex justify-between">
+    <input type="checkbox" id="section-58aec3ab091b08c257b626cc09af78c5" class="toggle"  />
+    <label for="section-58aec3ab091b08c257b626cc09af78c5" class="flex justify-between">
       <a href="/docs/errors/" class="">Errors</a>
     </label>
   
@@ -637,10 +663,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-a2fa4d1523374519c87fe83f9d8226b6" class="toggle"  />
-    <label for="section-a2fa4d1523374519c87fe83f9d8226b6" class="flex justify-between">
-      <a href="/docs/errors/sections/callstack/" class="">Call stack</a>
-    </label>
+    <a href="/docs/errors/sections/callstack/" class="">Call stack</a>
   
 
         </li>
@@ -653,10 +676,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-323953d2054911560fd76ed4505d5bb2" class="toggle"  />
-    <label for="section-323953d2054911560fd76ed4505d5bb2" class="flex justify-between">
-      <a href="/docs/errors/sections/exceptions/" class="">Exceptions</a>
-    </label>
+    <a href="/docs/errors/sections/exceptions/" class="">Exceptions</a>
   
 
         </li>
@@ -669,10 +689,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-03b7629c50286af7810d9917f4bdabd2" class="toggle"  />
-    <label for="section-03b7629c50286af7810d9917f4bdabd2" class="flex justify-between">
-      <a href="/docs/errors/sections/checked/" class="">Checked vs unchecked</a>
-    </label>
+    <a href="/docs/errors/sections/checked/" class="">Checked vs unchecked</a>
   
 
         </li>
@@ -685,10 +702,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-3add83584009ceb58c28b43e0a2280c9" class="toggle"  />
-    <label for="section-3add83584009ceb58c28b43e0a2280c9" class="flex justify-between">
-      <a href="/docs/errors/sections/custom/" class="">Custom exceptions</a>
-    </label>
+    <a href="/docs/errors/sections/custom/" class="">Custom exceptions</a>
   
 
         </li>
@@ -701,10 +715,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-b9c696d05ab8cb944ddf9cef47a3abb4" class="toggle"  />
-    <label for="section-b9c696d05ab8cb944ddf9cef47a3abb4" class="flex justify-between">
-      <a href="/docs/errors/sections/errors/" class="">Java errors</a>
-    </label>
+    <a href="/docs/errors/sections/errors/" class="">Java errors</a>
   
 
         </li>
@@ -722,8 +733,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-1be866adbf7f2244d1773e0d2a159b91" class="toggle" checked />
-    <label for="section-1be866adbf7f2244d1773e0d2a159b91" class="flex justify-between">
+    <input type="checkbox" id="section-759e82ae41b9619c78e632572d50480a" class="toggle" checked />
+    <label for="section-759e82ae41b9619c78e632572d50480a" class="flex justify-between">
       <a href="/docs/recursion/" class="active">Recursion</a>
     </label>
   
@@ -782,8 +793,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-b7bc445f96cbe2bd1034c5f1c5d075bb" class="toggle"  />
-    <label for="section-b7bc445f96cbe2bd1034c5f1c5d075bb" class="flex justify-between">
+    <input type="checkbox" id="section-a1720661345b5872c845343fb6615be9" class="toggle"  />
+    <label for="section-a1720661345b5872c845343fb6615be9" class="flex justify-between">
       <a href="/docs/input/" class="">I/O and serialization</a>
     </label>
   
@@ -798,10 +809,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-09ea3b18445537bd77c25d3db6ab2fcf" class="toggle"  />
-    <label for="section-09ea3b18445537bd77c25d3db6ab2fcf" class="flex justify-between">
-      <a href="/docs/input/sections/files/" class="">Paths and files in Java</a>
-    </label>
+    <a href="/docs/input/sections/files/" class="">Paths and files in Java</a>
   
 
         </li>
@@ -814,10 +822,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-640b25aadb55f28505bfbbe5a5f7073d" class="toggle"  />
-    <label for="section-640b25aadb55f28505bfbbe5a5f7073d" class="flex justify-between">
-      <a href="/docs/input/sections/read/" class="">Reading from and writing to a file in Java</a>
-    </label>
+    <a href="/docs/input/sections/read/" class="">Reading from and writing to a file in Java</a>
   
 
         </li>
@@ -830,10 +835,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-7efe7741b54b5b602db75415a7806ef4" class="toggle"  />
-    <label for="section-7efe7741b54b5b602db75415a7806ef4" class="flex justify-between">
-      <a href="/docs/input/sections/property/" class="">Configuration files</a>
-    </label>
+    <a href="/docs/input/sections/property/" class="">Configuration files</a>
   
 
         </li>
@@ -846,10 +848,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-37fdfe811c449d15e51a84c19673df2f" class="toggle"  />
-    <label for="section-37fdfe811c449d15e51a84c19673df2f" class="flex justify-between">
-      <a href="/docs/input/sections/serialize/" class="">Serialization</a>
-    </label>
+    <a href="/docs/input/sections/serialize/" class="">Serialization</a>
   
 
         </li>
@@ -862,10 +861,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-ec41b3fcd24b301058a1bd1bd7b5c8e7" class="toggle"  />
-    <label for="section-ec41b3fcd24b301058a1bd1bd7b5c8e7" class="flex justify-between">
-      <a href="/docs/input/sections/json/" class="">JSON Serialization</a>
-    </label>
+    <a href="/docs/input/sections/json/" class="">JSON Serialization</a>
   
 
         </li>
@@ -883,8 +879,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-baf3ea6e28839ac044570d2d313c8794" class="toggle"  />
-    <label for="section-baf3ea6e28839ac044570d2d313c8794" class="flex justify-between">
+    <input type="checkbox" id="section-9bfff01f1c5ef64a53927faf30620ccf" class="toggle"  />
+    <label for="section-9bfff01f1c5ef64a53927faf30620ccf" class="flex justify-between">
       <a href="/docs/regex/" class="">Regular expressions</a>
     </label>
   
@@ -943,8 +939,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-ae8fba9e927e4c55801a4e71f6b7d054" class="toggle"  />
-    <label for="section-ae8fba9e927e4c55801a4e71f6b7d054" class="flex justify-between">
+    <input type="checkbox" id="section-882764aad745f79e099c5a43798784f9" class="toggle"  />
+    <label for="section-882764aad745f79e099c5a43798784f9" class="flex justify-between">
       <a href="/docs/lambda/" class="">Callback methods and lambda expressions</a>
     </label>
   
@@ -1042,8 +1038,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-41a2765a9682fb1ce579fb1661f1250d" class="toggle"  />
-    <label for="section-41a2765a9682fb1ce579fb1661f1250d" class="flex justify-between">
+    <input type="checkbox" id="section-7783f19754a3a0ec1529ed7ac208c3ab" class="toggle"  />
+    <label for="section-7783f19754a3a0ec1529ed7ac208c3ab" class="flex justify-between">
       <a href="/docs/stream/" class="">Streams in Java</a>
     </label>
   
@@ -1154,8 +1150,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-87d53bbeb97db8aab24c02b4d45460f2" class="toggle"  />
-    <label for="section-87d53bbeb97db8aab24c02b4d45460f2" class="flex justify-between">
+    <input type="checkbox" id="section-793e09c315e082fb44de3238b9ad707b" class="toggle"  />
+    <label for="section-793e09c315e082fb44de3238b9ad707b" class="flex justify-between">
       <a href="/docs/generics/" class="">Generic programming</a>
     </label>
   
@@ -1240,8 +1236,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-5dcccd15580bb824ba055538c97bdea6" class="toggle"  />
-    <label for="section-5dcccd15580bb824ba055538c97bdea6" class="flex justify-between">
+    <input type="checkbox" id="section-3876422a93470dcccad1a719c99a8e17" class="toggle"  />
+    <label for="section-3876422a93470dcccad1a719c99a8e17" class="flex justify-between">
       <a href="/docs/multithreading/" class="">Multithreading</a>
     </label>
   
@@ -1352,8 +1348,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-9d77b970a03dc72b048d9fce7bfe272f" class="toggle"  />
-    <label for="section-9d77b970a03dc72b048d9fce7bfe272f" class="flex justify-between">
+    <input type="checkbox" id="section-990bc84b6dc3891b1963528a24b45e2e" class="toggle"  />
+    <label for="section-990bc84b6dc3891b1963528a24b45e2e" class="flex justify-between">
       <a href="/docs/unittests/" class="">Unit tests</a>
     </label>
   
@@ -1368,10 +1364,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-796939dc839b82c2ff89d99e47011262" class="toggle"  />
-    <label for="section-796939dc839b82c2ff89d99e47011262" class="flex justify-between">
-      <a href="/docs/unittests/sections/structured/" class="">Code units</a>
-    </label>
+    <a href="/docs/unittests/sections/structured/" class="">Code units</a>
   
 
         </li>
@@ -1384,10 +1377,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-ad5c3d825858d4a9ca4ad02d541f7121" class="toggle"  />
-    <label for="section-ad5c3d825858d4a9ca4ad02d541f7121" class="flex justify-between">
-      <a href="/docs/unittests/sections/tdd/" class="">Development driven by unit tests</a>
-    </label>
+    <a href="/docs/unittests/sections/tdd/" class="">Development driven by unit tests</a>
   
 
         </li>
@@ -1400,10 +1390,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-7e09be54c45521908b57f9eaf194f5f6" class="toggle"  />
-    <label for="section-7e09be54c45521908b57f9eaf194f5f6" class="flex justify-between">
-      <a href="/docs/unittests/sections/junit/" class="">in Java</a>
-    </label>
+    <a href="/docs/unittests/sections/junit/" class="">in Java</a>
   
 
         </li>
@@ -1421,8 +1408,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-0407f110c1b3ed4992fcb7fc5f05aa12" class="toggle"  />
-    <label for="section-0407f110c1b3ed4992fcb7fc5f05aa12" class="flex justify-between">
+    <input type="checkbox" id="section-4aed4e1c4b6179fd330f627f75eb18b3" class="toggle"  />
+    <label for="section-4aed4e1c4b6179fd330f627f75eb18b3" class="flex justify-between">
       <a href="/docs/simplify/" class="">Simplifying code</a>
     </label>
   
@@ -1481,8 +1468,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-494fdb80ca3ad5d2868cb487a042ae27" class="toggle"  />
-    <label for="section-494fdb80ca3ad5d2868cb487a042ae27" class="flex justify-between">
+    <input type="checkbox" id="section-ba3d9d7fa2d604a47f68a6d7a7a9d2a2" class="toggle"  />
+    <label for="section-ba3d9d7fa2d604a47f68a6d7a7a9d2a2" class="flex justify-between">
       <a href="/docs/env/" class="">Development environment</a>
     </label>
   
@@ -1619,8 +1606,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-2870a15a3d2cff84408f43cbb1e77f97" class="toggle"  />
-    <label for="section-2870a15a3d2cff84408f43cbb1e77f97" class="flex justify-between">
+    <input type="checkbox" id="section-3c6a8c431d500080599ec572e56415d8" class="toggle"  />
+    <label for="section-3c6a8c431d500080599ec572e56415d8" class="flex justify-between">
       <a href="/docs/git/" class="">git</a>
     </label>
   
@@ -1770,8 +1757,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-44fa5eb3511a340ff4e9042080604b5c" class="toggle"  />
-    <label for="section-44fa5eb3511a340ff4e9042080604b5c" class="flex justify-between">
+    <input type="checkbox" id="section-39b7a0b404320b4007d4505305b8f4f4" class="toggle"  />
+    <label for="section-39b7a0b404320b4007d4505305b8f4f4" class="flex justify-between">
       <a href="/docs/build/" class="">Build automation</a>
     </label>
   
@@ -1786,10 +1773,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-0c816e62fd66eb322757addb01600cdd" class="toggle"  />
-    <label for="section-0c816e62fd66eb322757addb01600cdd" class="flex justify-between">
-      <a href="/docs/build/sections/packaging/" class="">Packaging a Java application</a>
-    </label>
+    <a href="/docs/build/sections/packaging/" class="">Packaging a Java application</a>
   
 
         </li>
@@ -1802,10 +1786,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-5537e478f301d8ff4f0b5a7a03c9db32" class="toggle"  />
-    <label for="section-5537e478f301d8ff4f0b5a7a03c9db32" class="flex justify-between">
-      <a href="/docs/build/sections/layout/" class="">Layout</a>
-    </label>
+    <a href="/docs/build/sections/layout/" class="">Layout</a>
   
 
         </li>
@@ -1818,10 +1799,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-33bd3456c4645cc966d192fba400a71a" class="toggle"  />
-    <label for="section-33bd3456c4645cc966d192fba400a71a" class="flex justify-between">
-      <a href="/docs/build/sections/pom/" class="">Configuration file</a>
-    </label>
+    <a href="/docs/build/sections/pom/" class="">Configuration file</a>
   
 
         </li>
@@ -1834,10 +1812,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-c956d0b428ebb6c853f314459a513393" class="toggle"  />
-    <label for="section-c956d0b428ebb6c853f314459a513393" class="flex justify-between">
-      <a href="/docs/build/sections/artifact/" class="">Artifact</a>
-    </label>
+    <a href="/docs/build/sections/artifact/" class="">Artifact</a>
   
 
         </li>
@@ -1850,10 +1825,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-d01a14431bc2161a8fed02d90e1a365b" class="toggle"  />
-    <label for="section-d01a14431bc2161a8fed02d90e1a365b" class="flex justify-between">
-      <a href="/docs/build/sections/dependencies/" class="">Dependencies</a>
-    </label>
+    <a href="/docs/build/sections/dependencies/" class="">Dependencies</a>
   
 
         </li>
@@ -1866,10 +1838,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-b838446830102a7dece872d673537390" class="toggle"  />
-    <label for="section-b838446830102a7dece872d673537390" class="flex justify-between">
-      <a href="/docs/build/sections/building/" class="">Building</a>
-    </label>
+    <a href="/docs/build/sections/building/" class="">Building</a>
   
 
         </li>
@@ -1887,8 +1856,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-ffcf8551871937aae0ce60f2b3cc616b" class="toggle"  />
-    <label for="section-ffcf8551871937aae0ce60f2b3cc616b" class="flex justify-between">
+    <input type="checkbox" id="section-48bf1202a7e278154d3a51c618c94cd6" class="toggle"  />
+    <label for="section-48bf1202a7e278154d3a51c618c94cd6" class="flex justify-between">
       <a href="/docs/background/" class="">Background</a>
     </label>
   
@@ -1981,7 +1950,6 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-
 </nav>
 
 
@@ -2002,7 +1970,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Recursion</strong>
+  <h3>Recursion</h3>
 
   <label for="toc-control">
     
@@ -2047,13 +2015,10 @@ https://github.com/alex-shpak/hugo-book
   Warmup
   <a class="anchor" href="#printFiles">#</a>
 </h2>
-
-
-
-
-<div class="book-tabs"><input type="radio" class="toggle" name="tabs-exercise_recursion_files" id="tabs-exercise_recursion_files-0" checked="checked" />
-  <label for="tabs-exercise_recursion_files-0">Exercise</label>
-  <div class="book-tabs-content markdown-inner"><p>In this exercise, we assume that a folder can only contain files or other folders.</p>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-exercise_recursion_files" id="tabs-exercise_recursion_files-0" checked="checked" />
+<label for="tabs-exercise_recursion_files-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>In this exercise, we assume that a folder can only contain files or other folders.</p>
 <p>Write (in pseudocode) a method <code>void printFiles(String folder)</code> that:</p>
 <ul>
 <li>takes as input a path to an (existing) folder, and</li>
@@ -2083,9 +2048,10 @@ https://github.com/alex-shpak/hugo-book
 <li><code>Set&lt;String&gt; content(String path)</code> takes a path to a folder, and returns a path to each file or folder that it contains (non-recursively).
 E.g. <code>content(&quot;foo&quot;)</code> returns <code>{ &quot;foo/fred.txt&quot;, &quot;foo/bar&quot; }</code>.</li>
 </ul>
-</div><input type="radio" class="toggle" name="tabs-exercise_recursion_files" id="tabs-exercise_recursion_files-1"  />
-  <label for="tabs-exercise_recursion_files-1">Possible solution</label>
-  <div class="book-tabs-content markdown-inner"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">printFiles</span>(String folder){
+</div>
+<input type="radio" class="toggle" name="tabs-exercise_recursion_files" id="tabs-exercise_recursion_files-1"  />
+<label for="tabs-exercise_recursion_files-1">Possible solution</label>
+<div class="book-tabs-content markdown-inner"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">printFiles</span>(String folder){
 </span></span><span style="display:flex;"><span>    foreach child in <span style="color:#a6e22e">content</span>(folder){
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>(isFile(child)){
 </span></span><span style="display:flex;"><span>            print(child)
@@ -2094,22 +2060,20 @@ E.g. <code>content(&quot;foo&quot;)</code> returns <code>{ &quot;foo/fred.txt&qu
 </span></span><span style="display:flex;"><span>        }
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div></div></div>
-
+</span></span></code></pre></div></div>
+</div>
 <h2 id="recursive-method">
   Recursive method
   <a class="anchor" href="#recursive-method">#</a>
 </h2>
 <blockquote class="book-hint warning">
-  <strong><em>Definition.</em></strong>
-A method is <strong>recursive</strong> if it calls itself, directly or indirectly.
+<p><strong><em>Definition.</em></strong>
+A method is <strong>recursive</strong> if it calls itself, directly or indirectly.</p>
 </blockquote>
-
 <p>For instance (in pseudocode):</p>
 <div class="book-columns flex flex-wrap">
-
-  <div class="flex-even markdown-inner">
-    <ul>
+<div class="flex-even markdown-inner" style="flex-grow: 1;">
+<ul>
 <li>the following method is recursive:</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span>    myMethod() {
@@ -2117,11 +2081,9 @@ A method is <strong>recursive</strong> if it calls itself, directly or indirectl
 </span></span><span style="display:flex;"><span>        myMethod()
 </span></span><span style="display:flex;"><span>        <span style="color:#f92672">...</span>
 </span></span><span style="display:flex;"><span>    }
-</span></span></code></pre></div>
-  </div>
-
-  <div class="flex-even markdown-inner">
-    <ul>
+</span></span></code></pre></div>  </div>
+<div class="flex-even markdown-inner" style="flex-grow: 1;">
+<ul>
 <li>the following two methods are recursive:</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span>    myMethod1() {
@@ -2135,11 +2097,8 @@ A method is <strong>recursive</strong> if it calls itself, directly or indirectl
 </span></span><span style="display:flex;"><span>        myMethod1()
 </span></span><span style="display:flex;"><span>        <span style="color:#f92672">...</span>
 </span></span><span style="display:flex;"><span>    }
-</span></span></code></pre></div>
-  </div>
-
+</span></span></code></pre></div>  </div>
 </div>
-
 <h2 id="methodology">
   Usage
   <a class="anchor" href="#methodology">#</a>
@@ -2147,9 +2106,9 @@ A method is <strong>recursive</strong> if it calls itself, directly or indirectl
 <p>In theory, a recursive algorithm can be rewritten using loops only (and conversely).</p>
 <p>However, in practice, some problems are easier to <em>solve</em> recursively.
 In particular, this is the case of many problem that involve tree-like structures (e.g. a folder, a JSON or XML document, an algebraic expression, etc.), and more generally graphs.</p>
-<p>The following methodology can be used to solve a variety of problems:
+<p>The following methodology can be used to solve a variety of problems:</p>
 <blockquote class="book-hint warning">
-  <p><strong><em>Methodology.</em></strong>
+<p><strong><em>Methodology.</em></strong>
 To solve a problem recursively:</p>
 <ul>
 <li><strong><em>(Base case).</em></strong> If the input $I$ is minimal (e.g. of size 0 or size 1), then solve the problem directly.</li>
@@ -2162,42 +2121,35 @@ To solve a problem recursively:</p>
 </li>
 </ul>
 <p>In other words, in the inductive case, solve the problem for $I$ <em>under the assumption</em> that it can be solved for $I_1$, .., $I_k$.</p>
-
 </blockquote>
-</p>
 <h3 id="binaryTrees">
   Example: binary trees
   <a class="anchor" href="#binaryTrees">#</a>
 </h3>
 <blockquote class="book-hint warning">
-  <strong><em>Definition.</em></strong>
-An <strong>ordered tree</strong> is a tree where the children of each node are totally ordered.
+<p><strong><em>Definition.</em></strong>
+An <strong>ordered tree</strong> is a tree where the children of each node are totally ordered.</p>
 </blockquote>
-
 <blockquote class="book-hint warning">
-  <strong><em>Definition.</em></strong>
-A <strong>binary tree</strong> is an ordered tree where each node has exactly two (possibly null) children.
+<p><strong><em>Definition.</em></strong>
+A <strong>binary tree</strong> is an ordered tree where each node has exactly two (possibly null) children.</p>
 </blockquote>
-
 <blockquote class="book-hint info">
-  <strong><em>Example.</em></strong> This is a binary tree:
-<img src="/img/binaryTrees/unlabeled/generic/tree.svg" alt="" />
+<p><strong><em>Example.</em></strong> This is a binary tree:</p>
+<p><img src="/img/binaryTrees/unlabeled/generic/tree.svg" alt="" /></p>
 </blockquote>
-
-
-
-
-
-<div class="book-tabs"><input type="radio" class="toggle" name="tabs-exercise_binTree_sum" id="tabs-exercise_binTree_sum-0" checked="checked" />
-  <label for="tabs-exercise_binTree_sum-0">Exercise</label>
-  <div class="book-tabs-content markdown-inner"><p>Let us represent a node in a binary tree as an instance of the following class:</p>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-exercise_binTree_sum" id="tabs-exercise_binTree_sum-0" checked="checked" />
+<label for="tabs-exercise_binTree_sum-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>Let us represent a node in a binary tree as an instance of the following class:</p>
 <p><img src="/img/diagrams/plantuml/nodeWithIntLabel.svg" alt="" /></p>
 <p>Write (in pseudocode) a method <code>int sum(Node root)</code> that takes as input the root of a binary tree, and returns the sum of all values in the tree.</p>
 <p>For instance, for the following tree, the method should return 13:</p>
 <p><img src="/img/binaryTrees/labeled/int/tree.svg" alt="" /></p>
-</div><input type="radio" class="toggle" name="tabs-exercise_binTree_sum" id="tabs-exercise_binTree_sum-1"  />
-  <label for="tabs-exercise_binTree_sum-1">Possible solution</label>
-  <div class="book-tabs-content markdown-inner"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">sum</span>(Node root){
+</div>
+<input type="radio" class="toggle" name="tabs-exercise_binTree_sum" id="tabs-exercise_binTree_sum-1"  />
+<label for="tabs-exercise_binTree_sum-1">Possible solution</label>
+<div class="book-tabs-content markdown-inner"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">sum</span>(Node root){
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// base case</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (root <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span>){
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> 0
@@ -2205,22 +2157,20 @@ A <strong>binary tree</strong> is an ordered tree where each node has exactly tw
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// inductive case</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> root.<span style="color:#a6e22e">value</span> <span style="color:#f92672">+</span> sum(root.<span style="color:#a6e22e">leftChild</span>) <span style="color:#f92672">+</span> sum(root.<span style="color:#a6e22e">rightChild</span>)
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div></div></div>
-
-
-
-
-
-<div class="book-tabs"><input type="radio" class="toggle" name="tabs-exercise_binTree_height" id="tabs-exercise_binTree_height-0" checked="checked" />
-  <label for="tabs-exercise_binTree_height-0">Exercise</label>
-  <div class="book-tabs-content markdown-inner"><p>Let us represent a binary tree as above, but where nodes have no label:</p>
+</span></span></code></pre></div></div>
+</div>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-exercise_binTree_height" id="tabs-exercise_binTree_height-0" checked="checked" />
+<label for="tabs-exercise_binTree_height-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>Let us represent a binary tree as above, but where nodes have no label:</p>
 <p><img src="/img/diagrams/plantuml/node.svg" alt="" /></p>
 <p>Write (in pseudocode) a method <code>int height(Node root)</code> that takes as input the root of such a tree, and returns the number of nodes in the longest branch of this tree.</p>
 <p>For instance, for the following tree, the method should return 4:</p>
 <p><img src="/img/binaryTrees/unlabeled/height/tree.svg" alt="" /></p>
-</div><input type="radio" class="toggle" name="tabs-exercise_binTree_height" id="tabs-exercise_binTree_height-1"  />
-  <label for="tabs-exercise_binTree_height-1">Possible solution</label>
-  <div class="book-tabs-content markdown-inner"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">height</span>(Node root){
+</div>
+<input type="radio" class="toggle" name="tabs-exercise_binTree_height" id="tabs-exercise_binTree_height-1"  />
+<label for="tabs-exercise_binTree_height-1">Possible solution</label>
+<div class="book-tabs-content markdown-inner"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">height</span>(Node root){
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">//base case</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (root <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span>){
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> 0
@@ -2231,19 +2181,16 @@ A <strong>binary tree</strong> is an ordered tree where each node has exactly tw
 </span></span><span style="display:flex;"><span>                height(root.<span style="color:#a6e22e">rightChild</span>)
 </span></span><span style="display:flex;"><span>    )
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div></div></div>
-
+</span></span></code></pre></div></div>
+</div>
 <h3 id="traversal">
   Processing order
   <a class="anchor" href="#traversal">#</a>
 </h3>
-
-
-
-
-<div class="book-tabs"><input type="radio" class="toggle" name="tabs-exercise_preorder_traversal" id="tabs-exercise_preorder_traversal-0" checked="checked" />
-  <label for="tabs-exercise_preorder_traversal-0">Exercise</label>
-  <div class="book-tabs-content markdown-inner"><p>Let us represent a binary tree as above, but where nodes are labeled with a character.</p>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-exercise_preorder_traversal" id="tabs-exercise_preorder_traversal-0" checked="checked" />
+<label for="tabs-exercise_preorder_traversal-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>Let us represent a binary tree as above, but where nodes are labeled with a character.</p>
 <p><img src="/img/diagrams/plantuml/nodeWithChar.svg" alt="" /></p>
 <p>Consider the following recursive algorithm:</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
@@ -2270,17 +2217,16 @@ A <strong>binary tree</strong> is an ordered tree where each node has exactly tw
 </div>
 </div><p>What does this algorithm print for the following input tree?</p>
 <p><img src="/img/binaryTrees/labeled/char/tree.svg" alt="" /></p>
-</div><input type="radio" class="toggle" name="tabs-exercise_preorder_traversal" id="tabs-exercise_preorder_traversal-1"  />
-  <label for="tabs-exercise_preorder_traversal-1">Solution</label>
-  <div class="book-tabs-content markdown-inner">A B D H E I J C F K L G M</div></div>
-
-
-
-
-
-<div class="book-tabs"><input type="radio" class="toggle" name="tabs-exercise_inorder_traversal" id="tabs-exercise_inorder_traversal-0" checked="checked" />
-  <label for="tabs-exercise_inorder_traversal-0">Exercise</label>
-  <div class="book-tabs-content markdown-inner"><p>What about the following algorithm (for the same tree)?</p>
+</div>
+<input type="radio" class="toggle" name="tabs-exercise_preorder_traversal" id="tabs-exercise_preorder_traversal-1"  />
+<label for="tabs-exercise_preorder_traversal-1">Solution</label>
+<div class="book-tabs-content markdown-inner"><p>A B D H E I J C F K L G M</p>
+</div>
+</div>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-exercise_inorder_traversal" id="tabs-exercise_inorder_traversal-0" checked="checked" />
+<label for="tabs-exercise_inorder_traversal-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>What about the following algorithm (for the same tree)?</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -2303,17 +2249,16 @@ A <strong>binary tree</strong> is an ordered tree where each node has exactly tw
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></td></tr></table>
 </div>
-</div></div><input type="radio" class="toggle" name="tabs-exercise_inorder_traversal" id="tabs-exercise_inorder_traversal-1"  />
-  <label for="tabs-exercise_inorder_traversal-1">Solution</label>
-  <div class="book-tabs-content markdown-inner">D H B I E J A K F L C G M</div></div>
-
-
-
-
-
-<div class="book-tabs"><input type="radio" class="toggle" name="tabs-exercise_postorder_traversal" id="tabs-exercise_postorder_traversal-0" checked="checked" />
-  <label for="tabs-exercise_postorder_traversal-0">Exercise</label>
-  <div class="book-tabs-content markdown-inner"><p>And this algorithm?</p>
+</div></div>
+<input type="radio" class="toggle" name="tabs-exercise_inorder_traversal" id="tabs-exercise_inorder_traversal-1"  />
+<label for="tabs-exercise_inorder_traversal-1">Solution</label>
+<div class="book-tabs-content markdown-inner"><p>D H B I E J A K F L C G M</p>
+</div>
+</div>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-exercise_postorder_traversal" id="tabs-exercise_postorder_traversal-0" checked="checked" />
+<label for="tabs-exercise_postorder_traversal-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>And this algorithm?</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -2336,36 +2281,34 @@ A <strong>binary tree</strong> is an ordered tree where each node has exactly tw
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></td></tr></table>
 </div>
-</div></div><input type="radio" class="toggle" name="tabs-exercise_postorder_traversal" id="tabs-exercise_postorder_traversal-1"  />
-  <label for="tabs-exercise_postorder_traversal-1">Solution</label>
-  <div class="book-tabs-content markdown-inner">H D I J E B A K L F M G C</div></div>
-
+</div></div>
+<input type="radio" class="toggle" name="tabs-exercise_postorder_traversal" id="tabs-exercise_postorder_traversal-1"  />
+<label for="tabs-exercise_postorder_traversal-1">Solution</label>
+<div class="book-tabs-content markdown-inner"><p>H D I J E B A K L F M G C</p>
+</div>
+</div>
 <blockquote class="book-hint warning">
-  <strong><em>Definition.</em></strong>
+<p><strong><em>Definition.</em></strong>
 In the above exercises, the three node processing orders are respectively called
 <strong>pre-order traversal</strong>,
 <strong>in-order traversal</strong> and
-<strong>post-order traversal</strong>.
+<strong>post-order traversal</strong>.</p>
 </blockquote>
-
 <p>These three algorithms can be adapted to solve a variety of problems.</p>
 <blockquote class="book-hint info">
-  <strong><em>Hint.</em></strong>
-In-order traversal processes nodes in left-to-right order (when projected to a line).
+<p><strong><em>Hint.</em></strong>
+In-order traversal processes nodes in left-to-right order (when projected to a line).</p>
 </blockquote>
-
-
-
-
-
-<div class="book-tabs"><input type="radio" class="toggle" name="tabs-exercise_leftMost" id="tabs-exercise_leftMost-0" checked="checked" />
-  <label for="tabs-exercise_leftMost-0">Exercise</label>
-  <div class="book-tabs-content markdown-inner"><p>Let us consider once again a binary tree where nodes are labeled with a character.</p>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-exercise_leftMost" id="tabs-exercise_leftMost-0" checked="checked" />
+<label for="tabs-exercise_leftMost-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>Let us consider once again a binary tree where nodes are labeled with a character.</p>
 <p><img src="/img/diagrams/plantuml/nodeWithChar.svg" alt="" /></p>
 <p>Write (in pseudocode) a method <code>Node leftMost(Node root, char label)</code> that returns the leftmost node labeled with <code>label</code> in the tree rooted in <code>root</code> (or <code>null</code> if there is no such node).</p>
-</div><input type="radio" class="toggle" name="tabs-exercise_leftMost" id="tabs-exercise_leftMost-1"  />
-  <label for="tabs-exercise_leftMost-1">Possible solution</label>
-  <div class="book-tabs-content markdown-inner"><p>We can adapt the in-order traversal algorithm (above), as follows:</p>
+</div>
+<input type="radio" class="toggle" name="tabs-exercise_leftMost" id="tabs-exercise_leftMost-1"  />
+<label for="tabs-exercise_leftMost-1">Possible solution</label>
+<div class="book-tabs-content markdown-inner"><p>We can adapt the in-order traversal algorithm (above), as follows:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Node <span style="color:#a6e22e">leftMost</span>(Node root, <span style="color:#66d9ef">char</span> label){
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Base case.</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(root <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span>){
@@ -2386,8 +2329,8 @@ In-order traversal processes nodes in left-to-right order (when projected to a l
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// If both attempts failed, then explore the right subtree.</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> leftMost(root.<span style="color:#a6e22e">rightChild</span>, label)
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div></div></div>
-
+</span></span></code></pre></div></div>
+</div>
 <h2 id="syntax">
   Syntax
   <a class="anchor" href="#syntax">#</a>
@@ -2411,10 +2354,9 @@ In-order traversal processes nodes in left-to-right order (when projected to a l
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><blockquote class="book-hint info">
-  <strong><em>Observation.</em></strong>
-Termination is guaranteed if the input of each recursive call is strictly <em>smaller</em> than the current input.
+<p><strong><em>Observation.</em></strong>
+Termination is guaranteed if the input of each recursive call is strictly <em>smaller</em> than the current input.</p>
 </blockquote>
-
 <p>Besides, a recursive method is often an <em>auxiliary method</em>.
 For instance, some problems with an array as input can be solved recursively by dividing the array in sub-segments, as follows (in pseudocode):</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>solveProblem(Type<span style="color:#f92672">[]</span> array) {
@@ -2443,7 +2385,7 @@ For instance, some problems with an array as input can be solved recursively by 
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>It is also frequent for a recursive method to return <em>multiple</em> values.
 For instance, in a binary tree, return the set of labels that appear in a tree as well as the number of nodes.</p>
-<p>In Java 14 or later, this can be easily achieved by returning a <a href="https://unibz-pp-23-24.github.io/docs/objects/sections/quasi-objects/#record">record</a>.
+<p>In Java 14 or later, this can be easily achieved by returning a <a href="https://unibz-pp-24-25.github.io/docs/objects/sections/quasi-objects/#record">record</a>.
 For instance:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">record</span> <span style="color:#a6e22e">Result</span>(Set<span style="color:#f92672">&lt;</span>Character<span style="color:#f92672">&gt;</span> labels, <span style="color:#66d9ef">int</span> numberOfNodes){};
 </span></span><span style="display:flex;"><span>

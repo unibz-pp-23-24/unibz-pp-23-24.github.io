@@ -3,22 +3,45 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Unit tests # Testing software # Testing is an integral part of software development.
-Different terminologies coexists to categorize software tests (more or less precise, an with overlapping meanings). Common categories are:
-functional vs non-functional test unit vs integration test security test performance test regression test etc. A side benefit of many tests is that they help clarifying what a program (resp. component, method) is expected to do. So in a sense, tests are part of the documentation or specification of a system, because they provide precise examples of the expected behavior of the program (resp.">
+<meta name="description" content="
+  Unit tests
+  #
+
+
+  Testing software
+  #
+
+Testing is an integral part of software development.
+Different terminologies coexists to categorize software tests (more or less precise, an with overlapping meanings).
+Common categories are:
+
+functional vs non-functional test
+unit vs integration test
+security test
+performance test
+regression test
+etc.
+
+A side benefit of many tests is that they help clarifying what a program (resp. component, method) is expected to do.
+So in a sense, tests are part of the documentation or specification of a system, because they provide precise examples of the expected behavior of the program (resp. component, method).">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="Unit tests" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/unittests/" />
-<title>Unit tests | Programming project 2023-24</title>
-<link rel="manifest" href="/manifest.json">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/unittests/">
+  <meta property="og:site_name" content="Programming project 2024-25">
+  <meta property="og:title" content="Unit tests">
+  <meta property="og:description" content="Unit tests # Testing software # Testing is an integral part of software development.
+Different terminologies coexists to categorize software tests (more or less precise, an with overlapping meanings). Common categories are:
+functional vs non-functional test unit vs integration test security test performance test regression test etc. A side benefit of many tests is that they help clarifying what a program (resp. component, method) is expected to do. So in a sense, tests are part of the documentation or specification of a system, because they provide precise examples of the expected behavior of the program (resp. component, method).">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="website">
+<title>Unit tests | Programming project 2024-25</title>
 <link rel="icon" href="/favicon.png" >
-<link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
-  <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.4e5dd21f0324d689aa628cb546e70eda39fb9e0b5daabb2a2c7da954eec10dab.js" integrity="sha256-Tl3SHwMk1omqYoy1RucO2jn7ngtdqrsqLH2pVO7BDas=" crossorigin="anonymous"></script>
-<link rel="alternate" type="application/rss+xml" href="https://unibz-pp-23-24.github.io/docs/unittests/index.xml" title="Programming project 2023-24" />
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/unittests/">
+<link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.ef6ce3f581865a34e7a0361facaa520c0f023938171236d76684573e7df35a2c.js" integrity="sha256-72zj9YGGWjTnoDYfrKpSDA8COTgXEjbXZoRXPn3zWiw=" crossorigin="anonymous"></script>
+<link rel="alternate" type="application/rss+xml" href="https://unibz-pp-24-25.github.io/docs/unittests/index.xml" title="Programming project 2024-25" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -68,16 +91,17 @@ https://github.com/alex-shpak/hugo-book
         
   <nav>
 <h2 class="book-brand">
-  <a class="flex align-center" href="/"><span>Programming project 2023-24</span>
+  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
   </a>
 </h2>
 
 
-<div class="book-search">
+<div class="book-search hidden">
   <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
 
 
 
@@ -90,7 +114,6 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  
 
 
 
@@ -104,8 +127,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-f1c1e874f9c9473478447bba6c7db644" class="toggle"  />
-    <label for="section-f1c1e874f9c9473478447bba6c7db644" class="flex justify-between">
+    <input type="checkbox" id="section-9c72579f4feaa5ed1d8188779488d483" class="toggle"  />
+    <label for="section-9c72579f4feaa5ed1d8188779488d483" class="flex justify-between">
       <a href="/docs/intro/" class="">This course</a>
     </label>
   
@@ -203,8 +226,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-bc4d9392f5af16481cccf0c311076888" class="toggle"  />
-    <label for="section-bc4d9392f5af16481cccf0c311076888" class="flex justify-between">
+    <input type="checkbox" id="section-0af90824fe38d1d85af672be7208f3fa" class="toggle"  />
+    <label for="section-0af90824fe38d1d85af672be7208f3fa" class="flex justify-between">
       <a href="/docs/project/" class="">Project</a>
     </label>
   
@@ -250,8 +273,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-3435ead23eba75b5ffeeb8d422f70dea" class="toggle"  />
-    <label for="section-3435ead23eba75b5ffeeb8d422f70dea" class="flex justify-between">
+    <input type="checkbox" id="section-f8aa8cff3b51717ecd2ebfbd81d061ce" class="toggle"  />
+    <label for="section-f8aa8cff3b51717ecd2ebfbd81d061ce" class="flex justify-between">
       <a href="/docs/objects/" class="">Objects and classes</a>
     </label>
   
@@ -427,8 +450,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-48bc13e86f573c257821b397e779b02e" class="toggle"  />
-    <label for="section-48bc13e86f573c257821b397e779b02e" class="flex justify-between">
+    <input type="checkbox" id="section-84375da4f2da0b5ee2a224e67daa47cd" class="toggle"  />
+    <label for="section-84375da4f2da0b5ee2a224e67daa47cd" class="flex justify-between">
       <a href="/docs/interfaces/" class="">Interfaces</a>
     </label>
   
@@ -474,8 +497,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-e06acd393c0cc6e5b27e2cd8945d3dd8" class="toggle"  />
-    <label for="section-e06acd393c0cc6e5b27e2cd8945d3dd8" class="flex justify-between">
+    <input type="checkbox" id="section-dd500264748ddf6db6c4f8c13c5fa45b" class="toggle"  />
+    <label for="section-dd500264748ddf6db6c4f8c13c5fa45b" class="flex justify-between">
       <a href="/docs/abstractdatatypes/" class="">Abstract data types</a>
     </label>
   
@@ -560,8 +583,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-5d60f9e6a9b7c875f51358c583373282" class="toggle"  />
-    <label for="section-5d60f9e6a9b7c875f51358c583373282" class="flex justify-between">
+    <input type="checkbox" id="section-10a993a702eb9f53bd9244a93734d095" class="toggle"  />
+    <label for="section-10a993a702eb9f53bd9244a93734d095" class="flex justify-between">
       <a href="/docs/datastructures/" class="">Data structures</a>
     </label>
   
@@ -620,8 +643,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-93b39c27c032f5f72bed81496cbb41e3" class="toggle"  />
-    <label for="section-93b39c27c032f5f72bed81496cbb41e3" class="flex justify-between">
+    <input type="checkbox" id="section-58aec3ab091b08c257b626cc09af78c5" class="toggle"  />
+    <label for="section-58aec3ab091b08c257b626cc09af78c5" class="flex justify-between">
       <a href="/docs/errors/" class="">Errors</a>
     </label>
   
@@ -636,10 +659,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-a2fa4d1523374519c87fe83f9d8226b6" class="toggle"  />
-    <label for="section-a2fa4d1523374519c87fe83f9d8226b6" class="flex justify-between">
-      <a href="/docs/errors/sections/callstack/" class="">Call stack</a>
-    </label>
+    <a href="/docs/errors/sections/callstack/" class="">Call stack</a>
   
 
         </li>
@@ -652,10 +672,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-323953d2054911560fd76ed4505d5bb2" class="toggle"  />
-    <label for="section-323953d2054911560fd76ed4505d5bb2" class="flex justify-between">
-      <a href="/docs/errors/sections/exceptions/" class="">Exceptions</a>
-    </label>
+    <a href="/docs/errors/sections/exceptions/" class="">Exceptions</a>
   
 
         </li>
@@ -668,10 +685,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-03b7629c50286af7810d9917f4bdabd2" class="toggle"  />
-    <label for="section-03b7629c50286af7810d9917f4bdabd2" class="flex justify-between">
-      <a href="/docs/errors/sections/checked/" class="">Checked vs unchecked</a>
-    </label>
+    <a href="/docs/errors/sections/checked/" class="">Checked vs unchecked</a>
   
 
         </li>
@@ -684,10 +698,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-3add83584009ceb58c28b43e0a2280c9" class="toggle"  />
-    <label for="section-3add83584009ceb58c28b43e0a2280c9" class="flex justify-between">
-      <a href="/docs/errors/sections/custom/" class="">Custom exceptions</a>
-    </label>
+    <a href="/docs/errors/sections/custom/" class="">Custom exceptions</a>
   
 
         </li>
@@ -700,10 +711,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-b9c696d05ab8cb944ddf9cef47a3abb4" class="toggle"  />
-    <label for="section-b9c696d05ab8cb944ddf9cef47a3abb4" class="flex justify-between">
-      <a href="/docs/errors/sections/errors/" class="">Java errors</a>
-    </label>
+    <a href="/docs/errors/sections/errors/" class="">Java errors</a>
   
 
         </li>
@@ -721,8 +729,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-1be866adbf7f2244d1773e0d2a159b91" class="toggle"  />
-    <label for="section-1be866adbf7f2244d1773e0d2a159b91" class="flex justify-between">
+    <input type="checkbox" id="section-759e82ae41b9619c78e632572d50480a" class="toggle"  />
+    <label for="section-759e82ae41b9619c78e632572d50480a" class="flex justify-between">
       <a href="/docs/recursion/" class="">Recursion</a>
     </label>
   
@@ -781,8 +789,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-b7bc445f96cbe2bd1034c5f1c5d075bb" class="toggle"  />
-    <label for="section-b7bc445f96cbe2bd1034c5f1c5d075bb" class="flex justify-between">
+    <input type="checkbox" id="section-a1720661345b5872c845343fb6615be9" class="toggle"  />
+    <label for="section-a1720661345b5872c845343fb6615be9" class="flex justify-between">
       <a href="/docs/input/" class="">I/O and serialization</a>
     </label>
   
@@ -797,10 +805,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-09ea3b18445537bd77c25d3db6ab2fcf" class="toggle"  />
-    <label for="section-09ea3b18445537bd77c25d3db6ab2fcf" class="flex justify-between">
-      <a href="/docs/input/sections/files/" class="">Paths and files in Java</a>
-    </label>
+    <a href="/docs/input/sections/files/" class="">Paths and files in Java</a>
   
 
         </li>
@@ -813,10 +818,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-640b25aadb55f28505bfbbe5a5f7073d" class="toggle"  />
-    <label for="section-640b25aadb55f28505bfbbe5a5f7073d" class="flex justify-between">
-      <a href="/docs/input/sections/read/" class="">Reading from and writing to a file in Java</a>
-    </label>
+    <a href="/docs/input/sections/read/" class="">Reading from and writing to a file in Java</a>
   
 
         </li>
@@ -829,10 +831,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-7efe7741b54b5b602db75415a7806ef4" class="toggle"  />
-    <label for="section-7efe7741b54b5b602db75415a7806ef4" class="flex justify-between">
-      <a href="/docs/input/sections/property/" class="">Configuration files</a>
-    </label>
+    <a href="/docs/input/sections/property/" class="">Configuration files</a>
   
 
         </li>
@@ -845,10 +844,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-37fdfe811c449d15e51a84c19673df2f" class="toggle"  />
-    <label for="section-37fdfe811c449d15e51a84c19673df2f" class="flex justify-between">
-      <a href="/docs/input/sections/serialize/" class="">Serialization</a>
-    </label>
+    <a href="/docs/input/sections/serialize/" class="">Serialization</a>
   
 
         </li>
@@ -861,10 +857,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-ec41b3fcd24b301058a1bd1bd7b5c8e7" class="toggle"  />
-    <label for="section-ec41b3fcd24b301058a1bd1bd7b5c8e7" class="flex justify-between">
-      <a href="/docs/input/sections/json/" class="">JSON Serialization</a>
-    </label>
+    <a href="/docs/input/sections/json/" class="">JSON Serialization</a>
   
 
         </li>
@@ -882,8 +875,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-baf3ea6e28839ac044570d2d313c8794" class="toggle"  />
-    <label for="section-baf3ea6e28839ac044570d2d313c8794" class="flex justify-between">
+    <input type="checkbox" id="section-9bfff01f1c5ef64a53927faf30620ccf" class="toggle"  />
+    <label for="section-9bfff01f1c5ef64a53927faf30620ccf" class="flex justify-between">
       <a href="/docs/regex/" class="">Regular expressions</a>
     </label>
   
@@ -942,8 +935,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-ae8fba9e927e4c55801a4e71f6b7d054" class="toggle"  />
-    <label for="section-ae8fba9e927e4c55801a4e71f6b7d054" class="flex justify-between">
+    <input type="checkbox" id="section-882764aad745f79e099c5a43798784f9" class="toggle"  />
+    <label for="section-882764aad745f79e099c5a43798784f9" class="flex justify-between">
       <a href="/docs/lambda/" class="">Callback methods and lambda expressions</a>
     </label>
   
@@ -1041,8 +1034,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-41a2765a9682fb1ce579fb1661f1250d" class="toggle"  />
-    <label for="section-41a2765a9682fb1ce579fb1661f1250d" class="flex justify-between">
+    <input type="checkbox" id="section-7783f19754a3a0ec1529ed7ac208c3ab" class="toggle"  />
+    <label for="section-7783f19754a3a0ec1529ed7ac208c3ab" class="flex justify-between">
       <a href="/docs/stream/" class="">Streams in Java</a>
     </label>
   
@@ -1153,8 +1146,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-87d53bbeb97db8aab24c02b4d45460f2" class="toggle"  />
-    <label for="section-87d53bbeb97db8aab24c02b4d45460f2" class="flex justify-between">
+    <input type="checkbox" id="section-793e09c315e082fb44de3238b9ad707b" class="toggle"  />
+    <label for="section-793e09c315e082fb44de3238b9ad707b" class="flex justify-between">
       <a href="/docs/generics/" class="">Generic programming</a>
     </label>
   
@@ -1239,8 +1232,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-5dcccd15580bb824ba055538c97bdea6" class="toggle"  />
-    <label for="section-5dcccd15580bb824ba055538c97bdea6" class="flex justify-between">
+    <input type="checkbox" id="section-3876422a93470dcccad1a719c99a8e17" class="toggle"  />
+    <label for="section-3876422a93470dcccad1a719c99a8e17" class="flex justify-between">
       <a href="/docs/multithreading/" class="">Multithreading</a>
     </label>
   
@@ -1351,8 +1344,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-9d77b970a03dc72b048d9fce7bfe272f" class="toggle" checked />
-    <label for="section-9d77b970a03dc72b048d9fce7bfe272f" class="flex justify-between">
+    <input type="checkbox" id="section-990bc84b6dc3891b1963528a24b45e2e" class="toggle" checked />
+    <label for="section-990bc84b6dc3891b1963528a24b45e2e" class="flex justify-between">
       <a href="/docs/unittests/" class="active">Unit tests</a>
     </label>
   
@@ -1367,10 +1360,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-796939dc839b82c2ff89d99e47011262" class="toggle"  />
-    <label for="section-796939dc839b82c2ff89d99e47011262" class="flex justify-between">
-      <a href="/docs/unittests/sections/structured/" class="">Code units</a>
-    </label>
+    <a href="/docs/unittests/sections/structured/" class="">Code units</a>
   
 
         </li>
@@ -1383,10 +1373,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-ad5c3d825858d4a9ca4ad02d541f7121" class="toggle"  />
-    <label for="section-ad5c3d825858d4a9ca4ad02d541f7121" class="flex justify-between">
-      <a href="/docs/unittests/sections/tdd/" class="">Development driven by unit tests</a>
-    </label>
+    <a href="/docs/unittests/sections/tdd/" class="">Development driven by unit tests</a>
   
 
         </li>
@@ -1399,10 +1386,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-7e09be54c45521908b57f9eaf194f5f6" class="toggle"  />
-    <label for="section-7e09be54c45521908b57f9eaf194f5f6" class="flex justify-between">
-      <a href="/docs/unittests/sections/junit/" class="">in Java</a>
-    </label>
+    <a href="/docs/unittests/sections/junit/" class="">in Java</a>
   
 
         </li>
@@ -1420,8 +1404,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-0407f110c1b3ed4992fcb7fc5f05aa12" class="toggle"  />
-    <label for="section-0407f110c1b3ed4992fcb7fc5f05aa12" class="flex justify-between">
+    <input type="checkbox" id="section-4aed4e1c4b6179fd330f627f75eb18b3" class="toggle"  />
+    <label for="section-4aed4e1c4b6179fd330f627f75eb18b3" class="flex justify-between">
       <a href="/docs/simplify/" class="">Simplifying code</a>
     </label>
   
@@ -1480,8 +1464,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-494fdb80ca3ad5d2868cb487a042ae27" class="toggle"  />
-    <label for="section-494fdb80ca3ad5d2868cb487a042ae27" class="flex justify-between">
+    <input type="checkbox" id="section-ba3d9d7fa2d604a47f68a6d7a7a9d2a2" class="toggle"  />
+    <label for="section-ba3d9d7fa2d604a47f68a6d7a7a9d2a2" class="flex justify-between">
       <a href="/docs/env/" class="">Development environment</a>
     </label>
   
@@ -1618,8 +1602,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-2870a15a3d2cff84408f43cbb1e77f97" class="toggle"  />
-    <label for="section-2870a15a3d2cff84408f43cbb1e77f97" class="flex justify-between">
+    <input type="checkbox" id="section-3c6a8c431d500080599ec572e56415d8" class="toggle"  />
+    <label for="section-3c6a8c431d500080599ec572e56415d8" class="flex justify-between">
       <a href="/docs/git/" class="">git</a>
     </label>
   
@@ -1769,8 +1753,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-44fa5eb3511a340ff4e9042080604b5c" class="toggle"  />
-    <label for="section-44fa5eb3511a340ff4e9042080604b5c" class="flex justify-between">
+    <input type="checkbox" id="section-39b7a0b404320b4007d4505305b8f4f4" class="toggle"  />
+    <label for="section-39b7a0b404320b4007d4505305b8f4f4" class="flex justify-between">
       <a href="/docs/build/" class="">Build automation</a>
     </label>
   
@@ -1785,10 +1769,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-0c816e62fd66eb322757addb01600cdd" class="toggle"  />
-    <label for="section-0c816e62fd66eb322757addb01600cdd" class="flex justify-between">
-      <a href="/docs/build/sections/packaging/" class="">Packaging a Java application</a>
-    </label>
+    <a href="/docs/build/sections/packaging/" class="">Packaging a Java application</a>
   
 
         </li>
@@ -1801,10 +1782,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-5537e478f301d8ff4f0b5a7a03c9db32" class="toggle"  />
-    <label for="section-5537e478f301d8ff4f0b5a7a03c9db32" class="flex justify-between">
-      <a href="/docs/build/sections/layout/" class="">Layout</a>
-    </label>
+    <a href="/docs/build/sections/layout/" class="">Layout</a>
   
 
         </li>
@@ -1817,10 +1795,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-33bd3456c4645cc966d192fba400a71a" class="toggle"  />
-    <label for="section-33bd3456c4645cc966d192fba400a71a" class="flex justify-between">
-      <a href="/docs/build/sections/pom/" class="">Configuration file</a>
-    </label>
+    <a href="/docs/build/sections/pom/" class="">Configuration file</a>
   
 
         </li>
@@ -1833,10 +1808,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-c956d0b428ebb6c853f314459a513393" class="toggle"  />
-    <label for="section-c956d0b428ebb6c853f314459a513393" class="flex justify-between">
-      <a href="/docs/build/sections/artifact/" class="">Artifact</a>
-    </label>
+    <a href="/docs/build/sections/artifact/" class="">Artifact</a>
   
 
         </li>
@@ -1849,10 +1821,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-d01a14431bc2161a8fed02d90e1a365b" class="toggle"  />
-    <label for="section-d01a14431bc2161a8fed02d90e1a365b" class="flex justify-between">
-      <a href="/docs/build/sections/dependencies/" class="">Dependencies</a>
-    </label>
+    <a href="/docs/build/sections/dependencies/" class="">Dependencies</a>
   
 
         </li>
@@ -1865,10 +1834,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-b838446830102a7dece872d673537390" class="toggle"  />
-    <label for="section-b838446830102a7dece872d673537390" class="flex justify-between">
-      <a href="/docs/build/sections/building/" class="">Building</a>
-    </label>
+    <a href="/docs/build/sections/building/" class="">Building</a>
   
 
         </li>
@@ -1886,8 +1852,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-ffcf8551871937aae0ce60f2b3cc616b" class="toggle"  />
-    <label for="section-ffcf8551871937aae0ce60f2b3cc616b" class="flex justify-between">
+    <input type="checkbox" id="section-48bf1202a7e278154d3a51c618c94cd6" class="toggle"  />
+    <label for="section-48bf1202a7e278154d3a51c618c94cd6" class="flex justify-between">
       <a href="/docs/background/" class="">Background</a>
     </label>
   
@@ -1980,7 +1946,6 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-
 </nav>
 
 
@@ -2001,7 +1966,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Unit tests</strong>
+  <h3>Unit tests</h3>
 
   <label for="toc-control">
     
@@ -2057,42 +2022,37 @@ Common categories are:</p>
 <p>A side benefit of many tests is that they help clarifying <em>what</em> a program (resp. component, method) is expected to do.
 So in a sense, tests are part of the <em>documentation</em> or specification of a system, because they provide precise <em>examples</em> of the expected behavior of the program (resp. component, method).</p>
 <p>This is why tests are often part of the development process itself.
-Notably, <a href="https://unibz-pp-23-24.github.io/docs/unittests/sections/tdd/">test-driven development</a> consists in developing tests cases <em>before</em> software is fully developed.</p>
+Notably, <a href="https://unibz-pp-24-25.github.io/docs/unittests/sections/tdd/">test-driven development</a> consists in developing tests cases <em>before</em> software is fully developed.</p>
 <h2 id="unit-tests-1">
   Unit tests
   <a class="anchor" href="#unit-tests-1">#</a>
 </h2>
-<p><blockquote class="book-hint warning">
-  <p>A <strong>unit test</strong> is usually understood as:</p>
+<blockquote class="book-hint warning">
+<p>A <strong>unit test</strong> is usually understood as:</p>
 <ul>
 <li>testing the behavior of a <em>small</em> piece of code (typically a method),</li>
-<li>automated (typically integrated to the <a href="https://unibz-pp-23-24.github.io/docs/build/">build</a> process),</li>
+<li>automated (typically integrated to the <a href="https://unibz-pp-24-25.github.io/docs/build/">build</a> process),</li>
 <li>fast.</li>
 </ul>
-<!-- raw HTML omitted -->
+<!-- - isolated. -->
 </blockquote>
-
-Besides, most unit tests are concerned with <em>correctness</em> (rather than performance for instance).</p>
+<p>Besides, most unit tests are concerned with <em>correctness</em> (rather than performance for instance).</p>
 <blockquote class="book-hint danger">
-  <strong><em>Warning.</em></strong>
+<p><strong><em>Warning.</em></strong>
 The tests used to evaluate assignments in this course are implemented via libraries for unit testing.
-However, many of them do <em>not</em> qualify as unit tests.
+However, many of them do <em>not</em> qualify as unit tests.</p>
 </blockquote>
-
 <blockquote class="book-hint warning">
-  <p>In its simplest form, a unit test can be viewed as a pair</p>
+<p>In its simplest form, a unit test can be viewed as a pair</p>
 <p>$\qquad$ (input, expected output)</p>
-<p>for a given <a href="https://unibz-pp-23-24.github.io/docs/background/sections/problem/">computational problem</a>.</p>
-
+<p>for a given <a href="https://unibz-pp-24-25.github.io/docs/background/sections/problem/">computational problem</a>.</p>
 </blockquote>
-
 <blockquote class="book-hint info">
-  <p><strong><em>Example.</em></strong>
+<p><strong><em>Example.</em></strong>
 Consider the following problem:</p>
 <blockquote>
 <p><strong><em>Input:</em></strong> a (finite) array of positive integers, representing the successive values of a stock, one value per day.</p>
-<p><strong><em>Output:</em></strong> the maximal gain that can be made by buying on a certain day, and selling the same day or later on.</p>
-</blockquote>
+<p><strong><em>Output:</em></strong> the maximal gain that can be made by buying on a certain day, and selling the same day or later on.</p></blockquote>
 <p>Possible unit tests for this problem are:</p>
 <ul>
 <li>( [0, 3], 3 )</li>
@@ -2101,28 +2061,23 @@ Consider the following problem:</p>
 <li>( [3, 2], 0 )</li>
 <li>etc.</li>
 </ul>
-
 </blockquote>
-
-
-
-
-
-<div class="book-tabs"><input type="radio" class="toggle" name="tabs-exercise_finite_unitTests" id="tabs-exercise_finite_unitTests-0" checked="checked" />
-  <label for="tabs-exercise_finite_unitTests-0">Exercise</label>
-  <div class="book-tabs-content markdown-inner"><p>Consider the following problem:</p>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-exercise_finite_unitTests" id="tabs-exercise_finite_unitTests-0" checked="checked" />
+<label for="tabs-exercise_finite_unitTests-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>Consider the following problem:</p>
 <blockquote>
 <p><strong><em>Input:</em></strong> a (finite) array of characters, with possibly duplicated characters (and no restriction on the size of the array).</p>
-<p><strong><em>Output:</em></strong> the size of the longest (left-to-right) sequence in this array that respects alphabetical order.</p>
-</blockquote>
+<p><strong><em>Output:</em></strong> the size of the longest (left-to-right) sequence in this array that respects alphabetical order.</p></blockquote>
 <p>For instance, for the input</p>
 <p>$\qquad$ <code>[m, q, b, e, e, z, m, e]</code>,</p>
 <p>the expected output is
 <code>4</code>.</p>
 <p><strong><em>Question.</em></strong> Does there exist a (finite) set of unit tests for this problem that guarantees that an implementation is correct?</p>
-</div><input type="radio" class="toggle" name="tabs-exercise_finite_unitTests" id="tabs-exercise_finite_unitTests-1"  />
-  <label for="tabs-exercise_finite_unitTests-1">Solution</label>
-  <div class="book-tabs-content markdown-inner"><p>No.</p>
+</div>
+<input type="radio" class="toggle" name="tabs-exercise_finite_unitTests" id="tabs-exercise_finite_unitTests-1"  />
+<label for="tabs-exercise_finite_unitTests-1">Solution</label>
+<div class="book-tabs-content markdown-inner"><p>No.</p>
 <p>A unit tests for this problem is a pair
 $(a, i)$,
 where</p>
@@ -2137,30 +2092,29 @@ where</p>
 there exists an array of characters $a_0$ that does not appear in this set of tests.</p>
 <p>Let $i_0$ be the expected output for $a_0$, and let $j$ be any positive integer different from $i_0$.</p>
 <p>Now consider the method (in pseudocode):</p>
-<pre tabindex="0"><code>int sizeOfLongestNonDecreasingSequence(char[] characters) {
-    if(characters == a_1) {
-      return i_1
-    }
-    if(characters == a_2) {
-      return i_2
-    }
-    ...
-
-    if(characters == a_n) {
-      return i_n
-    }
-    return j;
-}
-</code></pre><p>This algorithm will pass the unit tests, but is incorrect for the input $a_0$.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span>int sizeOfLongestNonDecreasingSequence(char<span style="color:#f92672">[]</span> characters) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(characters <span style="color:#f92672">==</span> a_1) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> i_1
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(characters <span style="color:#f92672">==</span> a_2) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> i_2
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(characters <span style="color:#f92672">==</span> a_n) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> i_n
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> j;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This algorithm will pass the unit tests, but is incorrect for the input $a_0$.</p>
 <p>So given any set of unit tests (for this problem), there exists an incorrect algorithm that passes these tests.</p>
-</div></div>
-
-<p>This (artificial) exercise was only meant to illustrate the following:
+</div>
+</div>
+<p>This (artificial) exercise was only meant to illustrate the following:</p>
 <blockquote class="book-hint danger">
-  <strong><em>Warning.</em></strong>
-In general, no (reasonably small) set of unit tests can ensure that a (non-trivial) method is correct.
+<p><strong><em>Warning.</em></strong>
+In general, no (reasonably small) set of unit tests can ensure that a (non-trivial) method is correct.</p>
 </blockquote>
-</p>
 <h2 id="unit-test-design">
   Unit test design
   <a class="anchor" href="#unit-test-design">#</a>
@@ -2198,10 +2152,9 @@ In particular, it should not depend on:</p>
   <a class="anchor" href="#implementation">#</a>
 </h2>
 <blockquote class="book-hint danger">
-  <strong><em>Requirement.</em></strong>
-A unit test should itself be <em>free of bugs</em>.
+<p><strong><em>Requirement.</em></strong>
+A unit test should itself be <em>free of bugs</em>.</p>
 </blockquote>
-
 <p>For this reason, unit tests usually:</p>
 <ul>
 <li>rely of widely used libraries for test execution,</li>
@@ -2213,25 +2166,21 @@ A unit test should itself be <em>free of bugs</em>.
   <a class="anchor" href="#unit-tests-and-build-automation">#</a>
 </h2>
 <p>Unit tests are usually integrated to the standard build automation process of a project.</p>
-<p>For instance, the <code>test-compile</code> and <code>test</code> phases of Maven&rsquo;s <a href="https://unibz-pp-23-24.github.io/docs/build/sections/building/#phases">default lifecycle</a> are in charge of compiling and executing unit tests respectively.
+<p>For instance, the <code>test-compile</code> and <code>test</code> phases of Maven&rsquo;s <a href="https://unibz-pp-24-25.github.io/docs/build/sections/building/#phases">default lifecycle</a> are in charge of compiling and executing unit tests respectively.
 This effectively prevents further phases to be executed if a test fails.</p>
 <h2 id="regression-tests">
   Regression tests
   <a class="anchor" href="#regression-tests">#</a>
 </h2>
 <blockquote class="book-hint warning">
-  A <strong>regression test</strong> is meant to verify that modifications brought to the code base (e.g. a new feature, code optimization, reorganization, etc. ) do not compromise correctness of functionalities that were already implemented.
+<p>A <strong>regression test</strong> is meant to verify that modifications brought to the code base (e.g. a new feature, code optimization, reorganization, etc. ) do not compromise correctness of functionalities that were already implemented.</p>
 </blockquote>
-
 <p>Some unit tests may act in practice as regression tests.</p>
 <p>In particular, before sharing code with co-developers (e.g. via the main branch of a git repository), it is good practice to verify that all unit tests as <em>successful</em>.</p>
-
-
-
-
-<div class="book-tabs"><input type="radio" class="toggle" name="tabs-exercise_git_collab_reminder" id="tabs-exercise_git_collab_reminder-0" checked="checked" />
-  <label for="tabs-exercise_git_collab_reminder-0">Exercise (reminder)</label>
-  <div class="book-tabs-content markdown-inner"><p>Consider a basic collaboration scheme via git, where:</p>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-exercise_git_collab_reminder" id="tabs-exercise_git_collab_reminder-0" checked="checked" />
+<label for="tabs-exercise_git_collab_reminder-0">Exercise (reminder)</label>
+<div class="book-tabs-content markdown-inner"><p>Consider a basic collaboration scheme via git, where:</p>
 <ul>
 <li>Alice, Bob and Carol collaborate on the same project,</li>
 <li>they share code via the <code>main</code> branch,</li>
@@ -2241,9 +2190,10 @@ This effectively prevents further phases to be executed if a test fails.</p>
 Her code compiles and passes all unit tests.
 Now she wants to share her code with the other two.</p>
 <p>Which sequence of git commands should Alice execute?</p>
-</div><input type="radio" class="toggle" name="tabs-exercise_git_collab_reminder" id="tabs-exercise_git_collab_reminder-1"  />
-  <label for="tabs-exercise_git_collab_reminder-1">Solution</label>
-  <div class="book-tabs-content markdown-inner"><ol>
+</div>
+<input type="radio" class="toggle" name="tabs-exercise_git_collab_reminder" id="tabs-exercise_git_collab_reminder-1"  />
+<label for="tabs-exercise_git_collab_reminder-1">Solution</label>
+<div class="book-tabs-content markdown-inner"><ol>
 <li>Commit her changes (locally, to the branch <code>alice</code>):</li>
 </ol>
 <ul>
@@ -2290,8 +2240,8 @@ After this step, the local copies of <code>alice</code> and <code>main</code> wi
 <ul>
 <li><code>git checkout alice</code></li>
 </ul>
-</div></div>
-
+</div>
+</div>
 </article>
  
       

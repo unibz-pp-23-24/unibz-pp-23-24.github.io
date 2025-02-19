@@ -3,25 +3,40 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Encapsulation # Encapsulation is a (vague) principle in object-oriented programming that refers to &ldquo;bundling&rdquo; data with the code that operates on it, and restrict visibility of this code and data to other components of a system. From Wikipedia: &ldquo;Essentially, encapsulation prevents external code from being concerned [&hellip;]&rdquo;
+<meta name="description" content="
+  Encapsulation
+  #
+
+
+Encapsulation is a (vague) principle in object-oriented programming that refers to &ldquo;bundling&rdquo; data with the code that operates on it, and restrict visibility of this code and data to other components of a system.
+
+
+From Wikipedia:
+&ldquo;Essentially, encapsulation prevents external code from being concerned [&hellip;]&rdquo;
 Each component hides its internal logic by exposing only data and methods that other components may need.
-Example. As we saw earlier, in our game, the &ldquo;view&rdquo; component (which is in charge of rendering the game on screen) may buffer the game snapshots that it receives from the backend, if these snapshots are received faster than they can be displayed.">
+
+Example. As we saw earlier, in our game,
+the &ldquo;view&rdquo; component (which is in charge of rendering the game on screen) may buffer the game snapshots that it receives from the backend,
+if these snapshots are received faster than they can be displayed.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="Encapsulation" />
-<meta property="og:description" content="Encapsulation # Encapsulation is a (vague) principle in object-oriented programming that refers to &ldquo;bundling&rdquo; data with the code that operates on it, and restrict visibility of this code and data to other components of a system. From Wikipedia: &ldquo;Essentially, encapsulation prevents external code from being concerned [&hellip;]&rdquo;
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/objects/sections/encapsulation/">
+  <meta property="og:site_name" content="Programming project 2024-25">
+  <meta property="og:title" content="Encapsulation">
+  <meta property="og:description" content="Encapsulation # Encapsulation is a (vague) principle in object-oriented programming that refers to “bundling” data with the code that operates on it, and restrict visibility of this code and data to other components of a system.
+From Wikipedia: “Essentially, encapsulation prevents external code from being concerned […]”
 Each component hides its internal logic by exposing only data and methods that other components may need.
-Example. As we saw earlier, in our game, the &ldquo;view&rdquo; component (which is in charge of rendering the game on screen) may buffer the game snapshots that it receives from the backend, if these snapshots are received faster than they can be displayed." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/objects/sections/encapsulation/" /><meta property="article:section" content="docs" />
-
-
-<title>Encapsulation | Programming project 2023-24</title>
-<link rel="manifest" href="/manifest.json">
+Example. As we saw earlier, in our game, the “view” component (which is in charge of rendering the game on screen) may buffer the game snapshots that it receives from the backend, if these snapshots are received faster than they can be displayed.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Encapsulation | Programming project 2024-25</title>
 <link rel="icon" href="/favicon.png" >
-<link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
-  <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.4e5dd21f0324d689aa628cb546e70eda39fb9e0b5daabb2a2c7da954eec10dab.js" integrity="sha256-Tl3SHwMk1omqYoy1RucO2jn7ngtdqrsqLH2pVO7BDas=" crossorigin="anonymous"></script>
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/objects/sections/encapsulation/">
+<link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.ef6ce3f581865a34e7a0361facaa520c0f023938171236d76684573e7df35a2c.js" integrity="sha256-72zj9YGGWjTnoDYfrKpSDA8COTgXEjbXZoRXPn3zWiw=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -71,16 +86,17 @@ https://github.com/alex-shpak/hugo-book
         
   <nav>
 <h2 class="book-brand">
-  <a class="flex align-center" href="/"><span>Programming project 2023-24</span>
+  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
   </a>
 </h2>
 
 
-<div class="book-search">
+<div class="book-search hidden">
   <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
 
 
 
@@ -93,7 +109,6 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  
 
 
 
@@ -107,8 +122,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-f1c1e874f9c9473478447bba6c7db644" class="toggle"  />
-    <label for="section-f1c1e874f9c9473478447bba6c7db644" class="flex justify-between">
+    <input type="checkbox" id="section-9c72579f4feaa5ed1d8188779488d483" class="toggle"  />
+    <label for="section-9c72579f4feaa5ed1d8188779488d483" class="flex justify-between">
       <a href="/docs/intro/" class="">This course</a>
     </label>
   
@@ -206,8 +221,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-bc4d9392f5af16481cccf0c311076888" class="toggle"  />
-    <label for="section-bc4d9392f5af16481cccf0c311076888" class="flex justify-between">
+    <input type="checkbox" id="section-0af90824fe38d1d85af672be7208f3fa" class="toggle"  />
+    <label for="section-0af90824fe38d1d85af672be7208f3fa" class="flex justify-between">
       <a href="/docs/project/" class="">Project</a>
     </label>
   
@@ -253,8 +268,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-3435ead23eba75b5ffeeb8d422f70dea" class="toggle" checked />
-    <label for="section-3435ead23eba75b5ffeeb8d422f70dea" class="flex justify-between">
+    <input type="checkbox" id="section-f8aa8cff3b51717ecd2ebfbd81d061ce" class="toggle" checked />
+    <label for="section-f8aa8cff3b51717ecd2ebfbd81d061ce" class="flex justify-between">
       <a href="/docs/objects/" class="">Objects and classes</a>
     </label>
   
@@ -430,8 +445,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-48bc13e86f573c257821b397e779b02e" class="toggle"  />
-    <label for="section-48bc13e86f573c257821b397e779b02e" class="flex justify-between">
+    <input type="checkbox" id="section-84375da4f2da0b5ee2a224e67daa47cd" class="toggle"  />
+    <label for="section-84375da4f2da0b5ee2a224e67daa47cd" class="flex justify-between">
       <a href="/docs/interfaces/" class="">Interfaces</a>
     </label>
   
@@ -477,8 +492,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-e06acd393c0cc6e5b27e2cd8945d3dd8" class="toggle"  />
-    <label for="section-e06acd393c0cc6e5b27e2cd8945d3dd8" class="flex justify-between">
+    <input type="checkbox" id="section-dd500264748ddf6db6c4f8c13c5fa45b" class="toggle"  />
+    <label for="section-dd500264748ddf6db6c4f8c13c5fa45b" class="flex justify-between">
       <a href="/docs/abstractdatatypes/" class="">Abstract data types</a>
     </label>
   
@@ -563,8 +578,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-5d60f9e6a9b7c875f51358c583373282" class="toggle"  />
-    <label for="section-5d60f9e6a9b7c875f51358c583373282" class="flex justify-between">
+    <input type="checkbox" id="section-10a993a702eb9f53bd9244a93734d095" class="toggle"  />
+    <label for="section-10a993a702eb9f53bd9244a93734d095" class="flex justify-between">
       <a href="/docs/datastructures/" class="">Data structures</a>
     </label>
   
@@ -623,8 +638,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-93b39c27c032f5f72bed81496cbb41e3" class="toggle"  />
-    <label for="section-93b39c27c032f5f72bed81496cbb41e3" class="flex justify-between">
+    <input type="checkbox" id="section-58aec3ab091b08c257b626cc09af78c5" class="toggle"  />
+    <label for="section-58aec3ab091b08c257b626cc09af78c5" class="flex justify-between">
       <a href="/docs/errors/" class="">Errors</a>
     </label>
   
@@ -639,10 +654,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-a2fa4d1523374519c87fe83f9d8226b6" class="toggle"  />
-    <label for="section-a2fa4d1523374519c87fe83f9d8226b6" class="flex justify-between">
-      <a href="/docs/errors/sections/callstack/" class="">Call stack</a>
-    </label>
+    <a href="/docs/errors/sections/callstack/" class="">Call stack</a>
   
 
         </li>
@@ -655,10 +667,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-323953d2054911560fd76ed4505d5bb2" class="toggle"  />
-    <label for="section-323953d2054911560fd76ed4505d5bb2" class="flex justify-between">
-      <a href="/docs/errors/sections/exceptions/" class="">Exceptions</a>
-    </label>
+    <a href="/docs/errors/sections/exceptions/" class="">Exceptions</a>
   
 
         </li>
@@ -671,10 +680,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-03b7629c50286af7810d9917f4bdabd2" class="toggle"  />
-    <label for="section-03b7629c50286af7810d9917f4bdabd2" class="flex justify-between">
-      <a href="/docs/errors/sections/checked/" class="">Checked vs unchecked</a>
-    </label>
+    <a href="/docs/errors/sections/checked/" class="">Checked vs unchecked</a>
   
 
         </li>
@@ -687,10 +693,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-3add83584009ceb58c28b43e0a2280c9" class="toggle"  />
-    <label for="section-3add83584009ceb58c28b43e0a2280c9" class="flex justify-between">
-      <a href="/docs/errors/sections/custom/" class="">Custom exceptions</a>
-    </label>
+    <a href="/docs/errors/sections/custom/" class="">Custom exceptions</a>
   
 
         </li>
@@ -703,10 +706,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-b9c696d05ab8cb944ddf9cef47a3abb4" class="toggle"  />
-    <label for="section-b9c696d05ab8cb944ddf9cef47a3abb4" class="flex justify-between">
-      <a href="/docs/errors/sections/errors/" class="">Java errors</a>
-    </label>
+    <a href="/docs/errors/sections/errors/" class="">Java errors</a>
   
 
         </li>
@@ -724,8 +724,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-1be866adbf7f2244d1773e0d2a159b91" class="toggle"  />
-    <label for="section-1be866adbf7f2244d1773e0d2a159b91" class="flex justify-between">
+    <input type="checkbox" id="section-759e82ae41b9619c78e632572d50480a" class="toggle"  />
+    <label for="section-759e82ae41b9619c78e632572d50480a" class="flex justify-between">
       <a href="/docs/recursion/" class="">Recursion</a>
     </label>
   
@@ -784,8 +784,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-b7bc445f96cbe2bd1034c5f1c5d075bb" class="toggle"  />
-    <label for="section-b7bc445f96cbe2bd1034c5f1c5d075bb" class="flex justify-between">
+    <input type="checkbox" id="section-a1720661345b5872c845343fb6615be9" class="toggle"  />
+    <label for="section-a1720661345b5872c845343fb6615be9" class="flex justify-between">
       <a href="/docs/input/" class="">I/O and serialization</a>
     </label>
   
@@ -800,10 +800,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-09ea3b18445537bd77c25d3db6ab2fcf" class="toggle"  />
-    <label for="section-09ea3b18445537bd77c25d3db6ab2fcf" class="flex justify-between">
-      <a href="/docs/input/sections/files/" class="">Paths and files in Java</a>
-    </label>
+    <a href="/docs/input/sections/files/" class="">Paths and files in Java</a>
   
 
         </li>
@@ -816,10 +813,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-640b25aadb55f28505bfbbe5a5f7073d" class="toggle"  />
-    <label for="section-640b25aadb55f28505bfbbe5a5f7073d" class="flex justify-between">
-      <a href="/docs/input/sections/read/" class="">Reading from and writing to a file in Java</a>
-    </label>
+    <a href="/docs/input/sections/read/" class="">Reading from and writing to a file in Java</a>
   
 
         </li>
@@ -832,10 +826,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-7efe7741b54b5b602db75415a7806ef4" class="toggle"  />
-    <label for="section-7efe7741b54b5b602db75415a7806ef4" class="flex justify-between">
-      <a href="/docs/input/sections/property/" class="">Configuration files</a>
-    </label>
+    <a href="/docs/input/sections/property/" class="">Configuration files</a>
   
 
         </li>
@@ -848,10 +839,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-37fdfe811c449d15e51a84c19673df2f" class="toggle"  />
-    <label for="section-37fdfe811c449d15e51a84c19673df2f" class="flex justify-between">
-      <a href="/docs/input/sections/serialize/" class="">Serialization</a>
-    </label>
+    <a href="/docs/input/sections/serialize/" class="">Serialization</a>
   
 
         </li>
@@ -864,10 +852,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-ec41b3fcd24b301058a1bd1bd7b5c8e7" class="toggle"  />
-    <label for="section-ec41b3fcd24b301058a1bd1bd7b5c8e7" class="flex justify-between">
-      <a href="/docs/input/sections/json/" class="">JSON Serialization</a>
-    </label>
+    <a href="/docs/input/sections/json/" class="">JSON Serialization</a>
   
 
         </li>
@@ -885,8 +870,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-baf3ea6e28839ac044570d2d313c8794" class="toggle"  />
-    <label for="section-baf3ea6e28839ac044570d2d313c8794" class="flex justify-between">
+    <input type="checkbox" id="section-9bfff01f1c5ef64a53927faf30620ccf" class="toggle"  />
+    <label for="section-9bfff01f1c5ef64a53927faf30620ccf" class="flex justify-between">
       <a href="/docs/regex/" class="">Regular expressions</a>
     </label>
   
@@ -945,8 +930,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-ae8fba9e927e4c55801a4e71f6b7d054" class="toggle"  />
-    <label for="section-ae8fba9e927e4c55801a4e71f6b7d054" class="flex justify-between">
+    <input type="checkbox" id="section-882764aad745f79e099c5a43798784f9" class="toggle"  />
+    <label for="section-882764aad745f79e099c5a43798784f9" class="flex justify-between">
       <a href="/docs/lambda/" class="">Callback methods and lambda expressions</a>
     </label>
   
@@ -1044,8 +1029,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-41a2765a9682fb1ce579fb1661f1250d" class="toggle"  />
-    <label for="section-41a2765a9682fb1ce579fb1661f1250d" class="flex justify-between">
+    <input type="checkbox" id="section-7783f19754a3a0ec1529ed7ac208c3ab" class="toggle"  />
+    <label for="section-7783f19754a3a0ec1529ed7ac208c3ab" class="flex justify-between">
       <a href="/docs/stream/" class="">Streams in Java</a>
     </label>
   
@@ -1156,8 +1141,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-87d53bbeb97db8aab24c02b4d45460f2" class="toggle"  />
-    <label for="section-87d53bbeb97db8aab24c02b4d45460f2" class="flex justify-between">
+    <input type="checkbox" id="section-793e09c315e082fb44de3238b9ad707b" class="toggle"  />
+    <label for="section-793e09c315e082fb44de3238b9ad707b" class="flex justify-between">
       <a href="/docs/generics/" class="">Generic programming</a>
     </label>
   
@@ -1242,8 +1227,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-5dcccd15580bb824ba055538c97bdea6" class="toggle"  />
-    <label for="section-5dcccd15580bb824ba055538c97bdea6" class="flex justify-between">
+    <input type="checkbox" id="section-3876422a93470dcccad1a719c99a8e17" class="toggle"  />
+    <label for="section-3876422a93470dcccad1a719c99a8e17" class="flex justify-between">
       <a href="/docs/multithreading/" class="">Multithreading</a>
     </label>
   
@@ -1354,8 +1339,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-9d77b970a03dc72b048d9fce7bfe272f" class="toggle"  />
-    <label for="section-9d77b970a03dc72b048d9fce7bfe272f" class="flex justify-between">
+    <input type="checkbox" id="section-990bc84b6dc3891b1963528a24b45e2e" class="toggle"  />
+    <label for="section-990bc84b6dc3891b1963528a24b45e2e" class="flex justify-between">
       <a href="/docs/unittests/" class="">Unit tests</a>
     </label>
   
@@ -1370,10 +1355,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-796939dc839b82c2ff89d99e47011262" class="toggle"  />
-    <label for="section-796939dc839b82c2ff89d99e47011262" class="flex justify-between">
-      <a href="/docs/unittests/sections/structured/" class="">Code units</a>
-    </label>
+    <a href="/docs/unittests/sections/structured/" class="">Code units</a>
   
 
         </li>
@@ -1386,10 +1368,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-ad5c3d825858d4a9ca4ad02d541f7121" class="toggle"  />
-    <label for="section-ad5c3d825858d4a9ca4ad02d541f7121" class="flex justify-between">
-      <a href="/docs/unittests/sections/tdd/" class="">Development driven by unit tests</a>
-    </label>
+    <a href="/docs/unittests/sections/tdd/" class="">Development driven by unit tests</a>
   
 
         </li>
@@ -1402,10 +1381,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-7e09be54c45521908b57f9eaf194f5f6" class="toggle"  />
-    <label for="section-7e09be54c45521908b57f9eaf194f5f6" class="flex justify-between">
-      <a href="/docs/unittests/sections/junit/" class="">in Java</a>
-    </label>
+    <a href="/docs/unittests/sections/junit/" class="">in Java</a>
   
 
         </li>
@@ -1423,8 +1399,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-0407f110c1b3ed4992fcb7fc5f05aa12" class="toggle"  />
-    <label for="section-0407f110c1b3ed4992fcb7fc5f05aa12" class="flex justify-between">
+    <input type="checkbox" id="section-4aed4e1c4b6179fd330f627f75eb18b3" class="toggle"  />
+    <label for="section-4aed4e1c4b6179fd330f627f75eb18b3" class="flex justify-between">
       <a href="/docs/simplify/" class="">Simplifying code</a>
     </label>
   
@@ -1483,8 +1459,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-494fdb80ca3ad5d2868cb487a042ae27" class="toggle"  />
-    <label for="section-494fdb80ca3ad5d2868cb487a042ae27" class="flex justify-between">
+    <input type="checkbox" id="section-ba3d9d7fa2d604a47f68a6d7a7a9d2a2" class="toggle"  />
+    <label for="section-ba3d9d7fa2d604a47f68a6d7a7a9d2a2" class="flex justify-between">
       <a href="/docs/env/" class="">Development environment</a>
     </label>
   
@@ -1621,8 +1597,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-2870a15a3d2cff84408f43cbb1e77f97" class="toggle"  />
-    <label for="section-2870a15a3d2cff84408f43cbb1e77f97" class="flex justify-between">
+    <input type="checkbox" id="section-3c6a8c431d500080599ec572e56415d8" class="toggle"  />
+    <label for="section-3c6a8c431d500080599ec572e56415d8" class="flex justify-between">
       <a href="/docs/git/" class="">git</a>
     </label>
   
@@ -1772,8 +1748,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-44fa5eb3511a340ff4e9042080604b5c" class="toggle"  />
-    <label for="section-44fa5eb3511a340ff4e9042080604b5c" class="flex justify-between">
+    <input type="checkbox" id="section-39b7a0b404320b4007d4505305b8f4f4" class="toggle"  />
+    <label for="section-39b7a0b404320b4007d4505305b8f4f4" class="flex justify-between">
       <a href="/docs/build/" class="">Build automation</a>
     </label>
   
@@ -1788,10 +1764,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-0c816e62fd66eb322757addb01600cdd" class="toggle"  />
-    <label for="section-0c816e62fd66eb322757addb01600cdd" class="flex justify-between">
-      <a href="/docs/build/sections/packaging/" class="">Packaging a Java application</a>
-    </label>
+    <a href="/docs/build/sections/packaging/" class="">Packaging a Java application</a>
   
 
         </li>
@@ -1804,10 +1777,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-5537e478f301d8ff4f0b5a7a03c9db32" class="toggle"  />
-    <label for="section-5537e478f301d8ff4f0b5a7a03c9db32" class="flex justify-between">
-      <a href="/docs/build/sections/layout/" class="">Layout</a>
-    </label>
+    <a href="/docs/build/sections/layout/" class="">Layout</a>
   
 
         </li>
@@ -1820,10 +1790,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-33bd3456c4645cc966d192fba400a71a" class="toggle"  />
-    <label for="section-33bd3456c4645cc966d192fba400a71a" class="flex justify-between">
-      <a href="/docs/build/sections/pom/" class="">Configuration file</a>
-    </label>
+    <a href="/docs/build/sections/pom/" class="">Configuration file</a>
   
 
         </li>
@@ -1836,10 +1803,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-c956d0b428ebb6c853f314459a513393" class="toggle"  />
-    <label for="section-c956d0b428ebb6c853f314459a513393" class="flex justify-between">
-      <a href="/docs/build/sections/artifact/" class="">Artifact</a>
-    </label>
+    <a href="/docs/build/sections/artifact/" class="">Artifact</a>
   
 
         </li>
@@ -1852,10 +1816,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-d01a14431bc2161a8fed02d90e1a365b" class="toggle"  />
-    <label for="section-d01a14431bc2161a8fed02d90e1a365b" class="flex justify-between">
-      <a href="/docs/build/sections/dependencies/" class="">Dependencies</a>
-    </label>
+    <a href="/docs/build/sections/dependencies/" class="">Dependencies</a>
   
 
         </li>
@@ -1868,10 +1829,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-b838446830102a7dece872d673537390" class="toggle"  />
-    <label for="section-b838446830102a7dece872d673537390" class="flex justify-between">
-      <a href="/docs/build/sections/building/" class="">Building</a>
-    </label>
+    <a href="/docs/build/sections/building/" class="">Building</a>
   
 
         </li>
@@ -1889,8 +1847,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-ffcf8551871937aae0ce60f2b3cc616b" class="toggle"  />
-    <label for="section-ffcf8551871937aae0ce60f2b3cc616b" class="flex justify-between">
+    <input type="checkbox" id="section-48bf1202a7e278154d3a51c618c94cd6" class="toggle"  />
+    <label for="section-48bf1202a7e278154d3a51c618c94cd6" class="flex justify-between">
       <a href="/docs/background/" class="">Background</a>
     </label>
   
@@ -1983,7 +1941,6 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-
 </nav>
 
 
@@ -2004,7 +1961,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Encapsulation</strong>
+  <h3>Encapsulation</h3>
 
   <label for="toc-control">
     
@@ -2045,26 +2002,22 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#encapsulation">#</a>
 </h1>
 <blockquote class="book-hint warning">
-  <strong>Encapsulation</strong> is a (vague) principle in object-oriented programming that refers to <em>&ldquo;bundling&rdquo;</em> data with the code that operates on it, and <em>restrict visibility</em> of this code and data to other components of a system.
+<p><strong>Encapsulation</strong> is a (vague) principle in object-oriented programming that refers to <em>&ldquo;bundling&rdquo;</em> data with the code that operates on it, and <em>restrict visibility</em> of this code and data to other components of a system.</p>
 </blockquote>
-
 <blockquote>
 <p>From <a href="https://en.wikipedia.org/wiki/Encapsulation_%28computer_programming%29">Wikipedia</a>:
-&ldquo;Essentially, encapsulation prevents external code from being concerned [&hellip;]&rdquo;</p>
-</blockquote>
+&ldquo;Essentially, encapsulation prevents external code from being concerned [&hellip;]&rdquo;</p></blockquote>
 <p>Each component hides its internal logic by exposing only data and methods that other components may need.</p>
 <blockquote class="book-hint info">
-  <p><strong><em>Example.</em></strong> As we saw <a href="https://unibz-pp-23-24.github.io/docs/objects/sections/clone/">earlier</a>, in our game,
+<p><strong><em>Example.</em></strong> As we saw <a href="https://unibz-pp-24-25.github.io/docs/objects/sections/clone/">earlier</a>, in our game,
 the &ldquo;view&rdquo; component (which is in charge of rendering the game on screen) may <em>buffer</em> the game snapshots that it receives from the backend,
 if these snapshots are received faster than they can be displayed.</p>
 <p>As a buffer, this component uses a structure called a <strong>queue</strong>.
 This queue is <em>not exposed</em> to other components, because they do not need to <em>see</em> it, and (most importantly) should not <em>modify</em> it.
 In other words, this queue is an implementation detail, <em>internal</em> to the &ldquo;view&rdquo; component.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-
+<!-- Similarly, the implementation of the `drawSnapshot` method relies on subroutines (a.k.a. auxiliary methods) that are only useful to the renderer. -->
+<!-- These auxiliary methods do not need to be exposed. -->
 </blockquote>
-
 <p>Encapsulation can have many benefits.
 Among others:</p>
 <ol>
@@ -2087,7 +2040,7 @@ For instance, the keywords <code>private</code> and <code>protected</code> below
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> 1;
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><blockquote class="book-hint warning">
-  <p><strong><em>Definition.</em></strong>
+<p><strong><em>Definition.</em></strong>
 There are four levels of access in Java:</p>
 <ul>
 <li><code>private</code> restricts access to the <em>current class</em>,</li>
@@ -2096,74 +2049,67 @@ There are four levels of access in Java:</p>
 <li><code>public</code> does not restrict access.</li>
 </ul>
 </blockquote>
-
 <blockquote class="book-hint danger">
-  <strong><em>Warning.</em></strong>
+<p><strong><em>Warning.</em></strong>
 There is no keyword for the &ldquo;package-private&rdquo; level.
 Instead, this is the default level for an attribute or method <em>without</em> access modifier.
-For instance, in the example below, the attribute <code>myAttribute</code> is package-private:
+For instance, in the example below, the attribute <code>myAttribute</code> is package-private:</p>
 </blockquote>
-
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> myAttribute;
 </span></span></code></pre></div><p>Here is a recap table from the <a href="https://docs.oracle.com/javase/tutorial/java/javaOO/accesscontrol.html">Oracle tutorials</a>:</p>
 <table>
-<thead>
-<tr>
-<th>keyword</th>
-<th>class</th>
-<th>package</th>
-<th>subclasses</th>
-<th>world</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>private</code></td>
-<td>yes</td>
-<td>no</td>
-<td>no</td>
-<td>no</td>
-</tr>
-<tr>
-<td>none</td>
-<td>yes</td>
-<td>yes</td>
-<td>no</td>
-<td>no</td>
-</tr>
-<tr>
-<td><code>protected</code></td>
-<td>yes</td>
-<td>yes</td>
-<td>yes</td>
-<td>no</td>
-</tr>
-<tr>
-<td><code>public</code></td>
-<td>yes</td>
-<td>yes</td>
-<td>yes</td>
-<td>yes</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>keyword</th>
+          <th>class</th>
+          <th>package</th>
+          <th>subclasses</th>
+          <th>world</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>private</code></td>
+          <td>yes</td>
+          <td>no</td>
+          <td>no</td>
+          <td>no</td>
+      </tr>
+      <tr>
+          <td>none</td>
+          <td>yes</td>
+          <td>yes</td>
+          <td>no</td>
+          <td>no</td>
+      </tr>
+      <tr>
+          <td><code>protected</code></td>
+          <td>yes</td>
+          <td>yes</td>
+          <td>yes</td>
+          <td>no</td>
+      </tr>
+      <tr>
+          <td><code>public</code></td>
+          <td>yes</td>
+          <td>yes</td>
+          <td>yes</td>
+          <td>yes</td>
+      </tr>
+  </tbody>
 </table>
-<p><blockquote class="book-hint danger">
-  <strong><em>Warning.</em></strong>
-A method declared in an <a href="https://unibz-pp-23-24.github.io/docs/interfaces/sections/java_interfaces/">interface</a> is (implicitly) public.
-</blockquote>
-
 <blockquote class="book-hint danger">
-  <strong><em>Warning.</em></strong>
-If a method <em>m1</em> overrides (or implements) a method <em>m2</em>, then <em>m1</em> must be at least as accessible as <em>m2</em>.
+<p><strong><em>Warning.</em></strong>
+A method declared in an <a href="https://unibz-pp-24-25.github.io/docs/interfaces/sections/java_interfaces/">interface</a> is (implicitly) public.</p>
 </blockquote>
-</p>
-
-
-
-
-<div class="book-tabs"><input type="radio" class="toggle" name="tabs-exercise_encapsulation_relax" id="tabs-exercise_encapsulation_relax-0" checked="checked" />
-  <label for="tabs-exercise_encapsulation_relax-0">Exercise</label>
-  <div class="book-tabs-content markdown-inner"><p>The following program does not compile.
+<blockquote class="book-hint danger">
+<p><strong><em>Warning.</em></strong>
+If a method <em>m1</em> overrides (or implements) a method <em>m2</em>, then <em>m1</em> must be at least as accessible as <em>m2</em>.</p>
+</blockquote>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-exercise_encapsulation_relax" id="tabs-exercise_encapsulation_relax-0" checked="checked" />
+<label for="tabs-exercise_encapsulation_relax-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>The following program does not compile.
 Can you see why, and how to fix this?</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>├── Run.java
 </span></span><span style="display:flex;"><span>└── units
@@ -2193,38 +2139,34 @@ Can you see why, and how to fix this?</p>
 </span></span><span style="display:flex;"><span>        myUnicorn.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Tornado&#34;</span>;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div></div><input type="radio" class="toggle" name="tabs-exercise_encapsulation_relax" id="tabs-exercise_encapsulation_relax-1"  />
-  <label for="tabs-exercise_encapsulation_relax-1">Solution</label>
-  <div class="book-tabs-content markdown-inner"><ul>
+</span></span></code></pre></div></div>
+<input type="radio" class="toggle" name="tabs-exercise_encapsulation_relax" id="tabs-exercise_encapsulation_relax-1"  />
+<label for="tabs-exercise_encapsulation_relax-1">Solution</label>
+<div class="book-tabs-content markdown-inner"><ul>
 <li><code>Unicorn.getConfigFilePath</code> tries to access the package-private attribute <code>Unit.configFolder</code> (it should be made protected of public),</li>
 <li><code>Run.getConfigFilePath</code>, tries to access the package-private attribute <code>name</code> of <code>myUnicorn</code> (it should be made public).</li>
 </ul>
-</div></div>
-
+</div>
+</div>
 <blockquote class="book-hint info">
-  <p><strong><em>Hint.</em></strong>
+<p><strong><em>Hint.</em></strong>
 Your IDE may suggest how to fix such compilation errors.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<!-- For instance, with IntelliJ, in the previous exercise, move the cursor to `name` in `myUnicorn.name` and press "Alt+Enter" (or equivalently, right click on it and select "Show context actions"). -->
+<!-- You can then select "Make \`Unicorn.name\` public" as an automatic fix. -->
 </blockquote>
-
 <p>To improve encapsulation, it is good practice to <em>restrict access</em> whenever possible (i.e. without compromising compilation).</p>
 <blockquote class="book-hint info">
-  <p><strong><em>Hint</em>.</strong>
+<p><strong><em>Hint</em>.</strong>
 As a rule of thumb, in Java:</p>
 <ul>
 <li>use <code>private</code> by default for all attributes and methods that you create, and</li>
 <li>if the program does not compile, then use your IDE to relax access.</li>
 </ul>
 </blockquote>
-
-
-
-
-
-<div class="book-tabs"><input type="radio" class="toggle" name="tabs-exercise_encapsulation_restrict" id="tabs-exercise_encapsulation_restrict-0" checked="checked" />
-  <label for="tabs-exercise_encapsulation_restrict-0">Exercise</label>
-  <div class="book-tabs-content markdown-inner"><p>Encapsulation in this program can be improved.
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-exercise_encapsulation_restrict" id="tabs-exercise_encapsulation_restrict-0" checked="checked" />
+<label for="tabs-exercise_encapsulation_restrict-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>Encapsulation in this program can be improved.
 Can you see how?</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>├── Run.java
 </span></span><span style="display:flex;"><span>└── units
@@ -2270,20 +2212,20 @@ Can you see how?</p>
 </span></span><span style="display:flex;"><span>        u1.<span style="color:#a6e22e">attack</span>(u2);
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div></div><input type="radio" class="toggle" name="tabs-exercise_encapsulation_restrict" id="tabs-exercise_encapsulation_restrict-1"  />
-  <label for="tabs-exercise_encapsulation_restrict-1">Solution</label>
-  <div class="book-tabs-content markdown-inner"><ul>
+</span></span></code></pre></div></div>
+<input type="radio" class="toggle" name="tabs-exercise_encapsulation_restrict" id="tabs-exercise_encapsulation_restrict-1"  />
+<label for="tabs-exercise_encapsulation_restrict-1">Solution</label>
+<div class="book-tabs-content markdown-inner"><ul>
 <li><code>Unit.health</code> can be made protected,</li>
 <li>the constructor of <code>Unit</code> can be made protected,</li>
 <li><code>Unit.attack</code> can be made protected,</li>
 <li><code>Unicorn.regen</code> can be made private.</li>
 </ul>
-</div></div>
-
+</div>
+</div>
 <blockquote class="book-hint info">
-  <strong><em>Note.</em></strong> The constructor of an <em>abstract</em> class can always be made protected (since it can only be called in the constructor of a subclass).
+<p><strong><em>Note.</em></strong> The constructor of an <em>abstract</em> class can always be made protected (since it can only be called in the constructor of a subclass).</p>
 </blockquote>
-
 <h2 id="getterSetter">
   Getters and setters
   <a class="anchor" href="#getterSetter">#</a>
@@ -2318,10 +2260,9 @@ the attribute <code>health</code> can be modified but is not visible.</p>
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><blockquote class="book-hint info">
-  <strong><em>Hint.</em></strong>
-Getter and setter methods can be automatically generated by your IDE.
+<p><strong><em>Hint.</em></strong>
+Getter and setter methods can be automatically generated by your IDE.</p>
 </blockquote>
-
 <h2 id="to-go-further-inheritance-violates-encapsulation">
   To go further: inheritance violates encapsulation
   <a class="anchor" href="#to-go-further-inheritance-violates-encapsulation">#</a>
@@ -2331,7 +2272,7 @@ Getter and setter methods can be automatically generated by your IDE.
   <a class="anchor" href="#composition">#</a>
 </h3>
 <blockquote class="book-hint info">
-  <p><strong><em>Example</em></strong> (from <a href="https://unibz-pp-23-24.github.io/docs/intro/sections/bibliography/#effectiveJava">Effective Java</a>, Item 18).</p>
+<p><strong><em>Example</em></strong> (from <a href="https://unibz-pp-24-25.github.io/docs/intro/sections/bibliography/#effectiveJava">Effective Java</a>, Item 18).</p>
 <p>Consider a class <code>MyHashSet</code> that extends Java&rsquo;s <code>Hashset</code> functionality by keeping track of the number of objects <em>added</em> to the set (as opposed to the output of <code>HashSet.size()</code>, which returns the numer of elements <em>remaining</em> in the set).</p>
 <p>This class <code>myHashSet</code> may have an attribute <code>int counter</code> (initialized to <code>0</code>) that keeps track of the number of elements added to the set so far.
 And it may be implemented by overriding <code>add</code> and <code>addAll</code> in the expected way, i.e.:</p>
@@ -2347,9 +2288,7 @@ And it may be implemented by overriding <code>add</code> and <code>addAll</code>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">super</span>.<span style="color:#a6e22e">addAll</span>(c);
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>However, this implementation of <code>addAll</code> would count every insertion twice, because the implementation of <code>HashSet.addAll</code> calls <code>HashSet.add</code>.</p>
-
 </blockquote>
-
 <p>A design pattern called <strong>composition</strong> can be used to avoid such unintended effects.
 Intuitively, instead of extending the original class, use an instance <code>Hashset set</code> of it as a (private) attribute of the new class.
 However, this requires re-implementing all methods of the original class (albeit in a straightforward way), for instance:</p>

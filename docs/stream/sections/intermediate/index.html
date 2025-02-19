@@ -3,23 +3,42 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Intermediate operations # In a stream pipeline, an intermediate operation takes a stream as input, and produces another stream.
-Stateless operations # A stateless intermediate operation processes each element of the input stream independently, and without the need to memorize information about previous elements in the stream. Stream.filter and Stream.map # These two instance methods allow specifying a stateless operation, via a callback method. We have already explained their behavior in detail in our initial pipeline example.">
+<meta name="description" content="
+  Intermediate operations
+  #
+
+In a stream pipeline, an intermediate operation takes a stream as input, and produces another stream.
+
+  Stateless operations
+  #
+
+
+A stateless intermediate operation processes each element of the input stream independently, and without the need to memorize information about previous elements in the stream.
+
+
+  Stream.filter and Stream.map
+  #
+
+These two instance methods allow specifying a stateless operation, via a callback method.
+We have already explained their behavior in detail in our initial pipeline example.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="Intermediate operations" />
-<meta property="og:description" content="Intermediate operations # In a stream pipeline, an intermediate operation takes a stream as input, and produces another stream.
-Stateless operations # A stateless intermediate operation processes each element of the input stream independently, and without the need to memorize information about previous elements in the stream. Stream.filter and Stream.map # These two instance methods allow specifying a stateless operation, via a callback method. We have already explained their behavior in detail in our initial pipeline example." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/stream/sections/intermediate/" /><meta property="article:section" content="docs" />
-
-
-<title>Intermediate operations | Programming project 2023-24</title>
-<link rel="manifest" href="/manifest.json">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/stream/sections/intermediate/">
+  <meta property="og:site_name" content="Programming project 2024-25">
+  <meta property="og:title" content="Intermediate operations">
+  <meta property="og:description" content="Intermediate operations # In a stream pipeline, an intermediate operation takes a stream as input, and produces another stream.
+Stateless operations # A stateless intermediate operation processes each element of the input stream independently, and without the need to memorize information about previous elements in the stream.
+Stream.filter and Stream.map # These two instance methods allow specifying a stateless operation, via a callback method. We have already explained their behavior in detail in our initial pipeline example.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Intermediate operations | Programming project 2024-25</title>
 <link rel="icon" href="/favicon.png" >
-<link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
-  <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.4e5dd21f0324d689aa628cb546e70eda39fb9e0b5daabb2a2c7da954eec10dab.js" integrity="sha256-Tl3SHwMk1omqYoy1RucO2jn7ngtdqrsqLH2pVO7BDas=" crossorigin="anonymous"></script>
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/stream/sections/intermediate/">
+<link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.ef6ce3f581865a34e7a0361facaa520c0f023938171236d76684573e7df35a2c.js" integrity="sha256-72zj9YGGWjTnoDYfrKpSDA8COTgXEjbXZoRXPn3zWiw=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -69,16 +88,17 @@ https://github.com/alex-shpak/hugo-book
         
   <nav>
 <h2 class="book-brand">
-  <a class="flex align-center" href="/"><span>Programming project 2023-24</span>
+  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
   </a>
 </h2>
 
 
-<div class="book-search">
+<div class="book-search hidden">
   <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
 
 
 
@@ -91,7 +111,6 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  
 
 
 
@@ -105,8 +124,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-f1c1e874f9c9473478447bba6c7db644" class="toggle"  />
-    <label for="section-f1c1e874f9c9473478447bba6c7db644" class="flex justify-between">
+    <input type="checkbox" id="section-9c72579f4feaa5ed1d8188779488d483" class="toggle"  />
+    <label for="section-9c72579f4feaa5ed1d8188779488d483" class="flex justify-between">
       <a href="/docs/intro/" class="">This course</a>
     </label>
   
@@ -204,8 +223,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-bc4d9392f5af16481cccf0c311076888" class="toggle"  />
-    <label for="section-bc4d9392f5af16481cccf0c311076888" class="flex justify-between">
+    <input type="checkbox" id="section-0af90824fe38d1d85af672be7208f3fa" class="toggle"  />
+    <label for="section-0af90824fe38d1d85af672be7208f3fa" class="flex justify-between">
       <a href="/docs/project/" class="">Project</a>
     </label>
   
@@ -251,8 +270,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-3435ead23eba75b5ffeeb8d422f70dea" class="toggle"  />
-    <label for="section-3435ead23eba75b5ffeeb8d422f70dea" class="flex justify-between">
+    <input type="checkbox" id="section-f8aa8cff3b51717ecd2ebfbd81d061ce" class="toggle"  />
+    <label for="section-f8aa8cff3b51717ecd2ebfbd81d061ce" class="flex justify-between">
       <a href="/docs/objects/" class="">Objects and classes</a>
     </label>
   
@@ -428,8 +447,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-48bc13e86f573c257821b397e779b02e" class="toggle"  />
-    <label for="section-48bc13e86f573c257821b397e779b02e" class="flex justify-between">
+    <input type="checkbox" id="section-84375da4f2da0b5ee2a224e67daa47cd" class="toggle"  />
+    <label for="section-84375da4f2da0b5ee2a224e67daa47cd" class="flex justify-between">
       <a href="/docs/interfaces/" class="">Interfaces</a>
     </label>
   
@@ -475,8 +494,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-e06acd393c0cc6e5b27e2cd8945d3dd8" class="toggle"  />
-    <label for="section-e06acd393c0cc6e5b27e2cd8945d3dd8" class="flex justify-between">
+    <input type="checkbox" id="section-dd500264748ddf6db6c4f8c13c5fa45b" class="toggle"  />
+    <label for="section-dd500264748ddf6db6c4f8c13c5fa45b" class="flex justify-between">
       <a href="/docs/abstractdatatypes/" class="">Abstract data types</a>
     </label>
   
@@ -561,8 +580,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-5d60f9e6a9b7c875f51358c583373282" class="toggle"  />
-    <label for="section-5d60f9e6a9b7c875f51358c583373282" class="flex justify-between">
+    <input type="checkbox" id="section-10a993a702eb9f53bd9244a93734d095" class="toggle"  />
+    <label for="section-10a993a702eb9f53bd9244a93734d095" class="flex justify-between">
       <a href="/docs/datastructures/" class="">Data structures</a>
     </label>
   
@@ -621,8 +640,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-93b39c27c032f5f72bed81496cbb41e3" class="toggle"  />
-    <label for="section-93b39c27c032f5f72bed81496cbb41e3" class="flex justify-between">
+    <input type="checkbox" id="section-58aec3ab091b08c257b626cc09af78c5" class="toggle"  />
+    <label for="section-58aec3ab091b08c257b626cc09af78c5" class="flex justify-between">
       <a href="/docs/errors/" class="">Errors</a>
     </label>
   
@@ -637,10 +656,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-a2fa4d1523374519c87fe83f9d8226b6" class="toggle"  />
-    <label for="section-a2fa4d1523374519c87fe83f9d8226b6" class="flex justify-between">
-      <a href="/docs/errors/sections/callstack/" class="">Call stack</a>
-    </label>
+    <a href="/docs/errors/sections/callstack/" class="">Call stack</a>
   
 
         </li>
@@ -653,10 +669,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-323953d2054911560fd76ed4505d5bb2" class="toggle"  />
-    <label for="section-323953d2054911560fd76ed4505d5bb2" class="flex justify-between">
-      <a href="/docs/errors/sections/exceptions/" class="">Exceptions</a>
-    </label>
+    <a href="/docs/errors/sections/exceptions/" class="">Exceptions</a>
   
 
         </li>
@@ -669,10 +682,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-03b7629c50286af7810d9917f4bdabd2" class="toggle"  />
-    <label for="section-03b7629c50286af7810d9917f4bdabd2" class="flex justify-between">
-      <a href="/docs/errors/sections/checked/" class="">Checked vs unchecked</a>
-    </label>
+    <a href="/docs/errors/sections/checked/" class="">Checked vs unchecked</a>
   
 
         </li>
@@ -685,10 +695,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-3add83584009ceb58c28b43e0a2280c9" class="toggle"  />
-    <label for="section-3add83584009ceb58c28b43e0a2280c9" class="flex justify-between">
-      <a href="/docs/errors/sections/custom/" class="">Custom exceptions</a>
-    </label>
+    <a href="/docs/errors/sections/custom/" class="">Custom exceptions</a>
   
 
         </li>
@@ -701,10 +708,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-b9c696d05ab8cb944ddf9cef47a3abb4" class="toggle"  />
-    <label for="section-b9c696d05ab8cb944ddf9cef47a3abb4" class="flex justify-between">
-      <a href="/docs/errors/sections/errors/" class="">Java errors</a>
-    </label>
+    <a href="/docs/errors/sections/errors/" class="">Java errors</a>
   
 
         </li>
@@ -722,8 +726,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-1be866adbf7f2244d1773e0d2a159b91" class="toggle"  />
-    <label for="section-1be866adbf7f2244d1773e0d2a159b91" class="flex justify-between">
+    <input type="checkbox" id="section-759e82ae41b9619c78e632572d50480a" class="toggle"  />
+    <label for="section-759e82ae41b9619c78e632572d50480a" class="flex justify-between">
       <a href="/docs/recursion/" class="">Recursion</a>
     </label>
   
@@ -782,8 +786,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-b7bc445f96cbe2bd1034c5f1c5d075bb" class="toggle"  />
-    <label for="section-b7bc445f96cbe2bd1034c5f1c5d075bb" class="flex justify-between">
+    <input type="checkbox" id="section-a1720661345b5872c845343fb6615be9" class="toggle"  />
+    <label for="section-a1720661345b5872c845343fb6615be9" class="flex justify-between">
       <a href="/docs/input/" class="">I/O and serialization</a>
     </label>
   
@@ -798,10 +802,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-09ea3b18445537bd77c25d3db6ab2fcf" class="toggle"  />
-    <label for="section-09ea3b18445537bd77c25d3db6ab2fcf" class="flex justify-between">
-      <a href="/docs/input/sections/files/" class="">Paths and files in Java</a>
-    </label>
+    <a href="/docs/input/sections/files/" class="">Paths and files in Java</a>
   
 
         </li>
@@ -814,10 +815,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-640b25aadb55f28505bfbbe5a5f7073d" class="toggle"  />
-    <label for="section-640b25aadb55f28505bfbbe5a5f7073d" class="flex justify-between">
-      <a href="/docs/input/sections/read/" class="">Reading from and writing to a file in Java</a>
-    </label>
+    <a href="/docs/input/sections/read/" class="">Reading from and writing to a file in Java</a>
   
 
         </li>
@@ -830,10 +828,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-7efe7741b54b5b602db75415a7806ef4" class="toggle"  />
-    <label for="section-7efe7741b54b5b602db75415a7806ef4" class="flex justify-between">
-      <a href="/docs/input/sections/property/" class="">Configuration files</a>
-    </label>
+    <a href="/docs/input/sections/property/" class="">Configuration files</a>
   
 
         </li>
@@ -846,10 +841,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-37fdfe811c449d15e51a84c19673df2f" class="toggle"  />
-    <label for="section-37fdfe811c449d15e51a84c19673df2f" class="flex justify-between">
-      <a href="/docs/input/sections/serialize/" class="">Serialization</a>
-    </label>
+    <a href="/docs/input/sections/serialize/" class="">Serialization</a>
   
 
         </li>
@@ -862,10 +854,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-ec41b3fcd24b301058a1bd1bd7b5c8e7" class="toggle"  />
-    <label for="section-ec41b3fcd24b301058a1bd1bd7b5c8e7" class="flex justify-between">
-      <a href="/docs/input/sections/json/" class="">JSON Serialization</a>
-    </label>
+    <a href="/docs/input/sections/json/" class="">JSON Serialization</a>
   
 
         </li>
@@ -883,8 +872,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-baf3ea6e28839ac044570d2d313c8794" class="toggle"  />
-    <label for="section-baf3ea6e28839ac044570d2d313c8794" class="flex justify-between">
+    <input type="checkbox" id="section-9bfff01f1c5ef64a53927faf30620ccf" class="toggle"  />
+    <label for="section-9bfff01f1c5ef64a53927faf30620ccf" class="flex justify-between">
       <a href="/docs/regex/" class="">Regular expressions</a>
     </label>
   
@@ -943,8 +932,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-ae8fba9e927e4c55801a4e71f6b7d054" class="toggle"  />
-    <label for="section-ae8fba9e927e4c55801a4e71f6b7d054" class="flex justify-between">
+    <input type="checkbox" id="section-882764aad745f79e099c5a43798784f9" class="toggle"  />
+    <label for="section-882764aad745f79e099c5a43798784f9" class="flex justify-between">
       <a href="/docs/lambda/" class="">Callback methods and lambda expressions</a>
     </label>
   
@@ -1042,8 +1031,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-41a2765a9682fb1ce579fb1661f1250d" class="toggle" checked />
-    <label for="section-41a2765a9682fb1ce579fb1661f1250d" class="flex justify-between">
+    <input type="checkbox" id="section-7783f19754a3a0ec1529ed7ac208c3ab" class="toggle" checked />
+    <label for="section-7783f19754a3a0ec1529ed7ac208c3ab" class="flex justify-between">
       <a href="/docs/stream/" class="">Streams in Java</a>
     </label>
   
@@ -1154,8 +1143,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-87d53bbeb97db8aab24c02b4d45460f2" class="toggle"  />
-    <label for="section-87d53bbeb97db8aab24c02b4d45460f2" class="flex justify-between">
+    <input type="checkbox" id="section-793e09c315e082fb44de3238b9ad707b" class="toggle"  />
+    <label for="section-793e09c315e082fb44de3238b9ad707b" class="flex justify-between">
       <a href="/docs/generics/" class="">Generic programming</a>
     </label>
   
@@ -1240,8 +1229,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-5dcccd15580bb824ba055538c97bdea6" class="toggle"  />
-    <label for="section-5dcccd15580bb824ba055538c97bdea6" class="flex justify-between">
+    <input type="checkbox" id="section-3876422a93470dcccad1a719c99a8e17" class="toggle"  />
+    <label for="section-3876422a93470dcccad1a719c99a8e17" class="flex justify-between">
       <a href="/docs/multithreading/" class="">Multithreading</a>
     </label>
   
@@ -1352,8 +1341,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-9d77b970a03dc72b048d9fce7bfe272f" class="toggle"  />
-    <label for="section-9d77b970a03dc72b048d9fce7bfe272f" class="flex justify-between">
+    <input type="checkbox" id="section-990bc84b6dc3891b1963528a24b45e2e" class="toggle"  />
+    <label for="section-990bc84b6dc3891b1963528a24b45e2e" class="flex justify-between">
       <a href="/docs/unittests/" class="">Unit tests</a>
     </label>
   
@@ -1368,10 +1357,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-796939dc839b82c2ff89d99e47011262" class="toggle"  />
-    <label for="section-796939dc839b82c2ff89d99e47011262" class="flex justify-between">
-      <a href="/docs/unittests/sections/structured/" class="">Code units</a>
-    </label>
+    <a href="/docs/unittests/sections/structured/" class="">Code units</a>
   
 
         </li>
@@ -1384,10 +1370,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-ad5c3d825858d4a9ca4ad02d541f7121" class="toggle"  />
-    <label for="section-ad5c3d825858d4a9ca4ad02d541f7121" class="flex justify-between">
-      <a href="/docs/unittests/sections/tdd/" class="">Development driven by unit tests</a>
-    </label>
+    <a href="/docs/unittests/sections/tdd/" class="">Development driven by unit tests</a>
   
 
         </li>
@@ -1400,10 +1383,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-7e09be54c45521908b57f9eaf194f5f6" class="toggle"  />
-    <label for="section-7e09be54c45521908b57f9eaf194f5f6" class="flex justify-between">
-      <a href="/docs/unittests/sections/junit/" class="">in Java</a>
-    </label>
+    <a href="/docs/unittests/sections/junit/" class="">in Java</a>
   
 
         </li>
@@ -1421,8 +1401,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-0407f110c1b3ed4992fcb7fc5f05aa12" class="toggle"  />
-    <label for="section-0407f110c1b3ed4992fcb7fc5f05aa12" class="flex justify-between">
+    <input type="checkbox" id="section-4aed4e1c4b6179fd330f627f75eb18b3" class="toggle"  />
+    <label for="section-4aed4e1c4b6179fd330f627f75eb18b3" class="flex justify-between">
       <a href="/docs/simplify/" class="">Simplifying code</a>
     </label>
   
@@ -1481,8 +1461,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-494fdb80ca3ad5d2868cb487a042ae27" class="toggle"  />
-    <label for="section-494fdb80ca3ad5d2868cb487a042ae27" class="flex justify-between">
+    <input type="checkbox" id="section-ba3d9d7fa2d604a47f68a6d7a7a9d2a2" class="toggle"  />
+    <label for="section-ba3d9d7fa2d604a47f68a6d7a7a9d2a2" class="flex justify-between">
       <a href="/docs/env/" class="">Development environment</a>
     </label>
   
@@ -1619,8 +1599,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-2870a15a3d2cff84408f43cbb1e77f97" class="toggle"  />
-    <label for="section-2870a15a3d2cff84408f43cbb1e77f97" class="flex justify-between">
+    <input type="checkbox" id="section-3c6a8c431d500080599ec572e56415d8" class="toggle"  />
+    <label for="section-3c6a8c431d500080599ec572e56415d8" class="flex justify-between">
       <a href="/docs/git/" class="">git</a>
     </label>
   
@@ -1770,8 +1750,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-44fa5eb3511a340ff4e9042080604b5c" class="toggle"  />
-    <label for="section-44fa5eb3511a340ff4e9042080604b5c" class="flex justify-between">
+    <input type="checkbox" id="section-39b7a0b404320b4007d4505305b8f4f4" class="toggle"  />
+    <label for="section-39b7a0b404320b4007d4505305b8f4f4" class="flex justify-between">
       <a href="/docs/build/" class="">Build automation</a>
     </label>
   
@@ -1786,10 +1766,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-0c816e62fd66eb322757addb01600cdd" class="toggle"  />
-    <label for="section-0c816e62fd66eb322757addb01600cdd" class="flex justify-between">
-      <a href="/docs/build/sections/packaging/" class="">Packaging a Java application</a>
-    </label>
+    <a href="/docs/build/sections/packaging/" class="">Packaging a Java application</a>
   
 
         </li>
@@ -1802,10 +1779,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-5537e478f301d8ff4f0b5a7a03c9db32" class="toggle"  />
-    <label for="section-5537e478f301d8ff4f0b5a7a03c9db32" class="flex justify-between">
-      <a href="/docs/build/sections/layout/" class="">Layout</a>
-    </label>
+    <a href="/docs/build/sections/layout/" class="">Layout</a>
   
 
         </li>
@@ -1818,10 +1792,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-33bd3456c4645cc966d192fba400a71a" class="toggle"  />
-    <label for="section-33bd3456c4645cc966d192fba400a71a" class="flex justify-between">
-      <a href="/docs/build/sections/pom/" class="">Configuration file</a>
-    </label>
+    <a href="/docs/build/sections/pom/" class="">Configuration file</a>
   
 
         </li>
@@ -1834,10 +1805,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-c956d0b428ebb6c853f314459a513393" class="toggle"  />
-    <label for="section-c956d0b428ebb6c853f314459a513393" class="flex justify-between">
-      <a href="/docs/build/sections/artifact/" class="">Artifact</a>
-    </label>
+    <a href="/docs/build/sections/artifact/" class="">Artifact</a>
   
 
         </li>
@@ -1850,10 +1818,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-d01a14431bc2161a8fed02d90e1a365b" class="toggle"  />
-    <label for="section-d01a14431bc2161a8fed02d90e1a365b" class="flex justify-between">
-      <a href="/docs/build/sections/dependencies/" class="">Dependencies</a>
-    </label>
+    <a href="/docs/build/sections/dependencies/" class="">Dependencies</a>
   
 
         </li>
@@ -1866,10 +1831,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-b838446830102a7dece872d673537390" class="toggle"  />
-    <label for="section-b838446830102a7dece872d673537390" class="flex justify-between">
-      <a href="/docs/build/sections/building/" class="">Building</a>
-    </label>
+    <a href="/docs/build/sections/building/" class="">Building</a>
   
 
         </li>
@@ -1887,8 +1849,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-ffcf8551871937aae0ce60f2b3cc616b" class="toggle"  />
-    <label for="section-ffcf8551871937aae0ce60f2b3cc616b" class="flex justify-between">
+    <input type="checkbox" id="section-48bf1202a7e278154d3a51c618c94cd6" class="toggle"  />
+    <label for="section-48bf1202a7e278154d3a51c618c94cd6" class="flex justify-between">
       <a href="/docs/background/" class="">Background</a>
     </label>
   
@@ -1981,7 +1943,6 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-
 </nav>
 
 
@@ -2002,7 +1963,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Intermediate operations</strong>
+  <h3>Intermediate operations</h3>
 
   <label for="toc-control">
     
@@ -2048,28 +2009,27 @@ https://github.com/alex-shpak/hugo-book
   Intermediate operations
   <a class="anchor" href="#intermediate-operations">#</a>
 </h1>
-<p>In a <a href="https://unibz-pp-23-24.github.io/docs/stream/sections/pipeline/">stream pipeline</a>, an intermediate operation takes a stream as input, and produces another stream.</p>
+<p>In a <a href="https://unibz-pp-24-25.github.io/docs/stream/sections/pipeline/">stream pipeline</a>, an intermediate operation takes a stream as input, and produces another stream.</p>
 <h2 id="stateless-operations">
   Stateless operations
   <a class="anchor" href="#stateless-operations">#</a>
 </h2>
 <blockquote class="book-hint warning">
-  A <strong>stateless</strong> intermediate operation processes each element of the input stream independently, and without the need to memorize information about previous elements in the stream.
+<p>A <strong>stateless</strong> intermediate operation processes each element of the input stream independently, and without the need to memorize information about previous elements in the stream.</p>
 </blockquote>
-
 <h3 id="filterAndMap">
   <code>Stream.filter</code> and <code>Stream.map</code>
   <a class="anchor" href="#filterAndMap">#</a>
 </h3>
 <p>These two instance methods allow specifying a stateless operation, via a callback method.
-We have already explained their behavior in detail in our initial <a href="https://unibz-pp-23-24.github.io/docs/stream/sections/pipeline/#example">pipeline example</a>.</p>
+We have already explained their behavior in detail in our initial <a href="https://unibz-pp-24-25.github.io/docs/stream/sections/pipeline/#example">pipeline example</a>.</p>
 <h3 id="streamflatmap">
   <code>Stream.flatMap</code>
   <a class="anchor" href="#streamflatmap">#</a>
 </h3>
 <p>This is another very useful instance method, which can produce several objects out a single object in the stream.</p>
-<p><blockquote class="book-hint info">
-  <p><strong><em>Example.</em></strong>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong>
 Consider the following classes <code>City</code> and <code>Region</code>.</p>
 <p><img src="/img/diagrams/plantuml/two_classes.svg" alt="" /></p>
 <p>Given as input a collection <code>regions</code> of regions, we can use the function <code>flatMap</code> to create a stream that consists of all cities in these regions, as follows:</p>
@@ -2084,10 +2044,8 @@ with the exceptions of the zip code of Bologna:</p>
 </span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">map</span>(c <span style="color:#f92672">-&gt;</span> c.<span style="color:#a6e22e">zipCode</span>)
 </span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">toList</span>();
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div>
-</blockquote>
-
-Let us assume that the stream has type <code>Stream&lt;</code>$\mathit{T}$<code>&gt;</code> (for instance, in our example, $\mathit{T}$ is <code>Region</code>).</p>
+</span></span></code></pre></div></blockquote>
+<p>Let us assume that the stream has type <code>Stream&lt;</code>$\mathit{T}$<code>&gt;</code> (for instance, in our example, $\mathit{T}$ is <code>Region</code>).</p>
 <p>The method <code>flatMap</code> takes as argument a callback function of type</p>
 <p>$\qquad T \to$ <code>Stream&lt;</code>$T&rsquo;$<code>&gt;</code></p>
 <p>where $T&rsquo;$ can be any type.</p>
@@ -2103,53 +2061,47 @@ This stream is the concatenation of all streams $f(a)$ such that $a$ belongs to 
   <a class="anchor" href="#stateful-operations">#</a>
 </h2>
 <blockquote class="book-hint warning">
-  <strong>Stateful</strong> intermediate operations are the ones that are not stateless.
+<p><strong>Stateful</strong> intermediate operations are the ones that are not stateless.</p>
 </blockquote>
-
 <p>We list here some of the most useful ones.</p>
 <h3 id="streamdistinct">
   <code>Stream.distinct</code>
   <a class="anchor" href="#streamdistinct">#</a>
 </h3>
 <p>This instance method produces an identical stream, but without duplicates.</p>
-<p><blockquote class="book-hint info">
-  <p><strong><em>Example.</em></strong></p>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span>list <span style="color:#f92672">=</span> List.<span style="color:#a6e22e">of</span>(2, 1, 1, 3, 1, 2);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Contains [2, 1, 3]</span>
 </span></span><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> ouputList <span style="color:#f92672">=</span> list.<span style="color:#a6e22e">stream</span>()
 </span></span><span style="display:flex;"><span>                            .<span style="color:#a6e22e">distinct</span>()
 </span></span><span style="display:flex;"><span>                            .<span style="color:#a6e22e">toList</span>();
-</span></span></code></pre></div>
-</blockquote>
-
-For a stream of objects, duplicates are identified based on Java&rsquo;s object <a href="https://unibz-pp-23-24.github.io/docs/objects/sections/comparing/#equals">equality</a> (i.e. as specified by the method <code>Object.equals</code>).</p>
+</span></span></code></pre></div></blockquote>
+<p>For a stream of objects, duplicates are identified based on Java&rsquo;s object <a href="https://unibz-pp-24-25.github.io/docs/objects/sections/comparing/#equals">equality</a> (i.e. as specified by the method <code>Object.equals</code>).</p>
 <blockquote class="book-hint danger">
-  <strong><em>Reminder.</em></strong>
-If a class overrides the method <code>Object.equals</code>, then it should also override <code>Object.hashCode</code> (and these two implementations should be consistent with each other).
+<p><strong><em>Reminder.</em></strong>
+If a class overrides the method <code>Object.equals</code>, then it should also override <code>Object.hashCode</code> (and these two implementations should be consistent with each other).</p>
 </blockquote>
-
 <h3 id="streamsorted">
   <code>Stream.sorted</code>
   <a class="anchor" href="#streamsorted">#</a>
 </h3>
 <p>This instance method outputs a sorted stream.
-It can be called with or without a <a href="https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/sorting/#comparator">Comparator</a>.</p>
-<p>Its behavior (with and without a comparator) is analogous to the methods <a href="https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/sorting/#sortArray">Arrays.sort</a> and <a href="https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/sorting/#sortList">Collection.sort</a>.</p>
+It can be called with or without a <a href="https://unibz-pp-24-25.github.io/docs/abstractdatatypes/sections/sorting/#comparator">Comparator</a>.</p>
+<p>Its behavior (with and without a comparator) is analogous to the methods <a href="https://unibz-pp-24-25.github.io/docs/abstractdatatypes/sections/sorting/#sortArray">Arrays.sort</a> and <a href="https://unibz-pp-24-25.github.io/docs/abstractdatatypes/sections/sorting/#sortList">Collection.sort</a>.</p>
 <blockquote class="book-hint info">
-  <p><strong><em>Example.</em></strong></p>
+<p><strong><em>Example.</em></strong></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span>list <span style="color:#f92672">=</span> List.<span style="color:#a6e22e">of</span>(2, 1, 3, 1, 2);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Contains [1, 1, 2, 2, 3]</span>
 </span></span><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> ouputList <span style="color:#f92672">=</span> list.<span style="color:#a6e22e">stream</span>()
 </span></span><span style="display:flex;"><span>                            .<span style="color:#a6e22e">sorted</span>()
 </span></span><span style="display:flex;"><span>                            .<span style="color:#a6e22e">toList</span>();
-</span></span></code></pre></div>
-</blockquote>
-
+</span></span></code></pre></div></blockquote>
 <blockquote class="book-hint info">
-  <p><strong><em>Hint.</em></strong>
-Recall that <code>Comparator&lt;</code>$T$<code>&gt;</code> is a <a href="https://unibz-pp-23-24.github.io/docs/lambda/sections/type/#comparator">functional interface</a>, whose (only) method is <code>compare(</code>$T$ <code>e1</code>, $T$ <code>e2)</code>.
+<p><strong><em>Hint.</em></strong>
+Recall that <code>Comparator&lt;</code>$T$<code>&gt;</code> is a <a href="https://unibz-pp-24-25.github.io/docs/lambda/sections/type/#comparator">functional interface</a>, whose (only) method is <code>compare(</code>$T$ <code>e1</code>, $T$ <code>e2)</code>.
 As a result, it can be implemented with an anonymous method.</p>
 <p>For instance, the following method removes duplicates in a list of cities, and returns it sorted:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>City<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">sortDistinctCitiesByName</span>(List<span style="color:#f92672">&lt;</span>City<span style="color:#f92672">&gt;</span> cities){
@@ -2158,41 +2110,35 @@ As a result, it can be implemented with an anonymous method.</p>
 </span></span><span style="display:flex;"><span>                .<span style="color:#a6e22e">sorted</span>((c1, c2) <span style="color:#f92672">-&gt;</span> c1.<span style="color:#a6e22e">name</span>.<span style="color:#a6e22e">compareTo</span>(c2.<span style="color:#a6e22e">name</span>))
 </span></span><span style="display:flex;"><span>                .<span style="color:#a6e22e">toList</span>();
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div>
-</blockquote>
-
+</span></span></code></pre></div></blockquote>
 <h3 id="streamlimit">
   <code>Stream.limit</code>
   <a class="anchor" href="#streamlimit">#</a>
 </h3>
 <p>This instance method takes as argument an integer $n$, and outputs the $n$ first elements of the stream.</p>
 <blockquote class="book-hint info">
-  <p><strong><em>Example.</em></strong></p>
+<p><strong><em>Example.</em></strong></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span>list <span style="color:#f92672">=</span> List.<span style="color:#a6e22e">of</span>(2, 1, 3, 1, 2);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Contains [2, 1, 3, 1]</span>
 </span></span><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> ouputList <span style="color:#f92672">=</span> list.<span style="color:#a6e22e">stream</span>()
 </span></span><span style="display:flex;"><span>                            .<span style="color:#a6e22e">limit</span>(4)
 </span></span><span style="display:flex;"><span>                            .<span style="color:#a6e22e">toList</span>();
-</span></span></code></pre></div>
-</blockquote>
-
+</span></span></code></pre></div></blockquote>
 <h3 id="streamskip">
   <code>Stream.skip</code>
   <a class="anchor" href="#streamskip">#</a>
 </h3>
 <p>This instance method takes as argument an integer $n$, and outputs the stream without its $n$ first elements.</p>
 <blockquote class="book-hint info">
-  <p><strong><em>Example.</em></strong></p>
+<p><strong><em>Example.</em></strong></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span>list <span style="color:#f92672">=</span> List.<span style="color:#a6e22e">of</span>(2, 1, 3, 1, 2);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Contains [3, 1, 2]</span>
 </span></span><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> ouputList <span style="color:#f92672">=</span> list.<span style="color:#a6e22e">stream</span>()
 </span></span><span style="display:flex;"><span>                            .<span style="color:#a6e22e">skip</span>(2)
 </span></span><span style="display:flex;"><span>                            .<span style="color:#a6e22e">toList</span>();
-</span></span></code></pre></div>
-</blockquote>
-
+</span></span></code></pre></div></blockquote>
 </article>
  
       

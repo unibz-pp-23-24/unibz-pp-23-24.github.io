@@ -3,25 +3,49 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Class and instance # A class can be viewed as a blueprint for a set of similar objects.
+<meta name="description" content="
+  Class and instance
+  #
+
+A class can be viewed as a blueprint for a set of similar objects.
 For instance, consider the two objects:
-{ name: &#34;Florence&#34;, zipCode: 50100, region: &#34;Tuscany&#34; } { name: &#34;Rome&#34;, zipCode: 00100, region: &#34;Lazio&#34; } Each of these objects describes a city, and they share the same keys (name, zipCode and region). A possible class for these two objects may enforce this structure, and it could be named City.">
+
+
+{
+  name: &#34;Florence&#34;,
+  zipCode: 50100,
+  region: &#34;Tuscany&#34;
+}
+  
+
+{
+  name: &#34;Rome&#34;,
+  zipCode: 00100,
+  region: &#34;Lazio&#34;
+}
+  
+
+Each of these objects describes a city, and they share the same keys (name, zipCode and region).
+A possible class for these two objects may enforce this structure, and it could be named City.
+An object that follows this blueprint is called an instance of this class.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="Class and instance" />
-<meta property="og:description" content="Class and instance # A class can be viewed as a blueprint for a set of similar objects.
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/objects/sections/classes/">
+  <meta property="og:site_name" content="Programming project 2024-25">
+  <meta property="og:title" content="Class and instance">
+  <meta property="og:description" content="Class and instance # A class can be viewed as a blueprint for a set of similar objects.
 For instance, consider the two objects:
-{ name: &#34;Florence&#34;, zipCode: 50100, region: &#34;Tuscany&#34; } { name: &#34;Rome&#34;, zipCode: 00100, region: &#34;Lazio&#34; } Each of these objects describes a city, and they share the same keys (name, zipCode and region). A possible class for these two objects may enforce this structure, and it could be named City." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/objects/sections/classes/" /><meta property="article:section" content="docs" />
-
-
-<title>Class and instance | Programming project 2023-24</title>
-<link rel="manifest" href="/manifest.json">
+{ name: &#34;Florence&#34;, zipCode: 50100, region: &#34;Tuscany&#34; } { name: &#34;Rome&#34;, zipCode: 00100, region: &#34;Lazio&#34; } Each of these objects describes a city, and they share the same keys (name, zipCode and region). A possible class for these two objects may enforce this structure, and it could be named City. An object that follows this blueprint is called an instance of this class.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Class and instance | Programming project 2024-25</title>
 <link rel="icon" href="/favicon.png" >
-<link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
-  <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.4e5dd21f0324d689aa628cb546e70eda39fb9e0b5daabb2a2c7da954eec10dab.js" integrity="sha256-Tl3SHwMk1omqYoy1RucO2jn7ngtdqrsqLH2pVO7BDas=" crossorigin="anonymous"></script>
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/objects/sections/classes/">
+<link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.ef6ce3f581865a34e7a0361facaa520c0f023938171236d76684573e7df35a2c.js" integrity="sha256-72zj9YGGWjTnoDYfrKpSDA8COTgXEjbXZoRXPn3zWiw=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -71,16 +95,17 @@ https://github.com/alex-shpak/hugo-book
         
   <nav>
 <h2 class="book-brand">
-  <a class="flex align-center" href="/"><span>Programming project 2023-24</span>
+  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
   </a>
 </h2>
 
 
-<div class="book-search">
+<div class="book-search hidden">
   <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
 
 
 
@@ -93,7 +118,6 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  
 
 
 
@@ -107,8 +131,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-f1c1e874f9c9473478447bba6c7db644" class="toggle"  />
-    <label for="section-f1c1e874f9c9473478447bba6c7db644" class="flex justify-between">
+    <input type="checkbox" id="section-9c72579f4feaa5ed1d8188779488d483" class="toggle"  />
+    <label for="section-9c72579f4feaa5ed1d8188779488d483" class="flex justify-between">
       <a href="/docs/intro/" class="">This course</a>
     </label>
   
@@ -206,8 +230,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-bc4d9392f5af16481cccf0c311076888" class="toggle"  />
-    <label for="section-bc4d9392f5af16481cccf0c311076888" class="flex justify-between">
+    <input type="checkbox" id="section-0af90824fe38d1d85af672be7208f3fa" class="toggle"  />
+    <label for="section-0af90824fe38d1d85af672be7208f3fa" class="flex justify-between">
       <a href="/docs/project/" class="">Project</a>
     </label>
   
@@ -253,8 +277,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-3435ead23eba75b5ffeeb8d422f70dea" class="toggle" checked />
-    <label for="section-3435ead23eba75b5ffeeb8d422f70dea" class="flex justify-between">
+    <input type="checkbox" id="section-f8aa8cff3b51717ecd2ebfbd81d061ce" class="toggle" checked />
+    <label for="section-f8aa8cff3b51717ecd2ebfbd81d061ce" class="flex justify-between">
       <a href="/docs/objects/" class="">Objects and classes</a>
     </label>
   
@@ -430,8 +454,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-48bc13e86f573c257821b397e779b02e" class="toggle"  />
-    <label for="section-48bc13e86f573c257821b397e779b02e" class="flex justify-between">
+    <input type="checkbox" id="section-84375da4f2da0b5ee2a224e67daa47cd" class="toggle"  />
+    <label for="section-84375da4f2da0b5ee2a224e67daa47cd" class="flex justify-between">
       <a href="/docs/interfaces/" class="">Interfaces</a>
     </label>
   
@@ -477,8 +501,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-e06acd393c0cc6e5b27e2cd8945d3dd8" class="toggle"  />
-    <label for="section-e06acd393c0cc6e5b27e2cd8945d3dd8" class="flex justify-between">
+    <input type="checkbox" id="section-dd500264748ddf6db6c4f8c13c5fa45b" class="toggle"  />
+    <label for="section-dd500264748ddf6db6c4f8c13c5fa45b" class="flex justify-between">
       <a href="/docs/abstractdatatypes/" class="">Abstract data types</a>
     </label>
   
@@ -563,8 +587,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-5d60f9e6a9b7c875f51358c583373282" class="toggle"  />
-    <label for="section-5d60f9e6a9b7c875f51358c583373282" class="flex justify-between">
+    <input type="checkbox" id="section-10a993a702eb9f53bd9244a93734d095" class="toggle"  />
+    <label for="section-10a993a702eb9f53bd9244a93734d095" class="flex justify-between">
       <a href="/docs/datastructures/" class="">Data structures</a>
     </label>
   
@@ -623,8 +647,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-93b39c27c032f5f72bed81496cbb41e3" class="toggle"  />
-    <label for="section-93b39c27c032f5f72bed81496cbb41e3" class="flex justify-between">
+    <input type="checkbox" id="section-58aec3ab091b08c257b626cc09af78c5" class="toggle"  />
+    <label for="section-58aec3ab091b08c257b626cc09af78c5" class="flex justify-between">
       <a href="/docs/errors/" class="">Errors</a>
     </label>
   
@@ -639,10 +663,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-a2fa4d1523374519c87fe83f9d8226b6" class="toggle"  />
-    <label for="section-a2fa4d1523374519c87fe83f9d8226b6" class="flex justify-between">
-      <a href="/docs/errors/sections/callstack/" class="">Call stack</a>
-    </label>
+    <a href="/docs/errors/sections/callstack/" class="">Call stack</a>
   
 
         </li>
@@ -655,10 +676,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-323953d2054911560fd76ed4505d5bb2" class="toggle"  />
-    <label for="section-323953d2054911560fd76ed4505d5bb2" class="flex justify-between">
-      <a href="/docs/errors/sections/exceptions/" class="">Exceptions</a>
-    </label>
+    <a href="/docs/errors/sections/exceptions/" class="">Exceptions</a>
   
 
         </li>
@@ -671,10 +689,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-03b7629c50286af7810d9917f4bdabd2" class="toggle"  />
-    <label for="section-03b7629c50286af7810d9917f4bdabd2" class="flex justify-between">
-      <a href="/docs/errors/sections/checked/" class="">Checked vs unchecked</a>
-    </label>
+    <a href="/docs/errors/sections/checked/" class="">Checked vs unchecked</a>
   
 
         </li>
@@ -687,10 +702,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-3add83584009ceb58c28b43e0a2280c9" class="toggle"  />
-    <label for="section-3add83584009ceb58c28b43e0a2280c9" class="flex justify-between">
-      <a href="/docs/errors/sections/custom/" class="">Custom exceptions</a>
-    </label>
+    <a href="/docs/errors/sections/custom/" class="">Custom exceptions</a>
   
 
         </li>
@@ -703,10 +715,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-b9c696d05ab8cb944ddf9cef47a3abb4" class="toggle"  />
-    <label for="section-b9c696d05ab8cb944ddf9cef47a3abb4" class="flex justify-between">
-      <a href="/docs/errors/sections/errors/" class="">Java errors</a>
-    </label>
+    <a href="/docs/errors/sections/errors/" class="">Java errors</a>
   
 
         </li>
@@ -724,8 +733,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-1be866adbf7f2244d1773e0d2a159b91" class="toggle"  />
-    <label for="section-1be866adbf7f2244d1773e0d2a159b91" class="flex justify-between">
+    <input type="checkbox" id="section-759e82ae41b9619c78e632572d50480a" class="toggle"  />
+    <label for="section-759e82ae41b9619c78e632572d50480a" class="flex justify-between">
       <a href="/docs/recursion/" class="">Recursion</a>
     </label>
   
@@ -784,8 +793,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-b7bc445f96cbe2bd1034c5f1c5d075bb" class="toggle"  />
-    <label for="section-b7bc445f96cbe2bd1034c5f1c5d075bb" class="flex justify-between">
+    <input type="checkbox" id="section-a1720661345b5872c845343fb6615be9" class="toggle"  />
+    <label for="section-a1720661345b5872c845343fb6615be9" class="flex justify-between">
       <a href="/docs/input/" class="">I/O and serialization</a>
     </label>
   
@@ -800,10 +809,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-09ea3b18445537bd77c25d3db6ab2fcf" class="toggle"  />
-    <label for="section-09ea3b18445537bd77c25d3db6ab2fcf" class="flex justify-between">
-      <a href="/docs/input/sections/files/" class="">Paths and files in Java</a>
-    </label>
+    <a href="/docs/input/sections/files/" class="">Paths and files in Java</a>
   
 
         </li>
@@ -816,10 +822,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-640b25aadb55f28505bfbbe5a5f7073d" class="toggle"  />
-    <label for="section-640b25aadb55f28505bfbbe5a5f7073d" class="flex justify-between">
-      <a href="/docs/input/sections/read/" class="">Reading from and writing to a file in Java</a>
-    </label>
+    <a href="/docs/input/sections/read/" class="">Reading from and writing to a file in Java</a>
   
 
         </li>
@@ -832,10 +835,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-7efe7741b54b5b602db75415a7806ef4" class="toggle"  />
-    <label for="section-7efe7741b54b5b602db75415a7806ef4" class="flex justify-between">
-      <a href="/docs/input/sections/property/" class="">Configuration files</a>
-    </label>
+    <a href="/docs/input/sections/property/" class="">Configuration files</a>
   
 
         </li>
@@ -848,10 +848,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-37fdfe811c449d15e51a84c19673df2f" class="toggle"  />
-    <label for="section-37fdfe811c449d15e51a84c19673df2f" class="flex justify-between">
-      <a href="/docs/input/sections/serialize/" class="">Serialization</a>
-    </label>
+    <a href="/docs/input/sections/serialize/" class="">Serialization</a>
   
 
         </li>
@@ -864,10 +861,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-ec41b3fcd24b301058a1bd1bd7b5c8e7" class="toggle"  />
-    <label for="section-ec41b3fcd24b301058a1bd1bd7b5c8e7" class="flex justify-between">
-      <a href="/docs/input/sections/json/" class="">JSON Serialization</a>
-    </label>
+    <a href="/docs/input/sections/json/" class="">JSON Serialization</a>
   
 
         </li>
@@ -885,8 +879,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-baf3ea6e28839ac044570d2d313c8794" class="toggle"  />
-    <label for="section-baf3ea6e28839ac044570d2d313c8794" class="flex justify-between">
+    <input type="checkbox" id="section-9bfff01f1c5ef64a53927faf30620ccf" class="toggle"  />
+    <label for="section-9bfff01f1c5ef64a53927faf30620ccf" class="flex justify-between">
       <a href="/docs/regex/" class="">Regular expressions</a>
     </label>
   
@@ -945,8 +939,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-ae8fba9e927e4c55801a4e71f6b7d054" class="toggle"  />
-    <label for="section-ae8fba9e927e4c55801a4e71f6b7d054" class="flex justify-between">
+    <input type="checkbox" id="section-882764aad745f79e099c5a43798784f9" class="toggle"  />
+    <label for="section-882764aad745f79e099c5a43798784f9" class="flex justify-between">
       <a href="/docs/lambda/" class="">Callback methods and lambda expressions</a>
     </label>
   
@@ -1044,8 +1038,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-41a2765a9682fb1ce579fb1661f1250d" class="toggle"  />
-    <label for="section-41a2765a9682fb1ce579fb1661f1250d" class="flex justify-between">
+    <input type="checkbox" id="section-7783f19754a3a0ec1529ed7ac208c3ab" class="toggle"  />
+    <label for="section-7783f19754a3a0ec1529ed7ac208c3ab" class="flex justify-between">
       <a href="/docs/stream/" class="">Streams in Java</a>
     </label>
   
@@ -1156,8 +1150,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-87d53bbeb97db8aab24c02b4d45460f2" class="toggle"  />
-    <label for="section-87d53bbeb97db8aab24c02b4d45460f2" class="flex justify-between">
+    <input type="checkbox" id="section-793e09c315e082fb44de3238b9ad707b" class="toggle"  />
+    <label for="section-793e09c315e082fb44de3238b9ad707b" class="flex justify-between">
       <a href="/docs/generics/" class="">Generic programming</a>
     </label>
   
@@ -1242,8 +1236,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-5dcccd15580bb824ba055538c97bdea6" class="toggle"  />
-    <label for="section-5dcccd15580bb824ba055538c97bdea6" class="flex justify-between">
+    <input type="checkbox" id="section-3876422a93470dcccad1a719c99a8e17" class="toggle"  />
+    <label for="section-3876422a93470dcccad1a719c99a8e17" class="flex justify-between">
       <a href="/docs/multithreading/" class="">Multithreading</a>
     </label>
   
@@ -1354,8 +1348,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-9d77b970a03dc72b048d9fce7bfe272f" class="toggle"  />
-    <label for="section-9d77b970a03dc72b048d9fce7bfe272f" class="flex justify-between">
+    <input type="checkbox" id="section-990bc84b6dc3891b1963528a24b45e2e" class="toggle"  />
+    <label for="section-990bc84b6dc3891b1963528a24b45e2e" class="flex justify-between">
       <a href="/docs/unittests/" class="">Unit tests</a>
     </label>
   
@@ -1370,10 +1364,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-796939dc839b82c2ff89d99e47011262" class="toggle"  />
-    <label for="section-796939dc839b82c2ff89d99e47011262" class="flex justify-between">
-      <a href="/docs/unittests/sections/structured/" class="">Code units</a>
-    </label>
+    <a href="/docs/unittests/sections/structured/" class="">Code units</a>
   
 
         </li>
@@ -1386,10 +1377,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-ad5c3d825858d4a9ca4ad02d541f7121" class="toggle"  />
-    <label for="section-ad5c3d825858d4a9ca4ad02d541f7121" class="flex justify-between">
-      <a href="/docs/unittests/sections/tdd/" class="">Development driven by unit tests</a>
-    </label>
+    <a href="/docs/unittests/sections/tdd/" class="">Development driven by unit tests</a>
   
 
         </li>
@@ -1402,10 +1390,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-7e09be54c45521908b57f9eaf194f5f6" class="toggle"  />
-    <label for="section-7e09be54c45521908b57f9eaf194f5f6" class="flex justify-between">
-      <a href="/docs/unittests/sections/junit/" class="">in Java</a>
-    </label>
+    <a href="/docs/unittests/sections/junit/" class="">in Java</a>
   
 
         </li>
@@ -1423,8 +1408,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-0407f110c1b3ed4992fcb7fc5f05aa12" class="toggle"  />
-    <label for="section-0407f110c1b3ed4992fcb7fc5f05aa12" class="flex justify-between">
+    <input type="checkbox" id="section-4aed4e1c4b6179fd330f627f75eb18b3" class="toggle"  />
+    <label for="section-4aed4e1c4b6179fd330f627f75eb18b3" class="flex justify-between">
       <a href="/docs/simplify/" class="">Simplifying code</a>
     </label>
   
@@ -1483,8 +1468,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-494fdb80ca3ad5d2868cb487a042ae27" class="toggle"  />
-    <label for="section-494fdb80ca3ad5d2868cb487a042ae27" class="flex justify-between">
+    <input type="checkbox" id="section-ba3d9d7fa2d604a47f68a6d7a7a9d2a2" class="toggle"  />
+    <label for="section-ba3d9d7fa2d604a47f68a6d7a7a9d2a2" class="flex justify-between">
       <a href="/docs/env/" class="">Development environment</a>
     </label>
   
@@ -1621,8 +1606,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-2870a15a3d2cff84408f43cbb1e77f97" class="toggle"  />
-    <label for="section-2870a15a3d2cff84408f43cbb1e77f97" class="flex justify-between">
+    <input type="checkbox" id="section-3c6a8c431d500080599ec572e56415d8" class="toggle"  />
+    <label for="section-3c6a8c431d500080599ec572e56415d8" class="flex justify-between">
       <a href="/docs/git/" class="">git</a>
     </label>
   
@@ -1772,8 +1757,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-44fa5eb3511a340ff4e9042080604b5c" class="toggle"  />
-    <label for="section-44fa5eb3511a340ff4e9042080604b5c" class="flex justify-between">
+    <input type="checkbox" id="section-39b7a0b404320b4007d4505305b8f4f4" class="toggle"  />
+    <label for="section-39b7a0b404320b4007d4505305b8f4f4" class="flex justify-between">
       <a href="/docs/build/" class="">Build automation</a>
     </label>
   
@@ -1788,10 +1773,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-0c816e62fd66eb322757addb01600cdd" class="toggle"  />
-    <label for="section-0c816e62fd66eb322757addb01600cdd" class="flex justify-between">
-      <a href="/docs/build/sections/packaging/" class="">Packaging a Java application</a>
-    </label>
+    <a href="/docs/build/sections/packaging/" class="">Packaging a Java application</a>
   
 
         </li>
@@ -1804,10 +1786,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-5537e478f301d8ff4f0b5a7a03c9db32" class="toggle"  />
-    <label for="section-5537e478f301d8ff4f0b5a7a03c9db32" class="flex justify-between">
-      <a href="/docs/build/sections/layout/" class="">Layout</a>
-    </label>
+    <a href="/docs/build/sections/layout/" class="">Layout</a>
   
 
         </li>
@@ -1820,10 +1799,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-33bd3456c4645cc966d192fba400a71a" class="toggle"  />
-    <label for="section-33bd3456c4645cc966d192fba400a71a" class="flex justify-between">
-      <a href="/docs/build/sections/pom/" class="">Configuration file</a>
-    </label>
+    <a href="/docs/build/sections/pom/" class="">Configuration file</a>
   
 
         </li>
@@ -1836,10 +1812,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-c956d0b428ebb6c853f314459a513393" class="toggle"  />
-    <label for="section-c956d0b428ebb6c853f314459a513393" class="flex justify-between">
-      <a href="/docs/build/sections/artifact/" class="">Artifact</a>
-    </label>
+    <a href="/docs/build/sections/artifact/" class="">Artifact</a>
   
 
         </li>
@@ -1852,10 +1825,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-d01a14431bc2161a8fed02d90e1a365b" class="toggle"  />
-    <label for="section-d01a14431bc2161a8fed02d90e1a365b" class="flex justify-between">
-      <a href="/docs/build/sections/dependencies/" class="">Dependencies</a>
-    </label>
+    <a href="/docs/build/sections/dependencies/" class="">Dependencies</a>
   
 
         </li>
@@ -1868,10 +1838,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-b838446830102a7dece872d673537390" class="toggle"  />
-    <label for="section-b838446830102a7dece872d673537390" class="flex justify-between">
-      <a href="/docs/build/sections/building/" class="">Building</a>
-    </label>
+    <a href="/docs/build/sections/building/" class="">Building</a>
   
 
         </li>
@@ -1889,8 +1856,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-ffcf8551871937aae0ce60f2b3cc616b" class="toggle"  />
-    <label for="section-ffcf8551871937aae0ce60f2b3cc616b" class="flex justify-between">
+    <input type="checkbox" id="section-48bf1202a7e278154d3a51c618c94cd6" class="toggle"  />
+    <label for="section-48bf1202a7e278154d3a51c618c94cd6" class="flex justify-between">
       <a href="/docs/background/" class="">Background</a>
     </label>
   
@@ -1983,7 +1950,6 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-
 </nav>
 
 
@@ -2004,7 +1970,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Class and instance</strong>
+  <h3>Class and instance</h3>
 
   <label for="toc-control">
     
@@ -2053,27 +2019,21 @@ https://github.com/alex-shpak/hugo-book
 <p>A <strong>class</strong> can be viewed as a <em>blueprint</em> for a set of similar objects.</p>
 <p>For instance, consider the two objects:</p>
 <div class="book-columns flex flex-wrap">
-
-  <div class="flex-even markdown-inner">
-    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>{
+<div class="flex-even markdown-inner" style="flex-grow: 1;">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Florence&#34;</span>,
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">zipCode</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">50100</span>,
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">region</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Tuscany&#34;</span>
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div>
-  </div>
-
-  <div class="flex-even markdown-inner">
-    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>{
+</span></span></code></pre></div>  </div>
+<div class="flex-even markdown-inner" style="flex-grow: 1;">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Rome&#34;</span>,
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">zipCode</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">00100</span>,
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">region</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Lazio&#34;</span>
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div>
-  </div>
-
+</span></span></code></pre></div>  </div>
 </div>
-
 <p>Each of these objects describes a city, and they share the same keys (<code>name</code>, <code>zipCode</code> and <code>region</code>).
 A possible class for these two objects may enforce this structure, and it could be named <code>City</code>.
 An object that follows this blueprint is called an <strong>instance</strong> of this class.</p>
@@ -2081,7 +2041,7 @@ An object that follows this blueprint is called an <strong>instance</strong> of 
   Declaration
   <a class="anchor" href="#declaration">#</a>
 </h2>
-<p>In a typed language (like Java), a class must specifies not only the &ldquo;keys&rdquo; of its instances, but also their types.
+<p>In a typed language (like Java), a class must specify not only the &ldquo;keys&rdquo; of its instances, but also their types.
 For instance, the class City could be declared as follows in Java:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">City</span> {
 </span></span><span style="display:flex;"><span>
@@ -2091,32 +2051,28 @@ For instance, the class City could be declared as follows in Java:</p>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  ...
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p><blockquote class="book-hint danger">
-  In Java, a class is often declared in a dedicated file.
-This file must have the <em>same name</em> as the class (e.g. <code>City.java</code> in this example).
+</span></span></code></pre></div><blockquote class="book-hint danger">
+<p>In Java, a class is often declared in a dedicated file.
+This file must have the <em>same name</em> as the class (e.g. <code>City.java</code> in this example).</p>
 </blockquote>
-
-The three variables (<code>name</code>, <code>zipCode</code> and <code>region</code>) are called <strong>attributes</strong> (or sometimes <strong>member variables</strong>).</p>
+<p>The three variables (<code>name</code>, <code>zipCode</code> and <code>region</code>) are called <strong>attributes</strong> (or sometimes <strong>member variables</strong>).</p>
 <h2 id="constructor">
   Constructor
   <a class="anchor" href="#constructor">#</a>
 </h2>
-<p>A class also needs a special method called a <strong>constructor</strong>.<!-- raw HTML omitted -->
-The constructor is in charge of creating a (fresh) instance of the class.<!-- raw HTML omitted -->
-In Java (as in Python, C#, etc.), the constructor does not return the instance itself, but a <a href="https://unibz-pp-23-24.github.io/docs/objects/sections/objects/#objectRef">reference</a> (sometimes called &ldquo;pointer&rdquo;) to this instance.</p>
+<p>A class also needs a special method called a <strong>constructor</strong>.<br>
+The constructor is in charge of creating a (fresh) instance of the class.<br></p>
 <blockquote class="book-hint warning">
-  <strong><em>Note.</em></strong> A class may have several constructors (with different signatures).
+<p><strong><em>Note.</em></strong> A class may have several constructors (with different signatures).</p>
 </blockquote>
-
 <h3 id="writing-a-constructor-in-java">
   Writing a constructor in Java
   <a class="anchor" href="#writing-a-constructor-in-java">#</a>
 </h3>
-<p><blockquote class="book-hint danger">
-  The constructor of a Java class must have the <em>same name</em> as the class.
+<blockquote class="book-hint danger">
+<p>The constructor of a Java class must have the <em>same name</em> as the class.</p>
 </blockquote>
-
-For instance:</p>
+<p>For instance:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">City</span> {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  String name;
@@ -2131,7 +2087,7 @@ For instance:</p>
 </span></span><span style="display:flex;"><span>  ...
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><blockquote class="book-hint warning">
-  <p><strong><em>Note.</em></strong>
+<p><strong><em>Note.</em></strong>
 In this example, the variable names <code>n</code>, <code>z</code> and <code>r</code> are not very explicit.
 However, using <code>name</code>, <code>zipCode</code> and <code>region</code> would be ambiguous (because these names are already used for the attributes of the class).
 In Java, we can use the prefix <code>this.</code> to refer to attribute names, thus eliminating the ambiguity.</p>
@@ -2149,9 +2105,7 @@ In Java, we can use the prefix <code>this.</code> to refer to attribute names, t
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>  ...
 </span></span><span style="display:flex;"><span> }
-</span></span></code></pre></div>
-</blockquote>
-
+</span></span></code></pre></div></blockquote>
 <h3 id="calling-a-constructor-in-java">
   Calling a constructor in Java
   <a class="anchor" href="#calling-a-constructor-in-java">#</a>
@@ -2160,11 +2114,13 @@ In Java, we can use the prefix <code>this.</code> to refer to attribute names, t
 For instance:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span> City myCity <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Florence&#34;</span>, 50100, <span style="color:#e6db74">&#34;Tuscany&#34;</span>);
 </span></span><span style="display:flex;"><span> City yourCity <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Rome&#34;</span>, 00100, <span style="color:#e6db74">&#34;Lazio&#34;</span>);
-</span></span></code></pre></div><blockquote class="book-hint warning">
-  <strong><em>Note.</em></strong> The object that is created in memory contains extra information, in particular a reference to its class.
-This allows type checking, casts, etc. (more on this later).
+</span></span></code></pre></div><blockquote class="book-hint danger">
+<p><strong><em>Warning.</em></strong> In Java (as in Python, C#, etc.), the constructor does not return the instance itself, but a <a href="https://unibz-pp-24-25.github.io/docs/objects/sections/objects/#objectRef">reference</a> (sometimes called &ldquo;pointer&rdquo;) to this instance.</p>
 </blockquote>
-
+<blockquote class="book-hint warning">
+<p><strong><em>Note.</em></strong> The object that is created in memory contains extra information, in particular a reference to its class.
+This allows type checking, casts, etc. (more on this later).</p>
+</blockquote>
 <h2 id="accessing-an-object-in-java">
   Accessing an object in Java
   <a class="anchor" href="#accessing-an-object-in-java">#</a>
@@ -2183,47 +2139,35 @@ For instance,</p>
   Reference type vs primitive type
   <a class="anchor" href="#refType">#</a>
 </h2>
-<p>Recall that a Java constructor returns a <a href="https://unibz-pp-23-24.github.io/docs/objects/sections/objects/#objectRef">reference</a> to the object that it creates.
-So in the example above, the value of each variable (<code>myCity</code> and <code>yourCity</code>) is a reference, not the object itself.</p>
-<p>This also holds for:</p>
-<ul>
-<li>variables of type <code>String</code>,</li>
-<li>variable with an array type (like <code>int[] myArray</code>).</li>
-</ul>
-<p>The types of these variables (e.g. <code>City</code>, <code>String</code> or <code>int[]</code>) are called <strong>reference types</strong>.</p>
+<p>Recall that a Java constructor returns a <a href="https://unibz-pp-24-25.github.io/docs/objects/sections/objects/#objectRef">reference</a> to the object that it creates.
+So in the examples above, the value of each variable (<code>myCity</code>, <code>yourCity</code> and <code>thatCity</code>) is a reference, not the object itself.</p>
+<p>This also holds for variable with an array type (like <code>int[] myArray</code>).</p>
+<p>The types of these variables (e.g. <code>City</code> or <code>int[]</code>) are called <strong>reference types</strong>.</p>
 <blockquote class="book-hint warning">
-  <strong><em>Syntax.</em></strong> In Java, types that start with a <em>capital letter</em> (like <code>City</code> or <code>Array&lt;Integer&gt;</code>) are usually reference types.
+<p><strong><em>Syntax.</em></strong> In Java, types that start with a <em>capital letter</em> (like <code>City</code> or <code>Array&lt;Integer&gt;</code>) are usually reference types.</p>
 </blockquote>
-
 <p>Types that are not references types (like <code>int</code> or <code>char</code>) are called <strong>primitive types</strong>.</p>
-<p>The <em>value</em> of a reference <em>cannot</em> be output (printed, displayed, etc.) by a program.
-But this value can be modified or compared to another.</p>
-
-
-
-
-<div class="book-tabs"><input type="radio" class="toggle" name="tabs-ex_object_ref_1" id="tabs-ex_object_ref_1-0" checked="checked" />
-  <label for="tabs-ex_object_ref_1-0">Exercise</label>
-  <div class="book-tabs-content markdown-inner"><p>What is the output of the following program?</p>
+<p>In Java, the <em>value</em> of a reference <em>cannot</em> be output (printed, displayed, etc.) by a program (as opposed to C/C++ for instance).
+But this value can be overwritten or compared to another.</p>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-ex_object_ref_1" id="tabs-ex_object_ref_1-0" checked="checked" />
+<label for="tabs-ex_object_ref_1-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>What is the output of the following program?</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span> City aCity <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Matera&#34;</span>, 75100, <span style="color:#e6db74">&#34;Basilicata&#34;</span>);
 </span></span><span style="display:flex;"><span> City theSameCity <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Matera&#34;</span>, 75100, <span style="color:#e6db74">&#34;Basilicata&#34;</span>);
 </span></span><span style="display:flex;"><span> System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(aCity <span style="color:#f92672">==</span> theSameCity);
 </span></span><span style="display:flex;"><span> System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(aCity.<span style="color:#a6e22e">zipCode</span> <span style="color:#f92672">==</span> theSameCity.<span style="color:#a6e22e">zipCode</span>);
-</span></span><span style="display:flex;"><span> System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(aCity.<span style="color:#a6e22e">name</span> <span style="color:#f92672">==</span> theSameCity.<span style="color:#a6e22e">name</span>);
-</span></span></code></pre></div></div><input type="radio" class="toggle" name="tabs-ex_object_ref_1" id="tabs-ex_object_ref_1-1"  />
-  <label for="tabs-ex_object_ref_1-1">Solution</label>
-  <div class="book-tabs-content markdown-inner"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">false</span>
+</span></span></code></pre></div></div>
+<input type="radio" class="toggle" name="tabs-ex_object_ref_1" id="tabs-ex_object_ref_1-1"  />
+<label for="tabs-ex_object_ref_1-1">Solution</label>
+<div class="book-tabs-content markdown-inner"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">false</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">true</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">false</span>
-</span></span></code></pre></div></div></div>
-
-
-
-
-
-<div class="book-tabs"><input type="radio" class="toggle" name="tabs-ex_object_ref_2" id="tabs-ex_object_ref_2-0" checked="checked" />
-  <label for="tabs-ex_object_ref_2-0">Exercise</label>
-  <div class="book-tabs-content markdown-inner"><p>What is the output of the following program?</p>
+</span></span></code></pre></div></div>
+</div>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-ex_object_ref_2" id="tabs-ex_object_ref_2-0" checked="checked" />
+<label for="tabs-ex_object_ref_2-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>What is the output of the following program?</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span> City anotherCity <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Bologna&#34;</span>, 40100, <span style="color:#e6db74">&#34;Emilia-Romagna&#34;</span>);
 </span></span><span style="display:flex;"><span> City yetAnotherCity <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Mantua&#34;</span>, 46100, <span style="color:#e6db74">&#34;Emilia-Romagna&#34;</span>);
 </span></span><span style="display:flex;"><span>
@@ -2233,15 +2177,17 @@ But this value can be modified or compared to another.</p>
 </span></span><span style="display:flex;"><span> anotherCity <span style="color:#f92672">=</span> yetAnotherCity;
 </span></span><span style="display:flex;"><span> System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(anotherCity.<span style="color:#a6e22e">zipCode</span>);
 </span></span><span style="display:flex;"><span> System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(anotherCity <span style="color:#f92672">==</span> yetAnotherCity);
-</span></span></code></pre></div></div><input type="radio" class="toggle" name="tabs-ex_object_ref_2" id="tabs-ex_object_ref_2-1"  />
-  <label for="tabs-ex_object_ref_2-1">Solution</label>
-  <div class="book-tabs-content markdown-inner"><blockquote>
+</span></span></code></pre></div></div>
+<input type="radio" class="toggle" name="tabs-ex_object_ref_2" id="tabs-ex_object_ref_2-1"  />
+<label for="tabs-ex_object_ref_2-1">Solution</label>
+<div class="book-tabs-content markdown-inner"><blockquote>
 <p>Exercise 2.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#e6db74">&#34;Bologna&#34;</span>
 </span></span><span style="display:flex;"><span>46100
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">true</span>
-</span></span></code></pre></div></blockquote></div></div>
-
+</span></span></code></pre></div></blockquote>
+</div>
+</div>
 <h2 id="passing-by-value-or-by-reference">
   Passing by value or by reference
   <a class="anchor" href="#passing-by-value-or-by-reference">#</a>
@@ -2250,7 +2196,7 @@ But this value can be modified or compared to another.</p>
 Two common strategies are:</p>
 <ul>
 <li><strong>passing by value</strong>: the method receives as input a <em>copy</em> of each argument,</li>
-<li><strong>passing by reference</strong>: the method receives as input a <em>reference</em> to each argument.</li>
+<li><strong>passing by reference</strong>: the method receives as input a <em>reference</em> to each argument (which allows modifying the initial argument).</li>
 </ul>
 <p>Consider for instance the following program (in pseudocode):</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> myInteger <span style="color:#f92672">=</span> 0
@@ -2271,18 +2217,14 @@ Two common strategies are:</p>
 <p>In Java (and many other programming languages, like C, Python, Javascript, etc.), arguments are <a href="https://www.javadude.com/articles/passbyvalue.htm">passed by value</a>.
 So the above program translated in Java will print <code>0</code>.</p>
 <blockquote class="book-hint danger">
-  <strong><em>Warning.</em></strong> Consider a method with a <a href="#refType">reference type</a> argument.
+<p><strong><em>Warning.</em></strong> Consider a method with a <a href="#refType">reference type</a> argument.
 Because Java passes by value, this method will receive a copy of this argument.
-But this is a copy <em>of the reference</em>, not a copy of the object itself.
+But this is a copy <em>of the reference</em>, not a copy of the object itself.</p>
 </blockquote>
-
-
-
-
-
-<div class="book-tabs"><input type="radio" class="toggle" name="tabs-ex_passByValue" id="tabs-ex_passByValue-0" checked="checked" />
-  <label for="tabs-ex_passByValue-0">Exercise</label>
-  <div class="book-tabs-content markdown-inner"><p>What does the following Java program print?</p>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-ex_passByValue" id="tabs-ex_passByValue-0" checked="checked" />
+<label for="tabs-ex_passByValue-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>What does the following Java program print?</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>  <span style="color:#66d9ef">int</span> myInteger <span style="color:#f92672">=</span> 0;
 </span></span><span style="display:flex;"><span>  City myFirstCity <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Florence&#34;</span>, 50100, <span style="color:#e6db74">&#34;Tuscany&#34;</span>);
 </span></span><span style="display:flex;"><span>  City mySecondCity <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Mantua&#34;</span>, 46100, <span style="color:#e6db74">&#34;Emilia-Romagna&#34;</span>);
@@ -2303,16 +2245,17 @@ But this is a copy <em>of the reference</em>, not a copy of the object itself.
 </span></span><span style="display:flex;"><span>    secondCity <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Rome&#34;</span>, 00100, <span style="color:#e6db74">&#34;Lazio&#34;</span>);
 </span></span><span style="display:flex;"><span>    System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(secondCity.<span style="color:#a6e22e">zipCode</span>);
 </span></span><span style="display:flex;"><span> }
-</span></span></code></pre></div></div><input type="radio" class="toggle" name="tabs-ex_passByValue" id="tabs-ex_passByValue-1"  />
-  <label for="tabs-ex_passByValue-1">Solution</label>
-  <div class="book-tabs-content markdown-inner"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>  1
+</span></span></code></pre></div></div>
+<input type="radio" class="toggle" name="tabs-ex_passByValue" id="tabs-ex_passByValue-1"  />
+<label for="tabs-ex_passByValue-1">Solution</label>
+<div class="book-tabs-content markdown-inner"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>  1
 </span></span><span style="display:flex;"><span>  20590
 </span></span><span style="display:flex;"><span>  00100
 </span></span><span style="display:flex;"><span>  0
 </span></span><span style="display:flex;"><span>  20590
 </span></span><span style="display:flex;"><span>  46100
-</span></span></code></pre></div></div></div>
-
+</span></span></code></pre></div></div>
+</div>
 </article>
  
       

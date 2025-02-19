@@ -3,25 +3,40 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Hash table # A hash table is a data structure often used to implement an associative array (like a Java Map).
-Associative array # Reminder. An associative array (or map) is a finite set of key-value pairs, where keys are distinct. Terminology. A key-value pair in associative array is also called an entry. Running example. The following associative array has 5 entries.
-$\qquad$ 1 $\mapsto$ Alice $\qquad$ 3 $\mapsto$ Bob $\qquad$ 4 $\mapsto$ Carol $\qquad$ 9 $\mapsto$ Dan $\qquad$ 12 $\mapsto$ Eve">
+<meta name="description" content="
+  Hash table
+  #
+
+A hash table is a data structure often used to implement an associative array (like a Java Map).
+
+
+  Associative array
+  #
+
+
+Reminder. An associative array (or map) is a finite set of key-value pairs, where keys are distinct.
+
+
+Terminology.
+A key-value pair in associative array is also called an entry.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="Hash table" />
-<meta property="og:description" content="Hash table # A hash table is a data structure often used to implement an associative array (like a Java Map).
-Associative array # Reminder. An associative array (or map) is a finite set of key-value pairs, where keys are distinct. Terminology. A key-value pair in associative array is also called an entry. Running example. The following associative array has 5 entries.
-$\qquad$ 1 $\mapsto$ Alice $\qquad$ 3 $\mapsto$ Bob $\qquad$ 4 $\mapsto$ Carol $\qquad$ 9 $\mapsto$ Dan $\qquad$ 12 $\mapsto$ Eve" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/datastructures/sections/hash/" /><meta property="article:section" content="docs" />
-
-
-<title>Hash table | Programming project 2023-24</title>
-<link rel="manifest" href="/manifest.json">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/datastructures/sections/hash/">
+  <meta property="og:site_name" content="Programming project 2024-25">
+  <meta property="og:title" content="Hash table">
+  <meta property="og:description" content="Hash table # A hash table is a data structure often used to implement an associative array (like a Java Map).
+Associative array # Reminder. An associative array (or map) is a finite set of key-value pairs, where keys are distinct.
+Terminology. A key-value pair in associative array is also called an entry.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Hash table | Programming project 2024-25</title>
 <link rel="icon" href="/favicon.png" >
-<link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
-  <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.4e5dd21f0324d689aa628cb546e70eda39fb9e0b5daabb2a2c7da954eec10dab.js" integrity="sha256-Tl3SHwMk1omqYoy1RucO2jn7ngtdqrsqLH2pVO7BDas=" crossorigin="anonymous"></script>
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/datastructures/sections/hash/">
+<link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.ef6ce3f581865a34e7a0361facaa520c0f023938171236d76684573e7df35a2c.js" integrity="sha256-72zj9YGGWjTnoDYfrKpSDA8COTgXEjbXZoRXPn3zWiw=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -71,16 +86,17 @@ https://github.com/alex-shpak/hugo-book
         
   <nav>
 <h2 class="book-brand">
-  <a class="flex align-center" href="/"><span>Programming project 2023-24</span>
+  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
   </a>
 </h2>
 
 
-<div class="book-search">
+<div class="book-search hidden">
   <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
 
 
 
@@ -93,7 +109,6 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  
 
 
 
@@ -107,8 +122,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-f1c1e874f9c9473478447bba6c7db644" class="toggle"  />
-    <label for="section-f1c1e874f9c9473478447bba6c7db644" class="flex justify-between">
+    <input type="checkbox" id="section-9c72579f4feaa5ed1d8188779488d483" class="toggle"  />
+    <label for="section-9c72579f4feaa5ed1d8188779488d483" class="flex justify-between">
       <a href="/docs/intro/" class="">This course</a>
     </label>
   
@@ -206,8 +221,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-bc4d9392f5af16481cccf0c311076888" class="toggle"  />
-    <label for="section-bc4d9392f5af16481cccf0c311076888" class="flex justify-between">
+    <input type="checkbox" id="section-0af90824fe38d1d85af672be7208f3fa" class="toggle"  />
+    <label for="section-0af90824fe38d1d85af672be7208f3fa" class="flex justify-between">
       <a href="/docs/project/" class="">Project</a>
     </label>
   
@@ -253,8 +268,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-3435ead23eba75b5ffeeb8d422f70dea" class="toggle"  />
-    <label for="section-3435ead23eba75b5ffeeb8d422f70dea" class="flex justify-between">
+    <input type="checkbox" id="section-f8aa8cff3b51717ecd2ebfbd81d061ce" class="toggle"  />
+    <label for="section-f8aa8cff3b51717ecd2ebfbd81d061ce" class="flex justify-between">
       <a href="/docs/objects/" class="">Objects and classes</a>
     </label>
   
@@ -430,8 +445,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-48bc13e86f573c257821b397e779b02e" class="toggle"  />
-    <label for="section-48bc13e86f573c257821b397e779b02e" class="flex justify-between">
+    <input type="checkbox" id="section-84375da4f2da0b5ee2a224e67daa47cd" class="toggle"  />
+    <label for="section-84375da4f2da0b5ee2a224e67daa47cd" class="flex justify-between">
       <a href="/docs/interfaces/" class="">Interfaces</a>
     </label>
   
@@ -477,8 +492,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-e06acd393c0cc6e5b27e2cd8945d3dd8" class="toggle"  />
-    <label for="section-e06acd393c0cc6e5b27e2cd8945d3dd8" class="flex justify-between">
+    <input type="checkbox" id="section-dd500264748ddf6db6c4f8c13c5fa45b" class="toggle"  />
+    <label for="section-dd500264748ddf6db6c4f8c13c5fa45b" class="flex justify-between">
       <a href="/docs/abstractdatatypes/" class="">Abstract data types</a>
     </label>
   
@@ -563,8 +578,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-5d60f9e6a9b7c875f51358c583373282" class="toggle" checked />
-    <label for="section-5d60f9e6a9b7c875f51358c583373282" class="flex justify-between">
+    <input type="checkbox" id="section-10a993a702eb9f53bd9244a93734d095" class="toggle" checked />
+    <label for="section-10a993a702eb9f53bd9244a93734d095" class="flex justify-between">
       <a href="/docs/datastructures/" class="">Data structures</a>
     </label>
   
@@ -623,8 +638,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-93b39c27c032f5f72bed81496cbb41e3" class="toggle"  />
-    <label for="section-93b39c27c032f5f72bed81496cbb41e3" class="flex justify-between">
+    <input type="checkbox" id="section-58aec3ab091b08c257b626cc09af78c5" class="toggle"  />
+    <label for="section-58aec3ab091b08c257b626cc09af78c5" class="flex justify-between">
       <a href="/docs/errors/" class="">Errors</a>
     </label>
   
@@ -639,10 +654,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-a2fa4d1523374519c87fe83f9d8226b6" class="toggle"  />
-    <label for="section-a2fa4d1523374519c87fe83f9d8226b6" class="flex justify-between">
-      <a href="/docs/errors/sections/callstack/" class="">Call stack</a>
-    </label>
+    <a href="/docs/errors/sections/callstack/" class="">Call stack</a>
   
 
         </li>
@@ -655,10 +667,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-323953d2054911560fd76ed4505d5bb2" class="toggle"  />
-    <label for="section-323953d2054911560fd76ed4505d5bb2" class="flex justify-between">
-      <a href="/docs/errors/sections/exceptions/" class="">Exceptions</a>
-    </label>
+    <a href="/docs/errors/sections/exceptions/" class="">Exceptions</a>
   
 
         </li>
@@ -671,10 +680,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-03b7629c50286af7810d9917f4bdabd2" class="toggle"  />
-    <label for="section-03b7629c50286af7810d9917f4bdabd2" class="flex justify-between">
-      <a href="/docs/errors/sections/checked/" class="">Checked vs unchecked</a>
-    </label>
+    <a href="/docs/errors/sections/checked/" class="">Checked vs unchecked</a>
   
 
         </li>
@@ -687,10 +693,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-3add83584009ceb58c28b43e0a2280c9" class="toggle"  />
-    <label for="section-3add83584009ceb58c28b43e0a2280c9" class="flex justify-between">
-      <a href="/docs/errors/sections/custom/" class="">Custom exceptions</a>
-    </label>
+    <a href="/docs/errors/sections/custom/" class="">Custom exceptions</a>
   
 
         </li>
@@ -703,10 +706,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-b9c696d05ab8cb944ddf9cef47a3abb4" class="toggle"  />
-    <label for="section-b9c696d05ab8cb944ddf9cef47a3abb4" class="flex justify-between">
-      <a href="/docs/errors/sections/errors/" class="">Java errors</a>
-    </label>
+    <a href="/docs/errors/sections/errors/" class="">Java errors</a>
   
 
         </li>
@@ -724,8 +724,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-1be866adbf7f2244d1773e0d2a159b91" class="toggle"  />
-    <label for="section-1be866adbf7f2244d1773e0d2a159b91" class="flex justify-between">
+    <input type="checkbox" id="section-759e82ae41b9619c78e632572d50480a" class="toggle"  />
+    <label for="section-759e82ae41b9619c78e632572d50480a" class="flex justify-between">
       <a href="/docs/recursion/" class="">Recursion</a>
     </label>
   
@@ -784,8 +784,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-b7bc445f96cbe2bd1034c5f1c5d075bb" class="toggle"  />
-    <label for="section-b7bc445f96cbe2bd1034c5f1c5d075bb" class="flex justify-between">
+    <input type="checkbox" id="section-a1720661345b5872c845343fb6615be9" class="toggle"  />
+    <label for="section-a1720661345b5872c845343fb6615be9" class="flex justify-between">
       <a href="/docs/input/" class="">I/O and serialization</a>
     </label>
   
@@ -800,10 +800,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-09ea3b18445537bd77c25d3db6ab2fcf" class="toggle"  />
-    <label for="section-09ea3b18445537bd77c25d3db6ab2fcf" class="flex justify-between">
-      <a href="/docs/input/sections/files/" class="">Paths and files in Java</a>
-    </label>
+    <a href="/docs/input/sections/files/" class="">Paths and files in Java</a>
   
 
         </li>
@@ -816,10 +813,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-640b25aadb55f28505bfbbe5a5f7073d" class="toggle"  />
-    <label for="section-640b25aadb55f28505bfbbe5a5f7073d" class="flex justify-between">
-      <a href="/docs/input/sections/read/" class="">Reading from and writing to a file in Java</a>
-    </label>
+    <a href="/docs/input/sections/read/" class="">Reading from and writing to a file in Java</a>
   
 
         </li>
@@ -832,10 +826,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-7efe7741b54b5b602db75415a7806ef4" class="toggle"  />
-    <label for="section-7efe7741b54b5b602db75415a7806ef4" class="flex justify-between">
-      <a href="/docs/input/sections/property/" class="">Configuration files</a>
-    </label>
+    <a href="/docs/input/sections/property/" class="">Configuration files</a>
   
 
         </li>
@@ -848,10 +839,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-37fdfe811c449d15e51a84c19673df2f" class="toggle"  />
-    <label for="section-37fdfe811c449d15e51a84c19673df2f" class="flex justify-between">
-      <a href="/docs/input/sections/serialize/" class="">Serialization</a>
-    </label>
+    <a href="/docs/input/sections/serialize/" class="">Serialization</a>
   
 
         </li>
@@ -864,10 +852,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-ec41b3fcd24b301058a1bd1bd7b5c8e7" class="toggle"  />
-    <label for="section-ec41b3fcd24b301058a1bd1bd7b5c8e7" class="flex justify-between">
-      <a href="/docs/input/sections/json/" class="">JSON Serialization</a>
-    </label>
+    <a href="/docs/input/sections/json/" class="">JSON Serialization</a>
   
 
         </li>
@@ -885,8 +870,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-baf3ea6e28839ac044570d2d313c8794" class="toggle"  />
-    <label for="section-baf3ea6e28839ac044570d2d313c8794" class="flex justify-between">
+    <input type="checkbox" id="section-9bfff01f1c5ef64a53927faf30620ccf" class="toggle"  />
+    <label for="section-9bfff01f1c5ef64a53927faf30620ccf" class="flex justify-between">
       <a href="/docs/regex/" class="">Regular expressions</a>
     </label>
   
@@ -945,8 +930,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-ae8fba9e927e4c55801a4e71f6b7d054" class="toggle"  />
-    <label for="section-ae8fba9e927e4c55801a4e71f6b7d054" class="flex justify-between">
+    <input type="checkbox" id="section-882764aad745f79e099c5a43798784f9" class="toggle"  />
+    <label for="section-882764aad745f79e099c5a43798784f9" class="flex justify-between">
       <a href="/docs/lambda/" class="">Callback methods and lambda expressions</a>
     </label>
   
@@ -1044,8 +1029,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-41a2765a9682fb1ce579fb1661f1250d" class="toggle"  />
-    <label for="section-41a2765a9682fb1ce579fb1661f1250d" class="flex justify-between">
+    <input type="checkbox" id="section-7783f19754a3a0ec1529ed7ac208c3ab" class="toggle"  />
+    <label for="section-7783f19754a3a0ec1529ed7ac208c3ab" class="flex justify-between">
       <a href="/docs/stream/" class="">Streams in Java</a>
     </label>
   
@@ -1156,8 +1141,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-87d53bbeb97db8aab24c02b4d45460f2" class="toggle"  />
-    <label for="section-87d53bbeb97db8aab24c02b4d45460f2" class="flex justify-between">
+    <input type="checkbox" id="section-793e09c315e082fb44de3238b9ad707b" class="toggle"  />
+    <label for="section-793e09c315e082fb44de3238b9ad707b" class="flex justify-between">
       <a href="/docs/generics/" class="">Generic programming</a>
     </label>
   
@@ -1242,8 +1227,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-5dcccd15580bb824ba055538c97bdea6" class="toggle"  />
-    <label for="section-5dcccd15580bb824ba055538c97bdea6" class="flex justify-between">
+    <input type="checkbox" id="section-3876422a93470dcccad1a719c99a8e17" class="toggle"  />
+    <label for="section-3876422a93470dcccad1a719c99a8e17" class="flex justify-between">
       <a href="/docs/multithreading/" class="">Multithreading</a>
     </label>
   
@@ -1354,8 +1339,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-9d77b970a03dc72b048d9fce7bfe272f" class="toggle"  />
-    <label for="section-9d77b970a03dc72b048d9fce7bfe272f" class="flex justify-between">
+    <input type="checkbox" id="section-990bc84b6dc3891b1963528a24b45e2e" class="toggle"  />
+    <label for="section-990bc84b6dc3891b1963528a24b45e2e" class="flex justify-between">
       <a href="/docs/unittests/" class="">Unit tests</a>
     </label>
   
@@ -1370,10 +1355,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-796939dc839b82c2ff89d99e47011262" class="toggle"  />
-    <label for="section-796939dc839b82c2ff89d99e47011262" class="flex justify-between">
-      <a href="/docs/unittests/sections/structured/" class="">Code units</a>
-    </label>
+    <a href="/docs/unittests/sections/structured/" class="">Code units</a>
   
 
         </li>
@@ -1386,10 +1368,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-ad5c3d825858d4a9ca4ad02d541f7121" class="toggle"  />
-    <label for="section-ad5c3d825858d4a9ca4ad02d541f7121" class="flex justify-between">
-      <a href="/docs/unittests/sections/tdd/" class="">Development driven by unit tests</a>
-    </label>
+    <a href="/docs/unittests/sections/tdd/" class="">Development driven by unit tests</a>
   
 
         </li>
@@ -1402,10 +1381,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-7e09be54c45521908b57f9eaf194f5f6" class="toggle"  />
-    <label for="section-7e09be54c45521908b57f9eaf194f5f6" class="flex justify-between">
-      <a href="/docs/unittests/sections/junit/" class="">in Java</a>
-    </label>
+    <a href="/docs/unittests/sections/junit/" class="">in Java</a>
   
 
         </li>
@@ -1423,8 +1399,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-0407f110c1b3ed4992fcb7fc5f05aa12" class="toggle"  />
-    <label for="section-0407f110c1b3ed4992fcb7fc5f05aa12" class="flex justify-between">
+    <input type="checkbox" id="section-4aed4e1c4b6179fd330f627f75eb18b3" class="toggle"  />
+    <label for="section-4aed4e1c4b6179fd330f627f75eb18b3" class="flex justify-between">
       <a href="/docs/simplify/" class="">Simplifying code</a>
     </label>
   
@@ -1483,8 +1459,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-494fdb80ca3ad5d2868cb487a042ae27" class="toggle"  />
-    <label for="section-494fdb80ca3ad5d2868cb487a042ae27" class="flex justify-between">
+    <input type="checkbox" id="section-ba3d9d7fa2d604a47f68a6d7a7a9d2a2" class="toggle"  />
+    <label for="section-ba3d9d7fa2d604a47f68a6d7a7a9d2a2" class="flex justify-between">
       <a href="/docs/env/" class="">Development environment</a>
     </label>
   
@@ -1621,8 +1597,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-2870a15a3d2cff84408f43cbb1e77f97" class="toggle"  />
-    <label for="section-2870a15a3d2cff84408f43cbb1e77f97" class="flex justify-between">
+    <input type="checkbox" id="section-3c6a8c431d500080599ec572e56415d8" class="toggle"  />
+    <label for="section-3c6a8c431d500080599ec572e56415d8" class="flex justify-between">
       <a href="/docs/git/" class="">git</a>
     </label>
   
@@ -1772,8 +1748,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-44fa5eb3511a340ff4e9042080604b5c" class="toggle"  />
-    <label for="section-44fa5eb3511a340ff4e9042080604b5c" class="flex justify-between">
+    <input type="checkbox" id="section-39b7a0b404320b4007d4505305b8f4f4" class="toggle"  />
+    <label for="section-39b7a0b404320b4007d4505305b8f4f4" class="flex justify-between">
       <a href="/docs/build/" class="">Build automation</a>
     </label>
   
@@ -1788,10 +1764,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-0c816e62fd66eb322757addb01600cdd" class="toggle"  />
-    <label for="section-0c816e62fd66eb322757addb01600cdd" class="flex justify-between">
-      <a href="/docs/build/sections/packaging/" class="">Packaging a Java application</a>
-    </label>
+    <a href="/docs/build/sections/packaging/" class="">Packaging a Java application</a>
   
 
         </li>
@@ -1804,10 +1777,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-5537e478f301d8ff4f0b5a7a03c9db32" class="toggle"  />
-    <label for="section-5537e478f301d8ff4f0b5a7a03c9db32" class="flex justify-between">
-      <a href="/docs/build/sections/layout/" class="">Layout</a>
-    </label>
+    <a href="/docs/build/sections/layout/" class="">Layout</a>
   
 
         </li>
@@ -1820,10 +1790,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-33bd3456c4645cc966d192fba400a71a" class="toggle"  />
-    <label for="section-33bd3456c4645cc966d192fba400a71a" class="flex justify-between">
-      <a href="/docs/build/sections/pom/" class="">Configuration file</a>
-    </label>
+    <a href="/docs/build/sections/pom/" class="">Configuration file</a>
   
 
         </li>
@@ -1836,10 +1803,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-c956d0b428ebb6c853f314459a513393" class="toggle"  />
-    <label for="section-c956d0b428ebb6c853f314459a513393" class="flex justify-between">
-      <a href="/docs/build/sections/artifact/" class="">Artifact</a>
-    </label>
+    <a href="/docs/build/sections/artifact/" class="">Artifact</a>
   
 
         </li>
@@ -1852,10 +1816,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-d01a14431bc2161a8fed02d90e1a365b" class="toggle"  />
-    <label for="section-d01a14431bc2161a8fed02d90e1a365b" class="flex justify-between">
-      <a href="/docs/build/sections/dependencies/" class="">Dependencies</a>
-    </label>
+    <a href="/docs/build/sections/dependencies/" class="">Dependencies</a>
   
 
         </li>
@@ -1868,10 +1829,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-b838446830102a7dece872d673537390" class="toggle"  />
-    <label for="section-b838446830102a7dece872d673537390" class="flex justify-between">
-      <a href="/docs/build/sections/building/" class="">Building</a>
-    </label>
+    <a href="/docs/build/sections/building/" class="">Building</a>
   
 
         </li>
@@ -1889,8 +1847,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-ffcf8551871937aae0ce60f2b3cc616b" class="toggle"  />
-    <label for="section-ffcf8551871937aae0ce60f2b3cc616b" class="flex justify-between">
+    <input type="checkbox" id="section-48bf1202a7e278154d3a51c618c94cd6" class="toggle"  />
+    <label for="section-48bf1202a7e278154d3a51c618c94cd6" class="flex justify-between">
       <a href="/docs/background/" class="">Background</a>
     </label>
   
@@ -1983,7 +1941,6 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-
 </nav>
 
 
@@ -2004,7 +1961,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Hash table</strong>
+  <h3>Hash table</h3>
 
   <label for="toc-control">
     
@@ -2061,23 +2018,21 @@ https://github.com/alex-shpak/hugo-book
   Hash table
   <a class="anchor" href="#hash-table">#</a>
 </h1>
-<p>A hash table is a data structure often used to implement an <a href="https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/map/">associative array</a> (like a Java <code>Map</code>).</p>
-<!-- raw HTML omitted -->
+<p>A hash table is a data structure often used to implement an <a href="https://unibz-pp-24-25.github.io/docs/abstractdatatypes/sections/map/">associative array</a> (like a Java <code>Map</code>).</p>
+<!--We will start with this usage, before discussing how is can be used for other scenarios.-->
 <h2 id="associative-array">
   Associative array
   <a class="anchor" href="#associative-array">#</a>
 </h2>
 <blockquote class="book-hint warning">
-  <strong><em>Reminder.</em></strong> An <strong>associative array</strong> (or <strong>map</strong>) is a finite set of key-value pairs, where keys are distinct.
+<p><strong><em>Reminder.</em></strong> An <strong>associative array</strong> (or <strong>map</strong>) is a finite set of key-value pairs, where keys are distinct.</p>
 </blockquote>
-
 <blockquote class="book-hint warning">
-  <strong><em>Terminology.</em></strong>
-A key-value pair in associative array is also called an <strong>entry</strong>.
+<p><strong><em>Terminology.</em></strong>
+A key-value pair in associative array is also called an <strong>entry</strong>.</p>
 </blockquote>
-
 <blockquote class="book-hint info">
-  <p><strong><em>Running example.</em></strong>
+<p><strong><em>Running example.</em></strong>
 The following associative array has 5 entries.</p>
 <p>$\qquad$
 1 $\mapsto$ <code>Alice</code>
@@ -2090,57 +2045,48 @@ $\qquad$
 $\qquad$
 12 $\mapsto$ <code>Eve</code></p>
 <p>In this associative array, keys are integers, and values are strings.</p>
-
 </blockquote>
-
 <blockquote class="book-hint warning">
-  <strong><em>Notation.</em></strong>
-We will use $K$ for the type of the keys (integers in this example), and $V$ for the type of the values (strings in this example).
+<p><strong><em>Notation.</em></strong>
+We will use $K$ for the type of the keys (integers in this example), and $V$ for the type of the values (strings in this example).</p>
 </blockquote>
-
 <h2 id="structure">
   Structure
   <a class="anchor" href="#structure">#</a>
 </h2>
 <blockquote class="book-hint warning">
-  A hash table is an array $A$, whose entries are called <strong>slots</strong> (or <strong>buckets</strong>).
+<p>A hash table is an array $A$, whose entries are called <strong>slots</strong> (or <strong>buckets</strong>).</p>
 </blockquote>
-
 <p>Hash tables come in two varieties:</p>
 <ul>
 <li>chaining hash tables and</li>
 <li>hash tables with open indexing.</li>
 </ul>
 <blockquote class="book-hint warning">
-  In a <strong>chaining hash table</strong>, each slot is a pointer to a data structure (typically a linked list).
-These data structures store the entries (a.k.a. key-value pairs) of the associative array.
+<p>In a <strong>chaining hash table</strong>, each slot is a pointer to a data structure (typically a linked list).
+These data structures store the entries (a.k.a. key-value pairs) of the associative array.</p>
 </blockquote>
-
 <blockquote class="book-hint info">
-  <p><strong><em>Example (continued).</em></strong>
+<p><strong><em>Example (continued).</em></strong>
 The following is a chaining hash table, which stores our associative array.</p>
 <p><img src="/img/hashTable/ex/hashTable.svg" alt="" /></p>
 <p>The array has 4 slots, each of which points to a (possibly empty) linked list.</p>
-
 </blockquote>
-
-<p><blockquote class="book-hint warning">
-  In a hash table with <strong>open indexing</strong>, each slot stores one entry of the associative array.
+<blockquote class="book-hint warning">
+<p>In a hash table with <strong>open indexing</strong>, each slot stores one entry of the associative array.</p>
 </blockquote>
-
-We will discuss open indexing later in this section (and focus for now on chaining hash tables).</p>
+<p>We will discuss open indexing later in this section (and focus for now on chaining hash tables).</p>
 <h3 id="hash-function">
   Hash function
   <a class="anchor" href="#hash-function">#</a>
 </h3>
 <p>In a hash table, whether a certain entry is assigned to a certain slot is determined by a so-called hash function.</p>
 <blockquote class="book-hint warning">
-  <strong><em>Definition.</em></strong>
-A <strong>hash function</strong> maps each key in $K$ to an index in $A$.
+<p><strong><em>Definition.</em></strong>
+A <strong>hash function</strong> maps each key in $K$ to an index in $A$.</p>
 </blockquote>
-
 <blockquote class="book-hint info">
-  <p><strong><em>Example (continued).</em></strong>
+<p><strong><em>Example (continued).</em></strong>
 In the above example, we used</p>
 <p>$\qquad h(k) = k \mod 4$</p>
 <p>as our hash function.</p>
@@ -2149,41 +2095,34 @@ In the above example, we used</p>
 <p>which explains why the entry</p>
 <p>$\qquad$ $9 \mapsto$ <code>Dan</code></p>
 <p>is assigned to slot $1$.</p>
-
 </blockquote>
-
 <h2 id="collision">
   Collision
   <a class="anchor" href="#collision">#</a>
 </h2>
 <p>The size of the set $K$ of possible keys is often (much) larger than the size of the hash table $A$.</p>
-<p><blockquote class="book-hint info">
-  <strong><em>Example (continued).</em></strong>
+<blockquote class="book-hint info">
+<p><strong><em>Example (continued).</em></strong>
 In our example, $K$ is the set of integers.
-In Java, this set has size $2^{32}$ (i.e. more than 4 billion), which is unrealistic for the size of $A$.
+In Java, this set has size $2^{32}$ (i.e. more than 4 billion), which is unrealistic for the size of $A$.</p>
 </blockquote>
-
-As a consequence, hashing functions are usually not <a href="https://unibz-pp-23-24.github.io/docs/background/sections/set_tuple_map/#function">injective</a>.</p>
+<p>As a consequence, hashing functions are usually not <a href="https://unibz-pp-24-25.github.io/docs/background/sections/set_tuple_map/#function">injective</a>.</p>
 <blockquote class="book-hint warning">
-  <p><strong><em>Terminology.</em></strong>
+<p><strong><em>Terminology.</em></strong>
 A <strong>collision</strong> occurs when two entries of an associative array are assigned to the same slot.</p>
 <p>In other words, a collision occurs if the associative array contains two entries ${k_1 \mapsto v_1}$ and ${k_2 \mapsto v_1}$ such that $h(k_1) = h(k_2)$.</p>
-
 </blockquote>
-
 <blockquote class="book-hint info">
-  <p><strong><em>Example (continued).</em></strong>
+<p><strong><em>Example (continued).</em></strong>
 In the example above,
 1 $\mapsto$ <code>Alice</code> and 9 $\mapsto$ <code>Dan</code> are assigned to the same slot, because</p>
 <p>$$
 h(1) = h(9) = 1
 $$</p>
-
 </blockquote>
-
 <p>Collisions are often unavoidable (this is a consequence of what is sometimes called the <a href="https://en.wikipedia.org/wiki/Birthday_problem">birthday paradox</a>).</p>
 <blockquote class="book-hint info">
-  <p><strong><em>Example.</em></strong>
+<p><strong><em>Example.</em></strong>
 Let us assume that our hashing function $h$ partitions $K$ evenly across slots (like the function $h(x) = x \mod 4$ used above).</p>
 <ul>
 <li>
@@ -2195,15 +2134,13 @@ the probability of a collision is $\ge 0.5$ for $5$ entries already</p>
 the probability of a collision is $\ge 0.5$ for $38$ entries already, and $\ge 0.9$ for $69$ entries already.</p>
 </li>
 </ul>
-
 </blockquote>
-
 <h2 id="performance">
   Performance
   <a class="anchor" href="#performance">#</a>
 </h2>
 <blockquote class="book-hint warning">
-  <p><strong><em>Reminder.</em></strong>
+<p><strong><em>Reminder.</em></strong>
 An associative array exposes (at least) the following methods:</p>
 <ul>
 <li><strong>lookup</strong> (or <strong>get</strong>) takes a key as input, and returns the value for this key (if any).</li>
@@ -2211,7 +2148,6 @@ An associative array exposes (at least) the following methods:</p>
 <li><strong>remove</strong> (or <strong>delete</strong>) deletes the entry for a given key (if any).</li>
 </ul>
 </blockquote>
-
 <h3 id="worst-case">
   Worst case
   <a class="anchor" href="#worst-case">#</a>
@@ -2222,18 +2158,16 @@ we need to:</p>
 <li>compute $h(k)$</li>
 <li>search for an entry with key $k$ in the data structure that $A[h(k)]$ refers to (if any).</li>
 </ul>
-
-
-
-
-<div class="book-tabs"><input type="radio" class="toggle" name="tabs-exercise_hash_wc" id="tabs-exercise_hash_wc-0" checked="checked" />
-  <label for="tabs-exercise_hash_wc-0">Exercise</label>
-  <div class="book-tabs-content markdown-inner"><p>Consider a associative array with $n$ entries, stored as a chained hash table with linked lists (as above).</p>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-exercise_hash_wc" id="tabs-exercise_hash_wc-0" checked="checked" />
+<label for="tabs-exercise_hash_wc-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>Consider a associative array with $n$ entries, stored as a chained hash table with linked lists (as above).</p>
 <p>What is the worst case asymptotic running time of the lookup operation?</p>
 <p>Instead, what would be the best possible scenario?</p>
-</div><input type="radio" class="toggle" name="tabs-exercise_hash_wc" id="tabs-exercise_hash_wc-1"  />
-  <label for="tabs-exercise_hash_wc-1">Solution</label>
-  <div class="book-tabs-content markdown-inner"><p>A worst possible input (of size $n$) for the lookup operation consists of an input key $k$ and an input hash table $A$ with hash function $h$ such that,
+</div>
+<input type="radio" class="toggle" name="tabs-exercise_hash_wc" id="tabs-exercise_hash_wc-1"  />
+<label for="tabs-exercise_hash_wc-1">Solution</label>
+<div class="book-tabs-content markdown-inner"><p>A worst possible input (of size $n$) for the lookup operation consists of an input key $k$ and an input hash table $A$ with hash function $h$ such that,
 for each pair $k&rsquo; \mapsto v$ stored in $A$:</p>
 <ul>
 <li>$k&rsquo; \neq k$ and</li>
@@ -2243,18 +2177,17 @@ for each pair $k&rsquo; \mapsto v$ stored in $A$:</p>
 So the worst-case running time of such an algorithm is in $\Theta(n)$.</p>
 <p>A best possible input consists of an input key $k$ and an input hash table $A$ with hash function $h$ such that $h(k&rsquo;) \neq h(k)$ for each pair $k&rsquo; \mapsto v$ stored in $A$.
 A standard algorithm for lookup in this case would have constant running time (expressed as function of $n$).</p>
-</div></div>
-
+</div>
+</div>
 <h3 id="load-factor-and-rehashing">
   Load factor and rehashing
   <a class="anchor" href="#load-factor-and-rehashing">#</a>
 </h3>
 <blockquote class="book-hint warning">
-  <strong><em>Definition.</em></strong>
+<p><strong><em>Definition.</em></strong>
 Let $n$ be the number of entries in the associative array, and let $m$ be the size of $A$.
-The ratio $\alpha = \frac{n}{m}$ is called the <strong>load factor</strong> of the hash table.
+The ratio $\alpha = \frac{n}{m}$ is called the <strong>load factor</strong> of the hash table.</p>
 </blockquote>
-
 <p>A high load factor increases the chances of collision, thus affecting performance.</p>
 <p>When the load factor becomes too high, the hash table is typically <strong>rehashed</strong>, meaning that a larger hash table is created (thus with a <em>different</em> hashing function), in which entries are re-inserted.</p>
 <p>From <a href="https://en.wikipedia.org/wiki/Hash_table#Load_factor_for_separate_chaining">Wikipedia</a>, for a chaining hash table, the maximal acceptable load factor is between 1 and 3.</p>
@@ -2275,10 +2208,9 @@ So under this assumption, the <em>average</em> running time of lookup, insertion
   <a class="anchor" href="#open-indexing">#</a>
 </h2>
 <blockquote class="book-hint warning">
-  In a hash table with <strong>open indexing</strong>, each slot stores at most <em>one</em> entry of the associative array.
-In case of collision between two entries, one of them is assigned to a free slot.
+<p>In a hash table with <strong>open indexing</strong>, each slot stores at most <em>one</em> entry of the associative array.
+In case of collision between two entries, one of them is assigned to a free slot.</p>
 </blockquote>
-
 <p>This is achieved via a so-called <strong>probing</strong> function (from indices to indices), which defines an order over indices.
 More precisely:</p>
 <ul>
@@ -2304,15 +2236,15 @@ Instead, the slot is marked as a so called <strong>tombstone</strong>, which doe
   <a class="anchor" href="#implementation">#</a>
 </h3>
 <p>Java uses chained hash tables internally, with 16 slots by default.</p>
-<p>Each slot points to a <a href="https://unibz-pp-23-24.github.io/docs/datastructures/sections/list/#linkedList">linked list</a> by default.</p>
+<p>Each slot points to a <a href="https://unibz-pp-24-25.github.io/docs/datastructures/sections/list/#linkedList">linked list</a> by default.</p>
 <p>If the maximal acceptable load factor is exceeded, then the hash table is rehashed (as expected).</p>
 <p>In addition, Java uses a maximal load threshold for an individual slot.
-If this value is exceeded (but the maximal load factor is not), then the linked list for this slot is converted to a <a href="https://unibz-pp-23-24.github.io/docs/datastructures/sections/tree/#selfBalancing">red-black tree</a>.</p>
+If this value is exceeded (but the maximal load factor is not), then the linked list for this slot is converted to a <a href="https://unibz-pp-24-25.github.io/docs/datastructures/sections/tree/#selfBalancing">red-black tree</a>.</p>
 <h4 id="hashMap">
   Associative array
   <a class="anchor" href="#hashMap">#</a>
 </h4>
-<p>As we saw in the <a href="https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/map/#java">dedicated section</a>, the interface <code>java.util.Map</code> represents an associative array.</p>
+<p>As we saw in the <a href="https://unibz-pp-24-25.github.io/docs/abstractdatatypes/sections/map/#java">dedicated section</a>, the interface <code>java.util.Map</code> represents an associative array.</p>
 <ul>
 <li>
 <p>The class <code>java.util.HashMap</code> implements the interface as a hash table.</p>
@@ -2324,15 +2256,14 @@ This allows <em>iterating</em> over the entries of a map in a predictable order 
 </li>
 </ul>
 <blockquote class="book-hint danger">
-  <strong><em>Warning.</em></strong>
-In a <code>LinkedHashMap</code>, overwriting the value of an entry (with the method <code>Map.put</code>) does <em>not</em> affect the order of insertion.
+<p><strong><em>Warning.</em></strong>
+In a <code>LinkedHashMap</code>, overwriting the value of an entry (with the method <code>Map.put</code>) does <em>not</em> affect the order of insertion.</p>
 </blockquote>
-
 <h4 id="hashSet">
   Set
   <a class="anchor" href="#hashSet">#</a>
 </h4>
-<p>As we saw in the <a href="https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/set/#java">dedicated section</a>, the interface <code>java.util.Set</code> represents a set.</p>
+<p>As we saw in the <a href="https://unibz-pp-24-25.github.io/docs/abstractdatatypes/sections/set/#java">dedicated section</a>, the interface <code>java.util.Set</code> represents a set.</p>
 <ul>
 <li>
 <p>The class <code>java.util.Hashset</code> implements this interface as a hash table, where keys are the elements of the set, and an &ldquo;entry&rdquo; consists of a key only (i.e. has no value).</p>
@@ -2347,63 +2278,56 @@ It is analogous to <code>LinkedHashMap</code>, i.e. it guarantees that iteration
   <a class="anchor" href="#hashCode">#</a>
 </h3>
 <blockquote class="book-hint warning">
-  <p>In Java, the keys of a <code>Map</code> and the entries of a <code>Set</code> are <em>objects</em>.</p>
+<p>In Java, the keys of a <code>Map</code> and the entries of a <code>Set</code> are <em>objects</em>.</p>
 <p>So a Java hash function must map an <em>object</em> to a hash table slot.
 Technically, this function is the composition of:</p>
 <ul>
 <li>the function <code>hashCode</code>, which maps an object to an <code>int</code>, and</li>
 <li>a proper hash function $h$ that maps this <code>int</code> to a hash table slot.</li>
 </ul>
-
 </blockquote>
-
 <p>The function <code>hashCode</code> is an instance method of the class <code>Object</code>, thus it is inherited by default by all objects.
-This function behaves like a <a href="https://unibz-pp-23-24.github.io/docs/lambda/sections/pure/">pure function</a>, in the sense that it must return twice the same <code>int</code> if it is called twice for the same object.
+This function behaves like a <a href="https://unibz-pp-24-25.github.io/docs/lambda/sections/pure/">pure function</a>, in the sense that it must return twice the same <code>int</code> if it is called twice for the same object.
 This property <em>must be preserved</em> if the method is overridden.</p>
 <p>The hash function $h$ is also a function in the mathematical sense.
 Therefore the composition of these two functions has this property.
 As a consequence, a same key is always mapped to the same slot.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<!---->
+<!-- **_Example._** -->
+<!-- Consider the following Java program -->
+<!---->
+<!-- ```java -->
+<!-- HashMap<String, Integer> myMap = new HashMap<>(); -->
+<!-- myMap.put("Alice", 4); -->
+<!-- myMap.put("Alice", 5); -->
+<!-- ``` -->
+<!---->
+<!-- Let $o$ be the object for the string `Alice`. -->
+<!---->
+<!-- The constructor creates a hash table $A$ with 16 slots. -->
+<!---->
+<!-- The first call to the method `put` computes the slot index $k = $h$($o$.`hashCode()`) for the object $o$. -->
+<!-- Because $A[k]$ is empty, it: -->
+<!---->
+<!-- - creates a list node $n$ with key $o$ and value `4`, and -->
+<!-- - inserts a pointer to $n$ as the value of $A[k]$. -->
+<!---->
+<!-- The second call to the method `put` computes the same slot index $i = $h$($o$.`hashCode()`), for the same object $o$. -->
+<!-- Because $A[k]$ is nonempty, it searches for a node with key $o$ in the list that $A[k]$ points to, finds the node $n$, and replaces the value stored in this node with `4`. -->
 <h4 id="hashcode-and-equals">
   <code>hashCode</code> and <code>equals</code>
   <a class="anchor" href="#hashcode-and-equals">#</a>
 </h4>
 <blockquote class="book-hint danger">
-  <p><strong><em>Warning.</em></strong>
+<p><strong><em>Warning.</em></strong>
 In a Java hash table, two keys $o_1$ and $o_2$ are considered equal iff</p>
 <p>$\qquad o_1$.<code>equals(</code>$o_2$<code>)</code></p>
 <p>returns <code>true</code>.</p>
-
 </blockquote>
-
-
-
-
-
-<div class="book-tabs"><input type="radio" class="toggle" name="tabs-exercise_hashCode" id="tabs-exercise_hashCode-0" checked="checked" />
-  <label for="tabs-exercise_hashCode-0">Exercise</label>
-  <div class="book-tabs-content markdown-inner"><p>Consider the following Java class <code>City</code>, which overrides the method <a href="https://unibz-pp-23-24.github.io/docs/objects/sections/comparing/#equals">equals</a>, so that two cities are considered equal iff they have the same name and zip code.</p>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-exercise_hashCode" id="tabs-exercise_hashCode-0" checked="checked" />
+<label for="tabs-exercise_hashCode-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>Consider the following Java class <code>City</code>, which overrides the method <a href="https://unibz-pp-24-25.github.io/docs/objects/sections/comparing/#equals">equals</a>, so that two cities are considered equal iff they have the same name and zip code.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">City</span>(){
 </span></span><span style="display:flex;"><span>    String name;
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> zipCode;
@@ -2433,9 +2357,10 @@ In a Java hash table, two keys $o_1$ and $o_2$ are considered equal iff</p>
 </span></span><span style="display:flex;"><span>cities.<span style="color:#a6e22e">add</span>(bologna);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(cities.<span style="color:#a6e22e">contains</span>(bolognaAgain));
-</span></span></code></pre></div></div><input type="radio" class="toggle" name="tabs-exercise_hashCode" id="tabs-exercise_hashCode-1"  />
-  <label for="tabs-exercise_hashCode-1">Solution</label>
-  <div class="book-tabs-content markdown-inner"><p>The output is unpredictable.</p>
+</span></span></code></pre></div></div>
+<input type="radio" class="toggle" name="tabs-exercise_hashCode" id="tabs-exercise_hashCode-1"  />
+<label for="tabs-exercise_hashCode-1">Solution</label>
+<div class="book-tabs-content markdown-inner"><p>The output is unpredictable.</p>
 <p>Observe that the variables
 <code>bologna</code> and
 <code>bolognaAgain</code> point to two different objects $o_1$ and $o_2$.</p>
@@ -2458,20 +2383,19 @@ the method <code>contains</code> will return <code>true</code>.</p>
 the method <code>contains</code> will return <code>false</code>.</p>
 </li>
 </ul>
-</div></div>
-
+</div>
+</div>
 <blockquote class="book-hint danger">
-  <strong><em>Warning.</em></strong>
+<p><strong><em>Warning.</em></strong>
 As show with this exercise, if a class overrides <code>equals</code> without overriding <code>hashCode</code>,
-then the behavior of the three basic operations on hash tables (insertion, lookup and deletion) may depend on <a href="#collision">collisions</a>.
+then the behavior of the three basic operations on hash tables (insertion, lookup and deletion) may depend on <a href="#collision">collisions</a>.</p>
 </blockquote>
-
 <p>This makes the behavior of several methods implemented by <code>HashMap</code>, <code>LinkedHashMap</code>, <code>HashSet</code> and <code>LinkedHashSet</code> (among others) unpredictable.</p>
 <p>To avoid this, whenever <code>equals</code> is override, <code>hashCode</code> should be overridden accordingly.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p><blockquote class="book-hint info">
-  <p><strong><em>Example(continued).</em></strong>
+<!--In particular, if the equality of two instances is determined by equality of some class attributes, then `hashCode` should be a function (in the mathematical sense) of these attribute.-->
+<!--Semantically, _any_ function that produces an `int` out of these attributes is correct.-->
+<blockquote class="book-hint info">
+<p><strong><em>Example(continued).</em></strong>
 <code>hashCode</code> could be implemented as follows:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">City</span>(){
 </span></span><span style="display:flex;"><span>    ...
@@ -2480,14 +2404,12 @@ then the behavior of the three basic operations on hash tables (insertion, looku
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> name.<span style="color:#a6e22e">length</span> <span style="color:#f92672">+</span> zipCode;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div>
-</blockquote>
-
-In the example above,
+</span></span></code></pre></div></blockquote>
+<p>In the example above,
 <em>any</em> (pure) function that produces an <code>int</code> out of the values of <code>name</code> and <code>zipCode</code> could in theory be used to implement <code>hashCode</code> in the class <code>City</code>.</p>
 <p>However, the choice of this function may affect performance.</p>
-<p><blockquote class="book-hint info">
-  <p><strong><em>Example(continued).</em></strong>
+<blockquote class="book-hint info">
+<p><strong><em>Example(continued).</em></strong>
 The following implementation of <code>hashCode</code> also complies with the implementation of <code>equals</code> above.
 However, it has the effect of mapping all keys with type <code>City</code> to the same hash table slot.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">City</span>(){
@@ -2497,19 +2419,16 @@ However, it has the effect of mapping all keys with type <code>City</code> to th
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> 1;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div>
-</blockquote>
-
-This is why a common practice consists in implementing <code>hashCode</code> in terms of the method <code>hashCode</code> of the selected attributes (and implement the method <code>hashCode</code> of these attributes similarly, in a recursive fashion).</p>
+</span></span></code></pre></div></blockquote>
+<p>This is why a common practice consists in implementing <code>hashCode</code> in terms of the method <code>hashCode</code> of the selected attributes (and implement the method <code>hashCode</code> of these attributes similarly, in a recursive fashion).</p>
 <blockquote class="book-hint info">
-  <strong><em>Note.</em></strong>
-Most native Java classes (like <code>String</code>, <code>Integer</code>, <code>Boolean</code>, <code>ArrayList</code>, <code>HasSet</code>, etc.) already implement <code>hashCode</code> (in accordance with <code>equals</code>).
+<p><strong><em>Note.</em></strong>
+Most native Java classes (like <code>String</code>, <code>Integer</code>, <code>Boolean</code>, <code>ArrayList</code>, <code>HasSet</code>, etc.) already implement <code>hashCode</code> (in accordance with <code>equals</code>).</p>
 </blockquote>
-
 <p>The utility method <code>Objects.hash</code> takes any number of arguments, and wraps the ones that have primitive types (e.g. <code>int</code> into <code>Integer</code>).
 It returns an <code>int</code> whose value is a function of the outputs of the respective <code>hashCode</code> methods of the arguments.</p>
 <blockquote class="book-hint info">
-  <p><strong><em>Example(continued).</em></strong>
+<p><strong><em>Example(continued).</em></strong>
 In our example, we can implement <code>hashCode</code> as follows:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">City</span>(){
 </span></span><span style="display:flex;"><span>    ...
@@ -2520,9 +2439,7 @@ In our example, we can implement <code>hashCode</code> as follows:</p>
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>The returned value depends on the values of <code>name.hashCode()</code> and
 <code>Integer.valueOf(zipCode).hashCode()</code>.</p>
-
 </blockquote>
-
 </article>
  
       

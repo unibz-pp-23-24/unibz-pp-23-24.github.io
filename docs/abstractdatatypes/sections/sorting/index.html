@@ -3,27 +3,41 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Sorting # Sorting a collection (of values or objects) is needed in a variety of scenarios.
-Sorting criterion # In order to sort a collection of values (resp. objects), we need a sorting criterion, i.e. a way to compare two values (resp. objects).
-Some data types come with a natural way to compare two values. For instance, two real numbers can be compared w.r.t. $\le$.
-Observation. Some data type have several natural sorting criteria.">
+<meta name="description" content="
+  Sorting
+  #
+
+Sorting a collection (of values or objects) is needed in a variety of scenarios.
+
+  Sorting criterion
+  #
+
+In order to sort a collection of values (resp. objects), we need a sorting criterion, i.e. a way to compare two values (resp. objects).
+Some data types come with a natural way to compare two values.
+For instance, two real numbers can be compared w.r.t. $\le$.
+
+Observation.
+Some data type have several natural sorting criteria.
+For instance, strings may be sorted alphabetically from left to right (in English, Hindi, Russian, etc.) or from right to left (in Arabic, Hebrew, Persian, etc.).">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="Sorting" />
-<meta property="og:description" content="Sorting # Sorting a collection (of values or objects) is needed in a variety of scenarios.
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/abstractdatatypes/sections/sorting/">
+  <meta property="og:site_name" content="Programming project 2024-25">
+  <meta property="og:title" content="Sorting">
+  <meta property="og:description" content="Sorting # Sorting a collection (of values or objects) is needed in a variety of scenarios.
 Sorting criterion # In order to sort a collection of values (resp. objects), we need a sorting criterion, i.e. a way to compare two values (resp. objects).
 Some data types come with a natural way to compare two values. For instance, two real numbers can be compared w.r.t. $\le$.
-Observation. Some data type have several natural sorting criteria." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/sorting/" /><meta property="article:section" content="docs" />
-
-
-<title>Sorting | Programming project 2023-24</title>
-<link rel="manifest" href="/manifest.json">
+Observation. Some data type have several natural sorting criteria. For instance, strings may be sorted alphabetically from left to right (in English, Hindi, Russian, etc.) or from right to left (in Arabic, Hebrew, Persian, etc.).">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Sorting | Programming project 2024-25</title>
 <link rel="icon" href="/favicon.png" >
-<link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
-  <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.4e5dd21f0324d689aa628cb546e70eda39fb9e0b5daabb2a2c7da954eec10dab.js" integrity="sha256-Tl3SHwMk1omqYoy1RucO2jn7ngtdqrsqLH2pVO7BDas=" crossorigin="anonymous"></script>
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/abstractdatatypes/sections/sorting/">
+<link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.ef6ce3f581865a34e7a0361facaa520c0f023938171236d76684573e7df35a2c.js" integrity="sha256-72zj9YGGWjTnoDYfrKpSDA8COTgXEjbXZoRXPn3zWiw=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -73,16 +87,17 @@ https://github.com/alex-shpak/hugo-book
         
   <nav>
 <h2 class="book-brand">
-  <a class="flex align-center" href="/"><span>Programming project 2023-24</span>
+  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
   </a>
 </h2>
 
 
-<div class="book-search">
+<div class="book-search hidden">
   <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
 
 
 
@@ -95,7 +110,6 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  
 
 
 
@@ -109,8 +123,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-f1c1e874f9c9473478447bba6c7db644" class="toggle"  />
-    <label for="section-f1c1e874f9c9473478447bba6c7db644" class="flex justify-between">
+    <input type="checkbox" id="section-9c72579f4feaa5ed1d8188779488d483" class="toggle"  />
+    <label for="section-9c72579f4feaa5ed1d8188779488d483" class="flex justify-between">
       <a href="/docs/intro/" class="">This course</a>
     </label>
   
@@ -208,8 +222,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-bc4d9392f5af16481cccf0c311076888" class="toggle"  />
-    <label for="section-bc4d9392f5af16481cccf0c311076888" class="flex justify-between">
+    <input type="checkbox" id="section-0af90824fe38d1d85af672be7208f3fa" class="toggle"  />
+    <label for="section-0af90824fe38d1d85af672be7208f3fa" class="flex justify-between">
       <a href="/docs/project/" class="">Project</a>
     </label>
   
@@ -255,8 +269,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-3435ead23eba75b5ffeeb8d422f70dea" class="toggle"  />
-    <label for="section-3435ead23eba75b5ffeeb8d422f70dea" class="flex justify-between">
+    <input type="checkbox" id="section-f8aa8cff3b51717ecd2ebfbd81d061ce" class="toggle"  />
+    <label for="section-f8aa8cff3b51717ecd2ebfbd81d061ce" class="flex justify-between">
       <a href="/docs/objects/" class="">Objects and classes</a>
     </label>
   
@@ -432,8 +446,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-48bc13e86f573c257821b397e779b02e" class="toggle"  />
-    <label for="section-48bc13e86f573c257821b397e779b02e" class="flex justify-between">
+    <input type="checkbox" id="section-84375da4f2da0b5ee2a224e67daa47cd" class="toggle"  />
+    <label for="section-84375da4f2da0b5ee2a224e67daa47cd" class="flex justify-between">
       <a href="/docs/interfaces/" class="">Interfaces</a>
     </label>
   
@@ -479,8 +493,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-e06acd393c0cc6e5b27e2cd8945d3dd8" class="toggle" checked />
-    <label for="section-e06acd393c0cc6e5b27e2cd8945d3dd8" class="flex justify-between">
+    <input type="checkbox" id="section-dd500264748ddf6db6c4f8c13c5fa45b" class="toggle" checked />
+    <label for="section-dd500264748ddf6db6c4f8c13c5fa45b" class="flex justify-between">
       <a href="/docs/abstractdatatypes/" class="">Abstract data types</a>
     </label>
   
@@ -565,8 +579,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-5d60f9e6a9b7c875f51358c583373282" class="toggle"  />
-    <label for="section-5d60f9e6a9b7c875f51358c583373282" class="flex justify-between">
+    <input type="checkbox" id="section-10a993a702eb9f53bd9244a93734d095" class="toggle"  />
+    <label for="section-10a993a702eb9f53bd9244a93734d095" class="flex justify-between">
       <a href="/docs/datastructures/" class="">Data structures</a>
     </label>
   
@@ -625,8 +639,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-93b39c27c032f5f72bed81496cbb41e3" class="toggle"  />
-    <label for="section-93b39c27c032f5f72bed81496cbb41e3" class="flex justify-between">
+    <input type="checkbox" id="section-58aec3ab091b08c257b626cc09af78c5" class="toggle"  />
+    <label for="section-58aec3ab091b08c257b626cc09af78c5" class="flex justify-between">
       <a href="/docs/errors/" class="">Errors</a>
     </label>
   
@@ -641,10 +655,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-a2fa4d1523374519c87fe83f9d8226b6" class="toggle"  />
-    <label for="section-a2fa4d1523374519c87fe83f9d8226b6" class="flex justify-between">
-      <a href="/docs/errors/sections/callstack/" class="">Call stack</a>
-    </label>
+    <a href="/docs/errors/sections/callstack/" class="">Call stack</a>
   
 
         </li>
@@ -657,10 +668,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-323953d2054911560fd76ed4505d5bb2" class="toggle"  />
-    <label for="section-323953d2054911560fd76ed4505d5bb2" class="flex justify-between">
-      <a href="/docs/errors/sections/exceptions/" class="">Exceptions</a>
-    </label>
+    <a href="/docs/errors/sections/exceptions/" class="">Exceptions</a>
   
 
         </li>
@@ -673,10 +681,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-03b7629c50286af7810d9917f4bdabd2" class="toggle"  />
-    <label for="section-03b7629c50286af7810d9917f4bdabd2" class="flex justify-between">
-      <a href="/docs/errors/sections/checked/" class="">Checked vs unchecked</a>
-    </label>
+    <a href="/docs/errors/sections/checked/" class="">Checked vs unchecked</a>
   
 
         </li>
@@ -689,10 +694,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-3add83584009ceb58c28b43e0a2280c9" class="toggle"  />
-    <label for="section-3add83584009ceb58c28b43e0a2280c9" class="flex justify-between">
-      <a href="/docs/errors/sections/custom/" class="">Custom exceptions</a>
-    </label>
+    <a href="/docs/errors/sections/custom/" class="">Custom exceptions</a>
   
 
         </li>
@@ -705,10 +707,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-b9c696d05ab8cb944ddf9cef47a3abb4" class="toggle"  />
-    <label for="section-b9c696d05ab8cb944ddf9cef47a3abb4" class="flex justify-between">
-      <a href="/docs/errors/sections/errors/" class="">Java errors</a>
-    </label>
+    <a href="/docs/errors/sections/errors/" class="">Java errors</a>
   
 
         </li>
@@ -726,8 +725,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-1be866adbf7f2244d1773e0d2a159b91" class="toggle"  />
-    <label for="section-1be866adbf7f2244d1773e0d2a159b91" class="flex justify-between">
+    <input type="checkbox" id="section-759e82ae41b9619c78e632572d50480a" class="toggle"  />
+    <label for="section-759e82ae41b9619c78e632572d50480a" class="flex justify-between">
       <a href="/docs/recursion/" class="">Recursion</a>
     </label>
   
@@ -786,8 +785,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-b7bc445f96cbe2bd1034c5f1c5d075bb" class="toggle"  />
-    <label for="section-b7bc445f96cbe2bd1034c5f1c5d075bb" class="flex justify-between">
+    <input type="checkbox" id="section-a1720661345b5872c845343fb6615be9" class="toggle"  />
+    <label for="section-a1720661345b5872c845343fb6615be9" class="flex justify-between">
       <a href="/docs/input/" class="">I/O and serialization</a>
     </label>
   
@@ -802,10 +801,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-09ea3b18445537bd77c25d3db6ab2fcf" class="toggle"  />
-    <label for="section-09ea3b18445537bd77c25d3db6ab2fcf" class="flex justify-between">
-      <a href="/docs/input/sections/files/" class="">Paths and files in Java</a>
-    </label>
+    <a href="/docs/input/sections/files/" class="">Paths and files in Java</a>
   
 
         </li>
@@ -818,10 +814,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-640b25aadb55f28505bfbbe5a5f7073d" class="toggle"  />
-    <label for="section-640b25aadb55f28505bfbbe5a5f7073d" class="flex justify-between">
-      <a href="/docs/input/sections/read/" class="">Reading from and writing to a file in Java</a>
-    </label>
+    <a href="/docs/input/sections/read/" class="">Reading from and writing to a file in Java</a>
   
 
         </li>
@@ -834,10 +827,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-7efe7741b54b5b602db75415a7806ef4" class="toggle"  />
-    <label for="section-7efe7741b54b5b602db75415a7806ef4" class="flex justify-between">
-      <a href="/docs/input/sections/property/" class="">Configuration files</a>
-    </label>
+    <a href="/docs/input/sections/property/" class="">Configuration files</a>
   
 
         </li>
@@ -850,10 +840,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-37fdfe811c449d15e51a84c19673df2f" class="toggle"  />
-    <label for="section-37fdfe811c449d15e51a84c19673df2f" class="flex justify-between">
-      <a href="/docs/input/sections/serialize/" class="">Serialization</a>
-    </label>
+    <a href="/docs/input/sections/serialize/" class="">Serialization</a>
   
 
         </li>
@@ -866,10 +853,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-ec41b3fcd24b301058a1bd1bd7b5c8e7" class="toggle"  />
-    <label for="section-ec41b3fcd24b301058a1bd1bd7b5c8e7" class="flex justify-between">
-      <a href="/docs/input/sections/json/" class="">JSON Serialization</a>
-    </label>
+    <a href="/docs/input/sections/json/" class="">JSON Serialization</a>
   
 
         </li>
@@ -887,8 +871,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-baf3ea6e28839ac044570d2d313c8794" class="toggle"  />
-    <label for="section-baf3ea6e28839ac044570d2d313c8794" class="flex justify-between">
+    <input type="checkbox" id="section-9bfff01f1c5ef64a53927faf30620ccf" class="toggle"  />
+    <label for="section-9bfff01f1c5ef64a53927faf30620ccf" class="flex justify-between">
       <a href="/docs/regex/" class="">Regular expressions</a>
     </label>
   
@@ -947,8 +931,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-ae8fba9e927e4c55801a4e71f6b7d054" class="toggle"  />
-    <label for="section-ae8fba9e927e4c55801a4e71f6b7d054" class="flex justify-between">
+    <input type="checkbox" id="section-882764aad745f79e099c5a43798784f9" class="toggle"  />
+    <label for="section-882764aad745f79e099c5a43798784f9" class="flex justify-between">
       <a href="/docs/lambda/" class="">Callback methods and lambda expressions</a>
     </label>
   
@@ -1046,8 +1030,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-41a2765a9682fb1ce579fb1661f1250d" class="toggle"  />
-    <label for="section-41a2765a9682fb1ce579fb1661f1250d" class="flex justify-between">
+    <input type="checkbox" id="section-7783f19754a3a0ec1529ed7ac208c3ab" class="toggle"  />
+    <label for="section-7783f19754a3a0ec1529ed7ac208c3ab" class="flex justify-between">
       <a href="/docs/stream/" class="">Streams in Java</a>
     </label>
   
@@ -1158,8 +1142,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-87d53bbeb97db8aab24c02b4d45460f2" class="toggle"  />
-    <label for="section-87d53bbeb97db8aab24c02b4d45460f2" class="flex justify-between">
+    <input type="checkbox" id="section-793e09c315e082fb44de3238b9ad707b" class="toggle"  />
+    <label for="section-793e09c315e082fb44de3238b9ad707b" class="flex justify-between">
       <a href="/docs/generics/" class="">Generic programming</a>
     </label>
   
@@ -1244,8 +1228,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-5dcccd15580bb824ba055538c97bdea6" class="toggle"  />
-    <label for="section-5dcccd15580bb824ba055538c97bdea6" class="flex justify-between">
+    <input type="checkbox" id="section-3876422a93470dcccad1a719c99a8e17" class="toggle"  />
+    <label for="section-3876422a93470dcccad1a719c99a8e17" class="flex justify-between">
       <a href="/docs/multithreading/" class="">Multithreading</a>
     </label>
   
@@ -1356,8 +1340,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-9d77b970a03dc72b048d9fce7bfe272f" class="toggle"  />
-    <label for="section-9d77b970a03dc72b048d9fce7bfe272f" class="flex justify-between">
+    <input type="checkbox" id="section-990bc84b6dc3891b1963528a24b45e2e" class="toggle"  />
+    <label for="section-990bc84b6dc3891b1963528a24b45e2e" class="flex justify-between">
       <a href="/docs/unittests/" class="">Unit tests</a>
     </label>
   
@@ -1372,10 +1356,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-796939dc839b82c2ff89d99e47011262" class="toggle"  />
-    <label for="section-796939dc839b82c2ff89d99e47011262" class="flex justify-between">
-      <a href="/docs/unittests/sections/structured/" class="">Code units</a>
-    </label>
+    <a href="/docs/unittests/sections/structured/" class="">Code units</a>
   
 
         </li>
@@ -1388,10 +1369,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-ad5c3d825858d4a9ca4ad02d541f7121" class="toggle"  />
-    <label for="section-ad5c3d825858d4a9ca4ad02d541f7121" class="flex justify-between">
-      <a href="/docs/unittests/sections/tdd/" class="">Development driven by unit tests</a>
-    </label>
+    <a href="/docs/unittests/sections/tdd/" class="">Development driven by unit tests</a>
   
 
         </li>
@@ -1404,10 +1382,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-7e09be54c45521908b57f9eaf194f5f6" class="toggle"  />
-    <label for="section-7e09be54c45521908b57f9eaf194f5f6" class="flex justify-between">
-      <a href="/docs/unittests/sections/junit/" class="">in Java</a>
-    </label>
+    <a href="/docs/unittests/sections/junit/" class="">in Java</a>
   
 
         </li>
@@ -1425,8 +1400,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-0407f110c1b3ed4992fcb7fc5f05aa12" class="toggle"  />
-    <label for="section-0407f110c1b3ed4992fcb7fc5f05aa12" class="flex justify-between">
+    <input type="checkbox" id="section-4aed4e1c4b6179fd330f627f75eb18b3" class="toggle"  />
+    <label for="section-4aed4e1c4b6179fd330f627f75eb18b3" class="flex justify-between">
       <a href="/docs/simplify/" class="">Simplifying code</a>
     </label>
   
@@ -1485,8 +1460,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-494fdb80ca3ad5d2868cb487a042ae27" class="toggle"  />
-    <label for="section-494fdb80ca3ad5d2868cb487a042ae27" class="flex justify-between">
+    <input type="checkbox" id="section-ba3d9d7fa2d604a47f68a6d7a7a9d2a2" class="toggle"  />
+    <label for="section-ba3d9d7fa2d604a47f68a6d7a7a9d2a2" class="flex justify-between">
       <a href="/docs/env/" class="">Development environment</a>
     </label>
   
@@ -1623,8 +1598,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-2870a15a3d2cff84408f43cbb1e77f97" class="toggle"  />
-    <label for="section-2870a15a3d2cff84408f43cbb1e77f97" class="flex justify-between">
+    <input type="checkbox" id="section-3c6a8c431d500080599ec572e56415d8" class="toggle"  />
+    <label for="section-3c6a8c431d500080599ec572e56415d8" class="flex justify-between">
       <a href="/docs/git/" class="">git</a>
     </label>
   
@@ -1774,8 +1749,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-44fa5eb3511a340ff4e9042080604b5c" class="toggle"  />
-    <label for="section-44fa5eb3511a340ff4e9042080604b5c" class="flex justify-between">
+    <input type="checkbox" id="section-39b7a0b404320b4007d4505305b8f4f4" class="toggle"  />
+    <label for="section-39b7a0b404320b4007d4505305b8f4f4" class="flex justify-between">
       <a href="/docs/build/" class="">Build automation</a>
     </label>
   
@@ -1790,10 +1765,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-0c816e62fd66eb322757addb01600cdd" class="toggle"  />
-    <label for="section-0c816e62fd66eb322757addb01600cdd" class="flex justify-between">
-      <a href="/docs/build/sections/packaging/" class="">Packaging a Java application</a>
-    </label>
+    <a href="/docs/build/sections/packaging/" class="">Packaging a Java application</a>
   
 
         </li>
@@ -1806,10 +1778,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-5537e478f301d8ff4f0b5a7a03c9db32" class="toggle"  />
-    <label for="section-5537e478f301d8ff4f0b5a7a03c9db32" class="flex justify-between">
-      <a href="/docs/build/sections/layout/" class="">Layout</a>
-    </label>
+    <a href="/docs/build/sections/layout/" class="">Layout</a>
   
 
         </li>
@@ -1822,10 +1791,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-33bd3456c4645cc966d192fba400a71a" class="toggle"  />
-    <label for="section-33bd3456c4645cc966d192fba400a71a" class="flex justify-between">
-      <a href="/docs/build/sections/pom/" class="">Configuration file</a>
-    </label>
+    <a href="/docs/build/sections/pom/" class="">Configuration file</a>
   
 
         </li>
@@ -1838,10 +1804,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-c956d0b428ebb6c853f314459a513393" class="toggle"  />
-    <label for="section-c956d0b428ebb6c853f314459a513393" class="flex justify-between">
-      <a href="/docs/build/sections/artifact/" class="">Artifact</a>
-    </label>
+    <a href="/docs/build/sections/artifact/" class="">Artifact</a>
   
 
         </li>
@@ -1854,10 +1817,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-d01a14431bc2161a8fed02d90e1a365b" class="toggle"  />
-    <label for="section-d01a14431bc2161a8fed02d90e1a365b" class="flex justify-between">
-      <a href="/docs/build/sections/dependencies/" class="">Dependencies</a>
-    </label>
+    <a href="/docs/build/sections/dependencies/" class="">Dependencies</a>
   
 
         </li>
@@ -1870,10 +1830,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-b838446830102a7dece872d673537390" class="toggle"  />
-    <label for="section-b838446830102a7dece872d673537390" class="flex justify-between">
-      <a href="/docs/build/sections/building/" class="">Building</a>
-    </label>
+    <a href="/docs/build/sections/building/" class="">Building</a>
   
 
         </li>
@@ -1891,8 +1848,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-ffcf8551871937aae0ce60f2b3cc616b" class="toggle"  />
-    <label for="section-ffcf8551871937aae0ce60f2b3cc616b" class="flex justify-between">
+    <input type="checkbox" id="section-48bf1202a7e278154d3a51c618c94cd6" class="toggle"  />
+    <label for="section-48bf1202a7e278154d3a51c618c94cd6" class="flex justify-between">
       <a href="/docs/background/" class="">Background</a>
     </label>
   
@@ -1985,7 +1942,6 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-
 </nav>
 
 
@@ -2006,7 +1962,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Sorting</strong>
+  <h3>Sorting</h3>
 
   <label for="toc-control">
     
@@ -2061,27 +2017,21 @@ https://github.com/alex-shpak/hugo-book
 <p>Some data types come with a natural way to compare two values.
 For instance, two real numbers can be compared w.r.t. $\le$.</p>
 <blockquote class="book-hint info">
-  <strong><em>Observation.</em></strong>
+<p><strong><em>Observation.</em></strong>
 Some data type have several natural sorting criteria.
-For instance, strings may be sorted alphabetically from left to right (in English, Hindi, Russian, etc.) or from right to left (in Arabic, Hebrew, Persian, etc.).
+For instance, strings may be sorted alphabetically from left to right (in English, Hindi, Russian, etc.) or from right to left (in Arabic, Hebrew, Persian, etc.).</p>
 </blockquote>
-
 <blockquote>
 <p><strong><em>Question.</em></strong>
 What about objects, i.e.
-which sorting criterion can be used to sort a collection of people, cities, sets, lists, trees, etc.?</p>
-</blockquote>
+which sorting criterion can be used to sort a collection of people, cities, sets, lists, trees, etc.?</p></blockquote>
 <blockquote>
 <p><strong><em>Answer.</em></strong>
-Any <a href="https://unibz-pp-23-24.github.io/docs/background/sections/order/#preorder">total preorder</a> (i.e. a total, reflexive and transitive binary relation) can be used to sort a collection.</p>
-</blockquote>
-
-
-
-
-<div class="book-tabs"><input type="radio" class="toggle" name="tabs-exercise_preorders" id="tabs-exercise_preorders-0" checked="checked" />
-  <label for="tabs-exercise_preorders-0">Exercise</label>
-  <div class="book-tabs-content markdown-inner"><p>Which of the following are total preorders (i.e. can be used as a sorting criterion)?</p>
+Any <a href="https://unibz-pp-24-25.github.io/docs/background/sections/order/#preorder">total preorder</a> (i.e. a total, reflexive and transitive binary relation) can be used to sort a collection.</p></blockquote>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-exercise_preorders" id="tabs-exercise_preorders-0" checked="checked" />
+<label for="tabs-exercise_preorders-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>Which of the following are total preorders (i.e. can be used as a sorting criterion)?</p>
 <ol>
 <li>Compare two real numbers w.r.t. to their absolute value.</li>
 <li>Compare two people w.r.t. to their age.</li>
@@ -2101,9 +2051,10 @@ $\big(p_1.{\text{age}} \le p_2.{\text{age}}$ or $p_1.{\text{size}} \le p_2.{\tex
 <li>Compare two sets w.r.t. to set inclusion.</li>
 <li>Compare two lists of integers by first sorting them, and then comparing them lexicographically.</li>
 </ol>
-</div><input type="radio" class="toggle" name="tabs-exercise_preorders" id="tabs-exercise_preorders-1"  />
-  <label for="tabs-exercise_preorders-1">Solution</label>
-  <div class="book-tabs-content markdown-inner"><ul>
+</div>
+<input type="radio" class="toggle" name="tabs-exercise_preorders" id="tabs-exercise_preorders-1"  />
+<label for="tabs-exercise_preorders-1">Solution</label>
+<div class="book-tabs-content markdown-inner"><ul>
 <li>
 <ol start="3">
 <li>is a partial preorder,</li>
@@ -2120,8 +2071,9 @@ $\big(p_1.{\text{age}} \le p_2.{\text{age}}$ or $p_1.{\text{size}} \le p_2.{\tex
 </ol>
 </li>
 </ul>
-<p>The others are total preorders.</p></div></div>
-
+<p>The others are total preorders.</p>
+</div>
+</div>
 <h2 id="properties-of-sorting-algorithms">
   Properties of sorting algorithms
   <a class="anchor" href="#properties-of-sorting-algorithms">#</a>
@@ -2134,12 +2086,11 @@ We will <em>not</em> cover them this semester (with one exception), because this
   <a class="anchor" href="#stable">#</a>
 </h3>
 <blockquote class="book-hint warning">
-  <strong><em>Definition.</em></strong>
-A sorting algorithm is <strong>stable</strong> if it preserves the initial order (in the input collection) of two elements that are equivalent w.r.t. to the sorting criterion.
+<p><strong><em>Definition.</em></strong>
+A sorting algorithm is <strong>stable</strong> if it preserves the initial order (in the input collection) of two elements that are equivalent w.r.t. to the sorting criterion.</p>
 </blockquote>
-
 <blockquote class="book-hint info">
-  <p><strong><em>Example.</em></strong>
+<p><strong><em>Example.</em></strong>
 Consider an array <code>[u1, u2]</code> of type <code>Unit[]</code>,
 where (the objects referenced by) <code>u1</code> and <code>u2</code> both have health <code>2</code>.
 And let us sort the elements of this array by health.</p>
@@ -2148,16 +2099,14 @@ And let us sort the elements of this array by health.</p>
 <li>A <em>non-stable</em> sorting algorithm may output <code>[u1, u2]</code> or <code>[u2, u1]</code>.</li>
 </ul>
 </blockquote>
-
 <h3 id="in-place">
   In place
   <a class="anchor" href="#in-place">#</a>
 </h3>
 <blockquote class="book-hint warning">
-  <strong><em>Definition.</em></strong>
-A sorting algorithm is <strong>in place</strong> if it does not use additional data structures.
+<p><strong><em>Definition.</em></strong>
+A sorting algorithm is <strong>in place</strong> if it does not use additional data structures.</p>
 </blockquote>
-
 <h2 id="in-java">
   in Java
   <a class="anchor" href="#in-java">#</a>
@@ -2173,18 +2122,16 @@ We highlight here two of them.</p>
   <a class="anchor" href="#comparable">#</a>
 </h4>
 <p>A class <code>T</code> can implement the interface <code>Comparable&lt;T&gt;</code>.</p>
-<p><blockquote class="book-hint info">
-  <p><strong><em>Example.</em></strong>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong>
 We can create a class <code>City</code> that implements <code>Comparable&lt;City&gt;</code> as follows:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">City</span> <span style="color:#66d9ef">implements</span> Comparable<span style="color:#f92672">&lt;</span>City<span style="color:#f92672">&gt;</span> {
 </span></span><span style="display:flex;"><span>    ...
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div>
-</blockquote>
-
-The interface <code>Comparable&lt;T&gt;</code> specifies a single method</p>
+</span></span></code></pre></div></blockquote>
+<p>The interface <code>Comparable&lt;T&gt;</code> specifies a single method</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">compareTo</span> (T otherObject);
-</span></span></code></pre></div><p>This method should define a <a href="https://unibz-pp-23-24.github.io/docs/background/sections/order/#preorder">total preorder</a> $\preceq$ over instances of <code>T</code>, as follows.</p>
+</span></span></code></pre></div><p>This method should define a <a href="https://unibz-pp-24-25.github.io/docs/background/sections/order/#preorder">total preorder</a> $\preceq$ over instances of <code>T</code>, as follows.</p>
 <p>Let $o_1$ be the current object (i.e. the instance used to call the method), and let $o_2$ be the other object (i.e. the argument of the method <code>compareTo</code>).
 Then this method should return:</p>
 <ul>
@@ -2193,7 +2140,7 @@ Then this method should return:</p>
 <li>a positive integer otherwise.</li>
 </ul>
 <blockquote class="book-hint info">
-  <p><strong><em>Example (continued).</em></strong>
+<p><strong><em>Example (continued).</em></strong>
 Here is an implementation of the method <code>compareTo</code> where cities are compared by zip code:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">City</span> <span style="color:#66d9ef">implements</span> Comparable<span style="color:#f92672">&lt;</span>City<span style="color:#f92672">&gt;</span> {
 </span></span><span style="display:flex;"><span>
@@ -2213,17 +2160,14 @@ Here is an implementation of the method <code>compareTo</code> where cities are 
 </span></span><span style="display:flex;"><span>                0 : 1;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div>
-</blockquote>
-
+</span></span></code></pre></div></blockquote>
 <blockquote class="book-hint info">
-  <strong><em>Hint.</em></strong>
+<p><strong><em>Hint.</em></strong>
 Some native Java classes already implement <code>Comparable</code>, in the expected way.
-For instance <code>Integer</code>, <code>String</code> (left to right alphabetical order), etc.
+For instance <code>Integer</code>, <code>String</code> (left to right alphabetical order), etc.</p>
 </blockquote>
-
 <blockquote class="book-hint info">
-  <p><strong><em>Hint.</em></strong>
+<p><strong><em>Hint.</em></strong>
 Comparator methods are also available for primitive types (like <code>int</code>, or <code>bool</code>).
 For instance, <code>Integer</code> has a static method <code>compare(int x, int y)</code> that behaves like <code>compareTo</code>.
 So the method <code>compareTo</code> in the example above can be simplified as follows:</p>
@@ -2235,20 +2179,16 @@ So the method <code>compareTo</code> in the example above can be simplified as f
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> Integer.<span style="color:#a6e22e">compare</span>(zipCode, otherCity.<span style="color:#a6e22e">zipCode</span>);
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div>
-</blockquote>
-
+</span></span></code></pre></div></blockquote>
 <blockquote class="book-hint danger">
-  <p><strong><em>Warning.</em></strong>
+<p><strong><em>Warning.</em></strong>
 The method <code>compareTo</code> is implicitly used by some of Java&rsquo;s native data structures (e.g. <code>TreeSet</code>).
 So it is usually recommended to implement <code>compareTo</code> in such a way that it &ldquo;complies&rdquo; with <code>equals</code> (and <code>hashCode</code>).
 This means that</p>
 <p>$\qquad \qquad $<code>o1.compareTo(o2)</code> should return <code>0</code> iff <code>o1.equals(o2)</code> returns <code>true</code>.</p>
 <p>If you want to use a sorting criterion that does <em>not</em> satisfy this constraint (or if you want to use alternative sorting criteria for the same class),
 then we recommend using a <code>Comparator</code> instead (explained below).</p>
-
 </blockquote>
-
 <h4 id="comparator">
   Comparator
   <a class="anchor" href="#comparator">#</a>
@@ -2258,7 +2198,7 @@ then we recommend using a <code>Comparator</code> instead (explained below).</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">compare</span>(T o1, T o2)
 </span></span></code></pre></div><p>The return value (negative integer, <code>0</code> or positive integer) has the same meaning as the one of <code>Comparable.compareTo</code>.</p>
 <blockquote class="book-hint info">
-  <p><strong><em>Example (continued).</em></strong>
+<p><strong><em>Example (continued).</em></strong>
 We can create another comparator for our class <code>City</code>, which uses the city&rsquo; name rather than zip code.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CityNameComparator</span> <span style="color:#66d9ef">implements</span> Comparator<span style="color:#f92672">&lt;</span>City<span style="color:#f92672">&gt;</span> {
 </span></span><span style="display:flex;"><span>
@@ -2267,11 +2207,9 @@ We can create another comparator for our class <code>City</code>, which uses the
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> c1.<span style="color:#a6e22e">name</span>.<span style="color:#a6e22e">compareTo</span>(c2.<span style="color:#a6e22e">name</span>);
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div>
-</blockquote>
-
+</span></span></code></pre></div></blockquote>
 <p>The interface <code>Comparator</code> also provides convenient (default) methods.
-For instance, the method <a href="https://docs.oracle.com/javase/17/docs/api/java/util/Comparator.html#thenComparing-java.util.Comparator-">thenComparing</a> returns the <a href="https://unibz-pp-23-24.github.io/docs/background/sections/order/#lexProduct">lexicographic product</a> of two comparators.</p>
+For instance, the method <a href="https://docs.oracle.com/javase/17/docs/api/java/util/Comparator.html#thenComparing-java.util.Comparator-">thenComparing</a> returns the <a href="https://unibz-pp-24-25.github.io/docs/background/sections/order/#lexProduct">lexicographic product</a> of two comparators.</p>
 <h3 id="sorting-1">
   Sorting
   <a class="anchor" href="#sorting-1">#</a>
@@ -2284,15 +2222,13 @@ We highlight here a few of them.</p>
 </h4>
 <p>For an array of type <code>T[]</code>, the static method <code>Arrays.sort(T[] array)</code> can be called as follows:</p>
 <blockquote class="book-hint info">
-  <p><strong><em>Example.</em></strong></p>
+<p><strong><em>Example.</em></strong></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> integers <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> integer<span style="color:#f92672">[]</span>{2,1,3,2};
 </span></span><span style="display:flex;"><span>Arrays.<span style="color:#a6e22e">sort</span>(integers)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Outputs [1,2,2,3]</span>
 </span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(Arrays.<span style="color:#a6e22e">toString</span>(array));
-</span></span></code></pre></div>
-</blockquote>
-
+</span></span></code></pre></div></blockquote>
 <p>This method sorts the array using the so-called &ldquo;natural ordering&rdquo; for type <code>T</code>.
 The &ldquo;natural ordering&rdquo; is:</p>
 <ul>
@@ -2303,18 +2239,16 @@ a list can be found <a href="https://docs.oracle.com/javase/tutorial/collections
 </ul>
 <p>The method <code>Arrays.sort(T[] array, Comparator&lt;? super T&gt; c)</code> is similar, but it uses the input comparator to sort the array.</p>
 <blockquote class="book-hint info">
-  <p><strong><em>Example(continued).</em></strong></p>
+<p><strong><em>Example(continued).</em></strong></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span>City trento <span style="color:#f92672">=</span>  <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Trento&#34;</span>, 38121);
 </span></span><span style="display:flex;"><span>City bologna <span style="color:#f92672">=</span>  <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Bologna&#34;</span>, 40100);
 </span></span><span style="display:flex;"><span>City<span style="color:#f92672">[]</span> cities <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City<span style="color:#f92672">[]</span>{trento, bologna};
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// After this, the array &#39;cities&#39; contains [bologna, trento]</span>
 </span></span><span style="display:flex;"><span>Arrays.<span style="color:#a6e22e">sort</span>(cities, <span style="color:#66d9ef">new</span> CityNameComparator());
-</span></span></code></pre></div>
-</blockquote>
-
+</span></span></code></pre></div></blockquote>
 <blockquote class="book-hint warning">
-  <p><strong><em>Property.</em></strong> Both methods guarantee <em>stable</em> sorting.
+<p><strong><em>Property.</em></strong> Both methods guarantee <em>stable</em> sorting.
 For instance:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span>City trento1 <span style="color:#f92672">=</span>  <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Trento&#34;</span>, 38122);
 </span></span><span style="display:flex;"><span>City bologna <span style="color:#f92672">=</span>  <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Bologna&#34;</span>, 40100);
@@ -2323,19 +2257,15 @@ For instance:</p>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// After this, the array &#39;cities&#39; contains [bologna, trento1, trento2]</span>
 </span></span><span style="display:flex;"><span>Arrays.<span style="color:#a6e22e">sort</span>(cities, <span style="color:#66d9ef">new</span> CityNameComparator());
-</span></span></code></pre></div>
-</blockquote>
-
+</span></span></code></pre></div></blockquote>
 <blockquote class="book-hint info">
-  <p><strong><em>Note.</em></strong>
+<p><strong><em>Note.</em></strong>
 For an array with primitive type (like <code>int[]</code>), these two methods use (a version of) the <a href="https://en.wikipedia.org/wiki/Quicksort">Quicksort</a> algorithm,
 even though Quicksort is <em>not</em> stable.
 Stability is irrelevant for these types: for instance, permuting the elements of the array <code>[5,5]</code> yields the same array.</p>
 <p>However, for an array with (arbitrary) reference type (like <code>City[]</code>), these methods use (a version of) the <a href="https://en.wikipedia.org/wiki/Merge_sort">MergeSort</a> algorithm,
 which is stable.</p>
-
 </blockquote>
-
 <h4 id="sortList">
   Sorting a list
   <a class="anchor" href="#sortList">#</a>
@@ -2344,7 +2274,7 @@ which is stable.</p>
 In particular, it also guarantees stable sorting.
 Like <code>Arrays.sort</code>, it comes in two flavors (with and without comparator).</p>
 <blockquote class="book-hint info">
-  <p><strong><em>Example(continued).</em></strong></p>
+<p><strong><em>Example(continued).</em></strong></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span>City bologna <span style="color:#f92672">=</span>  <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Bologna&#34;</span>, 40100);
 </span></span><span style="display:flex;"><span>City trento <span style="color:#f92672">=</span>  <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Trento&#34;</span>, 38122);
 </span></span><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>City<span style="color:#f92672">&gt;</span> cities <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> LinkedList();
@@ -2357,9 +2287,7 @@ Like <code>Arrays.sort</code>, it comes in two flavors (with and without compara
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// After this, the list &#39;cities&#39; contains [bologna, trento],</span>
 </span></span><span style="display:flex;"><span>Collections.<span style="color:#a6e22e">sort</span>(cities, <span style="color:#66d9ef">new</span> CitynameComparator());
-</span></span></code></pre></div>
-</blockquote>
-
+</span></span></code></pre></div></blockquote>
 <p>The interface <code>List</code> also provides a default method <code>sort</code> that takes a comparator as argument.
 So in the above example, we could have used:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>cities.<span style="color:#a6e22e">sort</span>(<span style="color:#66d9ef">new</span> CitynameComparator());
@@ -2369,13 +2297,10 @@ So in the above example, we could have used:</p>
   Usage
   <a class="anchor" href="#usage">#</a>
 </h3>
-
-
-
-
-<div class="book-tabs"><input type="radio" class="toggle" name="tabs-exercise_sorting" id="tabs-exercise_sorting-0" checked="checked" />
-  <label for="tabs-exercise_sorting-0">Exercise</label>
-  <div class="book-tabs-content markdown-inner"><p>Consider the following class:</p>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-exercise_sorting" id="tabs-exercise_sorting-0" checked="checked" />
+<label for="tabs-exercise_sorting-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>Consider the following class:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Hero</span> {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    String name;
@@ -2390,9 +2315,10 @@ So in the above example, we could have used:</p>
 that takes as input an array of type <code>Hero[]</code>, and prints the number of occurrences of each hero in this array,
 where two heroes are considered identical if they have the same name and health.</p>
 <p><strong><em>Constraint.</em></strong> For this exercise, you <em>cannot</em> use an associative array (a.k.a. Java <code>Map</code>).</p>
-</div><input type="radio" class="toggle" name="tabs-exercise_sorting" id="tabs-exercise_sorting-1"  />
-  <label for="tabs-exercise_sorting-1">Possible solution</label>
-  <div class="book-tabs-content markdown-inner"><p>Create a comparator (compare first by health, then by name):</p>
+</div>
+<input type="radio" class="toggle" name="tabs-exercise_sorting" id="tabs-exercise_sorting-1"  />
+<label for="tabs-exercise_sorting-1">Possible solution</label>
+<div class="book-tabs-content markdown-inner"><p>Create a comparator (compare first by health, then by name):</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">HeroComparator</span> <span style="color:#66d9ef">implements</span> Comparator<span style="color:#f92672">&lt;</span>Hero<span style="color:#f92672">&gt;</span> {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
@@ -2435,21 +2361,19 @@ where two heroes are considered identical if they have the same name and health.
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">printHero</span>(Hero hero, <span style="color:#66d9ef">int</span> occ) {
 </span></span><span style="display:flex;"><span>    System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(hero.<span style="color:#a6e22e">name</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;,&#34;</span> <span style="color:#f92672">+</span> hero.<span style="color:#a6e22e">health</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;: &#34;</span> <span style="color:#f92672">+</span> occ);
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div></div></div>
-
+</span></span></code></pre></div></div>
+</div>
 <blockquote class="book-hint info">
-  <p><strong><em>Note.</em></strong>
+<p><strong><em>Note.</em></strong>
 The solution to the exercise above relies on sorting the input array.
-But the same problem could be solved with an <a href="https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/map/">associative array</a>, as follows:</p>
+But the same problem could be solved with an <a href="https://unibz-pp-24-25.github.io/docs/abstractdatatypes/sections/map/">associative array</a>, as follows:</p>
 <ul>
 <li>override <code>equals</code> and <code>hashCode</code> in the class <code>Hero</code>,</li>
 <li>compute a <code>Map&lt;Hero, Integer&gt;</code> that maps each hero to its number of occurrences in the input array,</li>
 <li>iterates over the entries of this map and print them.</li>
 </ul>
 <p>When it comes to running time, the latter solution is more efficient <em>on average</em> (assuming a hashmap), but less efficient <em>in the worst case</em>.</p>
-
 </blockquote>
-
 </article>
  
       

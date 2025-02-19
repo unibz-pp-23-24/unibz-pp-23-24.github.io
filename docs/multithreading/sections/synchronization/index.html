@@ -3,23 +3,33 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Synchronization # The behavior of a program that runs multiple threads can be hard to predict. In particular, two threads may compete to access a same resource (e.g. the value of some object&rsquo;s attribute), without guarantee on the order in which they access it. This may lead (among other things) to a race condition
-Programming languages that support multithreading also allow expressing constraints on the order of execution of some instructions.">
+<meta name="description" content="
+  Synchronization
+  #
+
+The behavior of a program that runs multiple threads can be hard to predict.
+In particular, two threads may compete to access a same resource (e.g. the value of some object&rsquo;s attribute),
+without guarantee on the order in which they access it.
+This may lead (among other things) to a race condition
+Programming languages that support multithreading also allow expressing constraints on the order of execution of some instructions.
+For instance, we saw earlier that a thread can be forced to wait for a child thread to terminate before resuming its execution.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="Synchronization" />
-<meta property="og:description" content="Synchronization # The behavior of a program that runs multiple threads can be hard to predict. In particular, two threads may compete to access a same resource (e.g. the value of some object&rsquo;s attribute), without guarantee on the order in which they access it. This may lead (among other things) to a race condition
-Programming languages that support multithreading also allow expressing constraints on the order of execution of some instructions." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/multithreading/sections/synchronization/" /><meta property="article:section" content="docs" />
-
-
-<title>Synchronization | Programming project 2023-24</title>
-<link rel="manifest" href="/manifest.json">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/multithreading/sections/synchronization/">
+  <meta property="og:site_name" content="Programming project 2024-25">
+  <meta property="og:title" content="Synchronization">
+  <meta property="og:description" content="Synchronization # The behavior of a program that runs multiple threads can be hard to predict. In particular, two threads may compete to access a same resource (e.g. the value of some object’s attribute), without guarantee on the order in which they access it. This may lead (among other things) to a race condition
+Programming languages that support multithreading also allow expressing constraints on the order of execution of some instructions. For instance, we saw earlier that a thread can be forced to wait for a child thread to terminate before resuming its execution.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Synchronization | Programming project 2024-25</title>
 <link rel="icon" href="/favicon.png" >
-<link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
-  <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.4e5dd21f0324d689aa628cb546e70eda39fb9e0b5daabb2a2c7da954eec10dab.js" integrity="sha256-Tl3SHwMk1omqYoy1RucO2jn7ngtdqrsqLH2pVO7BDas=" crossorigin="anonymous"></script>
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/multithreading/sections/synchronization/">
+<link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.ef6ce3f581865a34e7a0361facaa520c0f023938171236d76684573e7df35a2c.js" integrity="sha256-72zj9YGGWjTnoDYfrKpSDA8COTgXEjbXZoRXPn3zWiw=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -69,16 +79,17 @@ https://github.com/alex-shpak/hugo-book
         
   <nav>
 <h2 class="book-brand">
-  <a class="flex align-center" href="/"><span>Programming project 2023-24</span>
+  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
   </a>
 </h2>
 
 
-<div class="book-search">
+<div class="book-search hidden">
   <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
 
 
 
@@ -91,7 +102,6 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  
 
 
 
@@ -105,8 +115,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-f1c1e874f9c9473478447bba6c7db644" class="toggle"  />
-    <label for="section-f1c1e874f9c9473478447bba6c7db644" class="flex justify-between">
+    <input type="checkbox" id="section-9c72579f4feaa5ed1d8188779488d483" class="toggle"  />
+    <label for="section-9c72579f4feaa5ed1d8188779488d483" class="flex justify-between">
       <a href="/docs/intro/" class="">This course</a>
     </label>
   
@@ -204,8 +214,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-bc4d9392f5af16481cccf0c311076888" class="toggle"  />
-    <label for="section-bc4d9392f5af16481cccf0c311076888" class="flex justify-between">
+    <input type="checkbox" id="section-0af90824fe38d1d85af672be7208f3fa" class="toggle"  />
+    <label for="section-0af90824fe38d1d85af672be7208f3fa" class="flex justify-between">
       <a href="/docs/project/" class="">Project</a>
     </label>
   
@@ -251,8 +261,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-3435ead23eba75b5ffeeb8d422f70dea" class="toggle"  />
-    <label for="section-3435ead23eba75b5ffeeb8d422f70dea" class="flex justify-between">
+    <input type="checkbox" id="section-f8aa8cff3b51717ecd2ebfbd81d061ce" class="toggle"  />
+    <label for="section-f8aa8cff3b51717ecd2ebfbd81d061ce" class="flex justify-between">
       <a href="/docs/objects/" class="">Objects and classes</a>
     </label>
   
@@ -428,8 +438,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-48bc13e86f573c257821b397e779b02e" class="toggle"  />
-    <label for="section-48bc13e86f573c257821b397e779b02e" class="flex justify-between">
+    <input type="checkbox" id="section-84375da4f2da0b5ee2a224e67daa47cd" class="toggle"  />
+    <label for="section-84375da4f2da0b5ee2a224e67daa47cd" class="flex justify-between">
       <a href="/docs/interfaces/" class="">Interfaces</a>
     </label>
   
@@ -475,8 +485,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-e06acd393c0cc6e5b27e2cd8945d3dd8" class="toggle"  />
-    <label for="section-e06acd393c0cc6e5b27e2cd8945d3dd8" class="flex justify-between">
+    <input type="checkbox" id="section-dd500264748ddf6db6c4f8c13c5fa45b" class="toggle"  />
+    <label for="section-dd500264748ddf6db6c4f8c13c5fa45b" class="flex justify-between">
       <a href="/docs/abstractdatatypes/" class="">Abstract data types</a>
     </label>
   
@@ -561,8 +571,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-5d60f9e6a9b7c875f51358c583373282" class="toggle"  />
-    <label for="section-5d60f9e6a9b7c875f51358c583373282" class="flex justify-between">
+    <input type="checkbox" id="section-10a993a702eb9f53bd9244a93734d095" class="toggle"  />
+    <label for="section-10a993a702eb9f53bd9244a93734d095" class="flex justify-between">
       <a href="/docs/datastructures/" class="">Data structures</a>
     </label>
   
@@ -621,8 +631,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-93b39c27c032f5f72bed81496cbb41e3" class="toggle"  />
-    <label for="section-93b39c27c032f5f72bed81496cbb41e3" class="flex justify-between">
+    <input type="checkbox" id="section-58aec3ab091b08c257b626cc09af78c5" class="toggle"  />
+    <label for="section-58aec3ab091b08c257b626cc09af78c5" class="flex justify-between">
       <a href="/docs/errors/" class="">Errors</a>
     </label>
   
@@ -637,10 +647,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-a2fa4d1523374519c87fe83f9d8226b6" class="toggle"  />
-    <label for="section-a2fa4d1523374519c87fe83f9d8226b6" class="flex justify-between">
-      <a href="/docs/errors/sections/callstack/" class="">Call stack</a>
-    </label>
+    <a href="/docs/errors/sections/callstack/" class="">Call stack</a>
   
 
         </li>
@@ -653,10 +660,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-323953d2054911560fd76ed4505d5bb2" class="toggle"  />
-    <label for="section-323953d2054911560fd76ed4505d5bb2" class="flex justify-between">
-      <a href="/docs/errors/sections/exceptions/" class="">Exceptions</a>
-    </label>
+    <a href="/docs/errors/sections/exceptions/" class="">Exceptions</a>
   
 
         </li>
@@ -669,10 +673,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-03b7629c50286af7810d9917f4bdabd2" class="toggle"  />
-    <label for="section-03b7629c50286af7810d9917f4bdabd2" class="flex justify-between">
-      <a href="/docs/errors/sections/checked/" class="">Checked vs unchecked</a>
-    </label>
+    <a href="/docs/errors/sections/checked/" class="">Checked vs unchecked</a>
   
 
         </li>
@@ -685,10 +686,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-3add83584009ceb58c28b43e0a2280c9" class="toggle"  />
-    <label for="section-3add83584009ceb58c28b43e0a2280c9" class="flex justify-between">
-      <a href="/docs/errors/sections/custom/" class="">Custom exceptions</a>
-    </label>
+    <a href="/docs/errors/sections/custom/" class="">Custom exceptions</a>
   
 
         </li>
@@ -701,10 +699,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-b9c696d05ab8cb944ddf9cef47a3abb4" class="toggle"  />
-    <label for="section-b9c696d05ab8cb944ddf9cef47a3abb4" class="flex justify-between">
-      <a href="/docs/errors/sections/errors/" class="">Java errors</a>
-    </label>
+    <a href="/docs/errors/sections/errors/" class="">Java errors</a>
   
 
         </li>
@@ -722,8 +717,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-1be866adbf7f2244d1773e0d2a159b91" class="toggle"  />
-    <label for="section-1be866adbf7f2244d1773e0d2a159b91" class="flex justify-between">
+    <input type="checkbox" id="section-759e82ae41b9619c78e632572d50480a" class="toggle"  />
+    <label for="section-759e82ae41b9619c78e632572d50480a" class="flex justify-between">
       <a href="/docs/recursion/" class="">Recursion</a>
     </label>
   
@@ -782,8 +777,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-b7bc445f96cbe2bd1034c5f1c5d075bb" class="toggle"  />
-    <label for="section-b7bc445f96cbe2bd1034c5f1c5d075bb" class="flex justify-between">
+    <input type="checkbox" id="section-a1720661345b5872c845343fb6615be9" class="toggle"  />
+    <label for="section-a1720661345b5872c845343fb6615be9" class="flex justify-between">
       <a href="/docs/input/" class="">I/O and serialization</a>
     </label>
   
@@ -798,10 +793,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-09ea3b18445537bd77c25d3db6ab2fcf" class="toggle"  />
-    <label for="section-09ea3b18445537bd77c25d3db6ab2fcf" class="flex justify-between">
-      <a href="/docs/input/sections/files/" class="">Paths and files in Java</a>
-    </label>
+    <a href="/docs/input/sections/files/" class="">Paths and files in Java</a>
   
 
         </li>
@@ -814,10 +806,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-640b25aadb55f28505bfbbe5a5f7073d" class="toggle"  />
-    <label for="section-640b25aadb55f28505bfbbe5a5f7073d" class="flex justify-between">
-      <a href="/docs/input/sections/read/" class="">Reading from and writing to a file in Java</a>
-    </label>
+    <a href="/docs/input/sections/read/" class="">Reading from and writing to a file in Java</a>
   
 
         </li>
@@ -830,10 +819,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-7efe7741b54b5b602db75415a7806ef4" class="toggle"  />
-    <label for="section-7efe7741b54b5b602db75415a7806ef4" class="flex justify-between">
-      <a href="/docs/input/sections/property/" class="">Configuration files</a>
-    </label>
+    <a href="/docs/input/sections/property/" class="">Configuration files</a>
   
 
         </li>
@@ -846,10 +832,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-37fdfe811c449d15e51a84c19673df2f" class="toggle"  />
-    <label for="section-37fdfe811c449d15e51a84c19673df2f" class="flex justify-between">
-      <a href="/docs/input/sections/serialize/" class="">Serialization</a>
-    </label>
+    <a href="/docs/input/sections/serialize/" class="">Serialization</a>
   
 
         </li>
@@ -862,10 +845,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-ec41b3fcd24b301058a1bd1bd7b5c8e7" class="toggle"  />
-    <label for="section-ec41b3fcd24b301058a1bd1bd7b5c8e7" class="flex justify-between">
-      <a href="/docs/input/sections/json/" class="">JSON Serialization</a>
-    </label>
+    <a href="/docs/input/sections/json/" class="">JSON Serialization</a>
   
 
         </li>
@@ -883,8 +863,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-baf3ea6e28839ac044570d2d313c8794" class="toggle"  />
-    <label for="section-baf3ea6e28839ac044570d2d313c8794" class="flex justify-between">
+    <input type="checkbox" id="section-9bfff01f1c5ef64a53927faf30620ccf" class="toggle"  />
+    <label for="section-9bfff01f1c5ef64a53927faf30620ccf" class="flex justify-between">
       <a href="/docs/regex/" class="">Regular expressions</a>
     </label>
   
@@ -943,8 +923,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-ae8fba9e927e4c55801a4e71f6b7d054" class="toggle"  />
-    <label for="section-ae8fba9e927e4c55801a4e71f6b7d054" class="flex justify-between">
+    <input type="checkbox" id="section-882764aad745f79e099c5a43798784f9" class="toggle"  />
+    <label for="section-882764aad745f79e099c5a43798784f9" class="flex justify-between">
       <a href="/docs/lambda/" class="">Callback methods and lambda expressions</a>
     </label>
   
@@ -1042,8 +1022,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-41a2765a9682fb1ce579fb1661f1250d" class="toggle"  />
-    <label for="section-41a2765a9682fb1ce579fb1661f1250d" class="flex justify-between">
+    <input type="checkbox" id="section-7783f19754a3a0ec1529ed7ac208c3ab" class="toggle"  />
+    <label for="section-7783f19754a3a0ec1529ed7ac208c3ab" class="flex justify-between">
       <a href="/docs/stream/" class="">Streams in Java</a>
     </label>
   
@@ -1154,8 +1134,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-87d53bbeb97db8aab24c02b4d45460f2" class="toggle"  />
-    <label for="section-87d53bbeb97db8aab24c02b4d45460f2" class="flex justify-between">
+    <input type="checkbox" id="section-793e09c315e082fb44de3238b9ad707b" class="toggle"  />
+    <label for="section-793e09c315e082fb44de3238b9ad707b" class="flex justify-between">
       <a href="/docs/generics/" class="">Generic programming</a>
     </label>
   
@@ -1240,8 +1220,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-5dcccd15580bb824ba055538c97bdea6" class="toggle" checked />
-    <label for="section-5dcccd15580bb824ba055538c97bdea6" class="flex justify-between">
+    <input type="checkbox" id="section-3876422a93470dcccad1a719c99a8e17" class="toggle" checked />
+    <label for="section-3876422a93470dcccad1a719c99a8e17" class="flex justify-between">
       <a href="/docs/multithreading/" class="">Multithreading</a>
     </label>
   
@@ -1352,8 +1332,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-9d77b970a03dc72b048d9fce7bfe272f" class="toggle"  />
-    <label for="section-9d77b970a03dc72b048d9fce7bfe272f" class="flex justify-between">
+    <input type="checkbox" id="section-990bc84b6dc3891b1963528a24b45e2e" class="toggle"  />
+    <label for="section-990bc84b6dc3891b1963528a24b45e2e" class="flex justify-between">
       <a href="/docs/unittests/" class="">Unit tests</a>
     </label>
   
@@ -1368,10 +1348,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-796939dc839b82c2ff89d99e47011262" class="toggle"  />
-    <label for="section-796939dc839b82c2ff89d99e47011262" class="flex justify-between">
-      <a href="/docs/unittests/sections/structured/" class="">Code units</a>
-    </label>
+    <a href="/docs/unittests/sections/structured/" class="">Code units</a>
   
 
         </li>
@@ -1384,10 +1361,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-ad5c3d825858d4a9ca4ad02d541f7121" class="toggle"  />
-    <label for="section-ad5c3d825858d4a9ca4ad02d541f7121" class="flex justify-between">
-      <a href="/docs/unittests/sections/tdd/" class="">Development driven by unit tests</a>
-    </label>
+    <a href="/docs/unittests/sections/tdd/" class="">Development driven by unit tests</a>
   
 
         </li>
@@ -1400,10 +1374,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-7e09be54c45521908b57f9eaf194f5f6" class="toggle"  />
-    <label for="section-7e09be54c45521908b57f9eaf194f5f6" class="flex justify-between">
-      <a href="/docs/unittests/sections/junit/" class="">in Java</a>
-    </label>
+    <a href="/docs/unittests/sections/junit/" class="">in Java</a>
   
 
         </li>
@@ -1421,8 +1392,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-0407f110c1b3ed4992fcb7fc5f05aa12" class="toggle"  />
-    <label for="section-0407f110c1b3ed4992fcb7fc5f05aa12" class="flex justify-between">
+    <input type="checkbox" id="section-4aed4e1c4b6179fd330f627f75eb18b3" class="toggle"  />
+    <label for="section-4aed4e1c4b6179fd330f627f75eb18b3" class="flex justify-between">
       <a href="/docs/simplify/" class="">Simplifying code</a>
     </label>
   
@@ -1481,8 +1452,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-494fdb80ca3ad5d2868cb487a042ae27" class="toggle"  />
-    <label for="section-494fdb80ca3ad5d2868cb487a042ae27" class="flex justify-between">
+    <input type="checkbox" id="section-ba3d9d7fa2d604a47f68a6d7a7a9d2a2" class="toggle"  />
+    <label for="section-ba3d9d7fa2d604a47f68a6d7a7a9d2a2" class="flex justify-between">
       <a href="/docs/env/" class="">Development environment</a>
     </label>
   
@@ -1619,8 +1590,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-2870a15a3d2cff84408f43cbb1e77f97" class="toggle"  />
-    <label for="section-2870a15a3d2cff84408f43cbb1e77f97" class="flex justify-between">
+    <input type="checkbox" id="section-3c6a8c431d500080599ec572e56415d8" class="toggle"  />
+    <label for="section-3c6a8c431d500080599ec572e56415d8" class="flex justify-between">
       <a href="/docs/git/" class="">git</a>
     </label>
   
@@ -1770,8 +1741,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-44fa5eb3511a340ff4e9042080604b5c" class="toggle"  />
-    <label for="section-44fa5eb3511a340ff4e9042080604b5c" class="flex justify-between">
+    <input type="checkbox" id="section-39b7a0b404320b4007d4505305b8f4f4" class="toggle"  />
+    <label for="section-39b7a0b404320b4007d4505305b8f4f4" class="flex justify-between">
       <a href="/docs/build/" class="">Build automation</a>
     </label>
   
@@ -1786,10 +1757,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-0c816e62fd66eb322757addb01600cdd" class="toggle"  />
-    <label for="section-0c816e62fd66eb322757addb01600cdd" class="flex justify-between">
-      <a href="/docs/build/sections/packaging/" class="">Packaging a Java application</a>
-    </label>
+    <a href="/docs/build/sections/packaging/" class="">Packaging a Java application</a>
   
 
         </li>
@@ -1802,10 +1770,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-5537e478f301d8ff4f0b5a7a03c9db32" class="toggle"  />
-    <label for="section-5537e478f301d8ff4f0b5a7a03c9db32" class="flex justify-between">
-      <a href="/docs/build/sections/layout/" class="">Layout</a>
-    </label>
+    <a href="/docs/build/sections/layout/" class="">Layout</a>
   
 
         </li>
@@ -1818,10 +1783,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-33bd3456c4645cc966d192fba400a71a" class="toggle"  />
-    <label for="section-33bd3456c4645cc966d192fba400a71a" class="flex justify-between">
-      <a href="/docs/build/sections/pom/" class="">Configuration file</a>
-    </label>
+    <a href="/docs/build/sections/pom/" class="">Configuration file</a>
   
 
         </li>
@@ -1834,10 +1796,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-c956d0b428ebb6c853f314459a513393" class="toggle"  />
-    <label for="section-c956d0b428ebb6c853f314459a513393" class="flex justify-between">
-      <a href="/docs/build/sections/artifact/" class="">Artifact</a>
-    </label>
+    <a href="/docs/build/sections/artifact/" class="">Artifact</a>
   
 
         </li>
@@ -1850,10 +1809,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-d01a14431bc2161a8fed02d90e1a365b" class="toggle"  />
-    <label for="section-d01a14431bc2161a8fed02d90e1a365b" class="flex justify-between">
-      <a href="/docs/build/sections/dependencies/" class="">Dependencies</a>
-    </label>
+    <a href="/docs/build/sections/dependencies/" class="">Dependencies</a>
   
 
         </li>
@@ -1866,10 +1822,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-b838446830102a7dece872d673537390" class="toggle"  />
-    <label for="section-b838446830102a7dece872d673537390" class="flex justify-between">
-      <a href="/docs/build/sections/building/" class="">Building</a>
-    </label>
+    <a href="/docs/build/sections/building/" class="">Building</a>
   
 
         </li>
@@ -1887,8 +1840,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-ffcf8551871937aae0ce60f2b3cc616b" class="toggle"  />
-    <label for="section-ffcf8551871937aae0ce60f2b3cc616b" class="flex justify-between">
+    <input type="checkbox" id="section-48bf1202a7e278154d3a51c618c94cd6" class="toggle"  />
+    <label for="section-48bf1202a7e278154d3a51c618c94cd6" class="flex justify-between">
       <a href="/docs/background/" class="">Background</a>
     </label>
   
@@ -1981,7 +1934,6 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-
 </nav>
 
 
@@ -2002,7 +1954,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Synchronization</strong>
+  <h3>Synchronization</h3>
 
   <label for="toc-control">
     
@@ -2049,24 +2001,23 @@ https://github.com/alex-shpak/hugo-book
 <p>The behavior of a program that runs multiple threads can be hard to predict.
 In particular, two threads may compete to access a same resource (e.g. the value of some object&rsquo;s attribute),
 without guarantee on the <em>order</em> in which they access it.
-This may lead (among other things) to a <a href="https://unibz-pp-23-24.github.io/docs/multithreading/sections/race/">race condition</a></p>
+This may lead (among other things) to a <a href="https://unibz-pp-24-25.github.io/docs/multithreading/sections/race/">race condition</a></p>
 <p>Programming languages that support multithreading also allow expressing <em>constraints</em> on the order of execution of some instructions.
-For instance, we saw <a href="https://unibz-pp-23-24.github.io/docs/multithreading/sections/simple/#spawnSync">earlier</a> that a thread can be forced to wait for a child thread to terminate before resuming its execution.</p>
+For instance, we saw <a href="https://unibz-pp-24-25.github.io/docs/multithreading/sections/simple/#spawnSync">earlier</a> that a thread can be forced to wait for a child thread to terminate before resuming its execution.</p>
 <p>In this section, we review two additional mechanisms (mutual exclusion and condition variables) that allow synchronizing the behaviors of threads.</p>
 <p>For a more exhaustive overview of the possibilities offered by Java in that regard, we refer to the Javadoc of the package <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/package-summary.html">java.util.concurrent</a>,
 which summarizes the situations where a Java statement <em>must</em> be executed before another (in Java&rsquo;s terminology, this binary relation over statements is called the &ldquo;happens before&rdquo; relation).</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<!--Let $a_1$ (resp. $a_2$) be an instruction executed in a thread $t_1$ (resp. $t_2$).-->
+<!--By default, if $t_1$ and $t_2$ are executed concurrently, there is no guarantee that $a_1$ is executed before $a_2$.-->
+<!--However, most programming languages provide mechanisms to enforce it.-->
 <h2 id="mutual-exclusion">
   Mutual exclusion
   <a class="anchor" href="#mutual-exclusion">#</a>
 </h2>
 <blockquote class="book-hint warning">
-  <strong>Mutual exclusion</strong> prevents two threads to access a same resource concurrently.
-This is generally achieved via some kind of <strong>lock</strong> (sometimes called a <strong>mutex</strong> or <strong>semaphore</strong>).
+<p><strong>Mutual exclusion</strong> prevents two threads to access a same resource concurrently.
+This is generally achieved via some kind of <strong>lock</strong> (sometimes called a <strong>mutex</strong> or <strong>semaphore</strong>).</p>
 </blockquote>
-
 <p>Most programming languages that support concurrency provide mechanisms for mutual exclusion.
 These languages include C/C++, C#, Go, Java, PHP, Python, or Rust.</p>
 <h3 id="in-java">
@@ -2074,11 +2025,9 @@ These languages include C/C++, C#, Go, Java, PHP, Python, or Rust.</p>
   <a class="anchor" href="#in-java">#</a>
 </h3>
 <blockquote class="book-hint warning">
-  <p>Java associates to each object a so-called <strong>intrinsic lock</strong> (also called <strong>monitor lock</strong> or simply <strong>monitor</strong>).</p>
+<p>Java associates to each object a so-called <strong>intrinsic lock</strong> (also called <strong>monitor lock</strong> or simply <strong>monitor</strong>).</p>
 <p>If a thread $t_1$ <strong>acquires</strong> the intrinsic lock of an object, then a different thread $t_2$ cannot acquire this lock until $t_1$ has <strong>released</strong> it (however, a thread can reacquire a lock that it already owns).</p>
-
 </blockquote>
-
 <p>The Java keyword <code>synchronized</code> enforces mutual exclusion via an intrinsic lock.
 In can be used in two ways:</p>
 <h4 id="syncStatement">
@@ -2086,17 +2035,15 @@ In can be used in two ways:</p>
   <a class="anchor" href="#syncStatement">#</a>
 </h4>
 <blockquote class="book-hint warning">
-  <p>A <strong>synchronized statement</strong> associates an object $o$ to a <em>block</em> of code (called a <strong>synchronized block</strong>).</p>
+<p>A <strong>synchronized statement</strong> associates an object $o$ to a <em>block</em> of code (called a <strong>synchronized block</strong>).</p>
 <p>A thread that enters this block acquires the intrinsic lock of $o$, and releases it when exits the block.</p>
-
 </blockquote>
-
 <p>The syntax is the following:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">synchronized</span>(<span style="color:#f92672">&lt;</span>object<span style="color:#f92672">&gt;</span>){
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span>code block<span style="color:#f92672">&gt;</span>
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><blockquote class="book-hint info">
-  <p><strong><em>Example.</em></strong>
+<p><strong><em>Example.</em></strong>
 Consider the two following classes:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Counter</span> {
 </span></span><span style="display:flex;"><span>
@@ -2126,9 +2073,7 @@ Consider the two following classes:</p>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>t1.<span style="color:#a6e22e">start</span>();
 </span></span><span style="display:flex;"><span>t2.<span style="color:#a6e22e">start</span>();
-</span></span></code></pre></div>
-</blockquote>
-
+</span></span></code></pre></div></blockquote>
 <p>Observe that in the example above, any object could be used as a lock.
 In particular, the object <code>counter</code> itself.
 So the program below is equivalent:</p>
@@ -2138,8 +2083,7 @@ So the program below is equivalent:</p>
 </span></span><span style="display:flex;"><span>        counter.<span style="color:#a6e22e">value</span><span style="color:#f92672">++</span>;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>$\qquad$</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Counter counter <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Counter(0);
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Counter counter <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Counter(0);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>Thread t1 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Thread( () <span style="color:#f92672">-&gt;</span> { increment(counter); } );
 </span></span><span style="display:flex;"><span>Thread t2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Thread( () <span style="color:#f92672">-&gt;</span> { increment(counter); } );
@@ -2151,28 +2095,24 @@ So the program below is equivalent:</p>
   <a class="anchor" href="#syncMethod">#</a>
 </h4>
 <blockquote class="book-hint warning">
-  A <strong>synchronized instance method</strong> uses the intrinsic lock of the object for which this method is called.
+<p>A <strong>synchronized instance method</strong> uses the intrinsic lock of the object for which this method is called.</p>
 </blockquote>
-
 <p>The syntax is the following:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">synchronized</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">myMethod</span>() {
 </span></span><span style="display:flex;"><span>    ...
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>In other words, the two following classes are equivalent:
+</span></span></code></pre></div><p>In other words, the two following classes are equivalent:</p>
 <div class="book-columns flex flex-wrap">
-
-  <div class="flex-even markdown-inner">
-    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyClass</span> {
+<div class="flex-even markdown-inner" style="flex-grow: 1;">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyClass</span> {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">synchronized</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">myMethod</span>(){
 </span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;</span>method body<span style="color:#f92672">&gt;</span>
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div>
-  </div>
-
-  <div class="flex-even markdown-inner">
-    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyClass</span> {
+</span></span></code></pre></div>  </div>
+<div class="flex-even markdown-inner" style="flex-grow: 1;">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyClass</span> {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">myMethod</span>(){
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">synchronized</span>(<span style="color:#66d9ef">this</span>){
@@ -2180,35 +2120,25 @@ So the program below is equivalent:</p>
 </span></span><span style="display:flex;"><span>        }
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div>
-  </div>
-
+</span></span></code></pre></div>  </div>
 </div>
-</p>
 <blockquote class="book-hint danger">
-  <strong><em>Warning.</em></strong>
-A constructor <em>cannot</em> be synchronized (the program will not compile).
+<p><strong><em>Warning.</em></strong>
+A constructor <em>cannot</em> be synchronized (the program will not compile).</p>
 </blockquote>
-
 <blockquote class="book-hint info">
-  <p><strong><em>Observation.</em></strong>
+<p><strong><em>Observation.</em></strong>
 Let $m$ be a synchronized instance method, let $o$ be an object, let $t_1$ and $t_2$ be two different threads, and let us assume that $t_1$ executes $o.m$ (i.e. $t_1$ executes the method $m$ for the object $o$).</p>
 <p>Then $t_2$ cannot execute <em>any</em> synchronized method for $o$ before the termination of $o.m$</p>
-
 </blockquote>
-
 <blockquote class="book-hint info">
-  <strong><em>Observation.</em></strong>
-For the same object, a synchronized method can call another, as long as they are executed by the same thread.
+<p><strong><em>Observation.</em></strong>
+For the same object, a synchronized method can call another, as long as they are executed by the same thread.</p>
 </blockquote>
-
-
-
-
-
-<div class="book-tabs"><input type="radio" class="toggle" name="tabs-exercise_synchronized" id="tabs-exercise_synchronized-0" checked="checked" />
-  <label for="tabs-exercise_synchronized-0">Exercise</label>
-  <div class="book-tabs-content markdown-inner"><p>What are the possible outputs of the following program?</p>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-exercise_synchronized" id="tabs-exercise_synchronized-0" checked="checked" />
+<label for="tabs-exercise_synchronized-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>What are the possible outputs of the following program?</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Counter</span> {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> value;
@@ -2248,9 +2178,10 @@ For the same object, a synchronized method can call another, as long as they are
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(counter.<span style="color:#a6e22e">getValue</span>());
-</span></span></code></pre></div></div><input type="radio" class="toggle" name="tabs-exercise_synchronized" id="tabs-exercise_synchronized-1"  />
-  <label for="tabs-exercise_synchronized-1">Solution</label>
-  <div class="book-tabs-content markdown-inner"><p>Because the two methods <code>inc</code> and <code>doubleDec</code> are synchronized (and are called on the same object), their executions cannot interleave.
+</span></span></code></pre></div></div>
+<input type="radio" class="toggle" name="tabs-exercise_synchronized" id="tabs-exercise_synchronized-1"  />
+<label for="tabs-exercise_synchronized-1">Solution</label>
+<div class="book-tabs-content markdown-inner"><p>Because the two methods <code>inc</code> and <code>doubleDec</code> are synchronized (and are called on the same object), their executions cannot interleave.
 This guarantees that the <em>second</em> print statement must output <code>1</code>.</p>
 <p>As for the first print statement, observe that:</p>
 <ul>
@@ -2264,27 +2195,23 @@ This guarantees that the <em>second</em> print statement must output <code>1</co
 <code>1</code>,
 <code>-2</code> and
 <code>-4</code>.</p>
-</div></div>
-
+</div>
+</div>
 <blockquote class="book-hint warning">
-  A <strong>synchronized static method</strong> uses the intrinsic lock of the object that represents the class itself (this object is an instance of <code>Class</code>).
+<p>A <strong>synchronized static method</strong> uses the intrinsic lock of the object that represents the class itself (this object is an instance of <code>Class</code>).</p>
 </blockquote>
-
-<p>In other words, the two following classes are equivalent:
+<p>In other words, the two following classes are equivalent:</p>
 <div class="book-columns flex flex-wrap">
-
-  <div class="flex-even markdown-inner">
-    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyClass</span> {
+<div class="flex-even markdown-inner" style="flex-grow: 1;">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyClass</span> {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">synchronized</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">myMethod</span>(){
 </span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;</span>method body<span style="color:#f92672">&gt;</span>
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div>
-  </div>
-
-  <div class="flex-even markdown-inner">
-    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyClass</span> {
+</span></span></code></pre></div>  </div>
+<div class="flex-even markdown-inner" style="flex-grow: 1;">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyClass</span> {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">myMethod</span>(){
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">synchronized</span>(Class.<span style="color:#a6e22e">forName</span>(<span style="color:#e6db74">&#34;my.project.name.MyClass&#34;</span>)){
@@ -2292,11 +2219,8 @@ This guarantees that the <em>second</em> print statement must output <code>1</co
 </span></span><span style="display:flex;"><span>        }
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div>
-  </div>
-
+</span></span></code></pre></div>  </div>
 </div>
-</p>
 <h2 id="condition-variables">
   Condition variables
   <a class="anchor" href="#condition-variables">#</a>
@@ -2312,7 +2236,7 @@ These include C++, C#, Go, Java, Python or Rust.</p>
   <a class="anchor" href="#producerConsumer">#</a>
 </h3>
 <p>A prototypical application of condition variables is the so-called <strong>producer/consumer</strong> pattern.
-In this scenario, two pools of threads (usually with fixed sizes) communicate via a <a href="https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/queue/#queue">queue</a>.</p>
+In this scenario, two pools of threads (usually with fixed sizes) communicate via a <a href="https://unibz-pp-24-25.github.io/docs/abstractdatatypes/sections/queue/#queue">queue</a>.</p>
 <ol>
 <li>A pool of <strong>producer</strong> threads, which create elements and add (a.k.a. <strong>enqueue</strong>) them to the queue,</li>
 <li>A pool of <strong>consumer</strong> threads, which receive (a.k.a <strong>dequeue</strong>) these elements and process them.</li>
@@ -2327,14 +2251,13 @@ In this scenario, two pools of threads (usually with fixed sizes) communicate vi
   <a class="anchor" href="#in-java-1">#</a>
 </h3>
 <blockquote class="book-hint warning">
-  <p><strong><em>Reminder.</em></strong>
+<p><strong><em>Reminder.</em></strong>
 As discussed above, a thread can acquire the intrinsic lock of an object by:</p>
 <ul>
 <li>entering a <a href="#syncStatement">synchronized block</a> that has this object as lock, or</li>
 <li>executing a <a href="#syncMethod">synchronized method</a> for this object.</li>
 </ul>
 </blockquote>
-
 <p>A condition variable in Java can be simulated thanks to he method <code>Object.wait</code>, together with the method <code>Object.notify</code> (or <code>Object.notifyAll</code>).</p>
 <h4 id="wait">
   <code>wait</code>
@@ -2355,7 +2278,7 @@ The awakened thread will only proceed (i.e. actually wake up) after the notifyin
 </h4>
 <p>The instance method <code>Object.notifyAll</code> is identical to <code>Object.notify</code>, but attempts to wake up <em>all</em> threads that are waiting for the lock of this object.</p>
 <blockquote class="book-hint info">
-  <p><strong><em>Example.</em></strong>
+<p><strong><em>Example.</em></strong>
 For simplicity, we will use a queue with a capacity of 1.
 The example is borrowed from the <a href="https://docs.oracle.com/javase%2Ftutorial%2F/essential/concurrency/guardmeth.html">Oracle tutorials</a>.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>pulic <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyQueue</span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> {
@@ -2447,9 +2370,7 @@ If this happens, thread $p$:</p>
 </span></span><span style="display:flex;"><span>    p1.<span style="color:#a6e22e">start</span>();
 </span></span><span style="display:flex;"><span>    c1.<span style="color:#a6e22e">start</span>();
 </span></span><span style="display:flex;"><span>    c2.<span style="color:#a6e22e">start</span>();
-</span></span></code></pre></div>
-</blockquote>
-
+</span></span></code></pre></div></blockquote>
 <h3 id="spurious-wakeup">
   Spurious wakeup
   <a class="anchor" href="#spurious-wakeup">#</a>
@@ -2457,7 +2378,7 @@ If this happens, thread $p$:</p>
 <p>In the example above, the loop <code>while(!isEmpty)</code> (in the method <code>enqueue</code>) seems unnecessary, in the sense that it could be replaced with the conditional statements <code>if(!isEmpty)</code>.
 And similarly for the loop in the method <code>dequeue</code>.</p>
 <p>The purpose of this loop is to handle the abnormal case where a consumer (resp. producer) is awaken while the condition variable <code>isEmpty</code> has value <code>false</code> (resp. <code>true</code>).
-Such a situation is called a <a href="https://en.wikipedia.org/wiki/Spurious_wakeup">spurious wakeup</a>, and may have a variety of causes (including a <a href="https://unibz-pp-23-24.github.io/docs/multithreading/sections/race/">race condition</a>).</p>
+Such a situation is called a <a href="https://en.wikipedia.org/wiki/Spurious_wakeup">spurious wakeup</a>, and may have a variety of causes (including a <a href="https://unibz-pp-24-25.github.io/docs/multithreading/sections/race/">race condition</a>).</p>
 <p>This is the reason why it is customary to write:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">while</span>(<span style="color:#f92672">&lt;</span>conditionVariable<span style="color:#f92672">&gt;</span>){
 </span></span><span style="display:flex;"><span>    wait();

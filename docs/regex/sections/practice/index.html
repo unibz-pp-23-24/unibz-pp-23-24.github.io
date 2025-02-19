@@ -3,25 +3,42 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Regexes in practice # Concrete regexes deviate from theoretical ones in several ways. In particular:
+<meta name="description" content="
+  Regexes in practice
+  #
+
+Concrete regexes deviate from theoretical ones in several ways.
+In particular:
+
+
 Concrete syntaxes include a wide range of syntactic sugar, i.e. operators that could in theory be expressed in terms of |, * and concatenation.
-Many regex engines support expressions with features (such as backreferences) that go beyond the expressivity of theoretical regexes. Technically, such expressions do not qualify as as regexes (they may describe a language that is not regular).">
+
+
+
+
+
+Many regex engines support expressions with features (such as backreferences) that go beyond the expressivity of theoretical regexes.
+Technically, such expressions do not qualify as as regexes (they may describe a language that is not regular).
+However, in practice, they are still referred to as &ldquo;regexes&rdquo;.
+This is also what we will do in this section.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="in practice" />
-<meta property="og:description" content="Regexes in practice # Concrete regexes deviate from theoretical ones in several ways. In particular:
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/regex/sections/practice/">
+  <meta property="og:site_name" content="Programming project 2024-25">
+  <meta property="og:title" content="in practice">
+  <meta property="og:description" content="Regexes in practice # Concrete regexes deviate from theoretical ones in several ways. In particular:
 Concrete syntaxes include a wide range of syntactic sugar, i.e. operators that could in theory be expressed in terms of |, * and concatenation.
-Many regex engines support expressions with features (such as backreferences) that go beyond the expressivity of theoretical regexes. Technically, such expressions do not qualify as as regexes (they may describe a language that is not regular)." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/regex/sections/practice/" /><meta property="article:section" content="docs" />
-
-
-<title>in practice | Programming project 2023-24</title>
-<link rel="manifest" href="/manifest.json">
+Many regex engines support expressions with features (such as backreferences) that go beyond the expressivity of theoretical regexes. Technically, such expressions do not qualify as as regexes (they may describe a language that is not regular). However, in practice, they are still referred to as “regexes”. This is also what we will do in this section.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>in practice | Programming project 2024-25</title>
 <link rel="icon" href="/favicon.png" >
-<link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
-  <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.4e5dd21f0324d689aa628cb546e70eda39fb9e0b5daabb2a2c7da954eec10dab.js" integrity="sha256-Tl3SHwMk1omqYoy1RucO2jn7ngtdqrsqLH2pVO7BDas=" crossorigin="anonymous"></script>
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/regex/sections/practice/">
+<link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.ef6ce3f581865a34e7a0361facaa520c0f023938171236d76684573e7df35a2c.js" integrity="sha256-72zj9YGGWjTnoDYfrKpSDA8COTgXEjbXZoRXPn3zWiw=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -71,16 +88,17 @@ https://github.com/alex-shpak/hugo-book
         
   <nav>
 <h2 class="book-brand">
-  <a class="flex align-center" href="/"><span>Programming project 2023-24</span>
+  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
   </a>
 </h2>
 
 
-<div class="book-search">
+<div class="book-search hidden">
   <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
 
 
 
@@ -93,7 +111,6 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  
 
 
 
@@ -107,8 +124,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-f1c1e874f9c9473478447bba6c7db644" class="toggle"  />
-    <label for="section-f1c1e874f9c9473478447bba6c7db644" class="flex justify-between">
+    <input type="checkbox" id="section-9c72579f4feaa5ed1d8188779488d483" class="toggle"  />
+    <label for="section-9c72579f4feaa5ed1d8188779488d483" class="flex justify-between">
       <a href="/docs/intro/" class="">This course</a>
     </label>
   
@@ -206,8 +223,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-bc4d9392f5af16481cccf0c311076888" class="toggle"  />
-    <label for="section-bc4d9392f5af16481cccf0c311076888" class="flex justify-between">
+    <input type="checkbox" id="section-0af90824fe38d1d85af672be7208f3fa" class="toggle"  />
+    <label for="section-0af90824fe38d1d85af672be7208f3fa" class="flex justify-between">
       <a href="/docs/project/" class="">Project</a>
     </label>
   
@@ -253,8 +270,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-3435ead23eba75b5ffeeb8d422f70dea" class="toggle"  />
-    <label for="section-3435ead23eba75b5ffeeb8d422f70dea" class="flex justify-between">
+    <input type="checkbox" id="section-f8aa8cff3b51717ecd2ebfbd81d061ce" class="toggle"  />
+    <label for="section-f8aa8cff3b51717ecd2ebfbd81d061ce" class="flex justify-between">
       <a href="/docs/objects/" class="">Objects and classes</a>
     </label>
   
@@ -430,8 +447,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-48bc13e86f573c257821b397e779b02e" class="toggle"  />
-    <label for="section-48bc13e86f573c257821b397e779b02e" class="flex justify-between">
+    <input type="checkbox" id="section-84375da4f2da0b5ee2a224e67daa47cd" class="toggle"  />
+    <label for="section-84375da4f2da0b5ee2a224e67daa47cd" class="flex justify-between">
       <a href="/docs/interfaces/" class="">Interfaces</a>
     </label>
   
@@ -477,8 +494,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-e06acd393c0cc6e5b27e2cd8945d3dd8" class="toggle"  />
-    <label for="section-e06acd393c0cc6e5b27e2cd8945d3dd8" class="flex justify-between">
+    <input type="checkbox" id="section-dd500264748ddf6db6c4f8c13c5fa45b" class="toggle"  />
+    <label for="section-dd500264748ddf6db6c4f8c13c5fa45b" class="flex justify-between">
       <a href="/docs/abstractdatatypes/" class="">Abstract data types</a>
     </label>
   
@@ -563,8 +580,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-5d60f9e6a9b7c875f51358c583373282" class="toggle"  />
-    <label for="section-5d60f9e6a9b7c875f51358c583373282" class="flex justify-between">
+    <input type="checkbox" id="section-10a993a702eb9f53bd9244a93734d095" class="toggle"  />
+    <label for="section-10a993a702eb9f53bd9244a93734d095" class="flex justify-between">
       <a href="/docs/datastructures/" class="">Data structures</a>
     </label>
   
@@ -623,8 +640,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-93b39c27c032f5f72bed81496cbb41e3" class="toggle"  />
-    <label for="section-93b39c27c032f5f72bed81496cbb41e3" class="flex justify-between">
+    <input type="checkbox" id="section-58aec3ab091b08c257b626cc09af78c5" class="toggle"  />
+    <label for="section-58aec3ab091b08c257b626cc09af78c5" class="flex justify-between">
       <a href="/docs/errors/" class="">Errors</a>
     </label>
   
@@ -639,10 +656,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-a2fa4d1523374519c87fe83f9d8226b6" class="toggle"  />
-    <label for="section-a2fa4d1523374519c87fe83f9d8226b6" class="flex justify-between">
-      <a href="/docs/errors/sections/callstack/" class="">Call stack</a>
-    </label>
+    <a href="/docs/errors/sections/callstack/" class="">Call stack</a>
   
 
         </li>
@@ -655,10 +669,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-323953d2054911560fd76ed4505d5bb2" class="toggle"  />
-    <label for="section-323953d2054911560fd76ed4505d5bb2" class="flex justify-between">
-      <a href="/docs/errors/sections/exceptions/" class="">Exceptions</a>
-    </label>
+    <a href="/docs/errors/sections/exceptions/" class="">Exceptions</a>
   
 
         </li>
@@ -671,10 +682,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-03b7629c50286af7810d9917f4bdabd2" class="toggle"  />
-    <label for="section-03b7629c50286af7810d9917f4bdabd2" class="flex justify-between">
-      <a href="/docs/errors/sections/checked/" class="">Checked vs unchecked</a>
-    </label>
+    <a href="/docs/errors/sections/checked/" class="">Checked vs unchecked</a>
   
 
         </li>
@@ -687,10 +695,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-3add83584009ceb58c28b43e0a2280c9" class="toggle"  />
-    <label for="section-3add83584009ceb58c28b43e0a2280c9" class="flex justify-between">
-      <a href="/docs/errors/sections/custom/" class="">Custom exceptions</a>
-    </label>
+    <a href="/docs/errors/sections/custom/" class="">Custom exceptions</a>
   
 
         </li>
@@ -703,10 +708,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-b9c696d05ab8cb944ddf9cef47a3abb4" class="toggle"  />
-    <label for="section-b9c696d05ab8cb944ddf9cef47a3abb4" class="flex justify-between">
-      <a href="/docs/errors/sections/errors/" class="">Java errors</a>
-    </label>
+    <a href="/docs/errors/sections/errors/" class="">Java errors</a>
   
 
         </li>
@@ -724,8 +726,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-1be866adbf7f2244d1773e0d2a159b91" class="toggle"  />
-    <label for="section-1be866adbf7f2244d1773e0d2a159b91" class="flex justify-between">
+    <input type="checkbox" id="section-759e82ae41b9619c78e632572d50480a" class="toggle"  />
+    <label for="section-759e82ae41b9619c78e632572d50480a" class="flex justify-between">
       <a href="/docs/recursion/" class="">Recursion</a>
     </label>
   
@@ -784,8 +786,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-b7bc445f96cbe2bd1034c5f1c5d075bb" class="toggle"  />
-    <label for="section-b7bc445f96cbe2bd1034c5f1c5d075bb" class="flex justify-between">
+    <input type="checkbox" id="section-a1720661345b5872c845343fb6615be9" class="toggle"  />
+    <label for="section-a1720661345b5872c845343fb6615be9" class="flex justify-between">
       <a href="/docs/input/" class="">I/O and serialization</a>
     </label>
   
@@ -800,10 +802,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-09ea3b18445537bd77c25d3db6ab2fcf" class="toggle"  />
-    <label for="section-09ea3b18445537bd77c25d3db6ab2fcf" class="flex justify-between">
-      <a href="/docs/input/sections/files/" class="">Paths and files in Java</a>
-    </label>
+    <a href="/docs/input/sections/files/" class="">Paths and files in Java</a>
   
 
         </li>
@@ -816,10 +815,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-640b25aadb55f28505bfbbe5a5f7073d" class="toggle"  />
-    <label for="section-640b25aadb55f28505bfbbe5a5f7073d" class="flex justify-between">
-      <a href="/docs/input/sections/read/" class="">Reading from and writing to a file in Java</a>
-    </label>
+    <a href="/docs/input/sections/read/" class="">Reading from and writing to a file in Java</a>
   
 
         </li>
@@ -832,10 +828,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-7efe7741b54b5b602db75415a7806ef4" class="toggle"  />
-    <label for="section-7efe7741b54b5b602db75415a7806ef4" class="flex justify-between">
-      <a href="/docs/input/sections/property/" class="">Configuration files</a>
-    </label>
+    <a href="/docs/input/sections/property/" class="">Configuration files</a>
   
 
         </li>
@@ -848,10 +841,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-37fdfe811c449d15e51a84c19673df2f" class="toggle"  />
-    <label for="section-37fdfe811c449d15e51a84c19673df2f" class="flex justify-between">
-      <a href="/docs/input/sections/serialize/" class="">Serialization</a>
-    </label>
+    <a href="/docs/input/sections/serialize/" class="">Serialization</a>
   
 
         </li>
@@ -864,10 +854,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-ec41b3fcd24b301058a1bd1bd7b5c8e7" class="toggle"  />
-    <label for="section-ec41b3fcd24b301058a1bd1bd7b5c8e7" class="flex justify-between">
-      <a href="/docs/input/sections/json/" class="">JSON Serialization</a>
-    </label>
+    <a href="/docs/input/sections/json/" class="">JSON Serialization</a>
   
 
         </li>
@@ -885,8 +872,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-baf3ea6e28839ac044570d2d313c8794" class="toggle" checked />
-    <label for="section-baf3ea6e28839ac044570d2d313c8794" class="flex justify-between">
+    <input type="checkbox" id="section-9bfff01f1c5ef64a53927faf30620ccf" class="toggle" checked />
+    <label for="section-9bfff01f1c5ef64a53927faf30620ccf" class="flex justify-between">
       <a href="/docs/regex/" class="">Regular expressions</a>
     </label>
   
@@ -945,8 +932,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-ae8fba9e927e4c55801a4e71f6b7d054" class="toggle"  />
-    <label for="section-ae8fba9e927e4c55801a4e71f6b7d054" class="flex justify-between">
+    <input type="checkbox" id="section-882764aad745f79e099c5a43798784f9" class="toggle"  />
+    <label for="section-882764aad745f79e099c5a43798784f9" class="flex justify-between">
       <a href="/docs/lambda/" class="">Callback methods and lambda expressions</a>
     </label>
   
@@ -1044,8 +1031,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-41a2765a9682fb1ce579fb1661f1250d" class="toggle"  />
-    <label for="section-41a2765a9682fb1ce579fb1661f1250d" class="flex justify-between">
+    <input type="checkbox" id="section-7783f19754a3a0ec1529ed7ac208c3ab" class="toggle"  />
+    <label for="section-7783f19754a3a0ec1529ed7ac208c3ab" class="flex justify-between">
       <a href="/docs/stream/" class="">Streams in Java</a>
     </label>
   
@@ -1156,8 +1143,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-87d53bbeb97db8aab24c02b4d45460f2" class="toggle"  />
-    <label for="section-87d53bbeb97db8aab24c02b4d45460f2" class="flex justify-between">
+    <input type="checkbox" id="section-793e09c315e082fb44de3238b9ad707b" class="toggle"  />
+    <label for="section-793e09c315e082fb44de3238b9ad707b" class="flex justify-between">
       <a href="/docs/generics/" class="">Generic programming</a>
     </label>
   
@@ -1242,8 +1229,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-5dcccd15580bb824ba055538c97bdea6" class="toggle"  />
-    <label for="section-5dcccd15580bb824ba055538c97bdea6" class="flex justify-between">
+    <input type="checkbox" id="section-3876422a93470dcccad1a719c99a8e17" class="toggle"  />
+    <label for="section-3876422a93470dcccad1a719c99a8e17" class="flex justify-between">
       <a href="/docs/multithreading/" class="">Multithreading</a>
     </label>
   
@@ -1354,8 +1341,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-9d77b970a03dc72b048d9fce7bfe272f" class="toggle"  />
-    <label for="section-9d77b970a03dc72b048d9fce7bfe272f" class="flex justify-between">
+    <input type="checkbox" id="section-990bc84b6dc3891b1963528a24b45e2e" class="toggle"  />
+    <label for="section-990bc84b6dc3891b1963528a24b45e2e" class="flex justify-between">
       <a href="/docs/unittests/" class="">Unit tests</a>
     </label>
   
@@ -1370,10 +1357,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-796939dc839b82c2ff89d99e47011262" class="toggle"  />
-    <label for="section-796939dc839b82c2ff89d99e47011262" class="flex justify-between">
-      <a href="/docs/unittests/sections/structured/" class="">Code units</a>
-    </label>
+    <a href="/docs/unittests/sections/structured/" class="">Code units</a>
   
 
         </li>
@@ -1386,10 +1370,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-ad5c3d825858d4a9ca4ad02d541f7121" class="toggle"  />
-    <label for="section-ad5c3d825858d4a9ca4ad02d541f7121" class="flex justify-between">
-      <a href="/docs/unittests/sections/tdd/" class="">Development driven by unit tests</a>
-    </label>
+    <a href="/docs/unittests/sections/tdd/" class="">Development driven by unit tests</a>
   
 
         </li>
@@ -1402,10 +1383,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-7e09be54c45521908b57f9eaf194f5f6" class="toggle"  />
-    <label for="section-7e09be54c45521908b57f9eaf194f5f6" class="flex justify-between">
-      <a href="/docs/unittests/sections/junit/" class="">in Java</a>
-    </label>
+    <a href="/docs/unittests/sections/junit/" class="">in Java</a>
   
 
         </li>
@@ -1423,8 +1401,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-0407f110c1b3ed4992fcb7fc5f05aa12" class="toggle"  />
-    <label for="section-0407f110c1b3ed4992fcb7fc5f05aa12" class="flex justify-between">
+    <input type="checkbox" id="section-4aed4e1c4b6179fd330f627f75eb18b3" class="toggle"  />
+    <label for="section-4aed4e1c4b6179fd330f627f75eb18b3" class="flex justify-between">
       <a href="/docs/simplify/" class="">Simplifying code</a>
     </label>
   
@@ -1483,8 +1461,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-494fdb80ca3ad5d2868cb487a042ae27" class="toggle"  />
-    <label for="section-494fdb80ca3ad5d2868cb487a042ae27" class="flex justify-between">
+    <input type="checkbox" id="section-ba3d9d7fa2d604a47f68a6d7a7a9d2a2" class="toggle"  />
+    <label for="section-ba3d9d7fa2d604a47f68a6d7a7a9d2a2" class="flex justify-between">
       <a href="/docs/env/" class="">Development environment</a>
     </label>
   
@@ -1621,8 +1599,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-2870a15a3d2cff84408f43cbb1e77f97" class="toggle"  />
-    <label for="section-2870a15a3d2cff84408f43cbb1e77f97" class="flex justify-between">
+    <input type="checkbox" id="section-3c6a8c431d500080599ec572e56415d8" class="toggle"  />
+    <label for="section-3c6a8c431d500080599ec572e56415d8" class="flex justify-between">
       <a href="/docs/git/" class="">git</a>
     </label>
   
@@ -1772,8 +1750,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-44fa5eb3511a340ff4e9042080604b5c" class="toggle"  />
-    <label for="section-44fa5eb3511a340ff4e9042080604b5c" class="flex justify-between">
+    <input type="checkbox" id="section-39b7a0b404320b4007d4505305b8f4f4" class="toggle"  />
+    <label for="section-39b7a0b404320b4007d4505305b8f4f4" class="flex justify-between">
       <a href="/docs/build/" class="">Build automation</a>
     </label>
   
@@ -1788,10 +1766,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-0c816e62fd66eb322757addb01600cdd" class="toggle"  />
-    <label for="section-0c816e62fd66eb322757addb01600cdd" class="flex justify-between">
-      <a href="/docs/build/sections/packaging/" class="">Packaging a Java application</a>
-    </label>
+    <a href="/docs/build/sections/packaging/" class="">Packaging a Java application</a>
   
 
         </li>
@@ -1804,10 +1779,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-5537e478f301d8ff4f0b5a7a03c9db32" class="toggle"  />
-    <label for="section-5537e478f301d8ff4f0b5a7a03c9db32" class="flex justify-between">
-      <a href="/docs/build/sections/layout/" class="">Layout</a>
-    </label>
+    <a href="/docs/build/sections/layout/" class="">Layout</a>
   
 
         </li>
@@ -1820,10 +1792,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-33bd3456c4645cc966d192fba400a71a" class="toggle"  />
-    <label for="section-33bd3456c4645cc966d192fba400a71a" class="flex justify-between">
-      <a href="/docs/build/sections/pom/" class="">Configuration file</a>
-    </label>
+    <a href="/docs/build/sections/pom/" class="">Configuration file</a>
   
 
         </li>
@@ -1836,10 +1805,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-c956d0b428ebb6c853f314459a513393" class="toggle"  />
-    <label for="section-c956d0b428ebb6c853f314459a513393" class="flex justify-between">
-      <a href="/docs/build/sections/artifact/" class="">Artifact</a>
-    </label>
+    <a href="/docs/build/sections/artifact/" class="">Artifact</a>
   
 
         </li>
@@ -1852,10 +1818,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-d01a14431bc2161a8fed02d90e1a365b" class="toggle"  />
-    <label for="section-d01a14431bc2161a8fed02d90e1a365b" class="flex justify-between">
-      <a href="/docs/build/sections/dependencies/" class="">Dependencies</a>
-    </label>
+    <a href="/docs/build/sections/dependencies/" class="">Dependencies</a>
   
 
         </li>
@@ -1868,10 +1831,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-b838446830102a7dece872d673537390" class="toggle"  />
-    <label for="section-b838446830102a7dece872d673537390" class="flex justify-between">
-      <a href="/docs/build/sections/building/" class="">Building</a>
-    </label>
+    <a href="/docs/build/sections/building/" class="">Building</a>
   
 
         </li>
@@ -1889,8 +1849,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-ffcf8551871937aae0ce60f2b3cc616b" class="toggle"  />
-    <label for="section-ffcf8551871937aae0ce60f2b3cc616b" class="flex justify-between">
+    <input type="checkbox" id="section-48bf1202a7e278154d3a51c618c94cd6" class="toggle"  />
+    <label for="section-48bf1202a7e278154d3a51c618c94cd6" class="flex justify-between">
       <a href="/docs/background/" class="">Background</a>
     </label>
   
@@ -1983,7 +1943,6 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-
 </nav>
 
 
@@ -2004,7 +1963,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>in practice</strong>
+  <h3>in practice</h3>
 
   <label for="toc-control">
     
@@ -2052,13 +2011,13 @@ In particular:</p>
 <ol>
 <li>
 <p>Concrete syntaxes include a wide range of <em>syntactic sugar</em>, i.e. operators that could in theory be expressed in terms of <code>|</code>, <code>*</code> and concatenation.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<!-- This is almost a necessity for most practical applications. -->
+<!-- For instance, concrete syntaxes usually allow specifying a range of characters, like `[A-Z]` for "any capital letter between A and Z", -->
+<!-- which is syntactic sugar for $A | B | C |..| Z$. -->
 </li>
 <li>
 <p>Many regex engines support expressions with features (such as <a href="#backreference">backreferences</a>) that go beyond the expressivity of theoretical regexes.
-Technically, such expressions do not qualify as as regexes (they may describe a language that is not <a href="https://unibz-pp-23-24.github.io/docs/background/sections/regular/#reglanguage">regular</a>).
+Technically, such expressions do not qualify as as regexes (they may describe a language that is not <a href="https://unibz-pp-24-25.github.io/docs/background/sections/regular/#reglanguage">regular</a>).
 However, in practice, they are still referred to as &ldquo;regexes&rdquo;.
 This is also what we will do in this section.</p>
 </li>
@@ -2081,10 +2040,9 @@ Besides, many programming languages (Java, Javascript, Python, C#, etc.) have ad
 </ul>
 <p>A detailed comparison of some the main flavours of regexes can be found <a href="https://gist.github.com/CMCDragonkai/6c933f4a7d713ef712145c5eb94a1816">here</a>.</p>
 <blockquote class="book-hint danger">
-  <strong><em>Warning.</em></strong>
-The patterns used in <a href="https://unibz-pp-23-24.github.io/docs/git/sections/ignore/">.gitigore</a> files are <em>not</em> regular expressions.
+<p><strong><em>Warning.</em></strong>
+The patterns used in <a href="https://unibz-pp-24-25.github.io/docs/git/sections/ignore/">.gitigore</a> files are <em>not</em> regular expressions.</p>
 </blockquote>
-
 <h2 id="java-regexes">
   Java regexes
   <a class="anchor" href="#java-regexes">#</a>
@@ -2097,29 +2055,27 @@ Most of these are identical in other regex languages inspired by Perl&rsquo;s.</
   <a class="anchor" href="#characters">#</a>
 </h3>
 <p>A character in a Java regex can alternatively be written using its <a href="https://en.wikipedia.org/wiki/List_of_Unicode_characters">Unicode hexadecimal identifier</a>, preceded with <code>\u</code>.</p>
-<p><blockquote class="book-hint info">
-  <p><strong><em>Examples.</em></strong></p>
+<blockquote class="book-hint info">
+<p><strong><em>Examples.</em></strong></p>
 <ul>
 <li>the character <code>A</code> can be written either in its normal form, or <code>\u0041</code></li>
 <li>the carriage return character can be written either <code>\r</code> or <code>\u000D</code></li>
 </ul>
 </blockquote>
-
-Special characters (like <code>|</code> or <code>*</code>) need to be escaped to be treated as standard ones (except in some specific contexts, see below).</p>
+<p>Special characters (like <code>|</code> or <code>*</code>) need to be escaped to be treated as standard ones (except in some specific contexts, see below).</p>
 <blockquote class="book-hint info">
-  <p><strong><em>Examples.</em></strong>
+<p><strong><em>Examples.</em></strong>
 In order to be treated as a standard character:</p>
 <ul>
 <li><code>*</code> can be either escaped (<code>\*</code>) or written <code>\u002A</code></li>
 <li><code>\</code> can be either escaped (<code>\\</code>) or written <code>\u005C</code></li>
 </ul>
 </blockquote>
-
 <h3 id="syntactic-sugar">
   Syntactic sugar
   <a class="anchor" href="#syntactic-sugar">#</a>
 </h3>
-<p>We have seen in previous sections that in theory, regular expressions only admit <a href="https://unibz-pp-23-24.github.io/docs/regex/#definition">three operators</a>:</p>
+<p>We have seen in previous sections that in theory, regular expressions only admit <a href="https://unibz-pp-24-25.github.io/docs/regex/#definition">three operators</a>:</p>
 <ul>
 <li>concatenation ($e_1e_2$),</li>
 <li>union ($e_1$<code>|</code>$e_2$) and</li>
@@ -2127,25 +2083,22 @@ In order to be treated as a standard character:</p>
 </ul>
 <p>However, this is impractical for most implication.</p>
 <blockquote class="book-hint info">
-  <p><strong><em>Example.</em></strong>
-In order to match a character that is <em>not</em> a digit, with these three operators only, one would need to write an expression that enumerates all other characters in the underlying <a href="https://unibz-pp-23-24.github.io/docs/background/sections/regular/#alphabet">alphabet</a>, e.g.:</p>
+<p><strong><em>Example.</em></strong>
+In order to match a character that is <em>not</em> a digit, with these three operators only, one would need to write an expression that enumerates all other characters in the underlying <a href="https://unibz-pp-24-25.github.io/docs/background/sections/regular/#alphabet">alphabet</a>, e.g.:</p>
 <p>$\qquad\qquad$ <code>a | b | c | .. | A | B | C | .. | &amp; | ! | &gt; | ..</code></p>
 <p>For the simple <a href="https://en.wikipedia.org/wiki/ASCII">ASCII</a> alphabet, this is already more than a hundred characters.
 For the Unicode alphabet, this is more than 100 000.</p>
-
 </blockquote>
-
 <p>In practice, regexes include additional operators, most of which are <em>syntactic sugar</em> (i.e. could in theory be expressed with only concatenation, union, and closure).</p>
 <h4 id="characterClass">
   Character class
   <a class="anchor" href="#characterClass">#</a>
 </h4>
-<p><blockquote class="book-hint warning">
-  Square brackets (<code>[</code> and <code>]</code>) are used to denote a set of characters, called a <strong>character class</strong>.
+<blockquote class="book-hint warning">
+<p>Square brackets (<code>[</code> and <code>]</code>) are used to denote a set of characters, called a <strong>character class</strong>.</p>
 </blockquote>
-
 <blockquote class="book-hint info">
-  <p><strong><em>Examples.</em></strong></p>
+<p><strong><em>Examples.</em></strong></p>
 <ul>
 <li>
 <p><code>[abcd]</code> is equivalent to <code>a|b|c|d</code></p>
@@ -2154,29 +2107,24 @@ For the Unicode alphabet, this is more than 100 000.</p>
 <p><code>gr[ae]y</code> is equivalent to <code>gr(a|e)y</code></p>
 </li>
 </ul>
-
 </blockquote>
-</p>
-<p><blockquote class="book-hint warning">
-  A character class can also be defined with <em>ranges</em> of characters.
-If $c_1$ and $c_2$ are two characters, then $c_1$<code>-</code>$c_2$ (within square brackets still) denotes any character <em>between</em> $c_1$ and $c_2$ in the Unicode alphabet.
+<blockquote class="book-hint warning">
+<p>A character class can also be defined with <em>ranges</em> of characters.
+If $c_1$ and $c_2$ are two characters, then $c_1$<code>-</code>$c_2$ (within square brackets still) denotes any character <em>between</em> $c_1$ and $c_2$ in the Unicode alphabet.</p>
 </blockquote>
-
 <blockquote class="book-hint info">
-  <p><strong><em>Examples.</em></strong></p>
+<p><strong><em>Examples.</em></strong></p>
 <ul>
 <li><code>[A-Z]</code> matches any character between <code>A</code> and <code>Z</code></li>
 <li><code>[A-Za-z0-9]</code> matches any character between (<code>A</code> and <code>Z</code>) or between (<code>a</code> and <code>z</code>) or between (<code>0</code> and <code>9</code>)</li>
 <li><code>[A-Za-z@]</code> matches <code>@</code> or any character between (<code>A</code> and <code>Z</code>) or between (<code>a</code> and <code>z</code>)</li>
 </ul>
 </blockquote>
-
 <blockquote class="book-hint warning">
-  The <strong>complement</strong> (in the Unicode alphabet) of a character class is described by adding a <code>^</code> after the opening square bracket <code>[</code>.
+<p>The <strong>complement</strong> (in the Unicode alphabet) of a character class is described by adding a <code>^</code> after the opening square bracket <code>[</code>.</p>
 </blockquote>
-
 <blockquote class="book-hint info">
-  <p><strong><em>Examples.</em></strong></p>
+<p><strong><em>Examples.</em></strong></p>
 <ul>
 <li><code>[^a]</code> matches any character different from <code>a</code></li>
 <li><code>[^abc]</code> matches any character that is neither <code>a</code>, <code>b</code> or <code>c</code></li>
@@ -2184,72 +2132,66 @@ If $c_1$ and $c_2$ are two characters, then $c_1$<code>-</code>$c_2$ (within squ
 <li><code>[^A-Za-z0-9]</code> matches any character that is not an ASCII letter or digit</li>
 </ul>
 </blockquote>
-
-Most special characters (like <code>*</code> or <code>|</code>) can be used unescaped inside square brackets to refer to a character (some exceptions to this rule are <code>-</code>, <code>^</code> or <code>\</code>).</p>
+<p>Most special characters (like <code>*</code> or <code>|</code>) can be used unescaped inside square brackets to refer to a character (some exceptions to this rule are <code>-</code>, <code>^</code> or <code>\</code>).</p>
 <blockquote class="book-hint info">
-  <p><strong><em>Examples.</em></strong></p>
+<p><strong><em>Examples.</em></strong></p>
 <ul>
 <li><code>[|*]</code> matches either a <code>|</code> or a <code>*</code></li>
 <li><code>[^|]</code> matches any character that is not <code>|</code></li>
 </ul>
 </blockquote>
-
 <blockquote class="book-hint warning">
-  The special character <code>.</code> stands for any (Unicode) character
+<p>The special character <code>.</code> stands for any (Unicode) character</p>
 </blockquote>
-
 <blockquote class="book-hint info">
-  <p><strong><em>Examples.</em></strong></p>
+<p><strong><em>Examples.</em></strong></p>
 <ul>
 <li><code>..</code> matches any string of two characters</li>
 <li><code>.*</code> matches any Unicode string</li>
 </ul>
 </blockquote>
-
-
-
-
-
-<div class="book-tabs"><input type="radio" class="toggle" name="tabs-exercise_character_class_matches" id="tabs-exercise_character_class_matches-0" checked="checked" />
-  <label for="tabs-exercise_character_class_matches-0">Exercise</label>
-  <div class="book-tabs-content markdown-inner"><p>List all matches returned by a regex engine for:</p>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-exercise_character_class_matches" id="tabs-exercise_character_class_matches-0" checked="checked" />
+<label for="tabs-exercise_character_class_matches-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>List all matches returned by a regex engine for:</p>
 <ol>
 <li>the regex <code>gr[ae]y</code> in <code>the words grey and gray are homonyms</code></li>
 <li>the regex <code>[A-Z][^;]*;</code> in <code>Alice:12;Bob,35;</code></li>
 <li>the regex <code>&lt;.*&gt;</code> in <code>&lt;span class=&quot;title&quot;&gt;My Title&lt;/span&gt;</code></li>
-</ol></div><input type="radio" class="toggle" name="tabs-exercise_character_class_matches" id="tabs-exercise_character_class_matches-1"  />
-  <label for="tabs-exercise_character_class_matches-1">Solution</label>
-  <div class="book-tabs-content markdown-inner"><ol>
+</ol>
+</div>
+<input type="radio" class="toggle" name="tabs-exercise_character_class_matches" id="tabs-exercise_character_class_matches-1"  />
+<label for="tabs-exercise_character_class_matches-1">Solution</label>
+<div class="book-tabs-content markdown-inner"><ol>
 <li>$[10 .. 14)$: <code>grey</code>, $[19 .. 23)$: <code>gray</code></li>
 <li>$[0 .. 8)$: <code>Alice:12;</code>, $[19 .. 23)$: <code>Bob:35;</code></li>
 <li>$[0 .. 35)$: <code>&lt;span class=&quot;title&quot;&gt;My Title&lt;/span&gt;</code></li>
 </ol>
-</div></div>
-
-
-
-
-
-<div class="book-tabs"><input type="radio" class="toggle" name="tabs-exercise_html_tag_regex" id="tabs-exercise_html_tag_regex-0" checked="checked" />
-  <label for="tabs-exercise_html_tag_regex-0">Exercise</label>
-  <div class="book-tabs-content markdown-inner"><p>Use the regex validation tool <a href="https://regex101.com">regex101</a> to write a regex whose evaluation matches HTML tags.
+</div>
+</div>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-exercise_html_tag_regex" id="tabs-exercise_html_tag_regex-0" checked="checked" />
+<label for="tabs-exercise_html_tag_regex-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>Use the regex validation tool <a href="https://regex101.com">regex101</a> to write a regex whose evaluation matches HTML tags.
 For instance, in the word</p>
 <p>$\qquad\qquad$<code>&lt;span class=&quot;title&quot;&gt;My Title&lt;/span&gt;</code></p>
 <p>the regex should match
 <code>&lt;span class=&quot;title&quot;&gt;</code> and <code>&lt;/span&gt;</code>.</p>
-</div><input type="radio" class="toggle" name="tabs-exercise_html_tag_regex" id="tabs-exercise_html_tag_regex-1"  />
-  <label for="tabs-exercise_html_tag_regex-1">Possible solution</label>
-  <div class="book-tabs-content markdown-inner"><code>&lt;[^&gt;]*&gt;</code></div></div>
-
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+</div>
+<input type="radio" class="toggle" name="tabs-exercise_html_tag_regex" id="tabs-exercise_html_tag_regex-1"  />
+<label for="tabs-exercise_html_tag_regex-1">Possible solution</label>
+<div class="book-tabs-content markdown-inner"><p><code>&lt;[^&gt;]*&gt;</code></p>
+</div>
+</div>
+<!-- **_Warning_** -->
+<!-- Character classes with nonempty intersections can easily lead to unexpected matches. -->
 <h4 id="predefined-character-classes">
   Predefined character classes
   <a class="anchor" href="#predefined-character-classes">#</a>
 </h4>
 <p>Some escaped characters denote common character classes:</p>
-<p><blockquote class="book-hint warning">
-  <ul>
+<blockquote class="book-hint warning">
+<ul>
 <li><code>\d</code> is equivalent to <code>[0-9]</code></li>
 <li><code>\w</code> is equivalent to <code>[A-Za-z0-9]</code></li>
 <li><code>\s</code> stands for any whitespace character. It is equivalent to</li>
@@ -2261,84 +2203,71 @@ For instance, in the word</p>
 <p>$\qquad$<code>\u000D\u000A|[\u000A\u000B\u000C\u000D\u0085\u2028\u2029]</code></p>
 </li>
 </ul>
-
 </blockquote>
-
-The <em>complements</em> of some of these classes are also available:</p>
+<p>The <em>complements</em> of some of these classes are also available:</p>
 <blockquote class="book-hint warning">
-  <ul>
+<ul>
 <li><code>\D</code> is equivalent to <code>[^\d]</code></li>
 <li><code>\S</code> is equivalent to <code>[^\s]</code></li>
 <li><code>\W</code> is equivalent to <code>[^\w]</code></li>
 </ul>
-
 </blockquote>
-
 <h4 id="quantifiers">
   Quantifiers
   <a class="anchor" href="#quantifiers">#</a>
 </h4>
-<p><blockquote class="book-hint warning">
-  If $i \le j \in \mathbb{N}$ then $e$<code>{</code>$i$<code>,</code>$j$<code>}</code> concatenates $e$ with itself at least $i$ times and at most $j$ times, and is evaluated in a <a href="https://unibz-pp-23-24.github.io/docs/regex/sections/pattern/#greedy">greedy</a> way.
+<blockquote class="book-hint warning">
+<p>If $i \le j \in \mathbb{N}$ then $e$<code>{</code>$i$<code>,</code>$j$<code>}</code> concatenates $e$ with itself at least $i$ times and at most $j$ times, and is evaluated in a <a href="https://unibz-pp-24-25.github.io/docs/regex/sections/pattern/#greedy">greedy</a> way.</p>
 </blockquote>
-
 <blockquote class="book-hint info">
-  <p><strong><em>Examples.</em></strong></p>
+<p><strong><em>Examples.</em></strong></p>
 <ul>
 <li><code>a{1,3}</code> is equivalent to <code>aaa|aa|a</code></li>
 <li><code>[A-Z]{1,3}</code> greedily matches a sequence of 1 to 3 capital letters</li>
 <li><code>[A-Z]{0,3}</code> greedily matches a (possibly empty) sequence of at most 3 capital letters</li>
 </ul>
 </blockquote>
-</p>
-<p><blockquote class="book-hint warning">
-  $e$<code>{</code>$i$<code>}</code> is equivalent to $e$<code>{</code>$i$<code>,</code>$i$<code>}</code>.
+<blockquote class="book-hint warning">
+<p>$e$<code>{</code>$i$<code>}</code> is equivalent to $e$<code>{</code>$i$<code>,</code>$i$<code>}</code>.</p>
 </blockquote>
-
 <blockquote class="book-hint info">
-  <p><strong><em>Examples.</em></strong></p>
+<p><strong><em>Examples.</em></strong></p>
 <ul>
 <li><code>a{3}</code> is equivalent to <code>aaa</code></li>
 <li><code>[A-Z]{4}</code> matches a sequence of 4 capital letters</li>
 </ul>
 </blockquote>
-</p>
-<p><blockquote class="book-hint warning">
-  $e$<code>+</code> is equivalent to $ee$<code>*</code>.
+<blockquote class="book-hint warning">
+<p>$e$<code>+</code> is equivalent to $ee$<code>*</code>.</p>
 </blockquote>
-
 <blockquote class="book-hint info">
-  <p><strong><em>Examples.</em></strong></p>
+<p><strong><em>Examples.</em></strong></p>
 <ul>
 <li><code>a+</code> greedily matches a sequence of at least one <code>a</code></li>
 <li><code>\d+</code> greedily matches a nonempty sequence of digits</li>
 <li><code>[^\d]+</code> greedily matches a nonempty sequence of non-digits</li>
 </ul>
 </blockquote>
-
 <blockquote class="book-hint warning">
-  If $e$ does not end with a quantifier, then $e$<code>?</code> is equivalent to $e$<code>|</code>$\varepsilon$.
+<p>If $e$ does not end with a quantifier, then $e$<code>?</code> is equivalent to $e$<code>|</code>$\varepsilon$.</p>
 </blockquote>
-
 <blockquote class="book-hint info">
-  <p><strong><em>Examples.</em></strong></p>
+<p><strong><em>Examples.</em></strong></p>
 <ul>
 <li><code>a?</code> greedily matches at most one occurrence of <code>a</code></li>
 <li><code>(ab)?</code> greedily matches at most one occurrence of <code>ab</code></li>
 <li><code>[A-Z]?</code> greedily matches at most one capital letter</li>
 </ul>
 </blockquote>
-</p>
 <h3 id="lazy-quantification">
   Lazy quantification
   <a class="anchor" href="#lazy-quantification">#</a>
 </h3>
 <blockquote class="book-hint warning">
-  If $e$ ends with a quantifier (e.g. with <code>*</code> or <code>+</code>) then $e$<code>?</code> forces a <a href="https://unibz-pp-23-24.github.io/docs/regex/sections/pattern/#lazy">lazy</a> evaluation of this quantifier.
+<p>If $e$ ends with a quantifier (e.g. with <code>*</code> or <code>+</code>) then $e$<code>?</code> forces a <a href="https://unibz-pp-24-25.github.io/docs/regex/sections/pattern/#lazy">lazy</a> evaluation of this quantifier.</p>
 </blockquote>
-
 <blockquote class="book-hint info">
-  <p><strong><em>Examples.</em></strong></p>
+<p><strong><em>Examples.</em></strong></p>
 <ul>
 <li>
 <p>In the word $w$ = <code>ab</code>:</p>
@@ -2355,9 +2284,7 @@ The <em>complements</em> of some of these classes are also available:</p>
 </ul>
 </li>
 </ul>
-
 </blockquote>
-
 <h3 id="boundary-matchers">
   Boundary matchers
   <a class="anchor" href="#boundary-matchers">#</a>
@@ -2365,15 +2292,13 @@ The <em>complements</em> of some of these classes are also available:</p>
 <p>Some special characters match empty segments (i.e. segments with word $\varepsilon$).</p>
 <p>In particular:</p>
 <blockquote class="book-hint warning">
-  <ul>
+<ul>
 <li><code>^</code> (outside of a <a href="#characterClass">character class</a> definition) matches the beginning of a string,</li>
 <li><code>$</code> matches the end of a string.</li>
 </ul>
-
 </blockquote>
-
 <blockquote class="book-hint info">
-  <p><strong><em>Examples.</em></strong>
+<p><strong><em>Examples.</em></strong>
 Consider the string $w$ = <code>a123b</code></p>
 <ul>
 <li>the regex <code>\d+</code> matches $w[1 .. 3)$: <code>123</code></li>
@@ -2381,30 +2306,25 @@ Consider the string $w$ = <code>a123b</code></p>
 <li>the regex <code>\d+$</code> has no match in $w$</li>
 </ul>
 </blockquote>
-
 <blockquote class="book-hint info">
-  <p><strong><em>Hint.</em></strong>
+<p><strong><em>Hint.</em></strong>
 These two special characters are widely used, in particular for string validation:
 an input word $w$ belongs to the language described by a regex $e$ iff there is a match for the regex <code>^</code>$e$<code>$</code> in $w$.</p>
 <p>Besides, if this is the case, then the best first match is also the longest possible match.</p>
-
 </blockquote>
-
 <blockquote class="book-hint info">
-  <p><strong><em>Example.</em></strong>
+<p><strong><em>Example.</em></strong>
 In the string $w$ = <code>ab</code>:</p>
 <ul>
 <li>the best first match for <code>a|ab</code> is $w[a .. 1)$: <code>a</code></li>
 <li>the best first match for <code>^(a|ab)$</code> is $w[a .. 2)$: <code>ab</code></li>
 </ul>
 </blockquote>
-
 <blockquote class="book-hint warning">
-  The special character <code>\b</code> matches any &ldquo;natural language word&rdquo; boundary (i.e. beginning or end).
+<p>The special character <code>\b</code> matches any &ldquo;natural language word&rdquo; boundary (i.e. beginning or end).</p>
 </blockquote>
-
 <blockquote class="book-hint info">
-  <p><strong><em>Example.</em></strong>
+<p><strong><em>Example.</em></strong>
 Consider the string $w$ = <code>User Alice797 is 55 years old</code></p>
 <ul>
 <li>The best first match for <code>\d+</code> in $w$ is $w[10 .. 13)$: <code>797</code></li>
@@ -2413,30 +2333,26 @@ Consider the string $w$ = <code>User Alice797 is 55 years old</code></p>
 <li>The only match for <code>\b\d+\b</code> in $w$ is $w[17 .. 19)$: <code>55</code></li>
 </ul>
 </blockquote>
-
 <h3 id="group">
   Group
   <a class="anchor" href="#group">#</a>
 </h3>
-<p><blockquote class="book-hint warning">
-  A <strong>group</strong> in a regex is the content of a pair of parentheses.
+<blockquote class="book-hint warning">
+<p>A <strong>group</strong> in a regex is the content of a pair of parentheses.</p>
 </blockquote>
-
-Groups allow capturing <em>subsegments</em> of a matched segment.</p>
+<p>Groups allow capturing <em>subsegments</em> of a matched segment.</p>
 <blockquote class="book-hint info">
-  <p><strong><em>Example.</em></strong>
+<p><strong><em>Example.</em></strong>
 Consider the regex:
 $e$ = <code>a(b|c)d</code>
 and the word
 $w = $<code>abd</code></p>
 <p>There is only one match for $e$ in $w$ (namely $w$ itself).</p>
 <p><em>Within this match</em>, the subsegment captured by the group <code>(a|b)</code> is $w[1 .. 2)$: <code>b</code>.</p>
-
 </blockquote>
-
 <p>Groups in a regex are (totally) ordered based on the position of their opening parenthesis.</p>
 <blockquote class="book-hint info">
-  <p><strong><em>Example.</em></strong>
+<p><strong><em>Example.</em></strong>
 In the regex <code>a(([\d]*)(a|b))</code></p>
 <ul>
 <li>Group number 1 is <code>(([\d]*)(a|b))</code></li>
@@ -2444,75 +2360,66 @@ In the regex <code>a(([\d]*)(a|b))</code></p>
 <li>Group number 3 is <code>(a|b)</code></li>
 </ul>
 </blockquote>
-
-
-
-
-
-<div class="book-tabs"><input type="radio" class="toggle" name="tabs-exercise_html_tag_group_regex" id="tabs-exercise_html_tag_group_regex-0" checked="checked" />
-  <label for="tabs-exercise_html_tag_group_regex-0">Exercise</label>
-  <div class="book-tabs-content markdown-inner"><p>Use the regex validation tool <a href="https://regex101.com">regex101</a> to write a regex with a group that matches what is inside a pair of opening and a closing HTML tags.
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-exercise_html_tag_group_regex" id="tabs-exercise_html_tag_group_regex-0" checked="checked" />
+<label for="tabs-exercise_html_tag_group_regex-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>Use the regex validation tool <a href="https://regex101.com">regex101</a> to write a regex with a group that matches what is inside a pair of opening and a closing HTML tags.
 For instance, in the word</p>
 <p>$\qquad\qquad$<code>&lt;span class=&quot;title&quot;&gt;My Title&lt;/span&gt;  &lt;span class=&quot;content&quot;&gt;Hello&lt;/span&gt;</code></p>
 <p>the group should match
 <code>My Title</code> and <code>Hello</code></p>
-</div><input type="radio" class="toggle" name="tabs-exercise_html_tag_group_regex" id="tabs-exercise_html_tag_group_regex-1"  />
-  <label for="tabs-exercise_html_tag_group_regex-1">Possible solution</label>
-  <div class="book-tabs-content markdown-inner"><code>&gt;([^&lt;]*)&lt;/</code></div></div>
-
+</div>
+<input type="radio" class="toggle" name="tabs-exercise_html_tag_group_regex" id="tabs-exercise_html_tag_group_regex-1"  />
+<label for="tabs-exercise_html_tag_group_regex-1">Possible solution</label>
+<div class="book-tabs-content markdown-inner"><p><code>&gt;([^&lt;]*)&lt;/</code></p>
+</div>
+</div>
 <h3 id="backreference">
   Backreference
   <a class="anchor" href="#backreference">#</a>
 </h3>
 <blockquote class="book-hint warning">
-  A group can be referenced <em>within</em> a regex, with <code>\</code>$n$, where $n$ is the group number.
-If the reference appears <em>after</em> the group, this is called a <strong>backreference</strong>.
+<p>A group can be referenced <em>within</em> a regex, with <code>\</code>$n$, where $n$ is the group number.
+If the reference appears <em>after</em> the group, this is called a <strong>backreference</strong>.</p>
 </blockquote>
-
 <blockquote class="book-hint info">
-  <p><strong><em>Example.</em></strong></p>
+<p><strong><em>Example.</em></strong></p>
 <ul>
 <li>In the regex <code>a(b|c)d\1q</code>, the backreference <code>\1</code> refers to the group <code>(b|c)</code></li>
 <li>In the regex <code>(a(b|m))d\2m</code>, the backreference <code>\2</code> refers to the group <code>(b|m)</code></li>
 </ul>
 </blockquote>
-
-<p><blockquote class="book-hint warning">
-  <p><strong><em>Evaluation.</em></strong>
+<blockquote class="book-hint warning">
+<p><strong><em>Evaluation.</em></strong>
 Let $e$ be a regex with backreferences.</p>
 <p>Consider the expression $e&rsquo;$ identical to $e$, but where each backreference is replaced with the group that it references.
 Then a match for $e$ is a match for $e&rsquo;$ where each group and its copy capture segments with identical words.</p>
-
 </blockquote>
-
 <blockquote class="book-hint info">
-  <strong><em>Example.</em></strong>
-The regex <code>(a|b)\1</code> is equivalent to <code>aa|bb</code>
+<p><strong><em>Example.</em></strong>
+The regex <code>(a|b)\1</code> is equivalent to <code>aa|bb</code></p>
 </blockquote>
-</p>
-
-
-
-
-<div class="book-tabs"><input type="radio" class="toggle" name="tabs-exercise_backreferences" id="tabs-exercise_backreferences-0" checked="checked" />
-  <label for="tabs-exercise_backreferences-0">Exercise</label>
-  <div class="book-tabs-content markdown-inner"><p>Which words does the following regex match?</p>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-exercise_backreferences" id="tabs-exercise_backreferences-0" checked="checked" />
+<label for="tabs-exercise_backreferences-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>Which words does the following regex match?</p>
 <p>$\qquad\qquad$<code>((\d)_\2)@\1</code></p>
-</div><input type="radio" class="toggle" name="tabs-exercise_backreferences" id="tabs-exercise_backreferences-1"  />
-  <label for="tabs-exercise_backreferences-1">Solution</label>
-  <div class="book-tabs-content markdown-inner"><p>.</p>
+</div>
+<input type="radio" class="toggle" name="tabs-exercise_backreferences" id="tabs-exercise_backreferences-1"  />
+<label for="tabs-exercise_backreferences-1">Solution</label>
+<div class="book-tabs-content markdown-inner"><p>.</p>
 <ul>
 <li><code>1_1@1_1</code>,</li>
 <li><code>2_2@2_2</code>,</li>
 <li><code>3_3@3_3</code>,</li>
 <li>etc.</li>
-</ul></div></div>
-
+</ul>
+</div>
+</div>
 <blockquote class="book-hint info">
-  <strong><em>Note.</em></strong>
-Regexes with backreferences go beyond the expressivity of traditional regular expressions, meaning that they can describe languages that are <em>not</em> <a href="https://unibz-pp-23-24.github.io/docs/background/sections/regular/#language">regular</a>.
+<p><strong><em>Note.</em></strong>
+Regexes with backreferences go beyond the expressivity of traditional regular expressions, meaning that they can describe languages that are <em>not</em> <a href="https://unibz-pp-24-25.github.io/docs/background/sections/regular/#language">regular</a>.</p>
 </blockquote>
-
 </article>
  
       
