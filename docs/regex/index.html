@@ -21,21 +21,21 @@ lexical analysis in a compiler.
 A regular expression is a (finite) expression that describes a (possibly infinite) regular language.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/regex/">
-  <meta property="og:site_name" content="Programming project 2024-25">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/regex/">
+  <meta property="og:site_name" content="Programming project 2023-24">
   <meta property="og:title" content="Regular expressions">
   <meta property="og:description" content="Regular expressions # The theory of regular expressions (a.k.a. regexes) was developed in the 1950’s (notably by Stephen Cole Kleene), and regexes have been used since the 1960’s for variety of computational tasks. Common applications include:
 input string validation (e.g. checking whether a date is valid, or whether a password contains characters of certain types), searching and replacing strings (e.g. within an IDE), lexical analysis in a compiler. Definition # A regular expression is a (finite) expression that describes a (possibly infinite) regular language.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="website">
-<title>Regular expressions | Programming project 2024-25</title>
+<title>Regular expressions | Programming project 2023-24</title>
 <link rel="icon" href="/favicon.png" >
 <link rel="manifest" href="/manifest.json">
-<link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/regex/">
+<link rel="canonical" href="https://unibz-pp-23-24.github.io/docs/regex/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
   <script defer src="/en.search.min.ef6ce3f581865a34e7a0361facaa520c0f023938171236d76684573e7df35a2c.js" integrity="sha256-72zj9YGGWjTnoDYfrKpSDA8COTgXEjbXZoRXPn3zWiw=" crossorigin="anonymous"></script>
-<link rel="alternate" type="application/rss+xml" href="https://unibz-pp-24-25.github.io/docs/regex/index.xml" title="Programming project 2024-25" />
+<link rel="alternate" type="application/rss+xml" href="https://unibz-pp-23-24.github.io/docs/regex/index.xml" title="Programming project 2023-24" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -85,7 +85,7 @@ https://github.com/alex-shpak/hugo-book
         
   <nav>
 <h2 class="book-brand">
-  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  <a class="flex align-center" href="/"><span>Programming project 2023-24</span>
   </a>
 </h2>
 
@@ -2005,7 +2005,7 @@ Common applications include:</p>
   Definition
   <a class="anchor" href="#definition">#</a>
 </h2>
-<p>A <strong>regular expression</strong> is a (finite) expression that describes a (possibly infinite) <a href="https://unibz-pp-24-25.github.io/docs/background/sections/regular/#reglanguage">regular language</a>.</p>
+<p>A <strong>regular expression</strong> is a (finite) expression that describes a (possibly infinite) <a href="https://unibz-pp-23-24.github.io/docs/background/sections/regular/#reglanguage">regular language</a>.</p>
 <blockquote class="book-hint warning">
 <p><strong><em>Syntax.</em></strong>
 A regular expression is either:</p>
@@ -2044,7 +2044,7 @@ For instance:</p>
 </ul>
 <blockquote class="book-hint warning">
 <p><strong><em>Semantics.</em></strong>
-If $e$ is a regular expression, we use $\llbracket{e}\rrbracket$ to denote the <a href="https://unibz-pp-24-25.github.io/docs/background/sections/regular/#reglanguage">regular language</a> described by $e$.</p>
+If $e$ is a regular expression, we use $\llbracket{e}\rrbracket$ to denote the <a href="https://unibz-pp-23-24.github.io/docs/background/sections/regular/#reglanguage">regular language</a> described by $e$.</p>
 <p>Let <code>a</code> be a character, and let $e, e_1, e_2$ be regular expressions.
 Then:</p>
 <ul>
@@ -2068,12 +2068,12 @@ Then:</p>
 <li>$\llbracket{ e_1 | e_2 }\rrbracket = \llbracket{e_1}\rrbracket \cup \llbracket{e_2}\rrbracket$</li>
 </ul>
 </li>
-<li>$e_1 e_2$ describes the <a href="https://unibz-pp-24-25.github.io/docs/background/sections/regular/#concat">element-wise concatenation</a> of the languages described by $e_1$ and $e_2$:
+<li>$e_1 e_2$ describes the <a href="https://unibz-pp-23-24.github.io/docs/background/sections/regular/#concat">element-wise concatenation</a> of the languages described by $e_1$ and $e_2$:
 <ul>
 <li>$\llbracket{e_1e_2}\rrbracket = \llbracket{e_1}\rrbracket \circ \llbracket{e_2}\rrbracket$</li>
 </ul>
 </li>
-<li>$e*$ describes the <a href="https://unibz-pp-24-25.github.io/docs/background/sections/regular/#closure">closure</a> of the language described by $e$:
+<li>$e*$ describes the <a href="https://unibz-pp-23-24.github.io/docs/background/sections/regular/#closure">closure</a> of the language described by $e$:
 <ul>
 <li>$\llbracket e * \rrbracket$ = $\llbracket e \rrbracket^*$</li>
 </ul>

@@ -23,8 +23,8 @@ The algorithm seen earlier to print all files in a folder uses n-ary recursion.
 All the binary tree algorithms seen earlier use binary recursion.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/recursion/sections/nary/">
-  <meta property="og:site_name" content="Programming project 2024-25">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/recursion/sections/nary/">
+  <meta property="og:site_name" content="Programming project 2023-24">
   <meta property="og:title" content="N-ary recursion">
   <meta property="og:description" content="N-ary recursion # Definition. A recursive method that is not linear recursive uses n-ary recursion.
 Specific cases include:
@@ -34,10 +34,10 @@ All the binary tree algorithms seen earlier use binary recursion.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-<title>N-ary recursion | Programming project 2024-25</title>
+<title>N-ary recursion | Programming project 2023-24</title>
 <link rel="icon" href="/favicon.png" >
 <link rel="manifest" href="/manifest.json">
-<link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/recursion/sections/nary/">
+<link rel="canonical" href="https://unibz-pp-23-24.github.io/docs/recursion/sections/nary/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
   <script defer src="/en.search.min.ef6ce3f581865a34e7a0361facaa520c0f023938171236d76684573e7df35a2c.js" integrity="sha256-72zj9YGGWjTnoDYfrKpSDA8COTgXEjbXZoRXPn3zWiw=" crossorigin="anonymous"></script>
@@ -90,7 +90,7 @@ https://github.com/alex-shpak/hugo-book
         
   <nav>
 <h2 class="book-brand">
-  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  <a class="flex align-center" href="/"><span>Programming project 2023-24</span>
   </a>
 </h2>
 
@@ -2024,15 +2024,15 @@ A recursive method that is <em>not</em> linear recursive uses <strong>n-ary recu
 </ul>
 <blockquote class="book-hint info">
 <p><strong><em>Examples.</em></strong></p>
-<p>The algorithm seen <a href="https://unibz-pp-24-25.github.io/docs/recursion/#printFiles">earlier</a> to print all files in a folder uses n-ary recursion.</p>
-<p>All the binary tree algorithms seen <a href="https://unibz-pp-24-25.github.io/docs/recursion/#binaryTrees">earlier</a> use binary recursion.</p>
+<p>The algorithm seen <a href="https://unibz-pp-23-24.github.io/docs/recursion/#printFiles">earlier</a> to print all files in a folder uses n-ary recursion.</p>
+<p>All the binary tree algorithms seen <a href="https://unibz-pp-23-24.github.io/docs/recursion/#binaryTrees">earlier</a> use binary recursion.</p>
 </blockquote>
 <h2 id="divide-and-conquer">
   Divide and conquer
   <a class="anchor" href="#divide-and-conquer">#</a>
 </h2>
 <blockquote class="book-hint warning">
-<p>The <strong>divide-and-conquer</strong> paradigm is a variation of the methodology seen <a href="https://unibz-pp-24-25.github.io/docs/recursion/#methodology">earlier</a> to solve a problem recursively.
+<p>The <strong>divide-and-conquer</strong> paradigm is a variation of the methodology seen <a href="https://unibz-pp-23-24.github.io/docs/recursion/#methodology">earlier</a> to solve a problem recursively.
 In the divide-and-conquer approach, the smaller inputs $I_1$, .., $I_k$ usually have (nearly) the <em>same size</em>.</p>
 </blockquote>
 <p>Divide-and-conquer has been instrumental in discovering efficient solutions to pervasive computational problems.
@@ -2051,7 +2051,7 @@ Well-known examples include:</p>
 <p><strong><em>Input:</em></strong> an array $A$</p>
 <p><strong><em>Output:</em></strong> a sorted array with the same elements as $A$</p></blockquote>
 <p><strong><em>Observation.</em></strong>
-As we saw <a href="https://unibz-pp-24-25.github.io/docs/abstractdatatypes/sections/sorting/">already</a>, the array can be of any type (<code>int</code>, <code>String</code>, <code>City</code>, <code>Unit</code>, etc.), and the sorting criterion can be any <a href="https://unibz-pp-24-25.github.io/docs/background/sections/order/#preorder">total preorder</a> over this type.</p>
+As we saw <a href="https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/sorting/">already</a>, the array can be of any type (<code>int</code>, <code>String</code>, <code>City</code>, <code>Unit</code>, etc.), and the sorting criterion can be any <a href="https://unibz-pp-23-24.github.io/docs/background/sections/order/#preorder">total preorder</a> over this type.</p>
 <blockquote class="book-hint warning">
 <p>The Mergesort algorithm may be summarized as follows:</p>
 <ul>
@@ -2102,7 +2102,7 @@ We only used it to keep the explanation simple.</p>
 <div class="book-tabs-content markdown-inner"><p>To complete this algorithm, implement (in pseudocode) the auxiliary method</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Type<span style="color:#f92672">[]</span> <span style="color:#a6e22e">merge</span>(Type<span style="color:#f92672">[]</span> A, Type<span style="color:#f92672">[]</span> B)
 </span></span></code></pre></div><p>that takes as input two sorted arrays <code>A</code> and <code>B</code>, and returns a sorted array that contains their values.</p>
-<p>Try also to write it in such a way that the overall Mergesort algorithm is <a href="https://unibz-pp-24-25.github.io/docs/abstractdatatypes/sections/sorting/#stable">stable</a>.</p>
+<p>Try also to write it in such a way that the overall Mergesort algorithm is <a href="https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/sorting/#stable">stable</a>.</p>
 </div>
 <input type="radio" class="toggle" name="tabs-exercise_mergeSort" id="tabs-exercise_mergeSort-1"  />
 <label for="tabs-exercise_mergeSort-1">Possible solution</label>
@@ -2168,13 +2168,13 @@ or <a href="https://willrosenbaum.com/blog/2022/merge-sort/">this (more accurate
 </blockquote>
 <blockquote class="book-hint info">
 <p><strong><em>Observation.</em></strong>
-Merge sort is a <a href="https://unibz-pp-24-25.github.io/docs/abstractdatatypes/sections/sorting/#stable">stable</a> sorting algorithm.</p>
+Merge sort is a <a href="https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/sorting/#stable">stable</a> sorting algorithm.</p>
 </blockquote>
 <h2 id="tree-and-graph-traversal">
   Tree and graph traversal
   <a class="anchor" href="#tree-and-graph-traversal">#</a>
 </h2>
-<p><a href="https://unibz-pp-24-25.github.io/docs/recursion/#binaryTrees">Earlier</a> in this chapter, we used different algorithms to traverse a binary tree, where nodes were instances of the following class:</p>
+<p><a href="https://unibz-pp-23-24.github.io/docs/recursion/#binaryTrees">Earlier</a> in this chapter, we used different algorithms to traverse a binary tree, where nodes were instances of the following class:</p>
 <p><img src="/img/diagrams/plantuml/nodeWithChar.svg" alt="" /></p>
 <p>One of these algorithms was the so-called &ldquo;pre-order traversal&rdquo;:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>traverse(Node root){

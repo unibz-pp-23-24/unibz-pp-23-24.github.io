@@ -38,8 +38,8 @@ void penalizeGreenUnits(List&lt;Unit&gt; units){
 In each case, let us isolate the modification that is applied to a single unit, with a dedicated method (called boost and penalizeGreen respectively).">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/lambda/sections/callback/">
-  <meta property="og:site_name" content="Programming project 2024-25">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/lambda/sections/callback/">
+  <meta property="og:site_name" content="Programming project 2023-24">
   <meta property="og:title" content="Callback method">
   <meta property="og:description" content="Callback method # When a method takes another method as argument, the latter is a callback method.
 Anonymous methods are often used as callback methods.
@@ -48,10 +48,10 @@ void boostUnits(List&lt;Unit&gt; units){ for(Unit unit: units){ unit.health&#43;
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-<title>Callback method | Programming project 2024-25</title>
+<title>Callback method | Programming project 2023-24</title>
 <link rel="icon" href="/favicon.png" >
 <link rel="manifest" href="/manifest.json">
-<link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/lambda/sections/callback/">
+<link rel="canonical" href="https://unibz-pp-23-24.github.io/docs/lambda/sections/callback/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
   <script defer src="/en.search.min.ef6ce3f581865a34e7a0361facaa520c0f023938171236d76684573e7df35a2c.js" integrity="sha256-72zj9YGGWjTnoDYfrKpSDA8COTgXEjbXZoRXPn3zWiw=" crossorigin="anonymous"></script>
@@ -104,7 +104,7 @@ https://github.com/alex-shpak/hugo-book
         
   <nav>
 <h2 class="book-brand">
-  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  <a class="flex align-center" href="/"><span>Programming project 2023-24</span>
   </a>
 </h2>
 
@@ -2056,7 +2056,7 @@ The two following Java methods have the same structure: both modify each unit in
 </span></span><span style="display:flex;"><span>        unit.<span style="color:#a6e22e">health</span><span style="color:#f92672">--</span>;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>Both methods have type <code>Unit</code> $\to$ <code>void</code>, so they are instances of the <a href="https://unibz-pp-24-25.github.io/docs/lambda/sections/type/#functionalInterface">functional interface</a> <code>Consumer&lt;Unit&gt;</code>.</p>
+</span></span></code></pre></div><p>Both methods have type <code>Unit</code> $\to$ <code>void</code>, so they are instances of the <a href="https://unibz-pp-23-24.github.io/docs/lambda/sections/type/#functionalInterface">functional interface</a> <code>Consumer&lt;Unit&gt;</code>.</p>
 <p>This allows us to factorize our code with a method <code>transform</code> that takes as input:</p>
 <ul>
 <li>an array of units,</li>
@@ -2076,7 +2076,7 @@ The two following Java methods have the same structure: both modify each unit in
 <p>A callback method in Java can be:</p>
 <ul>
 <li>a method reference, or</li>
-<li>a <a href="https://unibz-pp-24-25.github.io/docs/lambda/sections/lambda/">lambda expression</a>.</li>
+<li>a <a href="https://unibz-pp-23-24.github.io/docs/lambda/sections/lambda/">lambda expression</a>.</li>
 </ul>
 <h4 id="methodReference">
   Method reference as a callback method
@@ -2153,7 +2153,7 @@ A Java <strong>method reference</strong> is written:</p>
 <blockquote class="book-hint info">
 <p><strong><em>Example(continued).</em></strong></p>
 <p>In Java, the above method <code>transform</code> is not necessary.
-Instead, we can use the native method <a href="https://unibz-pp-24-25.github.io/docs/stream/sections/terminal/#forEach">forEach</a>, available (among others) for any Java <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Collection.html">Collection</a>.
+Instead, we can use the native method <a href="https://unibz-pp-23-24.github.io/docs/stream/sections/terminal/#forEach">forEach</a>, available (among others) for any Java <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Collection.html">Collection</a>.
 This method takes a <code>Consumer</code> method as input, and applies this method to each element of the collection.</p>
 <p>So the following program:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>getUnits().<span style="color:#a6e22e">forEach</span>(unit <span style="color:#f92672">-&gt;</span> unit.<span style="color:#a6e22e">health</span><span style="color:#f92672">++</span>);

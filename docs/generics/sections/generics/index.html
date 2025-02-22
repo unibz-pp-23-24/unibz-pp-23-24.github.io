@@ -30,8 +30,8 @@ For instance, in the chapter dedicated to streams, we repeatedly used the variab
 Consider the following interface Unit and its two implementations Butterfly and Unicorn.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/generics/sections/generics/">
-  <meta property="og:site_name" content="Programming project 2024-25">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/generics/sections/generics/">
+  <meta property="og:site_name" content="Programming project 2023-24">
   <meta property="og:title" content="Generics">
   <meta property="og:description" content="Generics # Terminology. The term generics usually refers to generic methods and generic types.
 Type variable # A type variable is a variable ranging over types.
@@ -40,10 +40,10 @@ Generic method # Example # Consider the following interface Unit and its two imp
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-<title>Generics | Programming project 2024-25</title>
+<title>Generics | Programming project 2023-24</title>
 <link rel="icon" href="/favicon.png" >
 <link rel="manifest" href="/manifest.json">
-<link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/generics/sections/generics/">
+<link rel="canonical" href="https://unibz-pp-23-24.github.io/docs/generics/sections/generics/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
   <script defer src="/en.search.min.ef6ce3f581865a34e7a0361facaa520c0f023938171236d76684573e7df35a2c.js" integrity="sha256-72zj9YGGWjTnoDYfrKpSDA8COTgXEjbXZoRXPn3zWiw=" crossorigin="anonymous"></script>
@@ -96,7 +96,7 @@ https://github.com/alex-shpak/hugo-book
         
   <nav>
 <h2 class="book-brand">
-  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  <a class="flex align-center" href="/"><span>Programming project 2023-24</span>
   </a>
 </h2>
 
@@ -2027,7 +2027,7 @@ https://github.com/alex-shpak/hugo-book
 <blockquote class="book-hint warning">
 <p>A <strong>type variable</strong> is a variable ranging over types.</p>
 </blockquote>
-<p>For instance, in the chapter dedicated to <a href="https://unibz-pp-24-25.github.io/docs/stream/sections/pipeline/">streams</a>, we repeatedly used the variable $T$ to refer to the type of the elements of a stream.</p>
+<p>For instance, in the chapter dedicated to <a href="https://unibz-pp-23-24.github.io/docs/stream/sections/pipeline/">streams</a>, we repeatedly used the variable $T$ to refer to the type of the elements of a stream.</p>
 <h2 id="genericMethod">
   Generic method
   <a class="anchor" href="#genericMethod">#</a>
@@ -2208,7 +2208,7 @@ In Java:</p>
   <a class="anchor" href="#usage">#</a>
 </h3>
 <p>Generic types serve the same purpose as generic methods, i.e. factorizing code without sacrificing type safety.</p>
-<p>For some object-oriented languages (like Java or C++), generic types are instrumental in factorizing the implementation of <a href="https://unibz-pp-24-25.github.io/docs/abstractdatatypes/">abstract data types</a> (such as lists, sets, associative arrays or queues).</p>
+<p>For some object-oriented languages (like Java or C++), generic types are instrumental in factorizing the implementation of <a href="https://unibz-pp-23-24.github.io/docs/abstractdatatypes/">abstract data types</a> (such as lists, sets, associative arrays or queues).</p>
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong>
 The generic Java class <code>HashSet&lt;E&gt;</code> provides a <em>unique</em> instance method to add an element to the set.
@@ -2226,7 +2226,7 @@ This method has signature <code>boolean add(E e)</code>.</p>
 <p>The declaration of these type variables is identical to the one we saw above for methods, but the &ldquo;diamond&rdquo; is immediately next to the class (resp. record, interface) name (rather than left of the method declaration):</p>
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong>
-We can create a generic wrapper class <code>Box</code> (similar to Java&rsquo;s <a href="https://unibz-pp-24-25.github.io/docs/stream/sections/optional/">Optional</a>), as follows:</p>
+We can create a generic wrapper class <code>Box</code> (similar to Java&rsquo;s <a href="https://unibz-pp-23-24.github.io/docs/stream/sections/optional/">Optional</a>), as follows:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Box</span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> {
 </span></span><span style="display:flex;"><span>    ...
 </span></span><span style="display:flex;"><span>}

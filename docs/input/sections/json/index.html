@@ -27,8 +27,8 @@ Jackson can be used within a Maven project, by declaring the following dependenc
 And similarly for Gradle:">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/input/sections/json/">
-  <meta property="og:site_name" content="Programming project 2024-25">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/input/sections/json/">
+  <meta property="og:site_name" content="Programming project 2023-24">
   <meta property="og:title" content="JSON Serialization">
   <meta property="og:description" content="JSON serialization # A number of (external) libraries allow transforming Java objects into JSON objects and conversely. For instance Jackson, Gson, JSON-java, JSON-B and JSON-P.
 In this section, we focus on Jackson.
@@ -38,10 +38,10 @@ Install # Jackson can be used within a Maven project, by declaring the following
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-<title>JSON Serialization | Programming project 2024-25</title>
+<title>JSON Serialization | Programming project 2023-24</title>
 <link rel="icon" href="/favicon.png" >
 <link rel="manifest" href="/manifest.json">
-<link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/input/sections/json/">
+<link rel="canonical" href="https://unibz-pp-23-24.github.io/docs/input/sections/json/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
   <script defer src="/en.search.min.ef6ce3f581865a34e7a0361facaa520c0f023938171236d76684573e7df35a2c.js" integrity="sha256-72zj9YGGWjTnoDYfrKpSDA8COTgXEjbXZoRXPn3zWiw=" crossorigin="anonymous"></script>
@@ -94,7 +94,7 @@ https://github.com/alex-shpak/hugo-book
         
   <nav>
 <h2 class="book-brand">
-  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  <a class="flex align-center" href="/"><span>Programming project 2023-24</span>
   </a>
 </h2>
 
@@ -2021,7 +2021,7 @@ Jackson was initially designed for JSON, but extensions of Jackson allow manipul
   Install
   <a class="anchor" href="#install">#</a>
 </h2>
-<p>Jackson can be used within a Maven project, by declaring the following <a href="https://unibz-pp-24-25.github.io/docs/build/sections/dependencies/">dependency</a></p>
+<p>Jackson can be used within a Maven project, by declaring the following <a href="https://unibz-pp-23-24.github.io/docs/build/sections/dependencies/">dependency</a></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;dependency&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;groupId&gt;</span>com.fasterxml.jackson.core<span style="color:#f92672">&lt;/groupId&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;artifactId&gt;</span>jackson-databind<span style="color:#f92672">&lt;/artifactId&gt;</span>
@@ -2164,7 +2164,7 @@ for instance <a href="https://github.com/FasterXML/jackson-databind/">Jackson in
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">  }
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
 </span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(mapper.<span style="color:#a6e22e">writeValueAsString</span>(rome));
-</span></span></code></pre></div><p>However, recall that a JSON object cannot contain a <a href="https://unibz-pp-24-25.github.io/docs/objects/sections/objects/#objectRef">reference</a> to another JSON object.
+</span></span></code></pre></div><p>However, recall that a JSON object cannot contain a <a href="https://unibz-pp-23-24.github.io/docs/objects/sections/objects/#objectRef">reference</a> to another JSON object.
 As a consequence, some Java objects cannot be finitely represented in JSON:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>italy.<span style="color:#a6e22e">capital</span> <span style="color:#f92672">=</span> rome;
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Throws a JsonMappingException: Document nesting depth (1001) exceeds the maximum allowed</span>
@@ -2172,7 +2172,7 @@ As a consequence, some Java objects cannot be finitely represented in JSON:</p>
 </span></span></code></pre></div><p>By default, Jackson serializes:</p>
 <ul>
 <li>public (instance) attributes,</li>
-<li>non-public fields that have a <a href="https://unibz-pp-24-25.github.io/docs/objects/sections/encapsulation/#getterSetter">getter</a> method.</li>
+<li>non-public fields that have a <a href="https://unibz-pp-23-24.github.io/docs/objects/sections/encapsulation/#getterSetter">getter</a> method.</li>
 </ul>
 <p>However, it is also possible to force serialization of other attributes, either for all classes:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>mapper.<span style="color:#a6e22e">setVisibility</span>(PropertyAccessor.<span style="color:#a6e22e">FIELD</span>, Visibility.<span style="color:#a6e22e">ANY</span>);

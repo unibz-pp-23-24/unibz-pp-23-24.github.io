@@ -15,18 +15,18 @@ Programming languages that support multithreading also allow expressing constrai
 For instance, we saw earlier that a thread can be forced to wait for a child thread to terminate before resuming its execution.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/multithreading/sections/synchronization/">
-  <meta property="og:site_name" content="Programming project 2024-25">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/multithreading/sections/synchronization/">
+  <meta property="og:site_name" content="Programming project 2023-24">
   <meta property="og:title" content="Synchronization">
   <meta property="og:description" content="Synchronization # The behavior of a program that runs multiple threads can be hard to predict. In particular, two threads may compete to access a same resource (e.g. the value of some object’s attribute), without guarantee on the order in which they access it. This may lead (among other things) to a race condition
 Programming languages that support multithreading also allow expressing constraints on the order of execution of some instructions. For instance, we saw earlier that a thread can be forced to wait for a child thread to terminate before resuming its execution.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-<title>Synchronization | Programming project 2024-25</title>
+<title>Synchronization | Programming project 2023-24</title>
 <link rel="icon" href="/favicon.png" >
 <link rel="manifest" href="/manifest.json">
-<link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/multithreading/sections/synchronization/">
+<link rel="canonical" href="https://unibz-pp-23-24.github.io/docs/multithreading/sections/synchronization/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
   <script defer src="/en.search.min.ef6ce3f581865a34e7a0361facaa520c0f023938171236d76684573e7df35a2c.js" integrity="sha256-72zj9YGGWjTnoDYfrKpSDA8COTgXEjbXZoRXPn3zWiw=" crossorigin="anonymous"></script>
@@ -79,7 +79,7 @@ https://github.com/alex-shpak/hugo-book
         
   <nav>
 <h2 class="book-brand">
-  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  <a class="flex align-center" href="/"><span>Programming project 2023-24</span>
   </a>
 </h2>
 
@@ -2001,9 +2001,9 @@ https://github.com/alex-shpak/hugo-book
 <p>The behavior of a program that runs multiple threads can be hard to predict.
 In particular, two threads may compete to access a same resource (e.g. the value of some object&rsquo;s attribute),
 without guarantee on the <em>order</em> in which they access it.
-This may lead (among other things) to a <a href="https://unibz-pp-24-25.github.io/docs/multithreading/sections/race/">race condition</a></p>
+This may lead (among other things) to a <a href="https://unibz-pp-23-24.github.io/docs/multithreading/sections/race/">race condition</a></p>
 <p>Programming languages that support multithreading also allow expressing <em>constraints</em> on the order of execution of some instructions.
-For instance, we saw <a href="https://unibz-pp-24-25.github.io/docs/multithreading/sections/simple/#spawnSync">earlier</a> that a thread can be forced to wait for a child thread to terminate before resuming its execution.</p>
+For instance, we saw <a href="https://unibz-pp-23-24.github.io/docs/multithreading/sections/simple/#spawnSync">earlier</a> that a thread can be forced to wait for a child thread to terminate before resuming its execution.</p>
 <p>In this section, we review two additional mechanisms (mutual exclusion and condition variables) that allow synchronizing the behaviors of threads.</p>
 <p>For a more exhaustive overview of the possibilities offered by Java in that regard, we refer to the Javadoc of the package <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/package-summary.html">java.util.concurrent</a>,
 which summarizes the situations where a Java statement <em>must</em> be executed before another (in Java&rsquo;s terminology, this binary relation over statements is called the &ldquo;happens before&rdquo; relation).</p>
@@ -2236,7 +2236,7 @@ These include C++, C#, Go, Java, Python or Rust.</p>
   <a class="anchor" href="#producerConsumer">#</a>
 </h3>
 <p>A prototypical application of condition variables is the so-called <strong>producer/consumer</strong> pattern.
-In this scenario, two pools of threads (usually with fixed sizes) communicate via a <a href="https://unibz-pp-24-25.github.io/docs/abstractdatatypes/sections/queue/#queue">queue</a>.</p>
+In this scenario, two pools of threads (usually with fixed sizes) communicate via a <a href="https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/queue/#queue">queue</a>.</p>
 <ol>
 <li>A pool of <strong>producer</strong> threads, which create elements and add (a.k.a. <strong>enqueue</strong>) them to the queue,</li>
 <li>A pool of <strong>consumer</strong> threads, which receive (a.k.a <strong>dequeue</strong>) these elements and process them.</li>
@@ -2378,7 +2378,7 @@ If this happens, thread $p$:</p>
 <p>In the example above, the loop <code>while(!isEmpty)</code> (in the method <code>enqueue</code>) seems unnecessary, in the sense that it could be replaced with the conditional statements <code>if(!isEmpty)</code>.
 And similarly for the loop in the method <code>dequeue</code>.</p>
 <p>The purpose of this loop is to handle the abnormal case where a consumer (resp. producer) is awaken while the condition variable <code>isEmpty</code> has value <code>false</code> (resp. <code>true</code>).
-Such a situation is called a <a href="https://en.wikipedia.org/wiki/Spurious_wakeup">spurious wakeup</a>, and may have a variety of causes (including a <a href="https://unibz-pp-24-25.github.io/docs/multithreading/sections/race/">race condition</a>).</p>
+Such a situation is called a <a href="https://en.wikipedia.org/wiki/Spurious_wakeup">spurious wakeup</a>, and may have a variety of causes (including a <a href="https://unibz-pp-23-24.github.io/docs/multithreading/sections/race/">race condition</a>).</p>
 <p>This is the reason why it is customary to write:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">while</span>(<span style="color:#f92672">&lt;</span>conditionVariable<span style="color:#f92672">&gt;</span>){
 </span></span><span style="display:flex;"><span>    wait();

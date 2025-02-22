@@ -26,22 +26,22 @@ A side benefit of many tests is that they help clarifying what a program (resp. 
 So in a sense, tests are part of the documentation or specification of a system, because they provide precise examples of the expected behavior of the program (resp. component, method).">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/unittests/">
-  <meta property="og:site_name" content="Programming project 2024-25">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/unittests/">
+  <meta property="og:site_name" content="Programming project 2023-24">
   <meta property="og:title" content="Unit tests">
   <meta property="og:description" content="Unit tests # Testing software # Testing is an integral part of software development.
 Different terminologies coexists to categorize software tests (more or less precise, an with overlapping meanings). Common categories are:
 functional vs non-functional test unit vs integration test security test performance test regression test etc. A side benefit of many tests is that they help clarifying what a program (resp. component, method) is expected to do. So in a sense, tests are part of the documentation or specification of a system, because they provide precise examples of the expected behavior of the program (resp. component, method).">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="website">
-<title>Unit tests | Programming project 2024-25</title>
+<title>Unit tests | Programming project 2023-24</title>
 <link rel="icon" href="/favicon.png" >
 <link rel="manifest" href="/manifest.json">
-<link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/unittests/">
+<link rel="canonical" href="https://unibz-pp-23-24.github.io/docs/unittests/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
   <script defer src="/en.search.min.ef6ce3f581865a34e7a0361facaa520c0f023938171236d76684573e7df35a2c.js" integrity="sha256-72zj9YGGWjTnoDYfrKpSDA8COTgXEjbXZoRXPn3zWiw=" crossorigin="anonymous"></script>
-<link rel="alternate" type="application/rss+xml" href="https://unibz-pp-24-25.github.io/docs/unittests/index.xml" title="Programming project 2024-25" />
+<link rel="alternate" type="application/rss+xml" href="https://unibz-pp-23-24.github.io/docs/unittests/index.xml" title="Programming project 2023-24" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -91,7 +91,7 @@ https://github.com/alex-shpak/hugo-book
         
   <nav>
 <h2 class="book-brand">
-  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  <a class="flex align-center" href="/"><span>Programming project 2023-24</span>
   </a>
 </h2>
 
@@ -2022,7 +2022,7 @@ Common categories are:</p>
 <p>A side benefit of many tests is that they help clarifying <em>what</em> a program (resp. component, method) is expected to do.
 So in a sense, tests are part of the <em>documentation</em> or specification of a system, because they provide precise <em>examples</em> of the expected behavior of the program (resp. component, method).</p>
 <p>This is why tests are often part of the development process itself.
-Notably, <a href="https://unibz-pp-24-25.github.io/docs/unittests/sections/tdd/">test-driven development</a> consists in developing tests cases <em>before</em> software is fully developed.</p>
+Notably, <a href="https://unibz-pp-23-24.github.io/docs/unittests/sections/tdd/">test-driven development</a> consists in developing tests cases <em>before</em> software is fully developed.</p>
 <h2 id="unit-tests-1">
   Unit tests
   <a class="anchor" href="#unit-tests-1">#</a>
@@ -2031,7 +2031,7 @@ Notably, <a href="https://unibz-pp-24-25.github.io/docs/unittests/sections/tdd/"
 <p>A <strong>unit test</strong> is usually understood as:</p>
 <ul>
 <li>testing the behavior of a <em>small</em> piece of code (typically a method),</li>
-<li>automated (typically integrated to the <a href="https://unibz-pp-24-25.github.io/docs/build/">build</a> process),</li>
+<li>automated (typically integrated to the <a href="https://unibz-pp-23-24.github.io/docs/build/">build</a> process),</li>
 <li>fast.</li>
 </ul>
 <!-- - isolated. -->
@@ -2045,7 +2045,7 @@ However, many of them do <em>not</em> qualify as unit tests.</p>
 <blockquote class="book-hint warning">
 <p>In its simplest form, a unit test can be viewed as a pair</p>
 <p>$\qquad$ (input, expected output)</p>
-<p>for a given <a href="https://unibz-pp-24-25.github.io/docs/background/sections/problem/">computational problem</a>.</p>
+<p>for a given <a href="https://unibz-pp-23-24.github.io/docs/background/sections/problem/">computational problem</a>.</p>
 </blockquote>
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong>
@@ -2166,7 +2166,7 @@ A unit test should itself be <em>free of bugs</em>.</p>
   <a class="anchor" href="#unit-tests-and-build-automation">#</a>
 </h2>
 <p>Unit tests are usually integrated to the standard build automation process of a project.</p>
-<p>For instance, the <code>test-compile</code> and <code>test</code> phases of Maven&rsquo;s <a href="https://unibz-pp-24-25.github.io/docs/build/sections/building/#phases">default lifecycle</a> are in charge of compiling and executing unit tests respectively.
+<p>For instance, the <code>test-compile</code> and <code>test</code> phases of Maven&rsquo;s <a href="https://unibz-pp-23-24.github.io/docs/build/sections/building/#phases">default lifecycle</a> are in charge of compiling and executing unit tests respectively.
 This effectively prevents further phases to be executed if a test fails.</p>
 <h2 id="regression-tests">
   Regression tests

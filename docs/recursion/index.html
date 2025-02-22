@@ -29,8 +29,8 @@ For instance, in the following example,
 printFiles(&quot;foo&quot;) could print:">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/recursion/">
-  <meta property="og:site_name" content="Programming project 2024-25">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/recursion/">
+  <meta property="og:site_name" content="Programming project 2023-24">
   <meta property="og:title" content="Recursion">
   <meta property="og:description" content="Recursion # Warmup # Exercise In this exercise, we assume that a folder can only contain files or other folders.
 Write (in pseudocode) a method void printFiles(String folder) that:
@@ -38,14 +38,14 @@ takes as input a path to an (existing) folder, and prints a path to each file co
 └── foo ├── fred.txt └── bar ├── thud.txt └── waldo.txt printFiles(&#34;foo&#34;) could print:">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="website">
-<title>Recursion | Programming project 2024-25</title>
+<title>Recursion | Programming project 2023-24</title>
 <link rel="icon" href="/favicon.png" >
 <link rel="manifest" href="/manifest.json">
-<link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/recursion/">
+<link rel="canonical" href="https://unibz-pp-23-24.github.io/docs/recursion/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
   <script defer src="/en.search.min.ef6ce3f581865a34e7a0361facaa520c0f023938171236d76684573e7df35a2c.js" integrity="sha256-72zj9YGGWjTnoDYfrKpSDA8COTgXEjbXZoRXPn3zWiw=" crossorigin="anonymous"></script>
-<link rel="alternate" type="application/rss+xml" href="https://unibz-pp-24-25.github.io/docs/recursion/index.xml" title="Programming project 2024-25" />
+<link rel="alternate" type="application/rss+xml" href="https://unibz-pp-23-24.github.io/docs/recursion/index.xml" title="Programming project 2023-24" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -95,7 +95,7 @@ https://github.com/alex-shpak/hugo-book
         
   <nav>
 <h2 class="book-brand">
-  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  <a class="flex align-center" href="/"><span>Programming project 2023-24</span>
   </a>
 </h2>
 
@@ -2385,7 +2385,7 @@ For instance, some problems with an array as input can be solved recursively by 
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>It is also frequent for a recursive method to return <em>multiple</em> values.
 For instance, in a binary tree, return the set of labels that appear in a tree as well as the number of nodes.</p>
-<p>In Java 14 or later, this can be easily achieved by returning a <a href="https://unibz-pp-24-25.github.io/docs/objects/sections/quasi-objects/#record">record</a>.
+<p>In Java 14 or later, this can be easily achieved by returning a <a href="https://unibz-pp-23-24.github.io/docs/objects/sections/quasi-objects/#record">record</a>.
 For instance:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">record</span> <span style="color:#a6e22e">Result</span>(Set<span style="color:#f92672">&lt;</span>Character<span style="color:#f92672">&gt;</span> labels, <span style="color:#66d9ef">int</span> numberOfNodes){};
 </span></span><span style="display:flex;"><span>

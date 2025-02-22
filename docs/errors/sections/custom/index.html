@@ -26,8 +26,8 @@ Recall that an instance of a subclass of RuntimeException is unchecked.
 Therefore an instance of WrongNumberOfRowsException is an unchecked exception.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/errors/sections/custom/">
-  <meta property="og:site_name" content="Programming project 2024-25">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/errors/sections/custom/">
+  <meta property="og:site_name" content="Programming project 2023-24">
   <meta property="og:title" content="Custom exceptions">
   <meta property="og:description" content="Custom exception # Custom exceptions can be created by extending one of Java’s native exception types. For instance:
 public class WrongNumberOfRowsException extends IllegalArgumentException { public WrongNumberOfRowsException(int numberOfRows) { super(&#34;This sudoku grid has &#34;&#43;numberOfRows&#43;&#34; rows, whereas it should have 9&#34;). } } A custom exception can be thrown like a regular one:
@@ -35,10 +35,10 @@ if(sudokuGrid.length != 9){ throw new WrongNumberOfRowsException(sudokuGrid.leng
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-<title>Custom exceptions | Programming project 2024-25</title>
+<title>Custom exceptions | Programming project 2023-24</title>
 <link rel="icon" href="/favicon.png" >
 <link rel="manifest" href="/manifest.json">
-<link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/errors/sections/custom/">
+<link rel="canonical" href="https://unibz-pp-23-24.github.io/docs/errors/sections/custom/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
   <script defer src="/en.search.min.ef6ce3f581865a34e7a0361facaa520c0f023938171236d76684573e7df35a2c.js" integrity="sha256-72zj9YGGWjTnoDYfrKpSDA8COTgXEjbXZoRXPn3zWiw=" crossorigin="anonymous"></script>
@@ -91,7 +91,7 @@ https://github.com/alex-shpak/hugo-book
         
   <nav>
 <h2 class="book-brand">
-  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  <a class="flex align-center" href="/"><span>Programming project 2023-24</span>
   </a>
 </h2>
 
@@ -2003,14 +2003,14 @@ For instance:</p>
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">super</span>(<span style="color:#e6db74">&#34;This sudoku grid has &#34;</span><span style="color:#f92672">+</span>numberOfRows<span style="color:#f92672">+</span><span style="color:#e6db74">&#34; rows, whereas it should have 9&#34;</span>).
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>A custom exception can be <a href="https://unibz-pp-24-25.github.io/docs/errors/sections/exceptions/#throw">thrown</a> like a regular one:</p>
+</span></span></code></pre></div><p>A custom exception can be <a href="https://unibz-pp-23-24.github.io/docs/errors/sections/exceptions/#throw">thrown</a> like a regular one:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">if</span>(sudokuGrid.<span style="color:#a6e22e">length</span> <span style="color:#f92672">!=</span> 9){
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> WrongNumberOfRowsException(sudokuGrid.<span style="color:#a6e22e">length</span>);
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><blockquote class="book-hint info">
 <p><strong><em>Observation.</em></strong>
 In this example, <code>WrongNumberOfRowsException</code> extends <code>IllegalArgumentException</code>, which extends <code>RuntimeException</code>.
-Recall that an instance of a subclass of <code>RuntimeException</code> is <a href="https://unibz-pp-24-25.github.io/docs/errors/sections/checked/#unchecked">unchecked</a>.
+Recall that an instance of a subclass of <code>RuntimeException</code> is <a href="https://unibz-pp-23-24.github.io/docs/errors/sections/checked/#unchecked">unchecked</a>.
 Therefore an instance of <code>WrongNumberOfRowsException</code> is an unchecked exception.</p>
 </blockquote>
 </article>

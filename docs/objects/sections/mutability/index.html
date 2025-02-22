@@ -47,8 +47,8 @@ Possible solution
 The output array contains $i$ times the same user (with the last id and name from the input arrays).">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/objects/sections/mutability/">
-  <meta property="og:site_name" content="Programming project 2024-25">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/objects/sections/mutability/">
+  <meta property="og:site_name" content="Programming project 2023-24">
   <meta property="og:title" content="Mutability">
   <meta property="og:description" content="Mutability # Illustration # Exercise The Java method createUsers below is incorrect.
 Can you see why, and how to fix this?
@@ -56,10 +56,10 @@ public class User { int id; String name; } /* Input: - ids: a nonempty array of 
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-<title>Mutability | Programming project 2024-25</title>
+<title>Mutability | Programming project 2023-24</title>
 <link rel="icon" href="/favicon.png" >
 <link rel="manifest" href="/manifest.json">
-<link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/objects/sections/mutability/">
+<link rel="canonical" href="https://unibz-pp-23-24.github.io/docs/objects/sections/mutability/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
   <script defer src="/en.search.min.ef6ce3f581865a34e7a0361facaa520c0f023938171236d76684573e7df35a2c.js" integrity="sha256-72zj9YGGWjTnoDYfrKpSDA8COTgXEjbXZoRXPn3zWiw=" crossorigin="anonymous"></script>
@@ -112,7 +112,7 @@ https://github.com/alex-shpak/hugo-book
         
   <nav>
 <h2 class="book-brand">
-  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  <a class="flex align-center" href="/"><span>Programming project 2023-24</span>
   </a>
 </h2>
 
@@ -2118,13 +2118,13 @@ This would have prevented compilation of the incorrect program above.</p>
 <li><strong><em>Easier debugging:</em></strong> as illustrated above, forcing an object to be immutable may prevent an incorrect program to compile.
 Compile-time errors are usually easier to fix that bugs.</li>
 <li><strong><em>Readability:</em></strong> code that modifies or reuses objects can be harder to understand (and <em>reason</em> about) than code that creates (fresh) immutable objects.</li>
-<li><strong><em>Thread-safety:</em></strong> multiple threads can access an immutable object concurrently without <a href="https://unibz-pp-24-25.github.io/docs/multithreading/sections/race/">race condition</a>.</li>
+<li><strong><em>Thread-safety:</em></strong> multiple threads can access an immutable object concurrently without <a href="https://unibz-pp-23-24.github.io/docs/multithreading/sections/race/">race condition</a>.</li>
 <li><strong><em>Easier collaboration and maintenance:</em></strong> Alice can safely pass an immutable object to Bob (i.e. make the object visible to Bob&rsquo;s code).
 This will not affect the correctness of Alice&rsquo;s code (because Bob&rsquo;s code cannot modify this object).</li>
 </ul>
 <blockquote>
 <p><strong><em>Reference.</em></strong>
-For a more in-depth analysis of the benefits of immutability, we refer to <a href="https://unibz-pp-24-25.github.io/docs/intro/sections/bibliography/#effectiveJava">Effective Java</a>, item 17:</p>
+For a more in-depth analysis of the benefits of immutability, we refer to <a href="https://unibz-pp-23-24.github.io/docs/intro/sections/bibliography/#effectiveJava">Effective Java</a>, item 17:</p>
 <p><em>&ldquo;Classes should be immutable unless there&rsquo;s a very good reason to make them mutable.&rdquo;</em></p></blockquote>
 <blockquote class="book-hint info">
 <p><strong><em>Observation.</em></strong>
@@ -2175,7 +2175,7 @@ The following Java program does not compile.</p>
 </span></span></code></pre></div></blockquote>
 <blockquote class="book-hint danger">
 <p><strong><em>Warning.</em></strong>
-This meaning of the keyword <code>final</code> is different from that we already saw in the section on <a href="https://unibz-pp-24-25.github.io/docs/objects/sections/encapsulation/#final">encapsulation</a>.</p>
+This meaning of the keyword <code>final</code> is different from that we already saw in the section on <a href="https://unibz-pp-23-24.github.io/docs/objects/sections/encapsulation/#final">encapsulation</a>.</p>
 </blockquote>
 <p>When the variable is an instance attribute, this also forces the attributes to be explicitly instantiated <em>before the execution of the constructor terminates</em>.</p>
 <blockquote class="book-hint info">
@@ -2318,7 +2318,7 @@ The following program compiles (assuming that the attribute <code>streetNumber</
 For instance, the list of all files in a folder.
 In this case, the list (resp. set, map) can be made final.
 A common way to achieve this is the class <a href="https://guava.dev/releases/23.0/api/docs/com/google/common/collect/ImmutableList.html">ImmutableList</a> (resp. <a href="https://guava.dev/releases/23.0/api/docs/com/google/common/collect/ImmutableSet.html">ImmutableSet</a>, <a href="https://guava.dev/releases/23.0/api/docs/com/google/common/collect/ImmutableMap.html">ImmutableMap</a>) of the Guava library.</p>
-<p>To use Guava in a Maven project, declare this <a href="https://unibz-pp-24-25.github.io/docs/build/sections/dependencies/#mavenDep">dependency</a>:</p>
+<p>To use Guava in a Maven project, declare this <a href="https://unibz-pp-23-24.github.io/docs/build/sections/dependencies/#mavenDep">dependency</a>:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;dependencies&gt;</span>
 </span></span><span style="display:flex;"><span>  ...
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;dependency&gt;</span>
@@ -2341,9 +2341,9 @@ It provides instance methods like <code>append</code>, <code>insert</code>, <cod
   Boxed types
   <a class="anchor" href="#boxed-types">#</a>
 </h4>
-<p>Java&rsquo;s <a href="https://unibz-pp-24-25.github.io/docs/objects/sections/quasi-objects/#boxedTypes">boxed types</a> (like <code>Integer</code> or <code>Boolean</code>) are immutable.</p>
+<p>Java&rsquo;s <a href="https://unibz-pp-23-24.github.io/docs/objects/sections/quasi-objects/#boxedTypes">boxed types</a> (like <code>Integer</code> or <code>Boolean</code>) are immutable.</p>
 <p>However, each boxed types has a mutable &ldquo;atomic&rdquo; counterpart, e.g. <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/atomic/AtomicInteger.html">AtomicInteger</a> for <code>Integer</code> and <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/atomic/AtomicBoolean.html">AtomicBoolean</a> for <code>Boolean</code>.</p>
-<p>The main purpose of these classes is to offer build-in <a href="https://unibz-pp-24-25.github.io/docs/multithreading/sections/abstractions/#atomic">thread safety</a> for common sequences of operations.
+<p>The main purpose of these classes is to offer build-in <a href="https://unibz-pp-23-24.github.io/docs/multithreading/sections/abstractions/#atomic">thread safety</a> for common sequences of operations.
 For instance, <code>AtomicInteger</code> provides a method equivalent to <code>i++</code>, but thread-safe (note that <code>i++</code> is a shortcut for three operations: read the value, increment it and write it back).</p>
 <div class="book-tabs">
 <input type="radio" class="toggle" name="tabs-exercise_mutability_atomic" id="tabs-exercise_mutability_atomic-0" checked="checked" />

@@ -25,8 +25,8 @@ The name of an enumerated type can generally be used like a regular reference ty
 For instance">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/objects/sections/quasi-objects/">
-  <meta property="og:site_name" content="Programming project 2024-25">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/objects/sections/quasi-objects/">
+  <meta property="og:site_name" content="Programming project 2023-24">
   <meta property="og:title" content="Quasi-objects">
   <meta property="og:description" content="Quasi-objects # Enumerated types # Most imperative languages allow the creation of so-called enumerated types.
 An enumerated type is a datatype for a finite set or enumerated values. For instance, if our game only allows “blue”, “green” and “red” as unit colors, then we may create a dedicated type that only allows these three values.
@@ -34,10 +34,10 @@ In Java # An enumerated type in Java is a set of constants. These constants are 
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-<title>Quasi-objects | Programming project 2024-25</title>
+<title>Quasi-objects | Programming project 2023-24</title>
 <link rel="icon" href="/favicon.png" >
 <link rel="manifest" href="/manifest.json">
-<link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/objects/sections/quasi-objects/">
+<link rel="canonical" href="https://unibz-pp-23-24.github.io/docs/objects/sections/quasi-objects/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
   <script defer src="/en.search.min.ef6ce3f581865a34e7a0361facaa520c0f023938171236d76684573e7df35a2c.js" integrity="sha256-72zj9YGGWjTnoDYfrKpSDA8COTgXEjbXZoRXPn3zWiw=" crossorigin="anonymous"></script>
@@ -90,7 +90,7 @@ https://github.com/alex-shpak/hugo-book
         
   <nav>
 <h2 class="book-brand">
-  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  <a class="flex align-center" href="/"><span>Programming project 2023-24</span>
   </a>
 </h2>
 
@@ -2026,8 +2026,8 @@ For instance, if our game only allows &ldquo;blue&rdquo;, &ldquo;green&rdquo; an
   <a class="anchor" href="#in-java">#</a>
 </h3>
 <p>An enumerated type in Java is a set of constants.
-These constants are effectively <a href="https://unibz-pp-24-25.github.io/docs/objects/sections/classesasobjects/#staticAttributes">static</a>,
-meaning that they depends on the class or interface where the enumerated type is declared (similarly to a <a href="https://unibz-pp-24-25.github.io/docs/objects/sections/classesasobjects/#staticAttributes">static attribute</a>).
+These constants are effectively <a href="https://unibz-pp-23-24.github.io/docs/objects/sections/classesasobjects/#staticAttributes">static</a>,
+meaning that they depends on the class or interface where the enumerated type is declared (similarly to a <a href="https://unibz-pp-23-24.github.io/docs/objects/sections/classesasobjects/#staticAttributes">static attribute</a>).
 The <em>name</em> of an enumerated type can generally be used like a regular reference type.
 For instance</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Unit</span> {
@@ -2101,7 +2101,7 @@ For instance:</p>
 <blockquote class="book-hint warning">
 <p>Many modern languages (such as Java, C#, Python, Ruby, JavaScript, Go, etc.) support a technique called <strong>interning</strong>, in order to manage strings in memory.
 This consists in storing only one copy of each distinct string created during the execution of a program.
-These strings are stored in a shared <strong>pool</strong>, and each of them is an <a href="https://unibz-pp-24-25.github.io/docs/objects/sections/mutability/">immutable</a> object (meaning that it cannot be modified).</p>
+These strings are stored in a shared <strong>pool</strong>, and each of them is an <a href="https://unibz-pp-23-24.github.io/docs/objects/sections/mutability/">immutable</a> object (meaning that it cannot be modified).</p>
 </blockquote>
 <p>Some benefits are faster string comparisons, lower memory footprint, etc.</p>
 <h3 id="in-java-2">
@@ -2147,7 +2147,7 @@ For instance</p>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Outputs true, because of (implicit) interning</span>
 </span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(myString <span style="color:#f92672">==</span> sameString);
-</span></span></code></pre></div><p>In order to support interning, string in Java are <a href="https://unibz-pp-24-25.github.io/docs/objects/sections/mutability/">immutable</a>.</p>
+</span></span></code></pre></div><p>In order to support interning, string in Java are <a href="https://unibz-pp-23-24.github.io/docs/objects/sections/mutability/">immutable</a>.</p>
 <p>In particular, the instance methods of the class <code>String</code> (like <code>substring</code>, etc.) do <em>not</em> modify a string.
 Instead, some of them may return (a reference to) a <em>different</em> object.
 For instance:</p>
@@ -2162,7 +2162,7 @@ For instance:</p>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Outputs false, because the method &#39;replace&#39; returns a reference</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// to another object.</span>
 </span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(copy <span style="color:#f92672">==</span> foo);
-</span></span></code></pre></div><p>The class <code>String</code> overrides the method <a href="https://unibz-pp-24-25.github.io/docs/objects/sections/comparing/#equals">equals</a> so that it implements string comparison in the expected way.
+</span></span></code></pre></div><p>The class <code>String</code> overrides the method <a href="https://unibz-pp-23-24.github.io/docs/objects/sections/comparing/#equals">equals</a> so that it implements string comparison in the expected way.
 For instance:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String myString <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> String(<span style="color:#e6db74">&#34;foo&#34;</span>);
 </span></span><span style="display:flex;"><span>String sameString <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> String(<span style="color:#e6db74">&#34;foo&#34;</span>);
@@ -2197,14 +2197,14 @@ For instance:</p>
 </span></span><span style="display:flex;"><span>Integer j <span style="color:#f92672">=</span> 2;
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Outputs true</span>
 </span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(i <span style="color:#f92672">==</span> j);
-</span></span></code></pre></div><p>Like strings, instances of boxed types are <a href="https://unibz-pp-24-25.github.io/docs/objects/sections/mutability/">immutable</a>.
+</span></span></code></pre></div><p>Like strings, instances of boxed types are <a href="https://unibz-pp-23-24.github.io/docs/objects/sections/mutability/">immutable</a>.
 This can affect performance.
 For instance:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (Integer i <span style="color:#f92672">=</span> 0; i <span style="color:#f92672">&lt;</span> 1000000 ; i<span style="color:#f92672">++</span>){
 </span></span><span style="display:flex;"><span>    ...
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>may create up to 1 million objects in memory.
-This is one of the reasons why it is usually recommended to use primitive types whenever possible (see for instance <a href="https://unibz-pp-24-25.github.io/docs/intro/sections/bibliography/#effectiveJava">Effective Java</a>,
+This is one of the reasons why it is usually recommended to use primitive types whenever possible (see for instance <a href="https://unibz-pp-23-24.github.io/docs/intro/sections/bibliography/#effectiveJava">Effective Java</a>,
 Item 61).
 Some boxed types are (partially) interned, analogously to strings.</p>
 </article>

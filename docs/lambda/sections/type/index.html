@@ -27,8 +27,8 @@ In other words, this is a function with domain int and codomain int.
 This is written:">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/lambda/sections/type/">
-  <meta property="og:site_name" content="Programming project 2024-25">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/lambda/sections/type/">
+  <meta property="og:site_name" content="Programming project 2023-24">
   <meta property="og:title" content="Type of a method">
   <meta property="og:description" content="Type of a method # Terminology. The type (a.k.a. signature) of a method consists of:
 the type(s) of its argument(s), and its return type. Notation. The type of a method is sometimes described analogously to the type of a mathematical function. For instance, consider the following Java method square:
@@ -37,10 +37,10 @@ In other words, this is a function with domain int and codomain int. This is wri
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-<title>Type of a method | Programming project 2024-25</title>
+<title>Type of a method | Programming project 2023-24</title>
 <link rel="icon" href="/favicon.png" >
 <link rel="manifest" href="/manifest.json">
-<link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/lambda/sections/type/">
+<link rel="canonical" href="https://unibz-pp-23-24.github.io/docs/lambda/sections/type/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
   <script defer src="/en.search.min.ef6ce3f581865a34e7a0361facaa520c0f023938171236d76684573e7df35a2c.js" integrity="sha256-72zj9YGGWjTnoDYfrKpSDA8COTgXEjbXZoRXPn3zWiw=" crossorigin="anonymous"></script>
@@ -93,7 +93,7 @@ https://github.com/alex-shpak/hugo-book
         
   <nav>
 <h2 class="book-brand">
-  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  <a class="flex align-center" href="/"><span>Programming project 2023-24</span>
   </a>
 </h2>
 
@@ -2016,7 +2016,7 @@ The <strong>type</strong> (a.k.a. <strong>signature</strong>) of a method consis
 </blockquote>
 <blockquote class="book-hint warning">
 <p><strong><em>Notation.</em></strong>
-The type of a method is sometimes described analogously to the type of a mathematical <a href="https://unibz-pp-24-25.github.io/docs/background/sections/set_tuple_map/#function">function</a>.
+The type of a method is sometimes described analogously to the type of a mathematical <a href="https://unibz-pp-23-24.github.io/docs/background/sections/set_tuple_map/#function">function</a>.
 For instance, consider the following Java method <code>square</code>:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">square</span>(<span style="color:#66d9ef">int</span> x){
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> x <span style="color:#f92672">*</span> x;
@@ -2040,18 +2040,18 @@ This is written:</p>
   <a class="anchor" href="#in-java">#</a>
 </h2>
 <p>Syntactically, Java does not provide a method typing system like the one above.
-Instead, Java uses (abuses?) <a href="https://unibz-pp-24-25.github.io/docs/interfaces/sections/java_interfaces/">interfaces</a> for this purpose.</p>
+Instead, Java uses (abuses?) <a href="https://unibz-pp-23-24.github.io/docs/interfaces/sections/java_interfaces/">interfaces</a> for this purpose.</p>
 <h3 id="functionalInterface">
   Functional interface
   <a class="anchor" href="#functionalInterface">#</a>
 </h3>
 <p>A method type in Java is described with a so-called <em>functional interface</em>.</p>
 <blockquote class="book-hint warning">
-<p><strong><em>Syntax.</em></strong> A Java <strong>functional interface</strong> is an <a href="https://unibz-pp-24-25.github.io/docs/interfaces/sections/java_interfaces/">interface</a> with a single (standard) method.</p>
+<p><strong><em>Syntax.</em></strong> A Java <strong>functional interface</strong> is an <a href="https://unibz-pp-23-24.github.io/docs/interfaces/sections/java_interfaces/">interface</a> with a single (standard) method.</p>
 </blockquote>
 <blockquote class="book-hint info">
 <p><strong><em>Note.</em></strong>
-In this definition, &ldquo;standard&rdquo; method stands for a method that does not have the <a href="https://unibz-pp-24-25.github.io/docs/interfaces/sections/java_interfaces/#interfaceVsAbstractClass">default</a> qualifier (&ldquo;standard&rdquo; interface methods are also called &ldquo;abstract&rdquo;).</p>
+In this definition, &ldquo;standard&rdquo; method stands for a method that does not have the <a href="https://unibz-pp-23-24.github.io/docs/interfaces/sections/java_interfaces/#interfaceVsAbstractClass">default</a> qualifier (&ldquo;standard&rdquo; interface methods are also called &ldquo;abstract&rdquo;).</p>
 </blockquote>
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong>
@@ -2136,7 +2136,7 @@ Its method is called <code>get</code>.</p>
   <code>Comparator</code>
   <a class="anchor" href="#comparator">#</a>
 </h4>
-<p>The interface <code>Comparator&lt;T&gt;</code> (already seen in the section dedicated to <a href="https://unibz-pp-24-25.github.io/docs/abstractdatatypes/sections/sorting/#comparator">sorting</a>) is functional.
+<p>The interface <code>Comparator&lt;T&gt;</code> (already seen in the section dedicated to <a href="https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/sorting/#comparator">sorting</a>) is functional.
 Its method is called <code>compare</code>, and has type <code>T</code> $\times$ <code>T</code> $\to$ <code>int</code>.</p>
 </article>
  

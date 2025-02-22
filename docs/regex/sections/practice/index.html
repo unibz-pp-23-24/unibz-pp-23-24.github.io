@@ -23,8 +23,8 @@ However, in practice, they are still referred to as &ldquo;regexes&rdquo;.
 This is also what we will do in this section.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/regex/sections/practice/">
-  <meta property="og:site_name" content="Programming project 2024-25">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/regex/sections/practice/">
+  <meta property="og:site_name" content="Programming project 2023-24">
   <meta property="og:title" content="in practice">
   <meta property="og:description" content="Regexes in practice # Concrete regexes deviate from theoretical ones in several ways. In particular:
 Concrete syntaxes include a wide range of syntactic sugar, i.e. operators that could in theory be expressed in terms of |, * and concatenation.
@@ -32,10 +32,10 @@ Many regex engines support expressions with features (such as backreferences) th
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-<title>in practice | Programming project 2024-25</title>
+<title>in practice | Programming project 2023-24</title>
 <link rel="icon" href="/favicon.png" >
 <link rel="manifest" href="/manifest.json">
-<link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/regex/sections/practice/">
+<link rel="canonical" href="https://unibz-pp-23-24.github.io/docs/regex/sections/practice/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
   <script defer src="/en.search.min.ef6ce3f581865a34e7a0361facaa520c0f023938171236d76684573e7df35a2c.js" integrity="sha256-72zj9YGGWjTnoDYfrKpSDA8COTgXEjbXZoRXPn3zWiw=" crossorigin="anonymous"></script>
@@ -88,7 +88,7 @@ https://github.com/alex-shpak/hugo-book
         
   <nav>
 <h2 class="book-brand">
-  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  <a class="flex align-center" href="/"><span>Programming project 2023-24</span>
   </a>
 </h2>
 
@@ -2017,7 +2017,7 @@ In particular:</p>
 </li>
 <li>
 <p>Many regex engines support expressions with features (such as <a href="#backreference">backreferences</a>) that go beyond the expressivity of theoretical regexes.
-Technically, such expressions do not qualify as as regexes (they may describe a language that is not <a href="https://unibz-pp-24-25.github.io/docs/background/sections/regular/#reglanguage">regular</a>).
+Technically, such expressions do not qualify as as regexes (they may describe a language that is not <a href="https://unibz-pp-23-24.github.io/docs/background/sections/regular/#reglanguage">regular</a>).
 However, in practice, they are still referred to as &ldquo;regexes&rdquo;.
 This is also what we will do in this section.</p>
 </li>
@@ -2041,7 +2041,7 @@ Besides, many programming languages (Java, Javascript, Python, C#, etc.) have ad
 <p>A detailed comparison of some the main flavours of regexes can be found <a href="https://gist.github.com/CMCDragonkai/6c933f4a7d713ef712145c5eb94a1816">here</a>.</p>
 <blockquote class="book-hint danger">
 <p><strong><em>Warning.</em></strong>
-The patterns used in <a href="https://unibz-pp-24-25.github.io/docs/git/sections/ignore/">.gitigore</a> files are <em>not</em> regular expressions.</p>
+The patterns used in <a href="https://unibz-pp-23-24.github.io/docs/git/sections/ignore/">.gitigore</a> files are <em>not</em> regular expressions.</p>
 </blockquote>
 <h2 id="java-regexes">
   Java regexes
@@ -2075,7 +2075,7 @@ In order to be treated as a standard character:</p>
   Syntactic sugar
   <a class="anchor" href="#syntactic-sugar">#</a>
 </h3>
-<p>We have seen in previous sections that in theory, regular expressions only admit <a href="https://unibz-pp-24-25.github.io/docs/regex/#definition">three operators</a>:</p>
+<p>We have seen in previous sections that in theory, regular expressions only admit <a href="https://unibz-pp-23-24.github.io/docs/regex/#definition">three operators</a>:</p>
 <ul>
 <li>concatenation ($e_1e_2$),</li>
 <li>union ($e_1$<code>|</code>$e_2$) and</li>
@@ -2084,7 +2084,7 @@ In order to be treated as a standard character:</p>
 <p>However, this is impractical for most implication.</p>
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong>
-In order to match a character that is <em>not</em> a digit, with these three operators only, one would need to write an expression that enumerates all other characters in the underlying <a href="https://unibz-pp-24-25.github.io/docs/background/sections/regular/#alphabet">alphabet</a>, e.g.:</p>
+In order to match a character that is <em>not</em> a digit, with these three operators only, one would need to write an expression that enumerates all other characters in the underlying <a href="https://unibz-pp-23-24.github.io/docs/background/sections/regular/#alphabet">alphabet</a>, e.g.:</p>
 <p>$\qquad\qquad$ <code>a | b | c | .. | A | B | C | .. | &amp; | ! | &gt; | ..</code></p>
 <p>For the simple <a href="https://en.wikipedia.org/wiki/ASCII">ASCII</a> alphabet, this is already more than a hundred characters.
 For the Unicode alphabet, this is more than 100 000.</p>
@@ -2217,7 +2217,7 @@ For instance, in the word</p>
   <a class="anchor" href="#quantifiers">#</a>
 </h4>
 <blockquote class="book-hint warning">
-<p>If $i \le j \in \mathbb{N}$ then $e$<code>{</code>$i$<code>,</code>$j$<code>}</code> concatenates $e$ with itself at least $i$ times and at most $j$ times, and is evaluated in a <a href="https://unibz-pp-24-25.github.io/docs/regex/sections/pattern/#greedy">greedy</a> way.</p>
+<p>If $i \le j \in \mathbb{N}$ then $e$<code>{</code>$i$<code>,</code>$j$<code>}</code> concatenates $e$ with itself at least $i$ times and at most $j$ times, and is evaluated in a <a href="https://unibz-pp-23-24.github.io/docs/regex/sections/pattern/#greedy">greedy</a> way.</p>
 </blockquote>
 <blockquote class="book-hint info">
 <p><strong><em>Examples.</em></strong></p>
@@ -2264,7 +2264,7 @@ For instance, in the word</p>
   <a class="anchor" href="#lazy-quantification">#</a>
 </h3>
 <blockquote class="book-hint warning">
-<p>If $e$ ends with a quantifier (e.g. with <code>*</code> or <code>+</code>) then $e$<code>?</code> forces a <a href="https://unibz-pp-24-25.github.io/docs/regex/sections/pattern/#lazy">lazy</a> evaluation of this quantifier.</p>
+<p>If $e$ ends with a quantifier (e.g. with <code>*</code> or <code>+</code>) then $e$<code>?</code> forces a <a href="https://unibz-pp-23-24.github.io/docs/regex/sections/pattern/#lazy">lazy</a> evaluation of this quantifier.</p>
 </blockquote>
 <blockquote class="book-hint info">
 <p><strong><em>Examples.</em></strong></p>
@@ -2418,7 +2418,7 @@ The regex <code>(a|b)\1</code> is equivalent to <code>aa|bb</code></p>
 </div>
 <blockquote class="book-hint info">
 <p><strong><em>Note.</em></strong>
-Regexes with backreferences go beyond the expressivity of traditional regular expressions, meaning that they can describe languages that are <em>not</em> <a href="https://unibz-pp-24-25.github.io/docs/background/sections/regular/#language">regular</a>.</p>
+Regexes with backreferences go beyond the expressivity of traditional regular expressions, meaning that they can describe languages that are <em>not</em> <a href="https://unibz-pp-23-24.github.io/docs/background/sections/regular/#language">regular</a>.</p>
 </blockquote>
 </article>
  

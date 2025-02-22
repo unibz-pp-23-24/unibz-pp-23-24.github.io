@@ -20,8 +20,8 @@ In this section, we borrow the simple syntax for parallel computation used in th
 This syntax extends imperative pseudocode with three keywords:">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/multithreading/sections/simple/">
-  <meta property="og:site_name" content="Programming project 2024-25">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/multithreading/sections/simple/">
+  <meta property="og:site_name" content="Programming project 2023-24">
   <meta property="og:title" content="A simplified view">
   <meta property="og:description" content="A simplified view # From an abstract perspective, in order to understand the properties of a program that allows concurrency and/or parallelism, it can be convenient to assume an simplified, ideal machine that:
 has an unlimited number of cores, and relies exclusively on parallelism. Parallel computation # In this section, we borrow the simple syntax for parallel computation used in the popular textbook Introduction to algorithms.
@@ -29,10 +29,10 @@ This syntax extends imperative pseudocode with three keywords:">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-<title>A simplified view | Programming project 2024-25</title>
+<title>A simplified view | Programming project 2023-24</title>
 <link rel="icon" href="/favicon.png" >
 <link rel="manifest" href="/manifest.json">
-<link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/multithreading/sections/simple/">
+<link rel="canonical" href="https://unibz-pp-23-24.github.io/docs/multithreading/sections/simple/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
   <script defer src="/en.search.min.ef6ce3f581865a34e7a0361facaa520c0f023938171236d76684573e7df35a2c.js" integrity="sha256-72zj9YGGWjTnoDYfrKpSDA8COTgXEjbXZoRXPn3zWiw=" crossorigin="anonymous"></script>
@@ -85,7 +85,7 @@ https://github.com/alex-shpak/hugo-book
         
   <nav>
 <h2 class="book-brand">
-  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  <a class="flex align-center" href="/"><span>Programming project 2023-24</span>
   </a>
 </h2>
 
@@ -2171,7 +2171,7 @@ We cover here two of the most common ones.</p>
   <a class="anchor" href="#instantiate-runnable">#</a>
 </h4>
 <p>The constructor <code>Thread(Runnable runnable)</code> takes as input an instance of the interface <code>Runnable</code>.</p>
-<p>Runnable is a <a href="https://unibz-pp-24-25.github.io/docs/lambda/sections/type/#functionalInterface">functional interface</a>, whose method is called <code>run</code> and has type</p>
+<p>Runnable is a <a href="https://unibz-pp-23-24.github.io/docs/lambda/sections/type/#functionalInterface">functional interface</a>, whose method is called <code>run</code> and has type</p>
 <p>$\qquad$ <code>void</code> $\to$ <code>void</code></p>
 <p>Therefore it can be instantiated with a callback method (that takes no argument and returns no value).</p>
 <blockquote class="book-hint info">
@@ -2251,7 +2251,7 @@ We cover here two of the most common ones.</p>
   Loop
   <a class="anchor" href="#loop">#</a>
 </h3>
-<p>In Java, an operation analogous to the <code>parallel</code> keyword is the instance method <code>Stream.parallel</code> that we saw in the <a href="https://unibz-pp-24-25.github.io/docs/stream/sections/order/">dedicated section</a></p>
+<p>In Java, an operation analogous to the <code>parallel</code> keyword is the instance method <code>Stream.parallel</code> that we saw in the <a href="https://unibz-pp-23-24.github.io/docs/stream/sections/order/">dedicated section</a></p>
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> vector <span style="color:#f92672">=</span> getVector();

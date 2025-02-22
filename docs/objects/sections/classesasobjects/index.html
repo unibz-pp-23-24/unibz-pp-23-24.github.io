@@ -22,18 +22,18 @@ These are often called static attributes (or sometimes class attributes or class
 as opposed to the attributes that we have seen so far, called instance attributes (or member variables).">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/objects/sections/classesasobjects/">
-  <meta property="og:site_name" content="Programming project 2024-25">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/objects/sections/classesasobjects/">
+  <meta property="og:site_name" content="Programming project 2023-24">
   <meta property="og:title" content="Classes as objects">
   <meta property="og:description" content="Classes as objects # Some object-oriented languages (like Java, C# or C&#43;&#43;) provide ways to access or manipulate classes (almost) as if they were objects.
 Static attributes and methods # Static attributes # Java (as well as C# and C&#43;&#43;) supports attributes that do not depend on a specific object, but on a class instead. These are often called static attributes (or sometimes class attributes or class variables), as opposed to the attributes that we have seen so far, called instance attributes (or member variables).">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-<title>Classes as objects | Programming project 2024-25</title>
+<title>Classes as objects | Programming project 2023-24</title>
 <link rel="icon" href="/favicon.png" >
 <link rel="manifest" href="/manifest.json">
-<link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/objects/sections/classesasobjects/">
+<link rel="canonical" href="https://unibz-pp-23-24.github.io/docs/objects/sections/classesasobjects/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
   <script defer src="/en.search.min.ef6ce3f581865a34e7a0361facaa520c0f023938171236d76684573e7df35a2c.js" integrity="sha256-72zj9YGGWjTnoDYfrKpSDA8COTgXEjbXZoRXPn3zWiw=" crossorigin="anonymous"></script>
@@ -86,7 +86,7 @@ https://github.com/alex-shpak/hugo-book
         
   <nav>
 <h2 class="book-brand">
-  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  <a class="flex align-center" href="/"><span>Programming project 2023-24</span>
   </a>
 </h2>
 
@@ -2045,7 +2045,7 @@ But the value of <code>configFile</code> is <em>unique</em>.</p>
   <a class="anchor" href="#staticMethods">#</a>
 </h3>
 <blockquote class="book-hint warning">
-<p>Similarly to a static attribute, a <strong>static method</strong> does not depend on a specific object, as opposed to an <a href="https://unibz-pp-24-25.github.io/docs/objects/sections/methods/">instance method</a>.</p>
+<p>Similarly to a static attribute, a <strong>static method</strong> does not depend on a specific object, as opposed to an <a href="https://unibz-pp-23-24.github.io/docs/objects/sections/methods/">instance method</a>.</p>
 </blockquote>
 <blockquote class="book-hint info">
 <p><strong><em>Example</em></strong> (continued).</p>
@@ -2084,8 +2084,8 @@ For instance, adding the following static method to our class would cause a comp
   <a class="anchor" href="#inheritance">#</a>
 </h3>
 <p>Two static methods with the same name and signature can be declared in a class and a superclass.
-In Java&rsquo;s terminology, this is <em>not</em> called <a href="https://unibz-pp-24-25.github.io/docs/objects/sections/methods/#overriding">method overriding</a>, but instead <strong>method hiding</strong>.
-An important difference is that <a href="https://unibz-pp-24-25.github.io/docs/objects/sections/methods/#dispatch">dynamic dispatch</a> (a.k.a. runtime polymorphism) does <em>not</em> apply to this case (the method to be called is determined at compile time, rather than run time).</p>
+In Java&rsquo;s terminology, this is <em>not</em> called <a href="https://unibz-pp-23-24.github.io/docs/objects/sections/methods/#overriding">method overriding</a>, but instead <strong>method hiding</strong>.
+An important difference is that <a href="https://unibz-pp-23-24.github.io/docs/objects/sections/methods/#dispatch">dynamic dispatch</a> (a.k.a. runtime polymorphism) does <em>not</em> apply to this case (the method to be called is determined at compile time, rather than run time).</p>
 <blockquote class="book-hint info">
 <p><strong><em>Example</em></strong> (continued).</p>
 <p>Let us extend our example with a subclass of Unicorn that <strong>hides</strong> the static method <code>configFileExists</code>.</p>

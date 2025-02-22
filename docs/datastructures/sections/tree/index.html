@@ -26,8 +26,8 @@ Recall that an associative array is a finite set of key-value pairs.
 Again, let us assume keys have type $K$, and that values have type $V$.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/datastructures/sections/tree/">
-  <meta property="og:site_name" content="Programming project 2024-25">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/datastructures/sections/tree/">
+  <meta property="og:site_name" content="Programming project 2023-24">
   <meta property="og:title" content="Binary search tree">
   <meta property="og:description" content="Binary search tree # A Binary Search Tree (BST) is another data structure used to store an associative array (e.g. a Java Map).
 Definition. A BST is a binary tree such that each node’s label is:
@@ -36,10 +36,10 @@ Associative array as a binary search tree # Recall that an associative array is 
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-<title>Binary search tree | Programming project 2024-25</title>
+<title>Binary search tree | Programming project 2023-24</title>
 <link rel="icon" href="/favicon.png" >
 <link rel="manifest" href="/manifest.json">
-<link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/datastructures/sections/tree/">
+<link rel="canonical" href="https://unibz-pp-23-24.github.io/docs/datastructures/sections/tree/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
   <script defer src="/en.search.min.ef6ce3f581865a34e7a0361facaa520c0f023938171236d76684573e7df35a2c.js" integrity="sha256-72zj9YGGWjTnoDYfrKpSDA8COTgXEjbXZoRXPn3zWiw=" crossorigin="anonymous"></script>
@@ -92,7 +92,7 @@ https://github.com/alex-shpak/hugo-book
         
   <nav>
 <h2 class="book-brand">
-  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  <a class="flex align-center" href="/"><span>Programming project 2023-24</span>
   </a>
 </h2>
 
@@ -2008,7 +2008,7 @@ https://github.com/alex-shpak/hugo-book
   Binary search tree
   <a class="anchor" href="#binary-search-tree">#</a>
 </h1>
-<p>A <strong>Binary Search Tree (BST)</strong> is another data structure used to store an <a href="https://unibz-pp-24-25.github.io/docs/abstractdatatypes/sections/map/">associative array</a> (e.g. a Java <code>Map</code>).</p>
+<p>A <strong>Binary Search Tree (BST)</strong> is another data structure used to store an <a href="https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/map/">associative array</a> (e.g. a Java <code>Map</code>).</p>
 <blockquote class="book-hint warning">
 <p><strong><em>Definition.</em></strong>
 A BST is a binary tree such that each node&rsquo;s label is:</p>
@@ -2017,7 +2017,7 @@ A BST is a binary tree such that each node&rsquo;s label is:</p>
 <li>smaller than its right child&rsquo;s label (if any).</li>
 </ul>
 </blockquote>
-<p>Equivalently, a BST is a binary tree whose nodes are sorted w.r.t. <a href="https://unibz-pp-24-25.github.io/docs/recursion/#traversal">in-order traversal</a>.</p>
+<p>Equivalently, a BST is a binary tree whose nodes are sorted w.r.t. <a href="https://unibz-pp-23-24.github.io/docs/recursion/#traversal">in-order traversal</a>.</p>
 <p><img src="/img/binaryTrees/labeled/bst/tree.svg" alt="" /></p>
 <h2 id="associative-array-as-a-binary-search-tree">
   Associative array as a binary search tree
@@ -2028,14 +2028,14 @@ Again, let us assume keys have type $K$, and that values have type $V$.</p>
 <p>When a BST implements an associative array:</p>
 <ul>
 <li>each node of the tree stores a key-value pair,</li>
-<li>nodes are sorted by key, using their natural order or any other <a href="https://unibz-pp-24-25.github.io/docs/background/sections/order/#total">total order</a> over $K$.</li>
+<li>nodes are sorted by key, using their natural order or any other <a href="https://unibz-pp-23-24.github.io/docs/background/sections/order/#total">total order</a> over $K$.</li>
 </ul>
 <p><img src="/img/diagrams/plantuml/bst.svg" alt="" /></p>
 <h3 id="lookup">
   Lookup
   <a class="anchor" href="#lookup">#</a>
 </h3>
-<p>Recall that the <a href="https://unibz-pp-24-25.github.io/docs/abstractdatatypes/sections/map/">lookup</a> operation for an associative array:</p>
+<p>Recall that the <a href="https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/map/">lookup</a> operation for an associative array:</p>
 <ul>
 <li>takes as input a key $k$, and</li>
 <li>returns the value $v$ associated to this key (if any).</li>
@@ -2090,10 +2090,10 @@ Again, let us assume keys have type $K$, and that values have type $V$.</p>
   Benefits
   <a class="anchor" href="#benefits">#</a>
 </h2>
-<p>Recall that a <a href="https://unibz-pp-24-25.github.io/docs/datastructures/sections/hash/">hash table</a> does <em>not</em> preserve the order of an associative array&rsquo;s keys
-(at best, we saw that Java&rsquo;s <a href="https://unibz-pp-24-25.github.io/docs/datastructures/sections/hash/#hashMap">LinkedHashMap</a> preserves the order of insertion).</p>
+<p>Recall that a <a href="https://unibz-pp-23-24.github.io/docs/datastructures/sections/hash/">hash table</a> does <em>not</em> preserve the order of an associative array&rsquo;s keys
+(at best, we saw that Java&rsquo;s <a href="https://unibz-pp-23-24.github.io/docs/datastructures/sections/hash/#hashMap">LinkedHashMap</a> preserves the order of insertion).</p>
 <p>Instead, keys in a BST remain sorted, after any number of insertion or deletion operations.
-Besides, any <a href="https://unibz-pp-24-25.github.io/docs/background/sections/order/#total">total order</a> can be used for this purpose (e.g. alphabetical order if the keys are strings).</p>
+Besides, any <a href="https://unibz-pp-23-24.github.io/docs/background/sections/order/#total">total order</a> can be used for this purpose (e.g. alphabetical order if the keys are strings).</p>
 <h2 id="selfBalancing">
   Self balancing trees
   <a class="anchor" href="#selfBalancing">#</a>
@@ -2115,7 +2115,7 @@ Besides, any <a href="https://unibz-pp-24-25.github.io/docs/background/sections/
 </li>
 </ul>
 <p>By default, keys are sorted according to their natural order.
-But both classes provide an alternative constructor that accept an arbitrary <a href="https://unibz-pp-24-25.github.io/docs/abstractdatatypes/sections/sorting/#comparator">Comparator</a> over $K$.</p>
+But both classes provide an alternative constructor that accept an arbitrary <a href="https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/sorting/#comparator">Comparator</a> over $K$.</p>
 </article>
  
       

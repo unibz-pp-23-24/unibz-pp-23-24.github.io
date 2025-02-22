@@ -21,8 +21,8 @@ Terminology.
 A key-value pair in associative array is also called an entry.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/datastructures/sections/hash/">
-  <meta property="og:site_name" content="Programming project 2024-25">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/datastructures/sections/hash/">
+  <meta property="og:site_name" content="Programming project 2023-24">
   <meta property="og:title" content="Hash table">
   <meta property="og:description" content="Hash table # A hash table is a data structure often used to implement an associative array (like a Java Map).
 Associative array # Reminder. An associative array (or map) is a finite set of key-value pairs, where keys are distinct.
@@ -30,10 +30,10 @@ Terminology. A key-value pair in associative array is also called an entry.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-<title>Hash table | Programming project 2024-25</title>
+<title>Hash table | Programming project 2023-24</title>
 <link rel="icon" href="/favicon.png" >
 <link rel="manifest" href="/manifest.json">
-<link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/datastructures/sections/hash/">
+<link rel="canonical" href="https://unibz-pp-23-24.github.io/docs/datastructures/sections/hash/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
   <script defer src="/en.search.min.ef6ce3f581865a34e7a0361facaa520c0f023938171236d76684573e7df35a2c.js" integrity="sha256-72zj9YGGWjTnoDYfrKpSDA8COTgXEjbXZoRXPn3zWiw=" crossorigin="anonymous"></script>
@@ -86,7 +86,7 @@ https://github.com/alex-shpak/hugo-book
         
   <nav>
 <h2 class="book-brand">
-  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  <a class="flex align-center" href="/"><span>Programming project 2023-24</span>
   </a>
 </h2>
 
@@ -2018,7 +2018,7 @@ https://github.com/alex-shpak/hugo-book
   Hash table
   <a class="anchor" href="#hash-table">#</a>
 </h1>
-<p>A hash table is a data structure often used to implement an <a href="https://unibz-pp-24-25.github.io/docs/abstractdatatypes/sections/map/">associative array</a> (like a Java <code>Map</code>).</p>
+<p>A hash table is a data structure often used to implement an <a href="https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/map/">associative array</a> (like a Java <code>Map</code>).</p>
 <!--We will start with this usage, before discussing how is can be used for other scenarios.-->
 <h2 id="associative-array">
   Associative array
@@ -2106,7 +2106,7 @@ In the above example, we used</p>
 In our example, $K$ is the set of integers.
 In Java, this set has size $2^{32}$ (i.e. more than 4 billion), which is unrealistic for the size of $A$.</p>
 </blockquote>
-<p>As a consequence, hashing functions are usually not <a href="https://unibz-pp-24-25.github.io/docs/background/sections/set_tuple_map/#function">injective</a>.</p>
+<p>As a consequence, hashing functions are usually not <a href="https://unibz-pp-23-24.github.io/docs/background/sections/set_tuple_map/#function">injective</a>.</p>
 <blockquote class="book-hint warning">
 <p><strong><em>Terminology.</em></strong>
 A <strong>collision</strong> occurs when two entries of an associative array are assigned to the same slot.</p>
@@ -2236,15 +2236,15 @@ Instead, the slot is marked as a so called <strong>tombstone</strong>, which doe
   <a class="anchor" href="#implementation">#</a>
 </h3>
 <p>Java uses chained hash tables internally, with 16 slots by default.</p>
-<p>Each slot points to a <a href="https://unibz-pp-24-25.github.io/docs/datastructures/sections/list/#linkedList">linked list</a> by default.</p>
+<p>Each slot points to a <a href="https://unibz-pp-23-24.github.io/docs/datastructures/sections/list/#linkedList">linked list</a> by default.</p>
 <p>If the maximal acceptable load factor is exceeded, then the hash table is rehashed (as expected).</p>
 <p>In addition, Java uses a maximal load threshold for an individual slot.
-If this value is exceeded (but the maximal load factor is not), then the linked list for this slot is converted to a <a href="https://unibz-pp-24-25.github.io/docs/datastructures/sections/tree/#selfBalancing">red-black tree</a>.</p>
+If this value is exceeded (but the maximal load factor is not), then the linked list for this slot is converted to a <a href="https://unibz-pp-23-24.github.io/docs/datastructures/sections/tree/#selfBalancing">red-black tree</a>.</p>
 <h4 id="hashMap">
   Associative array
   <a class="anchor" href="#hashMap">#</a>
 </h4>
-<p>As we saw in the <a href="https://unibz-pp-24-25.github.io/docs/abstractdatatypes/sections/map/#java">dedicated section</a>, the interface <code>java.util.Map</code> represents an associative array.</p>
+<p>As we saw in the <a href="https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/map/#java">dedicated section</a>, the interface <code>java.util.Map</code> represents an associative array.</p>
 <ul>
 <li>
 <p>The class <code>java.util.HashMap</code> implements the interface as a hash table.</p>
@@ -2263,7 +2263,7 @@ In a <code>LinkedHashMap</code>, overwriting the value of an entry (with the met
   Set
   <a class="anchor" href="#hashSet">#</a>
 </h4>
-<p>As we saw in the <a href="https://unibz-pp-24-25.github.io/docs/abstractdatatypes/sections/set/#java">dedicated section</a>, the interface <code>java.util.Set</code> represents a set.</p>
+<p>As we saw in the <a href="https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/set/#java">dedicated section</a>, the interface <code>java.util.Set</code> represents a set.</p>
 <ul>
 <li>
 <p>The class <code>java.util.Hashset</code> implements this interface as a hash table, where keys are the elements of the set, and an &ldquo;entry&rdquo; consists of a key only (i.e. has no value).</p>
@@ -2287,7 +2287,7 @@ Technically, this function is the composition of:</p>
 </ul>
 </blockquote>
 <p>The function <code>hashCode</code> is an instance method of the class <code>Object</code>, thus it is inherited by default by all objects.
-This function behaves like a <a href="https://unibz-pp-24-25.github.io/docs/lambda/sections/pure/">pure function</a>, in the sense that it must return twice the same <code>int</code> if it is called twice for the same object.
+This function behaves like a <a href="https://unibz-pp-23-24.github.io/docs/lambda/sections/pure/">pure function</a>, in the sense that it must return twice the same <code>int</code> if it is called twice for the same object.
 This property <em>must be preserved</em> if the method is overridden.</p>
 <p>The hash function $h$ is also a function in the mathematical sense.
 Therefore the composition of these two functions has this property.
@@ -2327,7 +2327,7 @@ In a Java hash table, two keys $o_1$ and $o_2$ are considered equal iff</p>
 <div class="book-tabs">
 <input type="radio" class="toggle" name="tabs-exercise_hashCode" id="tabs-exercise_hashCode-0" checked="checked" />
 <label for="tabs-exercise_hashCode-0">Exercise</label>
-<div class="book-tabs-content markdown-inner"><p>Consider the following Java class <code>City</code>, which overrides the method <a href="https://unibz-pp-24-25.github.io/docs/objects/sections/comparing/#equals">equals</a>, so that two cities are considered equal iff they have the same name and zip code.</p>
+<div class="book-tabs-content markdown-inner"><p>Consider the following Java class <code>City</code>, which overrides the method <a href="https://unibz-pp-23-24.github.io/docs/objects/sections/comparing/#equals">equals</a>, so that two cities are considered equal iff they have the same name and zip code.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">City</span>(){
 </span></span><span style="display:flex;"><span>    String name;
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> zipCode;

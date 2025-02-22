@@ -19,8 +19,8 @@ The implementation of our game contains an interface called Snapshot, which desc
 This interface specifies (among others) a method called getSizeOfReinforcement, as follows:">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/interfaces/sections/java_interfaces/">
-  <meta property="og:site_name" content="Programming project 2024-25">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/interfaces/sections/java_interfaces/">
+  <meta property="og:site_name" content="Programming project 2023-24">
   <meta property="og:title" content="Java interfaces">
   <meta property="og:description" content="Java interfaces # A Java interface is a programming interface with additional (object-oriented) features.
 Syntactically, a Java interface is similar to a class. But (in its simplest form), it contains no code. Instead, it specifies the behavior of some methods (which are implemented in some classes).
@@ -28,10 +28,10 @@ Examples # The implementation of our game contains an interface called Snapshot,
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-<title>Java interfaces | Programming project 2024-25</title>
+<title>Java interfaces | Programming project 2023-24</title>
 <link rel="icon" href="/favicon.png" >
 <link rel="manifest" href="/manifest.json">
-<link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/interfaces/sections/java_interfaces/">
+<link rel="canonical" href="https://unibz-pp-23-24.github.io/docs/interfaces/sections/java_interfaces/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
   <script defer src="/en.search.min.ef6ce3f581865a34e7a0361facaa520c0f023938171236d76684573e7df35a2c.js" integrity="sha256-72zj9YGGWjTnoDYfrKpSDA8COTgXEjbXZoRXPn3zWiw=" crossorigin="anonymous"></script>
@@ -84,7 +84,7 @@ https://github.com/alex-shpak/hugo-book
         
   <nav>
 <h2 class="book-brand">
-  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  <a class="flex align-center" href="/"><span>Programming project 2023-24</span>
   </a>
 </h2>
 
@@ -1996,10 +1996,10 @@ https://github.com/alex-shpak/hugo-book
   Java interfaces
   <a class="anchor" href="#java-interfaces">#</a>
 </h1>
-<p>A Java interface is a <a href="https://unibz-pp-24-25.github.io/docs/interfaces/sections/specification/#programmingInterface">programming interface</a> with additional (object-oriented) features.</p>
+<p>A Java interface is a <a href="https://unibz-pp-23-24.github.io/docs/interfaces/sections/specification/#programmingInterface">programming interface</a> with additional (object-oriented) features.</p>
 <p>Syntactically, a Java interface is similar to a class.
 But (in its simplest form), it contains no code.
-Instead, it <a href="https://unibz-pp-24-25.github.io/docs/interfaces/sections/specification/#specification">specifies</a> the behavior of some methods (which are <strong>implemented</strong> in some <em>classes</em>).</p>
+Instead, it <a href="https://unibz-pp-23-24.github.io/docs/interfaces/sections/specification/#specification">specifies</a> the behavior of some methods (which are <strong>implemented</strong> in some <em>classes</em>).</p>
 <h2 id="snapshotExample">
   Examples
   <a class="anchor" href="#snapshotExample">#</a>
@@ -2024,7 +2024,7 @@ any (non-abstract) class that implements this interface must implement all metho
 <p>A Java interface can be used to specify how two components of a system <em>communicate</em> (before the interface is even implemented!).
 For instance, the <code>Snapshot</code> interface specifies which information must be provided by our backend to the component in charge of displaying the game on screen.</p>
 <!-- And it is currently no real implementation of this interface (only dummy ones, for demonstration purposes). -->
-<p>The name of an interface can be used as a <a href="https://unibz-pp-24-25.github.io/docs/objects/sections/classes/#refType">reference type</a> (similarly to the name of a class).
+<p>The name of an interface can be used as a <a href="https://unibz-pp-23-24.github.io/docs/objects/sections/classes/#refType">reference type</a> (similarly to the name of a class).
 For instance, the <code>Snapshot</code> interface also specifies a method</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Board <span style="color:#a6e22e">getBoard</span>();
 </span></span></code></pre></div><p>which must return an object of type <code>Board</code>.
@@ -2127,7 +2127,7 @@ Can you see why?</p>
 <div class="book-tabs-content markdown-inner"><p>The class <code>Butterfly</code> does not implement the method <code>sleep</code>.</p>
 <blockquote>
 <p><strong><em>Note.</em></strong>
-In this example, the class <code>Butterfly</code> inherits an implementation of <code>boost</code> (from <code>AbstractUnit</code>), and <a href="https://unibz-pp-24-25.github.io/docs/objects/sections/methods/#overriding">overrides</a> it.
+In this example, the class <code>Butterfly</code> inherits an implementation of <code>boost</code> (from <code>AbstractUnit</code>), and <a href="https://unibz-pp-23-24.github.io/docs/objects/sections/methods/#overriding">overrides</a> it.
 This is <em>not</em> an error.</p></blockquote>
 </div>
 </div>
@@ -2161,7 +2161,7 @@ Can you see why?</p>
 <p>However, in practice, they have partially overlapping features, which may be confusing.</p>
 <p>In particular:</p>
 <ul>
-<li>an abstract class can have <a href="https://unibz-pp-24-25.github.io/docs/objects/sections/inheritance/#inheritance">abstract methods</a>, which behave similarly to interface methods (with the additional constraint that an abstract method must be implemented by <em>at least one</em> subclass).</li>
+<li>an abstract class can have <a href="https://unibz-pp-23-24.github.io/docs/objects/sections/inheritance/#inheritance">abstract methods</a>, which behave similarly to interface methods (with the additional constraint that an abstract method must be implemented by <em>at least one</em> subclass).</li>
 <li>Since Java 8 (2014), interfaces can carry code, in so-called <a href="https://docs.oracle.com/javase%2Ftutorial%2F/java/IandI/defaultmethods.html">default methods</a>.
 This feature was introduced for backward compatibility reasons, but arguably contradicts the meaning of the term &ldquo;interface&rdquo;.</li>
 </ul>

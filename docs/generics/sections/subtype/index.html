@@ -13,18 +13,18 @@ we need to make sure that our code complies with these type constraints.
 In some situations, this requires reasoning about types and their hierarchy (notably for programs that use callback methods).">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/generics/sections/subtype/">
-  <meta property="og:site_name" content="Programming project 2024-25">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/generics/sections/subtype/">
+  <meta property="og:site_name" content="Programming project 2023-24">
   <meta property="og:title" content="Subtype">
   <meta property="og:description" content="Subtype # As we saw in the previous sections, the purpose of generic programming is to write abstract code while enforcing type constraints. As a result, when we write a program that uses a generic type (e.g. a native Java Collection), we need to make sure that our code complies with these type constraints.
 In some situations, this requires reasoning about types and their hierarchy (notably for programs that use callback methods).">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-<title>Subtype | Programming project 2024-25</title>
+<title>Subtype | Programming project 2023-24</title>
 <link rel="icon" href="/favicon.png" >
 <link rel="manifest" href="/manifest.json">
-<link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/generics/sections/subtype/">
+<link rel="canonical" href="https://unibz-pp-23-24.github.io/docs/generics/sections/subtype/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
   <script defer src="/en.search.min.ef6ce3f581865a34e7a0361facaa520c0f023938171236d76684573e7df35a2c.js" integrity="sha256-72zj9YGGWjTnoDYfrKpSDA8COTgXEjbXZoRXPn3zWiw=" crossorigin="anonymous"></script>
@@ -77,7 +77,7 @@ https://github.com/alex-shpak/hugo-book
         
   <nav>
 <h2 class="book-brand">
-  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  <a class="flex align-center" href="/"><span>Programming project 2023-24</span>
   </a>
 </h2>
 
@@ -1994,9 +1994,9 @@ https://github.com/alex-shpak/hugo-book
 <p>As we saw in the previous sections, the purpose of generic programming is to write abstract code while enforcing type constraints.
 As a result, when we write a program that <em>uses</em> a generic type (e.g. a native Java <code>Collection</code>),
 we need to make sure that our code complies with these type constraints.</p>
-<p>In some situations, this requires <em>reasoning</em> about types and their hierarchy (notably for programs that use <a href="https://unibz-pp-24-25.github.io/docs/lambda/sections/callback/">callback methods</a>).</p>
+<p>In some situations, this requires <em>reasoning</em> about types and their hierarchy (notably for programs that use <a href="https://unibz-pp-23-24.github.io/docs/lambda/sections/callback/">callback methods</a>).</p>
 <p>In this section, we briefly illustrate how the notion of a subtype extends to functions (and more generally, methods).
-This will allow us to understand (in the <a href="https://unibz-pp-24-25.github.io/docs/generics/sections/variance/">dedicated section</a>) some type constraints expressed via generics in languages like Java or C#.</p>
+This will allow us to understand (in the <a href="https://unibz-pp-23-24.github.io/docs/generics/sections/variance/">dedicated section</a>) some type constraints expressed via generics in languages like Java or C#.</p>
 <h2 id="subtype">
   The subtype relation
   <a class="anchor" href="#subtype">#</a>
@@ -2024,15 +2024,15 @@ In Java, $A$ is a subtype of $B$ if:</p>
 </blockquote>
 <blockquote class="book-hint warning">
 <p><strong><em>Observation.</em></strong>
-&ldquo;Subtype&rdquo; is a <a href="https://unibz-pp-24-25.github.io/docs/background/sections/order/#binaryRelation">binary relation</a>.
+&ldquo;Subtype&rdquo; is a <a href="https://unibz-pp-23-24.github.io/docs/background/sections/order/#binaryRelation">binary relation</a>.
 This relation is both:</p>
 <ul>
 <li>
-<p><a href="https://unibz-pp-24-25.github.io/docs/background/sections/order/#reflexiveTransitiveAntisymmetric">reflexive</a>:
+<p><a href="https://unibz-pp-23-24.github.io/docs/background/sections/order/#reflexiveTransitiveAntisymmetric">reflexive</a>:
 every type $A$ is a subtype of itself,</p>
 </li>
 <li>
-<p><a href="https://unibz-pp-24-25.github.io/docs/background/sections/order/#reflexiveTransitiveAntisymmetric">transitive</a>:
+<p><a href="https://unibz-pp-23-24.github.io/docs/background/sections/order/#reflexiveTransitiveAntisymmetric">transitive</a>:
 if $A$ is a subtype of $B$ and $B$ is a subtype of $C$, then $A$ is a subtype of $C$.</p>
 </li>
 </ul>

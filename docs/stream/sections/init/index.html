@@ -21,8 +21,8 @@ If the collection has a predictable order of iteration (e.g. if the collection i
 To create a stream out of the entries of a map, we can use the instance method Map.entrySet (which returns a set).">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/stream/sections/init/">
-  <meta property="og:site_name" content="Programming project 2024-25">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/stream/sections/init/">
+  <meta property="og:site_name" content="Programming project 2023-24">
   <meta property="og:title" content="Source">
   <meta property="og:description" content="Source # Collection # A stream can be created out of a Java Collection with the instance method stream.
 Example.
@@ -31,10 +31,10 @@ To create a stream out of the entries of a map, we can use the instance method M
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-<title>Source | Programming project 2024-25</title>
+<title>Source | Programming project 2023-24</title>
 <link rel="icon" href="/favicon.png" >
 <link rel="manifest" href="/manifest.json">
-<link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/stream/sections/init/">
+<link rel="canonical" href="https://unibz-pp-23-24.github.io/docs/stream/sections/init/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
   <script defer src="/en.search.min.ef6ce3f581865a34e7a0361facaa520c0f023938171236d76684573e7df35a2c.js" integrity="sha256-72zj9YGGWjTnoDYfrKpSDA8COTgXEjbXZoRXPn3zWiw=" crossorigin="anonymous"></script>
@@ -87,7 +87,7 @@ https://github.com/alex-shpak/hugo-book
         
   <nav>
 <h2 class="book-brand">
-  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  <a class="flex align-center" href="/"><span>Programming project 2023-24</span>
   </a>
 </h2>
 
@@ -2001,14 +2001,14 @@ https://github.com/alex-shpak/hugo-book
   Collection
   <a class="anchor" href="#collection">#</a>
 </h2>
-<p>A stream can be created out of a Java <a href="https://unibz-pp-24-25.github.io/docs/abstractdatatypes/#collection">Collection</a> with the instance method <code>stream</code>.</p>
+<p>A stream can be created out of a Java <a href="https://unibz-pp-23-24.github.io/docs/abstractdatatypes/#collection">Collection</a> with the instance method <code>stream</code>.</p>
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> units <span style="color:#f92672">=</span> getUnits();
 </span></span><span style="display:flex;"><span>units.<span style="color:#a6e22e">stream</span>();
 </span></span></code></pre></div></blockquote>
 <p>If the collection has a predictable order of iteration (e.g. if the collection is a <code>List</code>), then the elements will appear in this order in the stream.</p>
-<p>To create a stream out of the entries of a map, we can use the instance method <a href="https://unibz-pp-24-25.github.io/docs/abstractdatatypes/sections/map/#syntax">Map.entrySet</a> (which returns a set).</p>
+<p>To create a stream out of the entries of a map, we can use the instance method <a href="https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/map/#syntax">Map.entrySet</a> (which returns a set).</p>
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Map<span style="color:#f92672">&lt;</span>String, Integer<span style="color:#f92672">&gt;</span> map <span style="color:#f92672">=</span> getMap();
@@ -2029,7 +2029,7 @@ https://github.com/alex-shpak/hugo-book
   Generate a stream with indices
   <a class="anchor" href="#generate-a-stream-with-indices">#</a>
 </h2>
-<p>An <code>IntStream</code> is a stream of <code>int</code> (see the <a href="https://unibz-pp-24-25.github.io/docs/stream/sections/numeric/">dedicated section</a> on streams with primitive numeric types).
+<p>An <code>IntStream</code> is a stream of <code>int</code> (see the <a href="https://unibz-pp-23-24.github.io/docs/stream/sections/numeric/">dedicated section</a> on streams with primitive numeric types).
 An <code>IntStream</code> can for instance be created with the static method <code>IntStream.range</code>, as follows:</p>
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong></p>
@@ -2048,14 +2048,14 @@ An <code>IntStream</code> can for instance be created with the static method <co
 </span></span><span style="display:flex;"><span>                          .<span style="color:#a6e22e">toList</span>();
 </span></span></code></pre></div></blockquote>
 <p>However, for this usage, external libraries offer more natural options.
-For instance, the StreamEx library can create a map from index to entry in an array, and generate a stream out of the entries of this map (analogous to the set of entries produced by <a href="https://unibz-pp-24-25.github.io/docs/abstractdatatypes/sections/map/#syntax">Map.entrySet</a>).</p>
+For instance, the StreamEx library can create a map from index to entry in an array, and generate a stream out of the entries of this map (analogous to the set of entries produced by <a href="https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/map/#syntax">Map.entrySet</a>).</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Unit<span style="color:#f92672">[]</span> units <span style="color:#f92672">=</span> getUnits();
 </span></span><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> evenUnits <span style="color:#f92672">=</span> EntryStream.<span style="color:#a6e22e">of</span>(units)
 </span></span><span style="display:flex;"><span>                            .<span style="color:#a6e22e">filterKeyValue</span>((index, unit) <span style="color:#f92672">-&gt;</span> index <span style="color:#f92672">%</span> 2 <span style="color:#f92672">==</span> 0)
 </span></span><span style="display:flex;"><span>                            .<span style="color:#a6e22e">values</span>()
 </span></span><span style="display:flex;"><span>                            .<span style="color:#a6e22e">toList</span>();
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>To use StreamEx in a Maven project, declare this <a href="https://unibz-pp-24-25.github.io/docs/build/sections/dependencies/#mavenDep">dependency</a>:</p>
+</span></span></code></pre></div><p>To use StreamEx in a Maven project, declare this <a href="https://unibz-pp-23-24.github.io/docs/build/sections/dependencies/#mavenDep">dependency</a>:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;dependencies&gt;</span>
 </span></span><span style="display:flex;"><span>  ...
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;dependency&gt;</span>

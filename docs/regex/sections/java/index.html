@@ -23,8 +23,8 @@ Hint.
 This is another good reason for using a regex validation tool (e.g. regex101) to test and debug a regex, before incorporating it into a program.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/regex/sections/java/">
-  <meta property="og:site_name" content="Programming project 2024-25">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/regex/sections/java/">
+  <meta property="og:site_name" content="Programming project 2023-24">
   <meta property="og:title" content="Using Java regexes">
   <meta property="og:description" content="Using Java regexes # Escaping \ # A regex in Java is a string.
 Recall that within a Java string, a \ character must be escaped (i.e. written \\) to be read as a normal character. So in a Java string that represents a regex, every \ should be written \\.
@@ -33,10 +33,10 @@ Hint. This is another good reason for using a regex validation tool (e.g. regex1
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-<title>Using Java regexes | Programming project 2024-25</title>
+<title>Using Java regexes | Programming project 2023-24</title>
 <link rel="icon" href="/favicon.png" >
 <link rel="manifest" href="/manifest.json">
-<link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/regex/sections/java/">
+<link rel="canonical" href="https://unibz-pp-23-24.github.io/docs/regex/sections/java/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
   <script defer src="/en.search.min.ef6ce3f581865a34e7a0361facaa520c0f023938171236d76684573e7df35a2c.js" integrity="sha256-72zj9YGGWjTnoDYfrKpSDA8COTgXEjbXZoRXPn3zWiw=" crossorigin="anonymous"></script>
@@ -89,7 +89,7 @@ https://github.com/alex-shpak/hugo-book
         
   <nav>
 <h2 class="book-brand">
-  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  <a class="flex align-center" href="/"><span>Programming project 2023-24</span>
   </a>
 </h2>
 
@@ -2050,7 +2050,7 @@ Or equivalently if there is a match for the regex <code>^</code>regex<code>$</co
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Outputs true</span>
 </span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(input.<span style="color:#a6e22e">matches</span>(<span style="color:#e6db74">&#34;a|ab&#34;</span>));
 </span></span></code></pre></div><ul>
-<li><code>String replaceFirst(String regex, String replacement)</code> replaces the <a href="https://unibz-pp-24-25.github.io/docs/regex/sections/pattern/#bestFirstMatch">best first match</a> with the input replacement string:</li>
+<li><code>String replaceFirst(String regex, String replacement)</code> replaces the <a href="https://unibz-pp-23-24.github.io/docs/regex/sections/pattern/#bestFirstMatch">best first match</a> with the input replacement string:</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String input <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;aba&#34;</span>;
 </span></span><span style="display:flex;"><span>
@@ -2060,7 +2060,7 @@ Or equivalently if there is a match for the regex <code>^</code>regex<code>$</co
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Outputs &#34;bba&#34;</span>
 </span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(input.<span style="color:#a6e22e">replaceFirst</span>(<span style="color:#e6db74">&#34;a|ab&#34;</span>, <span style="color:#e6db74">&#34;b&#34;</span>));
 </span></span></code></pre></div><ul>
-<li><code>String replaceAll(String regex, String replacement)</code> replaces all <a href="https://unibz-pp-24-25.github.io/docs/regex/sections/pattern/#successiveMatches">(successive) best first matches</a> with the input replacement string:</li>
+<li><code>String replaceAll(String regex, String replacement)</code> replaces all <a href="https://unibz-pp-23-24.github.io/docs/regex/sections/pattern/#successiveMatches">(successive) best first matches</a> with the input replacement string:</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String input <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;aba&#34;</span>;
 </span></span><span style="display:flex;"><span>
@@ -2070,7 +2070,7 @@ Or equivalently if there is a match for the regex <code>^</code>regex<code>$</co
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Outputs &#34;bbb&#34;</span>
 </span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(input.<span style="color:#a6e22e">replaceAll</span>(<span style="color:#e6db74">&#34;a|ab&#34;</span>, <span style="color:#e6db74">&#34;b&#34;</span>));
 </span></span></code></pre></div><blockquote class="book-hint warning">
-<p>For both <code>replaceFirst</code> and <code>replaceAll</code>, the replacement string can use a <a href="https://unibz-pp-24-25.github.io/docs/regex/sections/practice/#backreference">reference</a> to a group, written <code>$</code>$n$, where $n$ is the <a href="https://unibz-pp-24-25.github.io/docs/regex/sections/practice/#group">group number</a>:</p>
+<p>For both <code>replaceFirst</code> and <code>replaceAll</code>, the replacement string can use a <a href="https://unibz-pp-23-24.github.io/docs/regex/sections/practice/#backreference">reference</a> to a group, written <code>$</code>$n$, where $n$ is the <a href="https://unibz-pp-23-24.github.io/docs/regex/sections/practice/#group">group number</a>:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String input <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;The windows are open. The apples are green.&#34;</span>;
 </span></span><span style="display:flex;"><span>String output <span style="color:#f92672">=</span> input.<span style="color:#a6e22e">replaceAll</span>(<span style="color:#e6db74">&#34;(\\w+)s\\s+are&#34;</span>, <span style="color:#e6db74">&#34;$1 is&#34;</span>);
 </span></span><span style="display:flex;"><span>
@@ -2078,10 +2078,10 @@ Or equivalently if there is a match for the regex <code>^</code>regex<code>$</co
 </span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(output);
 </span></span></code></pre></div></blockquote>
 <blockquote class="book-hint warning">
-<p><strong><em>Reminder.</em></strong> Strings in Java are <a href="https://unibz-pp-24-25.github.io/docs/objects/sections/quasi-objects/#string">immutable</a>. So when the methods <code>replaceFirst</code> and <code>replaceAll</code> successfully &ldquo;modify&rdquo; the string, they return a different object.</p>
+<p><strong><em>Reminder.</em></strong> Strings in Java are <a href="https://unibz-pp-23-24.github.io/docs/objects/sections/quasi-objects/#string">immutable</a>. So when the methods <code>replaceFirst</code> and <code>replaceAll</code> successfully &ldquo;modify&rdquo; the string, they return a different object.</p>
 </blockquote>
 <ul>
-<li><code>String[] split()</code> splits the input string around the <a href="https://unibz-pp-24-25.github.io/docs/regex/sections/pattern/#successiveMatches">(successive) best first matches</a>:</li>
+<li><code>String[] split()</code> splits the input string around the <a href="https://unibz-pp-23-24.github.io/docs/regex/sections/pattern/#successiveMatches">(successive) best first matches</a>:</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String input <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;This is weird.\n&#34;</span><span style="color:#f92672">+</span>
 </span></span><span style="display:flex;"><span>               <span style="color:#e6db74">&#34;Or not.&#34;</span>
@@ -2114,7 +2114,7 @@ Or equivalently if there is a match for the regex <code>^</code>regex<code>$</co
 <a href="#String">described above</a>.</p>
 </li>
 <li>
-<p><code>boolean find()</code> tries to match the next <a href="https://unibz-pp-24-25.github.io/docs/regex/sections/pattern/#bestFirstMatch">best first match</a>.
+<p><code>boolean find()</code> tries to match the next <a href="https://unibz-pp-23-24.github.io/docs/regex/sections/pattern/#bestFirstMatch">best first match</a>.
 If this method succeeds, then information can be retrieved about the matched segment (see below).
 The next call to <code>find()</code> will find the following best first match (if any).</p>
 </li>
@@ -2166,7 +2166,7 @@ Group <code>0</code> stands for the whole regex.</p>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Outputs &#34;B&#34;</span>
 </span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(matcher.<span style="color:#a6e22e">group</span>(1));
 </span></span></code></pre></div><ul>
-<li><code>public Sream&lt;MatchResult&gt; results()</code> returns all <a href="https://unibz-pp-24-25.github.io/docs/regex/sections/pattern/#successiveMatches">(successive) best first matches</a>.</li>
+<li><code>public Sream&lt;MatchResult&gt; results()</code> returns all <a href="https://unibz-pp-23-24.github.io/docs/regex/sections/pattern/#successiveMatches">(successive) best first matches</a>.</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Pattern pattern <span style="color:#f92672">=</span> Pattern.<span style="color:#a6e22e">compile</span>(<span style="color:#e6db74">&#34;[A-Z][a-z]*&#34;</span>);
 </span></span><span style="display:flex;"><span>Matcher matcher <span style="color:#f92672">=</span> pattern.<span style="color:#a6e22e">matcher</span>(<span style="color:#e6db74">&#34;Alice and Bob are exhausted.&#34;</span>);

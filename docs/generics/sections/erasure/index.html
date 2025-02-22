@@ -25,8 +25,8 @@ Intuitively, type erasure consists in producing a program equivalent to the init
 but free of generic or parameterized types (i.e. intuitively with no &ldquo;diamond&rdquo;).">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/generics/sections/erasure/">
-  <meta property="og:site_name" content="Programming project 2024-25">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/generics/sections/erasure/">
+  <meta property="og:site_name" content="Programming project 2023-24">
   <meta property="og:title" content="Type erasure">
   <meta property="og:description" content="Type erasure in Java # Java compilers rely on an approach called type erasure to compile:
 type parameters (e.g. Box&lt;Integer&gt;), type variables (e.g. Box&lt;T&gt;), and question marks (e.g. Box&lt;? extends Number&gt;). More often than not, when a Java program does not compile, we can understand why without understanding the compilation procedure. However, for generics, some basic understanding of type erasure can help.
@@ -34,10 +34,10 @@ Procedure # Intuitively, type erasure consists in producing a program equivalent
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-<title>Type erasure | Programming project 2024-25</title>
+<title>Type erasure | Programming project 2023-24</title>
 <link rel="icon" href="/favicon.png" >
 <link rel="manifest" href="/manifest.json">
-<link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/generics/sections/erasure/">
+<link rel="canonical" href="https://unibz-pp-23-24.github.io/docs/generics/sections/erasure/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
   <script defer src="/en.search.min.ef6ce3f581865a34e7a0361facaa520c0f023938171236d76684573e7df35a2c.js" integrity="sha256-72zj9YGGWjTnoDYfrKpSDA8COTgXEjbXZoRXPn3zWiw=" crossorigin="anonymous"></script>
@@ -90,7 +90,7 @@ https://github.com/alex-shpak/hugo-book
         
   <nav>
 <h2 class="book-brand">
-  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  <a class="flex align-center" href="/"><span>Programming project 2023-24</span>
   </a>
 </h2>
 
@@ -2039,7 +2039,7 @@ However, these illustrations should <em>not</em> be taken literally, because com
 </blockquote>
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong>
-Consider the generic class <code>Box&lt;T&gt;</code> that we used <a href="https://unibz-pp-24-25.github.io/docs/generics/sections/variance/#covarContravarUsage">earlier</a> illustrate covariance and contravariance, together with the methods <code>unbox</code> and <code>replaceValue</code>:</p>
+Consider the generic class <code>Box&lt;T&gt;</code> that we used <a href="https://unibz-pp-23-24.github.io/docs/generics/sections/variance/#covarContravarUsage">earlier</a> illustrate covariance and contravariance, together with the methods <code>unbox</code> and <code>replaceValue</code>:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Box</span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    T boxedValue;

@@ -29,18 +29,18 @@ etc.
 In both scenarios, a regex is viewed as a pattern that should be matched against a string.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/regex/sections/pattern/">
-  <meta property="og:site_name" content="Programming project 2024-25">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/regex/sections/pattern/">
+  <meta property="og:site_name" content="Programming project 2023-24">
   <meta property="og:title" content="Pattern matching">
   <meta property="og:description" content="Pattern matching # Two of the main uses of regexes are:
 string validation, i.e. check whether a string satisfies certain constraints. For instance: has at least one digit and one special character, is a valid address, etc. string search, i.e. identify occurrences of a pattern in a line or in a file. This can be useful for: replacing strings in a file or a folder (e.g. within a codebase), splitting a sentence into (natural language) words, splitting a program into meaningful substrings, e.g. split the instruction int a=5; into int, a, =, 5 and ;, filtering (e.g. with the grep command) of modifying (e.g. with the sed command) lines in a file, etc. In both scenarios, a regex is viewed as a pattern that should be matched against a string.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-<title>Pattern matching | Programming project 2024-25</title>
+<title>Pattern matching | Programming project 2023-24</title>
 <link rel="icon" href="/favicon.png" >
 <link rel="manifest" href="/manifest.json">
-<link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/regex/sections/pattern/">
+<link rel="canonical" href="https://unibz-pp-23-24.github.io/docs/regex/sections/pattern/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
   <script defer src="/en.search.min.ef6ce3f581865a34e7a0361facaa520c0f023938171236d76684573e7df35a2c.js" integrity="sha256-72zj9YGGWjTnoDYfrKpSDA8COTgXEjbXZoRXPn3zWiw=" crossorigin="anonymous"></script>
@@ -93,7 +93,7 @@ https://github.com/alex-shpak/hugo-book
         
   <nav>
 <h2 class="book-brand">
-  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  <a class="flex align-center" href="/"><span>Programming project 2023-24</span>
   </a>
 </h2>
 
@@ -2116,7 +2116,7 @@ Reasons include:</p>
 <li>they start at the same index and the regex engine favors $m_1$ over $m_2$.</li>
 </ul>
 </blockquote>
-<p>Preference is a <a href="https://unibz-pp-24-25.github.io/docs/background/sections/order/#total">total order</a> over the matches for for $e$ in $w$, meaning that if there is a match, then there can be at most <em>one</em> best first match.</p>
+<p>Preference is a <a href="https://unibz-pp-23-24.github.io/docs/background/sections/order/#total">total order</a> over the matches for for $e$ in $w$, meaning that if there is a match, then there can be at most <em>one</em> best first match.</p>
 <blockquote class="book-hint info">
 <p><strong><em>Note.</em></strong>
 When $m_1$ and $m_2$ start at the same index (second case above), whether $m_1$ is favored over $m_2$ can vary in subtle ways from one regex engine to the other.
@@ -2141,7 +2141,7 @@ Consider the word $w$ = <code>ab</code>.</p>
 <blockquote class="book-hint danger">
 <p><strong><em>Exception.</em></strong>
 In this example,
-A <a href="https://unibz-pp-24-25.github.io/docs/regex/sections/practice/#flavours">POSIX-compliant</a> regex engine would produce
+A <a href="https://unibz-pp-23-24.github.io/docs/regex/sections/practice/#flavours">POSIX-compliant</a> regex engine would produce
 $w[0 .. 2) (with word <code>ab</code>) as best first match for both expressions.</p>
 </blockquote>
 <blockquote class="book-hint danger">

@@ -26,8 +26,8 @@ An unchecked exception that is not caught is automatically rethrown.
 In Java, an Exception that is not a RuntimeException is a checked exception.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-24-25.github.io/docs/errors/sections/checked/">
-  <meta property="og:site_name" content="Programming project 2024-25">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/errors/sections/checked/">
+  <meta property="og:site_name" content="Programming project 2023-24">
   <meta property="og:title" content="Checked vs unchecked">
   <meta property="og:description" content="Checked vs unchecked # Unchecked exceptions # The simplest type of exception in Java is called an unchecked exception. An unchecked exception is an instances of the native class RuntimeException.
 The class RuntimeException has several native subclasses. You may be familiar wit some of them: NullPointerException, ArrayIndexOutOfBoundsException, IllegalArgumentException, etc.
@@ -36,10 +36,10 @@ Checked exceptions # In Java, an Exception that is not a RuntimeException is a c
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-<title>Checked vs unchecked | Programming project 2024-25</title>
+<title>Checked vs unchecked | Programming project 2023-24</title>
 <link rel="icon" href="/favicon.png" >
 <link rel="manifest" href="/manifest.json">
-<link rel="canonical" href="https://unibz-pp-24-25.github.io/docs/errors/sections/checked/">
+<link rel="canonical" href="https://unibz-pp-23-24.github.io/docs/errors/sections/checked/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
   <script defer src="/en.search.min.ef6ce3f581865a34e7a0361facaa520c0f023938171236d76684573e7df35a2c.js" integrity="sha256-72zj9YGGWjTnoDYfrKpSDA8COTgXEjbXZoRXPn3zWiw=" crossorigin="anonymous"></script>
@@ -92,7 +92,7 @@ https://github.com/alex-shpak/hugo-book
         
   <nav>
 <h2 class="book-brand">
-  <a class="flex align-center" href="/"><span>Programming project 2024-25</span>
+  <a class="flex align-center" href="/"><span>Programming project 2023-24</span>
   </a>
 </h2>
 
@@ -2036,7 +2036,7 @@ Instead, it must be <em>explicitly</em> rethrown (or caught), otherwise the prog
   Rethrow explicitly
   <a class="anchor" href="#rethrow">#</a>
 </h3>
-<p>This can be fixed by either <a href="https://unibz-pp-24-25.github.io/docs/errors/sections/exceptions/#catch">catching</a> the exception, or <em>explicitly</em> rethrowing it, as follows:</p>
+<p>This can be fixed by either <a href="https://unibz-pp-23-24.github.io/docs/errors/sections/exceptions/#catch">catching</a> the exception, or <em>explicitly</em> rethrowing it, as follows:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">someMethod</span>(Path path) <span style="color:#66d9ef">throws</span> IOException {
 </span></span><span style="display:flex;"><span>    Files.<span style="color:#a6e22e">readAllLines</span>(path);
 </span></span><span style="display:flex;"><span>}
@@ -2045,7 +2045,7 @@ Instead, it must be <em>explicitly</em> rethrown (or caught), otherwise the prog
 <p><strong><em>Warning.</em></strong>
 Checked exceptions add boilerplate code to method signatures (e.g. <code>throws IOException</code> in the above example).
 For this reason, it is often recommended to use unchecked exceptions (i.e. instances of <code>RuntimeException</code>) <em>by default</em>.
-In <a href="https://unibz-pp-24-25.github.io/docs/intro/sections/bibliography/#effectiveJava">Effective java</a> (Item 71),
+In <a href="https://unibz-pp-23-24.github.io/docs/intro/sections/bibliography/#effectiveJava">Effective java</a> (Item 71),
 Joshua Bloch suggests checked exceptions only if some calling method is likely to <em>catch</em> the exception and take a <em>meaningful action</em> when this happens.</p>
 </blockquote>
 </article>
