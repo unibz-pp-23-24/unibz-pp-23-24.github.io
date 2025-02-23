@@ -12,20 +12,20 @@
   #
 
 
-In most (class-based) object-oriented languages, a class A can extend another class B.
-In this case, A is called a subclass of B.
+In most (class-based) object-oriented languages, a class $A$ can extend another class $B$.
+In this case, $A$ is called a subclass of $B$.
 
-The intuitive meaning is inclusion between their respective sets of instances, i.e. every instance of A is also an instance of B (but the converse may not hold).
-This can be paraphrased in English by &ldquo;every A is a B &ldquo;.
+The intuitive meaning is inclusion between their respective sets of instances, i.e. every instance of $A$ is also an instance of $B$ (but the converse may not hold).
+This can be paraphrased in English by &ldquo;every $A$ is a $B$ &ldquo;.
 For instance:">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/objects/sections/inheritance/">
   <meta property="og:site_name" content="Programming project 2023-24">
   <meta property="og:title" content="Inheritance">
-  <meta property="og:description" content="Inheritance # Subclass # In most (class-based) object-oriented languages, a class A can extend another class B. In this case, A is called a subclass of B.
-The intuitive meaning is inclusion between their respective sets of instances, i.e. every instance of A is also an instance of B (but the converse may not hold).
-This can be paraphrased in English by “every A is a B “. For instance:">
+  <meta property="og:description" content="Inheritance # Subclass # In most (class-based) object-oriented languages, a class $A$ can extend another class $B$. In this case, $A$ is called a subclass of $B$.
+The intuitive meaning is inclusion between their respective sets of instances, i.e. every instance of $A$ is also an instance of $B$ (but the converse may not hold).
+This can be paraphrased in English by “every $A$ is a $B$ “. For instance:">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -35,7 +35,7 @@ This can be paraphrased in English by “every A is a B “. For instance:">
 <link rel="canonical" href="https://unibz-pp-23-24.github.io/docs/objects/sections/inheritance/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.b2dee831af48bb656c1184ce6a31059a474705a4d213f00d32725b64630552f1.js" integrity="sha256-st7oMa9Iu2VsEYTOajEFmkdHBaTSE/ANMnJbZGMFUvE=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.f779fe9779cf793fc57868383cdd0199e7ac9baaf78dd30e667cb9a2efeabbaa.js" integrity="sha256-93n&#43;l3nPeT/FeGg4PN0Bmeesm6r3jdMOZny5ou/qu6o=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -2009,11 +2009,11 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#subclass">#</a>
 </h2>
 <blockquote class="book-hint warning">
-<p>In most (class-based) object-oriented languages, a class <em>A</em> can <strong>extend</strong> another class <em>B</em>.
-In this case, <em>A</em> is called a <strong>subclass</strong> of <em>B</em>.</p>
+<p>In most (class-based) object-oriented languages, a class $A$ can <strong>extend</strong> another class $B$.
+In this case, $A$ is called a <strong>subclass</strong> of $B$.</p>
 </blockquote>
-<p>The intuitive meaning is inclusion between their respective sets of instances, i.e. every instance of <em>A</em> is also an instance of <em>B</em> (but the converse may not hold).</p>
-<p>This can be paraphrased in English by &ldquo;every <em>A</em> is a <em>B</em> &ldquo;.
+<p>The intuitive meaning is inclusion between their respective sets of instances, i.e. every instance of $A$ is also an instance of $B$ (but the converse may not hold).</p>
+<p>This can be paraphrased in English by &ldquo;every $A$ is a $B$ &ldquo;.
 For instance:</p>
 <ul>
 <li>every banana is a fruit</li>
@@ -2027,7 +2027,7 @@ For instance:</p>
 </h3>
 <blockquote class="book-hint warning">
 <p>The &ldquo;extend&rdquo; relation is <strong>transitive</strong>, meaning that
-if <em>A</em> extends <em>B</em> and <em>B</em> extends <em>C</em>, then <em>A</em> extends <em>C</em> (for any classes <em>A</em>, <em>B</em> and <em>C</em> ).</p>
+if $A$ extends $B$ and $B$ extends $C$, then $A$ extends $C$ (for any classes $A$, $B$ and $C$ ).</p>
 </blockquote>
 <p>For instance, from the above examples, one can infer that
 &ldquo;every square is a geometric shape&rdquo;.</p>
@@ -2036,7 +2036,7 @@ if <em>A</em> extends <em>B</em> and <em>B</em> extends <em>C</em>, then <em>A</
   <a class="anchor" href="#inheritance">#</a>
 </h3>
 <blockquote class="book-hint warning">
-<p>Naturally, if <em>A</em> is a subclass of <em>B</em> then it <strong>inherits</strong> the properties of <em>B</em>.</p>
+<p>Naturally, if $A$ is a subclass of $B$ then it <strong>inherits</strong> the properties of $B$.</p>
 </blockquote>
 <p>For instance, a rectangle has four right angles.
 Since every square is a rectangle, a square has four right angles as well.</p>
@@ -2101,10 +2101,10 @@ Without inheritance, one would need to implement four versions of this method:</
 <p>For instance, the first of these four methods could be implemented as follows:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">encounter</span>(Unicorn u1, Unicorn u2) {
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// substract the health of u2 from the health of u1</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// subtract the health of u2 from the health of u1</span>
 </span></span><span style="display:flex;"><span>      u1.<span style="color:#a6e22e">health</span> <span style="color:#f92672">-=</span> u2.<span style="color:#a6e22e">health</span>;
 </span></span><span style="display:flex;"><span>      <span style="color:#75715e">// the health of u2 becomes the inverse of the remaining health of u1</span>
-</span></span><span style="display:flex;"><span>      u2.<span style="color:#a6e22e">health</span> <span style="color:#f92672">=</span> <span style="color:#f92672">-</span> u1.<span style="color:#a6e22e">health</span>;
+</span></span><span style="display:flex;"><span>      u2.<span style="color:#a6e22e">health</span> <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>u1.<span style="color:#a6e22e">health</span>;
 </span></span><span style="display:flex;"><span>    }
 </span></span></code></pre></div><p>More generally, if the game has $n$ types of units, then the code will contain $n^2$ nearly identical <code>encounter</code> methods.</p>
 <blockquote class="book-hint info">
@@ -2155,7 +2155,7 @@ For instance,</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">encounter</span>(Unit u1, Unit u2) {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>      u1.<span style="color:#a6e22e">health</span> <span style="color:#f92672">-=</span> u2.<span style="color:#a6e22e">health</span>;
-</span></span><span style="display:flex;"><span>      u2.<span style="color:#a6e22e">health</span> <span style="color:#f92672">=</span> <span style="color:#f92672">-</span> u1.<span style="color:#a6e22e">health</span>;
+</span></span><span style="display:flex;"><span>      u2.<span style="color:#a6e22e">health</span> <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>u1.<span style="color:#a6e22e">health</span>;
 </span></span><span style="display:flex;"><span>    }
 </span></span></code></pre></div><p>And this method can be used with unicorns and/or butterflies.
 For instance:</p>

@@ -28,7 +28,7 @@ For instance, in Java, an instance method declared in MyClass can be called by a
 <link rel="canonical" href="https://unibz-pp-23-24.github.io/docs/objects/sections/methods/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.b2dee831af48bb656c1184ce6a31059a474705a4d213f00d32725b64630552f1.js" integrity="sha256-st7oMa9Iu2VsEYTOajEFmkdHBaTSE/ANMnJbZGMFUvE=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.f779fe9779cf793fc57868383cdd0199e7ac9baaf78dd30e667cb9a2efeabbaa.js" integrity="sha256-93n&#43;l3nPeT/FeGg4PN0Bmeesm6r3jdMOZny5ou/qu6o=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -2073,7 +2073,7 @@ However, the following program increases the health of (the object referenced by
 </span></span></code></pre></div><p>This is not necessary.
 The benefit is that the program will not compile if the overridden and overriding methods have different signatures.</p>
 <p>More generally, <em>syntactic</em> mistakes (a.k.a. compile time errors) are easier to fix than <em>bugs</em> (a.k.a. runtime errors).
-So when possible, it is good practice to use features of a language that prevent compilation if incorrect programs.
+So when possible, it is good practice to use features of a language that prevent compilation of incorrect programs.
 This is why debugging in an untyped language (like Python, Javascript, Lua, etc.) can be more difficult than in a <em>typed</em> one (such as Java, C#, Typescript, etc.).</p>
 </blockquote>
 <h2 id="dispatch">
@@ -2144,11 +2144,10 @@ Add it as an instance method to our example, so that:</p>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">defend</span>(MobileUnit attacker) {
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// save the initial value of the first unit&#39;s health</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">int</span> copy <span style="color:#f92672">=</span> health;
-</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// subtract the health of the attacker from the health of the current unit</span>
 </span></span><span style="display:flex;"><span>      health <span style="color:#f92672">-=</span> attacker.<span style="color:#a6e22e">health</span>;
-</span></span><span style="display:flex;"><span>      attacker.<span style="color:#a6e22e">health</span> <span style="color:#f92672">-=</span> copy;
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// the health of the attacket becomes the inverse of the remaining health of the current unit</span>
+</span></span><span style="display:flex;"><span>      attacker.<span style="color:#a6e22e">health</span> <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>health;
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Unicorn</span> <span style="color:#66d9ef">extends</span> Unit {
