@@ -35,7 +35,7 @@ This can be paraphrased in English by “every A is a B “. For instance:">
 <link rel="canonical" href="https://unibz-pp-23-24.github.io/docs/objects/sections/inheritance/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.ef6ce3f581865a34e7a0361facaa520c0f023938171236d76684573e7df35a2c.js" integrity="sha256-72zj9YGGWjTnoDYfrKpSDA8COTgXEjbXZoRXPn3zWiw=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.b2dee831af48bb656c1184ce6a31059a474705a4d213f00d32725b64630552f1.js" integrity="sha256-st7oMa9Iu2VsEYTOajEFmkdHBaTSE/ANMnJbZGMFUvE=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -2076,7 +2076,7 @@ In Java:</p>
 But there are of course other ways to model this.</p>
 </blockquote>
 <blockquote class="book-hint info">
-<p><strong><em>Note.</em></strong> In this example, we used the prefix <code>this.</code> for the attribute <code>color</code> only, because there is no ambiguity for the three other attributes.</p>
+<p><strong><em>Note.</em></strong> In this example, we used the prefix <code>this.</code> for the attribute <code>color</code> only, because there is no ambiguity for the two other attributes.</p>
 </blockquote>
 <p>We can also create a class <code>Butterfly</code> on the same model</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Butterfly</span> {
@@ -2101,18 +2101,17 @@ Without inheritance, one would need to implement four versions of this method:</
 <p>For instance, the first of these four methods could be implemented as follows:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">encounter</span>(Unicorn u1, Unicorn u2) {
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// save the initial value of the first unit&#39;s health</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">int</span> copy <span style="color:#f92672">=</span> u1.<span style="color:#a6e22e">health</span>;
-</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// substract the health of u2 from the health of u1</span>
 </span></span><span style="display:flex;"><span>      u1.<span style="color:#a6e22e">health</span> <span style="color:#f92672">-=</span> u2.<span style="color:#a6e22e">health</span>;
-</span></span><span style="display:flex;"><span>      u2.<span style="color:#a6e22e">health</span> <span style="color:#f92672">-=</span> copy;
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// the health of u2 becomes the inverse of the remaining health of u1</span>
+</span></span><span style="display:flex;"><span>      u2.<span style="color:#a6e22e">health</span> <span style="color:#f92672">=</span> <span style="color:#f92672">-</span> u1.<span style="color:#a6e22e">health</span>;
 </span></span><span style="display:flex;"><span>    }
 </span></span></code></pre></div><p>More generally, if the game has $n$ types of units, then the code will contain $n^2$ nearly identical <code>encounter</code> methods.</p>
 <blockquote class="book-hint info">
 <p><strong><em>Question.</em></strong> Can we use inheritance in this example to avoid duplicate code (and how)?</p>
 </blockquote>
 <p>Observe that a unicorn and a butterfly (viewed as object) have identical attributes (a.k.a. &ldquo;keys&rdquo;), namely <code>String color</code>, <code>int health</code>, and <code>int attackCountdown</code>.
-So we can create a superclass of <code>Unicorn</code>and<code>Butterfly</code>that carries these attributes, and let the two subclasses inherit it.
+So we can create a superclass of <code>Unicorn</code> and <code>Butterfly</code> that carries these attributes, and let the two subclasses inherit it.
 For instance, this superclass may be called <code>Unit</code>.</p>
 <p><img src="/img/diagrams/plantuml/abstract_inherit_simple.svg" alt="" /></p>
 <p>However, we may also want every unit in the game to have a concrete type (like &ldquo;unicorn&rdquo; or &ldquo;butterfly&rdquo;), rather than being a generic &ldquo;unit&rdquo;.
@@ -2155,11 +2154,8 @@ For instance,</p>
 </span></span></code></pre></div><p>This allows us to write a generic <code>encounter</code> method, as follows:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">encounter</span>(Unit u1, Unit u2) {
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// save the initial value of the first unit&#39;s health</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">int</span> copy <span style="color:#f92672">=</span> u1.<span style="color:#a6e22e">health</span>;
-</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>      u1.<span style="color:#a6e22e">health</span> <span style="color:#f92672">-=</span> u2.<span style="color:#a6e22e">health</span>;
-</span></span><span style="display:flex;"><span>      u2.<span style="color:#a6e22e">health</span> <span style="color:#f92672">-=</span> copy;
+</span></span><span style="display:flex;"><span>      u2.<span style="color:#a6e22e">health</span> <span style="color:#f92672">=</span> <span style="color:#f92672">-</span> u1.<span style="color:#a6e22e">health</span>;
 </span></span><span style="display:flex;"><span>    }
 </span></span></code></pre></div><p>And this method can be used with unicorns and/or butterflies.
 For instance:</p>
@@ -2221,7 +2217,7 @@ However, unnecessary attributes make code harder to understand, and such a desig
 </span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">super</span>(color, 1);
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>and similarly for <code>Butterfy</code>.</p>
+</span></span></code></pre></div><p>and similarly for <code>Butterfly</code>.</p>
 </div>
 </div>
 </article>
