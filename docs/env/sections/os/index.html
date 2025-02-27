@@ -43,7 +43,7 @@ Windows # Benefits and drawbacks # Here are some benefits of using Windows as yo
 <link rel="canonical" href="https://unibz-pp-23-24.github.io/docs/env/sections/os/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.d0a39f2293c820c862568afd21f234c34afc45d38a4b9d2139fd107f63f3e59d.js" integrity="sha256-0KOfIpPIIMhiVor9IfI0w0r8RdOKS50hOf0Qf2Pz5Z0=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.ea89299fdd3295e22ec72c751a0f1b8acdf9f1789ff72588e2e926bb4bb2a3c6.js" integrity="sha256-6okpn90yleIuxyx1Gg8bis358Xif9yWI4ukmu0uyo8Y=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -2073,7 +2073,7 @@ However, a path written with <code>\</code> will be interpreted as such (therefo
 </blockquote>
 <ol start="2">
 <li><strong><em>Line breaks:</em></strong> many text editors for Windows encode a line break as <em>two</em> ascii characters (<code>\r\n</code>), against a <em>single</em> character (<code>\n</code>) on most modern systems.
-This is often transparent for regular users, because many text editors (or even git) use detection and normalization procedures for line breaks.
+This is often transparent for regular users, because many text editors apply line breaks normalization procedures (git may as well).
 However, this may be a source of bugs for developers, for instance when generating code, or when writing a script to configure a virtual environment (e.g. a Docker image).</li>
 </ol>
 <h3 id="for-this-course">
@@ -2092,7 +2092,7 @@ Installing and configuring the necessary software may also be more complex (agai
 <ul>
 <li>it comes pre-installed with an Apple computer,</li>
 <li>it is POSIX-compliant (since 2001), thus offering easier <em>interoperability</em> with Linux/BSD/Android/IOS</li>
-<li>the homebrew package manager is relatively mature.</li>
+<li>the <a href="https://brew.sh/">Homebrew</a> package manager is relatively mature.</li>
 </ul>
 <p>And some drawbacks:</p>
 <ul>
@@ -2105,31 +2105,32 @@ Installing and configuring the necessary software may also be more complex (agai
 </h3>
 <p>MacOS is rarely used on hardware other than Apple computers.</p>
 <p>It is often a good choice for new developers.
-In particular, homebrew offers an easy way to install programs needed for general-purpose development (compilers, interpreters, other package managers, etc.), and its software repository is reasonably comprehensive in that regard (albeit smaller than repositories used by Linux distributions).</p>
-<p>A number of more experienced developers also work with macOS, notably for web development (Node.js/Javascript) or data science related projects (Python).</p>
+In particular, <a href="https://brew.sh/">Homebrew</a> offers an easy way to install/update/remove programs needed for general-purpose development (compilers, interpreters, other package managers, etc.), and its software repository is reasonably comprehensive in that regard (albeit smaller than repositories used by Linux distributions).</p>
+<p>A number of more experienced developers also work with macOS, notably for web development (Node.js/Javascript) or data science (Python).</p>
 <p>A Linux distribution may be more convenient in some situations, e.g. when developing a program meant to run on a server, or when working with Docker containers.</p>
 <h3 id="for-this-course-1">
   For this course
   <a class="anchor" href="#for-this-course-1">#</a>
 </h3>
-<p>If you have a Apple laptop, then you should not need an OS other than macOS for this course (even if your collaborators use other OSs).</p>
+<p>If you have a Apple laptop, then you should not need an OS other than macOS for this course (even if your collaborators use Windows or Linux).</p>
 <h2 id="linux">
   Linux
   <a class="anchor" href="#linux">#</a>
 </h2>
 <p>Here are some benefits of using Linux as your OS <em>for software development</em>:</p>
 <ul>
+<li>it is primarily designed for developers,</li>
 <li>it is used by most web servers servers,</li>
 <li>it is relatively lightweight,</li>
-<li>for developers, it has an important (and high-quality) online community support,</li>
+<li>it has an important (and high-quality) online community support,</li>
 <li>(OS) package managers are mature and easy to use,</li>
 <li>your working environment can be easily customized and/or configured.</li>
 </ul>
 <p>And some drawbacks:</p>
 <ul>
 <li>Linux rarely comes pre-installed on a computer,</li>
-<li>there sometimes <em>too much choice</em> of programs or distributions,</li>
-<li>Linux distributions are (still) not as friendly to desktop users as Windows or macOS,</li>
+<li>there is sometimes <em>too much choice</em> (distributions, programs, configuration options, etc.),</li>
+<li>Linux distributions are (arguably) not as friendly to desktop users as Windows or macOS,</li>
 <li>Hardware support (e.g. for peripherals) is (still) more limited than for Windows.</li>
 </ul>
 <h3 id="when-to-use-linux-and-when-not">
@@ -2159,9 +2160,9 @@ Keep in mind however that this will not solve issues related to the configuratio
 Besides, Linux environments are highly customizable: for instance, the choice of a distribution does not bind you to its default desktop environment.
 Available software is also very similar from one distribution to another: regardless of the distribution, you will have access to openJDK, git, Maven, etc. via a package manager.</p>
 <p>Distributions that are more desktop-oriented can be more friendly to newcomers (especially non-developers), but also come with unnecessary software.
-Two popular distributions in this category (for new users) are Linux Mint and Zorin OS.
+Two popular distributions in this category (for new users) are <a href="https://linuxmint.com/">Linux Mint</a> and <a href="https://zorin.com/os/">Zorin OS</a>.
 Both are forks of Ubuntu, which is itself a fork of Debian.</p>
-<p>For a (slightly) more lightweight distribution, MX Linux is currently a popular choice.
+<p>For a (slightly) more lightweight distribution, <a href="https://mxlinux.org/">MX Linux</a> is currently a popular choice.
 It is also based on Debian.</p>
 <h3 id="linux_install">
   How to install a Linux distribution
@@ -2171,7 +2172,7 @@ It is also based on Debian.</p>
 <p>Regardless of the distribution, you have are (at least) three possible options:</p>
 <ol>
 <li>
-<p><strong><em>Virtual machine (such as VirtualBox).</em></strong>
+<p><strong><em>Virtual machine (such as <a href="https://www.virtualbox.org/">VirtualBox</a>).</em></strong>
 This is the simplest option in terms of installation.
 But also the most expensive computationally, so only suited to a relatively powerful computer.
 Performance is also suboptimal.</p>
@@ -2185,13 +2186,13 @@ Compared to the third option below, this may affect the performance of disk acce
 <li>
 <p><strong><em>Partition (with dual boot).</em></strong>
 You can dedicate a certain amount of space to a Linux distribution your hard drive.
-A minimum of 30 GB is often recommended, but this can be adjusted later on.
+A minimum of 30 GB is often recommended (this can be adjusted later on).
 When starting your computer, it will let you choose which OS to boot on.
 This is the best option in terms of performance.</p>
 </li>
 </ol>
 <blockquote class="book-hint warning">
-<p><strong><em>Note.</em></strong> For the third option (dual boot), the installation procedure has become more involved on some recent computers, due to encrypted disks or so-called &ldquo;secure boot&rdquo;.
+<p><strong><em>Note.</em></strong> For the third option (dual boot), the installation procedure has become slightly more involved on some recent computers, due to encrypted disks or so-called &ldquo;secure boot&rdquo;.
 So make sure that the instructions that you follow are up-to-date.</p>
 </blockquote>
 </article>

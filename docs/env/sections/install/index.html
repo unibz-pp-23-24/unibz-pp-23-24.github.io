@@ -15,7 +15,7 @@ As a developer, you frequently need to download, install and/or update:
 
 libraries used in your projects (called dependencies),
 core programming utilities, such as a compiler or interpreter for a given programming language, a package manager, etc.
-tools for software development: editor, debugger, visualization tool, etc.
+tools for software development: editor, debugger, etc.
 
 These programs have their own dependencies, that have their own dependencies, etc.
 And two programs may depend on different versions of a same third program.">
@@ -25,7 +25,7 @@ And two programs may depend on different versions of a same third program.">
   <meta property="og:site_name" content="Programming project 2023-24">
   <meta property="og:title" content="Software management">
   <meta property="og:description" content="Software management # Dependencies # As a developer, you frequently need to download, install and/or update:
-libraries used in your projects (called dependencies), core programming utilities, such as a compiler or interpreter for a given programming language, a package manager, etc. tools for software development: editor, debugger, visualization tool, etc. These programs have their own dependencies, that have their own dependencies, etc. And two programs may depend on different versions of a same third program.">
+libraries used in your projects (called dependencies), core programming utilities, such as a compiler or interpreter for a given programming language, a package manager, etc. tools for software development: editor, debugger, etc. These programs have their own dependencies, that have their own dependencies, etc. And two programs may depend on different versions of a same third program.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -35,7 +35,7 @@ libraries used in your projects (called dependencies), core programming utilitie
 <link rel="canonical" href="https://unibz-pp-23-24.github.io/docs/env/sections/install/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.d0a39f2293c820c862568afd21f234c34afc45d38a4b9d2139fd107f63f3e59d.js" integrity="sha256-0KOfIpPIIMhiVor9IfI0w0r8RdOKS50hOf0Qf2Pz5Z0=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.ea89299fdd3295e22ec72c751a0f1b8acdf9f1789ff72588e2e926bb4bb2a3c6.js" integrity="sha256-6okpn90yleIuxyx1Gg8bis358Xif9yWI4ukmu0uyo8Y=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -2013,7 +2013,7 @@ https://github.com/alex-shpak/hugo-book
 <ul>
 <li>libraries used in your projects (called <strong>dependencies</strong>),</li>
 <li>core programming utilities, such as a compiler or interpreter for a given programming language, a package manager, etc.</li>
-<li>tools for software development: editor, debugger, visualization tool, etc.</li>
+<li>tools for software development: editor, debugger, etc.</li>
 </ul>
 <p>These programs have their own dependencies, that have their own dependencies, etc.
 And two programs may depend on different <em>versions</em> of a same third program.</p>
@@ -2051,7 +2051,7 @@ As a result, it can be very difficult to <em>diagnose</em> such problems.</p>
 <p>The term <a href="https://en.wikipedia.org/wiki/Dependency_hell">dependency hell</a> is sometimes used to refer to such situations.</p>
 <p>Two (non-exclusive) broad approaches are commonly adopted to avoid such issues:</p>
 <ul>
-<li><strong>automated dependency management</strong>, and</li>
+<li><strong>automated dependency management</strong> (using a package manager), and</li>
 <li><strong>self-containment</strong>: avoid shared libraries, each program having a copy (some of) its own dependencies.</li>
 </ul>
 <h2 id="automated-dependency-management">
@@ -2064,7 +2064,7 @@ As a result, it can be very difficult to <em>diagnose</em> such problems.</p>
 </h3>
 <blockquote class="book-hint warning">
 <p>A <strong>package</strong> is a program together with some metadata.
-These metadata include the program&rsquo;s name, version, release date, authors, licence and <em>dependencies</em> (together with their <em>versions</em>).</p>
+These metadata include the program&rsquo;s name, version, release date, authors, licence and <em>the names of its dependencies</em> (together with their <em>versions</em>).</p>
 <p>A <strong>software repository</strong> is a collection of packages that comply to the same format of metadata.
 A software repository (precisely, multiple copies of it) is generally hosted on the cloud.</p>
 <p>A <strong>package manager</strong> automates the installation (as well as configuration, update and removal) of packages from a software repository (or several) to a user&rsquo;s machine.</p>
@@ -2073,6 +2073,16 @@ A software repository (precisely, multiple copies of it) is generally hosted on 
   Examples
   <a class="anchor" href="#examples">#</a>
 </h3>
+<p>An <em>operating system</em> (OS) may use a package manager and software repositories.
+Notably, this is the preferred way of installing software on most Linux distributions.
+Widely used OS package managers include:</p>
+<ul>
+<li>apt for Debian and derivatives,</li>
+<li>dnf for Fedora and derivatives,</li>
+<li>pacman for Arch and derivatives,</li>
+<li>Homebrew for macOS,</li>
+<li>Chocolatey (since 2011) and Winget (since May 2021) for Windows.</li>
+</ul>
 <p>Many <em>programming languages</em> have dedicated package managers.
 For instance:</p>
 <ul>
@@ -2094,17 +2104,7 @@ For instance.</p>
 <li>etc.</li>
 </ul>
 <p>Other applications (such as zsh, vim or neovim) only have plugin managers, without a centralized software repository.
-These managers install plugins directly from hosts (e.g. a GitHub repository) specified by the plugins&rsquo; authors.</p>
-<p>Last (but not least), an <em>operating system</em> (OS) may use a package manager and software repositories.
-Notably, this is the preferred way of installing software on most Linux distributions.
-Widely used OS package managers include:</p>
-<ul>
-<li>apt for Debian and derivatives,</li>
-<li>dnf for Fedora and derivatives,</li>
-<li>pacman for Arch and derivatives,</li>
-<li>homebrew for macOS,</li>
-<li>chocolatey (since 2011) and winget (since May 2021) for Windows.</li>
-</ul>
+These managers install plugins directly from hosts (e.g. GitHub repositories).</p>
 <h3 id="packageManager">
   Usage
   <a class="anchor" href="#packageManager">#</a>
@@ -2133,7 +2133,7 @@ In particular when the latest version of a program is needed, but not available 
 <p>A variety of strategies can be adopted to build a program so that it runs in partial <em>isolation</em> from the rest of the system that it is deployed on (i.e. in its own environment, and with its <em>own dependencies</em>, that cannot be used by other programs).</p>
 <p>For instance, a Node.js project often includes a <em>copy</em> of all the Javascript libraries that it depends on (transitively).
 Further self-containment strategies may involve different levels of virtualization (e.g. via Docker).</p>
-<p>This is one way of avoiding shared dependencies.
+<p>This is one way to avoid shared dependencies.
 Other benefits are increased <em>portability</em>, and ease of installation by end-users.
 Drawbacks include and increased workload on the developer&rsquo;s side (e.g. for maintenance), and limited opportunities for integration with other programs.</p>
 <h3 id="self-containment-in-java">

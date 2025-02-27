@@ -13,7 +13,7 @@
 
 Most operating system expose files as a tree (or possibly several trees for Windows).
 
-Definition. A (nonempty) tree is either:
+A (nonempty) tree is either:
 
 a single node (called a leaf), or
 a node with one or several children that are trees.
@@ -60,7 +60,7 @@ Terminology. In this course, we will use the terms &ldquo;folder&rdquo; and &ldq
   <meta property="og:site_name" content="Programming project 2023-24">
   <meta property="og:title" content="Hierarchical file system">
   <meta property="og:description" content="Hierarchical file system # Tree # Most operating system expose files as a tree (or possibly several trees for Windows).
-Definition. A (nonempty) tree is either:
+A (nonempty) tree is either:
 a single node (called a leaf), or a node with one or several children that are trees. In this tree, non-leaf nodes are directories, and the leaves can be files, executables, links, empty directories, etc. For instance:
 ├── bin │ ├── echo │ └── ... ├── home │ ├── alice │ │ ├── .bashrc │ │ ├── .m2 │ │ │ └── ... │ │ ├── Desktop │ │ │ └── ... │ │ ├── music │ │ │ └── thatSong.mp3 │ │ └── workspace │ │ └── pp │ │ ├── assignments │ │ │ └── ... │ │ └── project │ │ ├── .git │ │ │ └── ... │ │ ├── src │ │ │ └── HelloWorld.java │ │ └── test │ │ └── testHelloWorld.java │ └── bob │ ├── .bashrc │ ├── Desktop │ │ └── ... │ └── music │ ├── thatSong.mp3 │ └── anotherSong.mp3 └── ... Terminology. In this course, we will use the terms “folder” and “directory” interchangeably.">
   <meta property="og:locale" content="en_us">
@@ -72,7 +72,7 @@ a single node (called a leaf), or a node with one or several children that are t
 <link rel="canonical" href="https://unibz-pp-23-24.github.io/docs/env/sections/files/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.d0a39f2293c820c862568afd21f234c34afc45d38a4b9d2139fd107f63f3e59d.js" integrity="sha256-0KOfIpPIIMhiVor9IfI0w0r8RdOKS50hOf0Qf2Pz5Z0=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.ea89299fdd3295e22ec72c751a0f1b8acdf9f1789ff72588e2e926bb4bb2a3c6.js" integrity="sha256-6okpn90yleIuxyx1Gg8bis358Xif9yWI4ukmu0uyo8Y=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -2051,7 +2051,7 @@ https://github.com/alex-shpak/hugo-book
 </h2>
 <p>Most operating system expose files as a <em>tree</em> (or possibly several trees for Windows).</p>
 <blockquote class="book-hint warning">
-<p><strong><em>Definition.</em></strong> A (nonempty) <strong>tree</strong> is either:</p>
+<p>A (nonempty) <strong>tree</strong> is either:</p>
 <ul>
 <li>a single node (called a <strong>leaf</strong>), or</li>
 <li>a node with one or several children that are trees.</li>
@@ -2103,12 +2103,12 @@ We will <em>not</em> follow this terminology.</p>
   <a class="anchor" href="#path">#</a>
 </h2>
 <blockquote class="book-hint warning">
-<p><strong><em>Definition.</em></strong> In such a tree, a <strong>path</strong> from a directory <em>s</em> to an arbitrary node <em>t</em> is either:</p>
+<p><strong><em>Definition.</em></strong> In such a tree, a <strong>path</strong> from a directory $s$ to an arbitrary node $t$ is either:</p>
 <ul>
-<li><code>.</code> if <em>s</em> and <em>t</em> are the same node, or</li>
-<li><code>..</code> if <em>t</em> is the parent of <em>s</em>, or</li>
-<li>the name of <em>t</em> if <em>s</em> is the parent of <em>t</em>, or</li>
-<li>a path from <em>s</em> to some node <em>i</em>, followed by <code>/</code> (or <code>\</code>on Windows), followed by a path from <em>i</em> to <em>t</em>.</li>
+<li><code>.</code> if $s$ and $t$ are the same node, or</li>
+<li><code>..</code> if $t$ is the parent of $s$, or</li>
+<li>the name of $t$ if $s$ is the parent of $t$, or</li>
+<li>a path from $s$ to some node $i$, followed by <code>/</code> (or <code>\</code>on Windows), followed by a path from $i$ to $t$.</li>
 </ul>
 </blockquote>
 <p>For instance (on macOS, Linux, etc.), in the tree above:</p>
@@ -2121,7 +2121,7 @@ We will <em>not</em> follow this terminology.</p>
 <div class="book-tabs">
 <input type="radio" class="toggle" name="tabs-number_of_paths" id="tabs-number_of_paths-0" checked="checked" />
 <label for="tabs-number_of_paths-0">Exercise</label>
-<div class="book-tabs-content markdown-inner"><p>How many paths are there from a directory to an arbitrary node?</p>
+<div class="book-tabs-content markdown-inner"><p>How many paths are there from a directory to a node?</p>
 </div>
 <input type="radio" class="toggle" name="tabs-number_of_paths" id="tabs-number_of_paths-1"  />
 <label for="tabs-number_of_paths-1">Solution</label>
@@ -2167,7 +2167,7 @@ In particular, the identifier of the main partition is often the letter <code>C<
 <blockquote class="book-hint warning">
 <p><strong><em>Definition.</em></strong> A <strong>relative path</strong> is a path that is not absolute.</p>
 </blockquote>
-<p>For instance (on macOS, Linux, etc.), <code>../../bob/Desktop</code> is a path to to Bob&rsquo;s Desktop <em>relative to</em> Alice&rsquo;s Desktop.</p>
+<p>For instance, <code>../../bob/Desktop</code> is a path to Bob&rsquo;s Desktop <em>relative to</em> Alice&rsquo;s Desktop.</p>
 <p>Note that if <em>p</em> is a relative path, then <em>p</em> prefixed with <code>./</code> (or <code>.\</code> on Windows) is a path equivalent to <em>p</em>.
 This prefix is sometimes used to emphasize that a path is relative (among other purposes).</p>
 <h2 id="wd">
@@ -2205,7 +2205,7 @@ E.g. in this example:</p>
 <li><code>/home/&lt;userId&gt;</code> on Linux/BSD,</li>
 <li><code>/Users/&lt;userId&gt;</code> on macOS,</li>
 <li><code>/User/&lt;userId&gt;</code> on iOS,</li>
-<li><code>/data/media/⟨userId⟩</code> on Android,</li>
+<li><code>/data/media/&lt;userId&gt;</code> on Android,</li>
 <li><code>&lt;mainHardDriveId&gt;:\Users\&lt;userId&gt;</code> on Windows (e.g. <code>C:\Users\&lt;userId&gt;</code>).</li>
 </ul>
 <p>On Linux and macOS, the alias <code>~</code> can be used as an absolute path to the current user&rsquo;s home directory.
@@ -2214,9 +2214,9 @@ For instance, in the above example, if Alice is logged in, then <code>~/music/th
   Access restriction
   <a class="anchor" href="#access-restriction">#</a>
 </h3>
-<p>Files and programs within the home directory of a user can usually be accessed by this user (or a system admin).
-Therefore programs that can be executed by <em>all users</em> are usually located in <em>other directories</em> (e.g. the program <code>/bin/echo</code> in the example above).
-Access restrictions (read, write and/or execute) may apply to the content of such directories.
+<p>Files and programs within the home directory of a user can usually be accessed by this user only (or a system admin).
+Therefore programs that can be executed by <em>all users</em> are usually located in <em>other directories</em> (e.g. the program <code>/bin/echo</code> in the example above).</p>
+<p>Access restrictions (read, write and/or execute) may apply to the content of such directories.
 Notably, on Linux systems, (most of) the content of these directories can only be modified by a system admin.</p>
 <h3 id="hidden-files-and-directories">
   Hidden files and directories
@@ -2232,7 +2232,7 @@ For instance, the <a href="https://en.wikipedia.org/wiki/Configuration_file">con
 can be used to declare parameters (e.g. user identifier, etc.) or options (e.g. disable default fast-forward merge, etc.) to be used with git.</p>
 <blockquote class="book-hint info">
 <p><strong><em>Hint.</em></strong> Configuration files are a convenient way to save your personal preferences and use them on several machines.
-For instance, you may need to logging to a remote server via <a href="https://en.wikipedia.org/wiki/Secure_Shell">ssh</a> to perform some tasks (e.g. deploy a database or run costly computations).
+For instance, you may need to connect to a remote server via <a href="https://en.wikipedia.org/wiki/Secure_Shell">ssh</a> to perform some tasks (e.g. deploy a database or run costly computations).
 In such a scenario, you can upload dot files to your home directory on this server.</p>
 </blockquote>
 <p>Hidden files or directories may serve other purposes.
