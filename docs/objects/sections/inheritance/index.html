@@ -35,7 +35,7 @@ This can be paraphrased in English by “every $A$ is a $B$ “. For instance:">
 <link rel="canonical" href="https://unibz-pp-23-24.github.io/docs/objects/sections/inheritance/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.b75f9aaae7d28cfd904aa6de9b5e55d2b8fcb3064d3cbd9b4a1d06f1c8010335.js" integrity="sha256-t1&#43;aqufSjP2QSqbem15V0rj8swZNPL2bSh0G8cgBAzU=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.46f2a652d18edc32284a57dc76ddb3523cd3e6c08e74540e5b6eeca3521c512d.js" integrity="sha256-RvKmUtGO3DIoSlfcdt2zUjzT5sCOdFQOW27so1IcUS0=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -2091,14 +2091,13 @@ But there are of course other ways to model this.</p>
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>Now consider a method <code>encounter</code> that manages an encounter between two units.
-Without inheritance, one would need to implement four versions of this method:</p>
+Without inheritance, one would need to implement at least three versions of this method (possibly four if encounters are asymmetric):</p>
 <ul>
 <li>unicorn vs unicorn,</li>
-<li>unicorn vs butterfly,</li>
-<li>butterfly vs unicorn, and</li>
+<li>unicorn vs butterfly and</li>
 <li>butterfly vs butterfly.</li>
 </ul>
-<p>For instance, the first of these four methods could be implemented as follows:</p>
+<p>For instance, the first of these three methods could be implemented as follows:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">encounter</span>(Unicorn u1, Unicorn u2) {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>      <span style="color:#75715e">// subtract the health of u2 from the health of u1</span>
@@ -2106,7 +2105,7 @@ Without inheritance, one would need to implement four versions of this method:</
 </span></span><span style="display:flex;"><span>      <span style="color:#75715e">// the health of u2 becomes the inverse of the remaining health of u1</span>
 </span></span><span style="display:flex;"><span>      u2.<span style="color:#a6e22e">health</span> <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>u1.<span style="color:#a6e22e">health</span>;
 </span></span><span style="display:flex;"><span>    }
-</span></span></code></pre></div><p>More generally, if the game has $n$ types of units, then the code will contain $n^2$ nearly identical <code>encounter</code> methods.</p>
+</span></span></code></pre></div><p>More generally, if the game has $n$ types of units, then the code will contain $\frac{n(n-1)}{2} + n$ nearly identical <code>encounter</code> methods.</p>
 <blockquote class="book-hint info">
 <p><strong><em>Question.</em></strong> Can we use inheritance in this example to avoid duplicate code (and how)?</p>
 </blockquote>
