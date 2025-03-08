@@ -19,7 +19,7 @@ a single node (called a leaf), or
 a node with one or several children that are trees.
 
 
-In this tree, non-leaf nodes are directories, and the leaves can be files, executables, links, empty directories, etc.
+In this tree, non-leaf nodes are directories, and the leaves can be files, links, empty directories, etc.
 For instance:
 ├── bin
 │   ├── echo
@@ -61,7 +61,7 @@ Terminology. In this course, we will use the terms &ldquo;folder&rdquo; and &ldq
   <meta property="og:title" content="Hierarchical file system">
   <meta property="og:description" content="Hierarchical file system # Tree # Most operating system expose files as a tree (or possibly several trees for Windows).
 A (nonempty) tree is either:
-a single node (called a leaf), or a node with one or several children that are trees. In this tree, non-leaf nodes are directories, and the leaves can be files, executables, links, empty directories, etc. For instance:
+a single node (called a leaf), or a node with one or several children that are trees. In this tree, non-leaf nodes are directories, and the leaves can be files, links, empty directories, etc. For instance:
 ├── bin │ ├── echo │ └── ... ├── home │ ├── alice │ │ ├── .bashrc │ │ ├── .m2 │ │ │ └── ... │ │ ├── Desktop │ │ │ └── ... │ │ ├── music │ │ │ └── thatSong.mp3 │ │ └── workspace │ │ └── pp │ │ ├── assignments │ │ │ └── ... │ │ └── project │ │ ├── .git │ │ │ └── ... │ │ ├── src │ │ │ └── HelloWorld.java │ │ └── test │ │ └── testHelloWorld.java │ └── bob │ ├── .bashrc │ ├── Desktop │ │ └── ... │ └── music │ ├── thatSong.mp3 │ └── anotherSong.mp3 └── ... Terminology. In this course, we will use the terms “folder” and “directory” interchangeably.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
@@ -72,7 +72,7 @@ a single node (called a leaf), or a node with one or several children that are t
 <link rel="canonical" href="https://unibz-pp-23-24.github.io/docs/env/sections/files/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.46f2a652d18edc32284a57dc76ddb3523cd3e6c08e74540e5b6eeca3521c512d.js" integrity="sha256-RvKmUtGO3DIoSlfcdt2zUjzT5sCOdFQOW27so1IcUS0=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.6a35c21eb4e9cb5e5a0773cc94ff7fff5c927b59315ffa6e0eb46925d8d62ba5.js" integrity="sha256-ajXCHrTpy15aB3PMlP9//1ySe1kxX/puDrRpJdjWK6U=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -2057,7 +2057,7 @@ https://github.com/alex-shpak/hugo-book
 <li>a node with one or several children that are trees.</li>
 </ul>
 </blockquote>
-<p>In this tree, non-leaf nodes are directories, and the leaves can be files, executables, links, empty directories, etc.
+<p>In this tree, non-leaf nodes are directories, and the leaves can be files, links, empty directories, etc.
 For instance:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>├── bin
 </span></span><span style="display:flex;"><span>│   ├── echo
@@ -2133,8 +2133,8 @@ We will <em>not</em> follow this terminology.</p>
 <p>For instance, on Windows, <code>src/HelloWorld.java</code> and <code>src/helloworld.java</code> are the <em>same path</em>.</p>
 <p>In order to make sure that your code is portable:</p>
 <ul>
-<li>always use <em>case-sensitive</em> paths in your code (i.e. respect the names of your files, folders, executables, etc.),</li>
-<li>do not create two files (or subfolders, executables, etc.) in the <em>same</em> folder with identical names modulo upper/lower case (e.g. <code>Readme.md</code> and <code>README.md</code>).</li>
+<li>always use <em>case-sensitive</em> paths in your code (i.e. respect the names of your files, folders, etc.),</li>
+<li>do not create two files (or subfolders, etc.) in the <em>same</em> folder with identical names modulo upper/lower case (e.g. <code>Readme.md</code> and <code>README.md</code>).</li>
 </ul>
 </blockquote>
 <blockquote class="book-hint warning">

@@ -35,7 +35,7 @@ This can be paraphrased in English by “every $A$ is a $B$ “. For instance:">
 <link rel="canonical" href="https://unibz-pp-23-24.github.io/docs/objects/sections/inheritance/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.46f2a652d18edc32284a57dc76ddb3523cd3e6c08e74540e5b6eeca3521c512d.js" integrity="sha256-RvKmUtGO3DIoSlfcdt2zUjzT5sCOdFQOW27so1IcUS0=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.6a35c21eb4e9cb5e5a0773cc94ff7fff5c927b59315ffa6e0eb46925d8d62ba5.js" integrity="sha256-ajXCHrTpy15aB3PMlP9//1ySe1kxX/puDrRpJdjWK6U=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -2036,7 +2036,7 @@ if $A$ extends $B$ and $B$ extends $C$, then $A$ extends $C$ (for any classes $A
   <a class="anchor" href="#inheritance">#</a>
 </h3>
 <blockquote class="book-hint warning">
-<p>Naturally, if $A$ is a subclass of $B$ then it <strong>inherits</strong> the properties of $B$.</p>
+<p>Naturally, if $A$ extends $B$, then it <strong>inherits</strong> the properties of $B$.</p>
 </blockquote>
 <p>For instance, a rectangle has four right angles.
 Since every square is a rectangle, a square has four right angles as well.</p>
@@ -2170,7 +2170,8 @@ For instance:</p>
 What if we also want to create a type of unit called <code>Wall</code> that has no color and cannot attack?
 An instance of this class does not need the attributes <code>color</code> and <code>attackCountdown</code>.</p>
 <p>A quick solution here consists is setting <code>attackCountdown</code> to -1, and <code>color</code> to <code>null</code>.
-However, unnecessary attributes make code harder to understand, and such a design may not scale well if the game is extended with more units types.</p>
+However, unnecessary attributes make code harder to understand (therefore bug-prone),
+and such a design may not scale well if the game is extended with more units types.</p>
 <div class="book-tabs">
 <input type="radio" class="toggle" name="tabs-exercise_trans_inherit" id="tabs-exercise_trans_inherit-0" checked="checked" />
 <label for="tabs-exercise_trans_inherit-0">Exercise</label>
@@ -2191,7 +2192,7 @@ However, unnecessary attributes make code harder to understand, and such a desig
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> health;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Unit</span>(<span style="color:#66d9ef">int</span> health) {
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">heath</span> <span style="color:#f92672">=</span> health;
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">health</span> <span style="color:#f92672">=</span> health;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Wall</span> <span style="color:#66d9ef">extends</span> Unit {
