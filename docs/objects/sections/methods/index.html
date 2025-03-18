@@ -28,7 +28,7 @@ For instance, in Java, an instance method declared in MyClass can be called by a
 <link rel="canonical" href="https://unibz-pp-23-24.github.io/docs/objects/sections/methods/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.d92c75524d11acecb05ab51436b61b289707d0f8843d88ec43436fd796d0a432.js" integrity="sha256-2Sx1Uk0RrOywWrUUNrYbKJcH0PiEPYjsQ0Nv15bQpDI=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.90739284bbfdb7e89ceb95f5dbb32d9209745c5402b30d08af7fce61bffa1c55.js" integrity="sha256-kHOShLv9t&#43;ic65X127Mtkgl0XFQCsw0Ir3/OYb/6HFU=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -2062,6 +2062,7 @@ However, the following program increases the health of (the object referenced by
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MobileUnit</span> <span style="color:#66d9ef">extends</span> Unit {
 </span></span><span style="display:flex;"><span>  ...
+</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@Override</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">regen</span>(){
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(health <span style="color:#f92672">&lt;</span> 10){
@@ -2108,6 +2109,7 @@ For instance, in the above example, the overriding method may be better written 
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MobileUnit</span> <span style="color:#66d9ef">extends</span> Unit {
 </span></span><span style="display:flex;"><span>  ...
 </span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@Override</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">regen</span>() {
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">super</span>.<span style="color:#a6e22e">regen</span>();
 </span></span><span style="display:flex;"><span>    health <span style="color:#f92672">+=</span> 1;
@@ -2155,6 +2157,7 @@ Add it as an instance method to our example, so that:</p>
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Unicorn</span> <span style="color:#66d9ef">extends</span> Unit {
 </span></span><span style="display:flex;"><span>  ...
 </span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@Override</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">defend</span>(MobileUnit attacker) {
 </span></span><span style="display:flex;"><span>    regen();
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">super</span>.<span style="color:#a6e22e">defend</span>(attacker);
