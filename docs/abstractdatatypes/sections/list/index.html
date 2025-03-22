@@ -40,7 +40,7 @@ isEmpty is self-explanatory, append adds an element at the end of the list, prep
 <link rel="canonical" href="https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/list/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.90739284bbfdb7e89ceb95f5dbb32d9209745c5402b30d08af7fce61bffa1c55.js" integrity="sha256-kHOShLv9t&#43;ic65X127Mtkgl0XFQCsw0Ir3/OYb/6HFU=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.65a3aaec3c071041c4689c45841c2f6fb88648e6e28b3233cea700c91460df65.js" integrity="sha256-ZaOq7DwHEEHEaJxFhBwvb7iGSObiizIzzqcAyRRg32U=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -2033,7 +2033,7 @@ The most commonly used are <code>ArrayList</code> and <code>LinkedList</code>.</
 <ul>
 <li>Create a <code>List</code> and populate it:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>City milan <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;milan&#34;</span>, 20100);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>City milan <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Milan&#34;</span>, 20100);
 </span></span><span style="display:flex;"><span>City florence <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Florence&#34;</span>, 50100);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Creates an empty list of cities</span>
@@ -2049,7 +2049,7 @@ The most commonly used are <code>ArrayList</code> and <code>LinkedList</code>.</
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Creates a list identical to the previous one, but which cannot be modified</span>
 </span></span><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>City<span style="color:#f92672">&gt;</span> myOtherList <span style="color:#f92672">=</span> List.<span style="color:#a6e22e">of</span>(milan, florence, milan);
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>City<span style="color:#f92672">[]</span> myArray <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City<span style="color:#f92672">[]</span>{milan, florence,};
+</span></span><span style="display:flex;"><span>City<span style="color:#f92672">[]</span> myArray <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City<span style="color:#f92672">[]</span>{milan, florence};
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Creates a fixed-lenght &#34;wrapper&#34; list around the array.</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// No data is duplicated.</span>
 </span></span><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>City<span style="color:#f92672">&gt;</span> yetAnotherList <span style="color:#f92672">=</span> Arrays.<span style="color:#a6e22e">asList</span>(myArray);
