@@ -12,9 +12,9 @@
   #
 
 
-Java (as well as C# and C&#43;&#43;) provides mechanisms to change the type associated with an object o, using
-either a supertype of o (this is an upcast),
-or a subtype of o (this is a downcast).
+Java (as well as C# and C&#43;&#43;) provides mechanisms to change the type associated with an object $o$, using
+either a supertype of $o$ (this is an upcast),
+or a subtype of $o$ (this is a downcast).
 
 
   Upcast
@@ -27,7 +27,7 @@ Implicit upcasts on the other hand are very frequent, when the type of an object
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/objects/sections/comparing/">
   <meta property="og:site_name" content="Programming project 2023-24">
   <meta property="og:title" content="Cast and equality">
-  <meta property="og:description" content="Cast and Equality # Cast # Java (as well as C# and C&#43;&#43;) provides mechanisms to change the type associated with an object o, using either a supertype of o (this is an upcast), or a subtype of o (this is a downcast).
+  <meta property="og:description" content="Cast and Equality # Cast # Java (as well as C# and C&#43;&#43;) provides mechanisms to change the type associated with an object $o$, using either a supertype of $o$ (this is an upcast), or a subtype of $o$ (this is a downcast).
 Upcast # Explicit upcasts are uncommon, but may still be useful in some scenarios, e.g. to disambiguate two method calls.
 Implicit upcasts on the other hand are very frequent, when the type of an object cannot be determined at compile time.">
   <meta property="og:locale" content="en_us">
@@ -39,7 +39,7 @@ Implicit upcasts on the other hand are very frequent, when the type of an object
 <link rel="canonical" href="https://unibz-pp-23-24.github.io/docs/objects/sections/comparing/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.65a3aaec3c071041c4689c45841c2f6fb88648e6e28b3233cea700c91460df65.js" integrity="sha256-ZaOq7DwHEEHEaJxFhBwvb7iGSObiizIzzqcAyRRg32U=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.d345f56549ad2e7d62801c32d20017750680c91019c9d13245efa2f3f5eb7d3e.js" integrity="sha256-00X1ZUmtLn1igBwy0gAXdQaAyRAZydEyRe&#43;i8/XrfT4=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -2014,9 +2014,9 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#cast">#</a>
 </h2>
 <blockquote class="book-hint warning">
-<p>Java (as well as C# and C++) provides mechanisms to change the type associated with an object <em>o</em>, using
-either a <em>supertype</em> of <em>o</em> (this is an <strong>upcast</strong>),
-or a <em>subtype</em> of <em>o</em> (this is a <strong>downcast</strong>).</p>
+<p>Java (as well as C# and C++) provides mechanisms to change the type associated with an object $o$, using
+either a <em>supertype</em> of $o$ (this is an <strong>upcast</strong>),
+or a <em>subtype</em> of $o$ (this is a <strong>downcast</strong>).</p>
 </blockquote>
 <h3 id="upcast">
   Upcast
@@ -2030,10 +2030,10 @@ Consider the following classes:</p>
 <p><img src="/img/diagrams/plantuml/downcast_simple.svg" alt="" /></p>
 <p>Now consider the following program, where the method <code>getUnits</code> produces an array of units that depends on the player&rsquo;s input.
 The type of objects in this array (<code>Unicorn</code> or <code>Butterfly</code>) cannot be determined at compile time.
-Thanks to the implicit upcast, they can nonetheless be treated as (underspecified) units.</p>
+Thanks to the implicit upcast, they can nonetheless be referred to as (underspecified) units.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Unit<span style="color:#f92672">[]</span> units <span style="color:#f92672">=</span> getUnits();
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (Unit unit: units){
-</span></span><span style="display:flex;"><span>    System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(unit.<span style="color:#a6e22e">health</span>);
+</span></span><span style="display:flex;"><span>    ...
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div></blockquote>
 <h3 id="downcast">
@@ -2058,7 +2058,7 @@ The output of this operation has type <code>Unicorn</code>, thus allowing the ca
   <a class="anchor" href="#equals">#</a>
 </h2>
 <p>As we saw in a <a href="https://unibz-pp-23-24.github.io/docs/objects/sections/classes/#constructor">previous chapter</a>, a constructor in Java creates an object in memory and returns a (fresh) <em>reference</em> to that object.
-Since two objects have different locations in memory, their respective references must differ, <em>even if the objects are identical</em>.</p>
+Since two objects have different locations in memory, their respective references must differ, <em>even if the content of the two objects is identical</em>.</p>
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong>
 Consider (a simplified version of) the class <code>City</code> that we saw <a href="https://unibz-pp-23-24.github.io/docs/objects/sections/classes/">earlier</a>.</p>
@@ -2077,7 +2077,7 @@ Consider (a simplified version of) the class <code>City</code> that we saw <a hr
 </span></span><span style="display:flex;"><span>City city2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Florence&#34;</span>, 50100);
 </span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(city1 <span style="color:#f92672">==</span> city2);
 </span></span></code></pre></div></blockquote>
-<p>However, in some scenarios, it may be useful to compare the objects themselves, rather than their references.
+<p>However, in some scenarios, it may be useful to compare the content of two objects, rather than their references.
 Java provides a native method called <code>equals</code> for this purpose.</p>
 <p>Like the method <code>toString</code> that we saw <a href="https://unibz-pp-23-24.github.io/docs/objects/sections/tostring/">earlier</a>, the <code>equals</code> is an instance method of the native Java class <code>Object</code>, which is an (implicit) superclass of every other class.
 So every (user-defined of native) class inherits <code>equals</code>.</p>
@@ -2105,7 +2105,7 @@ In order to use this method to check whether two objects are equal, it has to be
 </blockquote>
 <p>Note in this example:</p>
 <ul>
-<li>the (safe) downcast from <code>Object</code> to <code>City</code>, and</li>
+<li>the (safe) <a href="https://unibz-pp-23-24.github.io/docs/objects/sections/comparing/#downcast">downcast</a> from <code>Object</code> to <code>City</code>, and</li>
 <li>the recursive call to <code>equals</code> (because the attribute <code>name</code> has type <code>String</code>).</li>
 </ul>
 <h3 id="recursion">
@@ -2128,7 +2128,7 @@ We will encounter several of them during this course, notably for the class <cod
 </h3>
 <p>The method <code>equals</code> is usually overridden together with another method of the class <code>Object</code>, called <code>hashCode</code>.
 In particular, this is needed for the method <code>equals</code> of the class <code>HashSet</code> to behave correctly.
-We will explore this topic <a href="https://unibz-pp-23-24.github.io/docs/datastructures/sections/hash/#hashCode">later in this course</a>, when we introduce the notion of a hash table.</p>
+We will explore this topic <a href="%7b%7b%22../../dataStructures/sections/hash.md#hashCode%22%7d%7d">later in this course</a>, when we introduce the notion of a hash table.</p>
 </article>
  
       
