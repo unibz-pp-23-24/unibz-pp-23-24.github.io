@@ -39,7 +39,7 @@ one that checks whether the queue is empty, one that takes as input an element a
 <link rel="canonical" href="https://unibz-pp-23-24.github.io/docs/abstractdatatypes/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.ac08d90ce40298fb0cd5ab03c937847389c3a622051a67fd4e0fb39b6f095653.js" integrity="sha256-rAjZDOQCmPsM1asDyTeEc4nDpiIFGmf9Tg&#43;zm28JVlM=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.ba12bf7efff061a070352df90a57753b743742bce62e2a8af6ed6892abf289f9.js" integrity="sha256-uhK/fv/wYaBwNS35Cld1O3Q3QrzmLiqK9u1okqvyifk=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://unibz-pp-23-24.github.io/docs/abstractdatatypes/index.xml" title="Programming project 2023-24" />
 <!--
 Made with Book Theme
@@ -2021,7 +2021,7 @@ This interface typically exposes three methods:</p>
 For instance, a queue may be implemented as an array or as a linked list (among others).
 Each implementation may have advantages and drawbacks (in terms of performance, memory footprint, parallelization opportunities, etc.) for different tasks (reading, writing, etc.).</p>
 <blockquote class="book-hint danger">
-<p>A <strong>data structure</strong> (e.g. an array, a linked list, a hash map, etc.) is <em>not</em> an ADT, but a (concrete) way to store a collection of elements (values, objects, etc.) in memory.
+<p>A <strong>data structure</strong> (e.g. an array, a linked list, a hash table, etc.) is <em>not</em> an ADT, but a (concrete) way to store a collection of elements (values, objects, etc.) in memory.
 However, a data structure can implement one or several ADT(s).</p>
 </blockquote>
 <p>Some ADTs correspond to <a href="https://unibz-pp-23-24.github.io/docs/background/sections/set_tuple_map/">basic mathematical objects</a> (set, tuple, function, etc.), and are therefore easy to understand and manipulate.
@@ -2037,7 +2037,7 @@ For instance, if your program manipulates a collection of objects without duplic
   Parameterized types
   <a class="anchor" href="#parameterized-types">#</a>
 </h3>
-<p>An ADT in Java is usually a <a href="https://unibz-pp-23-24.github.io/docs/generics/sections/generics/#genericType">parameterized type</a>, meaning that it has one or several types as parameter.</p>
+<p>An ADT in Java is usually a <a href="https://unibz-pp-23-24.github.io/docs/generics/sections/generics/#genericType">parameterized type</a>, meaning that it has one or several types as parameter(s).</p>
 <p>For instance, a set of strings in Java has type <code>Set&lt;String&gt;</code>.</p>
 <blockquote class="book-hint info">
 <p><strong><em>Note.</em></strong>
@@ -2048,7 +2048,7 @@ For instance, the type <code>Set&lt;Integer&gt;</code> is valid.</p>
   The interface <code>Collection</code>
   <a class="anchor" href="#collection">#</a>
 </h3>
-<p>In Java, many ADTs and data structures extend or implement the interface <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Collection.html">Collection</a>
+<p>In Java, many ADTs and data structures extend or implement the <a href="https://unibz-pp-23-24.github.io/docs/interfaces/sections/java_interfaces/">interface</a> <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Collection.html">Collection</a>
 (the only exception in this chapter is <code>Map</code>).</p>
 <p>Among others, the interface <code>Collection</code> specifies the following methods (if <code>E</code> is the type of the elements in the collection):</p>
 <ul>
