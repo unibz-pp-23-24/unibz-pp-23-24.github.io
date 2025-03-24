@@ -49,7 +49,7 @@ For instance, if
 <link rel="canonical" href="https://unibz-pp-23-24.github.io/docs/background/sections/set_tuple_map/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.1d69a8025ba65dc911136698a2c50a8e3ee057b950cc1023e9e27a821ee7b790.js" integrity="sha256-HWmoAlumXckRE2aYosUKjj7gV7lQzBAj6eJ6gh7nt5A=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.ac08d90ce40298fb0cd5ab03c937847389c3a622051a67fd4e0fb39b6f095653.js" integrity="sha256-rAjZDOQCmPsM1asDyTeEc4nDpiIFGmf9Tg&#43;zm28JVlM=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -2036,7 +2036,7 @@ https://github.com/alex-shpak/hugo-book
 </blockquote>
 <p>If $S$ is finite with size $n$, then $\mathcal{P}(S)$ has size $2^n$.</p>
 <blockquote class="book-hint warning">
-<p><strong><em>Definition.</em></strong> The <strong>product</strong> $S_1 \times S_2$ of two sets $S_1$ and $S_2$ is the set of all pairs $(s_1, s_2)$ such that $s_1 \in S_1$ and $s_2 \in S_2$.</p>
+<p><strong><em>Definition.</em></strong> The <strong>product</strong> $S_1 \times S_2$ of two sets $S_1$ and $S_2$ is the set of all <a href="#tuple">pairs</a> $(s_1, s_2)$ such that $s_1 \in S_1$ and $s_2 \in S_2$.</p>
 </blockquote>
 <p>For instance, if</p>
 <span>
@@ -2094,7 +2094,6 @@ Similarly to $S_1 \times S_2$:</p>
 <blockquote class="book-hint warning">
 <p>A <strong>function</strong> (or <strong>map</strong>) $f\colon X \to Y$ maps each element $x$ of its <strong>domain</strong> $X$ to an element $f(x)$ of its <strong>codomain</strong> $Y$.</p>
 </blockquote>
-<p>A function $f\colon X \to Y$ can equivalently be viewed as a set of &ldquo;key-value&rdquo; pairs, namely the set of all pairs $(x, f(x))$ such that$ x \in X$.</p>
 <blockquote class="book-hint warning">
 <p><strong><em>Definition.</em></strong> A function $f\colon X \to Y$ is:</p>
 <ul>
@@ -2109,11 +2108,9 @@ Similarly to $S_1 \times S_2$:</p>
 <li><strong>bijective</strong> if it is injective and surjective.</li>
 </ul>
 </blockquote>
-<p>A function $f$ with <em>finite</em> domain can be represented extensionally, as a set of pairs of the form</p>
-<span>
-  \(\qquad \qquad x \mapsto f(x)\)
-</span>
-<p>For instance, the function</p>
+<p>A function $f\colon X \to Y$ can equivalently be viewed as a <a href="#set">set</a> of &ldquo;key-value&rdquo; pairs, namely the set of all pairs $(x, f(x))$ such that$ x \in X$.</p>
+<p>If $f$ has <em>finite</em> domain, then it can be (physically) represented as this set of pairs.
+For instance, the function</p>
 <span>
   \( \qquad \qquad f\colon \{a,b,c\} \to \mathbb{N} \)
 </span>
@@ -2125,6 +2122,13 @@ and<span>
   \(f(c) = 2\)
 </span>
 <p>can be represented as the set:</p>
+<span>
+  \(
+\qquad \qquad \{\ (a, 1),\ (b, 1),\ (c,2)\ \}
+\)
+</span>
+<p>We may also use the symbol $\mapsto$ to represent these pairs.
+For instance, we may represent the above function as</p>
 <span>
   \(
 \qquad \qquad \{\ a \mapsto 1,\ b \mapsto 1,\ c \mapsto 2\ \}
