@@ -37,7 +37,7 @@ Observation. Some data type have several natural sorting criteria. For instance,
 <link rel="canonical" href="https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/sorting/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.cf5bd6425e970381a1a41724cf3e14ca1c21431710d77e5bff4b9c48c74cf514.js" integrity="sha256-z1vWQl6XA4GhpBckzz4UyhwhQxcQ135b/0ucSMdM9RQ=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.6a8efd2e8046a02b4a4a9e117faf4888bcb0e67cd3059e0249b06255729ebe43.js" integrity="sha256-ao79LoBGoCtKSp4Rf69IiLyw5nzTBZ4CSbBiVXKevkM=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -2207,9 +2207,11 @@ We can create another comparator for our class <code>City</code>, which uses the
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> c1.<span style="color:#a6e22e">name</span>.<span style="color:#a6e22e">compareTo</span>(c2.<span style="color:#a6e22e">name</span>);
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div></blockquote>
+</span></span></code></pre></div><p><strong><em>Note.</em></strong>
+Observe that in this example, we used the instance method <code>compareTo</code> (described above) implemented in the class <code>String</code>.</p>
+</blockquote>
 <p>The interface <code>Comparator</code> also provides convenient (default) methods.
-For instance, the method <a href="https://docs.oracle.com/javase/17/docs/api/java/util/Comparator.html#thenComparing-java.util.Comparator-">thenComparing</a> returns the <a href="https://unibz-pp-23-24.github.io/docs/background/sections/order/#lexProduct">lexicographic product</a> of two comparators.</p>
+For instance, the method <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Comparator.html#thenComparing%28java.util.Comparator%29">thenComparing</a> returns the <a href="https://unibz-pp-23-24.github.io/docs/background/sections/order/#lexProduct">lexicographic product</a> of two comparators.</p>
 <h3 id="sorting-1">
   Sorting
   <a class="anchor" href="#sorting-1">#</a>
@@ -2248,7 +2250,7 @@ a list can be found <a href="https://docs.oracle.com/javase/tutorial/collections
 </span></span><span style="display:flex;"><span>Arrays.<span style="color:#a6e22e">sort</span>(cities, <span style="color:#66d9ef">new</span> CityNameComparator());
 </span></span></code></pre></div></blockquote>
 <blockquote class="book-hint warning">
-<p><strong><em>Property.</em></strong> Both methods guarantee <em>stable</em> sorting.
+<p><strong><em>Property.</em></strong> Both methods guarantee <a href="#stable">stable</a> sorting.
 For instance:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span>City trento1 <span style="color:#f92672">=</span>  <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Trento&#34;</span>, 38122);
 </span></span><span style="display:flex;"><span>City bologna <span style="color:#f92672">=</span>  <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Bologna&#34;</span>, 40100);
@@ -2286,13 +2288,13 @@ Like <code>Arrays.sort</code>, it comes in two flavors (with and without compara
 </span></span><span style="display:flex;"><span>Collections.<span style="color:#a6e22e">sort</span>(cities);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// After this, the list &#39;cities&#39; contains [bologna, trento],</span>
-</span></span><span style="display:flex;"><span>Collections.<span style="color:#a6e22e">sort</span>(cities, <span style="color:#66d9ef">new</span> CitynameComparator());
+</span></span><span style="display:flex;"><span>Collections.<span style="color:#a6e22e">sort</span>(cities, <span style="color:#66d9ef">new</span> CityNameComparator());
 </span></span></code></pre></div></blockquote>
 <p>The interface <code>List</code> also provides a default method <code>sort</code> that takes a comparator as argument.
 So in the above example, we could have used:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>cities.<span style="color:#a6e22e">sort</span>(<span style="color:#66d9ef">new</span> CitynameComparator());
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>cities.<span style="color:#a6e22e">sort</span>(<span style="color:#66d9ef">new</span> CityNameComparator());
 </span></span></code></pre></div><p>instead of</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Collections.<span style="color:#a6e22e">sort</span>(cities, <span style="color:#66d9ef">new</span> CitynameComparator());
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Collections.<span style="color:#a6e22e">sort</span>(cities, <span style="color:#66d9ef">new</span> CityNameComparator());
 </span></span></code></pre></div><h3 id="usage">
   Usage
   <a class="anchor" href="#usage">#</a>
@@ -2372,7 +2374,7 @@ But the same problem could be solved with an <a href="https://unibz-pp-23-24.git
 <li>compute a <code>Map&lt;Hero, Integer&gt;</code> that maps each hero to its number of occurrences in the input array,</li>
 <li>iterates over the entries of this map and print them.</li>
 </ul>
-<p>When it comes to running time, the latter solution is more efficient <em>on average</em> (assuming a hashmap), but less efficient <em>in the worst case</em>.</p>
+<p>When it comes to running time, the latter solution is more efficient <em>on average</em> (assuming a hash map), but less efficient <em>in the worst case</em>.</p>
 </blockquote>
 </article>
  
