@@ -37,7 +37,7 @@ Observation. Some data type have several natural sorting criteria. For instance,
 <link rel="canonical" href="https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/sorting/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.6a8efd2e8046a02b4a4a9e117faf4888bcb0e67cd3059e0249b06255729ebe43.js" integrity="sha256-ao79LoBGoCtKSp4Rf69IiLyw5nzTBZ4CSbBiVXKevkM=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.5b34d77236d9c1bf990e526e6d20674f3517a6564b33f406232b4589b6c35ea5.js" integrity="sha256-WzTXcjbZwb&#43;ZDlJubSBnTzUXplZLM/QGIytFibbDXqU=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -2049,7 +2049,7 @@ $\big(p_1.{\text{age}} \le p_2.{\text{age}}$ or $p_1.{\text{size}} \le p_2.{\tex
 <li>Compare two points w.r.t. to their X coordinate, and then their Y coordinate (if they have the same X coordinate).</li>
 <li>Compare two trees w.r.t. to their number of nodes.</li>
 <li>Compare two sets w.r.t. to set inclusion.</li>
-<li>Compare two lists of integers by first sorting them, and then comparing them lexicographically.</li>
+<li>Compare two sets of characters by first sorting each set (by alphabetical order), and then comparing the two resulting sequences lexicographically.</li>
 </ol>
 </div>
 <input type="radio" class="toggle" name="tabs-exercise_preorders" id="tabs-exercise_preorders-1"  />
@@ -2072,6 +2072,33 @@ $\big(p_1.{\text{age}} \le p_2.{\text{age}}$ or $p_1.{\text{size}} \le p_2.{\tex
 </li>
 </ul>
 <p>The others are total preorders.</p>
+<p>To see why 4. is not transitive, consider the example:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Person</th>
+          <th>Age</th>
+          <th>Height</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Alice</td>
+          <td>24</td>
+          <td>175</td>
+      </tr>
+      <tr>
+          <td>Bob</td>
+          <td>25</td>
+          <td>160</td>
+      </tr>
+      <tr>
+          <td>Carol</td>
+          <td>21</td>
+          <td>170</td>
+      </tr>
+  </tbody>
+</table>
 </div>
 </div>
 <h2 id="properties-of-sorting-algorithms">

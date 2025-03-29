@@ -36,7 +36,7 @@ Example. As we saw earlier, in our game, the “view” component (which is in c
 <link rel="canonical" href="https://unibz-pp-23-24.github.io/docs/objects/sections/encapsulation/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.6a8efd2e8046a02b4a4a9e117faf4888bcb0e67cd3059e0249b06255729ebe43.js" integrity="sha256-ao79LoBGoCtKSp4Rf69IiLyw5nzTBZ4CSbBiVXKevkM=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.5b34d77236d9c1bf990e526e6d20674f3517a6564b33f406232b4589b6c35ea5.js" integrity="sha256-WzTXcjbZwb&#43;ZDlJubSBnTzUXplZLM/QGIytFibbDXqU=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -2287,7 +2287,7 @@ And it may be implemented by overriding <code>add</code> and <code>addAll</code>
 </span></span><span style="display:flex;"><span>    counter <span style="color:#f92672">+=</span> c.<span style="color:#a6e22e">size</span>();
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">super</span>.<span style="color:#a6e22e">addAll</span>(c);
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>However, this implementation of <code>addAll</code> would count every insertion twice, because the implementation of <code>HashSet.addAll</code> calls <code>HashSet.add</code>.</p>
+</span></span></code></pre></div><p>However, this implementation of <code>addAll</code> would count every insertion twice, because the implementation of <code>HashSet.addAll</code> calls the method <code>add</code> (which is overridden in this case).</p>
 </blockquote>
 <p>A design pattern called <strong>composition</strong> can be used to avoid such unintended effects.
 Intuitively, instead of extending the original class, use an instance <code>Hashset set</code> of it as a (private) attribute of the new class.
