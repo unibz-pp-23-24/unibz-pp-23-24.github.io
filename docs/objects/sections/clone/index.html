@@ -11,11 +11,11 @@ In some scenarios, it may be useful to duplicate an object.
 In Java, as we saw earlier, copying the value of a variable with reference type does not copy the object that it references.
 For instance, the following program outputs &ldquo;yellow&rdquo;:
 Unicorn unicorn = new Unicorn(&#34;green&#34;);
-Unicorn shallowCopy = unicorn;
+Unicorn theSameUnicorn = unicorn;
 
 unicorn.color = &#34;yellow&#34;;
-System.out.println(shallowCopy.color);
-The need to duplicate objects may notably appear in a program that rely on concurrency.
+System.out.println(theSameUnicorn.color);
+The need to duplicate objects may notably appear in a program that relies on concurrency.
 
 
 Exercise
@@ -27,7 +27,7 @@ In our game, the &ldquo;view&rdquo; component is in charge of rendering the game
   <meta property="og:title" content="Duplicating objects">
   <meta property="og:description" content="Duplicating objects # In some scenarios, it may be useful to duplicate an object.
 In Java, as we saw earlier, copying the value of a variable with reference type does not copy the object that it references. For instance, the following program outputs “yellow”:
-Unicorn unicorn = new Unicorn(&#34;green&#34;); Unicorn shallowCopy = unicorn; unicorn.color = &#34;yellow&#34;; System.out.println(shallowCopy.color); The need to duplicate objects may notably appear in a program that rely on concurrency.
+Unicorn unicorn = new Unicorn(&#34;green&#34;); Unicorn theSameUnicorn = unicorn; unicorn.color = &#34;yellow&#34;; System.out.println(theSameUnicorn.color); The need to duplicate objects may notably appear in a program that relies on concurrency.
 Exercise In our game, the “view” component is in charge of rendering the game visually.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
@@ -38,7 +38,7 @@ Exercise In our game, the “view” component is in charge of rendering the gam
 <link rel="canonical" href="https://unibz-pp-23-24.github.io/docs/objects/sections/clone/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.5b34d77236d9c1bf990e526e6d20674f3517a6564b33f406232b4589b6c35ea5.js" integrity="sha256-WzTXcjbZwb&#43;ZDlJubSBnTzUXplZLM/QGIytFibbDXqU=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.53e343244bb5ae30367b3a9283c425f6488f4f24271ea9c3a779dbdb0e031ee3.js" integrity="sha256-U&#43;NDJEu1rjA2ezqSg8Ql9kiPTyQnHqnDp3nb2w4DHuM=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -2006,11 +2006,11 @@ https://github.com/alex-shpak/hugo-book
 <p>In Java, as we saw earlier, copying the value of a variable with reference type does <em>not</em> copy the object that it references.
 For instance, the following program outputs &ldquo;yellow&rdquo;:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Unicorn unicorn <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Unicorn(<span style="color:#e6db74">&#34;green&#34;</span>);
-</span></span><span style="display:flex;"><span>Unicorn shallowCopy <span style="color:#f92672">=</span> unicorn;
+</span></span><span style="display:flex;"><span>Unicorn theSameUnicorn <span style="color:#f92672">=</span> unicorn;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>unicorn.<span style="color:#a6e22e">color</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;yellow&#34;</span>;
-</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(shallowCopy.<span style="color:#a6e22e">color</span>);
-</span></span></code></pre></div><p>The need to duplicate objects may notably appear in a program that rely on <em>concurrency</em>.</p>
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(theSameUnicorn.<span style="color:#a6e22e">color</span>);
+</span></span></code></pre></div><p>The need to duplicate objects may notably appear in a program that relies on <em>concurrency</em>.</p>
 <div class="book-tabs">
 <input type="radio" class="toggle" name="tabs-exercise_clone" id="tabs-exercise_clone-0" checked="checked" />
 <label for="tabs-exercise_clone-0">Exercise</label>
