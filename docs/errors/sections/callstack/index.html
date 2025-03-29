@@ -28,7 +28,7 @@ When the execution of a method starts, it is “added” to the stack. When it t
 <link rel="canonical" href="https://unibz-pp-23-24.github.io/docs/errors/sections/callstack/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.53e343244bb5ae30367b3a9283c425f6488f4f24271ea9c3a779dbdb0e031ee3.js" integrity="sha256-U&#43;NDJEu1rjA2ezqSg8Ql9kiPTyQnHqnDp3nb2w4DHuM=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.724675ec64aee24b06674dbeaf8f84bb0cb49bdd6c8478fb47e543f9b2b6d8f3.js" integrity="sha256-ckZ17GSu4ksGZ02&#43;r4&#43;Euwy0m91shHj7R&#43;VD&#43;bK22PM=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -2080,19 +2080,19 @@ In our game, consider the following implementation of the method <code>callReinf
 This is rendered by a debugger as:</p>
 <pre tabindex="0"><code>callReinforcement
 &lt;bottom of the stack&gt;
-</code></pre><p>If execution &ldquo;reaches&rdquo; Line 11, then the method <code>generateRandomUnit</code> is called and added to the stack:</p>
+</code></pre><p>If execution &ldquo;reaches&rdquo; Line 13, then the method <code>generateRandomUnit</code> is called and added to the stack:</p>
 <pre tabindex="0"><code>generateRandomUnit
-callReinforcement: 11
+callReinforcement: 13
 &lt;bottom of the stack&gt;
 </code></pre><p>When the method <code>generateRandomUnit</code> terminates, it passes control (as well as a <code>Unit</code>) back to the method that called it, namely <code>callReinforcement</code>,
 which can resume its execution:</p>
 <pre tabindex="0"><code>callReinforcement
 &lt;bottom of the stack&gt;
-</code></pre><p>Similarly, when execution &ldquo;reaches&rdquo; Line 12, <code>findInsertionSpot</code> is added to the stack, executed, and then removed from the stack, passing control back to <code>callReinforcement</code>.</p>
-<p>Then if execution &ldquo;reaches&rdquo; Line 14, <code>addUnit</code> is executed, which in turn calls <code>performUnitMerges</code>:</p>
+</code></pre><p>Similarly, when execution &ldquo;reaches&rdquo; Line 14, <code>findInsertionSpot</code> is added to the stack, executed, and then removed from the stack, passing control back to <code>callReinforcement</code>.</p>
+<p>Then if execution &ldquo;reaches&rdquo; Line 16, <code>addUnit</code> is executed, which in turn calls <code>performUnitMerges</code>:</p>
 <pre tabindex="0"><code>performUnitMerges
-addUnit: 28
-callReinforcement: 14
+addUnit: 32
+callReinforcement: 16
 &lt;bottom of the stack&gt;
 </code></pre><p>etc.</p>
 <blockquote class="book-hint info">
@@ -2107,7 +2107,7 @@ method1: 8
 <blockquote class="book-hint warning">
 <p><strong><em>Definition.</em></strong>
 A <strong>stack overflow</strong> occurs when the size of the call stack exceeds the capacity allowed by the execution environment.
-This is generally due to a non-terminating recursive method.</p>
+This is usually due to a non-terminating recursive method.</p>
 </blockquote>
 </article>
  
