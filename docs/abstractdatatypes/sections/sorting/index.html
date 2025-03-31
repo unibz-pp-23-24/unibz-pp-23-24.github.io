@@ -37,7 +37,7 @@ Observation. Some data type have several natural sorting criteria. For instance,
 <link rel="canonical" href="https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/sorting/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.0dc81625a87bcd43ba948c17406a841450ab7bfe808c13957910406732560483.js" integrity="sha256-DcgWJah7zUO6lIwXQGqEFFCre/6AjBOVeRBAZzJWBIM=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.a816e6c75e85054922f1d02631f523383613153fdc20e0c93fe5d7fa99630fd5.js" integrity="sha256-qBbmx16FBUki8dAmMfUjODYTFT/cIODJP&#43;XX&#43;pljD9U=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -2142,7 +2142,7 @@ A sorting algorithm is <strong>in place</strong> if it does not use additional d
   Comparing
   <a class="anchor" href="#comparing">#</a>
 </h3>
-<p>Java provides several native ways to define a total preorder.
+<p>Java provides several native ways to define a sorting criterion (a.k.a. total preorder).
 We highlight here two of them.</p>
 <h4 id="comparable">
   Comparable
@@ -2181,10 +2181,7 @@ Here is an implementation of the method <code>compareTo</code> where cities are 
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">compareTo</span>(City otherCity) {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> zipCode <span style="color:#f92672">&lt;</span> otherCity.<span style="color:#a6e22e">zipCode</span> <span style="color:#f92672">?</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#f92672">-</span>1 :
-</span></span><span style="display:flex;"><span>            zipCode <span style="color:#f92672">==</span> otherCity.<span style="color:#a6e22e">zipCode</span> <span style="color:#f92672">?</span>
-</span></span><span style="display:flex;"><span>                0 : 1;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> zipCode <span style="color:#f92672">-</span> otherCity.<span style="color:#a6e22e">zipCode</span>;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div></blockquote>
@@ -2352,13 +2349,10 @@ where two heroes are considered identical if they have the same name and health.
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">compare</span>(Hero h1, Hero h2) {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>(h1.<span style="color:#a6e22e">health</span> <span style="color:#f92672">&lt;</span> h2.<span style="color:#a6e22e">health</span>) {
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span>1;
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>(h1.<span style="color:#a6e22e">health</span> <span style="color:#f92672">&gt;</span> h2.<span style="color:#a6e22e">health</span>) {
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> 1;
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> h1.<span style="color:#a6e22e">name</span>.<span style="color:#a6e22e">compareTo</span>(h2.<span style="color:#a6e22e">name</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> healthComparison <span style="color:#f92672">=</span> Integer.<span style="color:#a6e22e">compare</span>(h1.<span style="color:#a6e22e">health</span>, h2.<span style="color:#a6e22e">health</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> healthComparison <span style="color:#f92672">!=</span> 0 <span style="color:#f92672">?</span>
+</span></span><span style="display:flex;"><span>            healthComparison :
+</span></span><span style="display:flex;"><span>            h1.<span style="color:#a6e22e">name</span>.<span style="color:#a6e22e">compareTo</span>(h2.<span style="color:#a6e22e">name</span>);
 </span></span><span style="display:flex;"><span>    }
 </span></span></code></pre></div><p>Sort the array and iterate over it to count the number of occurrences of each hero:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">printHeroesOcc</span>(Hero<span style="color:#f92672">[]</span> heroes) {
