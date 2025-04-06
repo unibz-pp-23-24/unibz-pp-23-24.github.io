@@ -29,7 +29,7 @@ With Java 7 (2011), A new I/O package called NIO2 was released, with additional 
 <link rel="canonical" href="https://unibz-pp-23-24.github.io/docs/input/sections/files/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.10e3450de5da4640ee63fdacbc96ce93d79f74f1a4bca7827637b3a77f191269.js" integrity="sha256-EONFDeXaRkDuY/2svJbOk9efdPGkvKeCdjezp38ZEmk=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.e8b6b90ca4568213e14935fa99e87d5b0aeb2d629e2ffe5d66b8112b9669184f.js" integrity="sha256-6La5DKRWghPhSTX6meh9WwrrLWKeL/5dZrgRK5ZpGE8=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -673,7 +673,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/errors/sections/checked/" class="">Checked vs unchecked</a>
+    <a href="/docs/errors/sections/checked/" class="">Runtime vs checked</a>
   
 
         </li>
@@ -2052,12 +2052,12 @@ So the program may run on Windows, but fail on other systems.</p>
 </blockquote>
 <blockquote class="book-hint danger">
 <p><strong><em>Warning.</em></strong>
-Paths are <em>case sensitive</em> on Linux, Android, etc., but <em>case insensitive</em> on Windows and macOS.
-For maximal compatibility, make sure that path names in your code respect the case of your file and directory names.</p>
+Paths are <em>case-sensitive</em> (by default) on Linux, Android, etc., but <em>case insensitive</em> (by default) on Windows and macOS.
+For maximal compatibility, make sure that path names in your code <a href="https://unibz-pp-23-24.github.io/docs/env/sections/files/#case">respect the case</a> of your file and directory names.</p>
 </blockquote>
 <blockquote class="book-hint danger">
 <p><strong><em>Warning.</em></strong>
-Do <em>not</em> use <a href="https://unibz-pp-23-24.github.io/docs/env/sections/files/#absolute">absolute paths</a> in your code (e.g. <code>/home/Alice/workspace/javaProject/myFile.txt</code>, or <code>C:\Users\Alice\workspace\javaProject\myFile.txt</code>).
+Do <em>not</em> use <a href="https://unibz-pp-23-24.github.io/docs/env/sections/files/#absolute">absolute paths</a> in your code (e.g. <code>/home/alice/workspace/javaProject/myFile.txt</code>, or <code>C:\Users\alice\workspace\javaProject\myFile.txt</code>).
 Your program may run on your own computer, but will fail on others.</p>
 </blockquote>
 <h3 id="working-directory">
@@ -2074,22 +2074,22 @@ When a Java program is executed, relative paths are understood as paths <em>from
 <p>For instance,</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(Paths.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;&#34;</span>).<span style="color:#a6e22e">toAbsolutePath</span>());
 </span></span></code></pre></div><p>may output on Windows:</p>
-<pre tabindex="0"><code>C:\Users\Alice\workspace\javaProject
+<pre tabindex="0"><code>C:\Users\alice\workspace\javaProject
 </code></pre><p>or on macOS:</p>
-<pre tabindex="0"><code>/Users/Alice/workspace/javaProject
+<pre tabindex="0"><code>/Users/alice/workspace/javaProject
 </code></pre><p>or on Linux:</p>
-<pre tabindex="0"><code>/home/Alice/workspace/javaProject
+<pre tabindex="0"><code>/home/alice/workspace/javaProject
 </code></pre><h3 id="the-path-interface">
   The Path interface
   <a class="anchor" href="#the-path-interface">#</a>
 </h3>
-<p>Here are examples of outputs for some methods of the <code>Path</code> interface (assuming that the WD is <code>/home/Alice/workspace/javaProject</code>):</p>
+<p>Here are examples of outputs for some methods of the <code>Path</code> interface (assuming that the WD is <code>/home/alice/workspace/javaProject</code>):</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Path path <span style="color:#f92672">=</span> Path.<span style="color:#a6e22e">of</span>(<span style="color:#e6db74">&#34;src/main/../main/resources/myFile.txt&#34;</span>);
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// Outputs &#39;/home/Alice/workspace/javaProject/src/main/../main/resources/myFile.txt&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Outputs &#39;/home/alice/workspace/javaProject/src/main/../main/resources/myFile.txt&#39;</span>
 </span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(path.<span style="color:#a6e22e">toAbsolutePath</span>());
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// Outputs &#39;/home/Alice/workspace/javaProject/src/main/resources/myFile.txt&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Outputs &#39;/home/alice/workspace/javaProject/src/main/resources/myFile.txt&#39;</span>
 </span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(path.<span style="color:#a6e22e">toRealPath</span>());
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Outputs &#39;myFile.txt&#39;</span>

@@ -34,7 +34,7 @@ The process is JVM independent, meaning that an object can be serialized on one 
 <link rel="canonical" href="https://unibz-pp-23-24.github.io/docs/input/sections/serialize/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.10e3450de5da4640ee63fdacbc96ce93d79f74f1a4bca7827637b3a77f191269.js" integrity="sha256-EONFDeXaRkDuY/2svJbOk9efdPGkvKeCdjezp38ZEmk=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.e8b6b90ca4568213e14935fa99e87d5b0aeb2d629e2ffe5d66b8112b9669184f.js" integrity="sha256-6La5DKRWghPhSTX6meh9WwrrLWKeL/5dZrgRK5ZpGE8=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -678,7 +678,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/errors/sections/checked/" class="">Checked vs unchecked</a>
+    <a href="/docs/errors/sections/checked/" class="">Runtime vs checked</a>
   
 
         </li>
@@ -2081,6 +2081,7 @@ because the attribute <code>country</code> has type <code>Country</code>, which 
 <li>the attribute <code>zipCode</code> has a primitive type, and</li>
 <li>the attribute <code>country</code> is now declared as transient.</li>
 </ul>
+<p>Alternatively, in this example, we could have declared that <code>City</code> implements <code>Serializable</code>.</p>
 </blockquote>
 <blockquote class="book-hint info">
 <p><strong><em>Note.</em></strong>
@@ -2100,7 +2101,7 @@ For instance:</p>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">long</span> serialVersionUID <span style="color:#f92672">=</span> 0;
 </span></span><span style="display:flex;"><span>    ...
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>The value is irrelevant, but is meant to be updated if the (instance) attributes of the class are modified.</p>
+</span></span></code></pre></div><p>The value is irrelevant, but is meant to be updated (by the programmer) if the (instance) attributes of the class are modified.</p>
 <p>For an explanation, we refer to <a href="https://www.baeldung.com/java-serial-version-uid">this page</a>.</p>
 <h2 id="serialization-and-deserialization-methods">
   Serialization (and deserialization) methods

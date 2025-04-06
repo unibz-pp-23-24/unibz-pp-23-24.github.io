@@ -116,8 +116,6 @@
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/build/sections/artifact/</loc>
   </url><url>
-    <loc>https://unibz-pp-23-24.github.io/docs/errors/sections/checked/</loc>
-  </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/input/sections/property/</loc>
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/intro/sections/content/</loc>
@@ -131,6 +129,8 @@
     <loc>https://unibz-pp-23-24.github.io/docs/multithreading/sections/race/</loc>
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/background/sections/order/</loc>
+  </url><url>
+    <loc>https://unibz-pp-23-24.github.io/docs/errors/sections/checked/</loc>
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/env/sections/install/</loc>
   </url><url>

@@ -72,7 +72,7 @@ a single node (called a leaf), or a node with one or several children that are t
 <link rel="canonical" href="https://unibz-pp-23-24.github.io/docs/env/sections/files/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.10e3450de5da4640ee63fdacbc96ce93d79f74f1a4bca7827637b3a77f191269.js" integrity="sha256-EONFDeXaRkDuY/2svJbOk9efdPGkvKeCdjezp38ZEmk=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.e8b6b90ca4568213e14935fa99e87d5b0aeb2d629e2ffe5d66b8112b9669184f.js" integrity="sha256-6La5DKRWghPhSTX6meh9WwrrLWKeL/5dZrgRK5ZpGE8=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -716,7 +716,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/errors/sections/checked/" class="">Checked vs unchecked</a>
+    <a href="/docs/errors/sections/checked/" class="">Runtime vs checked</a>
   
 
         </li>
@@ -2016,6 +2016,8 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#tree">Tree</a></li>
     <li><a href="#path">Path</a>
       <ul>
+        <li><a href="#case">Case sensitivity</a></li>
+        <li><a href="#convention">Convention</a></li>
         <li><a href="#absolute">Absolute path</a></li>
         <li><a href="#relative-path">Relative path</a></li>
       </ul>
@@ -2128,8 +2130,12 @@ We will <em>not</em> follow this terminology.</p>
 <div class="book-tabs-content markdown-inner"><p>(Countably) infinitely many.</p>
 </div>
 </div>
+<h3 id="case">
+  Case sensitivity
+  <a class="anchor" href="#case">#</a>
+</h3>
 <blockquote class="book-hint danger">
-<p><strong><em>Warning.</em></strong> Some operating system (Windows, macOS) use <em>case-insensitive</em> paths, whereas others (Linux, Android) use <em>case-sensitive</em> paths (this may also vary depending on physical storage devices).</p>
+<p><strong><em>Warning.</em></strong> Some operating systems (Windows, macOS) use <em>case-insensitive</em> paths, whereas others (Linux, Android) use <em>case-sensitive</em> paths (this may also vary depending on physical storage devices).</p>
 <p>For instance, on Windows, <code>src/HelloWorld.java</code> and <code>src/helloworld.java</code> are the <em>same path</em>.</p>
 <p>In order to make sure that your code is portable:</p>
 <ul>
@@ -2137,6 +2143,10 @@ We will <em>not</em> follow this terminology.</p>
 <li>do not create two files (or subfolders, etc.) in the <em>same</em> folder with identical names modulo upper/lower case (e.g. <code>Readme.md</code> and <code>README.md</code>).</li>
 </ul>
 </blockquote>
+<h3 id="convention">
+  Convention
+  <a class="anchor" href="#convention">#</a>
+</h3>
 <blockquote class="book-hint warning">
 <p><strong><em>Convention.</em></strong> In what follows (unless explicitly stated), we will adopt by default the conventions for path names adopted on Linux.
 In particular, we will use <code>/</code> as a separator, and case-sensitive file and folder names.</p>
@@ -2324,6 +2334,8 @@ As a (soft) rule of thumb, you generally want to <em>choose the location</em> of
     <li><a href="#tree">Tree</a></li>
     <li><a href="#path">Path</a>
       <ul>
+        <li><a href="#case">Case sensitivity</a></li>
+        <li><a href="#convention">Convention</a></li>
         <li><a href="#absolute">Absolute path</a></li>
         <li><a href="#relative-path">Relative path</a></li>
       </ul>

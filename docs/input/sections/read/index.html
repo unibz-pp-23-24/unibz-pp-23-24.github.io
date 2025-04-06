@@ -41,7 +41,7 @@ reading and writing text (but Java also offers multiple ways to read or write se
 <link rel="canonical" href="https://unibz-pp-23-24.github.io/docs/input/sections/read/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.10e3450de5da4640ee63fdacbc96ce93d79f74f1a4bca7827637b3a77f191269.js" integrity="sha256-EONFDeXaRkDuY/2svJbOk9efdPGkvKeCdjezp38ZEmk=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.e8b6b90ca4568213e14935fa99e87d5b0aeb2d629e2ffe5d66b8112b9669184f.js" integrity="sha256-6La5DKRWghPhSTX6meh9WwrrLWKeL/5dZrgRK5ZpGE8=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -685,7 +685,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/errors/sections/checked/" class="">Checked vs unchecked</a>
+    <a href="/docs/errors/sections/checked/" class="">Runtime vs checked</a>
   
 
         </li>
@@ -2043,7 +2043,7 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#reading-an-entire-text-file">#</a>
 </h3>
 <p>Alternatively, if the file is small, its whole content can be stored as a list of strings (one per line), as follows:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> lines <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> lines;
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">try</span> (Stream<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> stream <span style="color:#f92672">=</span> Files.<span style="color:#a6e22e">lines</span>(Path.<span style="color:#a6e22e">of</span>(<span style="color:#e6db74">&#34;path/to/file.txt&#34;</span>))){
 </span></span><span style="display:flex;"><span>    lines <span style="color:#f92672">=</span> stream.<span style="color:#a6e22e">toList</span>();
 </span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">catch</span> (IOException e) {
@@ -2087,7 +2087,7 @@ In Java, methods that write an (underspecified) line separator produce a (sequen
 </h3>
 <p>A common way to write to a file consists in using a <code>BufferredWriter</code>.
 For instance:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>(BufferedWriter writer <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BufferedWriter(<span style="color:#66d9ef">new</span> FileWriter(<span style="color:#e6db74">&#34;path/to/file.txt&#34;</span>))){
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>(BufferedWriter writer <span style="color:#f92672">=</span> Files.<span style="color:#a6e22e">newBufferedWriter</span>(Path.<span style="color:#a6e22e">of</span>(<span style="color:#e6db74">&#34;path/to/file.txt&#34;</span>))){
 </span></span><span style="display:flex;"><span>        writer.<span style="color:#a6e22e">write</span>(<span style="color:#e6db74">&#34;Hi&#34;</span>);
 </span></span><span style="display:flex;"><span>        writer.<span style="color:#a6e22e">newLine</span>();
 </span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">catch</span> (IOException e) {
@@ -2095,7 +2095,7 @@ For instance:</p>
 </span></span><span style="display:flex;"><span>    }
 </span></span></code></pre></div><p>A <code>PrintWriter</code> offers additional methods to easily format the output, such as <code>print</code>, <code>println</code> or <code>printf</code>, analogous to the methods of the standard output stream <code>System.out</code>.
 It is often used as a wrapper around another writer, for instance a <code>BufferedWriter</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>(PrintWriter writer <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> PrintWriter(<span style="color:#66d9ef">new</span> BufferedWriter(<span style="color:#66d9ef">new</span> FileWriter(<span style="color:#e6db74">&#34;path/to/file.txt&#34;</span>)))){
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>(PrintWriter writer <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> PrintWriter(Files.<span style="color:#a6e22e">newBufferedWriter</span>(Path.<span style="color:#a6e22e">of</span>(<span style="color:#e6db74">&#34;path/to/file.txt&#34;</span>)))){
 </span></span><span style="display:flex;"><span>        writer.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Hi&#34;</span>);
 </span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">catch</span> (IOException e) {
 </span></span><span style="display:flex;"><span>        e.<span style="color:#a6e22e">printStackTrace</span>();
