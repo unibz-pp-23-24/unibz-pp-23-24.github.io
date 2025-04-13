@@ -35,7 +35,7 @@ This syntax extends imperative pseudocode with three keywords:">
 <link rel="canonical" href="https://unibz-pp-23-24.github.io/docs/multithreading/sections/simple/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.e9a53ecb614257cfc5ca4c38790d49be36822e015f6c3d16cbda22f4c03d84e4.js" integrity="sha256-6aU&#43;y2FCV8/Fykw4eQ1JvjaCLgFfbD0Wy9oi9MA9hOQ=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.00bf9bb16d65bdb52c4d92bf29a03a47451a9e1472d02f72828ffa14824b49e4.js" integrity="sha256-AL&#43;bsW1lvbUsTZK/KaA6R0UanhRy0C9ygo/6FIJLSeQ=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -2073,14 +2073,72 @@ The following method:</p>
 <p>There is <em>no guarantee</em> on which of the two threads will first finish executing the method <code>sumElts</code>.
 As a result, depending on the runtime environment,
 the program may output either</p>
-<pre tabindex="0"><code>done
-done
-waiting
-</code></pre><p>or</p>
-<pre tabindex="0"><code>done
-waiting
-done
-</code></pre></blockquote>
+
+
+
+<div class="goat svg-container ">
+  
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      font-family="Menlo,Lucida Console,monospace"
+      
+        viewBox="0 0 64 57"
+      >
+      <g transform='translate(8,16)'>
+<text text-anchor='middle' x='0' y='4' fill='currentColor' style='font-size:1em'>d</text>
+<text text-anchor='middle' x='0' y='20' fill='currentColor' style='font-size:1em'>d</text>
+<text text-anchor='middle' x='0' y='36' fill='currentColor' style='font-size:1em'>w</text>
+<text text-anchor='middle' x='8' y='4' fill='currentColor' style='font-size:1em'>o</text>
+<text text-anchor='middle' x='8' y='20' fill='currentColor' style='font-size:1em'>o</text>
+<text text-anchor='middle' x='8' y='36' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='16' y='4' fill='currentColor' style='font-size:1em'>n</text>
+<text text-anchor='middle' x='16' y='20' fill='currentColor' style='font-size:1em'>n</text>
+<text text-anchor='middle' x='16' y='36' fill='currentColor' style='font-size:1em'>i</text>
+<text text-anchor='middle' x='24' y='4' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='24' y='20' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='24' y='36' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='32' y='36' fill='currentColor' style='font-size:1em'>i</text>
+<text text-anchor='middle' x='40' y='36' fill='currentColor' style='font-size:1em'>n</text>
+<text text-anchor='middle' x='48' y='36' fill='currentColor' style='font-size:1em'>g</text>
+</g>
+
+    </svg>
+  
+</div>
+<p>or</p>
+
+
+
+<div class="goat svg-container ">
+  
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      font-family="Menlo,Lucida Console,monospace"
+      
+        viewBox="0 0 64 57"
+      >
+      <g transform='translate(8,16)'>
+<text text-anchor='middle' x='0' y='4' fill='currentColor' style='font-size:1em'>d</text>
+<text text-anchor='middle' x='0' y='20' fill='currentColor' style='font-size:1em'>w</text>
+<text text-anchor='middle' x='0' y='36' fill='currentColor' style='font-size:1em'>d</text>
+<text text-anchor='middle' x='8' y='4' fill='currentColor' style='font-size:1em'>o</text>
+<text text-anchor='middle' x='8' y='20' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='8' y='36' fill='currentColor' style='font-size:1em'>o</text>
+<text text-anchor='middle' x='16' y='4' fill='currentColor' style='font-size:1em'>n</text>
+<text text-anchor='middle' x='16' y='20' fill='currentColor' style='font-size:1em'>i</text>
+<text text-anchor='middle' x='16' y='36' fill='currentColor' style='font-size:1em'>n</text>
+<text text-anchor='middle' x='24' y='4' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='24' y='20' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='24' y='36' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='32' y='20' fill='currentColor' style='font-size:1em'>i</text>
+<text text-anchor='middle' x='40' y='20' fill='currentColor' style='font-size:1em'>n</text>
+<text text-anchor='middle' x='48' y='20' fill='currentColor' style='font-size:1em'>g</text>
+</g>
+
+    </svg>
+  
+</div>
+</blockquote>
 <h3 id="parallel">
   <code>parallel</code>
   <a class="anchor" href="#parallel">#</a>
