@@ -44,7 +44,7 @@ takes as input an absolute path to an (existing) folder $f$, and prints an absol
 <link rel="canonical" href="https://unibz-pp-23-24.github.io/docs/recursion/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.00bf9bb16d65bdb52c4d92bf29a03a47451a9e1472d02f72828ffa14824b49e4.js" integrity="sha256-AL&#43;bsW1lvbUsTZK/KaA6R0UanhRy0C9ygo/6FIJLSeQ=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.af1dae72fd1fe182ce40a454bec8f32afac260eb9246853f32b69cb41087be66.js" integrity="sha256-rx2ucv0f4YLOQKRUvsjzKvrCYOuSRoU/MractBCHvmY=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://unibz-pp-23-24.github.io/docs/recursion/index.xml" title="Programming project 2023-24" />
 <!--
 Made with Book Theme
@@ -2400,8 +2400,7 @@ For instance, some problems with an array as input can be solved recursively by 
 For instance, in a binary tree, return the least label (in alphabetical order) and the maximal depth at which it occurs.</p>
 <p>In Java 14 or later, this can be easily achieved by returning a <a href="https://unibz-pp-23-24.github.io/docs/objects/sections/quasi-objects/#record">record</a>.
 For instance:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">record</span> <span style="color:#a6e22e">Result</span>(Character leastLabel, <span style="color:#66d9ef">int</span> depth){};
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">record</span> <span style="color:#a6e22e">Result</span>(Character leastLabel, <span style="color:#66d9ef">int</span> depth){};
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>Result <span style="color:#a6e22e">leastLabelAndDepth</span>(Node root) {
 </span></span><span style="display:flex;"><span>
@@ -2414,7 +2413,7 @@ For instance:</p>
 </span></span><span style="display:flex;"><span>    Result leftResult <span style="color:#f92672">=</span> leastLabelAndDepth(root.<span style="color:#a6e22e">leftChild</span>);
 </span></span><span style="display:flex;"><span>    Result rightResult <span style="color:#f92672">=</span> leastLabelAndDepth(root.<span style="color:#a6e22e">rightChild</span>);
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Initialize the return values with the values returned by the left recursive call</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Initialize the return values with the values returned by the left recursive call.</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">char</span> leastLabel <span style="color:#f92672">=</span> leftResult.<span style="color:#a6e22e">leastLabel</span>;
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> depth <span style="color:#f92672">=</span> leftResult.<span style="color:#a6e22e">depth</span>;
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// If the least label in the right subtree is &lt; to the least label in the left subtree</span>
