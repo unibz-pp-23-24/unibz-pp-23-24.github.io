@@ -40,7 +40,7 @@ All the binary tree algorithms seen earlier use binary recursion.">
 <link rel="canonical" href="https://unibz-pp-23-24.github.io/docs/recursion/sections/nary/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.b82347f6903dfc2750c26ef435770febf0cfcbed31ae3f39ea4d2272fe96b3fe.js" integrity="sha256-uCNH9pA9/CdQwm70NXcP6/DPy&#43;0xrj856k0icv6Ws/4=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.36b666bdbee315782ec783d3547fd08756b6039cb8b241baab533513637b5f69.js" integrity="sha256-NrZmvb7jFXgux4PTVH/Qh1a2A5y4skG6q1M1E2N7X2k=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -2259,17 +2259,11 @@ Here we only focus on the algorithm in its basic form.</p>
 <p>Assuming that Alice plays optimally, she already has won the game.
 Can you see why?</p>
 </div>
-<!-- 
 <input type="radio" class="toggle" name="tabs-exercise_tictactoe" id="tabs-exercise_tictactoe-1"  />
 <label for="tabs-exercise_tictactoe-1">Solution</label>
-<div class="book-tabs-content markdown-inner"><p>&ndash;&gt;</p>
-<!---->
-<!-- ![](/img/tictactoe/state/tictactoe.svg) -->
-<!---->
-<!-- If Alice plays top right or bottom right, then _regardless_ of Bob's action, she can complete a line or a diagonal as her next move. -->
-<!---->
-<!-- </div>
- -->
+<div class="book-tabs-content markdown-inner"><p><img src="/img/tictactoe/state/tictactoe.svg" alt="" /></p>
+<p>If Alice plays top right or bottom right, then <em>regardless</em> of Bob&rsquo;s action, she can complete a line or a diagonal as her next move.</p>
+</div>
 </div>
 <p>Let us generalize this observation.</p>
 <blockquote class="book-hint warning">
@@ -2296,14 +2290,10 @@ In such a tree, several nodes may represent the <em>same</em> board state (e.g. 
 <label for="tabs-exercise_tree_winning-0">Exercise</label>
 <div class="book-tabs-content markdown-inner"><p>In the tree above, determine whether Alice has already won the game (assuming that she plays optimally).</p>
 </div>
-<!-- 
 <input type="radio" class="toggle" name="tabs-exercise_tree_winning" id="tabs-exercise_tree_winning-1"  />
 <label for="tabs-exercise_tree_winning-1">Solution</label>
-<div class="book-tabs-content markdown-inner"><p>&ndash;&gt;</p>
-<!-- The answer is yes, if Alice selects the right child of the tree's root. -->
-<!---->
-<!-- </div>
- -->
+<div class="book-tabs-content markdown-inner"><p>The answer is yes, if Alice selects the right child of the tree&rsquo;s root.</p>
+</div>
 </div>
 <blockquote class="book-hint info">
 <p><strong><em>Observation.</em></strong>
@@ -2503,8 +2493,13 @@ Minimax can be <em>prohibitive</em> for games with an important tree height (sin
   Optimization
   <a class="anchor" href="#optimization">#</a>
 </h3>
-<p>A variety of optimization techniques have been proposed for Minimax (e.g. <a href="https://en.wikipedia.org/wiki/Alpha%E2%80%93beta_pruning">alpha-beta pruning</a>).
-They are beyond the scope of this course.</p>
+<p>A variety of optimization techniques have been developed for Minimax.
+For instance:</p>
+<ul>
+<li>keeping track of visited board states,</li>
+<li><a href="https://en.wikipedia.org/wiki/Alpha%E2%80%93beta_pruning">alpha-beta pruning</a>.</li>
+</ul>
+<p>These are beyond the scope of this course.</p>
 </article>
  
       
