@@ -22,7 +22,7 @@ performance test
 regression test
 etc.
 
-A side benefit of many tests is that they help clarifying what a program (resp. component, method) is expected to do.
+A test can help developers clarify what a program (resp. component, method) is expected to do.
 So in a sense, tests are part of the documentation or specification of a system, because they provide precise examples of the expected behavior of the program (resp. component, method).">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
@@ -31,7 +31,7 @@ So in a sense, tests are part of the documentation or specification of a system,
   <meta property="og:title" content="Unit tests">
   <meta property="og:description" content="Unit tests # Testing software # Testing is an integral part of software development.
 Different terminologies coexists to categorize software tests (more or less precise, an with overlapping meanings). Common categories are:
-functional vs non-functional test unit vs integration test security test performance test regression test etc. A side benefit of many tests is that they help clarifying what a program (resp. component, method) is expected to do. So in a sense, tests are part of the documentation or specification of a system, because they provide precise examples of the expected behavior of the program (resp. component, method).">
+functional vs non-functional test unit vs integration test security test performance test regression test etc. A test can help developers clarify what a program (resp. component, method) is expected to do. So in a sense, tests are part of the documentation or specification of a system, because they provide precise examples of the expected behavior of the program (resp. component, method).">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="website">
 <title>Unit tests | Programming project 2023-24</title>
@@ -40,7 +40,7 @@ functional vs non-functional test unit vs integration test security test perform
 <link rel="canonical" href="https://unibz-pp-23-24.github.io/docs/unittests/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.90da284d69cb4289b09c19e5fa31a6c4492b6bf2484a6b64e7b4da9589efa12a.js" integrity="sha256-kNooTWnLQomwnBnl&#43;jGmxEkra/JISmtk57TalYnvoSo=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.e2d6a869a52afbe53cbc2b3565abb6b5ef90d2ff819ec324d3cd640d0fc6856a.js" integrity="sha256-4taoaaUq&#43;&#43;U8vCs1Zau2te&#43;Q0v&#43;BnsMk081kDQ/GhWo=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://unibz-pp-23-24.github.io/docs/unittests/index.xml" title="Programming project 2023-24" />
 <!--
 Made with Book Theme
@@ -2009,7 +2009,7 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#testing-software">#</a>
 </h2>
 <p>Testing is an integral part of software development.</p>
-<p>Different terminologies coexists to <a href="https://en.wikipedia.org/wiki/Software_testing#Testing_types,_techniques_and_tactics">categorize</a> software tests (more or less precise, an with overlapping meanings).
+<p>Different terminologies coexists to <a href="https://en.wikipedia.org/wiki/Software_testing_tactics">categorize</a> software tests (more or less precise, an with overlapping meanings).
 Common categories are:</p>
 <ul>
 <li>functional vs non-functional test</li>
@@ -2019,7 +2019,7 @@ Common categories are:</p>
 <li>regression test</li>
 <li>etc.</li>
 </ul>
-<p>A side benefit of many tests is that they help clarifying <em>what</em> a program (resp. component, method) is expected to do.
+<p>A test can help developers clarify <em>what</em> a program (resp. component, method) is expected to do.
 So in a sense, tests are part of the <em>documentation</em> or specification of a system, because they provide precise <em>examples</em> of the expected behavior of the program (resp. component, method).</p>
 <p>This is why tests are often part of the development process itself.
 Notably, <a href="https://unibz-pp-23-24.github.io/docs/unittests/sections/tdd/">test-driven development</a> consists in developing tests cases <em>before</em> software is fully developed.</p>
@@ -2078,7 +2078,8 @@ Consider the following problem:</p>
 <input type="radio" class="toggle" name="tabs-exercise_finite_unitTests" id="tabs-exercise_finite_unitTests-1"  />
 <label for="tabs-exercise_finite_unitTests-1">Solution</label>
 <div class="book-tabs-content markdown-inner"><p>No.</p>
-<p>A unit tests for this problem is a pair
+<p>For any (finite) set of unit tests (for this problem), there exists an algorithm that passes the tests but is incorrect.</p>
+<p>To demonstrate this, observe that a unit tests for this problem is a pair
 $(a, i)$,
 where</p>
 <ul>
@@ -2088,7 +2089,7 @@ where</p>
 <p>Take any finite set</p>
 <p>$\qquad (a_1, i_1), (a_2, i_2),\ ..,\ (a_n, i_n)$</p>
 <p>of such unit tests.</p>
-<p>Because this set if finite,
+<p>Because this set is finite,
 there exists an array of characters $a_0$ that does not appear in this set of tests.</p>
 <p>Let $i_0$ be the expected output for $a_0$, and let $j$ be any positive integer different from $i_0$.</p>
 <p>Now consider the method (in pseudocode):</p>
@@ -2107,7 +2108,6 @@ there exists an array of characters $a_0$ that does not appear in this set of te
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> j;
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>This algorithm will pass the unit tests, but is incorrect for the input $a_0$.</p>
-<p>So given any set of unit tests (for this problem), there exists an incorrect algorithm that passes these tests.</p>
 </div>
 </div>
 <p>This (artificial) exercise was only meant to illustrate the following:</p>
