@@ -7,24 +7,25 @@
   Captured variables
   #
 
-In practice, lambda expressions are often used to represent pure functions.
-Some languages (like Java, JavaScript, C&#43;&#43;, etc) restrict (or allow the user to restrict) the usage of lambda expressions, so that they lean towards pure functions.
 
-Terminology. Some programming languages allow a lambda expression to use variables that:
+Terminology. A lambda expression may use variables that:
 
 are declared outside of the lambda expression&rsquo;s body, and
 are not arguments of the lambda expression.
 
-In this case, the expression is called a capturing lambda expression, and these variable are said to be captured.">
+In this case, the expression is called a capturing lambda expression, and these variable are said to be captured.
+
+
+Example.
+In the following Java program, the lambda expression x -&gt; x == a is a capturing lambda, because it uses the variable a, which is defined outside of the lambda expression.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/lambda/sections/captured/">
   <meta property="og:site_name" content="Programming project 2023-24">
   <meta property="og:title" content="Captured variables">
-  <meta property="og:description" content="Captured variables # In practice, lambda expressions are often used to represent pure functions.
-Some languages (like Java, JavaScript, C&#43;&#43;, etc) restrict (or allow the user to restrict) the usage of lambda expressions, so that they lean towards pure functions.
-Terminology. Some programming languages allow a lambda expression to use variables that:
-are declared outside of the lambda expression’s body, and are not arguments of the lambda expression. In this case, the expression is called a capturing lambda expression, and these variable are said to be captured.">
+  <meta property="og:description" content="Captured variables # Terminology. A lambda expression may use variables that:
+are declared outside of the lambda expression’s body, and are not arguments of the lambda expression. In this case, the expression is called a capturing lambda expression, and these variable are said to be captured.
+Example. In the following Java program, the lambda expression x -&gt; x == a is a capturing lambda, because it uses the variable a, which is defined outside of the lambda expression.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -34,7 +35,7 @@ are declared outside of the lambda expression’s body, and are not arguments of
 <link rel="canonical" href="https://unibz-pp-23-24.github.io/docs/lambda/sections/captured/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.cd2f79ad51cd93fa405e865b3cc3d1a4afe63def3677a7881fe9ec3e34aada60.js" integrity="sha256-zS95rVHNk/pAXoZbPMPRpK/mPe82d6eIH&#43;nsPjSq2mA=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.86fba0229f645ec41a83831cd5bc7d9d9a7d2f1bf8d20c75184a363f0bb23ec2.js" integrity="sha256-hvugIp9kXsQag4Mc1bx9nZp9Lxv40gx1GEo2PwuyPsI=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1975,7 +1976,11 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#captured-variables-in-java">Captured variables in Java</a></li>
+    <li><a href="#restrictions">Restrictions</a>
+      <ul>
+        <li><a href="#captured-variables-in-java">Captured variables in Java</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
@@ -1992,10 +1997,8 @@ https://github.com/alex-shpak/hugo-book
   Captured variables
   <a class="anchor" href="#captured-variables">#</a>
 </h1>
-<p>In practice, lambda expressions are often used to represent <a href="https://unibz-pp-23-24.github.io/docs/lambda/sections/pure/">pure functions</a>.</p>
-<p>Some languages (like Java, JavaScript, C++, etc) restrict (or allow the user to restrict) the usage of lambda expressions, so that they lean towards pure functions.</p>
 <blockquote class="book-hint warning">
-<p><strong><em>Terminology.</em></strong> Some programming languages allow a lambda expression to use variables that:</p>
+<p><strong><em>Terminology.</em></strong> A lambda expression may use variables that:</p>
 <ul>
 <li>are declared <em>outside</em> of the lambda expression&rsquo;s body, and</li>
 <li>are <em>not</em> arguments of the lambda expression.</li>
@@ -2017,10 +2020,16 @@ In the following Java program, the lambda expression <code>x -&gt; x == a</code>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> function.<span style="color:#a6e22e">apply</span>(x);
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div></blockquote>
-<h2 id="captured-variables-in-java">
+<h2 id="restrictions">
+  Restrictions
+  <a class="anchor" href="#restrictions">#</a>
+</h2>
+<p>In practice, lambda expressions are often used to represent functions with <a href="https://unibz-pp-23-24.github.io/docs/lambda/sections/pure/">no side effect</a>.</p>
+<p>Some languages (like Java, JavaScript, C++, etc) restrict (or allow the user to restrict) the usage of lambda expressions accordingly.</p>
+<h3 id="captured-variables-in-java">
   Captured variables in Java
   <a class="anchor" href="#captured-variables-in-java">#</a>
-</h2>
+</h3>
 <blockquote class="book-hint danger">
 <p><strong><em>Restriction.</em></strong> A capture variable in Java must be <strong>effectively final</strong>, meaning that it cannot be modified after its initialization.</p>
 </blockquote>
@@ -2118,7 +2127,11 @@ However, this new program compiles, because the captured variable <code>a</code>
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#captured-variables-in-java">Captured variables in Java</a></li>
+    <li><a href="#restrictions">Restrictions</a>
+      <ul>
+        <li><a href="#captured-variables-in-java">Captured variables in Java</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
