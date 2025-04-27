@@ -14,6 +14,8 @@
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/simplify/sections/factorization/</loc>
   </url><url>
+    <loc>https://unibz-pp-23-24.github.io/docs/lambda/sections/functional/</loc>
+  </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/recursion/sections/linear/</loc>
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/list/</loc>
@@ -188,9 +190,9 @@
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/git/sections/branches/</loc>
   </url><url>
-    <loc>https://unibz-pp-23-24.github.io/docs/lambda/sections/captured/</loc>
-  </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/objects/sections/classesasobjects/</loc>
+  </url><url>
+    <loc>https://unibz-pp-23-24.github.io/docs/lambda/sections/closure/</loc>
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/env/sections/ide/</loc>
   </url><url>
@@ -215,6 +217,8 @@
     <loc>https://unibz-pp-23-24.github.io/docs/objects/sections/quasi-objects/</loc>
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/env/sections/text_editor/</loc>
+  </url><url>
+    <loc>https://unibz-pp-23-24.github.io/docs/lambda/sections/currying/</loc>
   </url><url>
     <loc>https://unibz-pp-23-24.github.io/docs/env/sections/eval/</loc>
   </url><url>
