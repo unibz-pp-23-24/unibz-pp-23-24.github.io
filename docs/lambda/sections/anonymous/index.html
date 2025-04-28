@@ -15,7 +15,7 @@ An anonymous method is a method without a name.
   #
 
 We saw earlier that two mathematical functions may only differ by their names.
-This also holds for two Java methods:
+This also holds for two methods:
 
 
 int square(int x){
@@ -37,7 +37,7 @@ For instance, in Java, the two methods above could be described with the followi
   <meta property="og:site_name" content="Programming project 2023-24">
   <meta property="og:title" content="Anonymous method">
   <meta property="og:description" content="Anonymous method # An anonymous method is a method without a name.
-Illustration # We saw earlier that two mathematical functions may only differ by their names. This also holds for two Java methods:
+Illustration # We saw earlier that two mathematical functions may only differ by their names. This also holds for two methods:
 int square(int x){ return x * x; } int toThePowerOfTwo(int x){ return x * x; } So in a sense, these two methods are the same method.
 An anonymous method abstracts away from the name of the method. For instance, in Java, the two methods above could be described with the following lambda expression:">
   <meta property="og:locale" content="en_us">
@@ -49,7 +49,7 @@ An anonymous method abstracts away from the name of the method. For instance, in
 <link rel="canonical" href="https://unibz-pp-23-24.github.io/docs/lambda/sections/anonymous/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.f3baae9177d792e106fad26c9a7d9c17f32f841095202521039b84c7d8952d87.js" integrity="sha256-87qukXfXkuEG&#43;tJsmn2cF/MvhBCVICUhA5uEx9iVLYc=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.9b9327e59e85e117472793126f9dd8d90724257dff8e3301134ccdfc8e04ec80.js" integrity="sha256-m5Mn5Z6F4RdHJ5MSb53Y2QckJX3/jjMBE0zN/I4E7IA=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -2041,7 +2041,7 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#illustration">#</a>
 </h2>
 <p>We saw <a href="https://unibz-pp-23-24.github.io/docs/lambda/sections/functional/#anonymous">earlier</a> that two mathematical functions may only differ by their names.
-This also holds for two Java methods:</p>
+This also holds for two methods:</p>
 <div class="book-columns flex flex-wrap">
 <div class="flex-even markdown-inner" style="flex-grow: 1;">
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">square</span>(<span style="color:#66d9ef">int</span> x){
@@ -2060,7 +2060,13 @@ For instance, in Java, the two methods above could be described with the followi
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>(<span style="color:#66d9ef">int</span> x) <span style="color:#f92672">-&gt;</span> { <span style="color:#66d9ef">return</span> x <span style="color:#f92672">*</span> x; }
 </span></span></code></pre></div><p>Or (with a more concise syntax):</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>x <span style="color:#f92672">-&gt;</span> x <span style="color:#f92672">*</span> x
-</span></span></code></pre></div></article>
+</span></span></code></pre></div><blockquote class="book-hint danger">
+<p><strong><em>Warning.</em></strong>
+As we saw <a href="https://unibz-pp-23-24.github.io/docs/lambda/sections/functional/#anonymous">earlier</a>, a common mathematical notation for this anonymous function is</p>
+<p>$$ x \mapsto x^2 $$</p>
+<p>So Java uses <code>-&gt;</code> for the mathematical symbol $\mapsto$, <em>not</em> for $\to$ (which is normally used for the <a href="https://unibz-pp-23-24.github.io/docs/lambda/sections/functional/#type">type</a> of a function).</p>
+</blockquote>
+</article>
  
       
 
