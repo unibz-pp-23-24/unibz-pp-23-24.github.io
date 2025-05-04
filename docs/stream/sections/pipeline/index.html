@@ -34,7 +34,7 @@ a source (e.g. a collection or an I/O channel), a sequence of zero or more inter
 <link rel="canonical" href="https://unibz-pp-23-24.github.io/docs/stream/sections/pipeline/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.33da8e127af363a4afaaf62f66232af22bae1852288c52f7408c90f73b7becf4.js" integrity="sha256-M9qOEnrzY6SvqvYvZiMq8iuuGFIojFL3QIyQ9zt77PQ=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.e41d6c517a49cc69e76a5d6624c21aa1b3e6192cd68f01f98afdbd2636be9d31.js" integrity="sha256-5B1sUXpJzGnnal1mJMIaobPmGSzWjwH5iv29Jja&#43;nTE=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1623,7 +1623,7 @@ https://github.com/alex-shpak/hugo-book
   
     <input type="checkbox" id="section-3c6a8c431d500080599ec572e56415d8" class="toggle"  />
     <label for="section-3c6a8c431d500080599ec572e56415d8" class="flex justify-between">
-      <a href="/docs/git/" class="">git</a>
+      <a href="/docs/git/" class="">Git</a>
     </label>
   
 
@@ -2108,7 +2108,7 @@ More precisely, the Java interface <a href="https://docs.oracle.com/en/java/java
   <a class="anchor" href="#terminal-operation">#</a>
 </h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>.<span style="color:#a6e22e">collect</span>(Collectors.<span style="color:#a6e22e">toSet</span>());
-</span></span></code></pre></div><p>The instance method <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/stream/Stream.html#collect%28java.util.stream.Collector%29">Stream.collect</a> takes as argument a so-called <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/stream/Collector.html">Collector</a>, which is in charge of collecting the elements of the stream into a <a href="https://unibz-pp-23-24.github.io/docs/abstractdatatypes/#collection">Collection</a> (e.g. <code>List</code> or <code>Set</code>), or a <code>Map</code>, or a string, etc.</p>
+</span></span></code></pre></div><p>The instance method <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/stream/Stream.html#collect%28java.util.stream.Collector%29">Stream.collect</a> takes as argument a so-called <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/stream/Collector.html">Collector</a>, which is in charge of collecting the elements of the stream into a <a href="https://unibz-pp-23-24.github.io/docs/abstractdatatypes/#collection">Collection</a> (e.g. <code>List</code> or <code>Set</code>), or a <code>Map</code>, a <code>String</code>, etc.</p>
 <p>In this example, we call the static method <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/stream/Collectors.html#toSet%28%29">Collectors.toSet</a>, which returns a collector that produces a set.
 Because the stream has type <code>Stream&lt;String&gt;</code>, the instruction <code>.collect(Collectors.toSet())</code> returns a set with type <code>Set&lt;String&gt;</code>.</p>
 <h2 id="reading-a-pipeline">
@@ -2171,30 +2171,24 @@ Because the stream has type <code>Stream&lt;String&gt;</code>, the instruction <
 </span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">toList</span>();
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div></div>
+<!-- 
 <input type="radio" class="toggle" name="tabs-exercise_stream_units" id="tabs-exercise_stream_units-1"  />
 <label for="tabs-exercise_stream_units-1">Solution</label>
-<div class="book-tabs-content markdown-inner"><ul>
-<li><code>method1</code>:
-<ul>
-<li><strong>Input:</strong> A list of units.</li>
-<li><strong>Output:</strong> a stream that contains the same units, but discarding units with no health.</li>
-</ul>
-</li>
-<li><code>method2</code>:
-<ul>
-<li><strong>Input:</strong> A stream of units.</li>
-<li><strong>Output:</strong> A list that contains the same units, but where caterpillars become butterflies.</li>
-</ul>
-</li>
-<li><code>method3</code>:
-<ul>
-<li><strong>Input:</strong> A list of units.</li>
-<li><strong>Output:</strong> A list that contains the same units, but discarding units with no health, and transforming caterpillars into butterflies.</li>
-</ul>
-</li>
-<li><code>method4</code> is equivalent to <code>method3</code>.</li>
-</ul>
-</div>
+<div class="book-tabs-content markdown-inner"><p>&ndash;&gt;</p>
+<!---->
+<!-- - `method1`: -->
+<!--   - **Input:** A list of units. -->
+<!--   - **Output:** a stream that contains the same units, but discarding units with no health. -->
+<!-- - `method2`: -->
+<!--   - **Input:** A stream of units. -->
+<!--   - **Output:** A list that contains the same units, but where caterpillars become butterflies. -->
+<!-- - `method3`: -->
+<!--   - **Input:** A list of units. -->
+<!--   - **Output:** A list that contains the same units, but discarding units with no health, and transforming caterpillars into butterflies. -->
+<!-- - `method4` is equivalent to `method3`. -->
+<!---->
+<!-- </div>
+ -->
 </div>
 </article>
  

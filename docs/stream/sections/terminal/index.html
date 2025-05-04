@@ -39,7 +39,7 @@ execute a method for each element of the stream (e.g. print the value of each of
 <link rel="canonical" href="https://unibz-pp-23-24.github.io/docs/stream/sections/terminal/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.33da8e127af363a4afaaf62f66232af22bae1852288c52f7408c90f73b7becf4.js" integrity="sha256-M9qOEnrzY6SvqvYvZiMq8iuuGFIojFL3QIyQ9zt77PQ=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.e41d6c517a49cc69e76a5d6624c21aa1b3e6192cd68f01f98afdbd2636be9d31.js" integrity="sha256-5B1sUXpJzGnnal1mJMIaobPmGSzWjwH5iv29Jja&#43;nTE=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1628,7 +1628,7 @@ https://github.com/alex-shpak/hugo-book
   
     <input type="checkbox" id="section-3c6a8c431d500080599ec572e56415d8" class="toggle"  />
     <label for="section-3c6a8c431d500080599ec572e56415d8" class="flex justify-between">
-      <a href="/docs/git/" class="">git</a>
+      <a href="/docs/git/" class="">Git</a>
     </label>
   
 
@@ -2101,7 +2101,7 @@ For instance</p>
   <code>Stream.collect</code>
   <a class="anchor" href="#streamcollect">#</a>
 </h3>
-<p>This instance method takes as argument a so-called <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/stream/Collector.html">Collector</a>, which is in charge of collecting the elements of the stream into a <a href="https://unibz-pp-23-24.github.io/docs/abstractdatatypes/#collection">Collection</a> (e.g. <code>List</code> or <code>Set</code>, or a <code>Map</code>, or a <code>String</code>, etc.</p>
+<p>This instance method takes as argument a so-called <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/stream/Collector.html">Collector</a>, which is in charge of collecting the elements of the stream into a <a href="https://unibz-pp-23-24.github.io/docs/abstractdatatypes/#collection">Collection</a> (e.g. <code>List</code> or <code>Set</code>), or a <code>Map</code>, a <code>String</code>, etc.</p>
 <p>The utility class <code>Collectors</code> provides a variety of static methods that return a collector.</p>
 <h4 id="collectorsjoining">
   <code>Collectors.joining</code>
@@ -2126,7 +2126,8 @@ For instance</p>
 <input type="radio" class="toggle" name="tabs-exercise_joining" id="tabs-exercise_joining-0" checked="checked" />
 <label for="tabs-exercise_joining-0">Exercise</label>
 <div class="book-tabs-content markdown-inner"><p>The method <code>Files.list(path)</code> takes as argument a path to a directory,
-and returns an instance of <code>Stream&lt;Path&gt;</code>, whose elements are the entries in the directory.</p>
+and returns the content of the directory,
+as a stream of paths (i.e. a stream with type <code>Stream&lt;Path&gt;</code>).</p>
 <p>What does the method <code>mysteriousMethod</code> below return?</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String <span style="color:#a6e22e">mysteriousMethod</span>(Path path) <span style="color:#66d9ef">throws</span> IOException {
 </span></span><span style="display:flex;"><span>
@@ -2148,10 +2149,15 @@ and returns an instance of <code>Stream&lt;Path&gt;</code>, whose elements are t
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div></div>
+<!-- 
 <input type="radio" class="toggle" name="tabs-exercise_joining" id="tabs-exercise_joining-1"  />
 <label for="tabs-exercise_joining-1">Solution</label>
-<div class="book-tabs-content markdown-inner"><p>A string that consists of all lines that contain the string <code>foo</code> in any <code>.txt</code> file of the directory.</p>
-</div>
+<div class="book-tabs-content markdown-inner"><p>&ndash;&gt;</p>
+<!---->
+<!-- A string that consists of all lines that contain the string `foo` in any `.txt` file of the directory. -->
+<!---->
+<!-- </div>
+ -->
 </div>
 <h4 id="collectorstocollection">
   <code>Collectors.toCollection</code>
@@ -2228,12 +2234,12 @@ then <code>Collectors.groupingBy</code> takes as argument a callback function of
 <p>$\qquad \mathit{T} \to K$</p>
 <p>where $K$ is an arbitrary type.
 This callback function computes a key for each element of the stream.</p>
-<p><code>groupingBy</code> returns a map with type <code>Map&lt;</code>$K$, <code>List&lt;</code>$T$<code>&gt;&gt;</code> that maps each key to the list of elements that share this key.</p>
+<p>The terminal operation returns a map with type <code>Map&lt;</code>$K$, <code>List&lt;</code>$T$<code>&gt;&gt;</code> that maps each key to the list of elements that share this key.</p>
 <p>Alternatively, <code>groupingBy</code> may be called with a <code>Collector</code> as second argument, which aggregates the elements of each list.</p>
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong>
 The following method take a list of units as argument, and returns a map from color to number of units that share this color.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Map<span style="color:#f92672">&lt;</span>String, Long<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">groupByColor</span>(List<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> units) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Map<span style="color:#f92672">&lt;</span>String, Long<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">groupByColorAndCount</span>(List<span style="color:#f92672">&lt;</span>Unit<span style="color:#f92672">&gt;</span> units) {
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> units.<span style="color:#a6e22e">stream</span>()
 </span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">collect</span>(Collectors.<span style="color:#a6e22e">groupingBy</span>(
 </span></span><span style="display:flex;"><span>                        u <span style="color:#f92672">-&gt;</span> u.<span style="color:#a6e22e">color</span>,
@@ -2302,10 +2308,14 @@ A stream with a short-circuiting operation (like <code>anyMatch</code>) can be a
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div></div>
+<!-- 
 <input type="radio" class="toggle" name="tabs-exercise_anyMatch" id="tabs-exercise_anyMatch-1"  />
 <label for="tabs-exercise_anyMatch-1">Solution</label>
-<div class="book-tabs-content markdown-inner"><p>The list of all <code>.txt</code> files in the input directory that contain the string <code>foo</code>.</p>
-</div>
+<div class="book-tabs-content markdown-inner"><p>&ndash;&gt;</p>
+<!-- The list of all `.txt` files in the input directory that contain the string `foo`. -->
+<!---->
+<!-- </div>
+ -->
 </div>
 <h3 id="streamallmatch">
   <code>Stream.allMatch</code>
@@ -2324,6 +2334,7 @@ A stream with a short-circuiting operation (like <code>anyMatch</code>) can be a
 <p>This instance method returns the first element in the stream.</p>
 <p>This is a short-circuiting operation.</p>
 <p>In combination with <code>Stream.filter</code>, it can simulate <code>Stream.anyMatch</code>.</p>
+<p>The output value has type <code>Optional&lt;</code>$T$<code>&gt;</code> if the elements of the stream have type $T$ (we will see the meaning of <code>Optional</code> in the <a href="https://unibz-pp-23-24.github.io/docs/stream/sections/optional/">dedicated section</a>).</p>
 <blockquote class="book-hint info">
 <p><strong><em>Example</em></strong>
 The following two programs are equivalent:</p>
@@ -2359,7 +2370,8 @@ The following two programs are equivalent:</p>
   <code>Stream.max</code>
   <a class="anchor" href="#streammax">#</a>
 </h3>
-<p>This instance method takes as argument a <a href="https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/sorting/#comparator">Comparator</a>, and returns (one of the) maximal element(s) in the stream w.r.t. this comparator (if any).</p>
+<p>This instance method takes as argument a <a href="https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/sorting/#comparator">Comparator</a>, and returns (one of) the) maximal element(s) in the stream w.r.t. this comparator (if any).</p>
+<p>The output value has type <code>Optional&lt;</code>$T$<code>&gt;</code> if the elements of the stream have type $T$ (we will see the meaning of <code>Optional</code> in the <a href="https://unibz-pp-23-24.github.io/docs/stream/sections/optional/">dedicated section</a>).</p>
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>City ancona <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Ancona&#34;</span>, 60100);,
@@ -2404,10 +2416,15 @@ For instance,</p>
 <label for="tabs-exercise_reduce-0">Exercise</label>
 <div class="book-tabs-content markdown-inner"><p>What is the type of this callback function?</p>
 </div>
+<!-- 
 <input type="radio" class="toggle" name="tabs-exercise_reduce" id="tabs-exercise_reduce-1"  />
 <label for="tabs-exercise_reduce-1">Solution</label>
-<div class="book-tabs-content markdown-inner"><p>$\qquad T \times T \to T$</p>
-</div>
+<div class="book-tabs-content markdown-inner"><p>&ndash;&gt;</p>
+<!---->
+<!-- $\qquad T \times T \to T$ -->
+<!---->
+<!-- </div>
+ -->
 </div>
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong></p>
