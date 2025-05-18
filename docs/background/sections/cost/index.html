@@ -45,7 +45,7 @@ the number of entries for array, the number of nodes for tree, etc. Time or memo
 <link rel="canonical" href="https://unibz-pp-23-24.github.io/docs/background/sections/cost/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.9b8c184da413030eb82f00991bbc2abb684bdd1fb697892df3f7ec7af467749e.js" integrity="sha256-m4wYTaQTAw64LwCZG7wqu2hL3R&#43;2l4kt8/fsevRndJ4=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.b6b0f0f5253fe861b27582fe8d4437945098917cbfd59aa980aa07b906222896.js" integrity="sha256-trDw9SU/6GGydYL&#43;jUQ3lFCYkXy/1ZqpgKoHuQYiKJY=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -2078,7 +2078,7 @@ https://github.com/alex-shpak/hugo-book
 <blockquote class="book-hint warning">
 <p>Among others, the function $f(n)$ may estimate:</p>
 <ul>
-<li>cost in the <strong>worst case</strong>, i.e. for the worst possible inputs of size $n$</li>
+<li>cost in the <strong>worst case</strong>, i.e. for the worst possible inputs of size $n$, or</li>
 <li><strong>average</strong> cost over all possible inputs of size $n$.</li>
 </ul>
 </blockquote>
@@ -2159,19 +2159,19 @@ The following are linear functions:</p>
 <ul>
 <li>if $f(n) = \sqrt{n}$, then $f(4n) = 2f(n)$</li>
 <li>if $f(n) = \sqrt[3]{n}$, then $f(8n) = 2f(n)$</li>
-<li>if $f(n) = \log_2 n$, then $f(n+1) = 2 f(n)$</li>
+<li>if $f(n) = \log_2 n$, then $f(2n) = f(n) + 1$</li>
 </ul>
 </blockquote>
 <h3 id="comparing-cost-functions">
   Comparing cost functions
   <a class="anchor" href="#comparing-cost-functions">#</a>
 </h3>
-<p>Two cost functions $f$ and $g$ are said to be asymptotically equivalent if they intuitively have the same growth.</p>
+<p>Two cost functions $f$ and $g$ are said to be <strong>asymptotically equivalent</strong> if they intuitively have the same growth.</p>
 <blockquote class="book-hint info">
 <p><strong><em>Examples.</em></strong></p>
 <ul>
 <li>all linear functions are asymptotically equivalent,</li>
-<li>(as illustrated above), the functions
+<li>the functions
 $f(n) = n^2$ and $g(n) = 3n^2$
 are asymptotically equivalent.</li>
 </ul>
@@ -2255,9 +2255,6 @@ If $f(n) = n$, then the class $\Theta(f)$ contains the functions:</p>
 <li>etc.</li>
 </ul>
 </blockquote>
-<blockquote class="book-hint info">
-<p><strong><em>Note.</em></strong> If $g$ is in $\Theta(f)$, then $\Theta(f)$ and $\Theta(g)$ are the same class.</p>
-</blockquote>
 <blockquote class="book-hint warning">
 <p><strong><em>Notation.</em></strong> If $\Theta(f)$ is a class of cost functions, then the name of the function (&quot;$f$&quot; here) can be omitted.
 Instead, the definition of $f$ is used (typically with $n$ as variable).</p>
@@ -2269,6 +2266,9 @@ Instead, the definition of $f$ is used (typically with $n$ as variable).</p>
 <li>if $f(n) = n^2$, then the class $\Theta(f)$ is usually denoted with $\Theta(n^2)$,</li>
 <li>etc.</li>
 </ul>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Note.</em></strong> If $g$ is in $\Theta(f)$, then $\Theta(f)$ and $\Theta(g)$ are the same class.</p>
 </blockquote>
 <p>A simple, representative function is usually preferred to denote in each class.</p>
 <blockquote class="book-hint info">

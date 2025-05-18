@@ -36,7 +36,7 @@ Structure # A dynamic array stores the elements of a list in a regular array $A$
 <link rel="canonical" href="https://unibz-pp-23-24.github.io/docs/datastructures/sections/list/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.9b8c184da413030eb82f00991bbc2abb684bdd1fb697892df3f7ec7af467749e.js" integrity="sha256-m4wYTaQTAw64LwCZG7wqu2hL3R&#43;2l4kt8/fsevRndJ4=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.b6b0f0f5253fe861b27582fe8d4437945098917cbfd59aa980aa07b906222896.js" integrity="sha256-trDw9SU/6GGydYL&#43;jUQ3lFCYkXy/1ZqpgKoHuQYiKJY=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -2006,7 +2006,7 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#array">Dynamic array</a>
       <ul>
         <li><a href="#structure">Structure</a></li>
-        <li><a href="#array-dequeue">Array dequeue</a></li>
+        <li><a href="#alternative-structure-array-deque">Alternative structure: array deque</a></li>
         <li><a href="#in-java">in Java</a></li>
       </ul>
     </li>
@@ -2051,12 +2051,12 @@ https://github.com/alex-shpak/hugo-book
 If the size of the list exceeds the capacity of $A$, then the content of $A$ is copied into a larger array $A&rsquo;$,
 and $A$ is replaced with $A&rsquo;$.</p>
 </blockquote>
-<h3 id="array-dequeue">
-  Array dequeue
-  <a class="anchor" href="#array-dequeue">#</a>
+<h3 id="alternative-structure-array-deque">
+  Alternative structure: array deque
+  <a class="anchor" href="#alternative-structure-array-deque">#</a>
 </h3>
 <blockquote class="book-hint warning">
-<p>An <strong>array dequeue</strong> is a variant of a dynamic array that allows the list to be extended in both directions.
+<p>An <strong>array deque</strong> is a variant of a dynamic array that allows the list to be extended in both directions.
 The array is initially populated from its middle index.</p>
 </blockquote>
 <p>In addition to a list, an array dequeue is commonly used to implement a <a href="https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/queue/#queue">queue</a> and/or a <a href="https://unibz-pp-23-24.github.io/docs/abstractdatatypes/sections/queue/#stack">stack</a>.</p>
@@ -2064,7 +2064,8 @@ The array is initially populated from its middle index.</p>
   in Java
   <a class="anchor" href="#in-java">#</a>
 </h3>
-<p>The class <code>ArrayList</code> implements the interface <code>List</code> as a dynamic array.</p>
+<p>The class <code>ArrayList</code> implements the interface <code>List</code> as a (regular) dynamic array.</p>
+<p>The class <code>ArrayDeque</code> implements the interfaces <code>Queue</code> and <code>Deque</code> as an array deque.</p>
 <h2 id="linkedList">
   Linked list
   <a class="anchor" href="#linkedList">#</a>
@@ -2091,7 +2092,7 @@ A doubly linked list maintains a pointer to its head and a pointer to its last n
   in Java
   <a class="anchor" href="#in-java-1">#</a>
 </h3>
-<p>The class<code>java.util.LinkedList</code> implements the interfaces<code>List</code> and <code>Dequeue</code> as a double linked list.</p>
+<p>The class <code>LinkedList</code> implements the interfaces <code>List</code> and <code>Deque</code> as a double linked list.</p>
 <h2 id="performance">
   Performance
   <a class="anchor" href="#performance">#</a>
@@ -2099,9 +2100,9 @@ A doubly linked list maintains a pointer to its head and a pointer to its last n
 <div class="book-tabs">
 <input type="radio" class="toggle" name="tabs-my_exercise" id="tabs-my_exercise-0" checked="checked" />
 <label for="tabs-my_exercise-0">Exercise</label>
-<div class="book-tabs-content markdown-inner"><p>Determine the worst case running time of the following operations on a list, stack and/or queue, if the underlying data structure is:</p>
+<div class="book-tabs-content markdown-inner"><p>Determine the <a href="https://unibz-pp-23-24.github.io/docs/background/sections/cost/">worst case running time</a> of the following operations on a list, stack and/or queue, if the underlying data structure is:</p>
 <ol>
-<li>as a dynamic array</li>
+<li>a (large enough) dynamic array</li>
 <li>a linked list</li>
 <li>a doubly-linked list</li>
 </ol>
@@ -2149,12 +2150,6 @@ A doubly linked list maintains a pointer to its head and a pointer to its last n
           <td>$\Theta(i)$</td>
       </tr>
       <tr>
-          <td>remove the element at position $i$</td>
-          <td>$\Theta(n)$</td>
-          <td>$\Theta(n)$</td>
-          <td>$\Theta(n)$</td>
-      </tr>
-      <tr>
           <td>add an element at the beginning of the list</td>
           <td>$\Theta(n)$</td>
           <td>$\Theta(1)$</td>
@@ -2163,6 +2158,12 @@ A doubly linked list maintains a pointer to its head and a pointer to its last n
       <tr>
           <td>add an element at the end of the list</td>
           <td>$\Theta(1)$</td>
+          <td>$\Theta(n)$</td>
+          <td>$\Theta(n)$</td>
+      </tr>
+      <tr>
+          <td>remove the element at position $i$</td>
+          <td>$\Theta(n)$</td>
           <td>$\Theta(n)$</td>
           <td>$\Theta(n)$</td>
       </tr>
@@ -2238,7 +2239,7 @@ Iterating over an array can be more efficient than iterating over a linked list,
     <li><a href="#array">Dynamic array</a>
       <ul>
         <li><a href="#structure">Structure</a></li>
-        <li><a href="#array-dequeue">Array dequeue</a></li>
+        <li><a href="#alternative-structure-array-deque">Alternative structure: array deque</a></li>
         <li><a href="#in-java">in Java</a></li>
       </ul>
     </li>
