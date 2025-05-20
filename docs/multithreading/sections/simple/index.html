@@ -10,7 +10,7 @@
 From an abstract perspective, in order to understand the properties of a program that allows concurrency and/or parallelism, it can be convenient to assume an simplified, ideal machine that:
 
 has an unlimited number of cores, and
-relies exclusively on parallelism.
+relies exclusively on parallelism (no concurrency).
 
 
   Parallel computation
@@ -24,7 +24,7 @@ This syntax extends imperative pseudocode with three keywords:">
   <meta property="og:site_name" content="Programming project 2023-24">
   <meta property="og:title" content="A simplified view">
   <meta property="og:description" content="A simplified view # From an abstract perspective, in order to understand the properties of a program that allows concurrency and/or parallelism, it can be convenient to assume an simplified, ideal machine that:
-has an unlimited number of cores, and relies exclusively on parallelism. Parallel computation # In this section, we borrow the simple syntax for parallel computation used in the popular textbook Introduction to algorithms.
+has an unlimited number of cores, and relies exclusively on parallelism (no concurrency). Parallel computation # In this section, we borrow the simple syntax for parallel computation used in the popular textbook Introduction to algorithms.
 This syntax extends imperative pseudocode with three keywords:">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
@@ -35,7 +35,7 @@ This syntax extends imperative pseudocode with three keywords:">
 <link rel="canonical" href="https://unibz-pp-23-24.github.io/docs/multithreading/sections/simple/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.5cfb899779095f8e165682c6830d162ff5045e5ab40228b1726244304edc2885.js" integrity="sha256-XPuJl3kJX44WVoLGgw0WL/UEXlq0AiixcmJEME7cKIU=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.bee68cda1738dcaf7f3168d5961614f24b63fc3ec611620d582717b37a53ea8c.js" integrity="sha256-vuaM2hc43K9/MWjVlhYU8ktj/D7GEWINWCcXs3pT6ow=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -2036,7 +2036,7 @@ https://github.com/alex-shpak/hugo-book
 <p>From an abstract perspective, in order to understand the properties of a program that allows concurrency and/or parallelism, it can be convenient to assume an simplified, ideal machine that:</p>
 <ul>
 <li>has an unlimited number of cores, and</li>
-<li>relies exclusively on parallelism.</li>
+<li>relies exclusively on parallelism (no concurrency).</li>
 </ul>
 <h2 id="parallel-computation">
   Parallel computation
@@ -2131,7 +2131,7 @@ We can parallelize the auxiliary method <code>sumElts</code> in our previous exa
 <p>The keyword <code>parallel</code> can be replaced with combinations of <code>spawn</code> and (if needed) <code>sync</code>.</p>
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong>
-The example that immediately precedes can be rewritten as follows:</p>
+The example that immediately precedes can be rewritten as follows (among other options):</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">sumElts</span>(<span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> v){
 </span></span><span style="display:flex;"><span>    sumRec(v, 0, v.<span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> 1)
 </span></span><span style="display:flex;"><span>}
@@ -2227,7 +2227,7 @@ We cover here two of the most common ones.</p>
   Create a subclass of <code>Thread</code>
   <a class="anchor" href="#create-a-subclass-of-thread">#</a>
 </h4>
-<p>Instead of instantiating <code>Runnable</code>, we can create a subclass of <code>Thread</code> ans instantiate it.</p>
+<p>Instead of instantiating <code>Runnable</code>, we can create a subclass of <code>Thread</code> and instantiate it.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyThread</span> <span style="color:#66d9ef">extends</span> Thread {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    String arg;
@@ -2260,7 +2260,7 @@ We cover here two of the most common ones.</p>
   Waiting for a thread to terminate
   <a class="anchor" href="#waiting-for-a-thread-to-terminate">#</a>
 </h3>
-<p>Java provides a functionality analogous to the <code>sync</code> keyword seen above, but with a more fine-grained control.</p>
+<p>Java provides a functionality analogous to the <code>sync</code> keyword seen above, but with more fine-grained control.</p>
 <p>Calling the instance method <code>Thread.join</code> for a thread $t$ causes the <em>current</em> thread to pause its execution until termination of $t$.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Thread myThread <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Thread( () <span style="color:#f92672">-&gt;</span> { myExpensiveMethod(); } );
 </span></span><span style="display:flex;"><span>myThread.<span style="color:#a6e22e">start</span>();
