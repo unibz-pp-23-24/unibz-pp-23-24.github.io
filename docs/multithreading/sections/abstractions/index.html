@@ -14,9 +14,9 @@ We review here some higher-level utilities available in Java to use multithreadi
 
 
 Terminology.
-A method is said to be tread-safe if it can be accessed by concurrently by several threads without &ldquo;unexpected&rdquo; consequences.
+A method is said to be thread-safe if it can be accessed concurrently by several threads without &ldquo;unexpected&rdquo; consequences.
 
-Thread safety is a vague term, which may for instance refers to implementations that are free of race conditions.
+Thread safety is a vague term, which may for instance refer to implementations that are free of race conditions.
 Most high-level libraries or frameworks that exploit concurrency provide methods with some from of thread safety.
 In particular, this is the case of most Graphical User Interface frameworks (such as JavaFX or Swing for Java).">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
@@ -25,8 +25,8 @@ In particular, this is the case of most Graphical User Interface frameworks (suc
   <meta property="og:site_name" content="Programming project 2023-24">
   <meta property="og:title" content="Abstractions">
   <meta property="og:description" content="Abstractions # We review here some higher-level utilities available in Java to use multithreading, while reducing the risk of unwanted behaviors.
-Thread safety # Terminology. A method is said to be tread-safe if it can be accessed by concurrently by several threads without “unexpected” consequences.
-Thread safety is a vague term, which may for instance refers to implementations that are free of race conditions.
+Thread safety # Terminology. A method is said to be thread-safe if it can be accessed concurrently by several threads without “unexpected” consequences.
+Thread safety is a vague term, which may for instance refer to implementations that are free of race conditions.
 Most high-level libraries or frameworks that exploit concurrency provide methods with some from of thread safety. In particular, this is the case of most Graphical User Interface frameworks (such as JavaFX or Swing for Java).">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
@@ -37,7 +37,7 @@ Most high-level libraries or frameworks that exploit concurrency provide methods
 <link rel="canonical" href="https://unibz-pp-23-24.github.io/docs/multithreading/sections/abstractions/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.924cd3efcb985ecf3e25ca6a28fce4cc237ef0a1d24a69b75b6a87a76a19ad94.js" integrity="sha256-kkzT78uYXs8&#43;JcpqKPzkzCN&#43;8KHSSmm3W2qHp2oZrZQ=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.80d746da79ab076566dffdc24e31808fec2ea5b3016492f8f0b4a4b76ed0324a.js" integrity="sha256-gNdG2nmrB2Vm3/3CTjGAj&#43;wupbMBZJL48LSkt27QMko=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -2034,20 +2034,20 @@ https://github.com/alex-shpak/hugo-book
 </h2>
 <blockquote class="book-hint warning">
 <p><strong><em>Terminology.</em></strong>
-A method is said to be <strong>tread-safe</strong> if it can be accessed by concurrently by several threads without &ldquo;unexpected&rdquo; consequences.</p>
+A method is said to be <strong>thread-safe</strong> if it can be accessed concurrently by several threads without &ldquo;unexpected&rdquo; consequences.</p>
 </blockquote>
-<p>Thread safety is a vague term, which may for instance refers to implementations that are free of <a href="https://unibz-pp-23-24.github.io/docs/multithreading/sections/race/">race conditions</a>.</p>
+<p>Thread safety is a vague term, which may for instance refer to implementations that are free of <a href="https://unibz-pp-23-24.github.io/docs/multithreading/sections/race/">race conditions</a>.</p>
 <p>Most high-level libraries or frameworks that exploit concurrency provide methods with some from of thread safety.
 In particular, this is the case of most <a href="https://en.wikipedia.org/wiki/List_of_widget_toolkits#Based_on_Java">Graphical User Interface frameworks</a> (such as JavaFX or Swing for Java).</p>
 <p>By default, it is <em>highly recommended</em> to rely on such methods when using concurrency.
-For instance, <a href="https://unibz-pp-23-24.github.io/docs/intro/sections/bibliography/#effectiveJava">Effective Java</a> (Item 81) recommends using &ldquo;thread safe&rdquo; concurrency utilities when possible, rather than Java&rsquo;s (error prone) <a href="https://unibz-pp-23-24.github.io/docs/multithreading/sections/synchronization/#wait">wait</a>, <a href="https://unibz-pp-23-24.github.io/docs/multithreading/sections/synchronization/#notify">notify</a> and <a href="https://unibz-pp-23-24.github.io/docs/multithreading/sections/synchronization/#notifyAll">notifyAll</a> methods.</p>
+For instance, <a href="https://unibz-pp-23-24.github.io/docs/intro/sections/bibliography/#effectiveJava">Effective Java</a> (Item 81) recommends using thread-safe concurrency utilities when possible, rather than Java&rsquo;s (error prone) <a href="https://unibz-pp-23-24.github.io/docs/multithreading/sections/synchronization/#wait">wait</a>, <a href="https://unibz-pp-23-24.github.io/docs/multithreading/sections/synchronization/#notify">notify</a> and <a href="https://unibz-pp-23-24.github.io/docs/multithreading/sections/synchronization/#notifyAll">notifyAll</a> methods.</p>
 <h3 id="atomic">
   Atomic operation
   <a class="anchor" href="#atomic">#</a>
 </h3>
 <blockquote class="book-hint warning">
 <p><strong><em>Terminology.</em></strong>
-An operation performed by a thread is <strong>atomic</strong> if no operation performed by a concurrent or parallel thread can affect its execution.</p>
+An operation performed by a thread is <strong>atomic</strong> if no operation performed by another (concurrent or parallel) thread can affect its execution.</p>
 </blockquote>
 <p>We saw <a href="https://unibz-pp-23-24.github.io/docs/multithreading/sections/race/">earlier</a> that the operation</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>i<span style="color:#f92672">++</span>;
@@ -2079,7 +2079,7 @@ The latter maintains the order of insertion, analogously to <a href="https://uni
   <a class="anchor" href="#concurrentnavigablemap">#</a>
 </h5>
 <p>The interface <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/ConcurrentNavigableMap.html"><code>ConcurrentNavigableMap</code></a> is a sub-interface of <code>SortedMap</code> (like <code>TreeMap</code>, that we saw in the <a href="https://unibz-pp-23-24.github.io/docs/datastructures/sections/tree/#treeMap">dedicated section</a>), with additional atomicity and thread-safety guarantees.
-It has one native implementations, as a so-called <a href="https://en.wikipedia.org/wiki/Skip_list">skip list</a>.</p>
+It has one native implementations, as a <a href="https://en.wikipedia.org/wiki/Skip_list">skip list</a>.</p>
 <h4 id="queue">
   Queue
   <a class="anchor" href="#queue">#</a>
@@ -2097,7 +2097,7 @@ In addition to the traditional operations supported by a queue (<code>dequeue</c
   <a class="anchor" href="#thread-pool">#</a>
 </h2>
 <blockquote class="book-hint warning">
-<p>A <strong>thread pool</strong> is a (of fixed or flexible) set of threads that can be reused for different tasks.</p>
+<p>A <strong>thread pool</strong> is a set of threads (of fixed or flexible size) that can be reused for different tasks.</p>
 </blockquote>
 <p>The factory class <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/Executors.html"><code>Executors</code></a> provides a series of static methods that return a thread pool.
 In particular:</p>
@@ -2106,7 +2106,7 @@ In particular:</p>
 <li><code>Executors.newCachedThreadPool</code> returns a pool (also instance of <code>ExecutorService</code>), but with flexible size.</li>
 </ul>
 <p>In both cases, tasks submitted to the pool will reuse existing threads if available.</p>
-<p>An introduction to Java thread pools can be found <a href="https://www.baeldung.com/java-executors-cached-fixed-threadpool">here</a>.</p>
+<p>A quick introduction to Java thread pools can be found <a href="https://www.baeldung.com/java-executors-cached-fixed-threadpool">here</a>.</p>
 </article>
  
       

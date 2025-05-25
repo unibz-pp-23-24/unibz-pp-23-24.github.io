@@ -7,7 +7,7 @@
   A simplified view
   #
 
-From an abstract perspective, in order to understand the properties of a program that allows concurrency and/or parallelism, it can be convenient to assume an simplified, ideal machine that:
+From an abstract perspective, in order to understand the properties of a program that allows concurrency and/or parallelism, it can be convenient to assume a simplified, ideal machine that:
 
 has an unlimited number of cores, and
 relies exclusively on parallelism (no concurrency).
@@ -23,7 +23,7 @@ This syntax extends imperative pseudocode with three keywords:">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/multithreading/sections/simple/">
   <meta property="og:site_name" content="Programming project 2023-24">
   <meta property="og:title" content="A simplified view">
-  <meta property="og:description" content="A simplified view # From an abstract perspective, in order to understand the properties of a program that allows concurrency and/or parallelism, it can be convenient to assume an simplified, ideal machine that:
+  <meta property="og:description" content="A simplified view # From an abstract perspective, in order to understand the properties of a program that allows concurrency and/or parallelism, it can be convenient to assume a simplified, ideal machine that:
 has an unlimited number of cores, and relies exclusively on parallelism (no concurrency). Parallel computation # In this section, we borrow the simple syntax for parallel computation used in the popular textbook Introduction to algorithms.
 This syntax extends imperative pseudocode with three keywords:">
   <meta property="og:locale" content="en_us">
@@ -35,7 +35,7 @@ This syntax extends imperative pseudocode with three keywords:">
 <link rel="canonical" href="https://unibz-pp-23-24.github.io/docs/multithreading/sections/simple/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.924cd3efcb985ecf3e25ca6a28fce4cc237ef0a1d24a69b75b6a87a76a19ad94.js" integrity="sha256-kkzT78uYXs8&#43;JcpqKPzkzCN&#43;8KHSSmm3W2qHp2oZrZQ=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.80d746da79ab076566dffdc24e31808fec2ea5b3016492f8f0b4a4b76ed0324a.js" integrity="sha256-gNdG2nmrB2Vm3/3CTjGAj&#43;wupbMBZJL48LSkt27QMko=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -2033,7 +2033,7 @@ https://github.com/alex-shpak/hugo-book
   A simplified view
   <a class="anchor" href="#a-simplified-view">#</a>
 </h1>
-<p>From an abstract perspective, in order to understand the properties of a program that allows concurrency and/or parallelism, it can be convenient to assume an simplified, ideal machine that:</p>
+<p>From an abstract perspective, in order to understand the properties of a program that allows concurrency and/or parallelism, it can be convenient to assume a simplified, ideal machine that:</p>
 <ul>
 <li>has an unlimited number of cores, and</li>
 <li>relies exclusively on parallelism (no concurrency).</li>
@@ -2071,7 +2071,31 @@ The following method:</p>
 <li>takes as arguments two vectors with integer values,</li>
 <li>computes the sum of the values of each vector, and returns the sum of the two results.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">aggregate</span> (<span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> v1, <span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> v2){
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">aggregate</span> (<span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> v1, <span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> v2){
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> s1 <span style="color:#f92672">=</span> spawn <span style="color:#a6e22e">sumElts</span>(v1)
 </span></span><span style="display:flex;"><span>
@@ -2091,22 +2115,25 @@ The following method:</p>
 </span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;done&#34;</span>)
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> sum
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>In this method:</p>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>In this method:</p>
 <ul>
-<li>the statement <code>spawn sumElts(v1)</code> creates a child thread and executes the auxiliary method <code>sumElts</code> (with argument <code>v1</code>) in this child thread.</li>
-<li>the statement <code>sync</code> forces the main thread to wait for termination of the child thread.</li>
+<li>the statement <code>spawn sumElts(v1)</code> creates a child thread $c$ and executes the auxiliary method <code>sumElts</code> (with argument <code>v1</code>) in this child thread.</li>
+<li>the statement <code>sync</code> forces the main thread $m$ to wait for termination of $c$.</li>
 </ul>
-<p>There is <em>no guarantee</em> on which of the two threads will first finish executing the method <code>sumElts</code>.
-As a result, depending on the runtime environment,
-the program may output either</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
-</span></span><span style="display:flex;"><span>waiting
-</span></span></code></pre></div><p>or</p>
+<p>The child thread $c$ must finish executing the method <code>sumElts</code> before Line 10 is executed by $m$.
+But there is <em>no other guarantee</em> on when $c$ will finish its task.</p>
+<p>If $c$ finishes after $m$ executes Line 7, then the program will output:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
 </span></span><span style="display:flex;"><span>waiting
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
-</span></span></code></pre></div></blockquote>
+</span></span></code></pre></div><p>If $c$ finishes before $m$ executes Line 7, then the program will output:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
+</span></span><span style="display:flex;"><span>waiting
+</span></span></code></pre></div><p>Note that in this latter case, the first &ldquo;done&rdquo; message may be output by any of the two threads.</p>
+</blockquote>
 <h3 id="parallel">
   <code>parallel</code>
   <a class="anchor" href="#parallel">#</a>
@@ -2204,14 +2231,15 @@ We cover here two of the most common ones.</p>
 <p><strong><em>Example.</em></strong></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Thread myThread <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Thread( () <span style="color:#f92672">-&gt;</span> { System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Hello World&#34;</span>); } );
 </span></span></code></pre></div></blockquote>
-<p>Alternatively, in order to pass an argument to the thread, we can create a class that implements <code>Runnable</code>, and pass the argument to the constructor if this class.</p>
+<p>Alternatively, we can create a class that implements <code>Runnable</code>.
+This is useful if the child thread needs to access variables that are not <a href="https://unibz-pp-23-24.github.io/docs/lambda/sections/closure/#effectively_final">effectively final</a>.</p>
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyRunnable</span> <span style="color:#66d9ef">implements</span> Runnable {
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    String arg;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> arg;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">MyRunnable</span>(String arg){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">MyRunnable</span>(<span style="color:#66d9ef">int</span> arg){
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">arg</span> <span style="color:#f92672">=</span> arg;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>
@@ -2221,7 +2249,9 @@ We cover here two of the most common ones.</p>
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>$\qquad$</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Thread myThread <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Thread(<span style="color:#66d9ef">new</span> MyRunnable(<span style="color:#e6db74">&#34;Hello&#34;</span>));
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> myInt <span style="color:#f92672">=</span> 2;
+</span></span><span style="display:flex;"><span>myInt<span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span>Thread myThread <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Thread(<span style="color:#66d9ef">new</span> MyRunnable(myInt));
 </span></span></code></pre></div></blockquote>
 <h4 id="create-a-subclass-of-thread">
   Create a subclass of <code>Thread</code>
@@ -2230,9 +2260,9 @@ We cover here two of the most common ones.</p>
 <p>Instead of instantiating <code>Runnable</code>, we can create a subclass of <code>Thread</code> and instantiate it.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyThread</span> <span style="color:#66d9ef">extends</span> Thread {
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    String arg;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> arg;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">MyThread</span>(String arg){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">MyThread</span>(<span style="color:#66d9ef">int</span> arg){
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">arg</span> <span style="color:#f92672">=</span> arg;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>
@@ -2241,7 +2271,9 @@ We cover here two of the most common ones.</p>
 </span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(arg);
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Thread myThread <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> MyThread(<span style="color:#e6db74">&#34;Hello&#34;</span>);
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> myInt <span style="color:#f92672">=</span> 2;
+</span></span><span style="display:flex;"><span>myInt<span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span>Thread myThread <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> MyThread(myInt);
 </span></span></code></pre></div><ul>
 <li>An advantage of this approach (compared to the previous one) is that we do not need to create an instance of <code>Runnable</code>.</li>
 <li>A drawback is that the class <code>MyThread</code> cannot extend another class (since Java does not support multiple inheritance).</li>
@@ -2250,7 +2282,7 @@ We cover here two of the most common ones.</p>
   Spawning a thread
   <a class="anchor" href="#spawning-a-thread">#</a>
 </h3>
-<p>The instance method <code>Thread.start</code> spawns a thread.</p>
+<p>The instance method <code>Thread.start</code> spawns a thread (analogously to the <code>spawn</code> keyword in our abstract model).</p>
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Thread myThread <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Thread( () <span style="color:#f92672">-&gt;</span> { System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Hello&#34;</span>); } );
@@ -2261,8 +2293,9 @@ We cover here two of the most common ones.</p>
   <a class="anchor" href="#waiting-for-a-thread-to-terminate">#</a>
 </h3>
 <p>Java provides a functionality analogous to the <code>sync</code> keyword seen above, but with more fine-grained control.</p>
-<p>Calling the instance method <code>Thread.join</code> for a thread $t$ causes the <em>current</em> thread to pause its execution until termination of $t$.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Thread myThread <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Thread( () <span style="color:#f92672">-&gt;</span> { myExpensiveMethod(); } );
+<p>Calling the instance method <code>Thread.join</code> for a thread $t$ causes the <em>current</em> thread to pause its execution until termination of $t$
+(in comparison, the <code>sync</code> keyword causes the current thread to wait for termination of <em>all</em> its children).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Thread myThread <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Thread( () <span style="color:#f92672">-&gt;</span> { System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Hello&#34;</span>); } );
 </span></span><span style="display:flex;"><span>myThread.<span style="color:#a6e22e">start</span>();
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">try</span> {
@@ -2284,9 +2317,9 @@ We cover here two of the most common ones.</p>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>vector.<span style="color:#a6e22e">stream</span>()
 </span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">parallel</span>()
-</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">filter</span>(<span style="color:#f92672">&lt;</span>myPredicate<span style="color:#f92672">&gt;</span>)
-</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">map</span>(<span style="color:#f92672">&lt;</span>myFunction<span style="color:#f92672">&gt;</span>)
-</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">forEach</span>(<span style="color:#f92672">&lt;</span>myConsumer<span style="color:#f92672">&gt;</span>);
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">filter</span>(...)
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">map</span>(...)
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">forEach</span>(...);
 </span></span></code></pre></div></blockquote>
 <p>In this case, the <em>whole</em> stream pipeline is executed in a concurrent fashion (possibly parallel if some cores are available).</p>
 <p>By default, a pool of threads of size $k - 1$ is used, where $k$ is the number of cores of the CPU (but a larger pool can be manually configured).</p>
