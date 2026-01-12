@@ -14,9 +14,9 @@
 
 In most (class-based) object-oriented languages, a class $A$ can extend another class $B$.
 In this case, $A$ is called a subclass of $B$.
+The intuitive meaning is inclusion ($\subseteq$) between their respective sets of instances, i.e. every instance of $A$ is also an instance of $B$ (but the converse may not hold).
 
-The intuitive meaning is inclusion between their respective sets of instances, i.e. every instance of $A$ is also an instance of $B$ (but the converse may not hold).
-This can be paraphrased in English by &ldquo;every $A$ is a $B$ &ldquo;.
+This can be paraphrased in English by &ldquo;every $A$ is a $B$&rdquo;.
 For instance:">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
@@ -24,8 +24,8 @@ For instance:">
   <meta property="og:site_name" content="Programming project 2023-24">
   <meta property="og:title" content="Inheritance">
   <meta property="og:description" content="Inheritance # Subclass # In most (class-based) object-oriented languages, a class $A$ can extend another class $B$. In this case, $A$ is called a subclass of $B$.
-The intuitive meaning is inclusion between their respective sets of instances, i.e. every instance of $A$ is also an instance of $B$ (but the converse may not hold).
-This can be paraphrased in English by “every $A$ is a $B$ “. For instance:">
+The intuitive meaning is inclusion ($\subseteq$) between their respective sets of instances, i.e. every instance of $A$ is also an instance of $B$ (but the converse may not hold).
+This can be paraphrased in English by “every $A$ is a $B$”. For instance:">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -35,7 +35,7 @@ This can be paraphrased in English by “every $A$ is a $B$ “. For instance:">
 <link rel="canonical" href="https://unibz-pp-23-24.github.io/docs/objects/sections/inheritance/">
 <link rel="stylesheet" href="/book.min.c6f0ab8898a9b8e243f0aacc03c73275192bd36dfd0d01e4417d38cbfcafdc42.css" integrity="sha256-xvCriJipuOJD8KrMA8cydRkr0239DQHkQX04y/yv3EI=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.85d89e03c4adeba5936ffd3768b4ff6174e94a025d758a195a5a2643de3498e6.js" integrity="sha256-hdieA8St66WTb/03aLT/YXTpSgJddYoZWlomQ940mOY=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.c159978e52d628c201ba010267053b0d94b5c4c852495870ee12a9e715f7c0b3.js" integrity="sha256-wVmXjlLWKMIBugECZwU7DZS1xMhSSVhw7hKp5xX3wLM=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -2005,6 +2005,7 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#subclass">Subclass</a>
       <ul>
         <li><a href="#transitivity">Transitivity</a></li>
+        <li><a href="#antisymmetry">Antisymmetry</a></li>
         <li><a href="#inheritance">Inheritance</a></li>
       </ul>
     </li>
@@ -2037,9 +2038,9 @@ https://github.com/alex-shpak/hugo-book
 <blockquote class="book-hint warning">
 <p>In most (class-based) object-oriented languages, a class $A$ can <strong>extend</strong> another class $B$.
 In this case, $A$ is called a <strong>subclass</strong> of $B$.</p>
+<p>The intuitive meaning is inclusion ($\subseteq$) between their respective sets of instances, i.e. every instance of $A$ is also an instance of $B$ (but the converse may not hold).</p>
 </blockquote>
-<p>The intuitive meaning is inclusion between their respective sets of instances, i.e. every instance of $A$ is also an instance of $B$ (but the converse may not hold).</p>
-<p>This can be paraphrased in English by &ldquo;every $A$ is a $B$ &ldquo;.
+<p>This can be paraphrased in English by &ldquo;every $A$ is a $B$&rdquo;.
 For instance:</p>
 <ul>
 <li>every banana is a fruit,</li>
@@ -2047,16 +2048,311 @@ For instance:</p>
 <li>every rectangle is a polygon,</li>
 <li>etc.</li>
 </ul>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-exercise_inherit" id="tabs-exercise_inherit-0" checked="checked" />
+<label for="tabs-exercise_inherit-0">Exercise</label>
+<div class="book-tabs-content markdown-inner"><p>In each of the following cases, could $A$ extend $B$ ?</p>
+<table>
+  <thead>
+      <tr>
+          <th>$A$</th>
+          <th>$B$</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Student</td>
+          <td>Vegetarian</td>
+      </tr>
+      <tr>
+          <td>Polygon</td>
+          <td>Hexagon</td>
+      </tr>
+      <tr>
+          <td>Continent</td>
+          <td>Country</td>
+      </tr>
+      <tr>
+          <td>Country</td>
+          <td>Continent</td>
+      </tr>
+      <tr>
+          <td>City</td>
+          <td>Country</td>
+      </tr>
+      <tr>
+          <td>ZoomMeeting</td>
+          <td>Meeting</td>
+      </tr>
+      <tr>
+          <td>ZoomMeeting</td>
+          <td>Calendar</td>
+      </tr>
+      <tr>
+          <td>Chapter</td>
+          <td>Book</td>
+      </tr>
+      <tr>
+          <td>Minute</td>
+          <td>TimeInterval</td>
+      </tr>
+      <tr>
+          <td>Hour</td>
+          <td>TimeInterval</td>
+      </tr>
+      <tr>
+          <td>Minute</td>
+          <td>Hour</td>
+      </tr>
+      <tr>
+          <td>Integer</td>
+          <td>RationalNumber</td>
+      </tr>
+      <tr>
+          <td>RationalNumber</td>
+          <td>RealNumber</td>
+      </tr>
+      <tr>
+          <td>Integer</td>
+          <td>RealNumber</td>
+      </tr>
+      <tr>
+          <td>SetOfStudents</td>
+          <td>Student</td>
+      </tr>
+      <tr>
+          <td>Student</td>
+          <td>SetOfStudents</td>
+      </tr>
+      <tr>
+          <td>SetOfStudents</td>
+          <td>Set</td>
+      </tr>
+      <tr>
+          <td>SetOfStudents</td>
+          <td>SetOfPeople</td>
+      </tr>
+      <tr>
+          <td>ArrayOfIntegers</td>
+          <td>ArrayOfRealNumbers</td>
+      </tr>
+      <tr>
+          <td>ArrayOfIntegers</td>
+          <td>SetOfIntegers</td>
+      </tr>
+      <tr>
+          <td>UnionOfSets</td>
+          <td>Set</td>
+      </tr>
+      <tr>
+          <td>Set</td>
+          <td>UnionOfSets</td>
+      </tr>
+      <tr>
+          <td>Tree</td>
+          <td>Graph</td>
+      </tr>
+      <tr>
+          <td>Graph</td>
+          <td>Tree</td>
+      </tr>
+      <tr>
+          <td>AcyclicGraph</td>
+          <td>Tree</td>
+      </tr>
+      <tr>
+          <td>Object</td>
+          <td>Class</td>
+      </tr>
+      <tr>
+          <td>Subclass</td>
+          <td>Class</td>
+      </tr>
+      <tr>
+          <td>Class</td>
+          <td>Subclass</td>
+      </tr>
+  </tbody>
+</table>
+</div>
+<input type="radio" class="toggle" name="tabs-exercise_inherit" id="tabs-exercise_inherit-1"  />
+<label for="tabs-exercise_inherit-1">Solution</label>
+<div class="book-tabs-content markdown-inner"><table>
+  <thead>
+      <tr>
+          <th>A</th>
+          <th>B</th>
+          <th>Answer</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Student</td>
+          <td>Vegetarian</td>
+          <td>no</td>
+      </tr>
+      <tr>
+          <td>Polygon</td>
+          <td>Hexagon</td>
+          <td>no</td>
+      </tr>
+      <tr>
+          <td>Continent</td>
+          <td>Country</td>
+          <td>no</td>
+      </tr>
+      <tr>
+          <td>Country</td>
+          <td>Continent</td>
+          <td>no</td>
+      </tr>
+      <tr>
+          <td>City</td>
+          <td>Country</td>
+          <td>no</td>
+      </tr>
+      <tr>
+          <td>ZoomMeeting</td>
+          <td>Meeting</td>
+          <td>yes</td>
+      </tr>
+      <tr>
+          <td>ZoomMeeting</td>
+          <td>Calendar</td>
+          <td>no</td>
+      </tr>
+      <tr>
+          <td>Chapter</td>
+          <td>Book</td>
+          <td>no</td>
+      </tr>
+      <tr>
+          <td>Minute</td>
+          <td>TimeInterval</td>
+          <td>yes</td>
+      </tr>
+      <tr>
+          <td>Hour</td>
+          <td>TimeInterval</td>
+          <td>yes</td>
+      </tr>
+      <tr>
+          <td>Minute</td>
+          <td>Hour</td>
+          <td>no</td>
+      </tr>
+      <tr>
+          <td>Integer</td>
+          <td>RationalNumber</td>
+          <td>yes</td>
+      </tr>
+      <tr>
+          <td>RationalNumber</td>
+          <td>RealNumber</td>
+          <td>yes</td>
+      </tr>
+      <tr>
+          <td>Integer</td>
+          <td>RealNumber</td>
+          <td>yes</td>
+      </tr>
+      <tr>
+          <td>SetOfStudents</td>
+          <td>Student</td>
+          <td>no</td>
+      </tr>
+      <tr>
+          <td>Student</td>
+          <td>SetOfStudents</td>
+          <td>no</td>
+      </tr>
+      <tr>
+          <td>SetOfStudents</td>
+          <td>Set</td>
+          <td>yes</td>
+      </tr>
+      <tr>
+          <td>SetOfStudents</td>
+          <td>SetOfPeople</td>
+          <td>yes</td>
+      </tr>
+      <tr>
+          <td>ArrayOfIntegers</td>
+          <td>ArrayOfRealNumbers</td>
+          <td>yes</td>
+      </tr>
+      <tr>
+          <td>ArrayOfIntegers</td>
+          <td>SetOfIntegers</td>
+          <td>no</td>
+      </tr>
+      <tr>
+          <td>UnionOfSets</td>
+          <td>Set</td>
+          <td>yes</td>
+      </tr>
+      <tr>
+          <td>Set</td>
+          <td>UnionOfSets</td>
+          <td>arguably (except maybe the emptyset?)</td>
+      </tr>
+      <tr>
+          <td>Tree</td>
+          <td>Graph</td>
+          <td>arguably</td>
+      </tr>
+      <tr>
+          <td>Graph</td>
+          <td>Tree</td>
+          <td>no</td>
+      </tr>
+      <tr>
+          <td>AcyclicGraph</td>
+          <td>Tree</td>
+          <td>no</td>
+      </tr>
+      <tr>
+          <td>Object</td>
+          <td>Class</td>
+          <td>no</td>
+      </tr>
+      <tr>
+          <td>Subclass</td>
+          <td>Class</td>
+          <td>yes</td>
+      </tr>
+      <tr>
+          <td>Class</td>
+          <td>Subclass</td>
+          <td>arguably (a class is a subclass of itself)</td>
+      </tr>
+  </tbody>
+</table>
+</div>
+</div>
 <h3 id="transitivity">
   Transitivity
   <a class="anchor" href="#transitivity">#</a>
 </h3>
 <blockquote class="book-hint warning">
-<p>The &ldquo;extend&rdquo; relation is <strong>transitive</strong>, meaning that
-if $A$ extends $B$ and $B$ extends $C$, then $A$ extends $C$ (for any classes $A$, $B$ and $C$ ).</p>
+<p>If $A$ extends $B$ and $B$ extends $C$, then $A$ extends $C$</p>
 </blockquote>
-<p>For instance, from the above examples, one can infer that
-&ldquo;every square is a geometric shape&rdquo;.</p>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong>
+In the exercise above, <code>Integer</code> extends <code>RationalNumber</code> and <code>RationalNumber</code> extends <code>RealNumber</code>,
+therefore <code>Integer</code> extends <code>RealNumber</code>.</p>
+</blockquote>
+<h3 id="antisymmetry">
+  Antisymmetry
+  <a class="anchor" href="#antisymmetry">#</a>
+</h3>
+<blockquote class="book-hint warning">
+<p>If $A$ extends $B$ and $B$ extends $A$, then they are the same class.</p>
+</blockquote>
+<blockquote class="book-hint info">
+<p><strong><em>Example.</em></strong>
+In the exercise above, <code>Set</code> and <code>UnionOfSets</code> are (arguably) the same class.</p>
+</blockquote>
 <h3 id="inheritance">
   Inheritance
   <a class="anchor" href="#inheritance">#</a>
@@ -2070,7 +2366,7 @@ Since every square is a rectangle, a square has four right angles as well.</p>
   Factorizing code with a (possibly abstract) superclass
   <a class="anchor" href="#factorizing-code-with-a-possibly-abstract-superclass">#</a>
 </h2>
-<p>Inheritance can be used to avoid <a href="https://unibz-pp-23-24.github.io/docs/simplify/sections/factorization/#abstract">redundant code</a>.</p>
+<p>Inheritance can be used to avoid <a href="%7b%7b%22../../simplify/sections/factorization.md#abstract%22%7d%7d">redundant code</a>.</p>
 <h3 id="direct-inheritance-illustration">
   Direct inheritance: illustration
   <a class="anchor" href="#direct-inheritance-illustration">#</a>
@@ -2082,7 +2378,7 @@ Since every square is a rectangle, a square has four right angles as well.</p>
 <li>a <em>color</em> (at least in the <a href="https://www.dotemu.com/games/might-magic-clash-of-heroes-definitive-edition/">original game</a>), and</li>
 <li>a certain amount of <em>health</em>.</li>
 </ul>
-<p>The behavior and stats of a unit (e.g number of turns before attacking when combined, default health, etc.) are dictated by its type.
+<p>The behavior and stats of a unit (e.g. number of turns before attacking when combined, default health, etc.) are dictated by its type.
 So it makes sense to group units by type.</p>
 <p>For instance, one can create a class <code>Unicorn</code> whose instances are all units of type unicorn.
 In Java:</p>
@@ -2139,7 +2435,7 @@ Without inheritance, one would need to implement at least three versions of this
 So we can create a superclass of <code>Unicorn</code> and <code>Butterfly</code> that carries these attributes, and let the two subclasses inherit it.
 For instance, this superclass may be called <code>Unit</code>.</p>
 <p><img src="/img/diagrams/plantuml/abstract_inherit_simple.svg" alt="" /></p>
-<p>However, we may also want every unit in the game to have a concrete type (like &ldquo;unicorn&rdquo; or &ldquo;butterfly&rdquo;), rather than being a generic &ldquo;unit&rdquo;.
+<p>We may also want every unit in the game to have a concrete type (like &ldquo;unicorn&rdquo; or &ldquo;butterfly&rdquo;), rather than being a generic &ldquo;unit&rdquo;.
 In Java, this can be achieved with the <code>abstract</code> keyword.
 This keyword ensures that our superclass <em>cannot</em> be directly instantiated (even though it can still have a constructor).
 For instance:</p>
@@ -2158,9 +2454,6 @@ For instance:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Unit myUnit <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Unit(<span style="color:#e6db74">&#34;green&#34;</span>, 2);
 </span></span></code></pre></div><p>Next, we can declare that <code>Unicorn</code> extends <code>Unit</code>, by using the Java keyword <code>extends</code>.
 We can also use the constructor of <code>Unit</code> within the constructor of <code>Unicorn</code>, with the Java keyword <code>super</code>.</p>
-<blockquote class="book-hint info">
-<p><strong><em>Note.</em></strong> In Java (as opposed to C++ for instance), a class can only have <em>one</em> immediate superclass, so the keyword <code>super</code> is never ambiguous.</p>
-</blockquote>
 <p>This yields:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Unicorn</span> <span style="color:#66d9ef">extends</span> Unit {
 </span></span><span style="display:flex;"><span>
@@ -2168,7 +2461,16 @@ We can also use the constructor of <code>Unit</code> within the constructor of <
 </span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">super</span>(color, 1);
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>And we can proceed similarly for the class <code>Butterfly</code>.</p>
+</span></span></code></pre></div><p>And we can proceed similarly for the class <code>Butterfly</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Butterfly</span> <span style="color:#66d9ef">extends</span> Unit {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Butterfly</span>(String color) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">super</span>(color, 2);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><blockquote class="book-hint info">
+<p><strong><em>Note.</em></strong> In Java (as opposed to C++ for instance), a class can only have <em>one</em> immediate superclass, so the keyword <code>super</code> is never ambiguous.</p>
+</blockquote>
 <p>Observe that all the attributes are now carried by the superclass <code>Unit</code>.
 However, because they are inherited, these attributes can be accessed as if they were regular attributes of the subclass.
 For instance,</p>
@@ -2182,7 +2484,7 @@ For instance,</p>
 </span></span><span style="display:flex;"><span>      u1.<span style="color:#a6e22e">health</span> <span style="color:#f92672">-=</span> u2.<span style="color:#a6e22e">health</span>;
 </span></span><span style="display:flex;"><span>      u2.<span style="color:#a6e22e">health</span> <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>u1.<span style="color:#a6e22e">health</span>;
 </span></span><span style="display:flex;"><span>    }
-</span></span></code></pre></div><p>And this method can be used with unicorns and/or butterflies.
+</span></span></code></pre></div><p>And this method can be called with unicorns and/or butterflies as inputs.
 For instance:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>  Unicorn myUnicorn <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Unicorn(<span style="color:#e6db74">&#34;green&#34;</span>);
 </span></span><span style="display:flex;"><span>  Butterfly myButterfly <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Butterfly(<span style="color:#e6db74">&#34;yellow&#34;</span>);
@@ -2196,12 +2498,12 @@ For instance:</p>
 What if we also want to create a type of unit called <code>Wall</code> that has no color and cannot attack?
 An instance of this class does not need the attributes <code>color</code> and <code>attackCountdown</code>.</p>
 <p>A quick solution here consists is setting <code>attackCountdown</code> to -1, and <code>color</code> to <code>null</code>.
-However, unnecessary attributes make code harder to understand (therefore bug-prone),
-and such a design may not scale well if the game is extended with more units types.</p>
+However, unnecessary attributes make code harder to understand, and such a design may not scale well if the game is extended with more units types.</p>
 <div class="book-tabs">
 <input type="radio" class="toggle" name="tabs-exercise_trans_inherit" id="tabs-exercise_trans_inherit-0" checked="checked" />
 <label for="tabs-exercise_trans_inherit-0">Exercise</label>
-<div class="book-tabs-content markdown-inner"><p>Modify our model to accommodate for the class <code>Wall</code>, so that an instance of <code>Wall</code> only has the <code>health</code> attribute.</p>
+<div class="book-tabs-content markdown-inner"><p>Modify our model to accommodate for the class <code>Wall</code>,
+so that an instance of <code>Wall</code> only has the <code>health</code> attribute, with (default) value 5.</p>
 </div>
 <input type="radio" class="toggle" name="tabs-exercise_trans_inherit" id="tabs-exercise_trans_inherit-1"  />
 <label for="tabs-exercise_trans_inherit-1">Possible solution</label>
@@ -2290,6 +2592,7 @@ and such a design may not scale well if the game is extended with more units typ
     <li><a href="#subclass">Subclass</a>
       <ul>
         <li><a href="#transitivity">Transitivity</a></li>
+        <li><a href="#antisymmetry">Antisymmetry</a></li>
         <li><a href="#inheritance">Inheritance</a></li>
       </ul>
     </li>
