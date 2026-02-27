@@ -40,7 +40,7 @@ In Java # An enumerated type in Java is a set of constants. These constants are 
 <link rel="canonical" href="https://unibz-pp-23-24.github.io/docs/objects/sections/quasi-objects/">
 <link rel="stylesheet" href="/book.min.c6f0ab8898a9b8e243f0aacc03c73275192bd36dfd0d01e4417d38cbfcafdc42.css" integrity="sha256-xvCriJipuOJD8KrMA8cydRkr0239DQHkQX04y/yv3EI=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.c159978e52d628c201ba010267053b0d94b5c4c852495870ee12a9e715f7c0b3.js" integrity="sha256-wVmXjlLWKMIBugECZwU7DZS1xMhSSVhw7hKp5xX3wLM=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.abd91c764bbd26a10f4b127ef95f69652e3be2a560bf5f70fa1bed466b0ca9fb.js" integrity="sha256-q9kcdku9JqEPSxJ&#43;&#43;V9pZS474qVgv19w&#43;hvtRmsMqfs=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -2056,7 +2056,7 @@ These constants are effectively <a href="https://unibz-pp-23-24.github.io/docs/o
 meaning that they depends on the class (or interface) where the enumerated type is declared (similarly to a <a href="https://unibz-pp-23-24.github.io/docs/objects/sections/classesasobjects/#staticAttributes">static attribute</a>).
 The <em>name</em> of an enumerated type can generally be used like a regular reference type.
 For instance</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Unit</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Unit</span> {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">enum</span> UnitColor {BLUE, GREEN, RED}
 </span></span><span style="display:flex;"><span>
@@ -2094,28 +2094,28 @@ Notably, a Java <code>enum</code> can have its own <a href="https://docs.oracle.
 They are a convenient way to avoid boilerplate code.
 Records provide a concise syntax for &ldquo;lightweight&rdquo; classes that are only meant to hold data.</p>
 <p>For instance, here is the full implementation of a record <code>City</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">record</span> <span style="color:#a6e22e">City</span>(String name, <span style="color:#66d9ef">int</span> zipCode) {}
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">record</span> <span style="color:#a6e22e">City</span>(String name, <span style="color:#66d9ef">int</span> zipCode) {}
 </span></span></code></pre></div><p>This record has an implicit constructor, and implements <code>equals</code>, <code>hashcode</code> and <code>toString</code> in the expected way.
 For instance:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    City florence <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Florence&#34;</span>, 50100);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    City florence <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Florence&#34;</span>, 50100);
 </span></span><span style="display:flex;"><span>    City florenceAgain <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Florence&#34;</span>, 50100);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Outputs true.</span>
 </span></span><span style="display:flex;"><span>    System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(florence.<span style="color:#a6e22e">equals</span>(florenceAgain));
 </span></span></code></pre></div><p>The attributes of a record <em>cannot</em> be modified.
 For instance, the following program does not compile:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    City florence <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Florence&#34;</span>, 50100);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    City florence <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Florence&#34;</span>, 50100);
 </span></span><span style="display:flex;"><span>    florence.<span style="color:#a6e22e">zipCode</span> <span style="color:#f92672">=</span> 50121;
 </span></span></code></pre></div><p>A record is often declared inside a class or interface.
 For instance, in our game:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Board</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Board</span> {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">record</span> <span style="color:#a6e22e">TileCoordinates</span>(<span style="color:#66d9ef">int</span> X, <span style="color:#66d9ef">int</span> Y){};
 </span></span><span style="display:flex;"><span>    ...
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>Records are convenient for methods that need to return more than one value.
 For instance:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>TileCoordinates <span style="color:#a6e22e">getOngoingMove</span>();
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>TileCoordinates <span style="color:#a6e22e">getOngoingMove</span>();
 </span></span></code></pre></div><h2 id="string">
   Strings
   <a class="anchor" href="#string">#</a>
@@ -2136,7 +2136,7 @@ These strings are stored in a shared <strong>pool</strong>, and each of them is 
 </h3>
 <p>In Java, a string is an object.
 Like for regular objects, comparing two variables of type <code>String</code> with <code>==</code> compares their references:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String myString <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> String(<span style="color:#e6db74">&#34;foo&#34;</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String myString <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> String(<span style="color:#e6db74">&#34;foo&#34;</span>);
 </span></span><span style="display:flex;"><span>String sameString <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> String(<span style="color:#e6db74">&#34;foo&#34;</span>);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Outputs false, because the two variables hold different references.</span>
@@ -2148,7 +2148,7 @@ This method:</p>
 <li>returns a reference to the (only) version of the string contained in the pool.</li>
 </ul>
 <p>For instance, consider the following program:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Creates a string &#34;foo&#34;,</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Creates a string &#34;foo&#34;,</span>
 </span></span><span style="display:flex;"><span>String myString <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> String(<span style="color:#e6db74">&#34;foo&#34;</span>)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// adds it to the pool,</span>
@@ -2168,7 +2168,7 @@ This method:</p>
 </span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(myString <span style="color:#f92672">==</span> sameString);
 </span></span></code></pre></div><p>A string that is initialized without constructor (i.e. directly with &quot; &ldquo;) <em>is interned</em>.
 For instance</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String myString <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;foo&#34;</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String myString <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;foo&#34;</span>;
 </span></span><span style="display:flex;"><span>String sameString <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;foo&#34;</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Outputs true, because of (implicit) interning</span>
@@ -2177,7 +2177,7 @@ For instance</p>
 <p>In particular, the instance methods of the class <code>String</code> do <em>not</em> modify the current string, even if the names of some of these methods (<code>substring</code>, <code>replace</code>, etc.) suggest that they do.
 Instead, these methods (may) return (a reference to) a <em>different</em> object.
 For instance:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String foo <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> String(<span style="color:#e6db74">&#34;foo&#34;</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String foo <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> String(<span style="color:#e6db74">&#34;foo&#34;</span>);
 </span></span><span style="display:flex;"><span>String copy <span style="color:#f92672">=</span> foo;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Outputs true, because the two variables hold the same object reference.</span>
@@ -2190,7 +2190,7 @@ For instance:</p>
 </span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(copy <span style="color:#f92672">==</span> foo);
 </span></span></code></pre></div><p>The class <code>String</code> overrides the method <a href="https://unibz-pp-23-24.github.io/docs/objects/sections/comparing/#equals">equals</a> so that it implements string comparison in the expected way.
 For instance:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String myString <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> String(<span style="color:#e6db74">&#34;foo&#34;</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String myString <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> String(<span style="color:#e6db74">&#34;foo&#34;</span>);
 </span></span><span style="display:flex;"><span>String sameString <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> String(<span style="color:#e6db74">&#34;foo&#34;</span>);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Outputs false.</span>
@@ -2214,11 +2214,11 @@ This is less error-prone than <code>==</code> (albeit less efficient if the two 
 Some boxed types also offer additional functionalities, via instance methods (e.g. an <code>Integer</code> can represent a positive numbers up to $2^{32} - 1$.</p>
 <p>Constructors for boxed types are deprecated.
 Instead, instances can be created via so-called <strong>autoboxing</strong>, for instance:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Integer myInteger <span style="color:#f92672">=</span> 2;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Integer myInteger <span style="color:#f92672">=</span> 2;
 </span></span><span style="display:flex;"><span>Character myCharacter <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;a&#39;</span>;
 </span></span></code></pre></div><p>Several Java operators (like <code>+</code>, <code>==</code>, <code>&lt;=</code>, etc.) are also overloaded so that they behave with boxed types as they would with primitive types.
 For instance:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Integer i <span style="color:#f92672">=</span> 1;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Integer i <span style="color:#f92672">=</span> 1;
 </span></span><span style="display:flex;"><span>i <span style="color:#f92672">+=</span> 1;
 </span></span><span style="display:flex;"><span>Integer j <span style="color:#f92672">=</span> 2;
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Outputs true</span>
@@ -2226,7 +2226,7 @@ For instance:</p>
 </span></span></code></pre></div><p>Like strings, instances of boxed types are <a href="https://unibz-pp-23-24.github.io/docs/objects/sections/mutability/">immutable</a>.
 This can affect performance.
 For instance:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (Integer i <span style="color:#f92672">=</span> 0; i <span style="color:#f92672">&lt;</span> 1000000 ; i<span style="color:#f92672">++</span>){
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (Integer i <span style="color:#f92672">=</span> 0; i <span style="color:#f92672">&lt;</span> 1000000 ; i<span style="color:#f92672">++</span>){
 </span></span><span style="display:flex;"><span>    ...
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>may create up to 1 million objects in memory.

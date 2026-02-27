@@ -44,7 +44,7 @@ Create a method stub (e.g. return null if the method’s return type is a refere
 <link rel="canonical" href="https://unibz-pp-23-24.github.io/docs/unittests/sections/tdd/">
 <link rel="stylesheet" href="/book.min.c6f0ab8898a9b8e243f0aacc03c73275192bd36dfd0d01e4417d38cbfcafdc42.css" integrity="sha256-xvCriJipuOJD8KrMA8cydRkr0239DQHkQX04y/yv3EI=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.c159978e52d628c201ba010267053b0d94b5c4c852495870ee12a9e715f7c0b3.js" integrity="sha256-wVmXjlLWKMIBugECZwU7DZS1xMhSSVhw7hKp5xX3wLM=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.abd91c764bbd26a10f4b127ef95f69652e3be2a560bf5f70fa1bed466b0ca9fb.js" integrity="sha256-q9kcdku9JqEPSxJ&#43;&#43;V9pZS474qVgv19w&#43;hvtRmsMqfs=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -2084,7 +2084,7 @@ This allows experimenting with a specific feature <em>in isolation</em>, ignorin
 </h3>
 <p>First, let us decompose this method into simpler ones.
 For instance as follows:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Backend</span> <span style="color:#66d9ef">implements</span> EventHandler {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Backend</span> <span style="color:#66d9ef">implements</span> EventHandler {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> Snapshot currentSnapshot;
 </span></span><span style="display:flex;"><span>  ...
@@ -2116,7 +2116,7 @@ However, the two remaining ones (<code>performUnitMerges</code> and <code>endTur
 So it could be helpful to decompose them and/or devise unit tests for them.</p>
 <p>Let us focus on <code>endTurn</code>.
 It may for instance be decomposed as follows:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">endTurn</span>() {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">endTurn</span>() {
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// perform attacks for units whose counter is 1</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// (on the active player&#39;s side)</span>
 </span></span><span style="display:flex;"><span>    performAttacks();
@@ -2124,14 +2124,14 @@ It may for instance be decomposed as follows:</p>
 </span></span><span style="display:flex;"><span>    swapActivePlayer();
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>And <code>performAttacks</code> may in turn be decomposed as follows:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">performAttacks</span>() {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">performAttacks</span>() {
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> maxColumnIndex <span style="color:#f92672">=</span> currentSnapshot.<span style="color:#a6e22e">getBoard</span>().<span style="color:#a6e22e">getMaxColumnIndex</span>();
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// for each column</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> columnIndex <span style="color:#f92672">=</span> 0; columnIndex <span style="color:#f92672">&lt;=</span> maxColumnIndex; columnIndex<span style="color:#f92672">++</span>){
 </span></span><span style="display:flex;"><span>        performAttacks(columnIndex);
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">performAttack</span>(<span style="color:#66d9ef">int</span> columnIndex) {
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">performAttack</span>(<span style="color:#66d9ef">int</span> columnIndex) {
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// for each combined unit in this column (for the active player),</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// starting from front units</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (MobileUnit unit: getCombinedUnits(columnIndex)){

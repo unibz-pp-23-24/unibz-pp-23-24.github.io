@@ -34,7 +34,7 @@ Syntax in Java # A Java method
 <link rel="canonical" href="https://unibz-pp-23-24.github.io/docs/lambda/sections/lambda/">
 <link rel="stylesheet" href="/book.min.c6f0ab8898a9b8e243f0aacc03c73275192bd36dfd0d01e4417d38cbfcafdc42.css" integrity="sha256-xvCriJipuOJD8KrMA8cydRkr0239DQHkQX04y/yv3EI=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.c159978e52d628c201ba010267053b0d94b5c4c852495870ee12a9e715f7c0b3.js" integrity="sha256-wVmXjlLWKMIBugECZwU7DZS1xMhSSVhw7hKp5xX3wLM=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.abd91c764bbd26a10f4b127ef95f69652e3be2a560bf5f70fa1bed466b0ca9fb.js" integrity="sha256-q9kcdku9JqEPSxJ&#43;&#43;V9pZS474qVgv19w&#43;hvtRmsMqfs=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -2030,15 +2030,15 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#syntax-in-java">#</a>
 </h2>
 <p>A Java method</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span>ReturnType<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">myMethod</span> (<span style="color:#f92672">&lt;</span>Type 1<span style="color:#f92672">&gt;</span> <span style="color:#f92672">&lt;</span>argument 1<span style="color:#f92672">&gt;</span>, .., <span style="color:#f92672">&lt;</span>Type n<span style="color:#f92672">&gt;</span> <span style="color:#f92672">&lt;</span>argument n<span style="color:#f92672">&gt;</span>){ <span style="color:#f92672">&lt;</span>Body<span style="color:#f92672">&gt;</span> }
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span>ReturnType<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">myMethod</span> (<span style="color:#f92672">&lt;</span>Type 1<span style="color:#f92672">&gt;</span> <span style="color:#f92672">&lt;</span>argument 1<span style="color:#f92672">&gt;</span>, .., <span style="color:#f92672">&lt;</span>Type n<span style="color:#f92672">&gt;</span> <span style="color:#f92672">&lt;</span>argument n<span style="color:#f92672">&gt;</span>){ <span style="color:#f92672">&lt;</span>Body<span style="color:#f92672">&gt;</span> }
 </span></span></code></pre></div><p>can be written anonymously as the lambda expression:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>(<span style="color:#f92672">&lt;</span>Type 1<span style="color:#f92672">&gt;</span> <span style="color:#f92672">&lt;</span>argument 1<span style="color:#f92672">&gt;</span>, .., <span style="color:#f92672">&lt;</span>Type n<span style="color:#f92672">&gt;</span> <span style="color:#f92672">&lt;</span>argument n<span style="color:#f92672">&gt;</span>) <span style="color:#f92672">-&gt;</span> { <span style="color:#f92672">&lt;</span>Body<span style="color:#f92672">&gt;</span> }
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>(<span style="color:#f92672">&lt;</span>Type 1<span style="color:#f92672">&gt;</span> <span style="color:#f92672">&lt;</span>argument 1<span style="color:#f92672">&gt;</span>, .., <span style="color:#f92672">&lt;</span>Type n<span style="color:#f92672">&gt;</span> <span style="color:#f92672">&lt;</span>argument n<span style="color:#f92672">&gt;</span>) <span style="color:#f92672">-&gt;</span> { <span style="color:#f92672">&lt;</span>Body<span style="color:#f92672">&gt;</span> }
 </span></span></code></pre></div><p>For instance, the method:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">division</span> (<span style="color:#66d9ef">int</span> x, <span style="color:#66d9ef">int</span> y){
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">division</span> (<span style="color:#66d9ef">int</span> x, <span style="color:#66d9ef">int</span> y){
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> x <span style="color:#f92672">/</span> y;
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>is equivalent to the lambda expression</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>(<span style="color:#66d9ef">int</span> x, <span style="color:#66d9ef">int</span> y) <span style="color:#f92672">-&gt;</span> { <span style="color:#66d9ef">return</span> x <span style="color:#f92672">/</span> y ; }
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>(<span style="color:#66d9ef">int</span> x, <span style="color:#66d9ef">int</span> y) <span style="color:#f92672">-&gt;</span> { <span style="color:#66d9ef">return</span> x <span style="color:#f92672">/</span> y ; }
 </span></span></code></pre></div><p>However, a more concise syntax can often be used:</p>
 <h3 id="arguments">
   Arguments
@@ -2047,21 +2047,21 @@ https://github.com/alex-shpak/hugo-book
 <p>If the types of the arguments can be inferred by the compiler (which is often the case), then they can be omitted.</p>
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>(<span style="color:#66d9ef">int</span> x, <span style="color:#66d9ef">int</span> y) <span style="color:#f92672">-&gt;</span> { ... }
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>(<span style="color:#66d9ef">int</span> x, <span style="color:#66d9ef">int</span> y) <span style="color:#f92672">-&gt;</span> { ... }
 </span></span></code></pre></div><p>may be written</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>(x, y) <span style="color:#f92672">-&gt;</span> { ... }
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>(x, y) <span style="color:#f92672">-&gt;</span> { ... }
 </span></span></code></pre></div></blockquote>
 <p>If the method has exactly one argument and its type is omitted, then parentheses can also be omitted.</p>
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>(x) <span style="color:#f92672">-&gt;</span> { ... }
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>(x) <span style="color:#f92672">-&gt;</span> { ... }
 </span></span></code></pre></div><p>can always be written</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>x <span style="color:#f92672">-&gt;</span> { ... }
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>x <span style="color:#f92672">-&gt;</span> { ... }
 </span></span></code></pre></div></blockquote>
 <p>If the method takes no argument, then parentheses are mandatory.</p>
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>() <span style="color:#f92672">-&gt;</span> { ... }
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>() <span style="color:#f92672">-&gt;</span> { ... }
 </span></span></code></pre></div></blockquote>
 <h3 id="body">
   Body
@@ -2075,11 +2075,11 @@ https://github.com/alex-shpak/hugo-book
 <p>then the semicolon (<code>;</code>), curly braces (<code>{</code> and <code>}</code>) and <code>return</code> keyword (if any) can be omitted.</p>
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>(x, y) <span style="color:#f92672">-&gt;</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>(x, y) <span style="color:#f92672">-&gt;</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> x <span style="color:#f92672">/</span> y ;
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>can often be written</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>(x, y) <span style="color:#f92672">-&gt;</span> x <span style="color:#f92672">/</span> y
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>(x, y) <span style="color:#f92672">-&gt;</span> x <span style="color:#f92672">/</span> y
 </span></span></code></pre></div></blockquote>
 </article>
  

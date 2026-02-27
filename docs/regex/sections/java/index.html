@@ -39,7 +39,7 @@ Hint. This is another good reason for using a regex validation tool (e.g. regex1
 <link rel="canonical" href="https://unibz-pp-23-24.github.io/docs/regex/sections/java/">
 <link rel="stylesheet" href="/book.min.c6f0ab8898a9b8e243f0aacc03c73275192bd36dfd0d01e4417d38cbfcafdc42.css" integrity="sha256-xvCriJipuOJD8KrMA8cydRkr0239DQHkQX04y/yv3EI=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.c159978e52d628c201ba010267053b0d94b5c4c852495870ee12a9e715f7c0b3.js" integrity="sha256-wVmXjlLWKMIBugECZwU7DZS1xMhSSVhw7hKp5xX3wLM=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.abd91c764bbd26a10f4b127ef95f69652e3be2a560bf5f70fa1bed466b0ca9fb.js" integrity="sha256-q9kcdku9JqEPSxJ&#43;&#43;V9pZS474qVgv19w&#43;hvtRmsMqfs=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -2065,7 +2065,7 @@ Among these:</p>
 <li><code>boolean matches(String regex)</code> returns true iff the whole string belongs to the language described by the regex.
 Or equivalently if there is a match for the regex <code>^</code>regex<code>$</code>.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String input <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;ab&#34;</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String input <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;ab&#34;</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Outputs false</span>
 </span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(input.<span style="color:#a6e22e">matches</span>(<span style="color:#e6db74">&#34;a&#34;</span>));
@@ -2078,7 +2078,7 @@ Or equivalently if there is a match for the regex <code>^</code>regex<code>$</co
 </span></span></code></pre></div><ul>
 <li><code>String replaceFirst(String regex, String replacement)</code> replaces the <a href="https://unibz-pp-23-24.github.io/docs/regex/sections/pattern/#bestFirstMatch">best first match</a> with the input replacement string:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String input <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;aba&#34;</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String input <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;aba&#34;</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Outputs &#34;ba&#34;</span>
 </span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(input.<span style="color:#a6e22e">replaceFirst</span>(<span style="color:#e6db74">&#34;ab|a&#34;</span>, <span style="color:#e6db74">&#34;b&#34;</span>));
@@ -2088,7 +2088,7 @@ Or equivalently if there is a match for the regex <code>^</code>regex<code>$</co
 </span></span></code></pre></div><ul>
 <li><code>String replaceAll(String regex, String replacement)</code> replaces all <a href="https://unibz-pp-23-24.github.io/docs/regex/sections/pattern/#successiveMatches">(successive) best first matches</a> with the input replacement string:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String input <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;aba&#34;</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String input <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;aba&#34;</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Outputs &#34;bb&#34;</span>
 </span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(input.<span style="color:#a6e22e">replaceAll</span>(<span style="color:#e6db74">&#34;ab|a&#34;</span>, <span style="color:#e6db74">&#34;b&#34;</span>));
@@ -2097,7 +2097,7 @@ Or equivalently if there is a match for the regex <code>^</code>regex<code>$</co
 </span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(input.<span style="color:#a6e22e">replaceAll</span>(<span style="color:#e6db74">&#34;a|ab&#34;</span>, <span style="color:#e6db74">&#34;b&#34;</span>));
 </span></span></code></pre></div><blockquote class="book-hint warning">
 <p>For both <code>replaceFirst</code> and <code>replaceAll</code>, the replacement string can use a <a href="https://unibz-pp-23-24.github.io/docs/regex/sections/practice/#backreference">reference</a> to a group, written <code>$</code>$n$, where $n$ is the <a href="https://unibz-pp-23-24.github.io/docs/regex/sections/practice/#group">group number</a>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String input <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;The windows are open. The apples are green.&#34;</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String input <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;The windows are open. The apples are green.&#34;</span>;
 </span></span><span style="display:flex;"><span>String output <span style="color:#f92672">=</span> input.<span style="color:#a6e22e">replaceAll</span>(<span style="color:#e6db74">&#34;(\\w+)s\\s+are&#34;</span>, <span style="color:#e6db74">&#34;$1 is&#34;</span>);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Outputs &#34;The window is open. The apple is green.&#34;</span>
@@ -2109,7 +2109,7 @@ Or equivalently if there is a match for the regex <code>^</code>regex<code>$</co
 <ul>
 <li><code>String[] split()</code> splits the input string around the <a href="https://unibz-pp-23-24.github.io/docs/regex/sections/pattern/#successiveMatches">(successive) best first matches</a>:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String input <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;This is weird.\n&#34;</span><span style="color:#f92672">+</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String input <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;This is weird.\n&#34;</span><span style="color:#f92672">+</span>
 </span></span><span style="display:flex;"><span>               <span style="color:#e6db74">&#34;Or not.&#34;</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Contains [ &#34;This&#34;, &#34;is&#34;, &#34;weird.&#34;, &#34;Or&#34;, &#34;not.&#34; ]</span>
@@ -2131,7 +2131,7 @@ Or equivalently if there is a match for the regex <code>^</code>regex<code>$</co
 </h3>
 <p>A <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/regex/Matcher.html">Matcher</a> is a &ldquo;regex engine&rdquo; for a specific regex and a specific string.</p>
 <p>A <code>Matcher</code> can be created out of a <code>Pattern</code>, with the instance method <code>Matcher matcher(String inputString)</code> of the class <code>Pattern</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Pattern pattern <span style="color:#f92672">=</span> Pattern.<span style="color:#a6e22e">compile</span>(<span style="color:#e6db74">&#34;\\d+[a-z]*&#34;</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Pattern pattern <span style="color:#f92672">=</span> Pattern.<span style="color:#a6e22e">compile</span>(<span style="color:#e6db74">&#34;\\d+[a-z]*&#34;</span>);
 </span></span><span style="display:flex;"><span>Matcher matcher <span style="color:#f92672">=</span> pattern.<span style="color:#a6e22e">matcher</span>(<span style="color:#e6db74">&#34;Alice787@unibz&#34;</span>);
 </span></span></code></pre></div><p>Among others, the class <code>Matcher</code> provides the following instance methods:</p>
 <ul>
@@ -2145,7 +2145,7 @@ If this method succeeds, then information can be retrieved about the matched seg
 The next call to <code>find()</code> will find the following best first match (if any).</p>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Pattern pattern <span style="color:#f92672">=</span> Pattern.<span style="color:#a6e22e">compile</span>(<span style="color:#e6db74">&#34;[A-Z][a-z]*&#34;</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Pattern pattern <span style="color:#f92672">=</span> Pattern.<span style="color:#a6e22e">compile</span>(<span style="color:#e6db74">&#34;[A-Z][a-z]*&#34;</span>);
 </span></span><span style="display:flex;"><span>Matcher matcher <span style="color:#f92672">=</span> pattern.<span style="color:#a6e22e">matcher</span>(<span style="color:#e6db74">&#34;Alice and Bob are exhausted.&#34;</span>);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Outputs true and matches the segment with word &#34;Alice&#34;</span>
@@ -2171,7 +2171,7 @@ Group <code>0</code> stands for the whole regex.</p>
 <p><code>int end()</code> returns the end index (excluded) of the latest matched segment.</p>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Pattern pattern <span style="color:#f92672">=</span> Pattern.<span style="color:#a6e22e">compile</span>(<span style="color:#e6db74">&#34;([A-Z])[a-z]*&#34;</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Pattern pattern <span style="color:#f92672">=</span> Pattern.<span style="color:#a6e22e">compile</span>(<span style="color:#e6db74">&#34;([A-Z])[a-z]*&#34;</span>);
 </span></span><span style="display:flex;"><span>Matcher matcher <span style="color:#f92672">=</span> pattern.<span style="color:#a6e22e">matcher</span>(<span style="color:#e6db74">&#34;Alice and Bob are exhausted.&#34;</span>);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">//Find the best first match</span>
@@ -2194,7 +2194,7 @@ Group <code>0</code> stands for the whole regex.</p>
 </span></span></code></pre></div><ul>
 <li><code>public Sream&lt;MatchResult&gt; results()</code> returns all <a href="https://unibz-pp-23-24.github.io/docs/regex/sections/pattern/#successiveMatches">(successive) best first matches</a>.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Pattern pattern <span style="color:#f92672">=</span> Pattern.<span style="color:#a6e22e">compile</span>(<span style="color:#e6db74">&#34;[A-Z][a-z]*&#34;</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Pattern pattern <span style="color:#f92672">=</span> Pattern.<span style="color:#a6e22e">compile</span>(<span style="color:#e6db74">&#34;[A-Z][a-z]*&#34;</span>);
 </span></span><span style="display:flex;"><span>Matcher matcher <span style="color:#f92672">=</span> pattern.<span style="color:#a6e22e">matcher</span>(<span style="color:#e6db74">&#34;Alice and Bob are exhausted.&#34;</span>);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Contains two match results:</span>
@@ -2212,7 +2212,7 @@ Group <code>0</code> stands for the whole regex.</p>
 <code>int start()</code> and
 <code>int end()</code>,
 which behave analogously to their counterparts in the class <code>Matcher</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Pattern pattern <span style="color:#f92672">=</span> Pattern.<span style="color:#a6e22e">compile</span>(<span style="color:#e6db74">&#34;[A-Z][a-z]*&#34;</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Pattern pattern <span style="color:#f92672">=</span> Pattern.<span style="color:#a6e22e">compile</span>(<span style="color:#e6db74">&#34;[A-Z][a-z]*&#34;</span>);
 </span></span><span style="display:flex;"><span>Matcher matcher <span style="color:#f92672">=</span> pattern.<span style="color:#a6e22e">matcher</span>(<span style="color:#e6db74">&#34;Alice and Bob are exhausted.&#34;</span>);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Get all best first matches</span>

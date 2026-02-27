@@ -42,7 +42,7 @@ The default lifecycle # Maven’s default lifecycle is a sequence of 23 operatio
 <link rel="canonical" href="https://unibz-pp-23-24.github.io/docs/build/sections/building/">
 <link rel="stylesheet" href="/book.min.c6f0ab8898a9b8e243f0aacc03c73275192bd36dfd0d01e4417d38cbfcafdc42.css" integrity="sha256-xvCriJipuOJD8KrMA8cydRkr0239DQHkQX04y/yv3EI=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.c159978e52d628c201ba010267053b0d94b5c4c852495870ee12a9e715f7c0b3.js" integrity="sha256-wVmXjlLWKMIBugECZwU7DZS1xMhSSVhw7hKp5xX3wLM=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.abd91c764bbd26a10f4b127ef95f69652e3be2a560bf5f70fa1bed466b0ca9fb.js" integrity="sha256-q9kcdku9JqEPSxJ&#43;&#43;V9pZS474qVgv19w&#43;hvtRmsMqfs=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -2041,7 +2041,7 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#cleaning">#</a>
 </h2>
 <p>The command</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mvn clean
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mvn clean
 </span></span></code></pre></div><p>attempts to delete all content generated during a previous build (in particular, <code>.class</code> files).</p>
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong> Let us assume that <code>MyClass.java</code> is compiled into <code>MyClass.class</code>, and then renamed <code>MyNewClass.java</code>.
@@ -2065,7 +2065,7 @@ In this scenario, <code>mvn clean</code> allows eliminating the file <code>MyCla
 </ul>
 <p>Each phase can be executed via command-line with <code>mvn &lt;phaseName&gt;</code>.
 For instance:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mvn package
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mvn package
 </span></span></code></pre></div><blockquote class="book-hint danger">
 <p><strong><em>Warning.</em></strong> Executing any of these phases triggers the execution of <em>all phases that precede it</em>.</p>
 </blockquote>
@@ -2083,13 +2083,13 @@ For instance:</p>
 <li>a plugin is specified within the <code>&lt;plugin&gt;&lt;/plugin&gt;</code> tag, and</li>
 <li>plugins are declared within:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;build&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;build&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;plugins&gt;</span>
 </span></span><span style="display:flex;"><span>      ...
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;/plugins&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/build&gt;</span>
 </span></span></code></pre></div><p>For instance, here is the plugin called <code>maven-jar-plugin</code>, as it is <a href="https://unibz-pp-23-24.github.io/docs/build/sections/pom/#pomInherit">inherited</a> from the Super POM:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;build&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;build&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;plugins&gt;</span>
 </span></span><span style="display:flex;"><span>  ...
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;plugin&gt;</span>
@@ -2113,7 +2113,7 @@ For instance:</p>
 Intuitively, this specifies that the phase <code>package</code> must produce a <code>jar</code> file (as opposed to other formats like <code>war</code> or <code>ear</code>).</p>
 <p>In order to make this jar executable (and specify the main class of the application), we can add information to this inherited plugin,
 in the <code>pom.xml</code> file <em>of the project</em>, as follows:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;build&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;build&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;plugins&gt;</span>
 </span></span><span style="display:flex;"><span>  ...
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;plugin&gt;</span>
@@ -2132,7 +2132,7 @@ in the <code>pom.xml</code> file <em>of the project</em>, as follows:</p>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;/plugins&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/build&gt;</span>
 </span></span></code></pre></div><p>The <a href="">effective POM</a> in this example contains:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;build&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;build&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;plugins&gt;</span>
 </span></span><span style="display:flex;"><span>  ...
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;plugin&gt;</span>
@@ -2162,10 +2162,10 @@ in the <code>pom.xml</code> file <em>of the project</em>, as follows:</p>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/build&gt;</span>
 </span></span></code></pre></div><p>A plugin can contain several goals, and these may or may not be assigned to a specific phase.</p>
 <p>Besides, a goal can be executed independently from a phase, with the command:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mvn myplugin:myGoal
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mvn myplugin:myGoal
 </span></span></code></pre></div><p>For instance, the <a href="https://github.com/openjfx/javafx-maven-plugin">javafx maven plugin</a> has a goal <code>run</code> to start a JavaFX application.
 It can be executed with:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mvn javafx:run
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mvn javafx:run
 </span></span></code></pre></div><h2 id="installPlugin">
   Installing a plugin
   <a class="anchor" href="#installPlugin">#</a>
@@ -2174,7 +2174,7 @@ It can be executed with:</p>
 <p>A plugin is a <a href="https://unibz-pp-23-24.github.io/docs/build/sections/artifact/">Maven artifact</a>.
 Similarly to a <a href="https://unibz-pp-23-24.github.io/docs/build/sections/dependencies/">dependency</a>, an external plugin can be downloaded from Maven Central and installed into the <a href="https://unibz-pp-23-24.github.io/docs/build/sections/dependencies/#localRepo">local repository</a>
 , as follows:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;build&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;build&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;plugins&gt;</span>
 </span></span><span style="display:flex;"><span>  ...
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;plugin&gt;</span>
@@ -2198,7 +2198,7 @@ These are often specific to a plugin.</p>
 </h3>
 <p>The assembly plugin allows building a über jar (i.e. including dependencies), as opposed to the <code>maven-jar-plugin</code>, which can build a thin jar.</p>
 <p>This is a simple way to distribute an end-user application (as opposed to a library).</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;plugin&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;plugin&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;groupId&gt;</span>org.apache.maven.plugins<span style="color:#f92672">&lt;/groupId&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;artifactId&gt;</span>maven-assembly-plugin<span style="color:#f92672">&lt;/artifactId&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;version&gt;</span>3.7.1<span style="color:#f92672">&lt;/version&gt;</span>
@@ -2223,7 +2223,7 @@ These are often specific to a plugin.</p>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;/executions&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/plugin&gt;</span>
 </span></span></code></pre></div><p>In this example, the execution of the goal (called <code>single</code>) is attached to the phase <code>package</code>, so the über jar can be produced like a regular jar, with:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mvn package
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mvn package
 </span></span></code></pre></div><h3 id="the-source-plugin">
   The source plugin
   <a class="anchor" href="#the-source-plugin">#</a>
@@ -2234,7 +2234,7 @@ This allows:</p>
 <li>distributing a Java library alongside its source code, and/or</li>
 <li>installing the library in the local repository together with the source (and navigate through it with an IDE).</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;plugin&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;plugin&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;groupId&gt;</span>org.apache.maven.plugins<span style="color:#f92672">&lt;/groupId&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;artifactId&gt;</span>maven-source-plugin<span style="color:#f92672">&lt;/artifactId&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;version&gt;</span>3.3.1<span style="color:#f92672">&lt;/version&gt;</span>
@@ -2253,7 +2253,7 @@ This allows:</p>
   The Javadoc plugin
   <a class="anchor" href="#the-javadoc-plugin">#</a>
 </h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;plugin&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;plugin&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;groupId&gt;</span>org.apache.maven.plugins<span style="color:#f92672">&lt;/groupId&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;artifactId&gt;</span>maven-javadoc-plugin<span style="color:#f92672">&lt;/artifactId&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;version&gt;</span>3.6.3<span style="color:#f92672">&lt;/version&gt;</span>
@@ -2263,7 +2263,7 @@ This allows:</p>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/plugin&gt;</span>
 </span></span></code></pre></div><p>This plugin has <a href="https://maven.apache.org/plugins/maven-javadoc-plugin/">many goals</a>, which are often executed independently (i.s. not bound to a phase).</p>
 <p>For instance:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mvn javadoc:javadoc
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mvn javadoc:javadoc
 </span></span></code></pre></div><p>generates Javadoc for the project in the folder <code>target/site</code>.</p>
 </article>
  

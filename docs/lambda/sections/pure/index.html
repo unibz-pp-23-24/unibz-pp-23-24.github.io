@@ -56,7 +56,7 @@ returns a value, returns the same value if called twice with the same arguments,
 <link rel="canonical" href="https://unibz-pp-23-24.github.io/docs/lambda/sections/pure/">
 <link rel="stylesheet" href="/book.min.c6f0ab8898a9b8e243f0aacc03c73275192bd36dfd0d01e4417d38cbfcafdc42.css" integrity="sha256-xvCriJipuOJD8KrMA8cydRkr0239DQHkQX04y/yv3EI=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.c159978e52d628c201ba010267053b0d94b5c4c852495870ee12a9e715f7c0b3.js" integrity="sha256-wVmXjlLWKMIBugECZwU7DZS1xMhSSVhw7hKp5xX3wLM=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.abd91c764bbd26a10f4b127ef95f69652e3be2a560bf5f70fa1bed466b0ca9fb.js" integrity="sha256-q9kcdku9JqEPSxJ&#43;&#43;V9pZS474qVgv19w&#43;hvtRmsMqfs=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -2082,13 +2082,13 @@ A <strong>pure function</strong> is a method that:</p>
 <div class="book-tabs-content markdown-inner"><p>The Java method <code>createUsers</code> below is not a pure function.</p>
 <p>Can you see why?</p>
 <p>How would you rewrite it into a pure function?</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyClass</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyClass</span> {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    String<span style="color:#f92672">[]</span> names;
 </span></span><span style="display:flex;"><span>    User<span style="color:#f92672">[]</span> users;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">MyClass</span>(){
-</span></span><span style="display:flex;"><span>        String<span style="color:#f92672">[]</span> names <span style="color:#f92672">=</span> parseNames();
+</span></span><span style="display:flex;"><span>        names <span style="color:#f92672">=</span> parseNames();
 </span></span><span style="display:flex;"><span>        users <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> User<span style="color:#f92672">[</span>names.<span style="color:#a6e22e">length</span><span style="color:#f92672">]</span>;
 </span></span><span style="display:flex;"><span>        createUsers();
 </span></span><span style="display:flex;"><span>    }
@@ -2104,13 +2104,13 @@ A <strong>pure function</strong> is a method that:</p>
 </span></span></code></pre></div></div>
 <input type="radio" class="toggle" name="tabs-exercise_pure_function" id="tabs-exercise_pure_function-1"  />
 <label for="tabs-exercise_pure_function-1">Possible solution</label>
-<div class="book-tabs-content markdown-inner"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyClass</span> {
+<div class="book-tabs-content markdown-inner"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyClass</span> {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    String<span style="color:#f92672">[]</span> names;
 </span></span><span style="display:flex;"><span>    User<span style="color:#f92672">[]</span> users;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">MyClass</span>(){
-</span></span><span style="display:flex;"><span>        String<span style="color:#f92672">[]</span> names <span style="color:#f92672">=</span> parseNames();
+</span></span><span style="display:flex;"><span>        names <span style="color:#f92672">=</span> parseNames();
 </span></span><span style="display:flex;"><span>        users <span style="color:#f92672">=</span> createUsers(names);
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>
@@ -2152,12 +2152,12 @@ If $f$ and $g$ are pure functions, the two programs below (written in pseudocode
 </blockquote>
 <div class="book-columns flex flex-wrap">
 <div class="flex-even markdown-inner" style="flex-grow: 1;">
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span>   x <span style="color:#f92672">=</span> f(a)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span>   x <span style="color:#f92672">=</span> f(a)
 </span></span><span style="display:flex;"><span>   y <span style="color:#f92672">=</span> g(b)
 </span></span><span style="display:flex;"><span>   result <span style="color:#f92672">=</span> x <span style="color:#f92672">+</span> y
 </span></span></code></pre></div>  </div>
 <div class="flex-even markdown-inner" style="flex-grow: 1;">
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span>   y <span style="color:#f92672">=</span> g(b)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span>   y <span style="color:#f92672">=</span> g(b)
 </span></span><span style="display:flex;"><span>   x <span style="color:#f92672">=</span> f(a)
 </span></span><span style="display:flex;"><span>   result <span style="color:#f92672">=</span> x <span style="color:#f92672">+</span> y
 </span></span></code></pre></div>  </div>

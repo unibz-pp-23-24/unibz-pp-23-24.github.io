@@ -40,7 +40,7 @@ List&lt;Integer&gt;list = List.of(1, 2, 3); // Contains [3,4,5] List&lt;Integer&
 <link rel="canonical" href="https://unibz-pp-23-24.github.io/docs/stream/sections/order/">
 <link rel="stylesheet" href="/book.min.c6f0ab8898a9b8e243f0aacc03c73275192bd36dfd0d01e4417d38cbfcafdc42.css" integrity="sha256-xvCriJipuOJD8KrMA8cydRkr0239DQHkQX04y/yv3EI=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.c159978e52d628c201ba010267053b0d94b5c4c852495870ee12a9e715f7c0b3.js" integrity="sha256-wVmXjlLWKMIBugECZwU7DZS1xMhSSVhw7hKp5xX3wLM=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.abd91c764bbd26a10f4b127ef95f69652e3be2a560bf5f70fa1bed466b0ca9fb.js" integrity="sha256-q9kcdku9JqEPSxJ&#43;&#43;V9pZS474qVgv19w&#43;hvtRmsMqfs=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -2032,7 +2032,7 @@ https://github.com/alex-shpak/hugo-book
 <p>We can allow a whole stream pipeline to be executed in a <a href="https://unibz-pp-23-24.github.io/docs/multithreading/sections/simple/#loop">concurrent or parallel</a> fashion, for instance with the instance method <code>Stream.parallel</code>, as follows:</p>
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span>list <span style="color:#f92672">=</span> List.<span style="color:#a6e22e">of</span>(1, 2, 3);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span>list <span style="color:#f92672">=</span> List.<span style="color:#a6e22e">of</span>(1, 2, 3);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Contains [3,4,5]</span>
 </span></span><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> ouputList <span style="color:#f92672">=</span> list.<span style="color:#a6e22e">stream</span>()
@@ -2055,7 +2055,7 @@ But if the stream is executed in parallel, then this is likely to affect the out
 <p>In such a case, the terminal operation <code>forEachOrdered</code> may be used instead of <code>forEach</code>, in order to force this operation to respect the encounter order.</p>
 <blockquote class="book-hint info">
 <p><strong><em>Example.</em></strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span>list <span style="color:#f92672">=</span> List.<span style="color:#a6e22e">of</span>(1, 2, 3);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span>list <span style="color:#f92672">=</span> List.<span style="color:#a6e22e">of</span>(1, 2, 3);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Must output `2` `4` and `6, in this order.</span>
 </span></span><span style="display:flex;"><span>list.<span style="color:#a6e22e">stream</span>()
@@ -2074,7 +2074,7 @@ In this example, the order in which the elements of the stream are processed is 
 <li>the stream is collected as a set.</li>
 </ul>
 <p>This is why calling the <code>unordered</code> method is safe.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>MyClass<span style="color:#f92672">&gt;</span>list <span style="color:#f92672">=</span> getList();
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>MyClass<span style="color:#f92672">&gt;</span>list <span style="color:#f92672">=</span> getList();
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>list.<span style="color:#a6e22e">stream</span>()
 </span></span><span style="display:flex;"><span>      .<span style="color:#a6e22e">parallel</span>()
