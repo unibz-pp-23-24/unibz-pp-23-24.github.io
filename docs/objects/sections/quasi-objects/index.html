@@ -19,10 +19,7 @@ For instance, if our game only allows &ldquo;blue&rdquo;, &ldquo;green&rdquo; an
   #
 
 An enumerated type in Java is a set of constants.
-These constants are effectively static,
-meaning that they depends on the class (or interface) where the enumerated type is declared (similarly to a static attribute).
-The name of an enumerated type can generally be used like a regular reference type.
-For instance">
+It can be declared in its own file, or inside a class or interface.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="https://unibz-pp-23-24.github.io/docs/objects/sections/quasi-objects/">
@@ -30,7 +27,7 @@ For instance">
   <meta property="og:title" content="Quasi-objects">
   <meta property="og:description" content="Quasi-objects # Enumerated types # Most imperative languages allow the creation of so-called enumerated types.
 An enumerated type is a datatype for a finite set or enumerated values. For instance, if our game only allows “blue”, “green” and “red” as unit colors, then we may create a dedicated type that only allows these three values.
-In Java # An enumerated type in Java is a set of constants. These constants are effectively static, meaning that they depends on the class (or interface) where the enumerated type is declared (similarly to a static attribute). The name of an enumerated type can generally be used like a regular reference type. For instance">
+In Java # An enumerated type in Java is a set of constants. It can be declared in its own file, or inside a class or interface.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -40,7 +37,7 @@ In Java # An enumerated type in Java is a set of constants. These constants are 
 <link rel="canonical" href="https://unibz-pp-23-24.github.io/docs/objects/sections/quasi-objects/">
 <link rel="stylesheet" href="/book.min.c6f0ab8898a9b8e243f0aacc03c73275192bd36dfd0d01e4417d38cbfcafdc42.css" integrity="sha256-xvCriJipuOJD8KrMA8cydRkr0239DQHkQX04y/yv3EI=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.ca2c0d6c05a3944a1276285326a067fbe282e1724382315296115b3f1901f550.js" integrity="sha256-yiwNbAWjlEoSdihTJqBn&#43;&#43;KC4XJDgjFSlhFbPxkB9VA=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.c6445a642a40be7544b2710bb9ee8d58f42d199a731eb1e6cc2a36d9d7697a48.js" integrity="sha256-xkRaZCpAvnVEsnELue6NWPQtGZpzHrHmzCo22ddpekg=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -2052,9 +2049,8 @@ For instance, if our game only allows &ldquo;blue&rdquo;, &ldquo;green&rdquo; an
   <a class="anchor" href="#in-java">#</a>
 </h3>
 <p>An enumerated type in Java is a set of constants.
-These constants are effectively <a href="https://unibz-pp-23-24.github.io/docs/objects/sections/classesasobjects/#staticAttributes">static</a>,
-meaning that they depends on the class (or interface) where the enumerated type is declared (similarly to a <a href="https://unibz-pp-23-24.github.io/docs/objects/sections/classesasobjects/#staticAttributes">static attribute</a>).
-The <em>name</em> of an enumerated type can generally be used like a regular reference type.
+It can be declared in its own file, or inside a class or interface.</p>
+<p>The <em>name</em> of an enumerated type can generally be used like a regular reference type.<br>
 For instance</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Unit</span> {
 </span></span><span style="display:flex;"><span>
@@ -2105,7 +2101,7 @@ For instance:</p>
 </span></span></code></pre></div><p>The attributes of a record <em>cannot</em> be modified.
 For instance, the following program does not compile:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    City florence <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> City(<span style="color:#e6db74">&#34;Florence&#34;</span>, 50100);
-</span></span><span style="display:flex;"><span>    florence.<span style="color:#a6e22e">zipCode</span> <span style="color:#f92672">=</span> 50121;
+</span></span><span style="display:flex;"><span>    florence.<span style="color:#a6e22e">zipCode</span>() <span style="color:#f92672">=</span> 50121;
 </span></span></code></pre></div><p>A record is often declared inside a class or interface.
 For instance, in our game:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Board</span> {
@@ -2173,7 +2169,7 @@ For instance</p>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Outputs true, because of (implicit) interning</span>
 </span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(myString <span style="color:#f92672">==</span> sameString);
-</span></span></code></pre></div><p>In order to support interning, string in Java are <a href="https://unibz-pp-23-24.github.io/docs/objects/sections/mutability/">immutable</a>.</p>
+</span></span></code></pre></div><p>In order to support interning, strings in Java are <a href="https://unibz-pp-23-24.github.io/docs/objects/sections/mutability/">immutable</a>.</p>
 <p>In particular, the instance methods of the class <code>String</code> do <em>not</em> modify the current string, even if the names of some of these methods (<code>substring</code>, <code>replace</code>, etc.) suggest that they do.
 Instead, these methods (may) return (a reference to) a <em>different</em> object.
 For instance:</p>
